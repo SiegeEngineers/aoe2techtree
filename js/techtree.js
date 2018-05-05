@@ -127,12 +127,10 @@ function getDefaultTree() {
     archerylane.rows.feudal_1.push(building("Archery Range"));
     archerylane.rows.feudal_2.push(unit("Archer"));
     archerylane.rows.feudal_2.push(unit("Skirmisher"));
-
     archerylane.rows.castle_1.push(unit("Crossbowman"));
     archerylane.rows.castle_1.push(unit("Elite Skirmisher"));
     archerylane.rows.castle_1.push(unit("Cavalry Archer"));
     archerylane.rows.castle_1.push(tech("Thumbring"));
-
     archerylane.rows.imperial_1.push(unit("Arbalest"));
     archerylane.rows.imperial_1.push(unit("Hand Cannoneer"));
     archerylane.rows.imperial_1.push(unit("Heavy Cav Archer"));
@@ -143,17 +141,14 @@ function getDefaultTree() {
     let barrackslane = new Lane();
     barrackslane.rows.dark_1.push(building("Barracks"));
     barrackslane.rows.dark_2.push(unit("Militia"));
-
     barrackslane.rows.feudal_1.push(unit("Man-at-Arms"));
     barrackslane.rows.feudal_1.push(unit("Spearman"));
     barrackslane.rows.feudal_1.push(unit("Eagle Scout"));
     barrackslane.rows.feudal_1.push(tech("Tracking"));
-
     barrackslane.rows.castle_1.push(unit("Long Swordsman"));
     barrackslane.rows.castle_1.push(unit("Pikeman"));
     barrackslane.rows.castle_1.push(unit("Eagle Warrior"));
     barrackslane.rows.castle_1.push(tech("Squires"));
-
     barrackslane.rows.imperial_1.push(unit("Two Handed Swordsman"));
     barrackslane.rows.imperial_2.push(unit("Champion"));
     barrackslane.rows.imperial_1.push(unit("Halberdier"));
@@ -241,8 +236,127 @@ function getDefaultTree() {
 
     let castlelane = new Lane();
     castlelane.rows.castle_1.push(building("Castle"));
+    castlelane.rows.castle_2.push(new Caret(TYPES.UNIQUEUNIT, "UNIQUE UNIT"));
+    castlelane.rows.castle_2.push(unit("Petard"));
+    castlelane.rows.castle_2.push(tech("UNIQUE TECH 1"));
+    castlelane.rows.imperial_1.push(new Caret(TYPES.UNIQUEUNIT, "ELITE UNIQUE UNIT"));
+    castlelane.rows.imperial_1.push(unit("Trebuchet"));
+    castlelane.rows.imperial_1.push(tech("UNIQUE TECH 2"));
+    castlelane.rows.imperial_1.push(tech("Hoardings"));
+    castlelane.rows.imperial_1.push(tech("Sappers"));
+    castlelane.rows.imperial_1.push(tech("Conscription"));
+    castlelane.rows.imperial_1.push(tech("Spies/Treason"));
     tree.lanes.push(castlelane);
 
+
+    let houselane = new Lane();
+    houselane.rows.dark_1.push(building("House"));
+    tree.lanes.push(houselane);
+
+    let towncenterlane = new Lane();
+    towncenterlane.rows.dark_1.push(building("Town Center"));
+    towncenterlane.rows.dark_2.push(unit("Villager"));
+    towncenterlane.rows.dark_2.push(tech("Feudal Age"));
+    towncenterlane.rows.dark_2.push(tech("Loom"));
+    towncenterlane.rows.feudal_1.push(tech("Town Watch"));
+    towncenterlane.rows.feudal_1.push(tech("Castle Age"));
+    towncenterlane.rows.feudal_1.push(tech("Wheelbarrow"));
+    towncenterlane.rows.castle_1.push(tech("Town Patrol"));
+    towncenterlane.rows.castle_1.push(tech("Imperial Age"));
+    towncenterlane.rows.castle_1.push(tech("Hand Cart"));
+    tree.lanes.push(towncenterlane);
+
+
+    let additionaltowncenterlane = new Lane();
+    additionaltowncenterlane.rows.castle_1.push(building("Town Center"));
+    tree.lanes.push(additionaltowncenterlane);
+
+
+    let siegeworkshoplane = new Lane();
+    siegeworkshoplane.rows.castle_1.push(building("Siege Workshop"));
+    siegeworkshoplane.rows.castle_2.push(unit("Mangonel"));
+    siegeworkshoplane.rows.castle_2.push(unit("Battering Ram"));
+    siegeworkshoplane.rows.castle_2.push(unit("Scorpion"));
+    siegeworkshoplane.rows.imperial_1.push(unit("Onager"));
+    siegeworkshoplane.rows.imperial_1.push(unit("Capped Ram"));
+    siegeworkshoplane.rows.imperial_1.push(unit("Heavy Scorpion"));
+    siegeworkshoplane.rows.imperial_1.push(unit("Bombard Cannon"));
+    siegeworkshoplane.rows.imperial_2.push(unit("Siege Onager"));
+    siegeworkshoplane.rows.imperial_2.push(unit("Siege Ram"));
+    tree.lanes.push(siegeworkshoplane);
+
+
+    let blacksmithlane = new Lane();
+    blacksmithlane.rows.feudal_1.push(building("Blacksmith"));
+    blacksmithlane.rows.feudal_2.push(tech("Padded Archer Armor"));
+    blacksmithlane.rows.feudal_2.push(tech("Fletching"));
+    blacksmithlane.rows.feudal_2.push(tech("Forging"));
+    blacksmithlane.rows.feudal_2.push(tech("Scale Barding Armor"));
+    blacksmithlane.rows.feudal_2.push(tech("Scale Mail Armor"));
+    blacksmithlane.rows.castle_1.push(tech("Leather Archer Armor"));
+    blacksmithlane.rows.castle_1.push(tech("Bodkin Arrow"));
+    blacksmithlane.rows.castle_1.push(tech("Iron Casting"));
+    blacksmithlane.rows.castle_1.push(tech("Chain Barding Armor"));
+    blacksmithlane.rows.castle_1.push(tech("Chain Mail Armor"));
+    blacksmithlane.rows.imperial_1.push(tech("Ring Archer Armor"));
+    blacksmithlane.rows.imperial_1.push(tech("Bracer"));
+    blacksmithlane.rows.imperial_1.push(tech("Blast Furnance"));
+    blacksmithlane.rows.imperial_1.push(tech("Plate Barding Armor"));
+    blacksmithlane.rows.imperial_1.push(tech("Plate Mail Armor"));
+    tree.lanes.push(blacksmithlane);
+
+
+    let universitylane = new Lane();
+    universitylane.rows.castle_1.push(building("University"));
+    universitylane.rows.castle_2.push(tech("Masonry"));
+    universitylane.rows.castle_2.push(tech("Fortified Wall"));
+    universitylane.rows.castle_2.push(tech("Ballistics"));
+    universitylane.rows.castle_2.push(tech("Guard Tower"));
+    universitylane.rows.castle_2.push(tech("Heated Shot"));
+    universitylane.rows.castle_2.push(tech("Murder Holes"));
+    universitylane.rows.castle_2.push(tech("Treadmill Crane"));
+    universitylane.rows.imperial_1.push(tech("Architecture"));
+    universitylane.rows.imperial_1.push(tech("Chemistry"));
+    universitylane.rows.imperial_1.push(tech("Siege Engineers"));
+    universitylane.rows.imperial_1.push(tech("Keep"));
+    universitylane.rows.imperial_2.push(tech("Bombard Tower"));
+    tree.lanes.push(universitylane);
+
+    let miningcamplane = new Lane();
+    miningcamplane.rows.dark_1.push(building("Mining Camp"));
+    miningcamplane.rows.feudal_1.push(tech("Stone Mining"));
+    miningcamplane.rows.feudal_1.push(tech("Gold Mining"));
+    miningcamplane.rows.castle_1.push(tech("Stone Shaft Mining"));
+    miningcamplane.rows.castle_1.push(tech("Gold Shaft Mining"));
+    tree.lanes.push(miningcamplane);
+
+
+    let lumbercamplane = new Lane();
+    lumbercamplane.rows.dark_1.push(building("Lumber Camp"));
+    lumbercamplane.rows.feudal_1.push(tech("Double-Bit Axe"));
+    lumbercamplane.rows.castle_1.push(tech("Bow Saw"));
+    lumbercamplane.rows.imperial_1.push(tech("Two-Man Saw"));
+    tree.lanes.push(lumbercamplane);
+
+
+    let marketlane = new Lane();
+    marketlane.rows.feudal_1.push(building("Market"));
+    marketlane.rows.feudal_2.push(tech("Cartography"));
+    marketlane.rows.feudal_2.push(tech("Coinage"));
+    marketlane.rows.feudal_2.push(unit("Trade Cart"));
+    marketlane.rows.castle_1.push(tech("Caravan"));
+    marketlane.rows.castle_1.push(tech("Banking"));
+    marketlane.rows.imperial_1.push(tech("Guilds"));
+    tree.lanes.push(marketlane);
+
+
+    let milllane = new Lane();
+    milllane.rows.dark_1.push(building("Mill"));
+    milllane.rows.dark_2.push(building("Farm"));
+    milllane.rows.feudal_1.push(tech("Horse Collar"));
+    milllane.rows.castle_1.push(tech("Heavy Plow"));
+    milllane.rows.imperial_1.push(tech("Crop Rotation"));
+    tree.lanes.push(milllane);
 
     tree.updatePositions();
 
