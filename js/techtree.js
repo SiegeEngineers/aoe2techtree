@@ -2,8 +2,7 @@ var TYPES = Object.freeze({
     "BUILDING": { colour: '#922602' },
     "UNIT": { colour: '#3a6a80' },
     "UNIQUEUNIT": { colour: '#af30a3' },
-    "TECHNOLOGY": { colour: '#2c5729' },
-    "VOID": { colour: '#000000' }
+    "TECHNOLOGY": { colour: '#2c5729' }
 });
 
 class Tree {
@@ -94,7 +93,7 @@ class Lane {
 
         for (let r of Object.keys(this.rows)) {
             for (let i = 0; i < this.rows[r].length; i++) {
-                if(this.rows[r][i].type == TYPES.BUILDING){
+                if (this.rows[r][i].type == TYPES.BUILDING) {
                     this.rows[r][i].x = this.x + ((this.width - this.padding) / 2) - (this.rows[r][i].width / 2);
                 }
             }
@@ -104,10 +103,11 @@ class Lane {
 }
 
 class Caret {
-    constructor(type, name) {
+    constructor(type, name, id) {
         this.type = type;
         this.icon = null;
         this.name = name;
+        this.id = id;
         this.width = 100;
         this.height = 100;
         this.x = 0;
@@ -115,16 +115,30 @@ class Caret {
     }
 }
 
-function building(name){
-    return new Caret(TYPES.BUILDING, name);
+function checkIdUnique(tree) {
+    let ids = new Set();
+    for (let lane of tree.lanes) {
+        for (let r of Object.keys(lane.rows)) {
+            for (let caret of lane.rows[r]) {
+                if (ids.has(caret.id)) {
+                    console.error("ID " + caret.id + " is not unique!");
+                }
+                ids.add(caret.id);
+            }
+        }
+    }
 }
 
-function unit(name){
-    return  new Caret(TYPES.UNIT, name);
+function building(name) {
+    return new Caret(TYPES.BUILDING, name, name);
 }
 
-function tech(name){
-    return  new Caret(TYPES.TECHNOLOGY, name);
+function unit(name) {
+    return new Caret(TYPES.UNIT, name, name);
+}
+
+function tech(name) {
+    return new Caret(TYPES.TECHNOLOGY, name, name);
 }
 
 function getDefaultTree() {
@@ -138,7 +152,7 @@ function getDefaultTree() {
     archerylane.rows.castle_1.push(unit("Crossbowman"));
     archerylane.rows.castle_1.push(unit("Elite Skirmisher"));
     archerylane.rows.castle_1.push(unit("Cavalry Archer"));
-    archerylane.rows.castle_1.push(tech("Thumbring"));
+    archerylane.rows.castle_1.push(tech("Thumb Ring"));
     archerylane.rows.imperial_1.push(unit("Arbalest"));
     archerylane.rows.imperial_1.push(unit("Hand Cannoneer"));
     archerylane.rows.imperial_1.push(unit("Heavy Cav Archer"));
@@ -157,7 +171,8 @@ function getDefaultTree() {
     barrackslane.rows.castle_1.push(unit("Pikeman"));
     barrackslane.rows.castle_1.push(unit("Eagle Warrior"));
     barrackslane.rows.castle_1.push(tech("Squires"));
-    barrackslane.rows.imperial_1.push(unit("Two Handed Swordsman"));
+    barrackslane.rows.castle_1.push(tech("Arson"));
+    barrackslane.rows.imperial_1.push(unit("Two-Handed Swordsman"));
     barrackslane.rows.imperial_2.push(unit("Champion"));
     barrackslane.rows.imperial_1.push(unit("Halberdier"));
     barrackslane.rows.imperial_1.push(unit("Elite Eagle Warrior"));
@@ -166,17 +181,18 @@ function getDefaultTree() {
 
     let stablelane = new Lane();
     stablelane.rows.feudal_1.push(building("Stable"));
-    stablelane.rows.feudal_2.push(tech("Bloodlines"));
-    stablelane.rows.feudal_2.push(new Caret(TYPES.VOID, ""));
     stablelane.rows.feudal_2.push(unit("Scout Cavalry"));
-    stablelane.rows.castle_1.push(unit("Camel"));
-    stablelane.rows.castle_1.push(unit("Knight"));
+    stablelane.rows.feudal_2.push(tech("Bloodlines"));
     stablelane.rows.castle_1.push(unit("Light Cavalry"));
+    stablelane.rows.castle_1.push(unit("Knight"));
+    stablelane.rows.castle_1.push(unit("Camel"));
+    stablelane.rows.castle_1.push(unit("Battle Elephant"));
     stablelane.rows.castle_1.push(tech("Husbandry"));
-    stablelane.rows.imperial_1.push(unit("Heavy Camel"));
-    stablelane.rows.imperial_1.push(unit("Cavalier"));
-    stablelane.rows.imperial_2.push(unit("Paladin"));
     stablelane.rows.imperial_1.push(unit("Hussar"));
+    stablelane.rows.imperial_1.push(unit("Cavalier"));
+    stablelane.rows.imperial_1.push(unit("Heavy Camel"));
+    stablelane.rows.imperial_1.push(unit("Elite Battle Elephant"));
+    stablelane.rows.imperial_2.push(unit("Paladin"));
     tree.lanes.push(stablelane);
 
 
@@ -188,17 +204,20 @@ function getDefaultTree() {
     let docklane = new Lane();
     docklane.rows.dark_1.push(building("Dock"));
     docklane.rows.dark_2.push(unit("Fishing Ship"));
+    docklane.rows.dark_2.push(unit("Transport Ship"));
+    docklane.rows.feudal_1.push(unit("Fire Galley"));
     docklane.rows.feudal_1.push(unit("Trade Cog"));
-    docklane.rows.feudal_1.push(unit("Transport Ship"));
+    docklane.rows.feudal_1.push(unit("Demolition Raft"));
     docklane.rows.feudal_1.push(unit("Galley"));
     docklane.rows.castle_1.push(unit("Fire Ship"));
+    docklane.rows.castle_1.push(unit("Gillnets"));
     docklane.rows.castle_1.push(unit("Demolition Ship"));
     docklane.rows.castle_1.push(unit("War Galley"));
     docklane.rows.castle_1.push(tech("Careening"));
     docklane.rows.imperial_1.push(unit("Fast Fire Ship"));
+    docklane.rows.imperial_1.push(unit("Cannon Galleon"));
     docklane.rows.imperial_1.push(unit("Heavy Demolition Ship"));
     docklane.rows.imperial_1.push(unit("Galleon"));
-    docklane.rows.imperial_1.push(unit("Cannon Galleon"));
     docklane.rows.imperial_2.push(unit("Elite Cannon Galleon"));
     docklane.rows.imperial_1.push(tech("Dry Dock"));
     docklane.rows.imperial_1.push(tech("Shipwright"));
@@ -221,6 +240,7 @@ function getDefaultTree() {
 
     let walllane = new Lane();
     walllane.rows.dark_1.push(building("Palisade Wall"));
+    walllane.rows.dark_2.push(building("Palisade Gate"));
     walllane.rows.feudal_1.push(building("Gate"));
     walllane.rows.feudal_2.push(building("Stone Wall"));
     walllane.rows.castle_1.push(building("Fortified Wall"));
@@ -229,11 +249,11 @@ function getDefaultTree() {
 
     let monasterylane = new Lane();
     monasterylane.rows.castle_1.push(building("Monastery"));
+    monasterylane.rows.castle_2.push(unit("Monk"));
     monasterylane.rows.castle_2.push(tech("Redemption"));
     monasterylane.rows.castle_2.push(tech("Fervor"));
     monasterylane.rows.castle_2.push(tech("Sanctity"));
     monasterylane.rows.castle_2.push(tech("Atonement"));
-    monasterylane.rows.castle_2.push(unit("Monk"));
     monasterylane.rows.castle_2.push(tech("Herbal Medicine"));
     monasterylane.rows.castle_2.push(tech("Heresy"));
     monasterylane.rows.imperial_1.push(tech("Block Printing"));
@@ -244,10 +264,10 @@ function getDefaultTree() {
 
     let castlelane = new Lane();
     castlelane.rows.castle_1.push(building("Castle"));
-    castlelane.rows.castle_2.push(new Caret(TYPES.UNIQUEUNIT, "UNIQUE UNIT"));
+    castlelane.rows.castle_2.push(new Caret(TYPES.UNIQUEUNIT, "UNIQUE UNIT", "UNIQUE UNIT"));
     castlelane.rows.castle_2.push(unit("Petard"));
     castlelane.rows.castle_2.push(tech("UNIQUE TECH 1"));
-    castlelane.rows.imperial_1.push(new Caret(TYPES.UNIQUEUNIT, "ELITE UNIQUE UNIT"));
+    castlelane.rows.imperial_1.push(new Caret(TYPES.UNIQUEUNIT, "ELITE UNIQUE UNIT", "ELITE UNIQUE UNIT"));
     castlelane.rows.imperial_1.push(unit("Trebuchet"));
     castlelane.rows.imperial_1.push(tech("UNIQUE TECH 2"));
     castlelane.rows.imperial_1.push(tech("Hoardings"));
@@ -276,7 +296,7 @@ function getDefaultTree() {
 
 
     let additionaltowncenterlane = new Lane();
-    additionaltowncenterlane.rows.castle_1.push(building("Town Center"));
+    additionaltowncenterlane.rows.castle_1.push(new Caret(TYPES.BUILDING, "Town Center", "additional Town Center"));
     tree.lanes.push(additionaltowncenterlane);
 
 
@@ -308,7 +328,7 @@ function getDefaultTree() {
     blacksmithlane.rows.castle_1.push(tech("Chain Mail Armor"));
     blacksmithlane.rows.imperial_1.push(tech("Ring Archer Armor"));
     blacksmithlane.rows.imperial_1.push(tech("Bracer"));
-    blacksmithlane.rows.imperial_1.push(tech("Blast Furnance"));
+    blacksmithlane.rows.imperial_1.push(tech("Blast Furnace"));
     blacksmithlane.rows.imperial_1.push(tech("Plate Barding Armor"));
     blacksmithlane.rows.imperial_1.push(tech("Plate Mail Armor"));
     tree.lanes.push(blacksmithlane);
@@ -317,17 +337,17 @@ function getDefaultTree() {
     let universitylane = new Lane();
     universitylane.rows.castle_1.push(building("University"));
     universitylane.rows.castle_2.push(tech("Masonry"));
-    universitylane.rows.castle_2.push(tech("Fortified Wall"));
+    universitylane.rows.castle_2.push(new Caret(TYPES.TECHNOLOGY, "Fortified Wall", "Fortified Wall (Tech)"));
     universitylane.rows.castle_2.push(tech("Ballistics"));
-    universitylane.rows.castle_2.push(tech("Guard Tower"));
+    universitylane.rows.castle_2.push(new Caret(TYPES.TECHNOLOGY, "Guard Tower", "Guard Tower (Tech)"));
     universitylane.rows.castle_2.push(tech("Heated Shot"));
     universitylane.rows.castle_2.push(tech("Murder Holes"));
     universitylane.rows.castle_2.push(tech("Treadmill Crane"));
     universitylane.rows.imperial_1.push(tech("Architecture"));
     universitylane.rows.imperial_1.push(tech("Chemistry"));
     universitylane.rows.imperial_1.push(tech("Siege Engineers"));
-    universitylane.rows.imperial_1.push(tech("Keep"));
-    universitylane.rows.imperial_2.push(tech("Bombard Tower"));
+    universitylane.rows.imperial_1.push(new Caret(TYPES.TECHNOLOGY, "Keep", "Keep (Tech)"));
+    universitylane.rows.imperial_2.push(new Caret(TYPES.TECHNOLOGY, "Bombard Tower", "Bombard Tower (Tech)"));
     tree.lanes.push(universitylane);
 
     let miningcamplane = new Lane();
@@ -368,5 +388,156 @@ function getDefaultTree() {
 
     tree.updatePositions();
 
+    checkIdUnique(tree);
+
     return tree;
 }
+
+
+function getConnections() {
+    return [
+        ["Archery Range","Archer"],
+        ["Archer","Crossbowman"],
+        ["Crossbowman","Arbalest"],
+        ["Archery Range","Skirmisher"],
+        ["Skirmisher","Elite Skirmisher"],
+        ["Archery Range","Cavalry Archer"],
+        ["Cavalry Archer","Heavy Cav Archer"],
+        ["Archery Range","Thumb Ring"],
+        ["Barracks", "Archery Range"],
+        ["Barracks", "Stable"],
+        ["Barracks", "Militia"],
+        ["Militia","Man-at-Arms"],
+        ["Man-at-Arms","Long Swordsman"],
+        ["Long Swordsman","Two-Handed Swordsman"],
+        ["Two-Handed Swordsman","Champion"],
+        ["Barracks", "Spearman"],
+        ["Spearman","Pikeman"],
+        ["Pikeman","Halberdier"],
+        ["Barracks","Eagle Scout"],
+        ["Eagle Scout","Eagle Warrior"],
+        ["Eagle Warrior","Elite Eagle Warrior"],
+        ["Barracks", "Tracking"],
+        ["Barracks","Arson"],
+        ["Stable","Scout Cavalry"],
+        ["Scout Cavalry","Light Cavalry"],
+        ["Light Cavalry","Hussar"],
+        ["Stable","Bloodlines"],
+        ["Stable","Camel"],
+        ["Camel","Heavy Camel"],
+        ["Stable","Battle Elephant"],
+        ["Battle Elephant","Elite Battle Elephant"],
+        ["Stable","Husbandry"],
+        ["Knight","Cavalier"],
+        ["Cavalier","Paladin"],
+        ["Dock","Fishing Ship"],
+        ["Dock","Transport Ship"],
+        ["Dock","Demolition Raft"],
+        ["Demolition Raft","Demolition Ship"],
+        ["Demolition Ship","Heavy Demolition Ship"],
+        ["Dock","Galley"],
+        ["Galley","War Galley"],
+        ["War Galley","Galleon"],
+        ["Dock","Careening"],
+        ["Careening","Dry Dock"],
+        ["Dock","Shipwright"],
+        ["Dock","Fish Trap"],
+        ["Fire Galley","Fire Ship"],
+        ["Fire Ship","Fast Fire Ship"],
+        ["Cannon Galleon","Elite Cannon Galleon"],
+        ["Watch Tower","Guard Tower"],
+        ["Guard Tower","Keep"],
+        ["Stone Wall","Fortified Wall"],
+        ["Monastery","Monk"],
+        ["Monastery","Redemption"],
+        ["Monastery","Atonement"],
+        ["Monastery","Herbal Medicine"],
+        ["Monastery","Heresy"],
+        ["Monastery","Sanctity"],
+        ["Monastery","Fervor"],
+        ["Castle","UNIQUE UNIT"],
+        ["UNIQUE UNIT","ELITE UNIQUE UNIT"],
+        ["Castle","Petard"],
+        ["Castle","UNIQUE TECH 1"],
+        ["Castle","Hoardings"],
+        ["Castle","Sappers"],
+        ["Castle","Conscription"],
+        ["Castle","Spies/Treason"],
+        ["Town Center","Villager"],
+        ["Town Center","Feudal Age"],
+        ["Feudal Age","Castle Age"],
+        ["Castle Age","Imperial Age"],
+        ["Town Center","Loom"],
+        ["Town Watch","Town Patrol"],
+        ["Wheelbarrow","Hand Cart"],
+        ["Siege Workshop","Mangonel"],
+        ["Mangonel","Onager"],
+        ["Onager","Siege Onager"],
+        ["Siege Workshop","Battering Ram"],
+        ["Battering Ram","Capped Ram"],
+        ["Capped Ram","Siege Ram"],
+        ["Siege Workshop","Scorpion"],
+        ["Scorpion","Heavy Scorpion"],
+        ["Siege Workshop","Bombard Cannon"],
+        ["Blacksmith","Siege Workshop"],
+        ["Blacksmith","Padded Archer Armor"],
+        ["Padded Archer Armor","Leather Archer Armor"],
+        ["Leather Archer Armor","Ring Archer Armor"],
+        ["Blacksmith","Fletching"],
+        ["Fletching","Bodkin Arrow"],
+        ["Bodkin Arrow","Bracer"],
+        ["Blacksmith","Forging"],
+        ["Forging","Iron Casting"],
+        ["Iron Casting","Blast Furnace"],
+        ["Blacksmith","Scale Barding Armor"],
+        ["Scale Barding Armor","Chain Barding Armor"],
+        ["Chain Barding Armor","Plate Barding Armor"],
+        ["Blacksmith","Scale Mail Armor"],
+        ["Scale Mail Armor","Chain Mail Armor"],
+        ["Chain Mail Armor","Plate Mail Armor"],
+        ["University","Masonry"],
+        ["Masonry","Architecture"],
+        ["University","Fortified Wall (Tech)"],
+        ["University","Ballistics"],
+        ["University","Guard Tower (Tech)"],
+        ["Guard Tower (Tech)","Keep (Tech)"],
+        ["University","Heated Shot"],
+        ["University","Murder Holes"],
+        ["University","Treadmill Crane"],
+        ["Chemistry","Bombard Tower (Tech)"],
+        ["Mining Camp","Stone Mining"],
+        ["Stone Mining","Stone Shaft Mining"],
+        ["Mining Camp","Gold Mining"],
+        ["Gold Mining","Gold Shaft Mining"],
+        ["Lumber Camp","Double-Bit Axe"],
+        ["Double-Bit Axe","Bow Saw"],
+        ["Bow Saw","Two-Man Saw"],
+        ["Market","Cartography"],
+        ["Cartography","Caravan"],
+        ["Market","Coinage"],
+        ["Coinage","Banking"],
+        ["Market","Trade Cart"],
+        ["Mill","Market"],
+        ["Mill","Horse Collar"],
+        ["Horse Collar","Heavy Plow"],
+        ["Heavy Plow","Crop Rotation"],
+        ["Mill","Farm"]
+    ];
+}
+
+
+function getConnectionPoints(tree){
+    let points = new Map();
+    for (let lane of tree.lanes) {
+        for (let r of Object.keys(lane.rows)) {
+            for (let caret of lane.rows[r]) {
+                points.set(caret.id, {
+                    x: caret.x + (caret.width / 2), 
+                    y: caret.y + (caret.height / 2)
+                });
+            }
+        }
+    }
+    return points;
+}
+
