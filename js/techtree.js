@@ -170,6 +170,10 @@ function unit(name) {
     return new Caret(TYPES.UNIT, name, name);
 }
 
+function uniqueunit(name) {
+    return new Caret(TYPES.UNIQUEUNIT, name, name);
+}
+
 function tech(name) {
     return new Caret(TYPES.TECHNOLOGY, name, name);
 }
@@ -184,11 +188,15 @@ function getDefaultTree() {
     archerylane.rows.feudal_2.push(unit("Skirmisher"));
     archerylane.rows.castle_1.push(unit("Crossbowman"));
     archerylane.rows.castle_1.push(unit("Elite Skirmisher"));
+    archerylane.rows.castle_1.push(uniqueunit("Slinger"));
     archerylane.rows.castle_1.push(unit("Cavalry Archer"));
+    archerylane.rows.castle_1.push(uniqueunit("Genitour"));
     archerylane.rows.castle_1.push(tech("Thumb Ring"));
     archerylane.rows.imperial_1.push(unit("Arbalest"));
+    archerylane.rows.imperial_1.push(uniqueunit("Imperial Skirmisher"));
     archerylane.rows.imperial_1.push(unit("Hand Cannoneer"));
     archerylane.rows.imperial_1.push(unit("Heavy Cav Archer"));
+    archerylane.rows.imperial_1.push(uniqueunit("Elite Genitour"));
     archerylane.rows.imperial_1.push(tech("Parthian Tactics"));
     tree.lanes.push(archerylane);
 
@@ -209,6 +217,7 @@ function getDefaultTree() {
     barrackslane.rows.imperial_2.push(unit("Champion"));
     barrackslane.rows.imperial_1.push(unit("Halberdier"));
     barrackslane.rows.imperial_1.push(unit("Elite Eagle Warrior"));
+    barrackslane.rows.imperial_1.push(uniqueunit("Condottiero"));
     tree.lanes.push(barrackslane);
 
 
@@ -225,6 +234,7 @@ function getDefaultTree() {
     stablelane.rows.imperial_1.push(unit("Cavalier"));
     stablelane.rows.imperial_1.push(unit("Heavy Camel"));
     stablelane.rows.imperial_1.push(unit("Elite Battle Elephant"));
+    stablelane.rows.imperial_2.push(uniqueunit("Imperial Camel"));
     stablelane.rows.imperial_2.push(unit("Paladin"));
     tree.lanes.push(stablelane);
 
@@ -246,11 +256,17 @@ function getDefaultTree() {
     docklane.rows.castle_1.push(unit("Gillnets"));
     docklane.rows.castle_1.push(unit("Demolition Ship"));
     docklane.rows.castle_1.push(unit("War Galley"));
+    docklane.rows.castle_1.push(uniqueunit("Turtle Ship"));
+    docklane.rows.castle_1.push(uniqueunit("Longboat"));
+    docklane.rows.castle_1.push(uniqueunit("Caravel"));
     docklane.rows.castle_1.push(tech("Careening"));
     docklane.rows.imperial_1.push(unit("Fast Fire Ship"));
     docklane.rows.imperial_1.push(unit("Cannon Galleon"));
     docklane.rows.imperial_1.push(unit("Heavy Demolition Ship"));
     docklane.rows.imperial_1.push(unit("Galleon"));
+    docklane.rows.imperial_1.push(uniqueunit("Elite Turtle Ship"));
+    docklane.rows.imperial_1.push(uniqueunit("Elite Longboat"));
+    docklane.rows.imperial_1.push(uniqueunit("Elite Caravel"));
     docklane.rows.imperial_2.push(unit("Elite Cannon Galleon"));
     docklane.rows.imperial_1.push(tech("Dry Dock"));
     docklane.rows.imperial_1.push(tech("Shipwright"));
@@ -283,6 +299,7 @@ function getDefaultTree() {
     let monasterylane = new Lane();
     monasterylane.rows.castle_1.push(building("Monastery"));
     monasterylane.rows.castle_2.push(unit("Monk"));
+    monasterylane.rows.castle_2.push(uniqueunit("Missionary"));
     monasterylane.rows.castle_2.push(tech("Redemption"));
     monasterylane.rows.castle_2.push(tech("Fervor"));
     monasterylane.rows.castle_2.push(tech("Sanctity"));
@@ -554,7 +571,19 @@ function getConnections() {
         ["Mill", "Horse Collar"],
         ["Horse Collar", "Heavy Plow"],
         ["Heavy Plow", "Crop Rotation"],
-        ["Mill", "Farm"]
+        ["Mill", "Farm"],
+        ["Genitour", "Elite Genitour"],
+        ["Heavy Camel", "Imperial Camel"],
+        ["Turtle Ship", "Elite Turtle Ship"],
+        ["Longboat", "Elite Longboat"],
+        ["Elite Skirmisher", "Imperial Skirmisher"],
+        ["Monastery", "Missionary"],
+        ["Caravel", "Elite Caravel"],
+        ["Dock", "Caravel"],
+        ["Dock", "Turtle Ship"],
+        ["Archery Range", "Slinger"],
+        ["Archery Range", "Genitour"],
+        ["Dock", "Longboat"]
     ];
 
     let connection_ids = [];
