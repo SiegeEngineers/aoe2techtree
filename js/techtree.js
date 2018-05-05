@@ -93,11 +93,36 @@ class Lane {
 
         for (let r of Object.keys(this.rows)) {
             for (let i = 0; i < this.rows[r].length; i++) {
-                if (this.rows[r][i].type == TYPES.BUILDING) {
+                if (this.rows[r][i].isBuilding()) {
                     this.rows[r][i].x = this.x + ((this.width - this.padding) / 2) - (this.rows[r][i].width / 2);
                 }
             }
         }
+
+        let connections = getConnections();
+        let carets = this.nonBuildingCarets();
+        for (let connection of connections) {
+            let from = connection[0];
+            let to = connection[1];
+            if (carets.has(from) && carets.has(to)) {
+                let from_x = carets.get(from).x;
+                let to_x = carets.get(to).x;
+                carets.get(from).x = Math.max(from_x, to_x);
+                carets.get(to).x = Math.max(from_x, to_x);
+            }
+        }
+    }
+
+    nonBuildingCarets() {
+        let c = new Map();
+        for (let r of Object.keys(this.rows)) {
+            for (let caret of this.rows[r]) {
+                if (!caret.isBuilding()) {
+                    c.set(caret.id, caret);
+                }
+            }
+        }
+        return c;
     }
 
 }
@@ -112,6 +137,10 @@ class Caret {
         this.height = 100;
         this.x = 0;
         this.y = 0;
+    }
+
+    isBuilding() {
+        return this.type == TYPES.BUILDING;
     }
 }
 
@@ -396,143 +425,143 @@ function getDefaultTree() {
 
 function getConnections() {
     return [
-        ["Archery Range","Archer"],
-        ["Archer","Crossbowman"],
-        ["Crossbowman","Arbalest"],
-        ["Archery Range","Skirmisher"],
-        ["Skirmisher","Elite Skirmisher"],
-        ["Archery Range","Cavalry Archer"],
-        ["Cavalry Archer","Heavy Cav Archer"],
-        ["Archery Range","Thumb Ring"],
+        ["Archery Range", "Archer"],
+        ["Archer", "Crossbowman"],
+        ["Crossbowman", "Arbalest"],
+        ["Archery Range", "Skirmisher"],
+        ["Skirmisher", "Elite Skirmisher"],
+        ["Archery Range", "Cavalry Archer"],
+        ["Cavalry Archer", "Heavy Cav Archer"],
+        ["Archery Range", "Thumb Ring"],
         ["Barracks", "Archery Range"],
         ["Barracks", "Stable"],
         ["Barracks", "Militia"],
-        ["Militia","Man-at-Arms"],
-        ["Man-at-Arms","Long Swordsman"],
-        ["Long Swordsman","Two-Handed Swordsman"],
-        ["Two-Handed Swordsman","Champion"],
+        ["Militia", "Man-at-Arms"],
+        ["Man-at-Arms", "Long Swordsman"],
+        ["Long Swordsman", "Two-Handed Swordsman"],
+        ["Two-Handed Swordsman", "Champion"],
         ["Barracks", "Spearman"],
-        ["Spearman","Pikeman"],
-        ["Pikeman","Halberdier"],
-        ["Barracks","Eagle Scout"],
-        ["Eagle Scout","Eagle Warrior"],
-        ["Eagle Warrior","Elite Eagle Warrior"],
+        ["Spearman", "Pikeman"],
+        ["Pikeman", "Halberdier"],
+        ["Barracks", "Eagle Scout"],
+        ["Eagle Scout", "Eagle Warrior"],
+        ["Eagle Warrior", "Elite Eagle Warrior"],
         ["Barracks", "Tracking"],
-        ["Barracks","Arson"],
-        ["Stable","Scout Cavalry"],
-        ["Scout Cavalry","Light Cavalry"],
-        ["Light Cavalry","Hussar"],
-        ["Stable","Bloodlines"],
-        ["Stable","Camel"],
-        ["Camel","Heavy Camel"],
-        ["Stable","Battle Elephant"],
-        ["Battle Elephant","Elite Battle Elephant"],
-        ["Stable","Husbandry"],
-        ["Knight","Cavalier"],
-        ["Cavalier","Paladin"],
-        ["Dock","Fishing Ship"],
-        ["Dock","Transport Ship"],
-        ["Dock","Demolition Raft"],
-        ["Demolition Raft","Demolition Ship"],
-        ["Demolition Ship","Heavy Demolition Ship"],
-        ["Dock","Galley"],
-        ["Galley","War Galley"],
-        ["War Galley","Galleon"],
-        ["Dock","Careening"],
-        ["Careening","Dry Dock"],
-        ["Dock","Shipwright"],
-        ["Dock","Fish Trap"],
-        ["Fire Galley","Fire Ship"],
-        ["Fire Ship","Fast Fire Ship"],
-        ["Cannon Galleon","Elite Cannon Galleon"],
-        ["Watch Tower","Guard Tower"],
-        ["Guard Tower","Keep"],
-        ["Stone Wall","Fortified Wall"],
-        ["Monastery","Monk"],
-        ["Monastery","Redemption"],
-        ["Monastery","Atonement"],
-        ["Monastery","Herbal Medicine"],
-        ["Monastery","Heresy"],
-        ["Monastery","Sanctity"],
-        ["Monastery","Fervor"],
-        ["Castle","UNIQUE UNIT"],
-        ["UNIQUE UNIT","ELITE UNIQUE UNIT"],
-        ["Castle","Petard"],
-        ["Castle","UNIQUE TECH 1"],
-        ["Castle","Hoardings"],
-        ["Castle","Sappers"],
-        ["Castle","Conscription"],
-        ["Castle","Spies/Treason"],
-        ["Town Center","Villager"],
-        ["Town Center","Feudal Age"],
-        ["Feudal Age","Castle Age"],
-        ["Castle Age","Imperial Age"],
-        ["Town Center","Loom"],
-        ["Town Watch","Town Patrol"],
-        ["Wheelbarrow","Hand Cart"],
-        ["Siege Workshop","Mangonel"],
-        ["Mangonel","Onager"],
-        ["Onager","Siege Onager"],
-        ["Siege Workshop","Battering Ram"],
-        ["Battering Ram","Capped Ram"],
-        ["Capped Ram","Siege Ram"],
-        ["Siege Workshop","Scorpion"],
-        ["Scorpion","Heavy Scorpion"],
-        ["Siege Workshop","Bombard Cannon"],
-        ["Blacksmith","Siege Workshop"],
-        ["Blacksmith","Padded Archer Armor"],
-        ["Padded Archer Armor","Leather Archer Armor"],
-        ["Leather Archer Armor","Ring Archer Armor"],
-        ["Blacksmith","Fletching"],
-        ["Fletching","Bodkin Arrow"],
-        ["Bodkin Arrow","Bracer"],
-        ["Blacksmith","Forging"],
-        ["Forging","Iron Casting"],
-        ["Iron Casting","Blast Furnace"],
-        ["Blacksmith","Scale Barding Armor"],
-        ["Scale Barding Armor","Chain Barding Armor"],
-        ["Chain Barding Armor","Plate Barding Armor"],
-        ["Blacksmith","Scale Mail Armor"],
-        ["Scale Mail Armor","Chain Mail Armor"],
-        ["Chain Mail Armor","Plate Mail Armor"],
-        ["University","Masonry"],
-        ["Masonry","Architecture"],
-        ["University","Fortified Wall (Tech)"],
-        ["University","Ballistics"],
-        ["University","Guard Tower (Tech)"],
-        ["Guard Tower (Tech)","Keep (Tech)"],
-        ["University","Heated Shot"],
-        ["University","Murder Holes"],
-        ["University","Treadmill Crane"],
-        ["Chemistry","Bombard Tower (Tech)"],
-        ["Mining Camp","Stone Mining"],
-        ["Stone Mining","Stone Shaft Mining"],
-        ["Mining Camp","Gold Mining"],
-        ["Gold Mining","Gold Shaft Mining"],
-        ["Lumber Camp","Double-Bit Axe"],
-        ["Double-Bit Axe","Bow Saw"],
-        ["Bow Saw","Two-Man Saw"],
-        ["Market","Cartography"],
-        ["Cartography","Caravan"],
-        ["Market","Coinage"],
-        ["Coinage","Banking"],
-        ["Market","Trade Cart"],
-        ["Mill","Market"],
-        ["Mill","Horse Collar"],
-        ["Horse Collar","Heavy Plow"],
-        ["Heavy Plow","Crop Rotation"],
-        ["Mill","Farm"]
+        ["Barracks", "Arson"],
+        ["Stable", "Scout Cavalry"],
+        ["Scout Cavalry", "Light Cavalry"],
+        ["Light Cavalry", "Hussar"],
+        ["Stable", "Bloodlines"],
+        ["Stable", "Camel"],
+        ["Camel", "Heavy Camel"],
+        ["Stable", "Battle Elephant"],
+        ["Battle Elephant", "Elite Battle Elephant"],
+        ["Stable", "Husbandry"],
+        ["Knight", "Cavalier"],
+        ["Cavalier", "Paladin"],
+        ["Dock", "Fishing Ship"],
+        ["Dock", "Transport Ship"],
+        ["Dock", "Demolition Raft"],
+        ["Demolition Raft", "Demolition Ship"],
+        ["Demolition Ship", "Heavy Demolition Ship"],
+        ["Dock", "Galley"],
+        ["Galley", "War Galley"],
+        ["War Galley", "Galleon"],
+        ["Dock", "Careening"],
+        ["Careening", "Dry Dock"],
+        ["Dock", "Shipwright"],
+        ["Dock", "Fish Trap"],
+        ["Fire Galley", "Fire Ship"],
+        ["Fire Ship", "Fast Fire Ship"],
+        ["Cannon Galleon", "Elite Cannon Galleon"],
+        ["Watch Tower", "Guard Tower"],
+        ["Guard Tower", "Keep"],
+        ["Stone Wall", "Fortified Wall"],
+        ["Monastery", "Monk"],
+        ["Monastery", "Redemption"],
+        ["Monastery", "Atonement"],
+        ["Monastery", "Herbal Medicine"],
+        ["Monastery", "Heresy"],
+        ["Monastery", "Sanctity"],
+        ["Monastery", "Fervor"],
+        ["Castle", "UNIQUE UNIT"],
+        ["UNIQUE UNIT", "ELITE UNIQUE UNIT"],
+        ["Castle", "Petard"],
+        ["Castle", "UNIQUE TECH 1"],
+        ["Castle", "Hoardings"],
+        ["Castle", "Sappers"],
+        ["Castle", "Conscription"],
+        ["Castle", "Spies/Treason"],
+        ["Town Center", "Villager"],
+        ["Town Center", "Feudal Age"],
+        ["Feudal Age", "Castle Age"],
+        ["Castle Age", "Imperial Age"],
+        ["Town Center", "Loom"],
+        ["Town Watch", "Town Patrol"],
+        ["Wheelbarrow", "Hand Cart"],
+        ["Siege Workshop", "Mangonel"],
+        ["Mangonel", "Onager"],
+        ["Onager", "Siege Onager"],
+        ["Siege Workshop", "Battering Ram"],
+        ["Battering Ram", "Capped Ram"],
+        ["Capped Ram", "Siege Ram"],
+        ["Siege Workshop", "Scorpion"],
+        ["Scorpion", "Heavy Scorpion"],
+        ["Siege Workshop", "Bombard Cannon"],
+        ["Blacksmith", "Siege Workshop"],
+        ["Blacksmith", "Padded Archer Armor"],
+        ["Padded Archer Armor", "Leather Archer Armor"],
+        ["Leather Archer Armor", "Ring Archer Armor"],
+        ["Blacksmith", "Fletching"],
+        ["Fletching", "Bodkin Arrow"],
+        ["Bodkin Arrow", "Bracer"],
+        ["Blacksmith", "Forging"],
+        ["Forging", "Iron Casting"],
+        ["Iron Casting", "Blast Furnace"],
+        ["Blacksmith", "Scale Barding Armor"],
+        ["Scale Barding Armor", "Chain Barding Armor"],
+        ["Chain Barding Armor", "Plate Barding Armor"],
+        ["Blacksmith", "Scale Mail Armor"],
+        ["Scale Mail Armor", "Chain Mail Armor"],
+        ["Chain Mail Armor", "Plate Mail Armor"],
+        ["University", "Masonry"],
+        ["Masonry", "Architecture"],
+        ["University", "Fortified Wall (Tech)"],
+        ["University", "Ballistics"],
+        ["University", "Guard Tower (Tech)"],
+        ["Guard Tower (Tech)", "Keep (Tech)"],
+        ["University", "Heated Shot"],
+        ["University", "Murder Holes"],
+        ["University", "Treadmill Crane"],
+        ["Chemistry", "Bombard Tower (Tech)"],
+        ["Mining Camp", "Stone Mining"],
+        ["Stone Mining", "Stone Shaft Mining"],
+        ["Mining Camp", "Gold Mining"],
+        ["Gold Mining", "Gold Shaft Mining"],
+        ["Lumber Camp", "Double-Bit Axe"],
+        ["Double-Bit Axe", "Bow Saw"],
+        ["Bow Saw", "Two-Man Saw"],
+        ["Market", "Cartography"],
+        ["Cartography", "Caravan"],
+        ["Market", "Coinage"],
+        ["Coinage", "Banking"],
+        ["Market", "Trade Cart"],
+        ["Mill", "Market"],
+        ["Mill", "Horse Collar"],
+        ["Horse Collar", "Heavy Plow"],
+        ["Heavy Plow", "Crop Rotation"],
+        ["Mill", "Farm"]
     ];
 }
 
 
-function getConnectionPoints(tree){
+function getConnectionPoints(tree) {
     let points = new Map();
     for (let lane of tree.lanes) {
         for (let r of Object.keys(lane.rows)) {
             for (let caret of lane.rows[r]) {
                 points.set(caret.id, {
-                    x: caret.x + (caret.width / 2), 
+                    x: caret.x + (caret.width / 2),
                     y: caret.y + (caret.height / 2)
                 });
             }

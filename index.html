@@ -26,7 +26,6 @@
             let from = connectionpoints.get(connection[0]);
             let to = connectionpoints.get(connection[1]);
             let intermediate_height = from.y + (tree.element_height * 2 / 3);
-            console.log(connection[1]);
             draw.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y]).fill('none').stroke({ width: 2 });
         }
 
