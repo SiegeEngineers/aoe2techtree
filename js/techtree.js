@@ -91,6 +91,14 @@ class Lane {
             lane_width = Math.max(lane_width, row_width);
         }
         this.width = lane_width;
+
+        for (let r of Object.keys(this.rows)) {
+            for (let i = 0; i < this.rows[r].length; i++) {
+                if(this.rows[r][i].type == TYPES.BUILDING){
+                    this.rows[r][i].x = this.x + ((this.width - this.padding) / 2) - (this.rows[r][i].width / 2);
+                }
+            }
+        }
     }
 
 }
