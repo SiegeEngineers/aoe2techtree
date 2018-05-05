@@ -29,7 +29,7 @@ class Tree {
         this.element_height = this.height / 4 / 3;
         let element_offset = this.element_height / 2;
 
-        this.offsets.dark_1 = 0;
+        this.offsets.dark_1 = this.padding;
         this.offsets.dark_2 = this.offsets.dark_1 + this.element_height + element_offset;
         this.offsets.feudal_1 = this.offsets.dark_2 + this.element_height + element_offset;
         this.offsets.feudal_2 = this.offsets.feudal_1 + this.element_height + element_offset;
@@ -44,7 +44,7 @@ class Tree {
             lane.updatePositions(this.offsets, this.element_height);
         }
 
-        let x = 0;
+        let x = this.padding;
         for (let i = 0; i < this.lanes.length; i++) {
             this.lanes[i].x = x;
             x = x + this.lanes[i].width + this.padding;

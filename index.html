@@ -16,6 +16,12 @@
         console.log(tree);
 
         var draw = SVG('techtree').size(tree.width, tree.height)
+
+        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e'});
+        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).y(tree.height / 4);
+        draw.rect(tree.width,6).attr({fill: '#4d3617'}).y(tree.height / 4 * 2);
+        draw.rect(tree.width,6).attr({fill: '#4d3617'}).y(tree.height / 4 * 3);
+
         for (let lane of tree.lanes) {
             for (let r of Object.keys(lane.rows)) {
                 let row = lane.rows[r];
