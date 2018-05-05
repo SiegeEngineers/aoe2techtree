@@ -1,4 +1,10 @@
-var TYPES = Object.freeze({ "BUILDING": {colour: '#922602'}, "UNIT": {colour: '#3a6a80'}, "UNIQUEUNIT": {colour: '#af30a3'}, "TECHNOLOGY": {colour: '#2c5729'}});
+var TYPES = Object.freeze({
+    "BUILDING": { colour: '#922602' },
+    "UNIT": { colour: '#3a6a80' },
+    "UNIQUEUNIT": { colour: '#af30a3' },
+    "TECHNOLOGY": { colour: '#2c5729' },
+    "VOID": { colour: '#000000' }
+});
 
 class Tree {
     constructor() {
@@ -101,79 +107,142 @@ class Caret {
     }
 }
 
-function getDefaultTree(){
+function building(name){
+    return new Caret(TYPES.BUILDING, name);
+}
+
+function unit(name){
+    return  new Caret(TYPES.UNIT, name);
+}
+
+function tech(name){
+    return  new Caret(TYPES.TECHNOLOGY, name);
+}
+
+function getDefaultTree() {
     let tree = new Tree();
     tree.updateOffsets();
 
     let archerylane = new Lane();
-    let archeryrange = new Caret(TYPES.BUILDING, "Archery Range");
-    archerylane.rows.feudal_1.push(archeryrange);
-    let archer = new Caret(TYPES.UNIT, "Archer");
-    archerylane.rows.feudal_2.push(archer);
-    let skirmisher = new Caret(TYPES.UNIT, "Skirmisher");
-    archerylane.rows.feudal_2.push(skirmisher);
-    let crossbowman = new Caret(TYPES.UNIT, "Crossbowman");
-    archerylane.rows.castle_1.push(crossbowman);
-    let eliteskirmisher = new Caret(TYPES.UNIT, "Elite Skirmisher");
-    archerylane.rows.castle_1.push(eliteskirmisher);
-    let cavalryarcher = new Caret(TYPES.UNIT, "Cavalry Archer");
-    archerylane.rows.castle_1.push(cavalryarcher);
-    let thumbring = new Caret(TYPES.TECHNOLOGY, "Thumbring");
-    archerylane.rows.castle_1.push(thumbring);
-    let arbalest = new Caret(TYPES.UNIT, "Arbalest");
-    archerylane.rows.imperial_1.push(arbalest);
-    let handcannoneer = new Caret(TYPES.UNIT, "Hand Cannoneer");
-    archerylane.rows.imperial_1.push(handcannoneer);
-    let heavycavarcher = new Caret(TYPES.UNIT, "Heavy Cav Archer");
-    archerylane.rows.imperial_1.push(heavycavarcher);
-    let parthiantactics = new Caret(TYPES.TECHNOLOGY, "Parthian Tactics");
-    archerylane.rows.imperial_1.push(parthiantactics);
+    archerylane.rows.feudal_1.push(building("Archery Range"));
+    archerylane.rows.feudal_2.push(unit("Archer"));
+    archerylane.rows.feudal_2.push(unit("Skirmisher"));
+
+    archerylane.rows.castle_1.push(unit("Crossbowman"));
+    archerylane.rows.castle_1.push(unit("Elite Skirmisher"));
+    archerylane.rows.castle_1.push(unit("Cavalry Archer"));
+    archerylane.rows.castle_1.push(tech("Thumbring"));
+
+    archerylane.rows.imperial_1.push(unit("Arbalest"));
+    archerylane.rows.imperial_1.push(unit("Hand Cannoneer"));
+    archerylane.rows.imperial_1.push(unit("Heavy Cav Archer"));
+    archerylane.rows.imperial_1.push(tech("Parthian Tactics"));
     tree.lanes.push(archerylane);
 
+
     let barrackslane = new Lane();
-    let barracks = new Caret(TYPES.BUILDING, "Barracks");
-    barrackslane.rows.dark_1.push(barracks);
-    let militia = new Caret(TYPES.UNIT, "Militia");
-    barrackslane.rows.dark_2.push(militia);
-    let manatarms = new Caret(TYPES.UNIT, "Man-at-Arms");
-    barrackslane.rows.feudal_1.push(manatarms);
-    let spearman = new Caret(TYPES.UNIT, "Spearman");
-    barrackslane.rows.feudal_1.push(spearman);
-    let eaglescout = new Caret(TYPES.UNIT, "Eagle Scout");
-    barrackslane.rows.feudal_1.push(eaglescout);
-    let tracking = new Caret(TYPES.TECHNOLOGY, "Tracking");
-    barrackslane.rows.feudal_1.push(tracking);
-    let longswordsman = new Caret(TYPES.UNIT, "Long Swordsman");
-    barrackslane.rows.castle_1.push(longswordsman);
-    let pikeman = new Caret(TYPES.UNIT, "Pikeman");
-    barrackslane.rows.castle_1.push(pikeman);
-    let eaglewarrior = new Caret(TYPES.UNIT, "Eagle Warrior");
-    barrackslane.rows.castle_1.push(eaglewarrior);
-    let twohandendwordsman = new Caret(TYPES.UNIT, "Two Handed Swordsman");
-    barrackslane.rows.castle_1.push(twohandendwordsman);
-    let halberdier = new Caret(TYPES.UNIT, "Halberdier");
-    barrackslane.rows.castle_1.push(halberdier);
-    let eliteeaglewarrior = new Caret(TYPES.UNIT, "Elite Eagle Warrior");
-    barrackslane.rows.castle_1.push(eliteeaglewarrior);
+    barrackslane.rows.dark_1.push(building("Barracks"));
+    barrackslane.rows.dark_2.push(unit("Militia"));
+
+    barrackslane.rows.feudal_1.push(unit("Man-at-Arms"));
+    barrackslane.rows.feudal_1.push(unit("Spearman"));
+    barrackslane.rows.feudal_1.push(unit("Eagle Scout"));
+    barrackslane.rows.feudal_1.push(tech("Tracking"));
+
+    barrackslane.rows.castle_1.push(unit("Long Swordsman"));
+    barrackslane.rows.castle_1.push(unit("Pikeman"));
+    barrackslane.rows.castle_1.push(unit("Eagle Warrior"));
+    barrackslane.rows.castle_1.push(tech("Squires"));
+
+    barrackslane.rows.imperial_1.push(unit("Two Handed Swordsman"));
+    barrackslane.rows.imperial_2.push(unit("Champion"));
+    barrackslane.rows.imperial_1.push(unit("Halberdier"));
+    barrackslane.rows.imperial_1.push(unit("Elite Eagle Warrior"));
     tree.lanes.push(barrackslane);
 
+
+    let stablelane = new Lane();
+    stablelane.rows.feudal_1.push(building("Stable"));
+    stablelane.rows.feudal_2.push(tech("Bloodlines"));
+    stablelane.rows.feudal_2.push(new Caret(TYPES.VOID, ""));
+    stablelane.rows.feudal_2.push(unit("Scout Cavalry"));
+    stablelane.rows.castle_1.push(unit("Camel"));
+    stablelane.rows.castle_1.push(unit("Knight"));
+    stablelane.rows.castle_1.push(unit("Light Cavalry"));
+    stablelane.rows.castle_1.push(tech("Husbandry"));
+    stablelane.rows.imperial_1.push(unit("Heavy Camel"));
+    stablelane.rows.imperial_1.push(unit("Cavalier"));
+    stablelane.rows.imperial_2.push(unit("Paladin"));
+    stablelane.rows.imperial_1.push(unit("Hussar"));
+    tree.lanes.push(stablelane);
+
+
     let wonderlane = new Lane();
-    let wonder = new Caret(TYPES.BUILDING, "Wonder");
-    wonderlane.rows.imperial_1.push(wonder);
+    wonderlane.rows.imperial_1.push(building("Wonder"));
     tree.lanes.push(wonderlane);
 
+
+    let docklane = new Lane();
+    docklane.rows.dark_1.push(building("Dock"));
+    docklane.rows.dark_2.push(unit("Fishing Ship"));
+    docklane.rows.feudal_1.push(unit("Trade Cog"));
+    docklane.rows.feudal_1.push(unit("Transport Ship"));
+    docklane.rows.feudal_1.push(unit("Galley"));
+    docklane.rows.castle_1.push(unit("Fire Ship"));
+    docklane.rows.castle_1.push(unit("Demolition Ship"));
+    docklane.rows.castle_1.push(unit("War Galley"));
+    docklane.rows.castle_1.push(tech("Careening"));
+    docklane.rows.imperial_1.push(unit("Fast Fire Ship"));
+    docklane.rows.imperial_1.push(unit("Heavy Demolition Ship"));
+    docklane.rows.imperial_1.push(unit("Galleon"));
+    docklane.rows.imperial_1.push(unit("Cannon Galleon"));
+    docklane.rows.imperial_2.push(unit("Elite Cannon Galleon"));
+    docklane.rows.imperial_1.push(tech("Dry Dock"));
+    docklane.rows.imperial_1.push(tech("Shipwright"));
+    tree.lanes.push(docklane);
+
+
+    let fishtraplane = new Lane();
+    fishtraplane.rows.feudal_1.push(building("Fish Trap"));
+    tree.lanes.push(fishtraplane);
+
+
     let towerlane = new Lane();
-    let outpost = new Caret(TYPES.BUILDING, "Outpost");
-    towerlane.rows.dark_1.push(outpost);
-    let watchtower = new Caret(TYPES.BUILDING, "Watch Tower");
-    towerlane.rows.feudal_1.push(watchtower);
-    let guardtower = new Caret(TYPES.BUILDING, "Guard Tower");
-    towerlane.rows.castle_1.push(guardtower);
-    let keep = new Caret(TYPES.BUILDING, "Keep");
-    towerlane.rows.imperial_1.push(keep);
-    let bombardtower = new Caret(TYPES.BUILDING, "Bombard Tower");
-    towerlane.rows.imperial_2.push(bombardtower);
+    towerlane.rows.dark_1.push(building("Outpost"));
+    towerlane.rows.feudal_1.push(building("Watch Tower"));
+    towerlane.rows.castle_1.push(building("Guard Tower"));
+    towerlane.rows.imperial_1.push(building("Keep"));
+    towerlane.rows.imperial_2.push(building("Bombard Tower"));
     tree.lanes.push(towerlane);
+
+
+    let walllane = new Lane();
+    walllane.rows.dark_1.push(building("Palisade Wall"));
+    walllane.rows.feudal_1.push(building("Gate"));
+    walllane.rows.feudal_2.push(building("Stone Wall"));
+    walllane.rows.castle_1.push(building("Fortified Wall"));
+    tree.lanes.push(walllane);
+
+
+    let monasterylane = new Lane();
+    monasterylane.rows.castle_1.push(building("Monastery"));
+    monasterylane.rows.castle_2.push(tech("Redemption"));
+    monasterylane.rows.castle_2.push(tech("Fervor"));
+    monasterylane.rows.castle_2.push(tech("Sanctity"));
+    monasterylane.rows.castle_2.push(tech("Atonement"));
+    monasterylane.rows.castle_2.push(unit("Monk"));
+    monasterylane.rows.castle_2.push(tech("Herbal Medicine"));
+    monasterylane.rows.castle_2.push(tech("Heresy"));
+    monasterylane.rows.imperial_1.push(tech("Block Printing"));
+    monasterylane.rows.imperial_1.push(tech("Illumination"));
+    monasterylane.rows.imperial_1.push(tech("Faith"));
+    monasterylane.rows.imperial_1.push(tech("Theocracy"));
+    tree.lanes.push(monasterylane);
+
+    let castlelane = new Lane();
+    castlelane.rows.castle_1.push(building("Castle"));
+    tree.lanes.push(castlelane);
+
 
     tree.updatePositions();
 
