@@ -17,12 +17,12 @@
 
         var draw = SVG('techtree').size(tree.width, tree.height)
 
-        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e'});
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).y(tree.height / 4);
-        draw.rect(tree.width,6).attr({fill: '#4d3617'}).y(tree.height / 4 * 2);
-        draw.rect(tree.width,6).attr({fill: '#4d3617'}).y(tree.height / 4 * 3);
+        draw.rect(tree.width, tree.height).attr({ fill: '#e7c28e' });
+        draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4);
+        draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4 * 2);
+        draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4 * 3);
 
-        for(let connection of connections){
+        for (let connection of connections) {
             let from = connectionpoints.get(connection[0]);
             let to = connectionpoints.get(connection[1]);
             let intermediate_height = from.y + (tree.element_height * 2 / 3);
@@ -33,7 +33,7 @@
             for (let r of Object.keys(lane.rows)) {
                 let row = lane.rows[r];
                 for (let caret of row) {
-                    var rect = draw.rect(caret.width, caret.height).attr({ fill: caret.type.colour }).move(caret.x, caret.y);
+                    var rect = draw.rect(caret.width, caret.height).attr({ fill: caret.type.colour, id: caret.id }).move(caret.x, caret.y);
                     let name = caret.name;
                     if (name.length > 10) {
                         let space = caret.name.indexOf(" ");
@@ -49,7 +49,7 @@
                     }
                     var text = draw.text(name)
                         .font({ family: 'Helvetica', size: 8 })
-                        .attr({ fill: '#fff', 'text-anchor': 'middle' })
+                        .attr({ fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text' })
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
                 }
             }

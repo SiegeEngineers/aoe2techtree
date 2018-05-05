@@ -132,7 +132,7 @@ class Caret {
         this.type = type;
         this.icon = null;
         this.name = name;
-        this.id = id;
+        this.id = formatId(id);
         this.width = 100;
         this.height = 100;
         this.x = 0;
@@ -142,6 +142,10 @@ class Caret {
     isBuilding() {
         return this.type == TYPES.BUILDING;
     }
+}
+
+function formatId(string) {
+    return string.replace(/\s/g, "_").toLowerCase();
 }
 
 function checkIdUnique(tree) {
@@ -424,7 +428,7 @@ function getDefaultTree() {
 
 
 function getConnections() {
-    return [
+    let connections = [
         ["Archery Range", "Archer"],
         ["Archer", "Crossbowman"],
         ["Crossbowman", "Arbalest"],
@@ -552,6 +556,12 @@ function getConnections() {
         ["Heavy Plow", "Crop Rotation"],
         ["Mill", "Farm"]
     ];
+
+    let connection_ids = [];
+    for (let c of connections) {
+        connection_ids.push([formatId(c[0]), formatId(c[1])]);
+    }
+    return connection_ids;
 }
 
 
