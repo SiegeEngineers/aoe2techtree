@@ -54,6 +54,17 @@ class Tree {
             lane.updatePositions(this.offsets, this.element_height);
         }
     }
+
+    carets() {
+        let c = new Map();
+        for (let lane of this.lanes) {
+            let lanecarets = lane.carets();
+            for (let key of lanecarets.keys()) {
+                c.set(key, lanecarets.get(key));
+            }
+        }
+        return c;
+    }
 }
 
 class Lane {
@@ -125,6 +136,16 @@ class Lane {
         return c;
     }
 
+    carets() {
+        let c = new Map();
+        for (let r of Object.keys(this.rows)) {
+            for (let caret of this.rows[r]) {
+                c.set(caret.id, caret);
+            }
+        }
+        return c;
+    }
+
 }
 
 class Caret {
@@ -141,6 +162,10 @@ class Caret {
 
     isBuilding() {
         return this.type == TYPES.BUILDING;
+    }
+
+    isUniqueUnit() {
+        return this.type == TYPES.UNIQUEUNIT;
     }
 }
 
@@ -161,6 +186,84 @@ function checkIdUnique(tree) {
         }
     }
 }
+
+function resetToDefault(tree) {
+    SVG.select('.cross').hide();
+    disableUniqueUnits(tree);
+    enable(["UNIQUE UNIT", "ELITE UNIQUE UNIT"]);
+    disable(["Eagle Scout", "Eagle Warrior", "Elite Eagle Warrior"]);
+    disable(["Battle Elephant", "Elite Battle Elephant"]);
+    disable(["Feitoria"]);
+}
+
+function disable(names) {
+    for (name of names) {
+        SVG.get(formatId(name) + '_x').show();
+    }
+}
+
+function enable(names) {
+    for (name of names) {
+        SVG.get(formatId(name) + '_x').hide();
+    }
+}
+
+function disableUniqueUnits(tree) {
+    let carets = tree.carets();
+    for (key of carets.keys()) {
+        let caret = carets.get(key);
+        if (caret.isUniqueUnit()) {
+            SVG.get(caret.id + '_x').show();
+        }
+    }
+}
+
+function formatName(originalname) {
+    let name = originalname;
+    if (name.length > 10) {
+        let space = originalname.indexOf(" ");
+        if (space != -1) {
+            name = originalname.slice(0, space) + "\n" + originalname.slice(space + 1);
+            let alternativeSpace = space + 1 + originalname.slice(space + 1).indexOf(" ");
+            if (alternativeSpace != -1) {
+                if (Math.abs((originalname.length / 2) - alternativeSpace) < Math.abs((originalname.length / 2) - space)) {
+                    name = originalname.slice(0, alternativeSpace) + "\n" + originalname.slice(alternativeSpace + 1);
+                }
+            }
+        }
+    }
+    return name;
+}
+
+function unique(names) {
+    SVG.get(formatId("UNIQUE UNIT") + '_text').text(formatName(names[0]));
+    SVG.get(formatId("ELITE UNIQUE UNIT") + '_text').text(formatName(names[1]));
+    SVG.get(formatId("UNIQUE TECH 1") + '_text').text(formatName(names[2]));
+    SVG.get(formatId("UNIQUE TECH 2") + '_text').text(formatName(names[3]));
+}
+
+
+function disableHorses(tree) {
+    let stable_index = -1;
+    for (let i = 0; i < tree.lanes.length; i++) {
+        let lane = tree.lanes[i];
+        for (let r of Object.keys(lane.rows)) {
+            for (let caret of lane.rows[r]) {
+                if (caret.id === formatId("Stable")) {
+                    stable_index = i;
+                }
+            }
+        }
+    }
+    let lane = tree.lanes[stable_index];
+    for (let r of Object.keys(lane.rows)) {
+        for (let caret of lane.rows[r]) {
+            SVG.get(caret.id + '_x').show();
+        }
+    }
+    disable(["Cavalry Archer", "Heavy Cav Archer", "Scale Barding Armor", "Chain Barding Armor", "Plate Barding Armor", "Parthian Tactics"]);
+}
+
 
 function building(name) {
     return new Caret(TYPES.BUILDING, name, name);
@@ -244,6 +347,11 @@ function getDefaultTree() {
     tree.lanes.push(wonderlane);
 
 
+    let feitorialane = new Lane();
+    feitorialane.rows.imperial_1.push(building("Feitoria"));
+    tree.lanes.push(feitorialane);
+
+
     let docklane = new Lane();
     docklane.rows.dark_1.push(building("Dock"));
     docklane.rows.dark_2.push(unit("Fishing Ship"));
@@ -253,7 +361,7 @@ function getDefaultTree() {
     docklane.rows.feudal_1.push(unit("Demolition Raft"));
     docklane.rows.feudal_1.push(unit("Galley"));
     docklane.rows.castle_1.push(unit("Fire Ship"));
-    docklane.rows.castle_1.push(unit("Gillnets"));
+    docklane.rows.castle_1.push(tech("Gillnets"));
     docklane.rows.castle_1.push(unit("Demolition Ship"));
     docklane.rows.castle_1.push(unit("War Galley"));
     docklane.rows.castle_1.push(uniqueunit("Turtle Ship"));
@@ -262,7 +370,7 @@ function getDefaultTree() {
     docklane.rows.castle_1.push(tech("Careening"));
     docklane.rows.imperial_1.push(unit("Fast Fire Ship"));
     docklane.rows.imperial_1.push(unit("Cannon Galleon"));
-    docklane.rows.imperial_1.push(unit("Heavy Demolition Ship"));
+    docklane.rows.imperial_1.push(unit("Heavy Demo Ship"));
     docklane.rows.imperial_1.push(unit("Galleon"));
     docklane.rows.imperial_1.push(uniqueunit("Elite Turtle Ship"));
     docklane.rows.imperial_1.push(uniqueunit("Elite Longboat"));
@@ -397,6 +505,7 @@ function getDefaultTree() {
     universitylane.rows.imperial_1.push(tech("Chemistry"));
     universitylane.rows.imperial_1.push(tech("Siege Engineers"));
     universitylane.rows.imperial_1.push(new Caret(TYPES.TECHNOLOGY, "Keep", "Keep (Tech)"));
+    universitylane.rows.imperial_1.push(tech("Arrowslits"));
     universitylane.rows.imperial_2.push(new Caret(TYPES.TECHNOLOGY, "Bombard Tower", "Bombard Tower (Tech)"));
     tree.lanes.push(universitylane);
 
@@ -484,7 +593,7 @@ function getConnections() {
         ["Dock", "Transport Ship"],
         ["Dock", "Demolition Raft"],
         ["Demolition Raft", "Demolition Ship"],
-        ["Demolition Ship", "Heavy Demolition Ship"],
+        ["Demolition Ship", "Heavy Demo Ship"],
         ["Dock", "Galley"],
         ["Galley", "War Galley"],
         ["War Galley", "Galleon"],

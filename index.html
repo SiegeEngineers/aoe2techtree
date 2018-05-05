@@ -7,11 +7,47 @@
 </head>
 
 <body>
+    <div id="navigation">
+        <select id="civselect" onchange="loadCiv()">
+            <option>Aztecs</option>
+            <option>Berbers</option>
+            <option>Britons</option>
+            <option>Burmese</option>
+            <option>Byzantines</option>
+            <option>Celts</option>
+            <option>Chinese</option>
+            <option>Ethiopians</option>
+            <option>Franks</option>
+            <option>Goths</option>
+            <option>Huns</option>
+            <option>Incas</option>
+            <option>Indians</option>
+            <option>Italians</option>
+            <option>Japanese</option>
+            <option>Khmer</option>
+            <option>Koreans</option>
+            <option>Magyars</option>
+            <option>Malay</option>
+            <option>Malians</option>
+            <option>Mayans</option>
+            <option>Mongols</option>
+            <option>Persians</option>
+            <option>Portuguese</option>
+            <option>Saracens</option>
+            <option>Slavs</option>
+            <option>Spanish</option>
+            <option>Teutons</option>
+            <option>Turks</option>
+            <option>Vietnamese</option>
+            <option>Vikings</option>
+        </select>
+    </div>
     <div id="techtree"></div>
     <script src="js/svg.min.js"></script>
     <script src="js/techtree.js"></script>
+    <script src="js/civs.js"></script>
     <script type="text/javascript">
-        let tree = getDefaultTree();
+        var tree = getDefaultTree();
         let connections = getConnections();
         let connectionpoints = getConnectionPoints(tree);
 
@@ -34,19 +70,7 @@
                 let row = lane.rows[r];
                 for (let caret of row) {
                     var rect = draw.rect(caret.width, caret.height).attr({ fill: caret.type.colour, id: caret.id }).move(caret.x, caret.y);
-                    let name = caret.name;
-                    if (name.length > 10) {
-                        let space = caret.name.indexOf(" ");
-                        if (space != -1) {
-                            name = caret.name.slice(0, space) + "\n" + caret.name.slice(space + 1);
-                            let alternativeSpace = space + 1 + caret.name.slice(space + 1).indexOf(" ");
-                            if (alternativeSpace != -1) {
-                                if (Math.abs((caret.name.length / 2) - alternativeSpace) < Math.abs((caret.name.length / 2) - space)) {
-                                    name = caret.name.slice(0, alternativeSpace) + "\n" + caret.name.slice(alternativeSpace + 1);
-                                }
-                            }
-                        }
-                    }
+                    let name = formatName(caret.name);
                     var text = draw.text(name)
                         .font({ family: 'Helvetica', size: 8 })
                         .attr({ fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text' })
@@ -56,10 +80,18 @@
                         .move(caret.x + caret.width * 0.2, caret.y);
                     var cross = draw.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
                         .attr({ fill: 'rgba(255,0,0,0.5)', id: caret.id + '_x' })
+                        .addClass('cross')
                         .size(caret.width * 0.6, caret.height * 0.6)
                         .move(caret.x + caret.width * 0.2, caret.y);
                 }
             }
+        }
+
+        loadCiv();
+
+        function loadCiv() {
+            var selectedCiv = document.getElementById('civselect').value;
+            civ(selectedCiv, tree);
         }
 
     </script>
