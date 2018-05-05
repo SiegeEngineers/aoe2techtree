@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Age of Empires II Tech Tree</title>
+</head>
+
+<body>
+    <div id="techtree"></div>
+    <script src="js/svg.min.js"></script>
+    <script src="js/techtree.js"></script>
+    <script type="text/javascript">
+        let tree = getDefaultTree();
+
+        console.log(tree);
+
+        var draw = SVG('techtree').size(tree.width, tree.height)
+        for (let lane of tree.lanes) {
+            for (let r of Object.keys(lane.rows)) {
+                let row = lane.rows[r];
+                for (let caret of row) {
+                    var rect = draw.rect(caret.width, caret.height).attr({ fill: caret.type.colour }).move(caret.x, caret.y);
+                    let name = caret.name;
+                    let space = caret.name.indexOf(" ");
+                    if (space != -1) {
+                        name = caret.name.slice(0, space) + "\n" + caret.name.slice(space + 1);
+                        let alternativeSpace = space + 1 + caret.name.slice(space + 1).indexOf(" ");
+                        if(alternativeSpace != -1){
+                            if(Math.abs((caret.name.length / 2) - alternativeSpace) < Math.abs((caret.name.length / 2) - space)){
+                                name = caret.name.slice(0, alternativeSpace) + "\n" + caret.name.slice(alternativeSpace + 1);
+                            }
+                        }
+                    }
+                    var text = draw.text(name)
+                        .font({ family: 'Helvetica', size: 8 })
+                        .attr({ fill: '#fff', 'text-anchor': 'middle' })
+                        .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
