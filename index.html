@@ -22,13 +22,15 @@
                 for (let caret of row) {
                     var rect = draw.rect(caret.width, caret.height).attr({ fill: caret.type.colour }).move(caret.x, caret.y);
                     let name = caret.name;
-                    let space = caret.name.indexOf(" ");
-                    if (space != -1) {
-                        name = caret.name.slice(0, space) + "\n" + caret.name.slice(space + 1);
-                        let alternativeSpace = space + 1 + caret.name.slice(space + 1).indexOf(" ");
-                        if(alternativeSpace != -1){
-                            if(Math.abs((caret.name.length / 2) - alternativeSpace) < Math.abs((caret.name.length / 2) - space)){
-                                name = caret.name.slice(0, alternativeSpace) + "\n" + caret.name.slice(alternativeSpace + 1);
+                    if (name.length > 10) {
+                        let space = caret.name.indexOf(" ");
+                        if (space != -1) {
+                            name = caret.name.slice(0, space) + "\n" + caret.name.slice(space + 1);
+                            let alternativeSpace = space + 1 + caret.name.slice(space + 1).indexOf(" ");
+                            if (alternativeSpace != -1) {
+                                if (Math.abs((caret.name.length / 2) - alternativeSpace) < Math.abs((caret.name.length / 2) - space)) {
+                                    name = caret.name.slice(0, alternativeSpace) + "\n" + caret.name.slice(alternativeSpace + 1);
+                                }
                             }
                         }
                     }
