@@ -2,56 +2,101 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
     <title>Age of Empires II Tech Tree</title>
     <style>
-    #info,
-    #info a {
-        display: inline;
-        font-family: monospace;
-        color: gray;
-    }
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #info,
+        #info a {
+            display: inline;
+            font-family: monospace;
+            color: gray;
+        }
+
+        #container {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #wrapper {
+            min-width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+
+        #techtree {
+            flex: 0 0 auto;
+        }
+
+        #navigation {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 
 <body>
-    <div id="navigation">
-        <select id="civselect" onchange="loadCiv()">
-            <option>Aztecs</option>
-            <option>Berbers</option>
-            <option>Britons</option>
-            <option>Burmese</option>
-            <option>Byzantines</option>
-            <option>Celts</option>
-            <option>Chinese</option>
-            <option>Ethiopians</option>
-            <option>Franks</option>
-            <option>Goths</option>
-            <option>Huns</option>
-            <option>Incas</option>
-            <option>Indians</option>
-            <option>Italians</option>
-            <option>Japanese</option>
-            <option>Khmer</option>
-            <option>Koreans</option>
-            <option>Magyars</option>
-            <option>Malay</option>
-            <option>Malians</option>
-            <option>Mayans</option>
-            <option>Mongols</option>
-            <option>Persians</option>
-            <option>Portuguese</option>
-            <option>Saracens</option>
-            <option>Slavs</option>
-            <option>Spanish</option>
-            <option>Teutons</option>
-            <option>Turks</option>
-            <option>Vietnamese</option>
-            <option>Vikings</option>
-        </select>
-        <div id="info">Version: Age of Empires II HD Patch 5.7 | <a href="https://github.com/HSZemi/aoe2techtree" target="_blank">GitHub</a></div>
+    <div id="container">
+        <div id="navigation">
+            <select id="civselect" onchange="loadCiv()">
+                <option>Aztecs</option>
+                <option>Berbers</option>
+                <option>Britons</option>
+                <option>Burmese</option>
+                <option>Byzantines</option>
+                <option>Celts</option>
+                <option>Chinese</option>
+                <option>Ethiopians</option>
+                <option>Franks</option>
+                <option>Goths</option>
+                <option>Huns</option>
+                <option>Incas</option>
+                <option>Indians</option>
+                <option>Italians</option>
+                <option>Japanese</option>
+                <option>Khmer</option>
+                <option>Koreans</option>
+                <option>Magyars</option>
+                <option>Malay</option>
+                <option>Malians</option>
+                <option>Mayans</option>
+                <option>Mongols</option>
+                <option>Persians</option>
+                <option>Portuguese</option>
+                <option>Saracens</option>
+                <option>Slavs</option>
+                <option>Spanish</option>
+                <option>Teutons</option>
+                <option>Turks</option>
+                <option>Vietnamese</option>
+                <option>Vikings</option>
+            </select>
+            <div id="info">Version: Age of Empires II HD Patch 5.7 |
+                <a href="https://github.com/HSZemi/aoe2techtree" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div id="wrapper">
+            <div id="techtree"></div>
+        </div>
     </div>
-    <div id="techtree"></div>
     <script src="js/svg.min.js"></script>
     <script src="js/techtree.js"></script>
     <script src="js/civs.js"></script>
@@ -84,8 +129,18 @@
                         .font({ family: 'Helvetica', size: 8 })
                         .attr({ fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text' })
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
-                    var image = draw.rect(caret.width * 0.6, caret.height * 0.6)
-                        .attr({ fill: 'rgba(0,0,0,0.5)', id: caret.id + '_img' })
+                    var image_placeholder = draw.rect(caret.width * 0.6, caret.height * 0.6)
+                        .attr({ fill: 'rgba(0,0,0,0.5)', id: caret.id + '_imgph' })
+                        .move(caret.x + caret.width * 0.2, caret.y);
+                    let prefix = 'img/Units/';
+                    if (caret.isBuilding()) {
+                        prefix = 'img/Buildings/';
+                    }
+                    if (caret.isTech()) {
+                        prefix = 'img/Techs/';
+                    }
+                    var image = draw.image(prefix + caret.id + '.png', caret.width * 0.6, caret.height * 0.6)
+                        .attr({ id: caret.id + '_img' })
                         .move(caret.x + caret.width * 0.2, caret.y);
                     var cross = draw.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
                         .attr({ fill: 'rgba(255,0,0,0.5)', id: caret.id + '_x' })
