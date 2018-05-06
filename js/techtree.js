@@ -17,7 +17,7 @@ class Tree {
             imperial_1_y: 0,
             imperial_2_y: 0
         }
-        this.height = 800;
+        this.height = Math.max(window.innerHeight - 70, 800);
         this.width = 0;
         this.padding = 10;
         this.element_height = 0;
