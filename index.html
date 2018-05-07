@@ -11,6 +11,7 @@
         body {
             width: 100%;
             height: 100%;
+            box-sizing: border-box;
         }
 
         body {
@@ -33,6 +34,10 @@
             flex-direction: column;
         }
 
+        #navigation {
+            padding-left: 1rem;
+        }
+
         #wrapper {
             min-width: 100%;
             display: flex;
@@ -44,7 +49,43 @@
         }
 
         #techtree {
+            border: 5px solid #4d3617;
+            background-color: #e7c28e;
             flex: 0 0 auto;
+        }
+
+        #civinfo {
+            border: 5px solid #4d3617;
+            width: 20rem;
+            flex: 0 0 auto;
+            background-color: #e7c28e;
+            padding: 1rem;
+        }
+
+        #civname {
+            text-align: center;
+        }
+
+        hr {
+            overflow: visible;
+            /* For IE */
+            height: 30px;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px 0 0 0;
+            border-radius: 20px;
+        }
+
+        hr:before {
+            /* Not really supposed to work, but does */
+            display: block;
+            content: "";
+            height: 30px;
+            margin-top: -31px;
+            border-style: solid;
+            border-color: black;
+            border-width: 0 0 1px 0;
+            border-radius: 20px;
         }
 
         #navigation {
@@ -95,6 +136,11 @@
             </div>
         </div>
         <div id="wrapper">
+            <div id="civinfo">
+                <h2 id="civname">Aztecs</h2>
+                <hr>
+                <p id="civtext"></p>
+            </div>
             <div id="techtree"></div>
         </div>
     </div>
@@ -103,61 +149,89 @@
     <script src="js/civs.js"></script>
     <script type="text/javascript">
         var tree = getDefaultTree();
+        var civbonuses = {};
         let connections = getConnections();
         let connectionpoints = getConnectionPoints(tree);
 
-        var draw = SVG('techtree').size(tree.width, tree.height)
+        loadJson(function (response) {
 
-        draw.rect(tree.width, tree.height).attr({ fill: '#e7c28e' });
-        draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4);
-        draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4 * 2);
-        draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4 * 3);
+            civbonuses = JSON.parse(response);
 
-        for (let connection of connections) {
-            let from = connectionpoints.get(connection[0]);
-            let to = connectionpoints.get(connection[1]);
-            let intermediate_height = from.y + (tree.element_height * 2 / 3);
-            draw.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y]).fill('none').stroke({ width: 2 });
-        }
+            var draw = SVG('techtree').size(tree.width, tree.height)
 
-        for (let lane of tree.lanes) {
-            for (let r of Object.keys(lane.rows)) {
-                let row = lane.rows[r];
-                for (let caret of row) {
-                    var rect = draw.rect(caret.width, caret.height).attr({ fill: caret.type.colour, id: caret.id }).move(caret.x, caret.y);
-                    let name = formatName(caret.name);
-                    var text = draw.text(name)
-                        .font({ family: 'Helvetica', size: 8 })
-                        .attr({ fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text' })
-                        .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
-                    var image_placeholder = draw.rect(caret.width * 0.6, caret.height * 0.6)
-                        .attr({ fill: 'rgba(0,0,0,0.5)', id: caret.id + '_imgph' })
-                        .move(caret.x + caret.width * 0.2, caret.y);
-                    let prefix = 'img/Units/';
-                    if (caret.isBuilding()) {
-                        prefix = 'img/Buildings/';
+            draw.rect(tree.width, tree.height).attr({ fill: '#e7c28e' });
+            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4);
+            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4 * 2);
+            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4 * 3);
+
+            for (let connection of connections) {
+                let from = connectionpoints.get(connection[0]);
+                let to = connectionpoints.get(connection[1]);
+                let intermediate_height = from.y + (tree.element_height * 2 / 3);
+                draw.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y]).fill('none').stroke({ width: 2 });
+            }
+
+            for (let lane of tree.lanes) {
+                for (let r of Object.keys(lane.rows)) {
+                    let row = lane.rows[r];
+                    for (let caret of row) {
+                        var rect = draw.rect(caret.width, caret.height).attr({ fill: caret.type.colour, id: caret.id }).move(caret.x, caret.y);
+                        let name = formatName(caret.name);
+                        var text = draw.text(name)
+                            .font({ family: 'Helvetica', size: 8 })
+                            .attr({ fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text' })
+                            .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
+                        var image_placeholder = draw.rect(caret.width * 0.6, caret.height * 0.6)
+                            .attr({ fill: 'rgba(0,0,0,0.5)', id: caret.id + '_imgph' })
+                            .move(caret.x + caret.width * 0.2, caret.y);
+                        let prefix = 'img/Units/';
+                        if (caret.isBuilding()) {
+                            prefix = 'img/Buildings/';
+                        }
+                        if (caret.isTech()) {
+                            prefix = 'img/Techs/';
+                        }
+                        var image = draw.image(prefix + caret.id + '.png', caret.width * 0.6, caret.height * 0.6)
+                            .attr({ id: caret.id + '_img' })
+                            .move(caret.x + caret.width * 0.2, caret.y);
+                        var cross = draw.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
+                            .attr({ fill: 'rgba(255,0,0,0.5)', id: caret.id + '_x' })
+                            .addClass('cross')
+                            .size(caret.width * 0.6, caret.height * 0.6)
+                            .move(caret.x + caret.width * 0.2, caret.y);
                     }
-                    if (caret.isTech()) {
-                        prefix = 'img/Techs/';
-                    }
-                    var image = draw.image(prefix + caret.id + '.png', caret.width * 0.6, caret.height * 0.6)
-                        .attr({ id: caret.id + '_img' })
-                        .move(caret.x + caret.width * 0.2, caret.y);
-                    var cross = draw.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
-                        .attr({ fill: 'rgba(255,0,0,0.5)', id: caret.id + '_x' })
-                        .addClass('cross')
-                        .size(caret.width * 0.6, caret.height * 0.6)
-                        .move(caret.x + caret.width * 0.2, caret.y);
                 }
             }
-        }
 
-        loadCiv();
+            loadCiv();
+        });
+
 
         function loadCiv() {
             var selectedCiv = document.getElementById('civselect').value;
             civ(selectedCiv, tree);
+            document.getElementById('civname').innerText = selectedCiv;
+            if (selectedCiv in civbonuses) {
+                document.getElementById('civtext').innerHTML = civbonuses[selectedCiv];
+            } else {
+                document.getElementById('civtext').innerHTML = "";
+            }
         }
+
+        function loadJson(callback) {
+
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', 'data/civbonuses.json', true);
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                    callback(xobj.responseText);
+                }
+            };
+            xobj.send(null);
+        }
+
 
     </script>
 </body>
