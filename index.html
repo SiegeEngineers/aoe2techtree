@@ -38,6 +38,16 @@
             padding-left: 1rem;
         }
 
+        #helptext {
+            position: absolute;
+            display: none;
+            max-width: 300px;
+            background-color: #eee;
+            border: 2px solid #bbb;
+            padding: 0.2rem;
+            font-size: 8pt;
+        }
+
         #wrapper {
             min-width: 100%;
             display: flex;
@@ -52,6 +62,7 @@
             border: 5px solid #4d3617;
             background-color: #e7c28e;
             flex: 0 0 auto;
+            position: relative;
         }
 
         #civinfo {
@@ -141,7 +152,9 @@
                 <hr>
                 <p id="civtext"></p>
             </div>
-            <div id="techtree"></div>
+            <div id="techtree">
+                <div id="helptext"></div>
+            </div>
         </div>
     </div>
     <script src="js/svg.min.js"></script>
@@ -149,26 +162,28 @@
     <script src="js/civs.js"></script>
     <script type="text/javascript">
         var tree = getDefaultTree();
-        var civbonuses = {};
+        var data = {};
         let connections = getConnections();
         let connectionpoints = getConnectionPoints(tree);
 
         loadJson(function (response) {
 
-            civbonuses = JSON.parse(response);
+            data = JSON.parse(response);
 
             var draw = SVG('techtree').size(tree.width, tree.height)
 
-            draw.rect(tree.width, tree.height).attr({ fill: '#e7c28e' });
-            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4);
-            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4 * 2);
-            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).y(tree.height / 4 * 3);
+            draw.rect(tree.width, tree.height).attr({ fill: '#e7c28e' }).click(function () { hideHelp(); });
+            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).click(function () { hideHelp(); }).y(tree.height / 4);
+            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).click(function () { hideHelp(); }).y(tree.height / 4 * 2);
+            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).click(function () { hideHelp(); }).y(tree.height / 4 * 3);
 
             for (let connection of connections) {
                 let from = connectionpoints.get(connection[0]);
                 let to = connectionpoints.get(connection[1]);
                 let intermediate_height = from.y + (tree.element_height * 2 / 3);
-                draw.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y]).fill('none').stroke({ width: 2 });
+                draw.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y])
+                    .fill('none').stroke({ width: 2 })
+                    .click(function () { hideHelp(); });
             }
 
             for (let lane of tree.lanes) {
@@ -199,6 +214,11 @@
                             .addClass('cross')
                             .size(caret.width * 0.6, caret.height * 0.6)
                             .move(caret.x + caret.width * 0.2, caret.y);
+                        var overlaytrigger = draw.rect(caret.width, caret.height)
+                            .attr({ fill: 'rgba(0,0,0,0)', id: caret.id + '_overlay' })
+                            .move(caret.x, caret.y)
+                            .click(function () { displayHelp(caret); });
+
                     }
                 }
             }
@@ -211,8 +231,8 @@
             var selectedCiv = document.getElementById('civselect').value;
             civ(selectedCiv, tree);
             document.getElementById('civname').innerText = selectedCiv;
-            if (selectedCiv in civbonuses) {
-                document.getElementById('civtext').innerHTML = civbonuses[selectedCiv];
+            if (selectedCiv in data.civs) {
+                document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
             } else {
                 document.getElementById('civtext').innerHTML = "";
             }
@@ -222,7 +242,7 @@
 
             var xobj = new XMLHttpRequest();
             xobj.overrideMimeType("application/json");
-            xobj.open('GET', 'data/civbonuses.json', true);
+            xobj.open('GET', 'data/data.json', true);
             xobj.onreadystatechange = function () {
                 if (xobj.readyState == 4 && xobj.status == "200") {
                     // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -230,6 +250,28 @@
                 }
             };
             xobj.send(null);
+        }
+
+        function displayHelp(caret) {
+            let helptext = document.getElementById("helptext");
+            helptext.innerHTML = data.key_value[data.name_key[caret.name]];
+            helptext.style.display = "block";
+
+            let top = caret.y + caret.height;
+            if (top + helptext.offsetHeight > tree.height) {
+                top = top - helptext.offsetHeight - caret.height;
+            }
+            helptext.style.top = top + "px";
+
+            helptext.style.left = Math.max(0, (caret.x - helptext.offsetWidth)) + "px";
+            let helpbox = helptext.getBoundingClientRect();
+            if (helpbox.left < 0) {
+                helptext.style.left = Math.max(0, (caret.x - helptext.offsetWidth)) - helpbox.left + "px";
+            }
+        }
+
+        function hideHelp() {
+            helptext.style.display = "none";
         }
 
 
