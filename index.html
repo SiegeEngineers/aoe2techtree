@@ -65,12 +65,22 @@
             position: relative;
         }
 
-        #civinfo {
+        #metainfo {
             border: 5px solid #4d3617;
             width: 20rem;
             flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
             background-color: #e7c28e;
             padding: 1rem;
+        }
+
+        #civinfo {
+            flex: 1 0 auto;
+        }
+
+        #thanks {
+            flex: 0 0 auto;
         }
 
         #civname {
@@ -102,6 +112,13 @@
         #navigation {
             margin-top: 0.5rem;
             margin-bottom: 0.5rem;
+        }
+
+        #thanks,
+        #thanks a {
+            font-size: 6pt;
+            font-family: monospace;
+            color: gray;
         }
     </style>
 </head>
@@ -147,10 +164,18 @@
             </div>
         </div>
         <div id="wrapper">
-            <div id="civinfo">
-                <h2 id="civname">Aztecs</h2>
-                <hr>
-                <p id="civtext"></p>
+            <div id="metainfo">
+                <div id="civinfo">
+                    <h2 id="civname">Loading…</h2>
+                    <hr>
+                    <p id="civtext"></p>
+                </div>
+                <div id="thanks">
+                    Made by
+                    <a href="https://hszemi.de" target="_blank">hszemi</a>, with huge thanks to Jineapple and TriRem
+                    <br> Descriptions taken from the
+                    <a href="https://www.voobly.com/gamemods/mod/650/Max-Extended-Help-AK" target="_blank">Max-Extended-Help-AK mod</a>
+                </div>
             </div>
             <div id="techtree">
                 <div id="helptext"></div>
