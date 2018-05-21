@@ -492,6 +492,4192 @@
         "120179": "Monk and Elephant civilization<br>\n<br>\n\u00b7 Free Lumbercamp upgrades<br>\n\u00b7 Infantry +1 Attack per Age (starting in Feudal Age)<br>\n\u00b7 Monastery techs cost -50%<br>\n<br>\n<b>Unique Unit:</b> Arambai (Powerful, but inaccurate ranged cavalry)<br>\n<br>\n<b>Castle</b> <b>Age</b> <b>Tech:</b> Howdah (Battle Elephants +1/+1 Armor)<br>\n<b>Imperial</b> <b>Age</b> <b>Tech:</b> Manipur Cavalry (Cavalry and Arambai +6 Attack vs. Buildings, +3 of that blockable by building armor)<br>\n<br>\n<b>Team Bonus:</b> Relics visible on map",
         "120180": "Archer civilization<br>\n<br>\n\u00b7 Reveal enemy positions at game start<br>\n\u00b7 Archery Range units +10/15/20% HP in Feudal/Castle/Imperial Age<br>\n\u00b7 Conscription free<br>\n<br>\n<b>Unique Units:</b> Rattan Archer (Archer with high pierce armor)<br>\n<br>\n<b>Castle</b> <b>Age</b> <b>Tech:</b> Chatras (Battle Elephants +50 HP)<br>\n<b>Imperial</b> <b>Age</b> <b>Tech:</b> Paper Money (Tributes 500 gold to each Ally)<br>\n<br>\n<b>Team Bonus:</b> Have access to Imperial Skirmisher upgrade"
     },
+    "meta": {
+        "Anarchy": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "450F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Anarchy (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "450F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Andean Sling": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Andean Sling (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Arambai": {
+            "armor": "0",
+            "attack": "18",
+            "cost": "50W 60G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "1"
+        },
+        "Arbalest": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "25W 45G",
+            "garrison": "0",
+            "hp": "40",
+            "piercearmor": "0"
+        },
+        "Arbalest (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "350F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Archer": {
+            "armor": "0",
+            "attack": "4",
+            "cost": "25W 45G",
+            "garrison": "0",
+            "hp": "30",
+            "piercearmor": "0"
+        },
+        "Archery Range": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "175W",
+            "garrison": "0",
+            "hp": "2100",
+            "piercearmor": "10"
+        },
+        "Architecture": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 300F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Architecture (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 300F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Arquebus": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "700F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Arquebus (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "700F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Arrowslits": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250W 250F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Arrowslits (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250W 250F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Arson": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 50G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Arson (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 50G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Artillery": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Artillery (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Atheism": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Atheism (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Atlatl": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 350G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Atlatl (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 350G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Atonement": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "325G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Atonement (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "325G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Ballista Elephant": {
+            "armor": "0",
+            "attack": "8",
+            "cost": "100F 80G",
+            "garrison": "0",
+            "hp": "250",
+            "piercearmor": "3"
+        },
+        "Ballistics": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 175G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Ballistics (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 175G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Banking": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Banking (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Barracks": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "175W",
+            "garrison": "0",
+            "hp": "2100",
+            "piercearmor": "10"
+        },
+        "Battering Ram": {
+            "armor": "0",
+            "attack": "2",
+            "cost": "160W 75G",
+            "garrison": "0",
+            "hp": "175",
+            "piercearmor": "180"
+        },
+        "Battle Elephant": {
+            "armor": "1",
+            "attack": "12",
+            "cost": "120F 70G",
+            "garrison": "0",
+            "hp": "250",
+            "piercearmor": "2"
+        },
+        "Bearded Axe": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Bearded Axe (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Berserk": {
+            "armor": "0",
+            "attack": "9",
+            "cost": "65F 25G",
+            "garrison": "0",
+            "hp": "61",
+            "piercearmor": "1"
+        },
+        "Berserkergang": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "850F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Berserkergang (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "850F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Blacksmith": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "150W",
+            "garrison": "0",
+            "hp": "2100",
+            "piercearmor": "10"
+        },
+        "Blast Furnace": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "275F 225G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Blast Furnace (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "275F 225G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Block Printing": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Block Printing (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Bloodlines": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Bloodlines (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Bodkin Arrow": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Bodkin Arrow (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Boiling Oil": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 100S",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Boiling Oil (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 100S",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Bombard Cannon": {
+            "armor": "2",
+            "attack": "40",
+            "cost": "225W 225G",
+            "garrison": "0",
+            "hp": "80",
+            "piercearmor": "5"
+        },
+        "Bombard Tower": {
+            "armor": "3",
+            "attack": "120",
+            "cost": "100G 125S",
+            "garrison": "0",
+            "hp": "2220",
+            "piercearmor": "9"
+        },
+        "Bombard Tower (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 400W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Bow Saw": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 100W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Bow Saw (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 100W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Boyar": {
+            "armor": "4",
+            "attack": "12",
+            "cost": "50F 80G",
+            "garrison": "0",
+            "hp": "100",
+            "piercearmor": "1"
+        },
+        "Bracer": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Bracer (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Camel": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "0"
+        },
+        "Camel Archer": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "50W 60G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "1"
+        },
+        "Cannon Galleon": {
+            "armor": "0",
+            "attack": "35",
+            "cost": "200W 150G",
+            "garrison": "0",
+            "hp": "120",
+            "piercearmor": "6"
+        },
+        "Cannon Galleon (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 500W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Capped Ram": {
+            "armor": "0",
+            "attack": "3",
+            "cost": "160W 75G",
+            "garrison": "0",
+            "hp": "200",
+            "piercearmor": "190"
+        },
+        "Capped Ram (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Caravan": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Caravan (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Caravel": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "90W 40G",
+            "garrison": "0",
+            "hp": "143",
+            "piercearmor": "8"
+        },
+        "Careening": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Careening (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Carrack": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Carrack (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Cartography": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "Free to research",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Cartography (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "Free to research",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Castle": {
+            "armor": "8",
+            "attack": "11/arrow",
+            "cost": "650S",
+            "garrison": "0",
+            "hp": "4800",
+            "piercearmor": "11"
+        },
+        "Castle Age": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Castle Age (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Cataphract": {
+            "armor": "2",
+            "attack": "9",
+            "cost": "70F 75G",
+            "garrison": "0",
+            "hp": "110",
+            "piercearmor": "1"
+        },
+        "Cavalier": {
+            "armor": "2",
+            "attack": "12",
+            "cost": "60F 75G",
+            "garrison": "0",
+            "hp": "120",
+            "piercearmor": "2"
+        },
+        "Cavalier (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Cavalry Archer": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "40W 60G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "0"
+        },
+        "Chain Barding Armor": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chain Barding Armor (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chain Mail Armor": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chain Mail Armor (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Champion": {
+            "armor": "1",
+            "attack": "13",
+            "cost": "60F 20G",
+            "garrison": "0",
+            "hp": "70",
+            "piercearmor": "1"
+        },
+        "Champion (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 350G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chatras": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chatras (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chemistry": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chemistry (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chieftains": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chieftains (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chivalry": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400W 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chivalry (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400W 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Chu Ko Nu": {
+            "armor": "0",
+            "attack": "8",
+            "cost": "40W 35G",
+            "garrison": "0",
+            "hp": "45",
+            "piercearmor": "0"
+        },
+        "Coinage": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Coinage (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Condottiero": {
+            "armor": "1",
+            "attack": "10",
+            "cost": "50F 35G",
+            "garrison": "0",
+            "hp": "80",
+            "piercearmor": "1"
+        },
+        "Conquistador": {
+            "armor": "2",
+            "attack": "16",
+            "cost": "60F 70G",
+            "garrison": "0",
+            "hp": "55",
+            "piercearmor": "2"
+        },
+        "Conscription": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Conscription (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Couriers": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Couriers (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Cow": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "14",
+            "piercearmor": "0"
+        },
+        "Crenellations": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Crenellations (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Crop Rotation": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 250W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Crop Rotation (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 250W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Crossbowman": {
+            "armor": "0",
+            "attack": "5",
+            "cost": "25W 45G",
+            "garrison": "0",
+            "hp": "35",
+            "piercearmor": "0"
+        },
+        "Crossbowman (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "125F 75G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Deer": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "5",
+            "piercearmor": "0"
+        },
+        "Demolition Raft": {
+            "armor": "0",
+            "attack": "90",
+            "cost": "70W 50G",
+            "garrison": "0",
+            "hp": "45",
+            "piercearmor": "2"
+        },
+        "Demolition Ship": {
+            "armor": "0",
+            "attack": "110",
+            "cost": "70W 50G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "3"
+        },
+        "Dock": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "150W",
+            "garrison": "0",
+            "hp": "1800",
+            "piercearmor": "10"
+        },
+        "Double Crossbow": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "700F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Double Crossbow (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "700F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Double-Bit Axe": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F 50W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Double-Bit Axe (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F 50W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Drill": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Drill (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Druzhina": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1200F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Druzhina (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1200F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Dry Dock": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Dry Dock (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Eagle Scout": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "20F 50G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "2"
+        },
+        "Eagle Warrior": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "20F 50G",
+            "garrison": "0",
+            "hp": "55",
+            "piercearmor": "3"
+        },
+        "Eagle Warrior (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "El Dorado": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "El Dorado (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elephant": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "75",
+            "piercearmor": "0"
+        },
+        "Elephant Archer": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "100F 80G",
+            "garrison": "0",
+            "hp": "280",
+            "piercearmor": "3"
+        },
+        "Elite Arambai": {
+            "armor": "0",
+            "attack": "20",
+            "cost": "50W 60G",
+            "garrison": "0",
+            "hp": "65",
+            "piercearmor": "2"
+        },
+        "Elite Arambai (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1100F 675G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Ballista Elephant": {
+            "armor": "0",
+            "attack": "9",
+            "cost": "100F 80G",
+            "garrison": "0",
+            "hp": "290",
+            "piercearmor": "3"
+        },
+        "Elite Ballista Elephant (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Battle Elephant": {
+            "armor": "1",
+            "attack": "16",
+            "cost": "120F 70G",
+            "garrison": "0",
+            "hp": "300",
+            "piercearmor": "3"
+        },
+        "Elite Battle Elephant (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Berserk": {
+            "armor": "2",
+            "attack": "14",
+            "cost": "65F 25G",
+            "garrison": "0",
+            "hp": "75",
+            "piercearmor": "1"
+        },
+        "Elite Berserk (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1300F 550G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Boyar": {
+            "armor": "6",
+            "attack": "14",
+            "cost": "50F 80G",
+            "garrison": "0",
+            "hp": "130",
+            "piercearmor": "2"
+        },
+        "Elite Boyar (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Camel Archer": {
+            "armor": "1",
+            "attack": "8",
+            "cost": "50W 60G",
+            "garrison": "0",
+            "hp": "65",
+            "piercearmor": "1"
+        },
+        "Elite Camel Archer (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000W 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Cannon Galleon": {
+            "armor": "0",
+            "attack": "45",
+            "cost": "200W 150G",
+            "garrison": "0",
+            "hp": "150",
+            "piercearmor": "8"
+        },
+        "Elite Cannon Galleon (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "525W 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Caravel": {
+            "armor": "0",
+            "attack": "8",
+            "cost": "90W 40G",
+            "garrison": "0",
+            "hp": "165",
+            "piercearmor": "8"
+        },
+        "Elite Caravel (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 475G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Cataphract": {
+            "armor": "2",
+            "attack": "12",
+            "cost": "70F 75G",
+            "garrison": "0",
+            "hp": "150",
+            "piercearmor": "1"
+        },
+        "Elite Cataphract (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1600F 800G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Chu Ko Nu": {
+            "armor": "0",
+            "attack": "8",
+            "cost": "40W 35G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "0"
+        },
+        "Elite Chu Ko Nu (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "760F 760G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Conquistador": {
+            "armor": "2",
+            "attack": "18",
+            "cost": "60F 70G",
+            "garrison": "0",
+            "hp": "70",
+            "piercearmor": "2"
+        },
+        "Elite Conquistador (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1200F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Eagle Warrior": {
+            "armor": "0",
+            "attack": "9",
+            "cost": "20F 50G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "4"
+        },
+        "Elite Eagle Warrior (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Elephant Archer": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "100F 80G",
+            "garrison": "0",
+            "hp": "330",
+            "piercearmor": "3"
+        },
+        "Elite Elephant Archer (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 800G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Gbeto": {
+            "armor": "0",
+            "attack": "13",
+            "cost": "50F 40G",
+            "garrison": "0",
+            "hp": "45",
+            "piercearmor": "0"
+        },
+        "Elite Gbeto (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "900F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Genitour": {
+            "armor": "0",
+            "attack": "4",
+            "cost": "35W 50F",
+            "garrison": "0",
+            "hp": "55",
+            "piercearmor": "4"
+        },
+        "Elite Genitour (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 450W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Genoese Crossbowman": {
+            "armor": "1",
+            "attack": "6",
+            "cost": "45F 45G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "0"
+        },
+        "Elite Genoese Crossbowman (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "900F 750G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Huskarl": {
+            "armor": "0",
+            "attack": "12",
+            "cost": "52F 26G",
+            "garrison": "0",
+            "hp": "70",
+            "piercearmor": "8"
+        },
+        "Elite Huskarl (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1200F 550G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Jaguar Warrior": {
+            "armor": "2",
+            "attack": "12",
+            "cost": "60F 30G",
+            "garrison": "0",
+            "hp": "75",
+            "piercearmor": "1"
+        },
+        "Elite Jaguar Warrior (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Janissary": {
+            "armor": "2",
+            "attack": "22",
+            "cost": "60F 55G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "0"
+        },
+        "Elite Janissary (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "850F 750G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Kamayuk": {
+            "armor": "1",
+            "attack": "8",
+            "cost": "60F 30G",
+            "garrison": "0",
+            "hp": "80",
+            "piercearmor": "0"
+        },
+        "Elite Kamayuk (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "900F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Karambit Warrior": {
+            "armor": "1",
+            "attack": "8",
+            "cost": "25F 10G",
+            "garrison": "0",
+            "hp": "40",
+            "piercearmor": "1"
+        },
+        "Elite Karambit Warrior (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "900F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Longboat": {
+            "armor": "0",
+            "attack": "8",
+            "cost": "80W 40G",
+            "garrison": "0",
+            "hp": "160",
+            "piercearmor": "8"
+        },
+        "Elite Longboat (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 475G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Longbowman": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "35W 40G",
+            "garrison": "0",
+            "hp": "40",
+            "piercearmor": "1"
+        },
+        "Elite Longbowman (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "850F 850G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Magyar Huszar": {
+            "armor": "0",
+            "attack": "10",
+            "cost": "80F 10G",
+            "garrison": "0",
+            "hp": "85",
+            "piercearmor": "2"
+        },
+        "Elite Magyar Huszar (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Mameluke": {
+            "armor": "1",
+            "attack": "10",
+            "cost": "55F 85G",
+            "garrison": "0",
+            "hp": "80",
+            "piercearmor": "0"
+        },
+        "Elite Mameluke (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Mangudai": {
+            "armor": "1",
+            "attack": "8",
+            "cost": "55W 65G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "0"
+        },
+        "Elite Mangudai (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1100F 675G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Organ Gun": {
+            "armor": "2",
+            "attack": "20",
+            "cost": "80W 60G",
+            "garrison": "0",
+            "hp": "70",
+            "piercearmor": "6"
+        },
+        "Elite Organ Gun (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1200F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Plumed Archer": {
+            "armor": "0",
+            "attack": "5",
+            "cost": "35W 35G",
+            "garrison": "0",
+            "hp": "65",
+            "piercearmor": "2"
+        },
+        "Elite Plumed Archer (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000W 700F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Rattan Archer": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "50W 45G",
+            "garrison": "0",
+            "hp": "35",
+            "piercearmor": "6"
+        },
+        "Elite Rattan Archer (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 750G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Samurai": {
+            "armor": "1",
+            "attack": "12",
+            "cost": "60F 30G",
+            "garrison": "0",
+            "hp": "80",
+            "piercearmor": "1"
+        },
+        "Elite Samurai (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "950F 875G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Shotel Warrior": {
+            "armor": "0",
+            "attack": "18",
+            "cost": "50F 35G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "1"
+        },
+        "Elite Shotel Warrior (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1200F 550G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Skirmisher": {
+            "armor": "0",
+            "attack": "3",
+            "cost": "25F 35W",
+            "garrison": "0",
+            "hp": "35",
+            "piercearmor": "4"
+        },
+        "Elite Skirmisher (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Tarkan": {
+            "armor": "1",
+            "attack": "11",
+            "cost": "60F 60G",
+            "garrison": "0",
+            "hp": "150",
+            "piercearmor": "4"
+        },
+        "Elite Tarkan (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Teutonic Knight": {
+            "armor": "10",
+            "attack": "17",
+            "cost": "85F 40G",
+            "garrison": "0",
+            "hp": "100",
+            "piercearmor": "2"
+        },
+        "Elite Teutonic Knight (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1200F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Throwing Axeman": {
+            "armor": "1",
+            "attack": "8",
+            "cost": "55F 25G",
+            "garrison": "0",
+            "hp": "70",
+            "piercearmor": "0"
+        },
+        "Elite Throwing Axeman (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 750G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Turtle Ship": {
+            "armor": "8",
+            "attack": "50",
+            "cost": "180W 180G",
+            "garrison": "0",
+            "hp": "300",
+            "piercearmor": "6"
+        },
+        "Elite Turtle Ship (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 800G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite War Elephant": {
+            "armor": "1",
+            "attack": "20",
+            "cost": "200F 75G",
+            "garrison": "0",
+            "hp": "600",
+            "piercearmor": "3"
+        },
+        "Elite War Elephant (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1600F 1200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite War Wagon": {
+            "armor": "0",
+            "attack": "9",
+            "cost": "110W 60G",
+            "garrison": "0",
+            "hp": "200",
+            "piercearmor": "4"
+        },
+        "Elite War Wagon (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 800G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Elite Woad Raider": {
+            "armor": "0",
+            "attack": "13",
+            "cost": "65F 25G",
+            "garrison": "0",
+            "hp": "80",
+            "piercearmor": "1"
+        },
+        "Elite Woad Raider (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 800G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Faith": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 1000G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Faith (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 1000G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Farimba": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "650F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Farimba (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "650F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Farm": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "60W",
+            "garrison": "0",
+            "hp": "480",
+            "piercearmor": "0"
+        },
+        "Fast Fire Ship": {
+            "armor": "0",
+            "attack": "3",
+            "cost": "75W 45G",
+            "garrison": "0",
+            "hp": "140",
+            "piercearmor": "8"
+        },
+        "Fast Fire Ship (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "280W 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Feitoria": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "250G 250S",
+            "garrison": "0",
+            "hp": "5200",
+            "piercearmor": "10"
+        },
+        "Fervor": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "140G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Fervor (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "140G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Feudal Age": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Feudal Age (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Fire Galley": {
+            "armor": "0",
+            "attack": "1",
+            "cost": "75W 45G",
+            "garrison": "0",
+            "hp": "100",
+            "piercearmor": "4"
+        },
+        "Fire Ship": {
+            "armor": "0",
+            "attack": "2",
+            "cost": "75W 45G",
+            "garrison": "0",
+            "hp": "120",
+            "piercearmor": "6"
+        },
+        "Fish Trap": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "100W",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "0"
+        },
+        "Fishing Ship": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "75W",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "4"
+        },
+        "Fletching": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F 50G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Fletching (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F 50G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Forced Levy": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Forced Levy (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Forging": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Forging (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Fortified Wall": {
+            "armor": "12",
+            "attack": "-",
+            "cost": "5S",
+            "garrison": "0",
+            "hp": "3000",
+            "piercearmor": "12"
+        },
+        "Fortified Wall (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100W 200F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Furor Celtica": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Furor Celtica (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Galleon": {
+            "armor": "0",
+            "attack": "8",
+            "cost": "90W 30G",
+            "garrison": "0",
+            "hp": "165",
+            "piercearmor": "8"
+        },
+        "Galleon (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 315W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Galley": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "90W 30G",
+            "garrison": "0",
+            "hp": "120",
+            "piercearmor": "6"
+        },
+        "Garland Wars": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "450F 750G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Garland Wars (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "450F 750G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Gate": {
+            "armor": "6",
+            "attack": "-",
+            "cost": "30S",
+            "garrison": "0",
+            "hp": "2750",
+            "piercearmor": "6"
+        },
+        "Gbeto": {
+            "armor": "0",
+            "attack": "10",
+            "cost": "50F 40G",
+            "garrison": "0",
+            "hp": "30",
+            "piercearmor": "0"
+        },
+        "Genitour": {
+            "armor": "0",
+            "attack": "3",
+            "cost": "35W 50F",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "3"
+        },
+        "Genoese Crossbowman": {
+            "armor": "1",
+            "attack": "6",
+            "cost": "45F 45G",
+            "garrison": "0",
+            "hp": "45",
+            "piercearmor": "0"
+        },
+        "Gillnets": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 200W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Gillnets (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 200W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Goat": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "7",
+            "piercearmor": "0"
+        },
+        "Gold Mining": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F 75W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Gold Mining (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F 75W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Gold Shaft Mining": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 150W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Gold Shaft Mining (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 150W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Great Wall": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400W 200S",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Great Wall (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400W 200S",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Greek Fire": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Greek Fire (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Guard Tower": {
+            "armor": "2",
+            "attack": "7",
+            "cost": "25W 125S",
+            "garrison": "0",
+            "hp": "1500",
+            "piercearmor": "8"
+        },
+        "Guard Tower (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F 250W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Guilds": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Guilds (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Halberdier": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "35F 25W",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "0"
+        },
+        "Halberdier (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Hand Cannoneer": {
+            "armor": "1",
+            "attack": "17",
+            "cost": "45F 50G",
+            "garrison": "0",
+            "hp": "35",
+            "piercearmor": "0"
+        },
+        "Hand Cart": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Hand Cart (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Harbor": {
+            "armor": "3",
+            "attack": "6+ 3x 1",
+            "cost": "150W",
+            "garrison": "0",
+            "hp": "2000",
+            "piercearmor": "10"
+        },
+        "Heated Shot": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "350F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Heated Shot (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "350F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Heavy Camel": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "55F 60G",
+            "garrison": "0",
+            "hp": "120",
+            "piercearmor": "0"
+        },
+        "Heavy Camel (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "325F 360G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Heavy Cav Archer": {
+            "armor": "1",
+            "attack": "7",
+            "cost": "40W 60G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "0"
+        },
+        "Heavy Cavalry Archer": {
+            "armor": "1",
+            "attack": "7",
+            "cost": "40W 60G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "0"
+        },
+        "Heavy Cavalry Archer (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "900F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Heavy Demo Ship": {
+            "armor": "0",
+            "attack": "140",
+            "cost": "70W 50G",
+            "garrison": "0",
+            "hp": "70",
+            "piercearmor": "3"
+        },
+        "Heavy Demolition Ship": {
+            "armor": "0",
+            "attack": "140",
+            "cost": "70W 50G",
+            "garrison": "0",
+            "hp": "70",
+            "piercearmor": "3"
+        },
+        "Heavy Demolition Ship (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Heavy Plow": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "125F 125W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Heavy Plow (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "125F 125W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Heavy Scorpion": {
+            "armor": "0",
+            "attack": "16",
+            "cost": "75W 75G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "7"
+        },
+        "Heavy Scorpion (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 1100W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Herbal Medicine": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "350G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Herbal Medicine (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "350G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Heresy": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Heresy (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Hoardings": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Hoardings (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Horse": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "0"
+        },
+        "Horse Collar": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "75F 75W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Horse Collar (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "75F 75W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "House": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "25W",
+            "garrison": "0",
+            "hp": "900",
+            "piercearmor": "10"
+        },
+        "Howdah": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 200F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Howdah (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 200F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Husbandry": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Husbandry (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Huskarl": {
+            "armor": "0",
+            "attack": "10",
+            "cost": "52F 26G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "6"
+        },
+        "Hussar": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "80F",
+            "garrison": "0",
+            "hp": "75",
+            "piercearmor": "2"
+        },
+        "Hussar (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Illumination": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "120G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Illumination (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "120G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Imperial Age": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 800G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Imperial Age (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 800G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Imperial Camel": {
+            "armor": "0",
+            "attack": "9",
+            "cost": "55F 60G",
+            "garrison": "0",
+            "hp": "140",
+            "piercearmor": "0"
+        },
+        "Imperial Camel (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1200F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Imperial Skirmisher": {
+            "armor": "0",
+            "attack": "4",
+            "cost": "35W 25F",
+            "garrison": "0",
+            "hp": "35",
+            "piercearmor": "4"
+        },
+        "Imperial Skirmisher (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Inquisition": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300G 100F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Inquisition (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300G 100F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Iron Casting": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "220F 120G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Iron Casting (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "220F 120G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Ironclad": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400W 350G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Ironclad (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400W 350G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Jaguar": {
+            "armor": "0",
+            "attack": "3",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "25",
+            "piercearmor": "0"
+        },
+        "Jaguar Warrior": {
+            "armor": "1",
+            "attack": "10",
+            "cost": "60F 30G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "1"
+        },
+        "Janissary": {
+            "armor": "1",
+            "attack": "17",
+            "cost": "60F 55G",
+            "garrison": "0",
+            "hp": "44",
+            "piercearmor": "0"
+        },
+        "Kamayuk": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "60F 30G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "0"
+        },
+        "Karambit Warrior": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "25F 10G",
+            "garrison": "0",
+            "hp": "30",
+            "piercearmor": "1"
+        },
+        "Kasbah": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Kasbah (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Kataparuto": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Kataparuto (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Keep": {
+            "armor": "3",
+            "attack": "8",
+            "cost": "25W 125S",
+            "garrison": "0",
+            "hp": "2250",
+            "piercearmor": "9"
+        },
+        "Keep (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 350W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "King": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "50F",
+            "garrison": "0",
+            "hp": "75",
+            "piercearmor": "0"
+        },
+        "Knight": {
+            "armor": "2",
+            "attack": "10",
+            "cost": "60F 75G",
+            "garrison": "0",
+            "hp": "100",
+            "piercearmor": "2"
+        },
+        "Leather Archer Armor": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Leather Archer Armor (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Light Cavalry": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "80F",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "2"
+        },
+        "Light Cavalry (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F 50G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Llama": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "7",
+            "piercearmor": "0"
+        },
+        "Logistica": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Logistica (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Long Swordsman": {
+            "armor": "0",
+            "attack": "9",
+            "cost": "60F 20G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "1"
+        },
+        "Long Swordsman (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 65G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Longboat": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "85W 43G",
+            "garrison": "0",
+            "hp": "130",
+            "piercearmor": "6"
+        },
+        "Longbowman": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "35W 40G",
+            "garrison": "0",
+            "hp": "35",
+            "piercearmor": "0"
+        },
+        "Loom": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "50G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Loom (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "50G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Lumber Camp": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "100W",
+            "garrison": "0",
+            "hp": "1000",
+            "piercearmor": "10"
+        },
+        "Madrasah": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Madrasah (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Maghrabi Camels": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "700F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Maghrabi Camels (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "700F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Magyar Huszar": {
+            "armor": "0",
+            "attack": "9",
+            "cost": "80F 10G",
+            "garrison": "0",
+            "hp": "70",
+            "piercearmor": "2"
+        },
+        "Mahouts": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Mahouts (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Mameluke": {
+            "armor": "0",
+            "attack": "8",
+            "cost": "55F 85G",
+            "garrison": "0",
+            "hp": "65",
+            "piercearmor": "0"
+        },
+        "Man-at-Arms": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "60F 20G",
+            "garrison": "0",
+            "hp": "45",
+            "piercearmor": "1"
+        },
+        "Man-at-arms": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "60F 20G",
+            "garrison": "0",
+            "hp": "45",
+            "piercearmor": "1"
+        },
+        "Man-at-arms (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F 40G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Mangonel": {
+            "armor": "0",
+            "attack": "40",
+            "cost": "160W 135G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "6"
+        },
+        "Mangudai": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "55W 65G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "0"
+        },
+        "Manipur Cavalry": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "650F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Manipur Cavalry (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "650F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Marauders": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Marauders (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Market": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "175W",
+            "garrison": "0",
+            "hp": "2100",
+            "piercearmor": "10"
+        },
+        "Masonry": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "175W 150F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Masonry (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "175W 150F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Mercenaries": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300G 200F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Mercenaries (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300G 200F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Militia": {
+            "armor": "0",
+            "attack": "4",
+            "cost": "60F 20G",
+            "garrison": "0",
+            "hp": "40",
+            "piercearmor": "1"
+        },
+        "Mill": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "100W",
+            "garrison": "0",
+            "hp": "1000",
+            "piercearmor": "10"
+        },
+        "Mining Camp": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "100W",
+            "garrison": "0",
+            "hp": "1000",
+            "piercearmor": "10"
+        },
+        "Missionary": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100G",
+            "garrison": "0",
+            "hp": "30",
+            "piercearmor": "0"
+        },
+        "Monastery": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "175W",
+            "garrison": "0",
+            "hp": "2100",
+            "piercearmor": "10"
+        },
+        "Monk": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100G",
+            "garrison": "0",
+            "hp": "30",
+            "piercearmor": "0"
+        },
+        "Murder Holes": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 100S",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Murder Holes (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 100S",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Nomads": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Nomads (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Obsidian Arrow": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Obsidian Arrow (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Onager": {
+            "armor": "0",
+            "attack": "50",
+            "cost": "160W 135G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "7"
+        },
+        "Onager (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Organ Gun": {
+            "armor": "2",
+            "attack": "16",
+            "cost": "80W 60G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "4"
+        },
+        "Orthodoxy": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Orthodoxy (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Ostrich": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "5",
+            "piercearmor": "0"
+        },
+        "Outpost": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "25W 5S",
+            "garrison": "0",
+            "hp": "500",
+            "piercearmor": "0"
+        },
+        "Padded Archer Armor": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Padded Archer Armor (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Paladin": {
+            "armor": "2",
+            "attack": "14",
+            "cost": "60F 75G",
+            "garrison": "0",
+            "hp": "160",
+            "piercearmor": "3"
+        },
+        "Paladin (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1300F 750G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Palisade Gate": {
+            "armor": "2",
+            "attack": "-",
+            "cost": "20W",
+            "garrison": "0",
+            "hp": "400",
+            "piercearmor": "2"
+        },
+        "Palisade Wall": {
+            "armor": "2",
+            "attack": "-",
+            "cost": "2W",
+            "garrison": "0",
+            "hp": "250",
+            "piercearmor": "5"
+        },
+        "Panokseon": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 300F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Panokseon (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 300F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Paper Money": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Paper Money (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Parthian Tactics": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Parthian Tactics (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Pavise": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Pavise (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Perfusion": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Perfusion (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Petard": {
+            "armor": "0",
+            "attack": "25",
+            "cost": "65F 20G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "2"
+        },
+        "Pikeman": {
+            "armor": "0",
+            "attack": "4",
+            "cost": "35F 25W",
+            "garrison": "0",
+            "hp": "55",
+            "piercearmor": "0"
+        },
+        "Pikeman (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "215F 90G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Plate Barding Armor": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "350F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Plate Barding Armor (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "350F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Plate Mail Armor": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Plate Mail Armor (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Plumed Archer": {
+            "armor": "0",
+            "attack": "5",
+            "cost": "40W 40G",
+            "garrison": "0",
+            "hp": "50",
+            "piercearmor": "1"
+        },
+        "Rattan Archer": {
+            "armor": "0",
+            "attack": "6",
+            "cost": "50W 45G",
+            "garrison": "0",
+            "hp": "35",
+            "piercearmor": "4"
+        },
+        "Recurve Bow": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Recurve Bow (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600F 400G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Redemption": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "475G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Redemption (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "475G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Ring Archer Armor": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Ring Archer Armor (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Rocketry": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Rocketry (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Royal Heirs": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Royal Heirs (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Samurai": {
+            "armor": "1",
+            "attack": "8",
+            "cost": "60F 30G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "1"
+        },
+        "Sanctity": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "120G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Sanctity (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "120G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Sappers": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Sappers (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Scale Barding Armor": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Scale Barding Armor (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "150F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Scale Mail Armor": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Scale Mail Armor (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Scorpion": {
+            "armor": "0",
+            "attack": "12",
+            "cost": "75W 75G",
+            "garrison": "0",
+            "hp": "40",
+            "piercearmor": "7"
+        },
+        "Scout Cavalry": {
+            "armor": "0",
+            "attack": "5",
+            "cost": "80F",
+            "garrison": "0",
+            "hp": "45",
+            "piercearmor": "2"
+        },
+        "Shatagni": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Shatagni (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Sheep": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "7",
+            "piercearmor": "0"
+        },
+        "Shinkichon": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Shinkichon (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "800F 500G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Shipwright": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Shipwright (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Shotel Warrior": {
+            "armor": "0",
+            "attack": "16",
+            "cost": "50F 35G",
+            "garrison": "0",
+            "hp": "40",
+            "piercearmor": "0"
+        },
+        "Siege Engineers": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600W 500F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Siege Engineers (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "600W 500F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Siege Onager": {
+            "armor": "0",
+            "attack": "75",
+            "cost": "160W 135G",
+            "garrison": "0",
+            "hp": "70",
+            "piercearmor": "8"
+        },
+        "Siege Onager (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1450F 1000G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Siege Ram": {
+            "armor": "0",
+            "attack": "4",
+            "cost": "160W 75G",
+            "garrison": "0",
+            "hp": "270",
+            "piercearmor": "195"
+        },
+        "Siege Ram (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Siege Tower": {
+            "armor": "-2",
+            "attack": "-",
+            "cost": "200W 160G",
+            "garrison": "0",
+            "hp": "220",
+            "piercearmor": "100"
+        },
+        "Siege Workshop": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "200W",
+            "garrison": "0",
+            "hp": "2100",
+            "piercearmor": "10"
+        },
+        "Silk Road": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Silk Road (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Sipahi": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "350F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Sipahi (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "350F 150G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Skirmisher": {
+            "armor": "0",
+            "attack": "2",
+            "cost": "25F 35W",
+            "garrison": "0",
+            "hp": "30",
+            "piercearmor": "3"
+        },
+        "Slinger": {
+            "armor": "0",
+            "attack": "5",
+            "cost": "30F 40G",
+            "garrison": "0",
+            "hp": "40",
+            "piercearmor": "0"
+        },
+        "Spearman": {
+            "armor": "0",
+            "attack": "3",
+            "cost": "35F 25W",
+            "garrison": "0",
+            "hp": "45",
+            "piercearmor": "0"
+        },
+        "Spies": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200G/enemy villager",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Spies (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200G/enemy villager",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Spies/Treason": {
+            "armor": "",
+            "attack": "",
+            "cost": "",
+            "garrison": "",
+            "hp": "",
+            "piercearmor": ""
+        },
+        "Squires": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Squires (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Stable": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "175W",
+            "garrison": "0",
+            "hp": "2100",
+            "piercearmor": "10"
+        },
+        "Stone Mining": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F 75W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Stone Mining (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "100F 75W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Stone Shaft Mining": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 150W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Stone Shaft Mining (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200F 150W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Stone Wall": {
+            "armor": "8",
+            "attack": "-",
+            "cost": "5S",
+            "garrison": "0",
+            "hp": "1800",
+            "piercearmor": "10"
+        },
+        "Stronghold": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Stronghold (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "250F 200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Sultans": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 400W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Sultans (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 400W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Supremacy": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Supremacy (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400F 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Tarkan": {
+            "armor": "1",
+            "attack": "8",
+            "cost": "60F 60G",
+            "garrison": "0",
+            "hp": "100",
+            "piercearmor": "3"
+        },
+        "Teutonic Knight": {
+            "armor": "5",
+            "attack": "12",
+            "cost": "85F 40G",
+            "garrison": "0",
+            "hp": "80",
+            "piercearmor": "2"
+        },
+        "Thalassocracy": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Thalassocracy (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Theocracy": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Theocracy (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Throwing Axeman": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "55F 25G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "0"
+        },
+        "Thumb Ring": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 250W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Thumb Ring (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 250W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Tigui": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 200F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Tigui (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 200F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Torsion Engines": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Torsion Engines (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "1000F 600G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Town Center": {
+            "armor": "6",
+            "attack": "5/arrow",
+            "cost": "275W 100S",
+            "garrison": "0",
+            "hp": "2400",
+            "piercearmor": "8"
+        },
+        "Town Patrol": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Town Patrol (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Town Watch": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "75F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Town Watch (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "75F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Tracking": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "50F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Tracking (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "50F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Trade Cart": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "100W 50G",
+            "garrison": "0",
+            "hp": "70",
+            "piercearmor": "0"
+        },
+        "Trade Cog": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "100W 50G",
+            "garrison": "0",
+            "hp": "80",
+            "piercearmor": "6"
+        },
+        "Transport Ship": {
+            "armor": "4",
+            "attack": "-",
+            "cost": "125W",
+            "garrison": "0",
+            "hp": "100",
+            "piercearmor": "8"
+        },
+        "Treadmill Crane": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 300F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Treadmill Crane (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 300F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Treason": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400G each time",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Treason (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "400G each time",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Trebuchet": {
+            "armor": "1",
+            "attack": "200 (-)",
+            "cost": "200W 200G",
+            "garrison": "0",
+            "hp": "150",
+            "piercearmor": "150"
+        },
+        "Trebuchet (packed)": {
+            "armor": "1",
+            "attack": "200 (-)",
+            "cost": "200W 200G",
+            "garrison": "0",
+            "hp": "150",
+            "piercearmor": "150"
+        },
+        "Turkey": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "7",
+            "piercearmor": "0"
+        },
+        "Turtle Ship": {
+            "armor": "6",
+            "attack": "50",
+            "cost": "180W 180G",
+            "garrison": "0",
+            "hp": "200",
+            "piercearmor": "5"
+        },
+        "Tusk Swords": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Tusk Swords (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "200W 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Two-Handed Swordsman": {
+            "armor": "0",
+            "attack": "12",
+            "cost": "60F 20G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "1"
+        },
+        "Two-Man Saw": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Two-Man Saw (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 200W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Two-handed Swordsman": {
+            "armor": "0",
+            "attack": "12",
+            "cost": "60F 20G",
+            "garrison": "0",
+            "hp": "60",
+            "piercearmor": "1"
+        },
+        "Two-handed Swordsman (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "University": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "200W",
+            "garrison": "0",
+            "hp": "2100",
+            "piercearmor": "10"
+        },
+        "Villager": {
+            "armor": "0",
+            "attack": "3",
+            "cost": "50F",
+            "garrison": "0",
+            "hp": "25",
+            "piercearmor": "0"
+        },
+        "War Elephant": {
+            "armor": "1",
+            "attack": "15",
+            "cost": "200F 75G",
+            "garrison": "0",
+            "hp": "450",
+            "piercearmor": "2"
+        },
+        "War Galley": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "90W 30G",
+            "garrison": "0",
+            "hp": "135",
+            "piercearmor": "6"
+        },
+        "War Galley (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "230F 100G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "War Wagon": {
+            "armor": "0",
+            "attack": "9",
+            "cost": "110W 60G",
+            "garrison": "0",
+            "hp": "150",
+            "piercearmor": "3"
+        },
+        "Warwolf": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500W 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Warwolf (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "500W 250G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Watch Tower": {
+            "armor": "1",
+            "attack": "5",
+            "cost": "25W 125S",
+            "garrison": "0",
+            "hp": "1020",
+            "piercearmor": "7"
+        },
+        "Wheelbarrow": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "175F 50W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Wheelbarrow (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "175F 50W",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Wild Boar": {
+            "armor": "0",
+            "attack": "7",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "75",
+            "piercearmor": "0"
+        },
+        "Woad Raider": {
+            "armor": "0",
+            "attack": "8",
+            "cost": "65F 25G",
+            "garrison": "0",
+            "hp": "65",
+            "piercearmor": "1"
+        },
+        "Wolf": {
+            "armor": "0",
+            "attack": "3",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "25",
+            "piercearmor": "0"
+        },
+        "Wonder": {
+            "armor": "3",
+            "attack": "-",
+            "cost": "1000WSG",
+            "garrison": "0",
+            "hp": "4800",
+            "piercearmor": "10"
+        },
+        "Yasama": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 300F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Yasama (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300W 300F",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Yeomen": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Yeomen (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 450G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Zealotry": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 800G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Zealotry (Tech)": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "750F 800G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
+        "Zebra": {
+            "armor": "0",
+            "attack": "-",
+            "cost": "-",
+            "garrison": "0",
+            "hp": "5",
+            "piercearmor": "0"
+        }
+    },
     "name_key": {
         "Anarchy": "28427",
         "Andean Sling": "28266",
@@ -537,7 +4723,9 @@
         "Caravel": "26132",
         "Careening": "28372",
         "Carrack": "28250",
+        "Cartography": "28019",
         "Castle": "26142",
+        "Castle Age": "28102",
         "Cataphract": "26101",
         "Cavalier": "26070",
         "Cavalier (Tech)": "28207",
@@ -658,6 +4846,7 @@
         "Fast Fire Ship (Tech)": "28243",
         "Feitoria": "26159",
         "Fervor": "28249",
+        "Feudal Age": "28101",
         "Fire Galley": "26160",
         "Fire Ship": "26426",
         "Fish Trap": "26495",
@@ -695,6 +4884,7 @@
         "Heavy Cav Archer": "26412",
         "Heavy Cavalry Archer": "26412",
         "Heavy Cavalry Archer (Tech)": "28218",
+        "Heavy Demo Ship": "26425",
         "Heavy Demolition Ship": "26425",
         "Heavy Demolition Ship (Tech)": "28242",
         "Heavy Plow": "28013",
@@ -711,6 +4901,7 @@
         "Hussar": "26661",
         "Hussar (Tech)": "28417",
         "Illumination": "28220",
+        "Imperial Age": "28103",
         "Imperial Camel": "26419",
         "Imperial Camel (Tech)": "28236",
         "Imperial Skirmisher": "26190",
@@ -811,6 +5002,7 @@
         "Slinger": "26690",
         "Spearman": "26078",
         "Spies": "41113",
+        "Spies/Treason": "28408",
         "Squires": "28210",
         "Stable": "26171",
         "Stone Mining": "28276",

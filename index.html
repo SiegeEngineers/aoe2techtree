@@ -176,6 +176,8 @@
                     <a href="https://hszemi.de" target="_blank">hszemi</a>, with huge thanks to Jineapple and TriRem
                     <br> Descriptions taken from the
                     <a href="https://www.voobly.com/gamemods/mod/650/Max-Extended-Help-AK" target="_blank">Max-Extended-Help-AK mod</a>
+                    <br> Item Metadata (cost, HP etc.) taken from
+                    <a href="https://aoe2stats.net" target="_blank">aoe2stats</a>
                 </div>
             </div>
             <div id="techtree">
@@ -280,7 +282,8 @@
 
         function displayHelp(caret) {
             let helptext = document.getElementById("helptext");
-            helptext.innerHTML = data.key_value[data.name_key[caret.name]];
+            let content = getHelpText(caret);
+            helptext.innerHTML = content;
             helptext.style.display = "block";
 
             let top = caret.y + caret.height;
@@ -298,6 +301,25 @@
 
         function hideHelp() {
             helptext.style.display = "none";
+        }
+
+        function getHelpText(caret) {
+            let name = caret.name;
+            if (caret.id.endsWith("_(tech)")) {
+                name = name + " (Tech)";
+            }
+            let text = data.key_value[data.name_key[name]];
+            if (text === undefined) {
+                return "?";
+            }
+            let meta = data.meta[name];
+            text = text.replace(/‹cost›/, "Cost: " + meta.cost);
+            text = text.replace(/‹hp›/, "HP: " + meta.hp);
+            text = text.replace(/‹attack›/, "Attack: " + meta.attack);
+            text = text.replace(/‹Armor›/, "Armor: " + meta.armor);
+            text = text.replace(/‹Piercearmor›/, "Piercearmor: " + meta.piercearmor);
+            text = text.replace(/‹garrison›/, "Garrison: " + meta.garrison);
+            return text;
         }
 
 

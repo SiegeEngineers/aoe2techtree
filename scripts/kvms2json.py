@@ -8,7 +8,7 @@ import json
 
 def main():
     if len(sys.argv) < 2 or not os.path.isfile(sys.argv[1]):
-        print("Usage: {} <path to key-value-(modded-)strings-utf8.txt>".format(sys.argv[0]))
+        print("Usage: {} <path to key-value-(modded-)strings-utf8.txt> <meta.json>".format(sys.argv[0]))
         sys.exit()
     civs = {"Britons": "120150",
             "Franks": "120151",
@@ -43,7 +43,7 @@ def main():
             "Vietnamese": "120180"
             }
     kv = {}
-    nk = {}
+    nk = {"Spies/Treason": "28408", "Cartography": "28019"}
     with open(sys.argv[1], "r") as f:
         for line in f:
             items = line.split(" ")
@@ -83,9 +83,21 @@ def main():
                 text = re.sub(r'<b>(.+?)<b>', r'\1', text)
                 text = text.strip()
                 nk[text] = bmatch.group('number')
+            amatch = re.search('(?P<number>\d+) "Advance to (?P<text>.+) \(<cost>', line)
+            if (amatch):
+                text = amatch.group('text')
+                text = re.sub(r'<b>(.+?)<b>', r'\1', text)
+                text = text.strip()
+                nk[text] = amatch.group('number')
         nk["Heavy Cav Archer"] = nk["Heavy Cavalry Archer"]
+        nk["Heavy Demo Ship"] = nk["Heavy Demolition Ship"]
 
-    print(json.dumps({"civs": civs, "key_value": kv, "name_key": nk}, indent=4, sort_keys=True))
+    meta = {}
+    if len(sys.argv) > 2:
+        with open(sys.argv[2], "r") as f:
+            meta = json.load(f)
+
+    print(json.dumps({"civs": civs, "key_value": kv, "name_key": nk, "meta": meta}, indent=4, sort_keys=True))
 
 
 if __name__ == "__main__":
