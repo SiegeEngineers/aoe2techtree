@@ -3453,6 +3453,14 @@
             "hp": "0",
             "piercearmor": "0"
         },
+        "Obsidian Arrows": {
+            "armor": "0",
+            "attack": "0",
+            "cost": "300F 300G",
+            "garrison": "0",
+            "hp": "0",
+            "piercearmor": "0"
+        },
         "Onager": {
             "armor": "0",
             "attack": "50",

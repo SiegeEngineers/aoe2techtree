@@ -64,6 +64,7 @@ def main():
     values["Heavy Cav Archer"] = values["Heavy Cavalry Archer"]
     values["Trebuchet"] = values["Trebuchet (packed)"]
     values["Heavy Demo Ship"] = values["Heavy Demolition Ship"]
+    values["Obsidian Arrows"] = values["Obsidian Arrow"]
     values["Spies/Treason"] = {'cost': '', 'hp': '', 'attack': '', 'armor': '', 'piercearmor': '', 'garrison': ''}
 
     print(json.dumps(values, indent=4, sort_keys=True))
