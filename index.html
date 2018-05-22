@@ -245,7 +245,8 @@
                         var overlaytrigger = draw.rect(caret.width, caret.height)
                             .attr({ fill: 'rgba(0,0,0,0)', id: caret.id + '_overlay' })
                             .move(caret.x, caret.y)
-                            .click(function () { displayHelp(caret); });
+                            .data({ 'caret': caret, 'name': caret.name, 'id': caret.id })
+                            .click(function () { displayHelp(caret.id + '_overlay'); });
 
                     }
                 }
@@ -264,6 +265,7 @@
             } else {
                 document.getElementById('civtext').innerHTML = "";
             }
+            hideHelp();
         }
 
         function loadJson(callback) {
@@ -280,9 +282,13 @@
             xobj.send(null);
         }
 
-        function displayHelp(caret) {
+        function displayHelp(overlayId) {
             let helptext = document.getElementById("helptext");
-            let content = getHelpText(caret);
+            let overlay = SVG.get(overlayId);
+            let name = overlay.data('name');
+            let id = overlay.data('id');
+            let caret = overlay.data('caret');
+            let content = getHelpText(name, id);
             helptext.innerHTML = content;
             helptext.style.display = "block";
 
@@ -303,9 +309,8 @@
             helptext.style.display = "none";
         }
 
-        function getHelpText(caret) {
-            let name = caret.name;
-            if (caret.id.endsWith("_(tech)")) {
+        function getHelpText(name, id) {
+            if (id.endsWith("_(tech)")) {
                 name = name + " (Tech)";
             }
             let text = data.key_value[data.name_key[name]];

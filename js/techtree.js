@@ -198,7 +198,7 @@ function checkIdUnique(tree) {
 }
 
 function resetToDefault(tree) {
-    SVG.select('.cross').animate(animation_duration).attr({'fill-opacity': 0});
+    SVG.select('.cross').animate(animation_duration).attr({ 'fill-opacity': 0 });
     disableUniqueUnits(tree);
     enable(["UNIQUE UNIT", "ELITE UNIQUE UNIT"]);
     disable(["Eagle Scout", "Eagle Warrior", "Elite Eagle Warrior"]);
@@ -208,13 +208,13 @@ function resetToDefault(tree) {
 
 function disable(names) {
     for (name of names) {
-        SVG.get(formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
+        SVG.get(formatId(name) + '_x').animate(animation_duration).attr({ 'fill-opacity': 1 });
     }
 }
 
 function enable(names) {
     for (name of names) {
-        SVG.get(formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 0});
+        SVG.get(formatId(name) + '_x').animate(animation_duration).attr({ 'fill-opacity': 0 });
     }
 }
 
@@ -223,7 +223,7 @@ function disableUniqueUnits(tree) {
     for (key of carets.keys()) {
         let caret = carets.get(key);
         if (caret.isUniqueUnit()) {
-            SVG.get(caret.id + '_x').animate(animation_duration).attr({'fill-opacity': 1});
+            SVG.get(caret.id + '_x').animate(animation_duration).attr({ 'fill-opacity': 1 });
         }
     }
 }
@@ -246,13 +246,17 @@ function formatName(originalname) {
 }
 
 function unique(names, monk_prefix) {
-    if(monk_prefix === undefined){
+    if (monk_prefix === undefined) {
         monk_prefix = "";
     }
     SVG.get(formatId("UNIQUE UNIT") + '_text').text(formatName(names[0]));
+    SVG.get(formatId("UNIQUE UNIT") + '_overlay').data({ 'name': names[0] });
     SVG.get(formatId("ELITE UNIQUE UNIT") + '_text').text(formatName(names[1]));
+    SVG.get(formatId("ELITE UNIQUE UNIT") + '_overlay').data({ 'name': names[1] });
     SVG.get(formatId("UNIQUE TECH 1") + '_text').text(formatName(names[2]));
+    SVG.get(formatId("UNIQUE TECH 1") + '_overlay').data({ 'name': names[2] });
     SVG.get(formatId("UNIQUE TECH 2") + '_text').text(formatName(names[3]));
+    SVG.get(formatId("UNIQUE TECH 2") + '_overlay').data({ 'name': names[3] });
     SVG.get(formatId("UNIQUE UNIT") + '_img').load('img/Units/' + formatId(names[0]) + '.png');
     SVG.get(formatId("ELITE UNIQUE UNIT") + '_img').load('img/Units/' + formatId(names[1]) + '.png');
     SVG.get(formatId("Monk") + '_img').load('img/Units/' + monk_prefix + 'monk.png');
@@ -274,7 +278,7 @@ function disableHorses(tree) {
     let lane = tree.lanes[stable_index];
     for (let r of Object.keys(lane.rows)) {
         for (let caret of lane.rows[r]) {
-            SVG.get(caret.id + '_x').animate(animation_duration).attr({'fill-opacity': 1});
+            SVG.get(caret.id + '_x').animate(animation_duration).attr({ 'fill-opacity': 1 });
         }
     }
     disable(["Cavalry Archer", "Heavy Cav Archer", "Scale Barding Armor", "Chain Barding Armor", "Plate Barding Armor", "Parthian Tactics"]);
@@ -559,7 +563,7 @@ function getDefaultTree() {
     milllane.rows.castle_1.push(tech("Heavy Plow"));
     milllane.rows.imperial_1.push(tech("Crop Rotation"));
     tree.lanes.push(milllane);
-    
+
 
     let farmlane = new Lane();
     farmlane.rows.dark_2.push(building("Farm"));
