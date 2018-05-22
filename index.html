@@ -194,9 +194,15 @@
         let connections = getConnections();
         let connectionpoints = getConnectionPoints(tree);
 
+
         loadJson(function (response) {
 
             data = JSON.parse(response);
+
+            let hash = window.location.hash.substr(1);
+            if(hash in data.civs){
+                document.getElementById('civselect').value = hash;
+            }
 
             var draw = SVG('techtree').size(tree.width, tree.height)
 
@@ -262,6 +268,7 @@
             document.getElementById('civname').innerText = selectedCiv;
             if (selectedCiv in data.civs) {
                 document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
+                window.location.hash = selectedCiv;
             } else {
                 document.getElementById('civtext').innerHTML = "";
             }
