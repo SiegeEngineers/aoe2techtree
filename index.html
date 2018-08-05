@@ -178,7 +178,7 @@
                 <a href="https://www.voobly.com/gamemods/mod/650/Max-Extended-Help-AK" target="_blank">Max-Extended-Help-AK
                     mod</a>
                 <br> Item Metadata (cost, HP etc.) taken from
-                <a href="https://aoe2stats.net" target="_blank">aoe2stats</a>
+                <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
             </div>
         </div>
         <div id="techtree">
@@ -258,7 +258,7 @@
                     var overlaytrigger = draw.rect(caret.width, caret.height)
                         .attr({fill: 'rgba(0,0,0,0)', id: caret.id + '_overlay'})
                         .move(caret.x, caret.y)
-                        .data({'caret': caret, 'name': caret.name, 'id': caret.id})
+                        .data({'type': caret.type.type, 'caret': caret, 'name': caret.name, 'id': caret.id})
                         .click(function () {
                             displayHelp(caret.id + '_overlay');
                         });
@@ -310,7 +310,8 @@
         let name = overlay.data('name');
         let id = overlay.data('id');
         let caret = overlay.data('caret');
-        let content = getHelpText(name, id);
+        let type = overlay.data('type');
+        let content = getHelpText(name, id, type);
         helptext.innerHTML = content;
         helptext.style.display = "block";
 
@@ -331,22 +332,44 @@
         helptext.style.display = "none";
     }
 
-    function getHelpText(name, id) {
-        if (id.endsWith("_(tech)")) {
-            name = name + " (Tech)";
+    function getHelpText(name, id, type) {
+        let entitytype = 'buildings';
+        if (type === "UNIT" || type === "UNIQUEUNIT") {
+            entitytype = 'units';
         }
-        let text = data.key_value[data.name_key[name]];
+        if (type === "TECHNOLOGY") {
+            entitytype = 'techs';
+        }
+        let text = data.key_value[data.name_key[entitytype][name]];
         if (text === undefined) {
             return "?";
         }
-        let meta = data.meta[name];
-        text = text.replace(/‹cost›/, "Cost: " + meta.cost);
-        text = text.replace(/‹hp›/, "HP: " + meta.hp);
-        text = text.replace(/‹attack›/, "Attack: " + meta.attack);
-        text = text.replace(/‹Armor›/, "Armor: " + meta.armor);
-        text = text.replace(/‹Piercearmor›/, "Piercearmor: " + meta.piercearmor);
-        text = text.replace(/‹garrison›/, "Garrison: " + meta.garrison);
+        let meta = data.meta[entitytype][name];
+        text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
+        text = text.replace(/‹hp›/, "HP: " + meta.HP);
+        text = text.replace(/‹attack›/, "Attack: " + meta.Attack);
+        text = text.replace(/‹Armor›/, "Armor: " + meta.MeleeArmor);
+        text = text.replace(/‹Piercearmor›/, "Piercearmor: " + meta.PierceArmor);
+        text = text.replace(/‹garrison›/, "Garrison: " + meta.GarrisonCapacity);
         return text;
+
+    }
+
+    function cost(cost_object) {
+        let value = "";
+        if ("Food" in cost_object) {
+            value += " " + cost_object.Food + "F";
+        }
+        if ("Wood" in cost_object) {
+            value += " " + cost_object.Wood + "W";
+        }
+        if ("Gold" in cost_object) {
+            value += " " + cost_object.Gold + "G";
+        }
+        if ("Stone" in cost_object) {
+            value += " " + cost_object.Stone + "S";
+        }
+        return value;
     }
 
 

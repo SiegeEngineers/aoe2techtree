@@ -43,7 +43,7 @@ def main():
             "Vietnamese": "120180"
             }
     kv = {}
-    nk = {"Spies/Treason": "28408", "Cartography": "28019"}
+    name_key = {"buildings": {}, "units": {}, "techs": {"Spies/Treason": "28408", "Cartography": "28019"}}
     with open(sys.argv[1], "r") as f:
         for line in f:
             items = line.split(" ")
@@ -62,42 +62,41 @@ def main():
                 text = xmatch.group('text')
                 text = re.sub(r'<b>(.+?)<b>', r'\1', text)
                 text = text.strip()
-                if text not in nk:
-                    nk[text] = xmatch.group('number')
-                nk["{} (Tech)".format(text)] = xmatch.group('number')
+                name_key["techs"][text] = xmatch.group('number')
             rmatch = re.search('(?P<number>\d+) "Research (?P<text>.+) \(<cost>\)', line)
             if (rmatch):
                 text = rmatch.group('text')
                 text = re.sub(r'<b>(.+?)<b>', r'\1', text)
                 text = text.strip()
-                nk[text] = rmatch.group('number')
+                name_key["techs"][text] = rmatch.group('number')
             umatch = re.search('(?P<number>\d+) "Create (?P<text>.+) \(<cost>\)', line)
             if (umatch):
                 text = umatch.group('text')
                 text = re.sub(r'<b>(.+?)<b>', r'\1', text)
                 text = text.strip()
-                nk[text] = umatch.group('number')
+                name_key["units"][text] = umatch.group('number')
             bmatch = re.search('(?P<number>\d+) "Build (?P<text>.+) \(<cost>\)', line)
             if (bmatch):
                 text = bmatch.group('text')
                 text = re.sub(r'<b>(.+?)<b>', r'\1', text)
                 text = text.strip()
-                nk[text] = bmatch.group('number')
+                name_key["buildings"][text] = bmatch.group('number')
+                name_key["units"][text] = bmatch.group('number')  # ships are 'built', not 'created' :-(
             amatch = re.search('(?P<number>\d+) "Advance to (?P<text>.+) \(<cost>', line)
             if (amatch):
                 text = amatch.group('text')
                 text = re.sub(r'<b>(.+?)<b>', r'\1', text)
                 text = text.strip()
-                nk[text] = amatch.group('number')
-        nk["Heavy Cav Archer"] = nk["Heavy Cavalry Archer"]
-        nk["Heavy Demo Ship"] = nk["Heavy Demolition Ship"]
+                name_key["techs"][text] = amatch.group('number')
+        name_key["units"]["Heavy Cav Archer"] = name_key["units"]["Heavy Cavalry Archer"]
+        name_key["units"]["Heavy Demo Ship"] = name_key["units"]["Heavy Demolition Ship"]
 
     meta = {}
     if len(sys.argv) > 2:
         with open(sys.argv[2], "r") as f:
             meta = json.load(f)
 
-    print(json.dumps({"civs": civs, "key_value": kv, "name_key": nk, "meta": meta}, indent=4, sort_keys=True))
+    print(json.dumps({"civs": civs, "key_value": kv, "name_key": name_key, "meta": meta}, indent=4, sort_keys=True))
 
 
 if __name__ == "__main__":
