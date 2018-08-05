@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>Age of Empires II Tech Tree</title>
     <style>
         html,
@@ -125,217 +125,232 @@
 </head>
 
 <body>
-    <div id="container">
-        <div id="navigation">
-            <select id="civselect" onchange="loadCiv()">
-                <option>Aztecs</option>
-                <option>Berbers</option>
-                <option>Britons</option>
-                <option>Burmese</option>
-                <option>Byzantines</option>
-                <option>Celts</option>
-                <option>Chinese</option>
-                <option>Ethiopians</option>
-                <option>Franks</option>
-                <option>Goths</option>
-                <option>Huns</option>
-                <option>Incas</option>
-                <option>Indians</option>
-                <option>Italians</option>
-                <option>Japanese</option>
-                <option>Khmer</option>
-                <option>Koreans</option>
-                <option>Magyars</option>
-                <option>Malay</option>
-                <option>Malians</option>
-                <option>Mayans</option>
-                <option>Mongols</option>
-                <option>Persians</option>
-                <option>Portuguese</option>
-                <option>Saracens</option>
-                <option>Slavs</option>
-                <option>Spanish</option>
-                <option>Teutons</option>
-                <option>Turks</option>
-                <option>Vietnamese</option>
-                <option>Vikings</option>
-            </select>
-            <div id="info">Version: Age of Empires II HD Patch 5.7 |
-                <a href="https://github.com/HSZemi/aoe2techtree" target="_blank">GitHub</a>
-            </div>
-        </div>
-        <div id="wrapper">
-            <div id="metainfo">
-                <div id="civinfo">
-                    <h2 id="civname">Loading…</h2>
-                    <hr>
-                    <p id="civtext"></p>
-                </div>
-                <div id="thanks">
-                    Made by
-                    <a href="https://hszemi.de" target="_blank">hszemi</a>, with huge thanks to Jineapple, TriRem, and pip
-                    <br> Descriptions taken from the
-                    <a href="https://www.voobly.com/gamemods/mod/650/Max-Extended-Help-AK" target="_blank">Max-Extended-Help-AK mod</a>
-                    <br> Item Metadata (cost, HP etc.) taken from
-                    <a href="https://aoe2stats.net" target="_blank">aoe2stats</a>
-                </div>
-            </div>
-            <div id="techtree">
-                <div id="helptext"></div>
-            </div>
+<div id="container">
+    <div id="navigation">
+        <select id="civselect" onchange="loadCiv()">
+            <option>Aztecs</option>
+            <option>Berbers</option>
+            <option>Britons</option>
+            <option>Burmese</option>
+            <option>Byzantines</option>
+            <option>Celts</option>
+            <option>Chinese</option>
+            <option>Ethiopians</option>
+            <option>Franks</option>
+            <option>Goths</option>
+            <option>Huns</option>
+            <option>Incas</option>
+            <option>Indians</option>
+            <option>Italians</option>
+            <option>Japanese</option>
+            <option>Khmer</option>
+            <option>Koreans</option>
+            <option>Magyars</option>
+            <option>Malay</option>
+            <option>Malians</option>
+            <option>Mayans</option>
+            <option>Mongols</option>
+            <option>Persians</option>
+            <option>Portuguese</option>
+            <option>Saracens</option>
+            <option>Slavs</option>
+            <option>Spanish</option>
+            <option>Teutons</option>
+            <option>Turks</option>
+            <option>Vietnamese</option>
+            <option>Vikings</option>
+        </select>
+        <div id="info">Version: Age of Empires II HD Patch 5.7 |
+            <a href="https://github.com/HSZemi/aoe2techtree" target="_blank">GitHub</a>
         </div>
     </div>
-    <script src="js/svg.min.js"></script>
-    <script src="js/techtree.js"></script>
-    <script src="js/civs.js"></script>
-    <script type="text/javascript">
-        var tree = getDefaultTree();
-        var data = {};
-        let connections = getConnections();
-        let connectionpoints = getConnectionPoints(tree);
+    <div id="wrapper">
+        <div id="metainfo">
+            <div id="civinfo">
+                <h2 id="civname">Loading…</h2>
+                <hr>
+                <p id="civtext"></p>
+            </div>
+            <div id="thanks">
+                Made by
+                <a href="https://hszemi.de" target="_blank">hszemi</a>, with huge thanks to Jineapple, TriRem, and pip
+                <br> Descriptions taken from the
+                <a href="https://www.voobly.com/gamemods/mod/650/Max-Extended-Help-AK" target="_blank">Max-Extended-Help-AK
+                    mod</a>
+                <br> Item Metadata (cost, HP etc.) taken from
+                <a href="https://aoe2stats.net" target="_blank">aoe2stats</a>
+            </div>
+        </div>
+        <div id="techtree">
+            <div id="helptext"></div>
+        </div>
+    </div>
+</div>
+<script src="js/svg.min.js"></script>
+<script src="js/techtree.js"></script>
+<script src="js/civs.js"></script>
+<script type="text/javascript">
+    var tree = getDefaultTree();
+    var data = {};
+    let connections = getConnections();
+    let connectionpoints = getConnectionPoints(tree);
 
+    loadJson(function (response) {
 
-        loadJson(function (response) {
+        data = JSON.parse(response);
 
-            data = JSON.parse(response);
+        let hash = window.location.hash.substr(1);
+        if (hash in data.civs) {
+            document.getElementById('civselect').value = hash;
+        }
 
-            let hash = window.location.hash.substr(1);
-            if(hash in data.civs){
-                document.getElementById('civselect').value = hash;
-            }
+        var draw = SVG('techtree').size(tree.width, tree.height)
 
-            var draw = SVG('techtree').size(tree.width, tree.height)
-
-            draw.rect(tree.width, tree.height).attr({ fill: '#e7c28e' }).click(function () { hideHelp(); });
-            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).click(function () { hideHelp(); }).y(tree.height / 4);
-            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).click(function () { hideHelp(); }).y(tree.height / 4 * 2);
-            draw.rect(tree.width, 6).attr({ fill: '#4d3617' }).click(function () { hideHelp(); }).y(tree.height / 4 * 3);
-
-            for (let connection of connections) {
-                let from = connectionpoints.get(connection[0]);
-                let to = connectionpoints.get(connection[1]);
-                let intermediate_height = from.y + (tree.element_height * 2 / 3);
-                draw.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y])
-                    .fill('none').stroke({ width: 2 })
-                    .click(function () { hideHelp(); });
-            }
-
-            for (let lane of tree.lanes) {
-                for (let r of Object.keys(lane.rows)) {
-                    let row = lane.rows[r];
-                    for (let caret of row) {
-                        var rect = draw.rect(caret.width, caret.height).attr({ fill: caret.type.colour, id: caret.id }).move(caret.x, caret.y);
-                        let name = formatName(caret.name);
-                        var text = draw.text(name)
-                            .font({ family: 'Helvetica', size: 8 })
-                            .attr({ fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text' })
-                            .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
-                        var image_placeholder = draw.rect(caret.width * 0.6, caret.height * 0.6)
-                            .attr({ fill: 'rgba(0,0,0,0.5)', id: caret.id + '_imgph' })
-                            .move(caret.x + caret.width * 0.2, caret.y);
-                        let prefix = 'img/Units/';
-                        if (caret.isBuilding()) {
-                            prefix = 'img/Buildings/';
-                        }
-                        if (caret.isTech()) {
-                            prefix = 'img/Techs/';
-                        }
-                        var image = draw.image(prefix + caret.id + '.png', caret.width * 0.6, caret.height * 0.6)
-                            .attr({ id: caret.id + '_img' })
-                            .move(caret.x + caret.width * 0.2, caret.y);
-                        var cross = draw.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
-                            .attr({ fill: 'rgba(255,0,0,0.5)', id: caret.id + '_x' })
-                            .addClass('cross')
-                            .size(caret.width * 0.6, caret.height * 0.6)
-                            .move(caret.x + caret.width * 0.2, caret.y);
-                        var overlaytrigger = draw.rect(caret.width, caret.height)
-                            .attr({ fill: 'rgba(0,0,0,0)', id: caret.id + '_overlay' })
-                            .move(caret.x, caret.y)
-                            .data({ 'caret': caret, 'name': caret.name, 'id': caret.id })
-                            .click(function () { displayHelp(caret.id + '_overlay'); });
-
-                    }
-                }
-            }
-
-            loadCiv();
-        });
-
-
-        function loadCiv() {
-            var selectedCiv = document.getElementById('civselect').value;
-            civ(selectedCiv, tree);
-            document.getElementById('civname').innerText = selectedCiv;
-            if (selectedCiv in data.civs) {
-                document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
-                window.location.hash = selectedCiv;
-            } else {
-                document.getElementById('civtext').innerHTML = "";
-            }
+        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e'}).click(function () {
             hideHelp();
+        });
+        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(function () {
+            hideHelp();
+        }).y(tree.height / 4);
+        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(function () {
+            hideHelp();
+        }).y(tree.height / 4 * 2);
+        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(function () {
+            hideHelp();
+        }).y(tree.height / 4 * 3);
+
+        for (let connection of connections) {
+            let from = connectionpoints.get(connection[0]);
+            let to = connectionpoints.get(connection[1]);
+            let intermediate_height = from.y + (tree.element_height * 2 / 3);
+            draw.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y])
+                .fill('none').stroke({width: 2})
+                .click(function () {
+                    hideHelp();
+                });
         }
 
-        function loadJson(callback) {
+        for (let lane of tree.lanes) {
+            for (let r of Object.keys(lane.rows)) {
+                let row = lane.rows[r];
+                for (let caret of row) {
+                    var rect = draw.rect(caret.width, caret.height).attr({
+                        fill: caret.type.colour,
+                        id: caret.id
+                    }).move(caret.x, caret.y);
+                    let name = formatName(caret.name);
+                    var text = draw.text(name)
+                        .font({family: 'Helvetica', size: 8})
+                        .attr({fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text'})
+                        .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
+                    var image_placeholder = draw.rect(caret.width * 0.6, caret.height * 0.6)
+                        .attr({fill: 'rgba(0,0,0,0.5)', id: caret.id + '_imgph'})
+                        .move(caret.x + caret.width * 0.2, caret.y);
+                    let prefix = 'img/';
+                    var image = draw.image(prefix + imagePrefix(caret.id) + '.png', caret.width * 0.6, caret.height * 0.6)
+                        .attr({id: caret.id + '_img'})
+                        .move(caret.x + caret.width * 0.2, caret.y);
+                    var cross = draw.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
+                        .attr({fill: 'rgba(255,0,0,0.5)', id: caret.id + '_x'})
+                        .addClass('cross')
+                        .size(caret.width * 0.6, caret.height * 0.6)
+                        .move(caret.x + caret.width * 0.2, caret.y);
+                    var overlaytrigger = draw.rect(caret.width, caret.height)
+                        .attr({fill: 'rgba(0,0,0,0)', id: caret.id + '_overlay'})
+                        .move(caret.x, caret.y)
+                        .data({'caret': caret, 'name': caret.name, 'id': caret.id})
+                        .click(function () {
+                            displayHelp(caret.id + '_overlay');
+                        });
 
-            var xobj = new XMLHttpRequest();
-            xobj.overrideMimeType("application/json");
-            xobj.open('GET', 'data/data.json', true);
-            xobj.onreadystatechange = function () {
-                if (xobj.readyState == 4 && xobj.status == "200") {
-                    // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                    callback(xobj.responseText);
                 }
-            };
-            xobj.send(null);
-        }
-
-        function displayHelp(overlayId) {
-            let helptext = document.getElementById("helptext");
-            let overlay = SVG.get(overlayId);
-            let name = overlay.data('name');
-            let id = overlay.data('id');
-            let caret = overlay.data('caret');
-            let content = getHelpText(name, id);
-            helptext.innerHTML = content;
-            helptext.style.display = "block";
-
-            let top = caret.y + caret.height;
-            if (top + helptext.offsetHeight > tree.height) {
-                top = top - helptext.offsetHeight - caret.height;
-            }
-            helptext.style.top = top + "px";
-
-            helptext.style.left = Math.max(0, (caret.x - helptext.offsetWidth)) + "px";
-            let helpbox = helptext.getBoundingClientRect();
-            if (helpbox.left < 0) {
-                helptext.style.left = Math.max(0, (caret.x - helptext.offsetWidth)) - helpbox.left + "px";
             }
         }
 
-        function hideHelp() {
-            helptext.style.display = "none";
+        loadCiv();
+    });
+
+    function imagePrefix(name) {
+        return name
+            .replace("building_", "Buildings/")
+            .replace("unit_", "Units/")
+            .replace("tech_", "Techs/");
+    }
+
+    function loadCiv() {
+        var selectedCiv = document.getElementById('civselect').value;
+        civ(selectedCiv, tree);
+        document.getElementById('civname').innerText = selectedCiv;
+        if (selectedCiv in data.civs) {
+            document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
+            window.location.hash = selectedCiv;
+        } else {
+            document.getElementById('civtext').innerHTML = "";
         }
+        hideHelp();
+    }
 
-        function getHelpText(name, id) {
-            if (id.endsWith("_(tech)")) {
-                name = name + " (Tech)";
+    function loadJson(callback) {
+
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', 'data/data.json', true);
+        xobj.onreadystatechange = function () {
+            if (xobj.readyState === 4 && xobj.status === 200) {
+                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                callback(xobj.responseText);
             }
-            let text = data.key_value[data.name_key[name]];
-            if (text === undefined) {
-                return "?";
-            }
-            let meta = data.meta[name];
-            text = text.replace(/‹cost›/, "Cost: " + meta.cost);
-            text = text.replace(/‹hp›/, "HP: " + meta.hp);
-            text = text.replace(/‹attack›/, "Attack: " + meta.attack);
-            text = text.replace(/‹Armor›/, "Armor: " + meta.armor);
-            text = text.replace(/‹Piercearmor›/, "Piercearmor: " + meta.piercearmor);
-            text = text.replace(/‹garrison›/, "Garrison: " + meta.garrison);
-            return text;
+        };
+        xobj.send(null);
+    }
+
+    function displayHelp(overlayId) {
+        let helptext = document.getElementById("helptext");
+        let overlay = SVG.get(overlayId);
+        let name = overlay.data('name');
+        let id = overlay.data('id');
+        let caret = overlay.data('caret');
+        let content = getHelpText(name, id);
+        helptext.innerHTML = content;
+        helptext.style.display = "block";
+
+        let top = caret.y + caret.height;
+        if (top + helptext.offsetHeight > tree.height) {
+            top = top - helptext.offsetHeight - caret.height;
         }
+        helptext.style.top = top + "px";
+
+        helptext.style.left = Math.max(0, (caret.x - helptext.offsetWidth)) + "px";
+        let helpbox = helptext.getBoundingClientRect();
+        if (helpbox.left < 0) {
+            helptext.style.left = Math.max(0, (caret.x - helptext.offsetWidth)) - helpbox.left + "px";
+        }
+    }
+
+    function hideHelp() {
+        helptext.style.display = "none";
+    }
+
+    function getHelpText(name, id) {
+        if (id.endsWith("_(tech)")) {
+            name = name + " (Tech)";
+        }
+        let text = data.key_value[data.name_key[name]];
+        if (text === undefined) {
+            return "?";
+        }
+        let meta = data.meta[name];
+        text = text.replace(/‹cost›/, "Cost: " + meta.cost);
+        text = text.replace(/‹hp›/, "HP: " + meta.hp);
+        text = text.replace(/‹attack›/, "Attack: " + meta.attack);
+        text = text.replace(/‹Armor›/, "Armor: " + meta.armor);
+        text = text.replace(/‹Piercearmor›/, "Piercearmor: " + meta.piercearmor);
+        text = text.replace(/‹garrison›/, "Garrison: " + meta.garrison);
+        return text;
+    }
 
 
-    </script>
+</script>
 </body>
 
 </html>

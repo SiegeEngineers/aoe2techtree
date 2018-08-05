@@ -1,8 +1,15 @@
 var TYPES = Object.freeze({
-    "BUILDING": { colour: '#922602' },
-    "UNIT": { colour: '#3a6a80' },
-    "UNIQUEUNIT": { colour: '#af30a3' },
-    "TECHNOLOGY": { colour: '#2c5729' }
+    "BUILDING": {colour: '#922602', type: 'BUILDING'},
+    "UNIT": {colour: '#3a6a80', type: 'UNIT'},
+    "UNIQUEUNIT": {colour: '#af30a3', type: 'UNIQUEUNIT'},
+    "TECHNOLOGY": {colour: '#2c5729', type: 'TECHNOLOGY'}
+});
+
+var PREFIX = Object.freeze({
+    "BUILDING": 'building_',
+    "UNIT": 'unit_',
+    "UNIQUEUNIT": 'unit_',
+    "TECHNOLOGY": 'tech_'
 });
 
 var animation_duration = 50;
@@ -18,7 +25,7 @@ class Tree {
             castle_2_y: 0,
             imperial_1_y: 0,
             imperial_2_y: 0
-        }
+        };
         this.height = Math.max(window.innerHeight - 80, 100);
         this.width = 0;
         this.padding = 10;
@@ -80,7 +87,7 @@ class Lane {
             castle_2: [],
             imperial_1: [],
             imperial_2: []
-        }
+        };
         this.x = 0;
         this.y = 0;
         this.width = 0;
@@ -155,7 +162,7 @@ class Caret {
         this.type = type;
         this.icon = null;
         this.name = name;
-        this.id = formatId(id);
+        this.id = PREFIX[type.type] + formatId(id);
         this.width = 100;
         this.height = 100;
         this.x = 0;
@@ -163,19 +170,19 @@ class Caret {
     }
 
     isBuilding() {
-        return this.type == TYPES.BUILDING;
+        return this.type === TYPES.BUILDING;
     }
 
     isUniqueUnit() {
-        return this.type == TYPES.UNIQUEUNIT;
+        return this.type === TYPES.UNIQUEUNIT;
     }
 
     isUnit() {
-        return this.type == TYPES.UNIT;
+        return this.type === TYPES.UNIT;
     }
 
     isTech() {
-        return this.type == TYPES.TECHNOLOGY;
+        return this.type === TYPES.TECHNOLOGY;
     }
 }
 
@@ -198,23 +205,35 @@ function checkIdUnique(tree) {
 }
 
 function resetToDefault(tree) {
-    SVG.select('.cross').animate(animation_duration).attr({ 'fill-opacity': 0 });
+    SVG.select('.cross').animate(animation_duration).attr({'fill-opacity': 0});
     disableUniqueUnits(tree);
-    enable(["UNIQUE UNIT", "ELITE UNIQUE UNIT"]);
-    disable(["Eagle Scout", "Eagle Warrior", "Elite Eagle Warrior"]);
-    disable(["Battle Elephant", "Elite Battle Elephant"]);
-    disable(["Feitoria"]);
+    enable([], ["UNIQUE UNIT", "ELITE UNIQUE UNIT"], []);
+    disable([], ["Eagle Scout", "Eagle Warrior", "Elite Eagle Warrior"], []);
+    disable([], ["Battle Elephant", "Elite Battle Elephant"], []);
+    disable(["Feitoria"], [], []);
 }
 
-function disable(names) {
-    for (name of names) {
-        SVG.get(formatId(name) + '_x').animate(animation_duration).attr({ 'fill-opacity': 1 });
+function disable(buildings, units, techs) {
+    for (name of buildings) {
+        SVG.get('building_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
+    }
+    for (name of units) {
+        SVG.get('unit_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
+    }
+    for (name of techs) {
+        SVG.get('tech_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
     }
 }
 
-function enable(names) {
-    for (name of names) {
-        SVG.get(formatId(name) + '_x').animate(animation_duration).attr({ 'fill-opacity': 0 });
+function enable(buildings, units, techs) {
+    for (name of buildings) {
+        SVG.get('building_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 0});
+    }
+    for (name of units) {
+        SVG.get('unit_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 0});
+    }
+    for (name of techs) {
+        SVG.get('tech_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 0});
     }
 }
 
@@ -223,7 +242,7 @@ function disableUniqueUnits(tree) {
     for (key of carets.keys()) {
         let caret = carets.get(key);
         if (caret.isUniqueUnit()) {
-            SVG.get(caret.id + '_x').animate(animation_duration).attr({ 'fill-opacity': 1 });
+            SVG.get(caret.id + '_x').animate(animation_duration).attr({'fill-opacity': 1});
         }
     }
 }
@@ -232,10 +251,10 @@ function formatName(originalname) {
     let name = originalname;
     if (name.length > 10) {
         let space = originalname.indexOf(" ");
-        if (space != -1) {
+        if (space !== -1) {
             name = originalname.slice(0, space) + "\n" + originalname.slice(space + 1);
             let alternativeSpace = space + 1 + originalname.slice(space + 1).indexOf(" ");
-            if (alternativeSpace != -1) {
+            if (alternativeSpace !== -1) {
                 if (Math.abs((originalname.length / 2) - alternativeSpace) < Math.abs((originalname.length / 2) - space)) {
                     name = originalname.slice(0, alternativeSpace) + "\n" + originalname.slice(alternativeSpace + 1);
                 }
@@ -249,17 +268,17 @@ function unique(names, monk_prefix) {
     if (monk_prefix === undefined) {
         monk_prefix = "";
     }
-    SVG.get(formatId("UNIQUE UNIT") + '_text').text(formatName(names[0]));
-    SVG.get(formatId("UNIQUE UNIT") + '_overlay').data({ 'name': names[0] });
-    SVG.get(formatId("ELITE UNIQUE UNIT") + '_text').text(formatName(names[1]));
-    SVG.get(formatId("ELITE UNIQUE UNIT") + '_overlay').data({ 'name': names[1] });
-    SVG.get(formatId("UNIQUE TECH 1") + '_text').text(formatName(names[2]));
-    SVG.get(formatId("UNIQUE TECH 1") + '_overlay').data({ 'name': names[2] });
-    SVG.get(formatId("UNIQUE TECH 2") + '_text').text(formatName(names[3]));
-    SVG.get(formatId("UNIQUE TECH 2") + '_overlay').data({ 'name': names[3] });
-    SVG.get(formatId("UNIQUE UNIT") + '_img').load('img/Units/' + formatId(names[0]) + '.png');
-    SVG.get(formatId("ELITE UNIQUE UNIT") + '_img').load('img/Units/' + formatId(names[1]) + '.png');
-    SVG.get(formatId("Monk") + '_img').load('img/Units/' + monk_prefix + 'monk.png');
+    SVG.get('unit_' + formatId("UNIQUE UNIT") + '_text').text(formatName(names[0]));
+    SVG.get('unit_' + formatId("UNIQUE UNIT") + '_overlay').data({'name': names[0]});
+    SVG.get('unit_' + formatId("ELITE UNIQUE UNIT") + '_text').text(formatName(names[1]));
+    SVG.get('unit_' + formatId("ELITE UNIQUE UNIT") + '_overlay').data({'name': names[1]});
+    SVG.get('tech_' + formatId("UNIQUE TECH 1") + '_text').text(formatName(names[2]));
+    SVG.get('tech_' + formatId("UNIQUE TECH 1") + '_overlay').data({'name': names[2]});
+    SVG.get('tech_' + formatId("UNIQUE TECH 2") + '_text').text(formatName(names[3]));
+    SVG.get('tech_' + formatId("UNIQUE TECH 2") + '_overlay').data({'name': names[3]});
+    SVG.get('unit_' + formatId("UNIQUE UNIT") + '_img').load('img/Units/' + formatId(names[0]) + '.png');
+    SVG.get('unit_' + formatId("ELITE UNIQUE UNIT") + '_img').load('img/Units/' + formatId(names[1]) + '.png');
+    SVG.get('unit_' + formatId("Monk") + '_img').load('img/Units/' + monk_prefix + 'monk.png');
 }
 
 
@@ -269,7 +288,7 @@ function disableHorses(tree) {
         let lane = tree.lanes[i];
         for (let r of Object.keys(lane.rows)) {
             for (let caret of lane.rows[r]) {
-                if (caret.id === formatId("Stable")) {
+                if (caret.id === 'building_' + formatId("Stable")) {
                     stable_index = i;
                 }
             }
@@ -278,10 +297,10 @@ function disableHorses(tree) {
     let lane = tree.lanes[stable_index];
     for (let r of Object.keys(lane.rows)) {
         for (let caret of lane.rows[r]) {
-            SVG.get(caret.id + '_x').animate(animation_duration).attr({ 'fill-opacity': 1 });
+            SVG.get(caret.id + '_x').animate(animation_duration).attr({'fill-opacity': 1});
         }
     }
-    disable(["Cavalry Archer", "Heavy Cav Archer", "Scale Barding Armor", "Chain Barding Armor", "Plate Barding Armor", "Parthian Tactics"]);
+    disable([], ["Cavalry Archer", "Heavy Cav Archer"], ["Scale Barding Armor", "Chain Barding Armor", "Plate Barding Armor", "Parthian Tactics"]);
 }
 
 
@@ -515,18 +534,18 @@ function getDefaultTree() {
     let universitylane = new Lane();
     universitylane.rows.castle_1.push(building("University"));
     universitylane.rows.castle_2.push(tech("Masonry"));
-    universitylane.rows.castle_2.push(new Caret(TYPES.TECHNOLOGY, "Fortified Wall", "Fortified Wall (Tech)"));
+    universitylane.rows.castle_2.push(new Caret(TYPES.TECHNOLOGY, "Fortified Wall", "Fortified Wall"));
     universitylane.rows.castle_2.push(tech("Ballistics"));
-    universitylane.rows.castle_2.push(new Caret(TYPES.TECHNOLOGY, "Guard Tower", "Guard Tower (Tech)"));
+    universitylane.rows.castle_2.push(new Caret(TYPES.TECHNOLOGY, "Guard Tower", "Guard Tower"));
     universitylane.rows.castle_2.push(tech("Heated Shot"));
     universitylane.rows.castle_2.push(tech("Murder Holes"));
     universitylane.rows.castle_2.push(tech("Treadmill Crane"));
     universitylane.rows.imperial_1.push(tech("Architecture"));
     universitylane.rows.imperial_1.push(tech("Chemistry"));
     universitylane.rows.imperial_1.push(tech("Siege Engineers"));
-    universitylane.rows.imperial_1.push(new Caret(TYPES.TECHNOLOGY, "Keep", "Keep (Tech)"));
+    universitylane.rows.imperial_1.push(new Caret(TYPES.TECHNOLOGY, "Keep", "Keep"));
     universitylane.rows.imperial_1.push(tech("Arrowslits"));
-    universitylane.rows.imperial_2.push(new Caret(TYPES.TECHNOLOGY, "Bombard Tower", "Bombard Tower (Tech)"));
+    universitylane.rows.imperial_2.push(new Caret(TYPES.TECHNOLOGY, "Bombard Tower", "Bombard Tower"));
     tree.lanes.push(universitylane);
 
     let miningcamplane = new Lane();
@@ -576,147 +595,158 @@ function getDefaultTree() {
     return tree;
 }
 
+function u(unit) {
+    return 'unit_' + unit;
+}
+
+function b(building) {
+    return 'building_' + building;
+}
+
+function t(tech) {
+    return 'tech_' + tech;
+}
 
 function getConnections() {
     let connections = [
-        ["Archery Range", "Archer"],
-        ["Archer", "Crossbowman"],
-        ["Crossbowman", "Arbalest"],
-        ["Archery Range", "Skirmisher"],
-        ["Skirmisher", "Elite Skirmisher"],
-        ["Archery Range", "Cavalry Archer"],
-        ["Cavalry Archer", "Heavy Cav Archer"],
-        ["Archery Range", "Thumb Ring"],
-        ["Barracks", "Archery Range"],
-        ["Barracks", "Stable"],
-        ["Barracks", "Militia"],
-        ["Militia", "Man-at-Arms"],
-        ["Man-at-Arms", "Long Swordsman"],
-        ["Long Swordsman", "Two-Handed Swordsman"],
-        ["Two-Handed Swordsman", "Champion"],
-        ["Barracks", "Spearman"],
-        ["Spearman", "Pikeman"],
-        ["Pikeman", "Halberdier"],
-        ["Barracks", "Eagle Scout"],
-        ["Eagle Scout", "Eagle Warrior"],
-        ["Eagle Warrior", "Elite Eagle Warrior"],
-        ["Barracks", "Tracking"],
-        ["Barracks", "Arson"],
-        ["Stable", "Scout Cavalry"],
-        ["Scout Cavalry", "Light Cavalry"],
-        ["Light Cavalry", "Hussar"],
-        ["Stable", "Bloodlines"],
-        ["Stable", "Camel"],
-        ["Camel", "Heavy Camel"],
-        ["Stable", "Battle Elephant"],
-        ["Battle Elephant", "Elite Battle Elephant"],
-        ["Stable", "Husbandry"],
-        ["Knight", "Cavalier"],
-        ["Cavalier", "Paladin"],
-        ["Dock", "Fishing Ship"],
-        ["Dock", "Transport Ship"],
-        ["Dock", "Demolition Raft"],
-        ["Demolition Raft", "Demolition Ship"],
-        ["Demolition Ship", "Heavy Demo Ship"],
-        ["Dock", "Galley"],
-        ["Galley", "War Galley"],
-        ["War Galley", "Galleon"],
-        ["Dock", "Careening"],
-        ["Careening", "Dry Dock"],
-        ["Dock", "Shipwright"],
-        ["Dock", "Fish Trap"],
-        ["Fire Galley", "Fire Ship"],
-        ["Fire Ship", "Fast Fire Ship"],
-        ["Cannon Galleon", "Elite Cannon Galleon"],
-        ["Watch Tower", "Guard Tower"],
-        ["Guard Tower", "Keep"],
-        ["Stone Wall", "Fortified Wall"],
-        ["Monastery", "Monk"],
-        ["Monastery", "Redemption"],
-        ["Monastery", "Atonement"],
-        ["Monastery", "Herbal Medicine"],
-        ["Monastery", "Heresy"],
-        ["Monastery", "Sanctity"],
-        ["Monastery", "Fervor"],
-        ["Castle", "UNIQUE UNIT"],
-        ["UNIQUE UNIT", "ELITE UNIQUE UNIT"],
-        ["Castle", "Petard"],
-        ["Castle", "UNIQUE TECH 1"],
-        ["Castle", "Hoardings"],
-        ["Castle", "Sappers"],
-        ["Castle", "Conscription"],
-        ["Castle", "Spies/Treason"],
-        ["Town Center", "Villager"],
-        ["Town Center", "Feudal Age"],
-        ["Feudal Age", "Castle Age"],
-        ["Castle Age", "Imperial Age"],
-        ["Town Center", "Loom"],
-        ["Town Watch", "Town Patrol"],
-        ["Wheelbarrow", "Hand Cart"],
-        ["Siege Workshop", "Mangonel"],
-        ["Mangonel", "Onager"],
-        ["Onager", "Siege Onager"],
-        ["Siege Workshop", "Battering Ram"],
-        ["Battering Ram", "Capped Ram"],
-        ["Capped Ram", "Siege Ram"],
-        ["Siege Workshop", "Scorpion"],
-        ["Scorpion", "Heavy Scorpion"],
-        ["Siege Workshop", "Bombard Cannon"],
-        ["Blacksmith", "Siege Workshop"],
-        ["Blacksmith", "Padded Archer Armor"],
-        ["Padded Archer Armor", "Leather Archer Armor"],
-        ["Leather Archer Armor", "Ring Archer Armor"],
-        ["Blacksmith", "Fletching"],
-        ["Fletching", "Bodkin Arrow"],
-        ["Bodkin Arrow", "Bracer"],
-        ["Blacksmith", "Forging"],
-        ["Forging", "Iron Casting"],
-        ["Iron Casting", "Blast Furnace"],
-        ["Blacksmith", "Scale Barding Armor"],
-        ["Scale Barding Armor", "Chain Barding Armor"],
-        ["Chain Barding Armor", "Plate Barding Armor"],
-        ["Blacksmith", "Scale Mail Armor"],
-        ["Scale Mail Armor", "Chain Mail Armor"],
-        ["Chain Mail Armor", "Plate Mail Armor"],
-        ["University", "Masonry"],
-        ["Masonry", "Architecture"],
-        ["University", "Fortified Wall (Tech)"],
-        ["University", "Ballistics"],
-        ["University", "Guard Tower (Tech)"],
-        ["Guard Tower (Tech)", "Keep (Tech)"],
-        ["University", "Heated Shot"],
-        ["University", "Murder Holes"],
-        ["University", "Treadmill Crane"],
-        ["Chemistry", "Bombard Tower (Tech)"],
-        ["Mining Camp", "Stone Mining"],
-        ["Stone Mining", "Stone Shaft Mining"],
-        ["Mining Camp", "Gold Mining"],
-        ["Gold Mining", "Gold Shaft Mining"],
-        ["Lumber Camp", "Double-Bit Axe"],
-        ["Double-Bit Axe", "Bow Saw"],
-        ["Bow Saw", "Two-Man Saw"],
-        ["Market", "Cartography"],
-        ["Cartography", "Caravan"],
-        ["Market", "Coinage"],
-        ["Coinage", "Banking"],
-        ["Market", "Trade Cart"],
-        ["Mill", "Market"],
-        ["Mill", "Horse Collar"],
-        ["Horse Collar", "Heavy Plow"],
-        ["Heavy Plow", "Crop Rotation"],
-        ["Mill", "Farm"],
-        ["Genitour", "Elite Genitour"],
-        ["Heavy Camel", "Imperial Camel"],
-        ["Turtle Ship", "Elite Turtle Ship"],
-        ["Longboat", "Elite Longboat"],
-        ["Elite Skirmisher", "Imperial Skirmisher"],
-        ["Monastery", "Missionary"],
-        ["Caravel", "Elite Caravel"],
-        ["Dock", "Caravel"],
-        ["Dock", "Turtle Ship"],
-        ["Archery Range", "Slinger"],
-        ["Archery Range", "Genitour"],
-        ["Dock", "Longboat"]
+        [b("Archery Range"), u("Archer")],
+        [u("Archer"), u("Crossbowman")],
+        [u("Crossbowman"), u("Arbalest")],
+        [b("Archery Range"), u("Skirmisher")],
+        [u("Skirmisher"), u("Elite Skirmisher")],
+        [b("Archery Range"), u("Cavalry Archer")],
+        [u("Cavalry Archer"), u("Heavy Cav Archer")],
+        [b("Archery Range"), t("Thumb Ring")],
+        [b("Barracks"), b("Archery Range")],
+        [b("Barracks"), b("Stable")],
+        [b("Barracks"), u("Militia")],
+        [u("Militia"), u("Man-at-Arms")],
+        [u("Man-at-Arms"), u("Long Swordsman")],
+        [u("Long Swordsman"), u("Two-Handed Swordsman")],
+        [u("Two-Handed Swordsman"), u("Champion")],
+        [b("Barracks"), u("Spearman")],
+        [u("Spearman"), u("Pikeman")],
+        [u("Pikeman"), u("Halberdier")],
+        [b("Barracks"), u("Eagle Scout")],
+        [u("Eagle Scout"), u("Eagle Warrior")],
+        [u("Eagle Warrior"), u("Elite Eagle Warrior")],
+        [b("Barracks"), t("Tracking")],
+        [b("Barracks"), t("Arson")],
+        [b("Stable"), u("Scout Cavalry")],
+        [u("Scout Cavalry"), u("Light Cavalry")],
+        [u("Light Cavalry"), u("Hussar")],
+        [b("Stable"), t("Bloodlines")],
+        [b("Stable"), u("Camel")],
+        [u("Camel"), u("Heavy Camel")],
+        [b("Stable"), u("Battle Elephant")],
+        [u("Battle Elephant"), u("Elite Battle Elephant")],
+        [b("Stable"), t("Husbandry")],
+        [u("Knight"), u("Cavalier")],
+        [u("Cavalier"), u("Paladin")],
+        [b("Dock"), u("Fishing Ship")],
+        [b("Dock"), u("Transport Ship")],
+        [b("Dock"), u("Demolition Raft")],
+        [u("Demolition Raft"), u("Demolition Ship")],
+        [u("Demolition Ship"), u("Heavy Demo Ship")],
+        [b("Dock"), u("Galley")],
+        [u("Galley"), u("War Galley")],
+        [u("War Galley"), u("Galleon")],
+        [b("Dock"), t("Careening")],
+        [t("Careening"), t("Dry Dock")],
+        [b("Dock"), t("Shipwright")],
+        [b("Dock"), b("Fish Trap")],
+        [u("Fire Galley"), u("Fire Ship")],
+        [u("Fire Ship"), u("Fast Fire Ship")],
+        [u("Cannon Galleon"), u("Elite Cannon Galleon")],
+        [b("Watch Tower"), b("Guard Tower")],
+        [b("Guard Tower"), b("Keep")],
+        [b("Stone Wall"), b("Fortified Wall")],
+        [b("Monastery"), u("Monk")],
+        [b("Monastery"), t("Redemption")],
+        [b("Monastery"), t("Atonement")],
+        [b("Monastery"), t("Herbal Medicine")],
+        [b("Monastery"), t("Heresy")],
+        [b("Monastery"), t("Sanctity")],
+        [b("Monastery"), t("Fervor")],
+        [b("Castle"), u("UNIQUE UNIT")],
+        [u("UNIQUE UNIT"), u("ELITE UNIQUE UNIT")],
+        [b("Castle"), u("Petard")],
+        [b("Castle"), t("UNIQUE TECH 1")],
+        [b("Castle"), t("Hoardings")],
+        [b("Castle"), t("Sappers")],
+        [b("Castle"), t("Conscription")],
+        [b("Castle"), t("Spies/Treason")],
+        [b("Town Center"), u("Villager")],
+        [b("Town Center"), t("Feudal Age")],
+        [t("Feudal Age"), t("Castle Age")],
+        [t("Castle Age"), t("Imperial Age")],
+        [b("Town Center"), t("Loom")],
+        [t("Town Watch"), t("Town Patrol")],
+        [t("Wheelbarrow"), t("Hand Cart")],
+        [b("Siege Workshop"), u("Mangonel")],
+        [u("Mangonel"), u("Onager")],
+        [u("Onager"), u("Siege Onager")],
+        [b("Siege Workshop"), u("Battering Ram")],
+        [u("Battering Ram"), u("Capped Ram")],
+        [u("Capped Ram"), u("Siege Ram")],
+        [b("Siege Workshop"), u("Scorpion")],
+        [u("Scorpion"), u("Heavy Scorpion")],
+        [b("Siege Workshop"), u("Bombard Cannon")],
+        [b("Blacksmith"), b("Siege Workshop")],
+        [b("Blacksmith"), t("Padded Archer Armor")],
+        [t("Padded Archer Armor"), t("Leather Archer Armor")],
+        [t("Leather Archer Armor"), t("Ring Archer Armor")],
+        [b("Blacksmith"), t("Fletching")],
+        [t("Fletching"), t("Bodkin Arrow")],
+        [t("Bodkin Arrow"), t("Bracer")],
+        [b("Blacksmith"), t("Forging")],
+        [t("Forging"), t("Iron Casting")],
+        [t("Iron Casting"), t("Blast Furnace")],
+        [b("Blacksmith"), t("Scale Barding Armor")],
+        [t("Scale Barding Armor"), t("Chain Barding Armor")],
+        [t("Chain Barding Armor"), t("Plate Barding Armor")],
+        [b("Blacksmith"), t("Scale Mail Armor")],
+        [t("Scale Mail Armor"), t("Chain Mail Armor")],
+        [t("Chain Mail Armor"), t("Plate Mail Armor")],
+        [b("University"), t("Masonry")],
+        [t("Masonry"), t("Architecture")],
+        [b("University"), t("Fortified Wall")],
+        [b("University"), t("Ballistics")],
+        [b("University"), t("Guard Tower")],
+        [t("Guard Tower"), t("Keep")],
+        [b("University"), t("Heated Shot")],
+        [b("University"), t("Murder Holes")],
+        [b("University"), t("Treadmill Crane")],
+        [t("Chemistry"), t("Bombard Tower")],
+        [b("Mining Camp"), t("Stone Mining")],
+        [t("Stone Mining"), t("Stone Shaft Mining")],
+        [b("Mining Camp"), t("Gold Mining")],
+        [t("Gold Mining"), t("Gold Shaft Mining")],
+        [b("Lumber Camp"), t("Double-Bit Axe")],
+        [t("Double-Bit Axe"), t("Bow Saw")],
+        [t("Bow Saw"), t("Two-Man Saw")],
+        [b("Market"), t("Cartography")],
+        [t("Cartography"), t("Caravan")],
+        [b("Market"), t("Coinage")],
+        [t("Coinage"), t("Banking")],
+        [b("Market"), u("Trade Cart")],
+        [b("Mill"), b("Market")],
+        [b("Mill"), t("Horse Collar")],
+        [t("Horse Collar"), t("Heavy Plow")],
+        [t("Heavy Plow"), t("Crop Rotation")],
+        [b("Mill"), b("Farm")],
+        [u("Genitour"), u("Elite Genitour")],
+        [u("Heavy Camel"), u("Imperial Camel")],
+        [u("Turtle Ship"), u("Elite Turtle Ship")],
+        [u("Longboat"), u("Elite Longboat")],
+        [u("Elite Skirmisher"), u("Imperial Skirmisher")],
+        [b("Monastery"), u("Missionary")],
+        [u("Caravel"), u("Elite Caravel")],
+        [b("Dock"), u("Caravel")],
+        [b("Dock"), u("Turtle Ship")],
+        [b("Archery Range"), u("Slinger")],
+        [b("Archery Range"), u("Genitour")],
+        [b("Dock"), u("Longboat")]
     ];
 
     let connection_ids = [];
