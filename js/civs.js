@@ -132,7 +132,7 @@ function civ(name, tree) {
         case "Khmer":
             enable([], ["Battle Elephant", "Elite Battle Elephant"], []);
             disable(["Bombard Tower"],
-                ["Arbalest", "Champion", "Camel", "Heavy Camel", "Hussar", "Paladin", "Heavy Demo Ship", "Siege Onager"],
+                ["Champion", "Camel", "Heavy Camel", "Hussar", "Paladin", "Heavy Demo Ship", "Siege Onager"],
                 ["Thumb Ring", "Squires", "Bombard Tower", "Atonement", "Heresy", "Faith", "Block Printing",
                     "Plate Mail Armor", "Arrowslits", "Two-Man Saw", "Guilds"]);
             unique(["Ballista Elephant", "Elite Ballista Elephant", "Tusk Swords", "Double Crossbow"], "asian_");
