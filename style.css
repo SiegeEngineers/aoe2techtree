@@ -1,0 +1,114 @@
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #info,
+        #info a {
+            display: inline;
+            font-family: monospace;
+            color: gray;
+        }
+
+        #container {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #navigation {
+            padding-left: 1rem;
+        }
+
+        #helptext {
+            position: absolute;
+            display: none;
+            max-width: 300px;
+            background-color: #eee;
+            border: 2px solid #bbb;
+            padding: 0.2rem;
+            font-size: 10pt;
+        }
+
+        #wrapper {
+            min-width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+
+        #techtree {
+            border: 5px solid #4d3617;
+            background-color: #e7c28e;
+            flex: 0 0 auto;
+            position: relative;
+        }
+
+        #metainfo {
+            border: 5px solid #4d3617;
+            width: 20rem;
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            background-color: #e7c28e;
+            padding: 1rem;
+        }
+
+        #civinfo {
+            flex: 1 0 auto;
+            font-size: 11pt;
+        }
+
+        #thanks {
+            flex: 0 0 auto;
+        }
+
+        #civname {
+            text-align: center;
+        }
+
+        hr {
+            overflow: visible;
+            /* For IE */
+            height: 30px;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px 0 0 0;
+            border-radius: 20px;
+        }
+
+        hr:before {
+            /* Not really supposed to work, but does */
+            display: block;
+            content: "";
+            height: 30px;
+            margin-top: -31px;
+            border-style: solid;
+            border-color: black;
+            border-width: 0 0 1px 0;
+            border-radius: 20px;
+        }
+
+        #navigation {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #thanks,
+        #thanks a {
+            font-size: 6pt;
+            font-family: monospace;
+            color: gray;
+        }
