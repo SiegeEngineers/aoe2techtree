@@ -196,7 +196,7 @@ function civ(name, tree) {
             unique(["War Elephant", "Elite War Elephant", "Boiling Oil", "Mahouts"], "african_");
             break;
         case "Portuguese":
-            enable(["Feitoria"], [], []);
+            enable(["Feitoria"], ["Caravel", "Elite Caravel"], []);
             disable([],
                 ["Heavy Cav Archer", "Hussar", "Camel", "Heavy Camel", "Paladin", "Fast Fire Ship", "Siege Ram",
                     "Siege Onager", "Heavy Scorpion"],
