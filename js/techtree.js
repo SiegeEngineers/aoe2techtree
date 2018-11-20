@@ -502,6 +502,7 @@ function getDefaultTree() {
     siegeworkshoplane.rows.castle_2.push(unit("Mangonel"));
     siegeworkshoplane.rows.castle_2.push(unit("Battering Ram"));
     siegeworkshoplane.rows.castle_2.push(unit("Scorpion"));
+    siegeworkshoplane.rows.castle_2.push(unit("Siege Tower"));
     siegeworkshoplane.rows.imperial_1.push(unit("Onager"));
     siegeworkshoplane.rows.imperial_1.push(unit("Capped Ram"));
     siegeworkshoplane.rows.imperial_1.push(unit("Heavy Scorpion"));
@@ -691,7 +692,7 @@ function getConnections() {
         [u("Capped Ram"), u("Siege Ram")],
         [b("Siege Workshop"), u("Scorpion")],
         [u("Scorpion"), u("Heavy Scorpion")],
-        [b("Siege Workshop"), u("Bombard Cannon")],
+        [b("Siege Workshop"), u("Siege Tower")],
         [b("Blacksmith"), b("Siege Workshop")],
         [b("Blacksmith"), t("Padded Archer Armor")],
         [t("Padded Archer Armor"), t("Leather Archer Armor")],

@@ -79,6 +79,7 @@ UNITS = {
     280: {"internal_name": "MANGO", "Name": "Mangonel"},
     35: {"internal_name": "BTRAM", "Name": "Battering Ram"},
     279: {"internal_name": "SCBAL", "Name": "Scorpion"},
+    1105: {"internal_name": "SIEGTWR", "Name": "Siege Tower"},
     492: {"internal_name": "ACOAR", "Name": "Arbalest"},
     1155: {"internal_name": "IHXBOW", "Name": "Imperial Skirmisher"},
     5: {"internal_name": "HCANR", "Name": "Hand Cannoneer"},

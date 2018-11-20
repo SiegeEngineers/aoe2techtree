@@ -3854,6 +3854,21 @@
                 "Range": 0,
                 "internal_name": "SGRAM"
             },
+            "Siege Tower": {
+                "Attack": 0,
+                "Cost": {
+                    "Gold": 160,
+                    "Wood": 200
+                },
+                "GarrisonCapacity": 10,
+                "HP": 220,
+                "ID": 1105,
+                "MeleeArmor": 0,
+                "Name": "Siege Tower",
+                "PierceArmor": 100,
+                "Range": 0,
+                "internal_name": "SIEGTWR"
+            },
             "Skirmisher": {
                 "Attack": 2,
                 "Cost": {
