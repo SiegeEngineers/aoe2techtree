@@ -1,8 +1,9 @@
 # aoe2techtree
-Age of Empires II Tech Tree in your Browser
+The Age of Empires II Tech Tree in your web browser
 
-[Demo](https://hszemi.github.io/aoe2techtree/) (not the ship)
+Developed by @HSZemi
 
+Hosted on [aoe2techtree.net](https://aoe2techtree.net)
 
 ## Development
 
