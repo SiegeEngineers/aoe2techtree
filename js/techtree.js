@@ -210,7 +210,8 @@ function resetToDefault(tree) {
     enable([], ["UNIQUE UNIT", "ELITE UNIQUE UNIT"], []);
     disable([], ["Eagle Scout", "Eagle Warrior", "Elite Eagle Warrior"], []);
     disable([], ["Battle Elephant", "Elite Battle Elephant"], []);
-    disable(["Feitoria"], [], []);
+    disable([], ["Steppe Lancer", "Elite Steppe Lancer"], []);
+    disable(["Krepost", "Feitoria"], [], []);
 }
 
 function disable(buildings, units, techs) {
@@ -349,7 +350,7 @@ function getDefaultTree() {
     barrackslane.rows.feudal_1.push(unit("Man-at-Arms"));
     barrackslane.rows.feudal_1.push(unit("Spearman"));
     barrackslane.rows.feudal_1.push(unit("Eagle Scout"));
-    barrackslane.rows.feudal_1.push(tech("Tracking"));
+    barrackslane.rows.feudal_1.push(tech("Supplies"));
     barrackslane.rows.castle_1.push(unit("Long Swordsman"));
     barrackslane.rows.castle_1.push(unit("Pikeman"));
     barrackslane.rows.castle_1.push(unit("Eagle Warrior"));
@@ -371,11 +372,13 @@ function getDefaultTree() {
     stablelane.rows.castle_1.push(unit("Knight"));
     stablelane.rows.castle_1.push(unit("Camel"));
     stablelane.rows.castle_1.push(unit("Battle Elephant"));
+    stablelane.rows.castle_1.push(unit("Steppe Lancer"));
     stablelane.rows.castle_1.push(tech("Husbandry"));
     stablelane.rows.imperial_1.push(unit("Hussar"));
     stablelane.rows.imperial_1.push(unit("Cavalier"));
     stablelane.rows.imperial_1.push(unit("Heavy Camel"));
     stablelane.rows.imperial_1.push(unit("Elite Battle Elephant"));
+    stablelane.rows.imperial_1.push(unit("Elite Steppe Lancer"));
     stablelane.rows.imperial_2.push(uniqueunit("Imperial Camel"));
     stablelane.rows.imperial_2.push(unit("Paladin"));
     tree.lanes.push(stablelane);
@@ -387,6 +390,7 @@ function getDefaultTree() {
 
 
     let feitorialane = new Lane();
+    feitorialane.rows.castle_1.push(building("Krepost"));
     feitorialane.rows.imperial_1.push(building("Feitoria"));
     tree.lanes.push(feitorialane);
 
@@ -631,7 +635,7 @@ function getConnections() {
         [b("Barracks"), u("Eagle Scout")],
         [u("Eagle Scout"), u("Eagle Warrior")],
         [u("Eagle Warrior"), u("Elite Eagle Warrior")],
-        [b("Barracks"), t("Tracking")],
+        [b("Barracks"), t("Supplies")],
         [b("Barracks"), t("Arson")],
         [b("Stable"), u("Scout Cavalry")],
         [u("Scout Cavalry"), u("Light Cavalry")],
@@ -641,6 +645,8 @@ function getConnections() {
         [u("Camel"), u("Heavy Camel")],
         [b("Stable"), u("Battle Elephant")],
         [u("Battle Elephant"), u("Elite Battle Elephant")],
+        [b("Stable"), u("Steppe Lancer")],
+        [u("Steppe Lancer"), u("Elite Steppe Lancer")],
         [b("Stable"), t("Husbandry")],
         [u("Knight"), u("Cavalier")],
         [u("Cavalier"), u("Paladin")],

@@ -28,6 +28,16 @@ function civ(name, tree) {
                     "Treadmill Crane", "Stone Shaft Mining", "Crop Rotation"]);
             unique(["Longbowman", "Elite Longbowman", "Yeomen", "Warwolf"]);
             break;
+        case "Bulgarians":
+            enable(["Krepost"], [], []);
+            disable(["Fortified Wall", "Bombard Tower"],
+                ["Crossbowman", "Arbalest", "Hand Cannoneer", "Champion", "Camel", "Heavy Camel", "Bombard Cannon",
+                    "Fast Fire Ship", "Heavy Demo Ship", "Elite Cannon Galleon"],
+                ["Ring Archer Armor", "Dry Dock", "Shipwright", "Fortified Wall", "Treadmill Crane", "Arrowslits",
+                    "Bombard Tower", "Hoardings", "Sappers", "Atonement", "Sanctity", "Faith", "Block Printing", "Two-Man Saw",
+                    "Guilds"]);
+            unique(["Konnik", "Elite Konnik", "Stirrups", "Bagains"], "");
+            break;
         case "Burmese":
             enable([], ["Battle Elephant", "Elite Battle Elephant"], []);
             disable([],
@@ -60,6 +70,16 @@ function civ(name, tree) {
                 ["Parthian Tactics", "Heresy", "Block Printing", "Hoardings", "Siege Engineers", "Treadmill Crane",
                     "Guilds", "Crop Rotation"]);
             unique(["Chu Ko Nu", "Elite Chu Ko Nu", "Great Wall", "Rocketry"], "asian_");
+            break;
+        case "Cumans":
+            enable([], ["Steppe Lancer", "Elite Steppe Lancer"], []);
+            disable(["Gate", "Stone Wall", "Fortified Wall", "Guard Tower", "Keep", "Bombard Tower"],
+                ["Arbalest", "Hand Cannoneer", "Heavy Camel", "Heavy Scorpion", "Bombard Cannon", "Cannon Galleon",
+                    "Elite Cannon Galleon", "Heavy Demo Ship"],
+                ["Bracer", "Dry Dock", "Shipwright", "Fortified Wall", "Guard Tower", "Treadmill Crane", "Architecture",
+                    "Siege Engineers", "Keep", "Arrowslits", "Bombard Tower", "Illumination", "Block Printing", "Theocracy",
+                    "Stone Shaft Mining"]);
+            unique(["Kipchak", "Elite Kipchak", "Steppe Husbandry", "Cuman Mercenaries"], "asian_");
             break;
         case "Ethiopians":
             disable(["Bombard Tower"],
@@ -146,6 +166,13 @@ function civ(name, tree) {
                     "Sappers", "Blast Furnace", "Plate Barding Armor", "Crop Rotation"]);
             unique(["War Wagon", "Elite War Wagon", "Panokseon", "Shinkichon"], "asian_");
             break;
+        case "Lithuanians":
+            disable([],
+                ["Arbalest", "Camel", "Heavy Camel", "Siege Ram", "Siege Onager", "Heavy Scorpion", "Heavy Demo Ship"],
+                ["Parthian Tactics", "Plate Mail Armor", "Shipwright", "Siege Engineers", "Arrowslits", "Sappers",
+                    "Gold Shaft Mining"]);
+            unique(["Leitis", "Elite Leitis", "Hill Forts", "Tower Shields"], "");
+            break;
         case "Magyars":
             disable(["Keep", "Bombard Tower", "Fortified Wall"],
                 ["Hand Cannoneer", "Camel", "Heavy Camel", "Elite Cannon Galleon", "Heavy Demo Ship", "Siege Ram",
@@ -226,6 +253,14 @@ function civ(name, tree) {
                 ["Parthian Tactics", "Siege Engineers", "Heated Shot", "Treadmill Crane", "Gold Shaft Mining",
                     "Crop Rotation"]);
             unique(["Conquistador", "Elite Conquistador", "Inquisition", "Supremacy"]);
+            break;
+        case "Tatars":
+            enable([], ["Steppe Lancer", "Elite Steppe Lancer"], []);
+            disable(["Keep"],
+                ["Arbalest", "Champion", "Halberdier", "Paladin", "Siege Onager", "Bombard Cannon", "Heavy Demo Ship"],
+                ["Chain Mail Armor", "Plate Mail Armor", "Shipwright", "Architecture", "Keep", "Arrowslits",
+                    "Hoardings", "Redemption", "Heresy", "Sanctity", "Faith", "Theocracy", "Stone Shaft Mining", "Two-Man Saw"]);
+            unique(["Keshik", "Elite Keshik", "Silk Armor", "Timurid Siegecraft"]);
             break;
         case "Teutons":
             disable([],
