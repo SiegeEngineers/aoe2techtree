@@ -237,8 +237,8 @@
         text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
         text = text.replace(/‹hp›/, "HP: " + meta.HP);
         text = text.replace(/‹attack›/, "Attack: " + meta.Attack);
-        text = text.replace(/‹Armor›/, "Armor: " + meta.MeleeArmor);
-        text = text.replace(/‹Piercearmor›/, "Piercearmor: " + meta.PierceArmor);
+        text = text.replace(/‹(A|a)rmor›/, "Armor: " + meta.MeleeArmor);
+        text = text.replace(/‹(P|p)iercearmor›/, "Piercearmor: " + meta.PierceArmor);
         text = text.replace(/‹garrison›/, "Garrison: " + meta.GarrisonCapacity);
         text = text.replace(/‹range›/, "Range: " + meta.Range);
         return text;
