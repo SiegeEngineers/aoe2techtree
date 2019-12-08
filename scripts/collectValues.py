@@ -36,6 +36,7 @@ BUILDINGS = {
     1021: {"internal_name": "FEITO", "Name": "Feitoria"},
     235: {"internal_name": "WCTW3", "Name": "Keep"},
     236: {"internal_name": "WCTW4", "Name": "Bombard Tower"},
+    1251: {"internal_name": "KREPOST", "Name": "Krepost"},
 }
 
 UNITS = {
@@ -96,6 +97,8 @@ UNITS = {
     330: {"internal_name": "HCLRY", "Name": "Heavy Camel"},
     207: {"internal_name": "SHCLRY", "Name": "Imperial Camel"},
     1134: {"internal_name": "EBATELE", "Name": "Elite Battle Elephant"},
+    1370: {"internal_name": "SLANCER", "Name": "Steppe Lancer"},
+    1372: {"internal_name": "ESLANCER", "Name": "Elite Steppe Lancer"},
     532: {"internal_name": "HFGAL", "Name": "Fast Fire Ship"},
     420: {"internal_name": "CANGA", "Name": "Cannon Galleon"},
     691: {"internal_name": "CNGAU", "Name": "Elite Cannon Galleon"},
@@ -178,6 +181,7 @@ TECHS = {
     101: {"internal_name": "Middle Age", "Name": "Feudal Age"},
     22: {"internal_name": "Loom", "Name": "Loom"},
     90: {"internal_name": "Tracking", "Name": "Tracking"},
+    716: {"internal_name": "Tracking", "Name": "Supplies"},
     435: {"internal_name": "Bloodlines", "Name": "Bloodlines"},
     8: {"internal_name": "Town Watch", "Name": "Town Watch"},
     102: {"internal_name": "Feudal Age", "Name": "Castle Age"},
@@ -295,7 +299,7 @@ TECHS = {
     4: {"internal_name": "Mayan El Dorado", "Name": "El Dorado"},
     487: {"internal_name": "Mongols UT", "Name": "Nomads"},
     6: {"internal_name": "Mongol Siege Drill", "Name": "Drill"},
-    488: {"internal_name": "Persians UT", "Name": "Boiling Oil"},
+    488: {"internal_name": "Persians UT", "Name": "Kamandaran"},
     7: {"internal_name": "Persian Mahouts", "Name": "Mahouts"},
     572: {"internal_name": "Portuguese UT", "Name": "Carrack"},
     573: {"internal_name": "Portuguese UT", "Name": "Arquebus"},

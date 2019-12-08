@@ -35,7 +35,11 @@ IDS = {"Britons":120150,
             "Khmer":120177,
             "Malay":120178,
             "Burmese":120179,
-            "Vietnamese":120180
+            "Vietnamese":120180,
+            "Bulgarians":120181,
+            "Cumans":120183,
+            "Lithuanians":120184,
+            "Tatars":120182
 }
 
 def main():

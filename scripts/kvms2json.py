@@ -40,7 +40,11 @@ def main():
             "Khmer": "120177",
             "Malay": "120178",
             "Burmese": "120179",
-            "Vietnamese": "120180"
+            "Vietnamese": "120180",
+            "Bulgarians":"120181",
+            "Cumans":"120183",
+            "Lithuanians":"120184",
+            "Tatars":"120182"
             }
     kv = {}
     name_key = {"buildings": {}, "units": {}, "techs": {"Spies/Treason": "28408", "Cartography": "28019"}}
@@ -96,7 +100,16 @@ def main():
         with open(sys.argv[2], "r") as f:
             meta = json.load(f)
 
-    print(json.dumps({"civs": civs, "key_value": kv, "name_key": name_key, "meta": meta}, indent=4, sort_keys=True))
+    key_value_filtered = {}
+    for lv1 in name_key:
+        for lv2 in name_key[lv1]:
+            key = int(name_key[lv1][lv2])
+            key_value_filtered[key] = kv[key]
+    for name in civs:
+        key = int(civs[name])
+        key_value_filtered[key] = kv[key]
+
+    print(json.dumps({"civs": civs, "key_value": key_value_filtered, "name_key": name_key, "meta": meta}, indent=4, sort_keys=True))
 
 
 if __name__ == "__main__":
