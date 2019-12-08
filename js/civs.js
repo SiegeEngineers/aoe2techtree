@@ -22,7 +22,7 @@ function civ(name, tree) {
             break;
         case "Britons":
             disable(["Bombard Tower"],
-                ["Hand Cannoneer", "Hussar", "Paladin", "Camel", "Heavy Camel", "Elite Cannon Galleon", "Siege Ram",
+                ["Hand Cannoneer", "Hussar", "Paladin", "Camel Rider", "Heavy Camel Rider", "Elite Cannon Galleon", "Siege Ram",
                     "Siege Onager", "Bombard Cannon"],
                 ["Thumb Ring", "Parthian Tactics", "Bloodlines", "Redemption", "Atonement", "Heresy", "Bombard Tower",
                     "Treadmill Crane", "Stone Shaft Mining", "Crop Rotation"]);
@@ -31,7 +31,7 @@ function civ(name, tree) {
         case "Bulgarians":
             enable(["Krepost"], [], []);
             disable(["Fortified Wall", "Bombard Tower"],
-                ["Crossbowman", "Arbalest", "Hand Cannoneer", "Champion", "Camel", "Heavy Camel", "Bombard Cannon",
+                ["Crossbowman", "Arbalester", "Hand Cannoneer", "Champion", "Camel Rider", "Heavy Camel Rider", "Bombard Cannon",
                     "Fast Fire Ship", "Heavy Demo Ship", "Elite Cannon Galleon"],
                 ["Ring Archer Armor", "Dry Dock", "Shipwright", "Fortified Wall", "Treadmill Crane", "Arrowslits",
                     "Bombard Tower", "Hoardings", "Sappers", "Atonement", "Sanctity", "Faith", "Block Printing", "Two-Man Saw",
@@ -41,7 +41,7 @@ function civ(name, tree) {
         case "Burmese":
             enable([], ["Battle Elephant", "Elite Battle Elephant"], []);
             disable([],
-                ["Arbalest", "Hand Cannoneer", "Camel", "Heavy Camel", "Paladin", "Fast Fire Ship", "Heavy Demo Ship",
+                ["Arbalester", "Hand Cannoneer", "Camel Rider", "Heavy Camel Rider", "Paladin", "Fast Fire Ship", "Heavy Demo Ship",
                     "Siege Ram", "Siege Onager"],
                 ["Thumb Ring", "Shipwright", "Heresy", "Hoardings", "Sappers", "Leather Archer Armor",
                     "Ring Archer Armor", "Bombard Tower", "Arrowslits", "Stone Shaft Mining"]);
@@ -56,7 +56,7 @@ function civ(name, tree) {
             break;
         case "Celts":
             disable(["Bombard Tower"],
-                ["Arbalest", "Hand Cannoneer", "Camel", "Heavy Camel", "Fast Fire Ship", "Elite Cannon Galleon",
+                ["Arbalester", "Hand Cannoneer", "Camel Rider", "Heavy Camel Rider", "Fast Fire Ship", "Elite Cannon Galleon",
                     "Bombard Cannon"],
                 ["Thumb Ring", "Parthian Tactics", "Squires", "Bloodlines", "Redemption", "Illumination", "Atonement",
                     "Block Printing", "Theocracy", "Ring Archer Armor", "Bracer", "Plate Barding Armor", "Architecture",
@@ -74,7 +74,7 @@ function civ(name, tree) {
         case "Cumans":
             enable([], ["Steppe Lancer", "Elite Steppe Lancer"], []);
             disable(["Gate", "Stone Wall", "Fortified Wall", "Guard Tower", "Keep", "Bombard Tower"],
-                ["Arbalest", "Hand Cannoneer", "Heavy Camel", "Heavy Scorpion", "Bombard Cannon", "Cannon Galleon",
+                ["Arbalester", "Hand Cannoneer", "Heavy Camel Rider", "Heavy Scorpion", "Bombard Cannon", "Cannon Galleon",
                     "Elite Cannon Galleon", "Heavy Demo Ship"],
                 ["Bracer", "Dry Dock", "Shipwright", "Fortified Wall", "Guard Tower", "Treadmill Crane", "Architecture",
                     "Siege Engineers", "Keep", "Arrowslits", "Bombard Tower", "Illumination", "Block Printing", "Theocracy",
@@ -90,7 +90,7 @@ function civ(name, tree) {
             break;
         case "Franks":
             disable(["Keep", "Bombard Tower"],
-                ["Arbalest", "Camel", "Heavy Camel", "Hussar", "Elite Cannon Galleon", "Siege Ram", "Siege Onager",],
+                ["Arbalester", "Camel Rider", "Heavy Camel Rider", "Hussar", "Elite Cannon Galleon", "Siege Ram", "Siege Onager",],
                 ["Thumb Ring", "Parthian Tactics", "Bloodlines", "Shipwright", "Redemption", "Atonement", "Sappers",
                     "Ring Archer Armor", "Bracer", "Heated Shot", "Keep", "Bombard Tower", "Stone Shaft Mining",
                     "Two-Man Saw", "Guilds"]);
@@ -98,7 +98,7 @@ function civ(name, tree) {
             break;
         case "Goths":
             disable(["Guard Tower", "Keep", "Bombard Tower", "Gate", "Stone Wall", "Fortified Wall"],
-                ["Arbalest", "Camel", "Heavy Camel", "Paladin", "Elite Cannon Galleon", "Siege Ram", "Siege Onager"],
+                ["Arbalester", "Camel Rider", "Heavy Camel Rider", "Paladin", "Elite Cannon Galleon", "Siege Ram", "Siege Onager"],
                 ["Thumb Ring", "Parthian Tactics", "Dry Dock", "Keep", "Bombard Tower", "Fortified Wall", "Redemption",
                     "Atonement", "Block Printing", "Heresy", "Hoardings", "Plate Barding Armor", "Plate Mail Armor",
                     "Siege Engineers", "Treadmill Crane", "Arrowslits", "Gold Shaft Mining", "Supplies"]);
@@ -106,7 +106,7 @@ function civ(name, tree) {
             break;
         case "Huns":
             disable(["Guard Tower", "Keep", "Bombard Tower", "Fortified Wall"],
-                ["Arbalest", "Hand Cannoneer", "Champion", "Camel", "Heavy Camel", "Fast Fire Ship", "Cannon Galleon",
+                ["Arbalester", "Hand Cannoneer", "Champion", "Camel Rider", "Heavy Camel Rider", "Fast Fire Ship", "Cannon Galleon",
                     "Elite Cannon Galleon", "Onager", "Siege Onager", "Heavy Scorpion", "Bombard Cannon"],
                 ["Shipwright", "Guard Tower", "Keep", "Bombard Tower", "Redemption", "Herbal Medicine",
                     "Block Printing", "Theocracy", "Hoardings", "Ring Archer Armor", "Plate Mail Armor",
@@ -125,9 +125,9 @@ function civ(name, tree) {
             unique(["Kamayuk", "Elite Kamayuk", "Andean Sling", "Couriers"], "meso_");
             break;
         case "Indians":
-            enable([], ["Imperial Camel"], []);
+            enable([], ["Imperial Camel Rider"], []);
             disable(["Keep", "Bombard Tower"],
-                ["Arbalest", "Knight", "Cavalier", "Paladin", "Fast Fire Ship", "Heavy Scorpion", "Siege Ram",
+                ["Arbalester", "Knight", "Cavalier", "Paladin", "Fast Fire Ship", "Heavy Scorpion", "Siege Ram",
                     "Siege Onager"],
                 ["Shipwright", "Keep", "Bombard Tower", "Atonement", "Heresy", "Sappers", "Plate Mail Armor",
                     "Architecture", "Arrowslits", "Treadmill Crane", "Crop Rotation"]);
@@ -136,14 +136,14 @@ function civ(name, tree) {
         case "Italians":
             enable([], ["Condottiero"], []);
             disable([],
-                ["Heavy Cav Archer", "Halberdier", "Camel", "Heavy Camel", "Paladin", "Heavy Demo Ship",
+                ["Heavy Cav Archer", "Halberdier", "Camel Rider", "Heavy Camel Rider", "Paladin", "Heavy Demo Ship",
                     "Heavy Scorpion", "Siege Ram", "Siege Onager"],
                 ["Parthian Tactics", "Heresy", "Sappers", "Siege Engineers", "Gold Shaft Mining"]);
             unique(["Genoese Crossbowman", "Elite Genoese Crossbowman", "Pavise", "Silk Road"]);
             break;
         case "Japanese":
             disable(["Bombard Tower",],
-                ["Hussar", "Camel", "Heavy Camel", "Paladin", "Heavy Demo Ship", "Siege Ram", "Siege Onager",
+                ["Hussar", "Camel Rider", "Heavy Camel Rider", "Paladin", "Heavy Demo Ship", "Siege Ram", "Siege Onager",
                     "Bombard Cannon"],
                 ["Bombard Tower", "Heresy", "Hoardings", "Sappers", "Plate Barding Armor", "Architecture",
                     "Heated Shot", "Stone Shaft Mining", "Guilds", "Crop Rotation"]);
@@ -152,7 +152,7 @@ function civ(name, tree) {
         case "Khmer":
             enable([], ["Battle Elephant", "Elite Battle Elephant"], []);
             disable(["Bombard Tower"],
-                ["Champion", "Camel", "Heavy Camel", "Paladin", "Heavy Demo Ship", "Siege Onager"],
+                ["Champion", "Camel Rider", "Heavy Camel Rider", "Paladin", "Heavy Demo Ship", "Siege Onager"],
                 ["Thumb Ring", "Squires", "Bombard Tower", "Atonement", "Heresy", "Block Printing", "Shipwright",
                     "Plate Mail Armor", "Arrowslits", "Two-Man Saw", "Guilds"]);
             unique(["Ballista Elephant", "Elite Ballista Elephant", "Tusk Swords", "Double Crossbow"], "asian_");
@@ -160,7 +160,7 @@ function civ(name, tree) {
         case "Koreans":
             enable([], ["Turtle Ship", "Elite Turtle Ship"], []);
             disable([],
-                ["Camel", "Heavy Camel", "Paladin", "Elite Cannon Galleon", "Demolition Raft", "Demolition Ship",
+                ["Camel Rider", "Heavy Camel Rider", "Paladin", "Elite Cannon Galleon", "Demolition Raft", "Demolition Ship",
                     "Heavy Demo Ship", "Siege Ram", "Heavy Scorpion"],
                 ["Parthian Tactics", "Bloodlines", "Redemption", "Atonement", "Heresy", "Illumination", "Hoardings",
                     "Sappers", "Blast Furnace", "Plate Barding Armor", "Crop Rotation"]);
@@ -168,14 +168,14 @@ function civ(name, tree) {
             break;
         case "Lithuanians":
             disable([],
-                ["Arbalest", "Camel", "Heavy Camel", "Siege Ram", "Siege Onager", "Heavy Scorpion", "Heavy Demo Ship"],
+                ["Arbalester", "Camel Rider", "Heavy Camel Rider", "Siege Ram", "Siege Onager", "Heavy Scorpion", "Heavy Demo Ship"],
                 ["Parthian Tactics", "Plate Mail Armor", "Shipwright", "Siege Engineers", "Arrowslits", "Sappers",
                     "Gold Shaft Mining"]);
             unique(["Leitis", "Elite Leitis", "Hill Forts", "Tower Shields"], "");
             break;
         case "Magyars":
             disable(["Keep", "Bombard Tower", "Fortified Wall"],
-                ["Hand Cannoneer", "Camel", "Heavy Camel", "Elite Cannon Galleon", "Heavy Demo Ship", "Siege Ram",
+                ["Hand Cannoneer", "Camel Rider", "Heavy Camel Rider", "Elite Cannon Galleon", "Heavy Demo Ship", "Siege Ram",
                     "Siege Onager", "Bombard Cannon"],
                 ["Squires", "Keep", "Bombard Tower", "Fortified Wall", "Redemption", "Atonement",
                     "Faith", "Plate Mail Armor", "Architecture", "Arrowslits", "Stone Shaft Mining", "Guilds"]);
@@ -184,7 +184,7 @@ function civ(name, tree) {
         case "Malay":
             enable([], ["Battle Elephant", "Elite Battle Elephant"], []);
             disable(["Fortified Wall"],
-                ["Hand Cannoneer", "Heavy Cav Archer", "Champion", "Hussar", "Camel", "Heavy Camel", "Paladin",
+                ["Hand Cannoneer", "Heavy Cav Archer", "Champion", "Hussar", "Camel Rider", "Heavy Camel Rider", "Paladin",
                     "Heavy Demo Ship", "Siege Ram", "Siege Onager",],
                 ["Parthian Tactics", "Bloodlines", "Fortified Wall", "Fervor", "Theocracy", "Hoardings",
                     "Chain Barding Armor", "Plate Barding Armor", "Architecture", "Arrowslits", "Treadmill Crane",
@@ -217,7 +217,7 @@ function civ(name, tree) {
             break;
         case "Persians":
             disable(["Fortified Wall", "Keep", "Bombard Tower"],
-                ["Arbalest", "Two-Handed Swordsman", "Champion", "Siege Onager"],
+                ["Arbalester", "Two-Handed Swordsman", "Champion", "Siege Onager"],
                 ["Shipwright", "Fortified Wall", "Keep", "Bombard Tower", "Redemption", "Illumination", "Atonement",
                     "Heresy", "Sanctity", "Bracer", "Siege Engineers", "Arrowslits", "Treadmill Crane"]);
             unique(["War Elephant", "Elite War Elephant", "Kamandaran", "Mahouts"], "african_");
@@ -225,7 +225,7 @@ function civ(name, tree) {
         case "Portuguese":
             enable(["Feitoria"], ["Caravel", "Elite Caravel"], []);
             disable([],
-                ["Heavy Cav Archer", "Hussar", "Camel", "Heavy Camel", "Paladin", "Fast Fire Ship", "Siege Ram",
+                ["Heavy Cav Archer", "Hussar", "Camel Rider", "Heavy Camel Rider", "Paladin", "Fast Fire Ship", "Siege Ram",
                     "Siege Onager", "Heavy Scorpion"],
                 ["Parthian Tactics", "Squires", "Shipwright", "Illumination", "Hoardings", "Arrowslits",
                     "Gold Shaft Mining"]);
@@ -240,7 +240,7 @@ function civ(name, tree) {
             break;
         case "Slavs":
             disable(["Keep", "Bombard Tower"],
-                ["Arbalest", "Hand Cannoneer", "Camel", "Heavy Camel", "Paladin", "Elite Cannon Galleon",
+                ["Arbalester", "Hand Cannoneer", "Camel Rider", "Heavy Camel Rider", "Paladin", "Elite Cannon Galleon",
                     "Heavy Demo Ship", "Bombard Cannon"],
                 ["Thumb Ring", "Parthian Tactics", "Shipwright", "Keep", "Bombard Tower", "Heresy", "Bracer",
                     "Architecture", "Arrowslits", "Heated Shot", "Stone Shaft Mining", "Guilds"]);
@@ -249,7 +249,7 @@ function civ(name, tree) {
         case "Spanish":
             enable([], ["Missionary"], []);
             disable([],
-                ["Crossbowman", "Arbalest", "Camel", "Heavy Camel", "Siege Onager", "Heavy Scorpion"],
+                ["Crossbowman", "Arbalester", "Camel Rider", "Heavy Camel Rider", "Siege Onager", "Heavy Scorpion"],
                 ["Parthian Tactics", "Siege Engineers", "Heated Shot", "Treadmill Crane", "Gold Shaft Mining",
                     "Crop Rotation"]);
             unique(["Conquistador", "Elite Conquistador", "Inquisition", "Supremacy"]);
@@ -257,14 +257,14 @@ function civ(name, tree) {
         case "Tatars":
             enable([], ["Steppe Lancer", "Elite Steppe Lancer"], []);
             disable(["Keep"],
-                ["Arbalest", "Champion", "Halberdier", "Paladin", "Siege Onager", "Bombard Cannon", "Heavy Demo Ship"],
+                ["Arbalester", "Champion", "Halberdier", "Paladin", "Siege Onager", "Bombard Cannon", "Heavy Demo Ship"],
                 ["Chain Mail Armor", "Plate Mail Armor", "Shipwright", "Architecture", "Keep", "Arrowslits",
                     "Hoardings", "Redemption", "Heresy", "Sanctity", "Faith", "Theocracy", "Stone Shaft Mining", "Two-Man Saw"]);
             unique(["Keshik", "Elite Keshik", "Silk Armor", "Timurid Siegecraft"]);
             break;
         case "Teutons":
             disable([],
-                ["Arbalest", "Heavy Cav Archer", "Light Cavalry", "Hussar", "Camel", "Heavy Camel",
+                ["Arbalester", "Heavy Cav Archer", "Light Cavalry", "Hussar", "Camel Rider", "Heavy Camel Rider",
                     "Elite Cannon Galleon", "Siege Ram"],
                 ["Thumb Ring", "Parthian Tactics", "Husbandry", "Dry Dock", "Shipwright", "Bracer",
                     "Architecture", "Gold Shaft Mining"]);
@@ -272,7 +272,7 @@ function civ(name, tree) {
             break;
         case "Turks":
             disable([],
-                ["Arbalest", "Elite Skirmisher", "Pikeman", "Halberdier", "Paladin", "Fast Fire Ship", "Onager",
+                ["Arbalester", "Elite Skirmisher", "Pikeman", "Halberdier", "Paladin", "Fast Fire Ship", "Onager",
                     "Siege Onager"],
                 ["Herbal Medicine", "Illumination", "Block Printing", "Stone Shaft Mining", "Crop Rotation",
                     "Siege Engineers"]);
@@ -281,7 +281,7 @@ function civ(name, tree) {
         case "Vietnamese":
             enable([], ["Battle Elephant", "Elite Battle Elephant", "Imperial Skirmisher"], []);
             disable([],
-                ["Hand Cannoneer", "Hussar", "Paladin", "Camel", "Heavy Camel", "Fast Fire Ship", "Siege Ram",
+                ["Hand Cannoneer", "Hussar", "Paladin", "Camel Rider", "Heavy Camel Rider", "Fast Fire Ship", "Siege Ram",
                     "Siege Onager", "Heavy Scorpion",],
                 ["Parthian Tactics", "Shipwright", "Redemption", "Heresy", "Fervor", "Blast Furnace",
                     "Masonry", "Architecture", "Gold Shaft Mining"]);
@@ -290,7 +290,7 @@ function civ(name, tree) {
         case "Vikings":
             enable([], ["Longboat", "Elite Longboat"], []);
             disable(["Keep", "Bombard Tower"],
-                ["Hand Cannoneer", "Heavy Cav Archer", "Halberdier", "Hussar", "Camel", "Heavy Camel", "Paladin",
+                ["Hand Cannoneer", "Heavy Cav Archer", "Halberdier", "Hussar", "Camel Rider", "Heavy Camel Rider", "Paladin",
                     "Fire Galley", "Fire Ship", "Fast Fire Ship", "Siege Onager", "Bombard Cannon"],
                 ["Parthian Tactics", "Bloodlines", "Husbandry", "Shipwright", "Keep", "Bombard Tower", "Redemption",
                     "Herbal Medicine", "Sanctity", "Illumination", "Theocracy", "Plate Barding Armor",

@@ -335,7 +335,7 @@ function getDefaultTree() {
     archerylane.rows.castle_1.push(unit("Cavalry Archer"));
     archerylane.rows.castle_1.push(uniqueunit("Genitour"));
     archerylane.rows.castle_1.push(tech("Thumb Ring"));
-    archerylane.rows.imperial_1.push(unit("Arbalest"));
+    archerylane.rows.imperial_1.push(unit("Arbalester"));
     archerylane.rows.imperial_1.push(uniqueunit("Imperial Skirmisher"));
     archerylane.rows.imperial_1.push(unit("Hand Cannoneer"));
     archerylane.rows.imperial_1.push(unit("Heavy Cav Archer"));
@@ -370,16 +370,16 @@ function getDefaultTree() {
     stablelane.rows.feudal_2.push(tech("Bloodlines"));
     stablelane.rows.castle_1.push(unit("Light Cavalry"));
     stablelane.rows.castle_1.push(unit("Knight"));
-    stablelane.rows.castle_1.push(unit("Camel"));
+    stablelane.rows.castle_1.push(unit("Camel Rider"));
     stablelane.rows.castle_1.push(unit("Battle Elephant"));
     stablelane.rows.castle_1.push(unit("Steppe Lancer"));
     stablelane.rows.castle_1.push(tech("Husbandry"));
     stablelane.rows.imperial_1.push(unit("Hussar"));
     stablelane.rows.imperial_1.push(unit("Cavalier"));
-    stablelane.rows.imperial_1.push(unit("Heavy Camel"));
+    stablelane.rows.imperial_1.push(unit("Heavy Camel Rider"));
     stablelane.rows.imperial_1.push(unit("Elite Battle Elephant"));
     stablelane.rows.imperial_1.push(unit("Elite Steppe Lancer"));
-    stablelane.rows.imperial_2.push(uniqueunit("Imperial Camel"));
+    stablelane.rows.imperial_2.push(uniqueunit("Imperial Camel Rider"));
     stablelane.rows.imperial_2.push(unit("Paladin"));
     tree.lanes.push(stablelane);
 
@@ -616,7 +616,7 @@ function getConnections() {
     let connections = [
         [b("Archery Range"), u("Archer")],
         [u("Archer"), u("Crossbowman")],
-        [u("Crossbowman"), u("Arbalest")],
+        [u("Crossbowman"), u("Arbalester")],
         [b("Archery Range"), u("Skirmisher")],
         [u("Skirmisher"), u("Elite Skirmisher")],
         [b("Archery Range"), u("Cavalry Archer")],
@@ -641,8 +641,8 @@ function getConnections() {
         [u("Scout Cavalry"), u("Light Cavalry")],
         [u("Light Cavalry"), u("Hussar")],
         [b("Stable"), t("Bloodlines")],
-        [b("Stable"), u("Camel")],
-        [u("Camel"), u("Heavy Camel")],
+        [b("Stable"), u("Camel Rider")],
+        [u("Camel Rider"), u("Heavy Camel Rider")],
         [b("Stable"), u("Battle Elephant")],
         [u("Battle Elephant"), u("Elite Battle Elephant")],
         [b("Stable"), u("Steppe Lancer")],
@@ -743,7 +743,7 @@ function getConnections() {
         [t("Heavy Plow"), t("Crop Rotation")],
         [b("Mill"), b("Farm")],
         [u("Genitour"), u("Elite Genitour")],
-        [u("Heavy Camel"), u("Imperial Camel")],
+        [u("Heavy Camel Rider"), u("Imperial Camel Rider")],
         [u("Turtle Ship"), u("Elite Turtle Ship")],
         [u("Longboat"), u("Elite Longboat")],
         [u("Elite Skirmisher"), u("Imperial Skirmisher")],

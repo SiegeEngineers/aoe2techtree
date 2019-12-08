@@ -2146,7 +2146,7 @@
                 "Range": 5,
                 "internal_name": "ARAMBAI"
             },
-            "Arbalest": {
+            "Arbalester": {
                 "Attack": 6,
                 "Cost": {
                     "Gold": 45,
@@ -2156,7 +2156,7 @@
                 "HP": 40,
                 "ID": 492,
                 "MeleeArmor": 0,
-                "Name": "Arbalest",
+                "Name": "Arbalester",
                 "PierceArmor": 0,
                 "Range": 5,
                 "internal_name": "ACOAR"
@@ -2266,21 +2266,6 @@
                 "Range": 0,
                 "internal_name": "BOYAR"
             },
-            "Camel": {
-                "Attack": 6,
-                "Cost": {
-                    "Food": 55,
-                    "Gold": 60
-                },
-                "GarrisonCapacity": 1,
-                "HP": 100,
-                "ID": 329,
-                "MeleeArmor": 0,
-                "Name": "Camel",
-                "PierceArmor": 0,
-                "Range": 0,
-                "internal_name": "CVLRY"
-            },
             "Camel Archer": {
                 "Attack": 7,
                 "Cost": {
@@ -2295,6 +2280,21 @@
                 "PierceArmor": 1,
                 "Range": 4,
                 "internal_name": "CAMAR"
+            },
+            "Camel Rider": {
+                "Attack": 6,
+                "Cost": {
+                    "Food": 55,
+                    "Gold": 60
+                },
+                "GarrisonCapacity": 1,
+                "HP": 100,
+                "ID": 329,
+                "MeleeArmor": 0,
+                "Name": "Camel Rider",
+                "PierceArmor": 0,
+                "Range": 0,
+                "internal_name": "CVLRY"
             },
             "Cannon Galleon": {
                 "Attack": 35,
@@ -3300,7 +3300,7 @@
                 "Range": 7,
                 "internal_name": "HCANR"
             },
-            "Heavy Camel": {
+            "Heavy Camel Rider": {
                 "Attack": 7,
                 "Cost": {
                     "Food": 55,
@@ -3310,7 +3310,7 @@
                 "HP": 120,
                 "ID": 330,
                 "MeleeArmor": 0,
-                "Name": "Heavy Camel",
+                "Name": "Heavy Camel Rider",
                 "PierceArmor": 0,
                 "Range": 0,
                 "internal_name": "HCLRY"
@@ -3389,7 +3389,7 @@
                 "Range": 0,
                 "internal_name": "HUSSAR"
             },
-            "Imperial Camel": {
+            "Imperial Camel Rider": {
                 "Attack": 9,
                 "Cost": {
                     "Food": 55,
@@ -3399,7 +3399,7 @@
                 "HP": 140,
                 "ID": 207,
                 "MeleeArmor": 0,
-                "Name": "Imperial Camel",
+                "Name": "Imperial Camel Rider",
                 "PierceArmor": 0,
                 "Range": 0,
                 "internal_name": "SHCLRY"
