@@ -15,7 +15,7 @@ function civ(name, tree) {
         case "Berbers":
             enable([], ["Genitour", "Elite Genitour"], []);
             disable(["Bombard Tower", "Keep"],
-                ["Halberdier", "Paladin", "Siege Ram", "Siege Onager"],
+                ["Arbalester", "Halberdier", "Paladin", "Siege Ram", "Siege Onager"],
                 ["Parthian Tactics", "Shipwright", "Sanctity", "Block Printing", "Sappers", "Architecture",
                     "Bombard Tower", "Keep", "Two-Man Saw"]);
             unique(["Camel Archer", "Elite Camel Archer", "Kasbah", "Maghrabi Camels"], "african_");
