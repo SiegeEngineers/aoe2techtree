@@ -572,9 +572,8 @@ function getDefaultTree() {
 
     let marketlane = new Lane();
     marketlane.rows.feudal_1.push(building("Market"));
-    marketlane.rows.feudal_2.push(tech("Cartography"));
-    marketlane.rows.feudal_2.push(tech("Coinage"));
     marketlane.rows.feudal_2.push(unit("Trade Cart"));
+    marketlane.rows.feudal_2.push(tech("Coinage"));
     marketlane.rows.castle_1.push(tech("Caravan"));
     marketlane.rows.castle_1.push(tech("Banking"));
     marketlane.rows.imperial_1.push(tech("Guilds"));
@@ -732,8 +731,6 @@ function getConnections() {
         [b("Lumber Camp"), t("Double-Bit Axe")],
         [t("Double-Bit Axe"), t("Bow Saw")],
         [t("Bow Saw"), t("Two-Man Saw")],
-        [b("Market"), t("Cartography")],
-        [t("Cartography"), t("Caravan")],
         [b("Market"), t("Coinage")],
         [t("Coinage"), t("Banking")],
         [b("Market"), u("Trade Cart")],
