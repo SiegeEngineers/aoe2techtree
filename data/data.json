@@ -497,6 +497,20 @@
                 "Range": 0,
                 "internal_name": "ARRG"
             },
+            "Barracks": {
+                "Attack": 0,
+                "Cost": {
+                    "Wood": 175
+                },
+                "GarrisonCapacity": 10,
+                "HP": 1200,
+                "ID": 12,
+                "MeleeArmor": 0,
+                "Name": "Barracks",
+                "PierceArmor": 7,
+                "Range": 0,
+                "internal_name": "Barracks Age1"
+            },
             "Blacksmith": {
                 "Attack": 0,
                 "Cost": {

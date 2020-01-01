@@ -6,7 +6,7 @@ import re
 import json
 
 BUILDINGS = {
-    12: {"internal_name": "BRKS", "Name": "Barracks"},
+    12: {"internal_name": "Barracks Age1", "Name": "Barracks"},
     45: {"internal_name": "DOCK", "Name": "Dock"},
     598: {"internal_name": "WCTWX", "Name": "Outpost"},
     72: {"internal_name": "WALL", "Name": "Palisade Wall"},
