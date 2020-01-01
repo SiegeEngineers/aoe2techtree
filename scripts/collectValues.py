@@ -175,6 +175,14 @@ UNITS = {
     1131: {"internal_name": "ERATAN", "Name": "Elite Rattan Archer"},
     692: {"internal_name": "VBRSK", "Name": "Berserk"},
     694: {"internal_name": "UVBRK", "Name": "Elite Berserk"},
+    1254: {"internal_name": "KONNIK", "Name": "Konnik"},
+    1255: {"internal_name": "EKONNIK", "Name": "Elite Konnik"},
+    1231: {"internal_name": "KIPCHAK", "Name": "Kipchak"},
+    1233: {"internal_name": "EKIPCHAK", "Name": "Elite Kipchak"},
+    1234: {"internal_name": "LEITIS", "Name": "Leitis"},
+    1236: {"internal_name": "ELEITIS", "Name": "Elite Leitis"},
+    1228: {"internal_name": "KESHIK", "Name": "Keshik"},
+    1230: {"internal_name": "EKESHIK", "Name": "Elite Keshik"},
 }
 
 TECHS = {
@@ -317,6 +325,14 @@ TECHS = {
     629: {"internal_name": "Vietnamese UT", "Name": "Paper Money"},
     463: {"internal_name": "Viking Chieftains", "Name": "Chieftains"},
     49: {"internal_name": "Viking Berserkergang", "Name": "Berserkergang"},
+    685: {"internal_name": "Khmer UT", "Name": "Stirrups"},
+    686: {"internal_name": "Khmer UT", "Name": "Bagains"},
+    689: {"internal_name": "Burmese UT", "Name": "Steppe Husbandry"},
+    690: {"internal_name": "Burmese UT", "Name": "Cuman Mercenaries"},
+    691: {"internal_name": "Vietnamese UT", "Name": "Hill Forts"},
+    692: {"internal_name": "Vietnamese UT", "Name": "Tower Shields"},
+    687: {"internal_name": "Malay UT", "Name": "Silk Armor"},
+    688: {"internal_name": "Malay UT", "Name": "Timurid Siegecraft"},
 }
 
 

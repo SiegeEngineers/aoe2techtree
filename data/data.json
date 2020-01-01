@@ -1003,6 +1003,15 @@
                 "Name": "Atonement",
                 "internal_name": "Atonement"
             },
+            "Bagains": {
+                "Cost": {
+                    "Food": 900,
+                    "Gold": 450
+                },
+                "ID": 686,
+                "Name": "Bagains",
+                "internal_name": "Khmer UT"
+            },
             "Ballistics": {
                 "Cost": {
                     "Gold": 175,
@@ -1244,6 +1253,15 @@
                 "ID": 12,
                 "Name": "Crop Rotation",
                 "internal_name": "Crop rotation"
+            },
+            "Cuman Mercenaries": {
+                "Cost": {
+                    "Food": 650,
+                    "Gold": 400
+                },
+                "ID": 690,
+                "Name": "Cuman Mercenaries",
+                "internal_name": "Burmese UT"
             },
             "Double Crossbow": {
                 "Cost": {
@@ -1491,6 +1509,15 @@
                 "ID": 439,
                 "Name": "Heresy",
                 "internal_name": "Heresy"
+            },
+            "Hill Forts": {
+                "Cost": {
+                    "Food": 250,
+                    "Gold": 250
+                },
+                "ID": 691,
+                "Name": "Hill Forts",
+                "internal_name": "Vietnamese UT"
             },
             "Hoardings": {
                 "Cost": {
@@ -1916,6 +1943,15 @@
                 "Name": "Siege Engineers",
                 "internal_name": "Siege Engineers"
             },
+            "Silk Armor": {
+                "Cost": {
+                    "Gold": 300,
+                    "Wood": 400
+                },
+                "ID": 687,
+                "Name": "Silk Armor",
+                "internal_name": "Malay UT"
+            },
             "Silk Road": {
                 "Cost": {
                     "Food": 500,
@@ -1949,6 +1985,24 @@
                 "ID": 215,
                 "Name": "Squires",
                 "internal_name": "Squires"
+            },
+            "Steppe Husbandry": {
+                "Cost": {
+                    "Food": 200,
+                    "Wood": 300
+                },
+                "ID": 689,
+                "Name": "Steppe Husbandry",
+                "internal_name": "Burmese UT"
+            },
+            "Stirrups": {
+                "Cost": {
+                    "Food": 400,
+                    "Gold": 200
+                },
+                "ID": 685,
+                "Name": "Stirrups",
+                "internal_name": "Khmer UT"
             },
             "Stone Mining": {
                 "Cost": {
@@ -2039,6 +2093,15 @@
                 "Name": "Tigui",
                 "internal_name": "Malian UT"
             },
+            "Timurid Siegecraft": {
+                "Cost": {
+                    "Gold": 400,
+                    "Wood": 500
+                },
+                "ID": 688,
+                "Name": "Timurid Siegecraft",
+                "internal_name": "Malay UT"
+            },
             "Torsion Engines": {
                 "Cost": {
                     "Food": 1000,
@@ -2047,6 +2110,15 @@
                 "ID": 575,
                 "Name": "Torsion Engines",
                 "internal_name": "Ethiopian UT"
+            },
+            "Tower Shields": {
+                "Cost": {
+                    "Food": 800,
+                    "Gold": 200
+                },
+                "ID": 692,
+                "Name": "Tower Shields",
+                "internal_name": "Vietnamese UT"
             },
             "Town Patrol": {
                 "Cost": {
@@ -2865,6 +2937,66 @@
                 "Range": 0,
                 "internal_name": "EKARAM"
             },
+            "Elite Keshik": {
+                "Attack": 14,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 80
+                },
+                "GarrisonCapacity": 0,
+                "HP": 130,
+                "ID": 1230,
+                "MeleeArmor": 1,
+                "Name": "Elite Keshik",
+                "PierceArmor": 3,
+                "Range": 0,
+                "internal_name": "EKESHIK"
+            },
+            "Elite Kipchak": {
+                "Attack": 5,
+                "Cost": {
+                    "Gold": 35,
+                    "Wood": 60
+                },
+                "GarrisonCapacity": 0,
+                "HP": 50,
+                "ID": 1233,
+                "MeleeArmor": 0,
+                "Name": "Elite Kipchak",
+                "PierceArmor": 0,
+                "Range": 4,
+                "internal_name": "EKIPCHAK"
+            },
+            "Elite Konnik": {
+                "Attack": 14,
+                "Cost": {
+                    "Food": 60,
+                    "Gold": 70
+                },
+                "GarrisonCapacity": 0,
+                "HP": 130,
+                "ID": 1255,
+                "MeleeArmor": 2,
+                "Name": "Elite Konnik",
+                "PierceArmor": 2,
+                "Range": 0,
+                "internal_name": "EKONNIK"
+            },
+            "Elite Leitis": {
+                "Attack": 14,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 80
+                },
+                "GarrisonCapacity": 0,
+                "HP": 130,
+                "ID": 1236,
+                "MeleeArmor": 2,
+                "Name": "Elite Leitis",
+                "PierceArmor": 2,
+                "Range": 0,
+                "internal_name": "ELEITIS"
+            },
             "Elite Longboat": {
                 "Attack": 8,
                 "Cost": {
@@ -3493,6 +3625,36 @@
                 "Range": 0,
                 "internal_name": "KARAM"
             },
+            "Keshik": {
+                "Attack": 12,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 80
+                },
+                "GarrisonCapacity": 0,
+                "HP": 100,
+                "ID": 1228,
+                "MeleeArmor": 1,
+                "Name": "Keshik",
+                "PierceArmor": 2,
+                "Range": 0,
+                "internal_name": "KESHIK"
+            },
+            "Kipchak": {
+                "Attack": 4,
+                "Cost": {
+                    "Gold": 35,
+                    "Wood": 60
+                },
+                "GarrisonCapacity": 0,
+                "HP": 45,
+                "ID": 1231,
+                "MeleeArmor": 0,
+                "Name": "Kipchak",
+                "PierceArmor": 0,
+                "Range": 4,
+                "internal_name": "KIPCHAK"
+            },
             "Knight": {
                 "Attack": 10,
                 "Cost": {
@@ -3507,6 +3669,36 @@
                 "PierceArmor": 2,
                 "Range": 0,
                 "internal_name": "KNGHT"
+            },
+            "Konnik": {
+                "Attack": 12,
+                "Cost": {
+                    "Food": 60,
+                    "Gold": 70
+                },
+                "GarrisonCapacity": 0,
+                "HP": 110,
+                "ID": 1254,
+                "MeleeArmor": 2,
+                "Name": "Konnik",
+                "PierceArmor": 1,
+                "Range": 0,
+                "internal_name": "KONNIK"
+            },
+            "Leitis": {
+                "Attack": 12,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 80
+                },
+                "GarrisonCapacity": 0,
+                "HP": 100,
+                "ID": 1234,
+                "MeleeArmor": 1,
+                "Name": "Leitis",
+                "PierceArmor": 2,
+                "Range": 0,
+                "internal_name": "LEITIS"
             },
             "Light Cavalry": {
                 "Attack": 7,
