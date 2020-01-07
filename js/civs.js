@@ -40,7 +40,7 @@ function civ(name, tree) {
             break;
         case "Burmese":
             enable([], ["Battle Elephant", "Elite Battle Elephant"], []);
-            disable([],
+            disable(["Bombard Tower"],
                 ["Arbalester", "Hand Cannoneer", "Camel Rider", "Heavy Camel Rider", "Paladin", "Fast Fire Ship", "Heavy Demo Ship",
                     "Siege Ram", "Siege Onager"],
                 ["Thumb Ring", "Shipwright", "Heresy", "Hoardings", "Sappers", "Leather Archer Armor",
@@ -99,7 +99,7 @@ function civ(name, tree) {
         case "Goths":
             disable(["Guard Tower", "Keep", "Bombard Tower", "Gate", "Stone Wall", "Fortified Wall"],
                 ["Arbalester", "Camel Rider", "Heavy Camel Rider", "Paladin", "Elite Cannon Galleon", "Siege Ram", "Siege Onager"],
-                ["Thumb Ring", "Parthian Tactics", "Dry Dock", "Keep", "Bombard Tower", "Fortified Wall", "Redemption",
+                ["Thumb Ring", "Parthian Tactics", "Dry Dock", "Guard Tower", "Keep", "Bombard Tower", "Fortified Wall", "Redemption",
                     "Atonement", "Block Printing", "Heresy", "Hoardings", "Plate Barding Armor", "Plate Mail Armor",
                     "Siege Engineers", "Treadmill Crane", "Arrowslits", "Gold Shaft Mining", "Supplies"]);
             unique(["Huskarl", "Elite Huskarl", "Anarchy", "Perfusion"]);
