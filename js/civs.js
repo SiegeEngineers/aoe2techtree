@@ -78,7 +78,7 @@ function civ(name, tree) {
                     "Elite Cannon Galleon", "Heavy Demo Ship"],
                 ["Bracer", "Dry Dock", "Shipwright", "Fortified Wall", "Guard Tower", "Treadmill Crane", "Architecture",
                     "Siege Engineers", "Keep", "Arrowslits", "Bombard Tower", "Illumination", "Block Printing", "Theocracy",
-                    "Stone Shaft Mining"]);
+                    "Stone Shaft Mining", "Husbandry"]);
             unique(["Kipchak", "Elite Kipchak", "Steppe Husbandry", "Cuman Mercenaries"], "asian_");
             break;
         case "Ethiopians":

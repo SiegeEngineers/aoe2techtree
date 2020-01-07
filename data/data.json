@@ -39,7 +39,7 @@
     "key_value": {
         "26009": "Create <b>Steppe Lancer</b> (\u2039cost\u203a) <br>\nLight cavalry unit with increased attack range. Strong in groups. Weak vs. Camel Riders and archers.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed, to Elite Steppe Lancer 900F, 550G (Stable); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26010": "Create <b>Elite Steppe Lancer</b> (\u2039cost\u203a) <br>\nLight cavalry unit with increased attack range. Strong in groups. Weak vs. Camel Riders and archers.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
-        "26011": "Create <b>Iroquios Warrior</b> (\u2039cost\u203a) <br>\nExceptionally quick infantry. Strong vs. buildings. <i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26011": "Create <b>Iroquois Warrior</b> (\u2039cost\u203a) <br>\nExceptionally quick infantry. Strong vs. buildings. <i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26016": "Create <b>Ninja</b> (\u2039cost\u203a) <br>\nLight and quick infantry. Strong vs. heroes.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26039": "Create <b>Mounted Samurai</b> (\u2039cost\u203a) <br>\nCavalry with fast attack. Strong vs. unique units. <i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26040": "Create <b>Xolotl Warrior</b> (\u2039cost\u203a) <br>\nMesoamerican cavalry unit. Strong vs. infantry and siege. Weak vs. Pikemen and Camel Riders. <i> Upgrades: attack (Blacksmith); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -58,6 +58,7 @@
         "26089": "Build <b>Trade Cog</b> (\u2039cost\u203a) <br>\nTrade unit used for generating gold at another player's Dock. To trade, click the Trade Cog then right-click another player's Dock. Will return with gold to your Dock.<i> Upgrades: generate more gold (Market); armor, cost (Dock); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26090": "Build <b>Fishing Ship</b> (\u2039cost\u203a) <br>\nGathers food from fish and Fish Traps. Builds Fish Traps.<i> Upgrades: armor, cost, speed, efficiency (Dock); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26091": "Build <b>War Galley</b> (\u2039cost\u203a) <br>\nAll-purpose warship with ranged attack. Weak vs. Fire Ships.<i> Upgrades: armor, cost, speed, to Galleon 400F, 315W (Dock); attack, range (Blacksmith); attack, accuracy (University); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26092": "Build <b>Junk</b> (\u2039cost\u203a) <br>\nTrade unit used for generating gold at another player's Dock. To trade, click the Junk then right-click another player's Dock. Will return with gold to your Dock.<i> Upgrades: generate more gold (Market); armor, cost (Dock); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26093": "Build <b>Bombard Cannon</b> (\u2039cost\u203a) <br>\nSiege weapon with long range. Strong vs. buildings and siege weapons. Weak vs. melee units.<i> Upgrades: attack, range (University); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26094": "Build <b>Battering Ram</b> (\u2039cost\u203a) <br>\nAnti-building siege weapon. Resistant to most ranged attacks. Garrisoned infantry increase speed and attack.<i> Upgrades: attack (University); to Capped Ram 300F (Siege Workshop); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a \u2039garrison\u203a",
         "26095": "Build <b>Mangonel</b> (\u2039cost\u203a) <br>\nRanged siege weapon with area of effect attack, but cannot attack enemies at close range. Strong vs. tight groups of units. Can attack ground.<i> Upgrades: attack, range (University); to Onager 800F, 500G (Siege Workshop); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -77,6 +78,11 @@
         "26112": "Create <b>Teutonic Knight</b> (\u2039cost\u203a) <br>\nTeutonic unique infantry unit. Slow and powerful. Strong vs. melee units. Weak vs. archers and Scorpions. <i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed, to Elite Teutonic Knight 1200F, 600G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26113": "Create <b>Woad Raider</b> (\u2039cost\u203a) <br>\nCeltic unique infantry unit. Fast-moving. Strong vs. infantry and siege weapons. Weak vs. archers and cavalry. <i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed, to Elite Woad Raider 1000F, 800G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26114": "Create <b>Condottiero</b> (\u2039cost\u203a) <br>\nFast anti-gunpowder infantry. Strong vs. gunpowder units. Weak vs. cavalry and archers. Trainable by Italians and their allies.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26115": "Create <b>Royal Janissary</b> (\u2039cost\u203a) <br>\nTurkish unique hand cannoneer with longer range and no minimum range. Strong vs. infantry. Weak vs. archers.<i> Upgrades: armor (Blacksmith); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26116": "Create <b>Eastern Swordsman</b> (\u2039cost\u203a) <br>\nAll-purpose infantry unit. Strong vs. buildings and infantry. Weak vs. archers at long range.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26117": "Create <b>Norse Warrior</b> (\u2039cost\u203a) <br>\nAll-purpose infantry unit. Strong vs. buildings and infantry. Weak vs. archers at long range.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26118": "Create <b>Flamethrower</b> (\u2039cost\u203a) <br>\nSiege weapon that spews fire at close range. Strong vs. buildings and melee units. Weak vs. archers at long range.<i> Upgrades: attack, range (University); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26119": "Create <b>Canoe</b> (\u2039cost\u203a) <br>\nSmall fast-moving boat that fires multiple arrows. Strong vs. land units and buildings.<i> Upgrades: armor, speed, cost (Dock); attack, range (Blacksmith); attack, accuracy (University); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26120": "Create <b>Priest</b> (\u2039cost\u203a) <br>\nConverts enemy units to your civilization. Heals friendly units (except ships and siege weapons). Strong vs. slow and non-ranged units. Weak vs. Light Cavalry and ranged units. Can collect Relics and bring them to Monasteries.<i> Upgrades: at Monastery.</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26121": "Create <b>Villager</b> (\u2039cost\u203a) <br>\nGathers resources. Builds and repairs buildings. Also repairs ships and siege weapons.<i> Upgrades: hit points, armor, efficiency (Town Center); wood resource-gathering (Lumber Camp); stone, gold resource-gathering (Mining Camp); build speed (University); attack (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26128": "Build <b>Archery Range</b> (\u2039cost\u203a) <br>\nUsed to train and upgrade archer units. <i> Upgrades: production speed (Castle); line of sight (Town Center); hit points, armor (University); more resistant to Monks (Monastery).</i>  <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a \u2039garrison\u203a",
@@ -134,6 +140,9 @@
         "26288": "Create <b>Konnik</b> (\u2039cost\u203a) <br>\nBulgarian unique cavalry unit that fights on as infantry when felled. Strong vs. infantry and archers. Weak vs. Camel Riders and Monks.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed, to Elite Konnik 1000F, 750G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26289": "Build <b>Capped Ram</b> (\u2039cost\u203a) <br>\nAnti-building siege weapon. Resistant to most ranged attacks. Garrisoned infantry increase speed and attack.<i> Upgrades: attack (University); to Siege Ram 1000F (Siege Workshop); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a \u2039garrison\u203a",
         "26290": "Create <b>Elite Konnik</b> (\u2039cost\u203a) <br>\nBulgarian unique cavalry unit that fights on as infantry when felled. Strong vs. infantry and archers. Weak vs. Camel Riders and Monks.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26303": "Create <b>Amazon Warrior</b> (\u2039cost\u203a) <br>\nFast-moving infantry unit. Strong vs. buildings and siege weapons. Weak vs. archers and cavalry. <i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26304": "Create <b>Amazon Archer</b> (\u2039cost\u203a) <br>\nFast-moving archer. Strong vs. infantry. Weak vs. cavalry.<i> Upgrades: attack, range, armor (Blacksmith); accuracy (Archery Range); attack, accuracy (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26306": "Create <b>Donkey</b> (\u2039cost\u203a) <br>\nTrade unit used for generating gold at another player's Market. To trade, click the Donkey then right-click another player's Market. Will return with gold to your Market.<i> Upgrades: generate more gold (Market); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26309": "Build <b>Galleon</b> (\u2039cost\u203a) <br>\nAll-purpose warship with ranged attack. Weak vs. Fire Ships.<i> Upgrades: armor, cost, speed (Dock); attack, range (Blacksmith); attack, accuracy (University); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26311": "Build <b>Town Center</b> (\u2039cost\u203a) <br>\nUsed to train Villagers, deposit resources, advance to the next Age, and research technologies. Units can garrison inside for protection. Archers and Villagers provide additional projectiles. Provides 5 population. Cannot be converted by enemy Monks.<i> Upgrades: line of sight (Town Center); hit points, armor, accuracy (University); attack (Blacksmith).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a \u2039garrison\u203a",
         "26313": "Create <b>Keshik</b> (\u2039cost\u203a) <br>\nTatar unique cavalry unit that generates gold when fighting other units.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed, to Elite Keshik 700F, 900G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -145,9 +154,11 @@
         "26329": "Create <b>Elite Leitis</b> (\u2039cost\u203a) <br>\nLithuanian unique cavalry unit with attack that ignores armor. Strong vs. armored units.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26344": "Build <b>House</b> (\u2039cost\u203a) <br>\nProvides 5 population each. Your current/supportable population is shown at the top of the screen.<i> Upgrades: line of sight (Town Center); hit points, armor (University); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26349": "Build <b>Krepost</b> (\u2039cost\u203a) <br>\nFortification used to train your unique unit. Unique building of the Bulgarians. Units can garrison inside for protection. Archers and Villagers shoot additional projectiles. Cannot be converted by enemy Monks.<i> Upgrades: production speed (Castle); line of sight (Town Center); hit points, armor, accuracy (University); attack, range (Blacksmith).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a \u2039garrison\u203a",
+        "26375": "Create <b>Flaming Camel</b> (\u2039cost\u203a) <br>\nDemolition camel armed with inflammable hay. Strong vs. buildings and siege units. Weak vs. archers at long range. Self-destructs when used.<i> Upgrades: creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26381": "Build <b>Trebuchet</b> (\u2039cost\u203a) <br>\nPowerful anti-building siege weapon with long range. Must be packed to move, unpacked to attack. Cannot attack enemies at close range. Strong vs. buildings. Can attack ground and destroy trees.<i> Upgrades: attack, range (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26408": "Create <b>Pikeman</b> (\u2039cost\u203a) <br>\nAnti-cavalry infantry unit. Strong vs. mounted units, especially elephants. Weak vs. archers and infantry.<i> Upgrades: attack, armor (Blacksmith); speed, to Halberdier 300F, 600G (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26409": "Create <b>Halberdier</b> (\u2039cost\u203a) <br>\nAnti-cavalry infantry unit. Strong vs. mounted units, especially elephants. Weak vs. archers and infantry.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26410": "Create <b>Heavy Pikeman</b> (\u2039cost\u203a) <br>\nAnti-cavalry infantry unit. Strong vs. mounted units, especially elephants. Weak vs. archers and infantry.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26411": "Create <b>Two-Handed Swordsman</b> (\u2039cost\u203a) <br>\nAll-purpose infantry unit. Strong vs. buildings and infantry. Weak vs. archers at long range.<i> Upgrades: attack, armor (Blacksmith); cost, speed, to Champion 750F, 350G (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26412": "Create <b>Heavy Cavalry Archer</b> (\u2039cost\u203a) <br>\nMounted archer. Strong vs. slow units at long range. Weak vs. Elite Skirmishers and units at close range.<i> Upgrades: attack, range, armor (Blacksmith); accuracy, armor (Archery Range); attack, accuracy (University); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26416": "Create <b>Camel Rider</b> (\u2039cost\u203a) <br>\nFast anti-cavalry unit. Strong vs. cavalry. Weak vs. Spearmen, Monks, and archers.<i> Upgrades: attack, armor (Blacksmith); speed, to Heavy Camel Rider 325F, 360G (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -167,6 +178,7 @@
         "26447": "Create <b>Boyar</b> (\u2039cost\u203a) <br>\nSlavic unique cavalry unit. Resistant to melee attack.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed, to Elite Boyar 1000F, 600G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a ",
         "26448": "Build <b>Onager</b> (\u2039cost\u203a) <br>\nRanged siege weapon with area of effect attack, but cannot attack enemies at close range. Strong vs. tight groups of units. Can attack ground and destroy trees.<i> Upgrades: attack, range (University); to Siege Onager 1450F, 1000G (Siege Workshop); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26449": "Create <b>Elite Boyar</b> (\u2039cost\u203a) <br>\nSlavic unique cavalry unit. Resistant to melee attack.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26450": "Create <b>Centurion</b> (\u2039cost\u203a) <br>\nHeavy cavalry unit. Strong vs. infantry. Weak vs. archers.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26451": "Create <b>Elite Cataphract</b> (\u2039cost\u203a) <br>\nByzantine unique cavalry unit. Strong vs. infantry. Weak vs. archers.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26452": "Create <b>Elite Chu Ko Nu</b> (\u2039cost\u203a) <br>\nChinese unique archer with rapid-fire attack. Strong vs. infantry. Weak vs. archers and siege weapons.<i> Upgrades: attack, range, armor (Blacksmith); accuracy (Archery Range); attack, accuracy (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26453": "Create <b>Elite Mameluke</b> (\u2039cost\u203a) <br>\nSaracen unique camel unit with ranged melee attack. Strong vs. cavalry. Weak vs. archers.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -193,6 +205,7 @@
         "26661": "Create <b>Hussar</b> (\u2039cost\u203a) <br>\nFast cavalry for scouting and raiding. Resistant to conversion. Strong vs. Monks. Weak vs. Pikemen and Camel Riders.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26667": "Create <b>Jaguar Warrior</b> (\u2039cost\u203a) <br>\nAztec unique infantry unit. Strong vs. infantry. Weak vs. cavalry and archers.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed, to Elite Jaguar Warrior 1000F, 500G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26669": "Create <b>Elite Jaguar Warrior</b> (\u2039cost\u203a) <br>\nAztec unique infantry unit. Strong vs. infantry. Weak vs. cavalry and archers.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26670": "Create <b>Legionary</b> (\u2039cost\u203a) <br>\nHeavy infantry unit. Strong vs. infantry. Weak vs. cavalry and archers.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26671": "Create <b>Eagle Warrior</b> (\u2039cost\u203a) <br>\nFast infantry for scouting and raiding. Resistant to conversion. Strong vs. Monks and archers. Weak vs. Long Swordsmen and cavalry.<i> Upgrades: attack, armor (Blacksmith); speed, to Elite Eagle Warrior 800F, 500G (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26672": "Create <b>Eagle Scout</b> (\u2039cost\u203a) <br>\nFast infantry for scouting and raiding. Resistant to conversion. Strong vs. Monks and archers. Weak vs. Men-at-Arms and cavalry.<i> Upgrades: attack, armor (Blacksmith); speed, to Eagle Warrior 200F, 200G (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26673": "Create <b>Elite Eagle Warrior</b> (\u2039cost\u203a) <br>\nFast infantry for scouting and raiding. Resistant to conversion. Strong vs. Monks and archers. Weak vs. Long Swordsmen and cavalry.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -209,7 +222,7 @@
         "26688": "Create <b>Elite Kamayuk</b> (\u2039cost\u203a) <br>\nInca unique spearman with increased attack range. Strong vs. cavalry and infantry. Weak vs. archers.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26689": "Create <b>Elite Conquistador</b> (\u2039cost\u203a) <br>\nSpanish unique mounted hand cannoneer. Strong vs. infantry. Weak vs. Pikemen, Skirmishers, and Monks.<i> Upgrades: armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26690": "Create <b>Slinger</b> (\u2039cost\u203a) <br>\nInca unique unit. Ranged anti-infantry unit that cannot attack at close range. Strong vs. infantry. Weak vs. archers and cavalry.<i> Upgrades: attack, range, armor (Blacksmith); accuracy (Archery Range); attack, accuracy (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
-        "26691": "Create <b>Missionary</b> (\u2039cost\u203a) <br>\nSpanish unique mounted monk. Converts enemy units and heals friendly units. Faster than Monk but with less sight and range. Strong vs. slow, non-ranged units. Weak vs. Light Cavalry and ranged units. Cannot collect Relics.<i> Upgrades: at Monastery.</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26691": "Create <b>Missionary</b> (\u2039cost\u203a) <br>\nSpanish unique mounted monk. Converts enemy units and heals friendly units. Faster than Monk but with less sight and range. Strong vs. slow, non-ranged units. Weak vs. Light Cavalry and ranged units. Cannot collect Relics.<i> Upgrades: at Monastery; speed, hit points (Stable).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26704": "Build <b>Sea Tower</b> (\u2039cost\u203a) <br>\nTower with a ranged attack. Units can garrison inside for protection. Archers and Villagers shoot additional projectiles.<br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26723": "Create <b>Genoese Crossbowman</b> (\u2039cost\u203a) <br>\nItalian unique archer. Strong vs. cavalry and infantry. Weak vs. archers and siege weapons.<i> Upgrades: attack, range, armor (Blacksmith); accuracy (Archery Range); attack, accuracy (University); creation speed, to Elite Genoese Crossbowman 1000F, 800G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26725": "Create <b>Elite Genoese Crossbowman</b> (\u2039cost\u203a) <br>\nItalian unique archer. Strong vs. cavalry and infantry. Weak vs. archers and siege weapons.<i> Upgrades: attack, range, armor (Blacksmith); accuracy (Archery Range); attack, accuracy (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -219,6 +232,7 @@
         "26730": "Create <b>Elite Magyar Huszar</b> (\u2039cost\u203a) <br>\nMagyar unique light cavalry unit. Strong vs. siege weapons. Weak vs. Pikemen and Camel Riders.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26731": "Build <b>Turtle Ship</b> (\u2039cost\u203a) <br>\nKorean unique ship. Slow and ironclad. Strong vs. warships and buildings.<i> Upgrades: armor, speed, cost, to Elite Turtle Ship 1000F, 800G (Dock); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26732": "Build <b>Elite Turtle Ship</b> (\u2039cost\u203a) <br>\nKorean unique ship. Slow and ironclad. Strong vs. warships and buildings.<i> Upgrades: armor, speed, cost (Dock); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26739": "Build <b>Dragon Ship</b> (\u2039cost\u203a) <br>\nWarship that spews fire at close range. Strong vs. War Galleys. Weak vs. Demolition Ships.<i> Upgrades: armor, speed, cost (Dock); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "28008": "Research <b>Town Watch</b> (\u2039cost\u203a) <br>\nIncreases the line of sight of all buildings by +4 so they see enemies from a longer distance.",
         "28012": "Research <b>Crop Rotation</b> (\u2039cost\u203a) <br>\nFarms produce +175 food so they last longer before you must rebuild them.",
         "28013": "Research <b>Heavy Plow</b> (\u2039cost\u203a) <br>\nFarms produce +125 food so they last longer before you must rebuild them. Farmers carry +1 food each trip.",
@@ -355,7 +369,7 @@
         "28305": "Upgrade to <b>Elite Kipchak</b> (\u2039cost\u203a) <br>\nUpgrades your Kipchak and lets you create Elite Kipchak, which are stronger.",
         "28306": "Upgrade to <b>Elite Leitis</b> (\u2039cost\u203a) <br>\nUpgrades your Leitis and lets you create Elite Leitis, which are stronger.",
         "28307": "Research <b>Stirrups</b> (\u2039cost\u203a) <br>\nLight Cavalry and Konnik attack 25% faster.",
-        "28308": "Research <b>Bagains</b> (\u2039cost\u203a) <br>\nMilitia-line receives +3 melee armor.",
+        "28308": "Research <b>Bagains</b> (\u2039cost\u203a) <br>\nMilitia-line receives +5 melee armor.",
         "28309": "Research <b>Silk Armor</b> (\u2039cost\u203a) <br>\nLight Cavalry and Cavalry Archers receive +1 pierce armor.",
         "28310": "Research <b>Timurid Siegecraft</b> (\u2039cost\u203a) <br>\nTrebuchets receive +1 range.",
         "28311": "Research <b>Steppe Husbandry</b> (\u2039cost\u203a) <br>\nLight Cavalry and Cavalry Archers trained 80% faster.",
@@ -410,7 +424,7 @@
         "28401": "Upgrade to <b>Elite Berserk</b> (\u2039cost\u203a) <br>\nUpgrades Berserks and lets you create Elite Berserks, which are stronger and equipped with armor.",
         "28402": "Upgrade to <b>Elite Steppe Lancer</b> (\u2039cost\u203a) <br>\nUpgrades your Steppe Lancer and lets you create Elite Steppe Lancer, which are stronger.",
         "28403": "Research <b>Supplies</b> (\u2039cost\u203a) <br>\nMilitia-line costs -15 food.",
-        "28408": "Research <b>Spies/Treason</b> (Cost: 200 per enemy villager for Spies/400 per use for Treason) <br>\nSpies (Random Map games) reveals all enemy units and buildings by showing you their line of sight. The total cost is 200 gold per each enemy villager. <br>\n<br>\nTreason (Regicide games) reveals the position of all enemy Kings to your team for a few seconds. The Kings appear on the mini-map as a flashing X. Each time you choose Treason, 400 gold is immediately deducted from your stockpile.",
+        "28408": "Research <b>Spies/Treason</b> (Cost: 200 per enemy villager for Spies/400 per use for Treason) <br>\nSpies (Random Map games) reveals all enemy units and buildings by showing you their line of sight. The total cost is 200 gold per each villager from other players; allied villagers are excluded when teams are locked. <br>\n<br>\nTreason (Regicide games) reveals the position of all enemy Kings to your team for a few seconds. The Kings appear on the mini-map as a flashing X. Each time you choose Treason, 400 gold is immediately deducted from your stockpile.",
         "28409": "Research <b>Bloodlines</b> (\u2039cost\u203a) <br>\n Mounted units have +20 hit points.",
         "28410": "Research <b>Caravan</b> (\u2039cost\u203a) <br>\n Trade Carts and Trade Cogs move 50% faster (so gold accumulates faster).",
         "28411": "Research <b>Thumb Ring</b> (\u2039cost\u203a) <br>\n Archers fire faster and with 100% accuracy.",
@@ -443,7 +457,7 @@
         "28438": "Research <b>Shinkichon</b> (\u2039cost\u203a) <br>\n Mangonels, Onagers, and Siege Onagers have +1 range.",
         "28439": "Research <b>Perfusion</b> (\u2039cost\u203a) <br>\n Barracks units are created 100% faster.",
         "40114": "Research Treason (spy on enemy Kings) (\u2039cost\u203a) ",
-        "41113": "Research <b>Spies</b> (\u2039cost\u203a) <br>\nReveal all enemy units and buildings by showing you their line of sight. The total cost is 200 gold per each enemy villager.",
+        "41113": "Research <b>Spies</b> (\u2039cost\u203a) <br>\nReveal all enemy units and buildings by showing you their line of sight. The total cost is 200 gold per each villager from other players; allied villagers are excluded when teams are locked.",
         "41114": "Research <b>Treason</b> (\u2039cost\u203a) <br>\nReveal the position of all enemy Kings to your team for a few seconds. The Kings appear on the mini-map as a flashing X. Each time you research Treason, 400 gold is immediately deducted from your stockpile. (Only available in Regicide game.)",
         "120150": "Foot Archer civilization <br>\n<br>\n\u2022 Town Centers cost -50% wood in Castle Age <br>\n\u2022 Foot archers (except skirmishers) have +1 range Castle Age, +1 range Imperial Age (for +2 total)<br>\n\u2022 Shepherds work 25% faster <br>\n<br>\n<b>Unique Unit:</b>  <br>\nLongbowman (archer) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Yeomen (+1 foot archer range <br>\n+2 tower attack) <br>\n\u2022 Warwolf (Trebuchets do blast damage)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nArchery Ranges work 20% faster",
         "120151": "Cavalry civilization <br>\n<br>\n\u2022 Castles cost -25% <br>\n\u2022 Cavalry +20% hit points starting in Feudal Age <br>\n\u2022 Farm upgrades free (require Mill)<br>\n\u2022 Foragers work 25% faster <br>\n<br>\n<b>Unique Unit:</b>  <br>\nThrowing Axeman (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Chivalry (Stables work 40% faster) <br>\n\u2022 Bearded Axe (+1 Throwing Axemen range)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nKnights +2 line of sight",
@@ -453,7 +467,7 @@
         "120155": "Archer civilization <br>\n<br>\n\u2022 Start with +3 villagers, -50 wood, -200 food <br>\n\u2022 Technologies cost -10% Feudal,  <br>\n-15% Castle, -20% Imperial Age <br>\n\u2022 Town Centers support 10 population and +5 LOS<br>\n\u2022 Demolition ships +50% hit points <br>\n<br>\n<b>Unique Unit:</b>  <br>\nChu Ko Nu (archer) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Great Wall (Walls and towers +30% HP) <br>\n\u2022 Rocketry (Chu Ko Nu +2, scorpions +4 attack)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nFarms +45 food",
         "120156": "Defensive civilization <br>\n<br>\n\u2022 Buildings +10% HPs Dark, +20% Feudal, +30% Castle, +40% Imperial Age <br>\n\u2022 Camel Riders, Skirmishers, Pikemen, Halberdiers cost -25% <br>\n\u2022 Fire ships attack 20% faster <br>\n\u2022 Advance to Imperial Age costs -33% <br>\n\u2022 Town Watch free <br>\n<br>\n<b>Unique Unit:</b>  <br>\nCataphract (cavalry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Greek Fire (Fire Ships +1 range) <br>\n\u2022 Logistica (Cataphracts cause trample damage)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nMonks +50% heal speed",
         "120157": "Cavalry civilization <br>\n<br>\n\u2022 Start with +50 wood, food <br>\n\u2022 Town Center, Dock 2x hit points; work rate +5% Dark, +10% Feudal, +15% Castle, +20% Imperial Age <br>\n<br>\n<b>Unique Unit:</b>  <br>\nWar Elephant (cavalry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Kamandaran (Archer-line gold cost is replaced by additional wood cost) <br>\n\u2022 Mahouts (War Elephants 30% faster)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nKnights +2 attack vs. Archers",
-        "120158": "Camel and Naval civilization <br>\n<br>\n\u2022 Market trade cost only 5% <br>\n\u2022 Market costs -100 wood <br>\n\u2022 Transport Ships 2x hit points,  <br>\n2x carry capacity <br>\n\u2022 Galleys attack 20% faster <br>\n\u2022 Archers (except skirmishers) +3 attack vs. buildings <br>\n<br>\n<b>Unique Unit:</b>  <br>\nMameluke (camel rider) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Madrasah (Monks return 33% of their cost when killed) <br>\n\u2022 Zealotry (Camel units +30 hit points)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nFoot archers +1 attack vs. buildings",
+        "120158": "Camel and Naval civilization <br>\n<br>\n\u2022 Market trade cost only 5% <br>\n\u2022 Market costs -100 wood <br>\n\u2022 Transport Ships 2x hit points,  <br>\n2x carry capacity <br>\n\u2022 Galleys attack 20% faster <br>\n\u2022 Archers (except skirmishers) +1 attack vs. buildings per age (starting in the Feudal Age) <br>\n<br>\n<b>Unique Unit:</b>  <br>\nMameluke (camel rider) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Madrasah (Monks return 33% of their cost when killed) <br>\n\u2022 Zealotry (Camel units +30 hit points)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nFoot archers +1 attack vs. buildings",
         "120159": "Gunpowder civilization <br>\n<br>\n\u2022 Gunpowder units +25% hit points; researching gunpowder technologies costs -50%; Chemistry free <br>\n\u2022 Gold miners work 20% faster <br>\n\u2022 Light Cavalry and Hussar upgrades free <br>\n<br>\n<b>Unique Unit:</b>  <br>\nJanissary (hand cannoneer) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Sipahi (Cavalry Archers +20 HP) <br>\n\u2022 Artillery (+2 range Bombard Towers, Bombard Cannons, Cannon Galleons)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nGunpowder units created 20% faster",
         "120160": "Infantry and Naval civilization <br>\n<br>\n\u2022 Warships cost -15% Feudal Age, -15% Castle Age, -20% Imperial Age <br>\n\u2022 Infantry +10% hit points Feudal, +15% Castle, +20% Imperial Age <br>\n\u2022 Wheelbarrow, Hand Cart free <br>\n<br>\n<b>Unique Units:</b>  <br>\nBerserk (infantry), Longboat (warship) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Chieftains (infantry deal bonus damage to cavalry) <br>\n\u2022 Berserkergang (Berserks regenerate faster)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nDocks cost -15%",
         "120161": "Cavalry Archer civilization <br>\n<br>\n\u2022 Cavalry archers fire 20% faster <br>\n\u2022 Light Cavalry, Hussar +30% hit points<br>\n\u2022 Hunters work 50% faster <br>\n<br>\n<b>Unique Unit:</b>  <br>\nMangudai (cavalry archer) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Nomads (lost houses do not decrease population headroom) <br>\n\u2022 Drill (Siege Workshop units move 50% faster)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nScout Cavalry, Light Cavalry, Hussar +2 line of sight",
@@ -476,10 +490,10 @@
         "120178": "Naval civilization <br>\n<br>\n\u2022 Advancing to the next age 66% faster <br>\n\u2022 Fish Traps cost -33%<br>\n\u2022 Fish Traps provide unlimited food <br>\n\u2022 Battle Elephants 30% cheaper <br>\n<br>\n<b>Unique Unit:</b> <br>\nKarambit Warrior (infantry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Thalassocracy (upgrades Docks to Harbors, which fire arrows) <br>\n\u2022 Forced Levy (Militia-line gold cost is replaced by additional food cost)<br>\n<br>\n<b>Team Bonus:</b> <br>\nDocks +100% LOS",
         "120179": "Monk and Elephant civilization <br>\n<br>\n\u2022 Lumber Camp upgrades free <br>\n\u2022 Infantry +1 attack per age (starting in the Feudal Age)<br>\n\u2022 Monastery techs cost -50% <br>\n<br>\n<b>Unique Unit:</b> <br>\nArambai (ranged cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Howdah (Battle Elephants +1/+1P armor) <br>\n\u2022 Manipur Cavalry (Cavalry and Arambai +6 attack vs. buildings)<br>\n<br>\n<b>Team Bonus:</b> <br>\nRelics visible on the map at the start of the game",
         "120180": "Archer civilization <br>\n<br>\n\u2022 Enemy positions are revealed at the start of the game <br>\n\u2022 Archery Range units +20% HP <br>\n\u2022 Conscription free <br>\n<br>\n<b>Unique Units:</b> <br>\nRattan Archer (foot archer) <br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Chatras (Battle Elephants +50 HP) <br>\n\u2022 Paper Money (Each team member receives 500 gold)<br>\n<br>\n<b>Team Bonus:</b> <br>\nImperial Skirmisher upgrade available in the Imperial Age",
-        "120181": "Infantry and Cavalry civilization <br>\n<br>\n\u2022 Militia-line upgrades free <br>\n\u2022 Town Centers cost -50% stone<br>\n\u2022 Can build Krepost <br>\n<br>\n<b>Unique Unit:</b> <br>\nKonnik (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Stirrups (Light Cavalry and Konniks attack 25% faster) <br>\n\u2022 Bagains (Militia-line gains +3 armor) <br>\n<br>\n<b>Team Bonus:</b> <br>\nBlacksmiths work 50% faster",
+        "120181": "Infantry and Cavalry civilization <br>\n<br>\n\u2022 Militia-line upgrades free <br>\n\u2022 Town Centers cost -50% stone<br>\n\u2022 Can build Krepost <br>\n<br>\n<b>Unique Unit:</b> <br>\nKonnik (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Stirrups (Light Cavalry and Konniks attack 25% faster) <br>\n\u2022 Bagains (Militia-line gains +5 armor) <br>\n<br>\n<b>Team Bonus:</b> <br>\nBlacksmiths work 50% faster",
         "120182": "Cavalry Archer civilization <br>\n<br>\n\u2022 Herdables contain +50% food <br>\n\u2022 Units deal +25% damage when fighting from higher elevation <br>\n\u2022 Parthian Tactics free <br>\n<br>\n<b>Unique Unit:</b> <br>\nKeshik (raiding cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Silk Armor (Light Cavalry and Cavalry Archers receive +1P armor) <br>\n\u2022 Timurid Siegecraft (Trebuchets +1 range)<br>\n<br>\n<b>Team Bonus:</b> <br>\nCavalry Archers +2 LOS",
-        "120183": "Cavalry civilization <br>\n<br>\n\u2022 Additional Town Center can be built in the Feudal Age <br>\n\u2022 Siege Workshop and Battering Ram available in the Feudal Age<br>\n\u2022 Cavalry 10% faster starting in Feudal Age <br>\n<br>\n<b>Unique Unit:</b> <br>\nKipchak (cavalry archer)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Steppe Husbandry (Light Cavalry and Cavalry Archers trained 80% faster) <br>\n\u2022 Cuman Mercenaries (team members can create 10 free Elite Kipchaks in the Castle)<br>\n<br>\n<b>Team Bonus:</b> <br>\nPalisade Walls +50% HP",
-        "120184": "Cavalry and Monk civilization <br>\n<br>\n\u2022 Start with +150 food <br>\n\u2022 Spearman-line and Skirmishers move 10% faster<br>\n\u2022 Each garrisoned relic gives +1 attack to cavalry units (maximum +5) <br>\n<br>\n<b>Unique Unit:</b> <br>\nLeitis (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Hill Forts (Town Centers +3 range) <br>\n\u2022 Tower Shields (Spearman-line and Skirmishers +1P armor)<br>\n<br>\n<b>Team Bonus:</b> <br>\nMonasteries work 20% faster"
+        "120183": "Cavalry civilization <br>\n<br>\n\u2022 Additional Town Center can be built in the Feudal Age <br>\n\u2022 Siege Workshop and Battering Ram available in the Feudal Age<br>\n\u2022 Cavalry 5% faster each age (starting in Feudal Age) <br>\n<br>\n<b>Unique Unit:</b> <br>\nKipchak (cavalry archer)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Steppe Husbandry (Light Cavalry and Cavalry Archers trained 80% faster) <br>\n\u2022 Cuman Mercenaries (team members can create 10 free Elite Kipchaks in the Castle)<br>\n<br>\n<b>Team Bonus:</b> <br>\nPalisade Walls +50% HP",
+        "120184": "Cavalry and Monk civilization <br>\n<br>\n\u2022 Start with +150 food <br>\n\u2022 Spearman-line and Skirmishers move 10% faster<br>\n\u2022 Each garrisoned relic gives +1 attack to Knights and Leitis (maximum +4) <br>\n<br>\n<b>Unique Unit:</b> <br>\nLeitis (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Hill Forts (Town Centers +3 range) <br>\n\u2022 Tower Shields (Spearman-line and Skirmishers +1P armor)<br>\n<br>\n<b>Team Bonus:</b> <br>\nMonasteries work 20% faster"
     },
     "meta": {
         "buildings": {
@@ -2938,13 +2952,13 @@
                 "internal_name": "EKARAM"
             },
             "Elite Keshik": {
-                "Attack": 14,
+                "Attack": 11,
                 "Cost": {
                     "Food": 50,
-                    "Gold": 80
+                    "Gold": 40
                 },
                 "GarrisonCapacity": 0,
-                "HP": 130,
+                "HP": 140,
                 "ID": 1230,
                 "MeleeArmor": 1,
                 "Name": "Elite Keshik",
@@ -2959,7 +2973,7 @@
                     "Wood": 60
                 },
                 "GarrisonCapacity": 0,
-                "HP": 50,
+                "HP": 45,
                 "ID": 1233,
                 "MeleeArmor": 0,
                 "Name": "Elite Kipchak",
@@ -2974,7 +2988,7 @@
                     "Gold": 70
                 },
                 "GarrisonCapacity": 0,
-                "HP": 130,
+                "HP": 120,
                 "ID": 1255,
                 "MeleeArmor": 2,
                 "Name": "Elite Konnik",
@@ -3090,8 +3104,8 @@
             "Elite Plumed Archer": {
                 "Attack": 5,
                 "Cost": {
-                    "Gold": 50,
-                    "Wood": 50
+                    "Gold": 55,
+                    "Wood": 55
                 },
                 "GarrisonCapacity": 0,
                 "HP": 65,
@@ -3163,10 +3177,10 @@
                 "internal_name": "HXBOW"
             },
             "Elite Steppe Lancer": {
-                "Attack": 12,
+                "Attack": 10,
                 "Cost": {
                     "Food": 70,
-                    "Gold": 30
+                    "Gold": 45
                 },
                 "GarrisonCapacity": 0,
                 "HP": 80,
@@ -3626,13 +3640,13 @@
                 "internal_name": "KARAM"
             },
             "Keshik": {
-                "Attack": 12,
+                "Attack": 9,
                 "Cost": {
                     "Food": 50,
-                    "Gold": 80
+                    "Gold": 40
                 },
                 "GarrisonCapacity": 0,
-                "HP": 100,
+                "HP": 110,
                 "ID": 1228,
                 "MeleeArmor": 1,
                 "Name": "Keshik",
@@ -3647,7 +3661,7 @@
                     "Wood": 60
                 },
                 "GarrisonCapacity": 0,
-                "HP": 45,
+                "HP": 40,
                 "ID": 1231,
                 "MeleeArmor": 0,
                 "Name": "Kipchak",
@@ -3677,7 +3691,7 @@
                     "Gold": 70
                 },
                 "GarrisonCapacity": 0,
-                "HP": 110,
+                "HP": 100,
                 "ID": 1254,
                 "MeleeArmor": 2,
                 "Name": "Konnik",
@@ -3955,8 +3969,8 @@
             "Plumed Archer": {
                 "Attack": 5,
                 "Cost": {
-                    "Gold": 50,
-                    "Wood": 50
+                    "Gold": 55,
+                    "Wood": 55
                 },
                 "GarrisonCapacity": 0,
                 "HP": 50,
@@ -4132,10 +4146,10 @@
                 "internal_name": "PKEMN"
             },
             "Steppe Lancer": {
-                "Attack": 10,
+                "Attack": 8,
                 "Cost": {
                     "Food": 70,
-                    "Gold": 30
+                    "Gold": 45
                 },
                 "GarrisonCapacity": 0,
                 "HP": 60,
@@ -4370,6 +4384,7 @@
             "Demolition Raft": "26162",
             "Demolition Ship": "26424",
             "Dock": "26144",
+            "Dragon Ship": "26739",
             "Elite Cannon Galleon": "26573",
             "Elite Longboat": "26457",
             "Elite Turtle Ship": "26732",
@@ -4391,6 +4406,7 @@
             "Heavy Demolition Ship": "26425",
             "Heavy Scorpion": "26439",
             "House": "26344",
+            "Junk": "26092",
             "Keep": "26155",
             "Krepost": "26349",
             "Longboat": "26106",
@@ -4652,6 +4668,8 @@
             "Zealotry": "28424"
         },
         "units": {
+            "Amazon Archer": "26304",
+            "Amazon Warrior": "26303",
             "Arambai": "26151",
             "Arbalester": "26418",
             "Archer": "26083",
@@ -4668,12 +4686,14 @@
             "Camel Archer": "26134",
             "Camel Rider": "26416",
             "Cannon Galleon": "26287",
+            "Canoe": "26119",
             "Capped Ram": "26289",
             "Caravel": "26132",
             "Castle": "26142",
             "Cataphract": "26101",
             "Cavalier": "26070",
             "Cavalry Archer": "26085",
+            "Centurion": "26450",
             "Champion": "26469",
             "Chu Ko Nu": "26102",
             "Condottiero": "26114",
@@ -4682,8 +4702,11 @@
             "Demolition Raft": "26162",
             "Demolition Ship": "26424",
             "Dock": "26144",
+            "Donkey": "26306",
+            "Dragon Ship": "26739",
             "Eagle Scout": "26672",
             "Eagle Warrior": "26671",
+            "Eastern Swordsman": "26116",
             "Elephant Archer": "26682",
             "Elite Arambai": "26152",
             "Elite Ballista Elephant": "26147",
@@ -4737,6 +4760,8 @@
             "Fire Tower": "26158",
             "Fish Trap": "26495",
             "Fishing Ship": "26090",
+            "Flamethrower": "26118",
+            "Flaming Camel": "26375",
             "Fortified Palisade Wall": "26205",
             "Fortified Wall": "26204",
             "Galleon": "26309",
@@ -4754,15 +4779,17 @@
             "Heavy Cavalry Archer": "26412",
             "Heavy Demo Ship": "26425",
             "Heavy Demolition Ship": "26425",
+            "Heavy Pikeman": "26410",
             "Heavy Scorpion": "26439",
             "House": "26344",
             "Huskarl": "26679",
             "Hussar": "26661",
             "Imperial Camel Rider": "26419",
             "Imperial Skirmisher": "26190",
-            "Iroquios Warrior": "26011",
+            "Iroquois Warrior": "26011",
             "Jaguar Warrior": "26667",
             "Janissary": "26105",
+            "Junk": "26092",
             "Kamayuk": "26686",
             "Karambit Warrior": "26148",
             "Keep": "26155",
@@ -4771,6 +4798,7 @@
             "Knight": "26068",
             "Konnik": "26288",
             "Krepost": "26349",
+            "Legionary": "26670",
             "Leitis": "26328",
             "Light Cavalry": "26444",
             "Long Swordsman": "26081",
@@ -4791,6 +4819,7 @@
             "Monk": "26099",
             "Mounted Samurai": "26039",
             "Ninja": "26016",
+            "Norse Warrior": "26117",
             "Onager": "26448",
             "Organ Gun": "26129",
             "Outpost": "26504",
@@ -4802,6 +4831,7 @@
             "Plumed Archer": "26683",
             "Priest": "26120",
             "Rattan Archer": "26165",
+            "Royal Janissary": "26115",
             "Samurai": "26110",
             "Scorpion": "26096",
             "Scout Cavalry": "26326",
