@@ -297,7 +297,7 @@ TECHS = {
     623: {"internal_name": "Khmer UT", "Name": "Double Crossbow"},
     486: {"internal_name": "Koreans UT", "Name": "Panokseon"},
     445: {"internal_name": "Korean catapults", "Name": "Shinkichon"},
-    514: {"internal_name": "Magyars UT", "Name": "Mercenaries"},
+    514: {"internal_name": "Magyars UT", "Name": "Corvinian Army"},
     515: {"internal_name": "Indians UT", "Name": "Recurve Bow"},
     624: {"internal_name": "Malay UT", "Name": "Thalassocracy"},
     625: {"internal_name": "Malay UT", "Name": "Forced Levy"},

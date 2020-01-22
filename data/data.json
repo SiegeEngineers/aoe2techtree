@@ -1241,6 +1241,15 @@
                 "Name": "Conscription",
                 "internal_name": "Conscription"
             },
+            "Corvinian Army": {
+                "Cost": {
+                    "Food": 200,
+                    "Gold": 300
+                },
+                "ID": 514,
+                "Name": "Corvinian Army",
+                "internal_name": "Magyars UT"
+            },
             "Couriers": {
                 "Cost": {
                     "Food": 600,
@@ -1727,15 +1736,6 @@
                 "ID": 50,
                 "Name": "Masonry",
                 "internal_name": "Masonry"
-            },
-            "Mercenaries": {
-                "Cost": {
-                    "Food": 200,
-                    "Gold": 300
-                },
-                "ID": 514,
-                "Name": "Mercenaries",
-                "internal_name": "Magyars UT"
             },
             "Murder Holes": {
                 "Cost": {
