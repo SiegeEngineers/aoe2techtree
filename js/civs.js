@@ -3,299 +3,299 @@ function civ(name, tree) {
     switch (name) {
         case "Aztecs":
             disableHorses(tree);
-            enable([], ["Eagle Scout", "Eagle Warrior", "Elite Eagle Warrior"], []);
-            disable(["Keep", "Bombard Tower"],
-                ["Hand Cannoneer", "Halberdier",
-                    "Cannon Galleon", "Elite Cannon Galleon", "Heavy Demo Ship", "Galleon", "Heavy Scorpion",
-                    "Bombard Cannon"],
-                ["Thumb Ring", "Parthian Tactics", "Hoardings", "Ring Archer Armor", "Masonry", "Architecture",
-                    "Bombard Tower", "Keep", "Two-Man Saw", "Guilds"]);
-            unique(["Jaguar Warrior", "Elite Jaguar Warrior", "Atlatl", "Garland Wars"], "meso_");
+            enable([], [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR], []);
+            disable([KEEP, BOMBARD_TOWER],
+                [HAND_CANNONEER, HALBERDIER,
+                    CANNON_GALLEON, ELITE_CANNON_GALLEON, HEAVY_DEMO_SHIP, GALLEON, HEAVY_SCORPION,
+                    BOMBARD_CANNON],
+                [THUMB_RING, PARTHIAN_TACTICS, HOARDINGS, RING_ARCHER_ARMOR, MASONRY, ARCHITECTURE,
+                    BOMBARD_TOWER, KEEP, TWO_MAN_SAW, GUILDS]);
+            unique([JAGUAR_WARRIOR, ELITE_JAGUAR_WARRIOR, ATLATL, GARLAND_WARS], MONK_PREFIX_MESO);
             break;
         case "Berbers":
-            enable([], ["Genitour", "Elite Genitour"], []);
-            disable(["Bombard Tower", "Keep"],
-                ["Arbalester", "Halberdier", "Paladin", "Siege Ram", "Siege Onager"],
-                ["Parthian Tactics", "Shipwright", "Sanctity", "Block Printing", "Sappers", "Architecture",
-                    "Bombard Tower", "Keep", "Two-Man Saw"]);
-            unique(["Camel Archer", "Elite Camel Archer", "Kasbah", "Maghrabi Camels"], "african_");
+            enable([], [GENITOUR, ELITE_GENITOUR], []);
+            disable([BOMBARD_TOWER, KEEP],
+                [ARBALESTER, HALBERDIER, PALADIN, SIEGE_RAM, SIEGE_ONAGER],
+                [PARTHIAN_TACTICS, SHIPWRIGHT, SANCTITY, BLOCK_PRINTING, SAPPERS, ARCHITECTURE,
+                    BOMBARD_TOWER, KEEP, TWO_MAN_SAW]);
+            unique([CAMEL_ARCHER, ELITE_CAMEL_ARCHER, KASBAH, MAGHRABI_CAMELS], MONK_PREFIX_AFRICAN);
             break;
         case "Britons":
-            disable(["Bombard Tower"],
-                ["Hand Cannoneer", "Hussar", "Paladin", "Camel Rider", "Heavy Camel Rider", "Elite Cannon Galleon", "Siege Ram",
-                    "Siege Onager", "Bombard Cannon"],
-                ["Thumb Ring", "Parthian Tactics", "Bloodlines", "Redemption", "Atonement", "Heresy", "Bombard Tower",
-                    "Treadmill Crane", "Stone Shaft Mining", "Crop Rotation"]);
-            unique(["Longbowman", "Elite Longbowman", "Yeomen", "Warwolf"]);
+            disable([BOMBARD_TOWER],
+                [HAND_CANNONEER, HUSSAR, PALADIN, CAMEL_RIDER, HEAVY_CAMEL_RIDER, ELITE_CANNON_GALLEON, SIEGE_RAM,
+                    SIEGE_ONAGER, BOMBARD_CANNON],
+                [THUMB_RING, PARTHIAN_TACTICS, BLOODLINES, REDEMPTION, ATONEMENT, HERESY, BOMBARD_TOWER,
+                    TREADMILL_CRANE, STONE_SHAFT_MINING, CROP_ROTATION]);
+            unique([LONGBOWMAN, ELITE_LONGBOWMAN, YEOMEN, WARWOLF]);
             break;
         case "Bulgarians":
-            enable(["Krepost"], [], []);
-            disable(["Fortified Wall", "Bombard Tower"],
-                ["Crossbowman", "Arbalester", "Hand Cannoneer", "Champion", "Camel Rider", "Heavy Camel Rider", "Bombard Cannon",
-                    "Fast Fire Ship", "Heavy Demo Ship", "Elite Cannon Galleon"],
-                ["Ring Archer Armor", "Dry Dock", "Shipwright", "Fortified Wall", "Treadmill Crane", "Arrowslits",
-                    "Bombard Tower", "Hoardings", "Sappers", "Atonement", "Sanctity", "Faith", "Block Printing", "Two-Man Saw",
-                    "Guilds"]);
-            unique(["Konnik", "Elite Konnik", "Stirrups", "Bagains"], "");
+            enable([KREPOST], [], []);
+            disable([FORTIFIED_WALL, BOMBARD_TOWER],
+                [CROSSBOWMAN, ARBALESTER, HAND_CANNONEER, CHAMPION, CAMEL_RIDER, HEAVY_CAMEL_RIDER, BOMBARD_CANNON,
+                    FAST_FIRE_SHIP, HEAVY_DEMO_SHIP, ELITE_CANNON_GALLEON],
+                [RING_ARCHER_ARMOR, DRY_DOCK, SHIPWRIGHT, FORTIFIED_WALL, TREADMILL_CRANE, ARROWSLITS,
+                    BOMBARD_TOWER, HOARDINGS, SAPPERS, ATONEMENT, SANCTITY, FAITH, BLOCK_PRINTING, TWO_MAN_SAW,
+                    GUILDS]);
+            unique([KONNIK, ELITE_KONNIK, STIRRUPS, BAGAINS], MONK_PREFIX_GENERIC);
             break;
         case "Burmese":
-            enable([], ["Battle Elephant", "Elite Battle Elephant"], []);
-            disable(["Bombard Tower"],
-                ["Arbalester", "Hand Cannoneer", "Camel Rider", "Heavy Camel Rider", "Paladin", "Fast Fire Ship", "Heavy Demo Ship",
-                    "Siege Ram", "Siege Onager"],
-                ["Thumb Ring", "Shipwright", "Heresy", "Hoardings", "Sappers", "Leather Archer Armor",
-                    "Ring Archer Armor", "Bombard Tower", "Arrowslits", "Stone Shaft Mining"]);
-            unique(["Arambai", "Elite Arambai", "Howdah", "Manipur Cavalry"], "asian_");
+            enable([], [BATTLE_ELEPHANT, ELITE_BATTLE_ELEPHANT], []);
+            disable([BOMBARD_TOWER],
+                [ARBALESTER, HAND_CANNONEER, CAMEL_RIDER, HEAVY_CAMEL_RIDER, PALADIN, FAST_FIRE_SHIP, HEAVY_DEMO_SHIP,
+                    SIEGE_RAM, SIEGE_ONAGER],
+                [THUMB_RING, SHIPWRIGHT, HERESY, HOARDINGS, SAPPERS, LEATHER_ARCHER_ARMOR,
+                    RING_ARCHER_ARMOR, BOMBARD_TOWER, ARROWSLITS, STONE_SHAFT_MINING]);
+            unique([ARAMBAI, ELITE_ARAMBAI, HOWDAH, MANIPUR_CAVALRY], MONK_PREFIX_ASIAN);
             break;
         case "Byzantines":
             disable([],
-                ["Heavy Scorpion", "Siege Onager"],
-                ["Parthian Tactics", "Bloodlines", "Herbal Medicine", "Sappers", "Blast Furnace", "Masonry",
-                    "Architecture", "Siege Engineers", "Heated Shot", "Treadmill Crane"]);
-            unique(["Cataphract", "Elite Cataphract", "Greek Fire", "Logistica"]);
+                [HEAVY_SCORPION, SIEGE_ONAGER],
+                [PARTHIAN_TACTICS, BLOODLINES, HERBAL_MEDICINE, SAPPERS, BLAST_FURNACE, MASONRY,
+                    ARCHITECTURE, SIEGE_ENGINEERS, HEATED_SHOT, TREADMILL_CRANE]);
+            unique([CATAPHRACT, ELITE_CATAPHRACT, GREEK_FIRE, LOGISTICA]);
             break;
         case "Celts":
-            disable(["Bombard Tower"],
-                ["Arbalester", "Hand Cannoneer", "Camel Rider", "Heavy Camel Rider", "Fast Fire Ship", "Elite Cannon Galleon",
-                    "Bombard Cannon"],
-                ["Thumb Ring", "Parthian Tactics", "Squires", "Bloodlines", "Redemption", "Illumination", "Atonement",
-                    "Block Printing", "Theocracy", "Ring Archer Armor", "Bracer", "Plate Barding Armor", "Architecture",
-                    "Bombard Tower", "Two-Man Saw", "Crop Rotation"]);
-            unique(["Woad Raider", "Elite Woad Raider", "Stronghold", "Furor Celtica"]);
+            disable([BOMBARD_TOWER],
+                [ARBALESTER, HAND_CANNONEER, CAMEL_RIDER, HEAVY_CAMEL_RIDER, FAST_FIRE_SHIP, ELITE_CANNON_GALLEON,
+                    BOMBARD_CANNON],
+                [THUMB_RING, PARTHIAN_TACTICS, SQUIRES, BLOODLINES, REDEMPTION, ILLUMINATION, ATONEMENT,
+                    BLOCK_PRINTING, THEOCRACY, RING_ARCHER_ARMOR, BRACER, PLATE_BARDING_ARMOR, ARCHITECTURE,
+                    BOMBARD_TOWER, TWO_MAN_SAW, CROP_ROTATION]);
+            unique([WOAD_RAIDER, ELITE_WOAD_RAIDER, STRONGHOLD, FUROR_CELTICA]);
             break;
         case "Chinese":
             disable([],
-                ["Hand Cannoneer", "Hussar", "Paladin", "Fast Fire Ship", "Elite Cannon Galleon", "Siege Onager",
-                    "Bombard Cannon"],
-                ["Parthian Tactics", "Heresy", "Block Printing", "Hoardings", "Siege Engineers", "Treadmill Crane",
-                    "Guilds", "Crop Rotation"]);
-            unique(["Chu Ko Nu", "Elite Chu Ko Nu", "Great Wall", "Rocketry"], "asian_");
+                [HAND_CANNONEER, HUSSAR, PALADIN, FAST_FIRE_SHIP, ELITE_CANNON_GALLEON, SIEGE_ONAGER,
+                    BOMBARD_CANNON],
+                [PARTHIAN_TACTICS, HERESY, BLOCK_PRINTING, HOARDINGS, SIEGE_ENGINEERS, TREADMILL_CRANE,
+                    GUILDS, CROP_ROTATION]);
+            unique([CHU_KO_NU, ELITE_CHU_KO_NU, GREAT_WALL, ROCKETRY], MONK_PREFIX_ASIAN);
             break;
         case "Cumans":
-            enable([], ["Steppe Lancer", "Elite Steppe Lancer"], []);
-            disable(["Gate", "Stone Wall", "Fortified Wall", "Guard Tower", "Keep", "Bombard Tower"],
-                ["Arbalester", "Hand Cannoneer", "Heavy Camel Rider", "Heavy Scorpion", "Bombard Cannon", "Cannon Galleon",
-                    "Elite Cannon Galleon", "Heavy Demo Ship"],
-                ["Bracer", "Dry Dock", "Shipwright", "Fortified Wall", "Guard Tower", "Treadmill Crane", "Architecture",
-                    "Siege Engineers", "Keep", "Arrowslits", "Bombard Tower", "Illumination", "Block Printing", "Theocracy",
-                    "Stone Shaft Mining", "Husbandry"]);
-            unique(["Kipchak", "Elite Kipchak", "Steppe Husbandry", "Cuman Mercenaries"], "asian_");
+            enable([], [STEPPE_LANCER, ELITE_STEPPE_LANCER], []);
+            disable([GATE, STONE_WALL, FORTIFIED_WALL, GUARD_TOWER, KEEP, BOMBARD_TOWER],
+                [ARBALESTER, HAND_CANNONEER, HEAVY_CAMEL_RIDER, HEAVY_SCORPION, BOMBARD_CANNON, CANNON_GALLEON,
+                    ELITE_CANNON_GALLEON, HEAVY_DEMO_SHIP],
+                [BRACER, DRY_DOCK, SHIPWRIGHT, FORTIFIED_WALL, GUARD_TOWER, TREADMILL_CRANE, ARCHITECTURE,
+                    SIEGE_ENGINEERS, KEEP, ARROWSLITS, BOMBARD_TOWER, ILLUMINATION, BLOCK_PRINTING, THEOCRACY,
+                    STONE_SHAFT_MINING, HUSBANDRY]);
+            unique([KIPCHAK, ELITE_KIPCHAK, STEPPE_HUSBANDRY, CUMAN_MERCENARIES], MONK_PREFIX_ASIAN);
             break;
         case "Ethiopians":
-            disable(["Bombard Tower"],
-                ["Hand Cannoneer", "Champion", "Paladin", "Fast Fire Ship", "Elite Cannon Galleon", "Heavy Demo Ship"],
-                ["Parthian Tactics", "Bloodlines", "Redemption", "Block Printing", "Hoardings", "Plate Barding Armor",
-                    "Treadmill Crane", "Arrowslits", "Bombard Tower", "Crop Rotation"]);
-            unique(["Shotel Warrior", "Elite Shotel Warrior", "Royal Heirs", "Torsion Engines"], "african_");
+            disable([BOMBARD_TOWER],
+                [HAND_CANNONEER, CHAMPION, PALADIN, FAST_FIRE_SHIP, ELITE_CANNON_GALLEON, HEAVY_DEMO_SHIP],
+                [PARTHIAN_TACTICS, BLOODLINES, REDEMPTION, BLOCK_PRINTING, HOARDINGS, PLATE_BARDING_ARMOR,
+                    TREADMILL_CRANE, ARROWSLITS, BOMBARD_TOWER, CROP_ROTATION]);
+            unique([SHOTEL_WARRIOR, ELITE_SHOTEL_WARRIOR, ROYAL_HEIRS, TORSION_ENGINES], MONK_PREFIX_AFRICAN);
             break;
         case "Franks":
-            disable(["Keep", "Bombard Tower"],
-                ["Arbalester", "Camel Rider", "Heavy Camel Rider", "Hussar", "Elite Cannon Galleon", "Siege Ram", "Siege Onager",],
-                ["Thumb Ring", "Parthian Tactics", "Bloodlines", "Shipwright", "Redemption", "Atonement", "Sappers",
-                    "Ring Archer Armor", "Bracer", "Heated Shot", "Keep", "Bombard Tower", "Stone Shaft Mining",
-                    "Two-Man Saw", "Guilds"]);
-            unique(["Throwing Axeman", "Elite Throwing Axeman", "Chivalry", "Bearded Axe"]);
+            disable([KEEP, BOMBARD_TOWER],
+                [ARBALESTER, CAMEL_RIDER, HEAVY_CAMEL_RIDER, HUSSAR, ELITE_CANNON_GALLEON, SIEGE_RAM, SIEGE_ONAGER,],
+                [THUMB_RING, PARTHIAN_TACTICS, BLOODLINES, SHIPWRIGHT, REDEMPTION, ATONEMENT, SAPPERS,
+                    RING_ARCHER_ARMOR, BRACER, HEATED_SHOT, KEEP, BOMBARD_TOWER, STONE_SHAFT_MINING,
+                    TWO_MAN_SAW, GUILDS]);
+            unique([THROWING_AXEMAN, ELITE_THROWING_AXEMAN, CHIVALRY, BEARDED_AXE]);
             break;
         case "Goths":
-            disable(["Guard Tower", "Keep", "Bombard Tower", "Gate", "Stone Wall", "Fortified Wall"],
-                ["Arbalester", "Camel Rider", "Heavy Camel Rider", "Paladin", "Elite Cannon Galleon", "Siege Ram", "Siege Onager"],
-                ["Thumb Ring", "Parthian Tactics", "Dry Dock", "Guard Tower", "Keep", "Bombard Tower", "Fortified Wall", "Redemption",
-                    "Atonement", "Block Printing", "Heresy", "Hoardings", "Plate Barding Armor", "Plate Mail Armor",
-                    "Siege Engineers", "Treadmill Crane", "Arrowslits", "Gold Shaft Mining", "Supplies"]);
-            unique(["Huskarl", "Elite Huskarl", "Anarchy", "Perfusion"]);
+            disable([GUARD_TOWER, KEEP, BOMBARD_TOWER, GATE, STONE_WALL, FORTIFIED_WALL],
+                [ARBALESTER, CAMEL_RIDER, HEAVY_CAMEL_RIDER, PALADIN, ELITE_CANNON_GALLEON, SIEGE_RAM, SIEGE_ONAGER],
+                [THUMB_RING, PARTHIAN_TACTICS, DRY_DOCK, GUARD_TOWER, KEEP, BOMBARD_TOWER, FORTIFIED_WALL, REDEMPTION,
+                    ATONEMENT, BLOCK_PRINTING, HERESY, HOARDINGS, PLATE_BARDING_ARMOR, PLATE_MAIL_ARMOR,
+                    SIEGE_ENGINEERS, TREADMILL_CRANE, ARROWSLITS, GOLD_SHAFT_MINING, SUPPLIES]);
+            unique([HUSKARL, ELITE_HUSKARL, ANARCHY, PERFUSION]);
             break;
         case "Huns":
-            disable(["Guard Tower", "Keep", "Bombard Tower", "Fortified Wall"],
-                ["Arbalester", "Hand Cannoneer", "Champion", "Camel Rider", "Heavy Camel Rider", "Fast Fire Ship", "Cannon Galleon",
-                    "Elite Cannon Galleon", "Onager", "Siege Onager", "Heavy Scorpion", "Bombard Cannon"],
-                ["Shipwright", "Guard Tower", "Keep", "Bombard Tower", "Redemption", "Herbal Medicine",
-                    "Block Printing", "Theocracy", "Hoardings", "Ring Archer Armor", "Plate Mail Armor",
-                    "Fortified Wall", "Heated Shot", "Treadmill Crane", "Architecture", "Siege Engineers",
-                    "Arrowslits", "Stone Shaft Mining", "Crop Rotation"]);
-            unique(["Tarkan", "Elite Tarkan", "Marauders", "Atheism"]);
+            disable([GUARD_TOWER, KEEP, BOMBARD_TOWER, FORTIFIED_WALL],
+                [ARBALESTER, HAND_CANNONEER, CHAMPION, CAMEL_RIDER, HEAVY_CAMEL_RIDER, FAST_FIRE_SHIP, CANNON_GALLEON,
+                    ELITE_CANNON_GALLEON, ONAGER, SIEGE_ONAGER, HEAVY_SCORPION, BOMBARD_CANNON],
+                [SHIPWRIGHT, GUARD_TOWER, KEEP, BOMBARD_TOWER, REDEMPTION, HERBAL_MEDICINE,
+                    BLOCK_PRINTING, THEOCRACY, HOARDINGS, RING_ARCHER_ARMOR, PLATE_MAIL_ARMOR,
+                    FORTIFIED_WALL, HEATED_SHOT, TREADMILL_CRANE, ARCHITECTURE, SIEGE_ENGINEERS,
+                    ARROWSLITS, STONE_SHAFT_MINING, CROP_ROTATION]);
+            unique([TARKAN, ELITE_TARKAN, MARAUDERS, ATHEISM]);
             break;
         case "Incas":
             disableHorses(tree);
-            enable([], ["Eagle Scout", "Eagle Warrior", "Elite Eagle Warrior"], []);
-            enable([], ["Slinger"], []);
-            disable(["Bombard Tower"],
-                ["Hand Cannoneer", "Cannon Galleon", "Elite Cannon Galleon", "Heavy Demo Ship", "Siege Onager",
-                    "Bombard Cannon"],
-                ["Bombard Tower", "Atonement", "Fervor", "Architecture", "Two-Man Saw"]);
-            unique(["Kamayuk", "Elite Kamayuk", "Andean Sling", "Couriers"], "meso_");
+            enable([], [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR], []);
+            enable([], [SLINGER], []);
+            disable([BOMBARD_TOWER],
+                [HAND_CANNONEER, CANNON_GALLEON, ELITE_CANNON_GALLEON, HEAVY_DEMO_SHIP, SIEGE_ONAGER,
+                    BOMBARD_CANNON],
+                [BOMBARD_TOWER, ATONEMENT, FERVOR, ARCHITECTURE, TWO_MAN_SAW]);
+            unique([KAMAYUK, ELITE_KAMAYUK, ANDEAN_SLING, COURIERS], MONK_PREFIX_MESO);
             break;
         case "Indians":
-            enable([], ["Imperial Camel Rider"], []);
-            disable(["Keep", "Bombard Tower"],
-                ["Arbalester", "Knight", "Cavalier", "Paladin", "Fast Fire Ship", "Heavy Scorpion", "Siege Ram",
-                    "Siege Onager"],
-                ["Shipwright", "Keep", "Bombard Tower", "Atonement", "Heresy", "Sappers", "Plate Mail Armor",
-                    "Architecture", "Arrowslits", "Treadmill Crane", "Crop Rotation"]);
-            unique(["Elephant Archer", "Elite Elephant Archer", "Sultans", "Shatagni"], "african_");
+            enable([], [IMPERIAL_CAMEL_RIDER], []);
+            disable([KEEP, BOMBARD_TOWER],
+                [ARBALESTER, KNIGHT, CAVALIER, PALADIN, FAST_FIRE_SHIP, HEAVY_SCORPION, SIEGE_RAM,
+                    SIEGE_ONAGER],
+                [SHIPWRIGHT, KEEP, BOMBARD_TOWER, ATONEMENT, HERESY, SAPPERS, PLATE_MAIL_ARMOR,
+                    ARCHITECTURE, ARROWSLITS, TREADMILL_CRANE, CROP_ROTATION]);
+            unique([ELEPHANT_ARCHER, ELITE_ELEPHANT_ARCHER, SULTANS, SHATAGNI], MONK_PREFIX_AFRICAN);
             break;
         case "Italians":
-            enable([], ["Condottiero"], []);
+            enable([], [CONDOTTIERO], []);
             disable([],
-                ["Heavy Cav Archer", "Halberdier", "Camel Rider", "Heavy Camel Rider", "Paladin", "Heavy Demo Ship",
-                    "Heavy Scorpion", "Siege Ram", "Siege Onager"],
-                ["Parthian Tactics", "Heresy", "Sappers", "Siege Engineers", "Gold Shaft Mining"]);
-            unique(["Genoese Crossbowman", "Elite Genoese Crossbowman", "Pavise", "Silk Road"]);
+                [HEAVY_CAV_ARCHER, HALBERDIER, CAMEL_RIDER, HEAVY_CAMEL_RIDER, PALADIN, HEAVY_DEMO_SHIP,
+                    HEAVY_SCORPION, SIEGE_RAM, SIEGE_ONAGER],
+                [PARTHIAN_TACTICS, HERESY, SAPPERS, SIEGE_ENGINEERS, GOLD_SHAFT_MINING]);
+            unique([GENOESE_CROSSBOWMAN, ELITE_GENOESE_CROSSBOWMAN, PAVISE, SILK_ROAD]);
             break;
         case "Japanese":
-            disable(["Bombard Tower",],
-                ["Hussar", "Camel Rider", "Heavy Camel Rider", "Paladin", "Heavy Demo Ship", "Siege Ram", "Siege Onager",
-                    "Bombard Cannon"],
-                ["Bombard Tower", "Heresy", "Hoardings", "Sappers", "Plate Barding Armor", "Architecture",
-                    "Heated Shot", "Stone Shaft Mining", "Guilds", "Crop Rotation"]);
-            unique(["Samurai", "Elite Samurai", "Yasama", "Kataparuto"], "asian_");
+            disable([BOMBARD_TOWER,],
+                [HUSSAR, CAMEL_RIDER, HEAVY_CAMEL_RIDER, PALADIN, HEAVY_DEMO_SHIP, SIEGE_RAM, SIEGE_ONAGER,
+                    BOMBARD_CANNON],
+                [BOMBARD_TOWER, HERESY, HOARDINGS, SAPPERS, PLATE_BARDING_ARMOR, ARCHITECTURE,
+                    HEATED_SHOT, STONE_SHAFT_MINING, GUILDS, CROP_ROTATION]);
+            unique([SAMURAI, ELITE_SAMURAI, YASAMA, KATAPARUTO], MONK_PREFIX_ASIAN);
             break;
         case "Khmer":
-            enable([], ["Battle Elephant", "Elite Battle Elephant"], []);
-            disable(["Bombard Tower"],
-                ["Champion", "Camel Rider", "Heavy Camel Rider", "Paladin", "Heavy Demo Ship", "Siege Onager"],
-                ["Thumb Ring", "Squires", "Bombard Tower", "Atonement", "Heresy", "Block Printing", "Shipwright",
-                    "Plate Mail Armor", "Arrowslits", "Two-Man Saw", "Guilds"]);
-            unique(["Ballista Elephant", "Elite Ballista Elephant", "Tusk Swords", "Double Crossbow"], "asian_");
+            enable([], [BATTLE_ELEPHANT, ELITE_BATTLE_ELEPHANT], []);
+            disable([BOMBARD_TOWER],
+                [CHAMPION, CAMEL_RIDER, HEAVY_CAMEL_RIDER, PALADIN, HEAVY_DEMO_SHIP, SIEGE_ONAGER],
+                [THUMB_RING, SQUIRES, BOMBARD_TOWER, ATONEMENT, HERESY, BLOCK_PRINTING, SHIPWRIGHT,
+                    PLATE_MAIL_ARMOR, ARROWSLITS, TWO_MAN_SAW, GUILDS]);
+            unique([BALLISTA_ELEPHANT, ELITE_BALLISTA_ELEPHANT, TUSK_SWORDS, DOUBLE_CROSSBOW], MONK_PREFIX_ASIAN);
             break;
         case "Koreans":
-            enable([], ["Turtle Ship", "Elite Turtle Ship"], []);
+            enable([], [TURTLE_SHIP, ELITE_TURTLE_SHIP], []);
             disable([],
-                ["Camel Rider", "Heavy Camel Rider", "Paladin", "Elite Cannon Galleon", "Demolition Raft", "Demolition Ship",
-                    "Heavy Demo Ship", "Siege Ram", "Heavy Scorpion"],
-                ["Parthian Tactics", "Bloodlines", "Redemption", "Atonement", "Heresy", "Illumination", "Hoardings",
-                    "Sappers", "Blast Furnace", "Plate Barding Armor", "Crop Rotation"]);
-            unique(["War Wagon", "Elite War Wagon", "Panokseon", "Shinkichon"], "asian_");
+                [CAMEL_RIDER, HEAVY_CAMEL_RIDER, PALADIN, ELITE_CANNON_GALLEON, DEMOLITION_RAFT, DEMOLITION_SHIP,
+                    HEAVY_DEMO_SHIP, SIEGE_RAM, HEAVY_SCORPION],
+                [PARTHIAN_TACTICS, BLOODLINES, REDEMPTION, ATONEMENT, HERESY, ILLUMINATION, HOARDINGS,
+                    SAPPERS, BLAST_FURNACE, PLATE_BARDING_ARMOR, CROP_ROTATION]);
+            unique([WAR_WAGON, ELITE_WAR_WAGON, PANOKSEON, SHINKICHON], MONK_PREFIX_ASIAN);
             break;
         case "Lithuanians":
             disable([],
-                ["Arbalester", "Camel Rider", "Heavy Camel Rider", "Siege Ram", "Siege Onager", "Heavy Scorpion", "Heavy Demo Ship"],
-                ["Parthian Tactics", "Plate Mail Armor", "Shipwright", "Siege Engineers", "Arrowslits", "Sappers",
-                    "Gold Shaft Mining"]);
-            unique(["Leitis", "Elite Leitis", "Hill Forts", "Tower Shields"], "");
+                [ARBALESTER, CAMEL_RIDER, HEAVY_CAMEL_RIDER, SIEGE_RAM, SIEGE_ONAGER, HEAVY_SCORPION, HEAVY_DEMO_SHIP],
+                [PARTHIAN_TACTICS, PLATE_MAIL_ARMOR, SHIPWRIGHT, SIEGE_ENGINEERS, ARROWSLITS, SAPPERS,
+                    GOLD_SHAFT_MINING]);
+            unique([LEITIS, ELITE_LEITIS, HILL_FORTS, TOWER_SHIELDS], MONK_PREFIX_GENERIC);
             break;
         case "Magyars":
-            disable(["Keep", "Bombard Tower", "Fortified Wall"],
-                ["Hand Cannoneer", "Camel Rider", "Heavy Camel Rider", "Elite Cannon Galleon", "Heavy Demo Ship", "Siege Ram",
-                    "Siege Onager", "Bombard Cannon"],
-                ["Squires", "Keep", "Bombard Tower", "Fortified Wall", "Redemption", "Atonement",
-                    "Faith", "Plate Mail Armor", "Architecture", "Arrowslits", "Stone Shaft Mining", "Guilds"]);
-            unique(["Magyar Huszar", "Elite Magyar Huszar", "Mercenaries", "Recurve Bow"]);
+            disable([KEEP, BOMBARD_TOWER, FORTIFIED_WALL],
+                [HAND_CANNONEER, CAMEL_RIDER, HEAVY_CAMEL_RIDER, ELITE_CANNON_GALLEON, HEAVY_DEMO_SHIP, SIEGE_RAM,
+                    SIEGE_ONAGER, BOMBARD_CANNON],
+                [SQUIRES, KEEP, BOMBARD_TOWER, FORTIFIED_WALL, REDEMPTION, ATONEMENT,
+                    FAITH, PLATE_MAIL_ARMOR, ARCHITECTURE, ARROWSLITS, STONE_SHAFT_MINING, GUILDS]);
+            unique([MAGYAR_HUSZAR, ELITE_MAGYAR_HUSZAR, MERCENARIES, RECURVE_BOW]);
             break;
         case "Malay":
-            enable([], ["Battle Elephant", "Elite Battle Elephant"], []);
-            disable(["Fortified Wall"],
-                ["Hand Cannoneer", "Heavy Cav Archer", "Champion", "Hussar", "Camel Rider", "Heavy Camel Rider", "Paladin",
-                    "Heavy Demo Ship", "Siege Ram", "Siege Onager",],
-                ["Parthian Tactics", "Bloodlines", "Fortified Wall", "Fervor", "Theocracy", "Hoardings",
-                    "Chain Barding Armor", "Plate Barding Armor", "Architecture", "Arrowslits", "Treadmill Crane",
-                    "Two-Man Saw"]);
-            unique(["Karambit Warrior", "Elite Karambit Warrior", "Thalassocracy", "Forced Levy"], "asian_");
+            enable([], [BATTLE_ELEPHANT, ELITE_BATTLE_ELEPHANT], []);
+            disable([FORTIFIED_WALL],
+                [HAND_CANNONEER, HEAVY_CAV_ARCHER, CHAMPION, HUSSAR, CAMEL_RIDER, HEAVY_CAMEL_RIDER, PALADIN,
+                    HEAVY_DEMO_SHIP, SIEGE_RAM, SIEGE_ONAGER,],
+                [PARTHIAN_TACTICS, BLOODLINES, FORTIFIED_WALL, FERVOR, THEOCRACY, HOARDINGS,
+                    CHAIN_BARDING_ARMOR, PLATE_BARDING_ARMOR, ARCHITECTURE, ARROWSLITS, TREADMILL_CRANE,
+                    TWO_MAN_SAW]);
+            unique([KARAMBIT_WARRIOR, ELITE_KARAMBIT_WARRIOR, THALASSOCRACY, FORCED_LEVY], MONK_PREFIX_ASIAN);
             break;
         case "Malians":
-            disable(["Bombard Tower"],
-                ["Halberdier", "Hussar", "Paladin", "Galleon", "Elite Cannon Galleon", "Siege Ram",
-                    "Heavy Scorpion"],
-                ["Parthian Tactics", "Shipwright", "Bombard Tower", "Bracer", "Illumination", "Blast Furnace",
-                    "Siege Engineers", "Arrowslits", "Two-Man Saw"]);
-            unique(["Gbeto", "Elite Gbeto", "Tigui", "Farimba"], "african_");
+            disable([BOMBARD_TOWER],
+                [HALBERDIER, HUSSAR, PALADIN, GALLEON, ELITE_CANNON_GALLEON, SIEGE_RAM,
+                    HEAVY_SCORPION],
+                [PARTHIAN_TACTICS, SHIPWRIGHT, BOMBARD_TOWER, BRACER, ILLUMINATION, BLAST_FURNACE,
+                    SIEGE_ENGINEERS, ARROWSLITS, TWO_MAN_SAW]);
+            unique([GBETO, ELITE_GBETO, TIGUI, FARIMBA], MONK_PREFIX_AFRICAN);
             break;
         case "Mayans":
             disableHorses(tree);
-            enable([], ["Eagle Scout", "Eagle Warrior", "Elite Eagle Warrior"], []);
-            disable(["Bombard Tower"],
-                ["Hand Cannoneer", "Champion", "Cannon Galleon", "Elite Cannon Galleon", "Siege Onager", "Bombard Cannon"],
-                ["Bombard Tower", "Redemption", "Illumination", "Siege Engineers", "Arrowslits", "Gold Shaft Mining"]);
-            unique(["Plumed Archer", "Elite Plumed Archer", "Obsidian Arrows", "El Dorado"], "meso_");
+            enable([], [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR], []);
+            disable([BOMBARD_TOWER],
+                [HAND_CANNONEER, CHAMPION, CANNON_GALLEON, ELITE_CANNON_GALLEON, SIEGE_ONAGER, BOMBARD_CANNON],
+                [BOMBARD_TOWER, REDEMPTION, ILLUMINATION, SIEGE_ENGINEERS, ARROWSLITS, GOLD_SHAFT_MINING]);
+            unique([PLUMED_ARCHER, ELITE_PLUMED_ARCHER, OBSIDIAN_ARROWS, EL_DORADO], MONK_PREFIX_MESO);
             break;
         case "Mongols":
-            disable(["Keep", "Bombard Tower"],
-                ["Hand Cannoneer", "Halberdier", "Paladin", "Elite Cannon Galleon", "Bombard Cannon"],
-                ["Dry Dock", "Keep", "Bombard Tower", "Redemption", "Illumination", "Sanctity", "Block Printing",
-                    "Theocracy", "Ring Archer Armor", "Plate Barding Armor", "Architecture", "Heated Shot",
-                    "Treadmill Crane", "Arrowslits", "Two-Man Saw", "Guilds", "Crop Rotation"]);
-            unique(["Mangudai", "Elite Mangudai", "Nomads", "Drill"], "asian_");
+            disable([KEEP, BOMBARD_TOWER],
+                [HAND_CANNONEER, HALBERDIER, PALADIN, ELITE_CANNON_GALLEON, BOMBARD_CANNON],
+                [DRY_DOCK, KEEP, BOMBARD_TOWER, REDEMPTION, ILLUMINATION, SANCTITY, BLOCK_PRINTING,
+                    THEOCRACY, RING_ARCHER_ARMOR, PLATE_BARDING_ARMOR, ARCHITECTURE, HEATED_SHOT,
+                    TREADMILL_CRANE, ARROWSLITS, TWO_MAN_SAW, GUILDS, CROP_ROTATION]);
+            unique([MANGUDAI, ELITE_MANGUDAI, NOMADS, DRILL], MONK_PREFIX_ASIAN);
             break;
         case "Persians":
-            disable(["Fortified Wall", "Keep", "Bombard Tower"],
-                ["Arbalester", "Two-Handed Swordsman", "Champion", "Siege Onager"],
-                ["Shipwright", "Fortified Wall", "Keep", "Bombard Tower", "Redemption", "Illumination", "Atonement",
-                    "Heresy", "Sanctity", "Bracer", "Siege Engineers", "Arrowslits", "Treadmill Crane"]);
-            unique(["War Elephant", "Elite War Elephant", "Kamandaran", "Mahouts"], "african_");
+            disable([FORTIFIED_WALL, KEEP, BOMBARD_TOWER],
+                [ARBALESTER, TWO_HANDED_SWORDSMAN, CHAMPION, SIEGE_ONAGER],
+                [SHIPWRIGHT, FORTIFIED_WALL, KEEP, BOMBARD_TOWER, REDEMPTION, ILLUMINATION, ATONEMENT,
+                    HERESY, SANCTITY, BRACER, SIEGE_ENGINEERS, ARROWSLITS, TREADMILL_CRANE]);
+            unique([WAR_ELEPHANT, ELITE_WAR_ELEPHANT, KAMANDARAN, MAHOUTS], MONK_PREFIX_AFRICAN);
             break;
         case "Portuguese":
-            enable(["Feitoria"], ["Caravel", "Elite Caravel"], []);
+            enable([FEITORIA], [CARAVEL, ELITE_CARAVEL], []);
             disable([],
-                ["Heavy Cav Archer", "Hussar", "Camel Rider", "Heavy Camel Rider", "Paladin", "Fast Fire Ship", "Siege Ram",
-                    "Siege Onager", "Heavy Scorpion"],
-                ["Parthian Tactics", "Squires", "Shipwright", "Illumination", "Hoardings", "Arrowslits",
-                    "Gold Shaft Mining"]);
-            unique(["Organ Gun", "Elite Organ Gun", "Carrack", "Arquebus"]);
+                [HEAVY_CAV_ARCHER, HUSSAR, CAMEL_RIDER, HEAVY_CAMEL_RIDER, PALADIN, FAST_FIRE_SHIP, SIEGE_RAM,
+                    SIEGE_ONAGER, HEAVY_SCORPION],
+                [PARTHIAN_TACTICS, SQUIRES, SHIPWRIGHT, ILLUMINATION, HOARDINGS, ARROWSLITS,
+                    GOLD_SHAFT_MINING]);
+            unique([ORGAN_GUN, ELITE_ORGAN_GUN, CARRACK, ARQUEBUS]);
             break;
         case "Saracens":
-            disable(["Bombard Tower"],
-                ["Halberdier", "Cavalier", "Paladin", "Fast Fire Ship", "Heavy Scorpion"],
-                ["Shipwright", "Bombard Tower", "Sappers", "Architecture", "Heated Shot", "Stone Shaft Mining",
-                    "Guilds", "Crop Rotation"]);
-            unique(["Mameluke", "Elite Mameluke", "Madrasah", "Zealotry"], "african_");
+            disable([BOMBARD_TOWER],
+                [HALBERDIER, CAVALIER, PALADIN, FAST_FIRE_SHIP, HEAVY_SCORPION],
+                [SHIPWRIGHT, BOMBARD_TOWER, SAPPERS, ARCHITECTURE, HEATED_SHOT, STONE_SHAFT_MINING,
+                    GUILDS, CROP_ROTATION]);
+            unique([MAMELUKE, ELITE_MAMELUKE, MADRASAH, ZEALOTRY], MONK_PREFIX_AFRICAN);
             break;
         case "Slavs":
-            disable(["Keep", "Bombard Tower"],
-                ["Arbalester", "Hand Cannoneer", "Camel Rider", "Heavy Camel Rider", "Paladin", "Elite Cannon Galleon",
-                    "Heavy Demo Ship", "Bombard Cannon"],
-                ["Thumb Ring", "Parthian Tactics", "Shipwright", "Keep", "Bombard Tower", "Heresy", "Bracer",
-                    "Architecture", "Arrowslits", "Heated Shot", "Stone Shaft Mining", "Guilds"]);
-            unique(["Boyar", "Elite Boyar", "Orthodoxy", "Druzhina"]);
+            disable([KEEP, BOMBARD_TOWER],
+                [ARBALESTER, HAND_CANNONEER, CAMEL_RIDER, HEAVY_CAMEL_RIDER, PALADIN, ELITE_CANNON_GALLEON,
+                    HEAVY_DEMO_SHIP, BOMBARD_CANNON],
+                [THUMB_RING, PARTHIAN_TACTICS, SHIPWRIGHT, KEEP, BOMBARD_TOWER, HERESY, BRACER,
+                    ARCHITECTURE, ARROWSLITS, HEATED_SHOT, STONE_SHAFT_MINING, GUILDS]);
+            unique([BOYAR, ELITE_BOYAR, ORTHODOXY, DRUZHINA]);
             break;
         case "Spanish":
-            enable([], ["Missionary"], []);
+            enable([], [MISSIONARY], []);
             disable([],
-                ["Crossbowman", "Arbalester", "Camel Rider", "Heavy Camel Rider", "Siege Onager", "Heavy Scorpion"],
-                ["Parthian Tactics", "Siege Engineers", "Heated Shot", "Treadmill Crane", "Gold Shaft Mining",
-                    "Crop Rotation"]);
-            unique(["Conquistador", "Elite Conquistador", "Inquisition", "Supremacy"]);
+                [CROSSBOWMAN, ARBALESTER, CAMEL_RIDER, HEAVY_CAMEL_RIDER, SIEGE_ONAGER, HEAVY_SCORPION],
+                [PARTHIAN_TACTICS, SIEGE_ENGINEERS, HEATED_SHOT, TREADMILL_CRANE, GOLD_SHAFT_MINING,
+                    CROP_ROTATION]);
+            unique([CONQUISTADOR, ELITE_CONQUISTADOR, INQUISITION, SUPREMACY]);
             break;
         case "Tatars":
-            enable([], ["Steppe Lancer", "Elite Steppe Lancer"], []);
-            disable(["Keep"],
-                ["Arbalester", "Champion", "Halberdier", "Paladin", "Siege Onager", "Bombard Cannon", "Heavy Demo Ship"],
-                ["Chain Mail Armor", "Plate Mail Armor", "Shipwright", "Architecture", "Keep", "Arrowslits",
-                    "Hoardings", "Redemption", "Heresy", "Sanctity", "Faith", "Theocracy", "Stone Shaft Mining", "Two-Man Saw"]);
-            unique(["Keshik", "Elite Keshik", "Silk Armor", "Timurid Siegecraft"]);
+            enable([], [STEPPE_LANCER, ELITE_STEPPE_LANCER], []);
+            disable([KEEP],
+                [ARBALESTER, CHAMPION, HALBERDIER, PALADIN, SIEGE_ONAGER, BOMBARD_CANNON, HEAVY_DEMO_SHIP],
+                [CHAIN_MAIL_ARMOR, PLATE_MAIL_ARMOR, SHIPWRIGHT, ARCHITECTURE, KEEP, ARROWSLITS,
+                    HOARDINGS, REDEMPTION, HERESY, SANCTITY, FAITH, THEOCRACY, STONE_SHAFT_MINING, TWO_MAN_SAW]);
+            unique([KESHIK, ELITE_KESHIK, SILK_ARMOR, TIMURID_SIEGECRAFT]);
             break;
         case "Teutons":
             disable([],
-                ["Arbalester", "Heavy Cav Archer", "Light Cavalry", "Hussar", "Camel Rider", "Heavy Camel Rider",
-                    "Elite Cannon Galleon", "Siege Ram"],
-                ["Thumb Ring", "Parthian Tactics", "Husbandry", "Dry Dock", "Shipwright", "Bracer",
-                    "Architecture", "Gold Shaft Mining"]);
-            unique(["Teutonic Knight", "Elite Teutonic Knight", "Ironclad", "Crenellations"]);
+                [ARBALESTER, HEAVY_CAV_ARCHER, LIGHT_CAVALRY, HUSSAR, CAMEL_RIDER, HEAVY_CAMEL_RIDER,
+                    ELITE_CANNON_GALLEON, SIEGE_RAM],
+                [THUMB_RING, PARTHIAN_TACTICS, HUSBANDRY, DRY_DOCK, SHIPWRIGHT, BRACER,
+                    ARCHITECTURE, GOLD_SHAFT_MINING]);
+            unique([TEUTONIC_KNIGHT, ELITE_TEUTONIC_KNIGHT, IRONCLAD, CRENELLATIONS]);
             break;
         case "Turks":
             disable([],
-                ["Arbalester", "Elite Skirmisher", "Pikeman", "Halberdier", "Paladin", "Fast Fire Ship", "Onager",
-                    "Siege Onager"],
-                ["Herbal Medicine", "Illumination", "Block Printing", "Stone Shaft Mining", "Crop Rotation",
-                    "Siege Engineers"]);
-            unique(["Janissary", "Elite Janissary", "Sipahi", "Artillery"], "african_");
+                [ARBALESTER, ELITE_SKIRMISHER, PIKEMAN, HALBERDIER, PALADIN, FAST_FIRE_SHIP, ONAGER,
+                    SIEGE_ONAGER],
+                [HERBAL_MEDICINE, ILLUMINATION, BLOCK_PRINTING, STONE_SHAFT_MINING, CROP_ROTATION,
+                    SIEGE_ENGINEERS]);
+            unique([JANISSARY, ELITE_JANISSARY, SIPAHI, ARTILLERY], MONK_PREFIX_AFRICAN);
             break;
         case "Vietnamese":
-            enable([], ["Battle Elephant", "Elite Battle Elephant", "Imperial Skirmisher"], []);
+            enable([], [BATTLE_ELEPHANT, ELITE_BATTLE_ELEPHANT, IMPERIAL_SKIRMISHER], []);
             disable([],
-                ["Hand Cannoneer", "Hussar", "Paladin", "Camel Rider", "Heavy Camel Rider", "Fast Fire Ship", "Siege Ram",
-                    "Siege Onager", "Heavy Scorpion",],
-                ["Parthian Tactics", "Shipwright", "Redemption", "Heresy", "Fervor", "Blast Furnace",
-                    "Masonry", "Architecture", "Gold Shaft Mining"]);
-            unique(["Rattan Archer", "Elite Rattan Archer", "Chatras", "Paper Money"], "asian_");
+                [HAND_CANNONEER, HUSSAR, PALADIN, CAMEL_RIDER, HEAVY_CAMEL_RIDER, FAST_FIRE_SHIP, SIEGE_RAM,
+                    SIEGE_ONAGER, HEAVY_SCORPION,],
+                [PARTHIAN_TACTICS, SHIPWRIGHT, REDEMPTION, HERESY, FERVOR, BLAST_FURNACE,
+                    MASONRY, ARCHITECTURE, GOLD_SHAFT_MINING]);
+            unique([RATTAN_ARCHER, ELITE_RATTAN_ARCHER, CHATRAS, PAPER_MONEY], MONK_PREFIX_ASIAN);
             break;
         case "Vikings":
-            enable([], ["Longboat", "Elite Longboat"], []);
-            disable(["Keep", "Bombard Tower"],
-                ["Hand Cannoneer", "Heavy Cav Archer", "Halberdier", "Hussar", "Camel Rider", "Heavy Camel Rider", "Paladin",
-                    "Fire Galley", "Fire Ship", "Fast Fire Ship", "Siege Onager", "Bombard Cannon"],
-                ["Parthian Tactics", "Bloodlines", "Husbandry", "Shipwright", "Keep", "Bombard Tower", "Redemption",
-                    "Herbal Medicine", "Sanctity", "Illumination", "Theocracy", "Plate Barding Armor",
-                    "Stone Shaft Mining", "Guilds"]);
-            unique(["Berserk", "Elite Berserk", "Chieftains", "Berserkergang"]);
+            enable([], [LONGBOAT, ELITE_LONGBOAT], []);
+            disable([KEEP, BOMBARD_TOWER],
+                [HAND_CANNONEER, HEAVY_CAV_ARCHER, HALBERDIER, HUSSAR, CAMEL_RIDER, HEAVY_CAMEL_RIDER, PALADIN,
+                    FIRE_GALLEY, FIRE_SHIP, FAST_FIRE_SHIP, SIEGE_ONAGER, BOMBARD_CANNON],
+                [PARTHIAN_TACTICS, BLOODLINES, HUSBANDRY, SHIPWRIGHT, KEEP, BOMBARD_TOWER, REDEMPTION,
+                    HERBAL_MEDICINE, SANCTITY, ILLUMINATION, THEOCRACY, PLATE_BARDING_ARMOR,
+                    STONE_SHAFT_MINING, GUILDS]);
+            unique([BERSERK, ELITE_BERSERK, CHIEFTAINS, BERSERKERGANG]);
             break;
     }
 }
