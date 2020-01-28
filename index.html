@@ -175,7 +175,7 @@
         document.getElementById('civname').innerText = selectedCiv;
         if (selectedCiv in data.civs) {
             document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
-            document.getElementById('civlogo').src = `./img/Civs/${selectedCiv}.png`;
+            document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
             window.location.hash = selectedCiv;
         } else {
             document.getElementById('civtext').innerHTML = "";
