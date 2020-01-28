@@ -21,6 +21,7 @@
 
         #container {
             min-width: 100%;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
@@ -41,18 +42,19 @@
 
         #wrapper {
             min-width: 100%;
+            flex: 1 1 auto;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             -ms-overflow-style: -ms-autohiding-scrollbar;
+            background-color: #e7c28e;
         }
 
         #techtree {
             border: 5px solid #4d3617;
-            background-color: #e7c28e;
-            flex: 0 0 auto;
+            flex: 1 0 auto;
             position: relative;
         }
 
