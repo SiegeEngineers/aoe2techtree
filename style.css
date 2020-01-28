@@ -75,6 +75,7 @@
             height: 52px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         #thanks {
@@ -83,6 +84,8 @@
 
         #civname {
             text-align: center;
+            flex: 1 0 auto;
+            margin: 0;
         }
 
         hr {
