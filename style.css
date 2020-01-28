@@ -71,6 +71,12 @@
             font-size: 11pt;
         }
 
+        #civtitle {
+            height: 52px;
+            display: flex;
+            justify-content: space-between;
+        }
+
         #thanks {
             flex: 0 0 auto;
         }

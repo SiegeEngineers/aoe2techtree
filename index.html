@@ -56,7 +56,10 @@
     <div id="wrapper">
         <div id="metainfo">
             <div id="civinfo">
-                <h2 id="civname">Loading…</h2>
+                <div id="civtitle">
+                    <h2 id="civname">Loading…</h2>
+                    <img id="civlogo" height=52 width=52 data-transparent="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
+                </div>
                 <hr>
                 <p id="civtext"></p>
             </div>
@@ -172,9 +175,11 @@
         document.getElementById('civname').innerText = selectedCiv;
         if (selectedCiv in data.civs) {
             document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
+            document.getElementById('civlogo').src = `./img/Civs/${selectedCiv}.png`;
             window.location.hash = selectedCiv;
         } else {
             document.getElementById('civtext').innerHTML = "";
+            document.getElementById('civlogo').src = document.getElementById('civlogo').dataset.transparent;
         }
         hideHelp();
     }
