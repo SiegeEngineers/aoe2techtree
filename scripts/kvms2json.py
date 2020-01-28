@@ -94,6 +94,7 @@ def main():
                 name_key["techs"][text] = amatch.group('number')
         name_key["units"]["Heavy Cav Archer"] = name_key["units"]["Heavy Cavalry Archer"]
         name_key["units"]["Heavy Demo Ship"] = name_key["units"]["Heavy Demolition Ship"]
+        name_key["techs"]["Double Crossbow"] = name_key["techs"]["Double Crossbows"]
 
     meta = {}
     if len(sys.argv) > 2:
