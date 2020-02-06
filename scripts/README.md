@@ -12,5 +12,5 @@ Example invocation:
 
 ```
 ./collectValues.py full.json > /tmp/values.json
-./kvms2json.py key-value-modded-strings-utf8.txt /tmp/values.json > ../data/data.json
+./kvms2json.py key-value-strings-utf8.txt /tmp/values.json > ../data/data.json
 ```
