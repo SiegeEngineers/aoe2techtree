@@ -241,17 +241,57 @@
         let meta = data.meta[entitytype][name];
         if (meta !== undefined) {
             text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
-            text = text.replace(/‹hp›/, "HP: " + meta.HP);
-            text = text.replace(/‹attack›/, "Attack: " + meta.Attack);
-            text = text.replace(/‹(A|a)rmor›/, "Armor: " + meta.MeleeArmor);
-            text = text.replace(/‹(P|p)iercearmor›/, "Piercearmor: " + meta.PierceArmor);
-            text = text.replace(/‹garrison›/, "Garrison: " + meta.GarrisonCapacity);
-            text = text.replace(/‹range›/, "Range: " + meta.Range);
+            text = text.replace(/‹hp›/, "HP:&nbsp;" + meta.HP + ",");
+            text = text.replace(/‹attack›/, "Attack:&nbsp;" + meta.Attack + ",");
+            text = text.replace(/‹(A|a)rmor›/, "Armor:&nbsp;" + meta.MeleeArmor + ",");
+            text = text.replace(/‹(P|p)iercearmor›/, "Piercearmor:&nbsp;" + meta.PierceArmor + ",");
+            text = text.replace(/‹garrison›/, "Garrison:&nbsp;" + meta.GarrisonCapacity + ",");
+            text = text.replace(/‹range›/, "Range:&nbsp;" + meta.Range + ",");
+            text += minRangeIfDefined(meta.MinRange, "Min Range:&nbsp;");
+            text += ifDefined(meta.LineOfSight, "Line of Sight:&nbsp;");
+            text += ifDefined(meta.Speed, "Speed:&nbsp;");
+            text += secondsIfDefined(meta.TrainTime, "Build Time:&nbsp;");
+            text += secondsIfDefined(meta.ResearchTime, "Research Time:&nbsp;");
+            text += ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;");
+            text += secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;");
+            text += accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;");
         } else {
             console.log("No metadata found for " + name);
         }
-        return text;
+        return text.substring(0, text.length - 1);
 
+    }
+
+    function ifDefined(value, prefix) {
+        if (value !== undefined) {
+            return " " + prefix + value + ",";
+        } else {
+            return "";
+        }
+    }
+
+    function secondsIfDefined(value, prefix) {
+        if (value !== undefined) {
+            return " " + prefix + value + "s,";
+        } else {
+            return "";
+        }
+    }
+
+    function accuracyIfDefined(value, prefix) {
+        if (value !== undefined && value < 100) {
+            return " " + prefix + value + "%,";
+        } else {
+            return "";
+        }
+    }
+
+    function minRangeIfDefined(value, prefix) {
+        if (value !== undefined && value > 0) {
+            return " " + prefix + value + ",";
+        } else {
+            return "";
+        }
     }
 
     function cost(cost_object) {

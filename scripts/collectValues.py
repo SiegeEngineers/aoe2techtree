@@ -395,6 +395,8 @@ def main():
                         'MeleeArmor': unit["Type50"]["DisplayedMeleeArmour"],
                         'PierceArmor': unit["Creatable"]["DisplayedPierceArmour"],
                         'GarrisonCapacity': unit["GarrisonCapacity"],
+                        'LineOfSight': unit["LineOfSight"],
+                        'TrainTime': unit["Creatable"]["TrainTime"],
                     })
                     building_set.remove(key)
             for key, value in UNITS.items():
@@ -410,6 +412,15 @@ def main():
                         'MeleeArmor': unit["Type50"]["DisplayedMeleeArmour"],
                         'PierceArmor': unit["Creatable"]["DisplayedPierceArmour"],
                         'GarrisonCapacity': unit["GarrisonCapacity"],
+                        'LineOfSight': unit["LineOfSight"],
+                        'Speed': unit["Speed"],
+                        'Attacks': unit["Type50"]["Attacks"],
+                        'Armours': unit["Type50"]["Armours"],
+                        'ReloadTime': unit["Type50"]["ReloadTime"],
+                        'AccuracyPercent': unit["Type50"]["AccuracyPercent"],
+                        'FrameDelay': unit["Type50"]["FrameDelay"],
+                        'MinRange': unit["Type50"]["MinRange"],
+                        'TrainTime': unit["Creatable"]["TrainTime"],
                     })
                     unit_set.remove(key)
         tech_id = 0
@@ -419,6 +430,7 @@ def main():
                     techs.append({
                         'internal_name': value['internal_name'],
                         'Name': value['Name'],
+                        'ResearchTime': tech['ResearchTime'],
                         'ID': key,
                         'Cost': get_cost(tech),
                     })
