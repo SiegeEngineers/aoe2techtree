@@ -340,7 +340,7 @@ const BERSERKERGANG = "Berserkergang";
 const horseDisabledBuildings = [STABLE];
 const horseDisabledUnits = [SCOUT_CAVALRY, LIGHT_CAVALRY, HUSSAR, KNIGHT, PALADIN, CAMEL_RIDER,
     HEAVY_CAMEL_RIDER, CAVALIER, CAVALRY_ARCHER, HEAVY_CAV_ARCHER];
-const horseDisabledTech = [BLOODLINES, HUSBANDRY, SCALE_BARDING_ARMOR, CHAIN_BARDING_ARMOR,
+const horseDisabledTechs = [BLOODLINES, HUSBANDRY, SCALE_BARDING_ARMOR, CHAIN_BARDING_ARMOR,
     PLATE_BARDING_ARMOR, PARTHIAN_TACTICS];
 
 const defaultDisabledUnits = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,
@@ -615,7 +615,7 @@ function unique(names, monk_prefix) {
 
 
 function disableHorses() {
-    disable(horseDisabledBuildings, horseDisabledUnits, horseDisabledTech);
+    disable(horseDisabledBuildings, horseDisabledUnits, horseDisabledTechs);
 }
 
 

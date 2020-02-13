@@ -307,6 +307,7 @@
      * @param {string} type The type of the entity being cross-referenced.
      */
     function styleXRefBadges(name, type) {
+        let horseDisabledAll = horseDisabledBuildings.concat(horseDisabledUnits).concat(horseDisabledTechs);
         for (let civ of Object.keys(data.civs)) {
             let xRefImage = document.getElementById(`xRef__badge__${civ}`);
             // By default, assume that this unit can be built.
@@ -320,7 +321,7 @@
             if (civsConfig[`${civ}`]) {
                 // Fast-Fail horses if civ disablesHorses
                 if (civsConfig[`${civ}`]['disableHorses'] &&
-                    horseDisabledBuildings.concat(horseDisabledUnits).concat(horseDisabledTech).includes(name)) {
+                    horseDisabledAll.includes(name)) {
                     found = false;
                 }
                 if (type === "UNIT") {
