@@ -133,10 +133,10 @@
             for (let r of Object.keys(lane.rows)) {
                 let row = lane.rows[r];
                 for (let caret of row) {
-                    var item = draw.group().addClass('node')
+                    var item = draw.group().attr({id: caret.id}).addClass('node')
                     var rect = item.rect(caret.width, caret.height).attr({
                         fill: caret.type.colour,
-                        id: caret.id
+                        id: `${caret.id}_bg`
                     }).move(caret.x, caret.y);
                     let name = formatName(caret.name);
                     var text = item.text(name)
@@ -231,8 +231,7 @@
         unhighlightPath();
 
         recurse(caretId);
-        SVG.get(caretId).parent() // get the `.node`
-            .addClass('is-highlight');
+        SVG.get(caretId).addClass('is-highlight');
 
         function recurse(caretId) {
             const parentId = parentConnections.get(caretId);
