@@ -5268,47 +5268,67 @@
                         "Class": 8
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 4,
                         "Class": 3
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 28
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
                     },
                     {
                         "Amount": 0,
                         "Class": 31
                     }
                 ],
-                "Attack": 5,
+                "Attack": 4,
                 "Attacks": [
                     {
                         "Amount": 0,
                         "Class": 21
                     },
                     {
-                        "Amount": 5,
+                        "Amount": 4,
                         "Class": 3
                     },
                     {
                         "Amount": 0,
                         "Class": 17
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 28
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 27
                     }
                 ],
                 "Cost": {
-                    "Food": 60,
-                    "Wood": 50
+                    "Food": 50,
+                    "Wood": 35
                 },
-                "FrameDelay": 30,
+                "FrameDelay": 12,
                 "GarrisonCapacity": 0,
-                "HP": 70,
-                "ID": 596,
+                "HP": 55,
+                "ID": 1012,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
                 "MinRange": 1,
                 "Name": "Elite Genitour",
-                "PierceArmor": 1,
+                "PierceArmor": 4,
                 "Range": 4,
                 "ReloadTime": 3,
                 "Speed": 1.35,
-                "TrainTime": 29,
-                "internal_name": "GENITX"
+                "TrainTime": 23,
+                "internal_name": "EGENITO"
             },
             "Elite Genoese Crossbowman": {
                 "AccuracyPercent": 100,
@@ -7624,47 +7644,67 @@
                         "Class": 8
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 3,
                         "Class": 3
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 28
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
                     },
                     {
                         "Amount": 0,
                         "Class": 31
                     }
                 ],
-                "Attack": 4,
+                "Attack": 3,
                 "Attacks": [
                     {
                         "Amount": 0,
                         "Class": 21
                     },
                     {
-                        "Amount": 4,
+                        "Amount": 3,
                         "Class": 3
                     },
                     {
                         "Amount": 0,
                         "Class": 17
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 28
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 27
                     }
                 ],
                 "Cost": {
-                    "Food": 60,
-                    "Wood": 50
+                    "Food": 50,
+                    "Wood": 35
                 },
-                "FrameDelay": 30,
+                "FrameDelay": 12,
                 "GarrisonCapacity": 0,
-                "HP": 60,
-                "ID": 583,
+                "HP": 50,
+                "ID": 1010,
                 "LineOfSight": 5,
                 "MeleeArmor": 0,
                 "MinRange": 1,
                 "Name": "Genitour",
-                "PierceArmor": 1,
-                "Range": 3,
+                "PierceArmor": 3,
+                "Range": 4,
                 "ReloadTime": 3,
                 "Speed": 1.35,
-                "TrainTime": 29,
-                "internal_name": "GENIT"
+                "TrainTime": 25,
+                "internal_name": "GENITO"
             },
             "Genoese Crossbowman": {
                 "AccuracyPercent": 100,
