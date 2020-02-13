@@ -153,3 +153,13 @@
         .xRef__badge {
             cursor: pointer;
         }
+
+        .connection {
+            fill: none;
+            stroke: #000;
+            stroke-width: 2px;
+        }
+        .connection.is-highlight {
+            stroke: #fff;
+            z-index: 1;
+        }
