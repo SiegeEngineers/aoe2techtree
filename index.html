@@ -162,7 +162,6 @@
             }
         }
 
-        // load the civs
         loadCiv();
         // Make the xref badges
         document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
@@ -216,7 +215,7 @@
         let content = getHelpText(name, id, type);
         helptextContent.innerHTML = content;
 
-        badgeXRef(name, type);
+        styleXRefBadges(name, type);
 
         helptext.style.display = "block";
 
@@ -290,7 +289,6 @@
               loadCiv();
             });
 
-            // Add a badge for this civ if this element isn't disabled, or if it is a unique unit and not enabled.
             let xRefImage = document.createElement('img');
 
             xRefImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
@@ -308,7 +306,7 @@
      * @param {string} name The name of the entity being cross-reference. 
      * @param {string} type The type of the entity being cross-reference.
      */
-    function badgeXRef(name, type) {
+    function styleXRefBadges(name, type) {
         for (let civ of Object.keys(data.civs)) {
             let xRefImage = document.getElementById(`xRef__badge__${civ}`);
             // By default, assume that this unit can be built.
@@ -330,21 +328,13 @@
                     //      1. The unit is disabled by default, and not 
                     //         specifically enabled in the config.
                     //      2. The unit is disabled in the specific config.
-
-                    // if this unit is disabled by default, and
-                    if (defaultDisabled.includes(name) &&
-                        // if there is no enabled object or
+                    if (defaultDisabledUnits.includes(name) &&
                         (!enabled ||
-                         // if there are no enabled units or
                          !enabled['units'] ||
-                         // if the unit is not specifically enabled
                          !enabled['units'].includes(name))) {
                         found = false;
-                    // if there is a disabled object and
                     } else if (disabled &&
-                            // if there are disabled units and
                             disabled['units'] &&
-                            // if this unit is specifically disabled
                             disabled['units'].includes(name)) {
                         found = false;
                     }
@@ -353,14 +343,9 @@
                     //      1. The UNIQUEUNIT can be enabled in 'unique'.
                     //      2. The UNIQUEUNIT can be enabled in 'unit'.
                     //          e.g. genitour
-                
-                    // if there is not a unique object or
                     if ((!unique ||
-                         // if the unit is not in the unique object
                          !unique.includes(name)) &&
-                        // if there is not an enabled or if there is not a units object or
                         (!enabled || !enabled['units'] ||
-                         // if the unit is not in the enabled object
                          !enabled['units'].includes(name))) {
                         found = false;    
                     }
@@ -376,23 +361,14 @@
                     //      1. The building is disabled by default, and not 
                     //         specifically enabled in the config.
                     //      2. The building is disabled in the specific config.
-
-                    // if this building is disabled by default, and
                     if (defaultDisabledBuildings.includes(name) &&
-                    // if there is no enabled object or
                     (!enabled ||
-                    // if there are no enabled buildings or 
                     !enabled['buildings'] ||
-                    // if the building is not specifically enabled
                     !enabled['buildings'].includes(name))) {
                         found = false;
-                    // if there is a disabled object and
                     } else if (disabled &&
-                            // if there are disabled buildings and
-                            disabled['buildings'] &&
-                            // if the building is specifically disabled
-                            disabled['buildings'].includes(name)
-                            ) {
+                               disabled['buildings'] &&
+                               disabled['buildings'].includes(name)) {
                         found = false;
                     }
                 }

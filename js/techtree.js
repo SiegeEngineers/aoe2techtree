@@ -344,7 +344,7 @@ const horseDisabled = [STABLE,
     CAVALRY_ARCHER, HEAVY_CAV_ARCHER, SCALE_BARDING_ARMOR,
     CHAIN_BARDING_ARMOR, PLATE_BARDING_ARMOR, PARTHIAN_TACTICS];
 
-const defaultDisabled = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,
+const defaultDisabledUnits = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,
     ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER,];
     
 const defaultDisabledBuildings = [KREPOST, FEITORIA,];
@@ -543,8 +543,7 @@ function resetToDefault(tree) {
     SVG.select('.cross').animate(animation_duration).attr({'fill-opacity': 0});
     disableUniqueUnits(tree);
     enable([], [UNIQUE_UNIT, ELITE_UNIQUE_UNIT], []);
-    disable([], defaultDisabled, []);
-    disable(defaultDisabledBuildings, [], []);
+    disable(defaultDisabledBuildings, defaultDisabledUnits, []);
 }
 
 function disable(buildings, units, techs) {
