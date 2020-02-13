@@ -90,8 +90,7 @@
     let connections = getConnections();
     let parentConnections = new Map(connections.map(([parent, child]) => [child, parent]));
     let connectionpoints = getConnectionPoints(tree);
-    // Populated when the lines are actually drawn
-    let connectionLines = new Map();
+    let focusedNodeId = null;
 
     loadJson(function (response) {
 
@@ -117,17 +116,17 @@
             hideHelp();
         }).y(tree.height / 4 * 3);
 
-        const connectionGroup = draw.group();
+        const connectionGroup = draw.group().attr({id: 'connection_lines'});
         for (let connection of connections) {
             let from = connectionpoints.get(connection[0]);
             let to = connectionpoints.get(connection[1]);
             let intermediate_height = from.y + (tree.element_height * 2 / 3);
-            let line = connectionGroup.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y])
+            connectionGroup.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y])
+                .attr({id: `connection_${connection[0]}_${connection[1]}`})
                 .addClass('connection')
                 .click(function () {
                     hideHelp();
                 });
-            connectionLines.set(`${connection[0]},${connection[1]}`, line);
         }
 
         for (let lane of tree.lanes) {
@@ -164,8 +163,10 @@
                         .mouseover(function () {
                             highlightPath(caret.id);
                         })
+                        .mouseout(resetHighlightPath)
                         .click(function () {
                             displayHelp(caret.id);
+                            resetHighlightPath(caret.id);
                         });
 
                 }
@@ -213,14 +214,26 @@
         xobj.send(null);
     }
 
-    function highlightPath(caretId) {
+    function resetHighlightPath() {
+        if (focusedNodeId) {
+            highlightPath(focusedNodeId);
+        } else {
+            unhighlightPath();
+        }
+    }
+
+    function unhighlightPath() {
         SVG.select('.connection').removeClass('is-highlight');
+    }
+
+    function highlightPath(caretId) {
+        unhighlightPath();
         recurse(caretId);
         function recurse(caretId) {
             const parentId = parentConnections.get(caretId);
             if (!parentId) return;
 
-            const line = connectionLines.get(`${parentId},${caretId}`);
+            const line = SVG.get(`connection_${parentId}_${caretId}`);
             if (line) {
                 // Move to the end of the <g> element so that it is drawn on top.
                 // Without this, the line would be highlighted, but other unhighlighted
@@ -232,6 +245,7 @@
     }
 
     function displayHelp(caretId) {
+        focusedNodeId = caretId;
         let helptext = document.getElementById("helptext");
         let helptextContent = document.getElementById("helptext__content");
         let helptextXRef = document.getElementById("helptext__x_ref");
@@ -261,6 +275,7 @@
     }
 
     function hideHelp() {
+        focusedNodeId = null;
         helptext.style.display = "none";
     }
 
