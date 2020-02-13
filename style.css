@@ -149,3 +149,7 @@
             fill: transparent;
             cursor: pointer;
         }
+
+        .xRef__badge {
+            cursor: pointer;
+        }
