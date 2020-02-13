@@ -337,12 +337,11 @@ const ELITE_BERSERK = "Elite Berserk";
 const CHIEFTAINS = "Chieftains";
 const BERSERKERGANG = "Berserkergang";
 
-const horseDisabled = [STABLE, 
-    SCOUT_CAVALRY, LIGHT_CAVALRY, HUSSAR,
-    BLOODLINES, KNIGHT, CAVALIER, PALADIN,
-    CAMEL_RIDER, HEAVY_CAMEL_RIDER, HUSBANDRY,
-    CAVALRY_ARCHER, HEAVY_CAV_ARCHER, SCALE_BARDING_ARMOR,
-    CHAIN_BARDING_ARMOR, PLATE_BARDING_ARMOR, PARTHIAN_TACTICS];
+const horseDisabledBuildings = [STABLE];
+const horseDisabledUnits = [SCOUT_CAVALRY, LIGHT_CAVALRY, HUSSAR, KNIGHT, PALADIN, CAMEL_RIDER,
+    HEAVY_CAMEL_RIDER, CAVALIER, CAVALRY_ARCHER, HEAVY_CAV_ARCHER];
+const horseDisabledTech = [BLOODLINES, HUSBANDRY, SCALE_BARDING_ARMOR, CHAIN_BARDING_ARMOR,
+    PLATE_BARDING_ARMOR, PARTHIAN_TACTICS];
 
 const defaultDisabledUnits = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,
     ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER,];
@@ -615,25 +614,8 @@ function unique(names, monk_prefix) {
 }
 
 
-function disableHorses(tree) {
-    let stable_index = -1;
-    for (let i = 0; i < tree.lanes.length; i++) {
-        let lane = tree.lanes[i];
-        for (let r of Object.keys(lane.rows)) {
-            for (let caret of lane.rows[r]) {
-                if (caret.id === 'building_' + formatId(STABLE)) {
-                    stable_index = i;
-                }
-            }
-        }
-    }
-    let lane = tree.lanes[stable_index];
-    for (let r of Object.keys(lane.rows)) {
-        for (let caret of lane.rows[r]) {
-            SVG.get(caret.id + '_x').animate(animation_duration).attr({'fill-opacity': 1});
-        }
-    }
-    disable([], [CAVALRY_ARCHER, HEAVY_CAV_ARCHER], [SCALE_BARDING_ARMOR, CHAIN_BARDING_ARMOR, PLATE_BARDING_ARMOR, PARTHIAN_TACTICS]);
+function disableHorses() {
+    disable(horseDisabledBuildings, horseDisabledUnits, horseDisabledTech);
 }
 
 

@@ -320,7 +320,7 @@
             if (civsConfig[`${civ}`]) {
                 // Fast-Fail horses if civ disablesHorses
                 if (civsConfig[`${civ}`]['disableHorses'] &&
-                    horseDisabled.includes(name)) {
+                    horseDisabledBuildings.concat(horseDisabledUnits).concat(horseDisabledTech).includes(name)) {
                     found = false;
                 }
                 if (type === "UNIT") {
