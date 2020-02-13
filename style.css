@@ -149,6 +149,10 @@
             fill: transparent;
             cursor: pointer;
         }
+        .node.is-highlight .node__overlay {
+            stroke: #fff;
+            stroke-width: 2px;
+        }
 
         .xRef__badge {
             cursor: pointer;

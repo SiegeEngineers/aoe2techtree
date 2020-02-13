@@ -223,12 +223,17 @@
     }
 
     function unhighlightPath() {
-        SVG.select('.connection').removeClass('is-highlight');
+        SVG.select('.node.is-highlight, .connection.is-highlight')
+            .removeClass('is-highlight');
     }
 
     function highlightPath(caretId) {
         unhighlightPath();
+
         recurse(caretId);
+        SVG.get(caretId).parent() // get the `.node`
+            .addClass('is-highlight');
+
         function recurse(caretId) {
             const parentId = parentConnections.get(caretId);
             if (!parentId) return;
