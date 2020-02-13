@@ -7,7 +7,7 @@ function civ(name, tree) {
     let disabled = selectedCiv.disabled || {};
     let uniqueConfig = selectedCiv.unique || {};
     if (selectedCiv.disableHorses) {
-        disableHorses(tree);
+        disableHorses();
     }
 
     enable(enabled.buildings || [], enabled.units || [], enabled.techs || []);
@@ -25,7 +25,6 @@ const civsConfig = {
           ],
           techs: [ 
              THUMB_RING,
-             PARTHIAN_TACTICS,
              HOARDINGS,
              RING_ARCHER_ARMOR,
              MASONRY,

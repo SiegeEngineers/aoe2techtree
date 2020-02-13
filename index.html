@@ -74,7 +74,10 @@
             </div>
         </div>
         <div id="techtree">
-            <div id="helptext"></div>
+            <div id="helptext">
+                <div id="helptext__content"></div>
+                <div id="helptext__x_ref"></div>
+              </div>
         </div>
     </div>
 </div>
@@ -160,6 +163,8 @@
         }
 
         loadCiv();
+        // Make the xref badges
+        document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
     });
 
     function imagePrefix(name) {
@@ -200,13 +205,18 @@
 
     function displayHelp(overlayId) {
         let helptext = document.getElementById("helptext");
+        let helptextContent = document.getElementById("helptext__content");
+        let helptextXRef = document.getElementById("helptext__x_ref");
         let overlay = SVG.get(overlayId);
         let name = overlay.data('name');
         let id = overlay.data('id');
         let caret = overlay.data('caret');
         let type = overlay.data('type');
         let content = getHelpText(name, id, type);
-        helptext.innerHTML = content;
+        helptextContent.innerHTML = content;
+
+        styleXRefBadges(name, type);
+
         helptext.style.display = "block";
 
         let top = caret.y + caret.height;
@@ -260,6 +270,116 @@
         }
         return text.substring(0, text.length - 1);
 
+    }
+
+    /**
+     * Create the Cross-Reference badges. This is done at load time in order to avoid re-making the
+     * badges at runtime per-click on a new unit.
+     * 
+     * @return A container with buttons + images for each civ to be used in cross referencing.
+     */
+     function createXRefBadges() {
+        let xRefLinks = document.createElement('div');
+        xRefLinks.id = "helptext__x_ref__container";
+
+        for (let civ of Object.keys(data.civs)) {
+            let xRefLink = document.createElement('button');
+            xRefLink.addEventListener('click', function() {
+              document.getElementById('civselect').value=civ;
+              loadCiv();
+            });
+
+            let xRefImage = document.createElement('img');
+
+            xRefImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
+            xRefImage.title = `${civ}`;
+            xRefImage.id = `xRef__badge__${civ}`;
+            xRefLink.appendChild(xRefImage);
+            xRefLinks.appendChild(xRefLink);
+        }
+        return xRefLinks;
+    }
+
+    /** 
+     * Set on/off of all cross reference badges for a single unit.
+     * 
+     * @param {string} name The name of the entity being cross-referenced. 
+     * @param {string} type The type of the entity being cross-referenced.
+     */
+    function styleXRefBadges(name, type) {
+        let horseDisabledAll = horseDisabledBuildings.concat(horseDisabledUnits).concat(horseDisabledTechs);
+        for (let civ of Object.keys(data.civs)) {
+            let xRefImage = document.getElementById(`xRef__badge__${civ}`);
+            // By default, assume that this unit can be built.
+            let found = true;
+            // Get the config objects
+            let enabled = civsConfig[`${civ}`]['enabled'];
+            let disabled = civsConfig[`${civ}`]['disabled'];
+            let unique = civsConfig[`${civ}`]['unique'];
+
+            // Make sure this civ exists
+            if (civsConfig[`${civ}`]) {
+                // Fast-Fail horses if civ disablesHorses
+                if (civsConfig[`${civ}`]['disableHorses'] &&
+                    horseDisabledAll.includes(name)) {
+                    found = false;
+                }
+                if (type === "UNIT") {
+                    // There are 2 ways for a UNIT to be disabled.
+                    //      1. The unit is disabled by default, and not 
+                    //         specifically enabled in the config.
+                    //      2. The unit is disabled in the specific config.
+                    if (defaultDisabledUnits.includes(name) &&
+                        (!enabled ||
+                         !enabled['units'] ||
+                         !enabled['units'].includes(name))) {
+                        found = false;
+                    } else if (disabled &&
+                            disabled['units'] &&
+                            disabled['units'].includes(name)) {
+                        found = false;
+                    }
+                } else if (type === "UNIQUEUNIT") {
+                    // There are 2 ways for a UNIQUEUNIT to be disabled.
+                    //      1. The UNIQUEUNIT can be enabled in 'unique'.
+                    //      2. The UNIQUEUNIT can be enabled in 'unit'.
+                    //          e.g. genitour
+                    if ((!unique ||
+                         !unique.includes(name)) &&
+                        (!enabled || !enabled['units'] ||
+                         !enabled['units'].includes(name))) {
+                        found = false;    
+                    }
+                } else if (type === "TECHNOLOGY") {
+                    // Technology is only ever disabled. See js/techtree.js#resetToDefault
+                    // if there is a tech object in disabled, and this tech is in it
+                    if (disabled['techs'] && disabled['techs'].includes(name)) {
+                        found = false;
+                    }
+                }
+                else if (type === "BUILDING") {
+                    // There are 2 ways for a BUILDING to be disabled.
+                    //      1. The building is disabled by default, and not 
+                    //         specifically enabled in the config.
+                    //      2. The building is disabled in the specific config.
+                    if (defaultDisabledBuildings.includes(name) &&
+                    (!enabled ||
+                    !enabled['buildings'] ||
+                    !enabled['buildings'].includes(name))) {
+                        found = false;
+                    } else if (disabled &&
+                               disabled['buildings'] &&
+                               disabled['buildings'].includes(name)) {
+                        found = false;
+                    }
+                }
+            }
+            if (found) {
+                xRefImage.style.opacity = '100%';
+            } else {
+                xRefImage.style.opacity = '20%';
+            }
+        }
     }
 
     function ifDefined(value, prefix) {

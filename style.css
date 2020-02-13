@@ -3,6 +3,7 @@
             width: 100%;
             height: 100%;
             box-sizing: border-box;
+            --xRef-badge-size: 30px;
         }
 
         body {
@@ -38,6 +39,26 @@
             border: 2px solid #bbb;
             padding: 0.2rem;
             font-size: 10pt;
+        }
+
+        #helptext__x_ref__container {
+            /* There are 35 civs, 5x7 makes the badges into a nice square. */
+            max-width: calc(var(--xRef-badge-size) * 7);
+            margin: auto;
+            padding-top: 0.2rem;
+        }
+
+        /* Style for helptext Cross-Reference buttons */
+        #helptext #helptext__x_ref div button {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        /* Style for helptext Cross-Reference image badges */
+        #helptext #helptext__x_ref div button img {
+            width: var(--xRef-badge-size);
+            height: var(--xRef-badge-size);
         }
 
         #wrapper {
