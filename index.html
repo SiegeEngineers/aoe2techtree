@@ -129,29 +129,31 @@
             for (let r of Object.keys(lane.rows)) {
                 let row = lane.rows[r];
                 for (let caret of row) {
-                    var rect = draw.rect(caret.width, caret.height).attr({
+                    var item = draw.group().addClass('node')
+                    var rect = item.rect(caret.width, caret.height).attr({
                         fill: caret.type.colour,
                         id: caret.id
                     }).move(caret.x, caret.y);
                     let name = formatName(caret.name);
-                    var text = draw.text(name)
+                    var text = item.text(name)
                         .font({family: 'Helvetica', size: 8})
                         .attr({fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text'})
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
-                    var image_placeholder = draw.rect(caret.width * 0.6, caret.height * 0.6)
+                    var image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
                         .attr({fill: 'rgba(0,0,0,0.5)', id: caret.id + '_imgph'})
                         .move(caret.x + caret.width * 0.2, caret.y);
                     let prefix = 'img/';
-                    var image = draw.image(prefix + imagePrefix(caret.id) + '.png', caret.width * 0.6, caret.height * 0.6)
+                    var image = item.image(prefix + imagePrefix(caret.id) + '.png', caret.width * 0.6, caret.height * 0.6)
                         .attr({id: caret.id + '_img'})
                         .move(caret.x + caret.width * 0.2, caret.y);
-                    var cross = draw.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
+                    var cross = item.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
                         .attr({fill: 'rgba(255,0,0,0.5)', id: caret.id + '_x'})
                         .addClass('cross')
                         .size(caret.width * 0.6, caret.height * 0.6)
                         .move(caret.x + caret.width * 0.2, caret.y);
-                    var overlaytrigger = draw.rect(caret.width, caret.height)
-                        .attr({fill: 'rgba(0,0,0,0)', id: caret.id + '_overlay'})
+                    var overlaytrigger = item.rect(caret.width, caret.height)
+                        .attr({id: caret.id + '_overlay'})
+                        .addClass('node__overlay')
                         .move(caret.x, caret.y)
                         .data({'type': caret.type.type, 'caret': caret, 'name': caret.name, 'id': caret.id})
                         .click(function () {

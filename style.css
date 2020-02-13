@@ -144,3 +144,8 @@
             font-family: monospace;
             color: gray;
         }
+
+        .node__overlay {
+            fill: transparent;
+            cursor: pointer;
+        }
