@@ -231,9 +231,10 @@
         unhighlightPath();
 
         recurse(caretId);
-        SVG.get(caretId).addClass('is-highlight');
 
         function recurse(caretId) {
+            SVG.get(caretId).addClass('is-highlight');
+
             const parentId = parentConnections.get(caretId);
             if (!parentId) return;
 
