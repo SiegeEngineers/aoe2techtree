@@ -204,10 +204,9 @@
     }
 
     function resetHighlightPath() {
+        unhighlightPath();
         if (focusedNodeId) {
             highlightPath(focusedNodeId);
-        } else {
-            unhighlightPath();
         }
     }
 
@@ -217,8 +216,6 @@
     }
 
     function highlightPath(caretId) {
-        unhighlightPath();
-
         recurse(caretId);
 
         function recurse(caretId) {
