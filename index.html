@@ -103,18 +103,10 @@
 
         var draw = SVG('techtree').size(tree.width, tree.height)
 
-        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e'}).click(function () {
-            hideHelp();
-        });
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(function () {
-            hideHelp();
-        }).y(tree.height / 4);
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(function () {
-            hideHelp();
-        }).y(tree.height / 4 * 2);
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(function () {
-            hideHelp();
-        }).y(tree.height / 4 * 3);
+        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e'}).click(hideHelp);
+        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4);
+        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 2);
+        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 3);
 
         const connectionGroup = draw.group().attr({id: 'connection_lines'});
         for (let connection of connections) {
@@ -124,9 +116,7 @@
             connectionGroup.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y])
                 .attr({id: `connection_${connection[0]}_${connection[1]}`})
                 .addClass('connection')
-                .click(function () {
-                    hideHelp();
-                });
+                .click(hideHelp);
         }
 
         for (let lane of tree.lanes) {
@@ -166,7 +156,6 @@
                         .mouseout(resetHighlightPath)
                         .click(function () {
                             displayHelp(caret.id);
-                            resetHighlightPath(caret.id);
                         });
 
                 }
@@ -277,11 +266,14 @@
         if (helpbox.left < 0) {
             helptext.style.left = Math.max(0, (caret.x - helptext.offsetWidth)) - helpbox.left + "px";
         }
+
+        resetHighlightPath();
     }
 
     function hideHelp() {
         focusedNodeId = null;
         helptext.style.display = "none";
+        resetHighlightPath();
     }
 
     function getHelpText(name, id, type) {
