@@ -151,7 +151,7 @@
         }
         .node.is-highlight .node__overlay {
             stroke: #fff;
-            stroke-width: 2px;
+            stroke-width: 3px;
         }
 
         .xRef__badge {
@@ -165,4 +165,5 @@
         }
         .connection.is-highlight {
             stroke: #fff;
+            stroke-width: 3px;
         }
