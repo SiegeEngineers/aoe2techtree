@@ -149,7 +149,21 @@
             fill: transparent;
             cursor: pointer;
         }
+        .node.is-highlight .node__overlay {
+            stroke: #fff;
+            stroke-width: 3px;
+        }
 
         .xRef__badge {
             cursor: pointer;
+        }
+
+        .connection {
+            fill: none;
+            stroke: #000;
+            stroke-width: 2px;
+        }
+        .connection.is-highlight {
+            stroke: #fff;
+            stroke-width: 3px;
         }

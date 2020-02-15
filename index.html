@@ -88,7 +88,9 @@
     var tree = getDefaultTree();
     var data = {};
     let connections = getConnections();
+    let parentConnections = new Map(connections.map(([parent, child]) => [child, parent]));
     let connectionpoints = getConnectionPoints(tree);
+    let focusedNodeId = null;
 
     loadJson(function (response) {
 
@@ -101,38 +103,30 @@
 
         var draw = SVG('techtree').size(tree.width, tree.height)
 
-        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e'}).click(function () {
-            hideHelp();
-        });
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(function () {
-            hideHelp();
-        }).y(tree.height / 4);
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(function () {
-            hideHelp();
-        }).y(tree.height / 4 * 2);
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(function () {
-            hideHelp();
-        }).y(tree.height / 4 * 3);
+        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e'}).click(hideHelp);
+        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4);
+        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 2);
+        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 3);
 
+        const connectionGroup = draw.group().attr({id: 'connection_lines'});
         for (let connection of connections) {
             let from = connectionpoints.get(connection[0]);
             let to = connectionpoints.get(connection[1]);
             let intermediate_height = from.y + (tree.element_height * 2 / 3);
-            draw.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y])
-                .fill('none').stroke({width: 2})
-                .click(function () {
-                    hideHelp();
-                });
+            connectionGroup.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y])
+                .attr({id: `connection_${connection[0]}_${connection[1]}`})
+                .addClass('connection')
+                .click(hideHelp);
         }
 
         for (let lane of tree.lanes) {
             for (let r of Object.keys(lane.rows)) {
                 let row = lane.rows[r];
                 for (let caret of row) {
-                    var item = draw.group().addClass('node')
+                    var item = draw.group().attr({id: caret.id}).addClass('node')
                     var rect = item.rect(caret.width, caret.height).attr({
                         fill: caret.type.colour,
-                        id: caret.id
+                        id: `${caret.id}_bg`
                     }).move(caret.x, caret.y);
                     let name = formatName(caret.name);
                     var text = item.text(name)
@@ -156,8 +150,12 @@
                         .addClass('node__overlay')
                         .move(caret.x, caret.y)
                         .data({'type': caret.type.type, 'caret': caret, 'name': caret.name, 'id': caret.id})
+                        .mouseover(function () {
+                            highlightPath(caret.id);
+                        })
+                        .mouseout(resetHighlightPath)
                         .click(function () {
-                            displayHelp(caret.id + '_overlay');
+                            displayHelp(caret.id);
                         });
 
                 }
@@ -205,11 +203,44 @@
         xobj.send(null);
     }
 
-    function displayHelp(overlayId) {
+    function resetHighlightPath() {
+        unhighlightPath();
+        if (focusedNodeId) {
+            highlightPath(focusedNodeId);
+        }
+    }
+
+    function unhighlightPath() {
+        SVG.select('.node.is-highlight, .connection.is-highlight')
+            .removeClass('is-highlight');
+    }
+
+    function highlightPath(caretId) {
+        recurse(caretId);
+
+        function recurse(caretId) {
+            SVG.get(caretId).addClass('is-highlight');
+
+            const parentId = parentConnections.get(caretId);
+            if (!parentId) return;
+
+            const line = SVG.get(`connection_${parentId}_${caretId}`);
+            if (line) {
+                // Move to the end of the <g> element so that it is drawn on top.
+                // Without this, the line would be highlighted, but other unhighlighted
+                // connection lines could be drawn on top, undoing the highlighting.
+                line.front().addClass('is-highlight');
+            }
+            recurse(parentId);
+        }
+    }
+
+    function displayHelp(caretId) {
+        focusedNodeId = caretId;
         let helptext = document.getElementById("helptext");
         let helptextContent = document.getElementById("helptext__content");
         let helptextXRef = document.getElementById("helptext__x_ref");
-        let overlay = SVG.get(overlayId);
+        let overlay = SVG.get(`${caretId}_overlay`);
         let name = overlay.data('name');
         let id = overlay.data('id');
         let caret = overlay.data('caret');
@@ -232,10 +263,14 @@
         if (helpbox.left < 0) {
             helptext.style.left = Math.max(0, (caret.x - helptext.offsetWidth)) - helpbox.left + "px";
         }
+
+        resetHighlightPath();
     }
 
     function hideHelp() {
+        focusedNodeId = null;
         helptext.style.display = "none";
+        resetHighlightPath();
     }
 
     function getHelpText(name, id, type) {
