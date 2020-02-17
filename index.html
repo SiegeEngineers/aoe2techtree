@@ -258,12 +258,16 @@
         }
         helptext.style.top = top + "px";
 
-        helptext.style.left = Math.max(0, (caret.x - helptext.offsetWidth)) + "px";
-        let helpbox = helptext.getBoundingClientRect();
-        if (helpbox.left < 0) {
-            helptext.style.left = Math.max(0, (caret.x - helptext.offsetWidth)) - helpbox.left + "px";
-        }
+        let destX = caret.x - helptext.offsetWidth;
 
+        let helpbox = helptext.getBoundingClientRect();
+        let tt = document.getElementById('techtree');
+        // If the X would be less than 0, or offscreen due to scrolling,
+        // set the helptext to the right instead of left.
+        if (destX < 0 || destX - tt.scrollLeft < 0) {
+            destX = caret.x + caret.width;
+        }
+        helptext.style.left = destX + 'px';
         resetHighlightPath();
     }
 
