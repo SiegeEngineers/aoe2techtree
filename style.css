@@ -176,5 +176,6 @@
         @media (max-width: 900px) {
             #techtree {
                 width: auto;
+                overflow-x: auto;
             }
         }
