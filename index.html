@@ -262,10 +262,9 @@
 
         let helpbox = helptext.getBoundingClientRect();
         let tt = document.getElementById('techtree');
-        // If the X would be less than 0, or offscreen due to scrolling,
-        // set the helptext to the right instead of left.
+        // If the X would be less than 0 put the helptext all the way to the left.
         if (destX < 0 || destX - tt.scrollLeft < 0) {
-            destX = caret.x + caret.width;
+            destX = tt.scrollLeft;
         }
         helptext.style.left = destX + 'px';
         resetHighlightPath();
