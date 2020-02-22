@@ -34,7 +34,7 @@
         #helptext {
             position: absolute;
             display: none;
-            max-width: 300px;
+            width: 300px;
             background-color: #eee;
             border: 2px solid #bbb;
             padding: 0.2rem;
@@ -73,14 +73,19 @@
             background-color: #e7c28e;
         }
 
+
+
         #techtree {
-            border: 5px solid #4d3617;
+            border: 6px solid #4d3617;
             flex: 1 0 auto;
             position: relative;
+            width: calc(100vw - 22rem - 20px);
+            overflow-x: scroll;
         }
 
         #metainfo {
-            border: 5px solid #4d3617;
+            border: 6px solid #4d3617;
+            border-right: none;
             width: 20rem;
             flex: 0 0 auto;
             display: flex;
@@ -166,4 +171,11 @@
         .connection.is-highlight {
             stroke: #fff;
             stroke-width: 3px;
+        }
+
+        @media (max-width: 900px) {
+            #techtree {
+                width: auto;
+                overflow-x: auto;
+            }
         }
