@@ -997,6 +997,12 @@ const civsConfig = {
              BOMBARD_CANNON
           ]
        },
+       enabled: {
+          units: [
+             STEPPE_LANCER,
+             ELITE_STEPPE_LANCER
+          ]
+       },
        monkPrefix: MONK_PREFIX_ASIAN,
        unique: [ 
           MANGUDAI,
@@ -1205,7 +1211,6 @@ const civsConfig = {
           units: [ 
              ARBALESTER,
              CHAMPION,
-             HALBERDIER,
              PALADIN,
              SIEGE_ONAGER,
              BOMBARD_CANNON,
