@@ -94,6 +94,16 @@
             padding: 1rem;
         }
 
+        #civselect {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: transparent;
+            flex: 1 0 auto;
+            margin-right: 1rem;
+            border-color:  #a9885b;
+        }
+
         #civinfo {
             flex: 1 0 auto;
             font-size: 11pt;
@@ -104,16 +114,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 1rem;
         }
 
         #thanks {
             flex: 0 0 auto;
-        }
-
-        #civname {
-            text-align: center;
-            flex: 1 0 auto;
-            margin: 0;
         }
 
         hr {
