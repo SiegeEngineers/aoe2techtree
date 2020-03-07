@@ -13,8 +13,8 @@
             align-items: center;
         }
 
-        #info,
-        #info a {
+        .info,
+        .info a {
             display: inline;
             font-family: monospace;
             color: gray;
@@ -108,8 +108,7 @@
         }
 
         #civselect option {
-            color: black;
-            background-color: white;
+            text-shadow: none;
         }
 
         #civselect:focus {
@@ -160,9 +159,9 @@
             margin-bottom: 0.5rem;
         }
 
-        #thanks,
-        #thanks a {
-            font-size: 6pt;
+        .small_info,
+        .small_info a {
+            font-size: 8pt;
             font-family: monospace;
             color: gray;
         }
