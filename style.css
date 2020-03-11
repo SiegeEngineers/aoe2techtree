@@ -21,7 +21,7 @@
             color: gray;
         }
 
-        .info div {
+        .info .info__margin {
             margin-bottom: 1rem;
         }
 
