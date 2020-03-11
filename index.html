@@ -11,67 +11,64 @@
 
 <body>
 <div id="container">
-    <div id="navigation">
-        <select id="civselect" onchange="loadCiv()">
-            <option>Aztecs</option>
-            <option>Berbers</option>
-            <option>Britons</option>
-            <option>Bulgarians</option>
-            <option>Burmese</option>
-            <option>Byzantines</option>
-            <option>Celts</option>
-            <option>Chinese</option>
-            <option>Cumans</option>
-            <option>Ethiopians</option>
-            <option>Franks</option>
-            <option>Goths</option>
-            <option>Huns</option>
-            <option>Incas</option>
-            <option>Indians</option>
-            <option>Italians</option>
-            <option>Japanese</option>
-            <option>Khmer</option>
-            <option>Koreans</option>
-            <option>Lithuanians</option>
-            <option>Magyars</option>
-            <option>Malay</option>
-            <option>Malians</option>
-            <option>Mayans</option>
-            <option>Mongols</option>
-            <option>Persians</option>
-            <option>Portuguese</option>
-            <option>Saracens</option>
-            <option>Slavs</option>
-            <option>Spanish</option>
-            <option>Tatars</option>
-            <option>Teutons</option>
-            <option>Turks</option>
-            <option>Vietnamese</option>
-            <option>Vikings</option>
-        </select>
-        <div id="info">Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-35584/" target="_blank" title="Changelog">35584</a>  |
-            <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
-        </div>
-    </div>
     <div id="wrapper">
         <div id="metainfo">
             <div id="civinfo">
                 <div id="civtitle">
-                    <h2 id="civname">Loading…</h2>
+                    <select id="civselect" onchange="loadCiv()">
+                        <option>Aztecs</option>
+                        <option>Berbers</option>
+                        <option>Britons</option>
+                        <option>Bulgarians</option>
+                        <option>Burmese</option>
+                        <option>Byzantines</option>
+                        <option>Celts</option>
+                        <option>Chinese</option>
+                        <option>Cumans</option>
+                        <option>Ethiopians</option>
+                        <option>Franks</option>
+                        <option>Goths</option>
+                        <option>Huns</option>
+                        <option>Incas</option>
+                        <option>Indians</option>
+                        <option>Italians</option>
+                        <option>Japanese</option>
+                        <option>Khmer</option>
+                        <option>Koreans</option>
+                        <option>Lithuanians</option>
+                        <option>Magyars</option>
+                        <option>Malay</option>
+                        <option>Malians</option>
+                        <option>Mayans</option>
+                        <option>Mongols</option>
+                        <option>Persians</option>
+                        <option>Portuguese</option>
+                        <option>Saracens</option>
+                        <option>Slavs</option>
+                        <option>Spanish</option>
+                        <option>Tatars</option>
+                        <option>Teutons</option>
+                        <option>Turks</option>
+                        <option>Vietnamese</option>
+                        <option>Vikings</option>
+                    </select>
                     <img id="civlogo" height=52 width=52 data-transparent="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
                 </div>
                 <hr>
                 <p id="civtext"></p>
             </div>
-            <div id="thanks">
-                <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">Made by</a> hszemi, Anda,
-                    exterkamp, paulirish,<br>
-                with huge thanks to Jineapple, TriRem, pip, and NkoDragaš
-                <!-- <br> Descriptions taken from the
-                <a href="https://www.voobly.com/gamemods/mod/650/Max-Extended-Help-AK" target="_blank">Max-Extended-Help-WK
-                    mod</a> -->
-                <br> Item Metadata (cost, HP etc.) taken from
-                <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
+            <div class="info">
+                <div class="info__margin">
+                    Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-35584/" target="_blank" title="Changelog">35584</a>
+                </div>
+                <div class="info__margin">
+                    Contribute on <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
+                </div>
+                <div>
+                    Made by hszemi, Anda, exterkamp, paulirish,<br>
+                    with thanks to Jineapple, TriRem, pip, and NkoDragaš<br>
+                    Item Metadata (cost, HP etc.) taken from <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
+                </div>
             </div>
         </div>
         <div id="techtree">
@@ -178,7 +175,6 @@
     function loadCiv() {
         var selectedCiv = document.getElementById('civselect').value;
         civ(selectedCiv, tree);
-        document.getElementById('civname').innerText = selectedCiv;
         if (selectedCiv in data.civs) {
             document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
             document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
