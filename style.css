@@ -11,6 +11,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
         .info,
@@ -102,7 +103,7 @@
         #civselect {
             font-size: 24px;
             font-weight: bold;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: #72604a;
             flex: 1 0 auto;
             margin-right: 1rem;
