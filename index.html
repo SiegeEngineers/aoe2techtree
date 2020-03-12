@@ -90,6 +90,46 @@
     let connectionpoints = getConnectionPoints(tree);
     let focusedNodeId = null;
 
+    const unitClasses = {
+        0: "Unused",
+        1: "Infantry",
+        2: "Turtle Ships",
+        3: "Base Pierce",
+        4: "Base Melee",
+        5: "War Elephants",
+        6: "Unused",
+        7: "Unused",
+        8: "Cavalry",
+        9: "Unused",
+        10: "Unused",
+        11: "<abbr title='(except Port)'>All Buildings</abbr>",
+        12: "Unused",
+        13: "Stone Defense",
+        14: "FE Predator Animals",
+        15: "Archers",
+        16: "Ships & Camels & Saboteurs",
+        17: "Rams",
+        18: "Trees",
+        19: "<abbr title='(except Turtle Ship)'>Unique Units</abbr>",
+        20: "Siege Weapons",
+        21: "Standard Buildings",
+        22: "Walls & Gates",
+        23: "FE Gunpowder Units",
+        24: "Boars",
+        25: "Monks",
+        26: "Castle",
+        27: "Spearmen",
+        28: "Cavalry Archers",
+        29: "Eagle Warriors",
+        30: "HD Camels",
+        31: "Anti-Leitis",
+        32: "Condottieros",
+        33: "Organ Gun Damage",
+        34: "Fishing Ships",
+        35: "Mamelukes",
+        36: "Heroes and Kings",
+    };
+
     loadJson(function (response) {
 
         data = JSON.parse(response);
@@ -302,6 +342,8 @@
             text += ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;");
             text += secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;");
             text += accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;");
+            text += arrayIfDefinedAndNonEmpty(meta.Attacks, "<br>Attacks:&nbsp;");
+            text += arrayIfDefinedAndNonEmpty(meta.Armours, "<br>Armours:&nbsp;");
         } else {
             console.log("No metadata found for " + name);
         }
@@ -451,6 +493,21 @@
             return "";
         }
     }
+
+    function arrayIfDefinedAndNonEmpty(attacks, prefix) {
+        if (attacks === undefined || attacks.length < 1) {
+            return "";
+        } else {
+            const strings = [];
+            for (let attack of attacks) {
+                const amount = attack['Amount'];
+                const clazz = unitClasses[attack['Class']];
+                strings.push(`${amount} (${clazz})`);
+            }
+            return " " + prefix + strings.join(', ') + ",";
+        }
+    }
+
 
     function cost(cost_object) {
         let value = "";
