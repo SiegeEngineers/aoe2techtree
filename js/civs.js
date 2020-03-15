@@ -502,7 +502,8 @@ const civsConfig = {
              GUARD_TOWER,
              KEEP,
              BOMBARD_TOWER,
-             FORTIFIED_WALL
+             FORTIFIED_WALL,
+             HOUSE
           ],
           techs: [ 
              SHIPWRIGHT,
