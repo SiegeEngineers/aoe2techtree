@@ -135,8 +135,9 @@
         data = JSON.parse(response);
 
         let hash = window.location.hash.substr(1);
-        if (hash in data.civs) {
-            document.getElementById('civselect').value = hash;
+        let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
+        if (capitalisedHash in data.civs) {
+            document.getElementById('civselect').value = capitalisedHash;
         }
 
         var draw = SVG('techtree').size(tree.width, tree.height)
@@ -213,7 +214,7 @@
     }
 
     function loadCiv() {
-        var selectedCiv = document.getElementById('civselect').value;
+        const selectedCiv = document.getElementById('civselect').value;
         civ(selectedCiv, tree);
         if (selectedCiv in data.civs) {
             document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
