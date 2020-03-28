@@ -75,7 +75,10 @@
             <div id="helptext">
                 <div id="helptext__content"></div>
                 <div id="helptext__x_ref"></div>
-              </div>
+            </div>
+            <div id="comparetext">
+                <div id="comparetext__content"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -273,6 +276,28 @@
         }
     }
 
+    function displayComparedUnit(dropdown) {
+        let name = dropdown.value;
+        let comparetext = document.getElementById("comparetext");
+        let comparetextContent = document.getElementById("comparetext__content");
+        if (name == '') {
+            comparetextContent.innerHTML = '';
+            comparetext.style.display = "none";
+            return;
+        }
+
+        let content = getHelpText(name, undefined, 'UNIT');
+
+        comparetextContent.innerHTML = content;
+
+        comparetext.style.display = "block";
+
+        let helptext = document.getElementById("helptext");
+        let helpbox = helptext.getBoundingClientRect();
+        comparetext.style.left = (helptext.offsetWidth + helptext.offsetLeft + 5) + 'px';
+        comparetext.style.top = helpbox.y + 'px';
+    }
+
     function displayHelp(caretId) {
         focusedNodeId = caretId;
         let helptext = document.getElementById("helptext");
@@ -284,6 +309,16 @@
         let caret = overlay.data('caret');
         let type = overlay.data('type');
         let content = getHelpText(name, id, type);
+
+        if (type.indexOf('UNIT') != -1 ) {
+            let compareDropdown = '<br>';
+            compareDropdown += `<select id="compare-unit-select" onchange="displayComparedUnit(this)">`;
+            compareDropdown += '<option value="">Compare to...</option>';
+            compareDropdown += Object.keys(data.meta.units).map(unitName => `<option>${unitName}</option>`).join('');
+            compareDropdown += '</select>';
+            content += compareDropdown;
+        }
+
         helptextContent.innerHTML = content;
 
         styleXRefBadges(name, type);
@@ -306,11 +341,13 @@
         }
         helptext.style.left = destX + 'px';
         resetHighlightPath();
+        comparetext.style.display = "none";
     }
 
     function hideHelp() {
         focusedNodeId = null;
         helptext.style.display = "none";
+        comparetext.style.display = "none";
         resetHighlightPath();
     }
 
