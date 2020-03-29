@@ -80,7 +80,8 @@
     </div>
 </div>
 <script src="js/svg.min.js"></script>
-<script src="https://unpkg.com/i18next@19.3.4/dist/umd/i18next.min.js"></script>
+<script src="js/i18next@19.3.4.min.js"></script>
+<script src="js/i18nextXHRBackend.min.js"></script>
 <script src="js/techtree.js"></script>
 <script src="js/civs.js"></script>
 <script type="text/javascript">
@@ -205,6 +206,7 @@
         loadCiv();
         // Make the xref badges
         document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
+        initLocalization();
     });
 
     function imagePrefix(name) {
@@ -528,6 +530,58 @@
         return value;
     }
 
+    /**
+     * Initializes localization engine, and localizes the website
+     * to the last-specified language (stored in localStorage, if available).
+     */
+    function initLocalization() {
+
+        // Both i18next and i18nextXHRBackend are global variables
+        // injected by their respective <script> tags.
+
+        i18next
+            .use(i18nextXHRBackend)
+            .init({
+                // https://www.i18next.com/overview/configuration-options
+                lng: 'en',
+                fallbackLng: 'en',
+                ns: ['common'],
+                defaultNS: 'common',
+                backend: {
+                    // Documentation: https://github.com/i18next/i18next-xhr-backend
+                    loadPath: 'data/locales/{{lng}}/{{ns}}.json',
+                    crossDomain: false,
+                    withCredentials: false,
+                    overrideMimeType: false
+                }
+            }, 
+            onLanguageSet);
+    }
+
+    /**
+     * Changes the language by loading the appropriate
+     * localization json from server.
+     */
+    function setLanguage(lang) {
+
+        i18next.changeLanguage(lang, onLanguageSet);
+    }
+
+    /**
+     * Invoked every time the languate is set.
+     * Responsible for updating the site's locales (strings).
+     *
+     * @param {Error} err - populated if there's an error settings the language, else null
+     * @param {function} _t - A reference to function: i18next.t
+     */
+    function onLanguageSet(err, _t) {
+        if (err) 
+            return console.log('Error while initializing locales: ', err);
+        
+        console.log('Language:', i18next.language);
+        console.log(_t('key'));
+        console.log(_t('Aztecs'));
+    }
 
 </script>
 </body>
