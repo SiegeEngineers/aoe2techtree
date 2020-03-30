@@ -203,11 +203,11 @@
             }
         }
 
-        prepareDomForLocalization();
-        loadCiv();
-        // Make the xref badges
-        document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
-        initLocalization();
+        initLocalization(function(){
+            loadCiv();
+            // Make the xref badges
+            document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
+        });
     });
 
     function imagePrefix(name) {
@@ -221,13 +221,16 @@
         const domSelect = document.getElementById('civselect');
         const selectedCiv = domSelect.children[domSelect.selectedIndex].getAttribute('data-i18n');
         civ(selectedCiv, tree);
+        const domCivText = document.getElementById('civtext');
+        const domCivLogo = document.getElementById('civlogo');
         if (selectedCiv in data.civs) {
-            document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
-            document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
+            domCivText.innerHTML = i18next.t(data.civs[selectedCiv]);
+            domCivText.setAttribute('data-i18n', data.civs[selectedCiv]);
+            domCivLogo.src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
             window.location.hash = selectedCiv;
         } else {
-            document.getElementById('civtext').innerHTML = "";
-            document.getElementById('civlogo').src = document.getElementById('civlogo').dataset.transparent;
+            domCivText.innerHTML = "";
+            domCivLogo.src = domCivLogo.dataset.transparent;
         }
         hideHelp();
     }
@@ -236,7 +239,7 @@
 
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-        xobj.open('GET', 'data/data.json', true);
+        xobj.open('GET', 'data/just-data.json', true);
         xobj.onreadystatechange = function () {
             if (xobj.readyState === 4 && xobj.status === 200) {
                 // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -535,8 +538,12 @@
     /**
      * Initializes localization engine, and localizes the website
      * to the last-specified language (stored in localStorage, if available).
+     *
+     * @param {function} [callback] - Invoked when the initialization subsystem is done initializing.
      */
-    function initLocalization() {
+    function initLocalization(callback) {
+
+        prepareDomForLocalization();
 
         // Both i18next and i18nextXHRBackend are global variables
         // injected by their respective <script> tags.
@@ -546,8 +553,9 @@
                 // https://www.i18next.com/overview/configuration-options
                 lng: 'en',
                 fallbackLng: 'en',
-                ns: ['common'],
+                ns: ['common', 'strings'],
                 defaultNS: 'common',
+                fallbackNS: ['strings'],
                 backend: {
                     // Documentation: https://github.com/i18next/i18next-xhr-backend
                     loadPath: 'data/locales/{{lng}}/{{ns}}.json',
@@ -556,7 +564,10 @@
                     overrideMimeType: false
                 }
             }, 
-            onLanguageSet);
+            function onLocalization(err, _t) {
+                onLanguageSet(err, _t);
+                callback && callback();
+            });
     }
 
     /**
@@ -599,6 +610,10 @@
 
                 case 'OPTION':
                     domElem.innerText = _t(locKey);
+                    break;
+
+                case "P":
+                    domElem.innerHTML = _t(locKey);
                     break;
                     
             }

@@ -1,0 +1,5 @@
+{
+	"120164": "Infantería y Monjes <br>\n<br>\n\u2022 TODO: Villagers carry +5 <br>\n\u2022 Military units created 15% faster <br>\n\u2022 +5 Monk hit points for each Monastery technology <br>\n\u2022 Start with +50 gold<br>\n<br>\n<b>Unique Unit:</b>  <br>\nJaguar Warrior (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Atlatl (Skirmishers +1 attack, +1 range) <br>\n\u2022 Garland Wars (+4 infantry attack)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nRelics generate +33% gold",
+	"120176": "Caballería y Barcos <br>\n<br>\n\u2022 TODO: Villagers move 10% faster <br>\n\u2022 Stable units cost -15% in Castle, -20% in Imperial Age <br>\n\u2022 Ships move 10% faster <br>\n<br>\n<b>Unique Units:</b>  <br>\nCamel Archer (cavalry archer), Genitour (mounted skirmisher)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Kasbah (team castles work 25% faster) <br>\n\u2022 Maghrabi Camels (Camel units regenerate)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nGenitour available in the Archery Range starting in the Castle Age",
+	"end": "fin"
+}
