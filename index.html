@@ -373,16 +373,25 @@
         for (let civ of Object.keys(data.civs)) {
             let xRefLink = document.createElement('button');
             xRefLink.addEventListener('click', function() {
-              document.getElementById('civselect').value=civ;
-              loadCiv();
+                const domSelect = document.getElementById('civselect');
+                var index;
+                for (var i=0; i<domSelect.children.length; ++i) {
+                    if (domSelect.children[i].getAttribute('data-i18n')===civ) {
+                        index = i;
+                        break;
+                    }
+                }
+                domSelect.selectedIndex = index;
+                loadCiv();
             });
 
             let xRefImage = document.createElement('img');
 
             xRefImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
             xRefImage.title = `${civ}`;
+            xRefImage.setAttribute('data-i18n', civ);
             xRefImage.id = `xRef__badge__${civ}`;
-            xRefImage.classList.add('xRef__badge')
+            xRefImage.classList.add('xRef__badge');
             xRefLink.appendChild(xRefImage);
             xRefLinks.appendChild(xRefLink);
         }
@@ -618,6 +627,9 @@
                 case "P":
                     domElem.innerHTML = _t(locKey);
                     break;
+
+                case "IMG":
+                    domElem.title = _t(locKey);
                     
             }
         }
