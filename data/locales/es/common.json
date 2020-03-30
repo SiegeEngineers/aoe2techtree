@@ -1,5 +1,6 @@
 {
     "key": "Hola en Español",
+    "Made by": "Creado por",
 
     "Aztecs": "Aztecas",
     "Berbers": "TODO_Berbers",
@@ -35,5 +36,28 @@
     "Teutons": "Teutones",
     "Turks": "Turcos",
     "Vietnamese": "Vietnamitas",
-    "Vikings": "Vikingos"
+    "Vikings": "Vikingos",
+
+    "Cost": "Costo: {{value}}",
+    "HP": "Ptos resist: {{value}}",
+    "Attack": "Ataque: {{value}}",
+    "Armor": "Arm: {{value}}",
+    "Piercearmor": "Arm antiproy: {{value}}",
+    "Garrison": "Guarnición: {{value}}",
+    "Range": "Alcance: {{value}}",
+    "Min Range": "Alcance Min: {{value}}",
+    "Line of Sight": "Linea de Visión: {{value}}",
+    "Speed": "Velocidad: {{value}}",
+    "Frame Delay": "Frame Delay: {{value}}",
+    "Reload Time": "Reload Time: {{value}}",
+    "Accuracy": "Precisión: {{value}}",
+    "Build Time": "Tiempo de construcción: {{value}}",
+    "Research Time": "Tiempo de estudio: {{value}}",
+
+    "Infantry": "Infantería",
+    "Turtle Ships": "Barco Tortuga",
+    "Base Pierce": "Pierce Base",
+    "Base Melee": "Base Melee",
+    "War Elephants": "Elefantes de Guerra",
+    "Cavalry": "Cavallería"
 }

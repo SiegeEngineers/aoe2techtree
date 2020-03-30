@@ -65,7 +65,7 @@
                     Contribute on <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
                 </div>
                 <div>
-                    Made by hszemi, Anda, exterkamp, paulirish,<br>
+                    <span data-i18n>Made by</span> hszemi, Anda, exterkamp, paulirish,<br>
                     with thanks to Jineapple, TriRem, pip, and NkoDragaš<br>
                     Item Metadata (cost, HP etc.) taken from <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
                 </div>
@@ -330,29 +330,29 @@
         if (type === "TECHNOLOGY") {
             entitytype = 'techs';
         }
-        let text = data.key_value[data.name_key[entitytype][name]];
+        let text = i18next.t(data.name_key[entitytype][name]);
         if (text === undefined) {
             return "?";
         }
         let meta = data.meta[entitytype][name];
         if (meta !== undefined) {
-            text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
-            text = text.replace(/‹hp›/, "HP:&nbsp;" + meta.HP + ",");
-            text = text.replace(/‹attack›/, "Attack:&nbsp;" + meta.Attack + ",");
-            text = text.replace(/‹(A|a)rmor›/, "Armor:&nbsp;" + meta.MeleeArmor + ",");
-            text = text.replace(/‹(P|p)iercearmor›/, "Piercearmor:&nbsp;" + meta.PierceArmor + ",");
-            text = text.replace(/‹garrison›/, "Garrison:&nbsp;" + meta.GarrisonCapacity + ",");
-            text = text.replace(/‹range›/, "Range:&nbsp;" + meta.Range + ",");
-            text += minRangeIfDefined(meta.MinRange, "Min Range:&nbsp;");
-            text += ifDefined(meta.LineOfSight, "Line of Sight:&nbsp;");
-            text += ifDefined(meta.Speed, "Speed:&nbsp;");
-            text += secondsIfDefined(meta.TrainTime, "Build Time:&nbsp;");
-            text += secondsIfDefined(meta.ResearchTime, "Research Time:&nbsp;");
-            text += ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;");
-            text += secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;");
-            text += accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;");
-            text += arrayIfDefinedAndNonEmpty(meta.Attacks, "<br>Attacks:&nbsp;");
-            text += arrayIfDefinedAndNonEmpty(meta.Armours, "<br>Armours:&nbsp;");
+            text = text.replace(/‹cost›/, i18next.t('Cost', { value: cost(meta.Cost) }));
+            text = text.replace(/‹hp›/, i18next.t('HP', { value: meta.HP }) + ",");
+            text = text.replace(/‹attack›/, i18next.t('Attack', { value: meta.Attack }) + ",");
+            text = text.replace(/‹(A|a)rmor›/, i18next.t('Armor', { value: meta.MeleeArmor }) + ",");
+            text = text.replace(/‹(P|p)iercearmor›/, i18next.t('Piercearmor', { value: meta.PierceArmor }) + ",");
+            text = text.replace(/‹garrison›/, i18next.t('Garrison', { value: meta.GarrisonCapacity }) + ",");
+            text = text.replace(/‹range›/, i18next.t('Range', { value: meta.Range }) + ",");
+            text += minRangeIfDefined(meta.MinRange, "Min Range");
+            text += ifDefined(meta.LineOfSight, "Line of Sight");
+            text += ifDefined(meta.Speed, "Speed");
+            text += secondsIfDefined(meta.TrainTime, "Build Time");
+            text += secondsIfDefined(meta.ResearchTime, "Research Time");
+            text += ifDefined(meta.FrameDelay, "Frame Delay");
+            text += secondsIfDefined(meta.ReloadTime, "Reload Time");
+            text += accuracyIfDefined(meta.AccuracyPercent, "Accuracy");
+            text += arrayIfDefinedAndNonEmpty(meta.Attacks, "<br>Attacks:&nbsp;"); // TODO: Localize
+            text += arrayIfDefinedAndNonEmpty(meta.Armours, "<br>Armours:&nbsp;"); // TODO: Localize
         } else {
             console.log("No metadata found for " + name);
         }
@@ -471,38 +471,39 @@
         }
     }
 
-    function ifDefined(value, prefix) {
+    function ifDefined(value, locKey) {
         if (value !== undefined) {
-            return " " + prefix + value + ",";
+            return " " + i18next.t(locKey, { value: value }) + ",";
         } else {
             return "";
         }
     }
 
-    function secondsIfDefined(value, prefix) {
+    function secondsIfDefined(value, locKey) {
         if (value !== undefined) {
-            return " " + prefix + value + "s,";
+            return " " + i18next.t(locKey, { value: value }) + "s,";
         } else {
             return "";
         }
     }
 
-    function accuracyIfDefined(value, prefix) {
+    function accuracyIfDefined(value, locKey) {
         if (value !== undefined && value < 100) {
-            return " " + prefix + value + "%,";
+            return " " + i18next.t(locKey, { value: value }) + "%,";
         } else {
             return "";
         }
     }
 
-    function minRangeIfDefined(value, prefix) {
+    function minRangeIfDefined(value, locKey) {
         if (value !== undefined && value > 0) {
-            return " " + prefix + value + ",";
+            return " " + i18next.t(locKey, { value: value }) + ",";
         } else {
             return "";
         }
     }
 
+    // TODO: Localize
     function arrayIfDefinedAndNonEmpty(attacks, prefix) {
         if (attacks === undefined || attacks.length < 1) {
             return "";
@@ -518,6 +519,7 @@
     }
 
 
+    // Do not localize F/W/G/S
     function cost(cost_object) {
         let value = "";
         if ("Food" in cost_object) {
@@ -609,6 +611,7 @@
             switch (domElem.nodeName) {
 
                 case 'OPTION':
+                case 'SPAN':
                     domElem.innerText = _t(locKey);
                     break;
 
@@ -618,6 +621,8 @@
                     
             }
         }
+
+        hideHelp(); // This dialog is very complex, might as well rebuild it.
     }
 
 
@@ -639,9 +644,9 @@
             switch (domElem.nodeName) {
 
                 case 'OPTION':
+                case 'SPAN':
                     attrValue = domElem.innerText;
                     break;
-                    
             }
 
             if (attrValue) {
