@@ -16,41 +16,41 @@
             <div id="civinfo">
                 <div id="civtitle">
                     <select id="civselect" onchange="loadCiv()">
-                        <option>Aztecs</option>
-                        <option>Berbers</option>
-                        <option>Britons</option>
-                        <option>Bulgarians</option>
-                        <option>Burmese</option>
-                        <option>Byzantines</option>
-                        <option>Celts</option>
-                        <option>Chinese</option>
-                        <option>Cumans</option>
-                        <option>Ethiopians</option>
-                        <option>Franks</option>
-                        <option>Goths</option>
-                        <option>Huns</option>
-                        <option>Incas</option>
-                        <option>Indians</option>
-                        <option>Italians</option>
-                        <option>Japanese</option>
-                        <option>Khmer</option>
-                        <option>Koreans</option>
-                        <option>Lithuanians</option>
-                        <option>Magyars</option>
-                        <option>Malay</option>
-                        <option>Malians</option>
-                        <option>Mayans</option>
-                        <option>Mongols</option>
-                        <option>Persians</option>
-                        <option>Portuguese</option>
-                        <option>Saracens</option>
-                        <option>Slavs</option>
-                        <option>Spanish</option>
-                        <option>Tatars</option>
-                        <option>Teutons</option>
-                        <option>Turks</option>
-                        <option>Vietnamese</option>
-                        <option>Vikings</option>
+                        <option data-i18n>Aztecs</option>
+                        <option data-i18n>Berbers</option>
+                        <option data-i18n>Britons</option>
+                        <option data-i18n>Bulgarians</option>
+                        <option data-i18n>Burmese</option>
+                        <option data-i18n>Byzantines</option>
+                        <option data-i18n>Celts</option>
+                        <option data-i18n>Chinese</option>
+                        <option data-i18n>Cumans</option>
+                        <option data-i18n>Ethiopians</option>
+                        <option data-i18n>Franks</option>
+                        <option data-i18n>Goths</option>
+                        <option data-i18n>Huns</option>
+                        <option data-i18n>Incas</option>
+                        <option data-i18n>Indians</option>
+                        <option data-i18n>Italians</option>
+                        <option data-i18n>Japanese</option>
+                        <option data-i18n>Khmer</option>
+                        <option data-i18n>Koreans</option>
+                        <option data-i18n>Lithuanians</option>
+                        <option data-i18n>Magyars</option>
+                        <option data-i18n>Malay</option>
+                        <option data-i18n>Malians</option>
+                        <option data-i18n>Mayans</option>
+                        <option data-i18n>Mongols</option>
+                        <option data-i18n>Persians</option>
+                        <option data-i18n>Portuguese</option>
+                        <option data-i18n>Saracens</option>
+                        <option data-i18n>Slavs</option>
+                        <option data-i18n>Spanish</option>
+                        <option data-i18n>Tatars</option>
+                        <option data-i18n>Teutons</option>
+                        <option data-i18n>Turks</option>
+                        <option data-i18n>Vietnamese</option>
+                        <option data-i18n>Vikings</option>
                     </select>
                     <img id="civlogo" height=52 width=52 data-transparent="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
                 </div>
@@ -203,6 +203,7 @@
             }
         }
 
+        prepareDomForLocalization();
         loadCiv();
         // Make the xref badges
         document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
@@ -217,7 +218,8 @@
     }
 
     function loadCiv() {
-        const selectedCiv = document.getElementById('civselect').value;
+        const domSelect = document.getElementById('civselect');
+        const selectedCiv = domSelect.children[domSelect.selectedIndex].getAttribute('data-i18n');
         civ(selectedCiv, tree);
         if (selectedCiv in data.civs) {
             document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
@@ -538,7 +540,6 @@
 
         // Both i18next and i18nextXHRBackend are global variables
         // injected by their respective <script> tags.
-
         i18next
             .use(i18nextXHRBackend)
             .init({
@@ -575,12 +576,65 @@
      * @param {function} _t - A reference to function: i18next.t
      */
     function onLanguageSet(err, _t) {
-        if (err) 
+        
+        if (err)
             return console.log('Error while initializing locales: ', err);
         
         console.log('Language:', i18next.language);
         console.log(_t('key'));
-        console.log(_t('Aztecs'));
+
+        var elements = document.querySelectorAll('[data-i18n]');
+        for (var i=0, len=elements.length; i<len; ++i) {
+
+            var domElem = elements[i];
+            var locKey = domElem.getAttribute('data-i18n');
+
+            if (!locKey) {
+                console.warn('Could not localize: (' + locKey + ')');
+                continue;
+            }
+
+            // Set localized string back into the DOM element's end-user visible property
+            switch (domElem.nodeName) {
+
+                case 'OPTION':
+                    domElem.innerText = _t(locKey);
+                    break;
+                    
+            }
+        }
+    }
+
+
+    /**
+     * Iterates over all DOM elments that need to be localized, and 
+     * sets them up for the localization library to interact with.
+     *
+     * The text in English is what defines the keys for other all other
+     * languages.
+     */
+    function prepareDomForLocalization() {
+
+        var elements = document.querySelectorAll('[data-i18n]');
+        for (var i=0, len=elements.length; i<len; ++i) {
+            
+            var domElem = elements[i];
+            var attrValue = undefined;
+            
+            switch (domElem.nodeName) {
+
+                case 'OPTION':
+                    attrValue = domElem.innerText;
+                    break;
+                    
+            }
+
+            if (attrValue) {
+                domElem.setAttribute('data-i18n', attrValue);
+            } else {
+                console.warn('Could not initialize localization for', domElem);
+            }
+        }
     }
 
 </script>
