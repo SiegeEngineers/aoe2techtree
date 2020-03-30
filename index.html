@@ -56,17 +56,18 @@
                 </div>
                 <hr>
                 <p id="civtext"></p>
+                <div id="loading" class="lds-dual-ring"></div>
             </div>
             <div class="info">
                 <div class="info__margin">
                     Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36202/" target="_blank" title="Changelog">36202</a>
                 </div>
                 <div class="info__margin">
-                    Contribute on <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
+                    <span data-i18n>Contribute on</span> <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
                 </div>
                 <div>
                     <span data-i18n>Made by</span> hszemi, Anda, exterkamp, paulirish,<br>
-                    with thanks to Jineapple, TriRem, pip, and NkoDragaš<br>
+                    <span data-i18n>with thanks to</span> Jineapple, TriRem, pip, and NkoDragaš<br>
                     Item Metadata (cost, HP etc.) taken from <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
                 </div>
             </div>
@@ -85,6 +86,9 @@
 <script src="js/techtree.js"></script>
 <script src="js/civs.js"></script>
 <script type="text/javascript">
+
+    document.getElementById('civselect').selectedIndex = -1;
+
     var tree = getDefaultTree();
     var data = {};
     let connections = getConnections();
@@ -132,13 +136,19 @@
         36: "Heroes and Kings",
     };
 
-    loadJson(function (response) {
+    initLocalization(function(){
+        loadJson(onJsonData);
+    });
+
+    function onJsonData(response) {
 
         data = JSON.parse(response);
 
         let hash = window.location.hash.substr(1);
         let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
         if (capitalisedHash in data.civs) {
+            // This code section works only in English locale,
+            // which is OKAY during application's initialiation.
             document.getElementById('civselect').value = capitalisedHash;
         }
 
@@ -203,12 +213,19 @@
             }
         }
 
-        initLocalization(function(){
-            loadCiv();
-            // Make the xref badges
-            document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
-        });
-    });
+        // Hide loading
+        document.getElementById('loading').style.display = 'none';
+
+
+        const domSelect = document.getElementById('civselect');
+        if (domSelect.selectedIndex === -1) {
+            domSelect.selectedIndex = 0;
+        }
+        loadCiv();
+        // Make the xref badges
+        document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
+    }
+
 
     function imagePrefix(name) {
         return name
