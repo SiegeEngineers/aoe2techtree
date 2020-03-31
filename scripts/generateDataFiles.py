@@ -219,6 +219,7 @@ UNITS = {
     1236: {"internal_name": "ELEITIS", "Name": "Elite Leitis"},
     1254: {"internal_name": "KONNIK", "Name": "Konnik"},
     1255: {"internal_name": "EKONNIK", "Name": "Elite Konnik"},
+    1263: {"internal_name": "FCAMEL", "Name": "Flaming Camel"},
     1370: {"internal_name": "SLANCER", "Name": "Steppe Lancer"},
     1372: {"internal_name": "ESLANCER", "Name": "Elite Steppe Lancer"},
 }
@@ -343,7 +344,7 @@ TECHS = {
     514: {"internal_name": "Magyars UT", "Name": "Corvinian Army"},
     515: {"internal_name": "Indians UT", "Name": "Recurve Bow"},
     516: {"internal_name": "Incas UT", "Name": "Andean Sling"},
-    517: {"internal_name": "Indians UT", "Name": "Couriers"},
+    517: {"internal_name": "Indians UT", "Name": "Fabric Shields"},
     572: {"internal_name": "Portuguese UT", "Name": "Carrack"},
     573: {"internal_name": "Portuguese UT", "Name": "Arquebus"},
     574: {"internal_name": "Ethiopian UT", "Name": "Royal Heirs"},

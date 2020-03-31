@@ -297,6 +297,7 @@ const civsConfig = {
           techs: [ 
              PARTHIAN_TACTICS,
              HERESY,
+             REDEMPTION,
              HOARDINGS,
              SIEGE_ENGINEERS,
              TREADMILL_CRANE,
@@ -344,6 +345,7 @@ const civsConfig = {
              ARROWSLITS,
              BOMBARD_TOWER,
              ILLUMINATION,
+             REDEMPTION,
              BLOCK_PRINTING,
              THEOCRACY,
              STONE_SHAFT_MINING,
@@ -458,7 +460,7 @@ const civsConfig = {
              STONE_WALL,
              FORTIFIED_WALL
           ],
-          techs: [ 
+          techs: [
              THUMB_RING,
              PARTHIAN_TACTICS,
              DRY_DOCK,
@@ -477,7 +479,8 @@ const civsConfig = {
              TREADMILL_CRANE,
              ARROWSLITS,
              GOLD_SHAFT_MINING,
-             SUPPLIES
+             SUPPLIES,
+             ARSON,
           ],
           units: [ 
              ARBALESTER,
@@ -583,7 +586,7 @@ const civsConfig = {
           KAMAYUK,
           ELITE_KAMAYUK,
           ANDEAN_SLING,
-          COURIERS
+          FABRIC_SHIELDS
        ]
     },
     Indians: { 
@@ -1221,7 +1224,8 @@ const civsConfig = {
        enabled: { 
           units: [ 
              STEPPE_LANCER,
-             ELITE_STEPPE_LANCER
+             ELITE_STEPPE_LANCER,
+             FLAMING_CAMEL,
           ]
        },
        unique: [ 

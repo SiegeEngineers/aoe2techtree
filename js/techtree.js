@@ -251,7 +251,7 @@ const ATHEISM = "Atheism";
 const KAMAYUK = "Kamayuk";
 const ELITE_KAMAYUK = "Elite Kamayuk";
 const ANDEAN_SLING = "Andean Sling";
-const COURIERS = "Couriers";
+const FABRIC_SHIELDS = "Fabric Shields";
 const ELEPHANT_ARCHER = "Elephant Archer";
 const ELITE_ELEPHANT_ARCHER = "Elite Elephant Archer";
 const SULTANS = "Sultans";
@@ -336,6 +336,7 @@ const BERSERK = "Berserk";
 const ELITE_BERSERK = "Elite Berserk";
 const CHIEFTAINS = "Chieftains";
 const BERSERKERGANG = "Berserkergang";
+const FLAMING_CAMEL = "Flaming Camel"
 
 const horseDisabledBuildings = [STABLE];
 const horseDisabledUnits = [SCOUT_CAVALRY, LIGHT_CAVALRY, HUSSAR, KNIGHT, PALADIN, CAMEL_RIDER,
@@ -344,7 +345,7 @@ const horseDisabledTechs = [BLOODLINES, HUSBANDRY, SCALE_BARDING_ARMOR, CHAIN_BA
     PLATE_BARDING_ARMOR, PARTHIAN_TACTICS];
 
 const defaultDisabledUnits = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,
-    ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER,];
+    ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER, FLAMING_CAMEL];
     
 const defaultDisabledBuildings = [KREPOST, FEITORIA,];
 
@@ -784,6 +785,7 @@ function getDefaultTree() {
     castlelane.rows.castle_2.push(tech(UNIQUE_TECH_1));
     castlelane.rows.imperial_1.push(new Caret(TYPES.UNIQUEUNIT, ELITE_UNIQUE_UNIT, ELITE_UNIQUE_UNIT));
     castlelane.rows.imperial_1.push(unit(TREBUCHET));
+    castlelane.rows.imperial_1.push(uniqueunit(FLAMING_CAMEL));
     castlelane.rows.imperial_1.push(tech(UNIQUE_TECH_2));
     castlelane.rows.imperial_1.push(tech(HOARDINGS));
     castlelane.rows.imperial_1.push(tech(SAPPERS));
@@ -992,6 +994,7 @@ function getConnections() {
         [u(UNIQUE_UNIT), u(ELITE_UNIQUE_UNIT)],
         [b(CASTLE), u(PETARD)],
         [b(CASTLE), t(UNIQUE_TECH_1)],
+        [b(CASTLE), t(UNIQUE_TECH_2)],
         [b(CASTLE), t(HOARDINGS)],
         [b(CASTLE), t(SAPPERS)],
         [b(CASTLE), t(CONSCRIPTION)],
