@@ -22,321 +22,326 @@ const MONK_PREFIX_MESO = "meso_";
 const MONK_PREFIX_AFRICAN = "african_";
 const MONK_PREFIX_ASIAN = "asian_";
 const MONK_PREFIX_GENERIC = "";
-const EAGLE_SCOUT = "Eagle Scout";
-const EAGLE_WARRIOR = "Eagle Warrior";
-const ELITE_EAGLE_WARRIOR = "Elite Eagle Warrior";
-const BATTLE_ELEPHANT = "Battle Elephant";
-const STEPPE_LANCER = "Steppe Lancer";
-const ELITE_BATTLE_ELEPHANT = "Elite Battle Elephant";
-const ELITE_STEPPE_LANCER = "Elite Steppe Lancer";
-const KREPOST = "Krepost";
-const FEITORIA = "Feitoria";
-const MONK = "Monk";
-const CAVALRY_ARCHER = "Cavalry Archer";
-const HEAVY_CAV_ARCHER = "Heavy Cav Archer";
-const PARTHIAN_TACTICS = "Parthian Tactics";
-const STABLE = "Stable";
-const SCALE_BARDING_ARMOR = "Scale Barding Armor";
-const CHAIN_BARDING_ARMOR = "Chain Barding Armor";
-const PLATE_BARDING_ARMOR = "Plate Barding Armor";
-const ARCHERY_RANGE = "Archery Range";
-const ARCHER = "Archer";
-const SKIRMISHER = "Skirmisher";
-const CROSSBOWMAN = "Crossbowman";
-const ELITE_SKIRMISHER = "Elite Skirmisher";
-const SLINGER = "Slinger";
-const GENITOUR = "Genitour";
-const THUMB_RING = "Thumb Ring";
-const ARBALESTER = "Arbalester";
-const IMPERIAL_SKIRMISHER = "Imperial Skirmisher";
-const HAND_CANNONEER = "Hand Cannoneer";
-const ELITE_GENITOUR = "Elite Genitour";
-const BARRACKS = "Barracks";
-const MILITIA = "Militia";
-const MAN_AT_ARMS = "Man-at-Arms";
-const SPEARMAN = "Spearman";
-const SUPPLIES = "Supplies";
-const LONG_SWORDSMAN = "Long Swordsman";
-const PIKEMAN = "Pikeman";
-const SQUIRES = "Squires";
-const ARSON = "Arson";
-const TWO_HANDED_SWORDSMAN = "Two-Handed Swordsman";
-const CHAMPION = "Champion";
-const HALBERDIER = "Halberdier";
-const CONDOTTIERO = "Condottiero";
-const SCOUT_CAVALRY = "Scout Cavalry";
-const BLOODLINES = "Bloodlines";
-const LIGHT_CAVALRY = "Light Cavalry";
-const KNIGHT = "Knight";
-const CAMEL_RIDER = "Camel Rider";
-const HUSBANDRY = "Husbandry";
-const HUSSAR = "Hussar";
-const CAVALIER = "Cavalier";
-const HEAVY_CAMEL_RIDER = "Heavy Camel Rider";
-const IMPERIAL_CAMEL_RIDER = "Imperial Camel Rider";
-const PALADIN = "Paladin";
-const WONDER = "Wonder";
-const DOCK = "Dock";
-const FISHING_SHIP = "Fishing Ship";
-const TRANSPORT_SHIP = "Transport Ship";
-const FIRE_GALLEY = "Fire Galley";
-const TRADE_COG = "Trade Cog";
-const DEMOLITION_RAFT = "Demolition Raft";
-const GALLEY = "Galley";
-const FIRE_SHIP = "Fire Ship";
-const GILLNETS = "Gillnets";
-const DEMOLITION_SHIP = "Demolition Ship";
-const WAR_GALLEY = "War Galley";
-const TURTLE_SHIP = "Turtle Ship";
-const LONGBOAT = "Longboat";
-const CARAVEL = "Caravel";
-const CAREENING = "Careening";
-const FAST_FIRE_SHIP = "Fast Fire Ship";
-const CANNON_GALLEON = "Cannon Galleon";
-const HEAVY_DEMO_SHIP = "Heavy Demo Ship";
-const GALLEON = "Galleon";
-const ELITE_TURTLE_SHIP = "Elite Turtle Ship";
-const ELITE_LONGBOAT = "Elite Longboat";
-const ELITE_CARAVEL = "Elite Caravel";
-const ELITE_CANNON_GALLEON = "Elite Cannon Galleon";
-const DRY_DOCK = "Dry Dock";
-const SHIPWRIGHT = "Shipwright";
-const FISH_TRAP = "Fish Trap";
-const OUTPOST = "Outpost";
-const WATCH_TOWER = "Watch Tower";
-const GUARD_TOWER = "Guard Tower";
-const KEEP = "Keep";
-const BOMBARD_TOWER = "Bombard Tower";
-const PALISADE_WALL = "Palisade Wall";
-const PALISADE_GATE = "Palisade Gate";
-const GATE = "Gate";
-const STONE_WALL = "Stone Wall";
-const FORTIFIED_WALL = "Fortified Wall";
-const MONASTERY = "Monastery";
-const MISSIONARY = "Missionary";
-const REDEMPTION = "Redemption";
-const FERVOR = "Fervor";
-const SANCTITY = "Sanctity";
-const ATONEMENT = "Atonement";
-const HERBAL_MEDICINE = "Herbal Medicine";
-const HERESY = "Heresy";
-const BLOCK_PRINTING = "Block Printing";
-const ILLUMINATION = "Illumination";
-const FAITH = "Faith";
-const THEOCRACY = "Theocracy";
-const CASTLE = "Castle";
-const PETARD = "Petard";
-const TREBUCHET = "Trebuchet";
-const HOARDINGS = "Hoardings";
-const SAPPERS = "Sappers";
-const CONSCRIPTION = "Conscription";
-const SPIES_TREASON = "Spies/Treason";
-const HOUSE = "House";
-const TOWN_CENTER = "Town Center";
-const VILLAGER = "Villager";
-const FEUDAL_AGE = "Feudal Age";
-const LOOM = "Loom";
-const TOWN_WATCH = "Town Watch";
-const CASTLE_AGE = "Castle Age";
-const WHEELBARROW = "Wheelbarrow";
-const TOWN_PATROL = "Town Patrol";
-const IMPERIAL_AGE = "Imperial Age";
-const HAND_CART = "Hand Cart";
-const SIEGE_WORKSHOP = "Siege Workshop";
-const MANGONEL = "Mangonel";
-const BATTERING_RAM = "Battering Ram";
-const SCORPION = "Scorpion";
-const SIEGE_TOWER = "Siege Tower";
-const ONAGER = "Onager";
-const CAPPED_RAM = "Capped Ram";
-const HEAVY_SCORPION = "Heavy Scorpion";
-const BOMBARD_CANNON = "Bombard Cannon";
-const SIEGE_ONAGER = "Siege Onager";
-const SIEGE_RAM = "Siege Ram";
-const BLACKSMITH = "Blacksmith";
-const PADDED_ARCHER_ARMOR = "Padded Archer Armor";
-const FLETCHING = "Fletching";
-const FORGING = "Forging";
-const SCALE_MAIL_ARMOR = "Scale Mail Armor";
-const LEATHER_ARCHER_ARMOR = "Leather Archer Armor";
-const BODKIN_ARROW = "Bodkin Arrow";
-const IRON_CASTING = "Iron Casting";
-const CHAIN_MAIL_ARMOR = "Chain Mail Armor";
-const RING_ARCHER_ARMOR = "Ring Archer Armor";
-const BRACER = "Bracer";
-const BLAST_FURNACE = "Blast Furnace";
-const PLATE_MAIL_ARMOR = "Plate Mail Armor";
-const UNIVERSITY = "University";
-const MASONRY = "Masonry";
-const BALLISTICS = "Ballistics";
-const HEATED_SHOT = "Heated Shot";
-const MURDER_HOLES = "Murder Holes";
-const TREADMILL_CRANE = "Treadmill Crane";
-const ARCHITECTURE = "Architecture";
-const CHEMISTRY = "Chemistry";
-const SIEGE_ENGINEERS = "Siege Engineers";
-const ARROWSLITS = "Arrowslits";
-const MINING_CAMP = "Mining Camp";
-const STONE_MINING = "Stone Mining";
-const GOLD_MINING = "Gold Mining";
-const STONE_SHAFT_MINING = "Stone Shaft Mining";
-const GOLD_SHAFT_MINING = "Gold Shaft Mining";
-const LUMBER_CAMP = "Lumber Camp";
-const DOUBLE_BIT_AXE = "Double-Bit Axe";
-const BOW_SAW = "Bow Saw";
-const TWO_MAN_SAW = "Two-Man Saw";
-const MARKET = "Market";
-const TRADE_CART = "Trade Cart";
-const COINAGE = "Coinage";
-const CARAVAN = "Caravan";
-const BANKING = "Banking";
-const GUILDS = "Guilds";
-const MILL = "Mill";
-const HORSE_COLLAR = "Horse Collar";
-const HEAVY_PLOW = "Heavy Plow";
-const CROP_ROTATION = "Crop Rotation";
-const FARM = "Farm";
-const JAGUAR_WARRIOR = "Jaguar Warrior";
-const ELITE_JAGUAR_WARRIOR = "Elite Jaguar Warrior";
-const ATLATL = "Atlatl";
-const GARLAND_WARS = "Garland Wars";
-const CAMEL_ARCHER = "Camel Archer";
-const ELITE_CAMEL_ARCHER = "Elite Camel Archer";
-const KASBAH = "Kasbah";
-const MAGHRABI_CAMELS = "Maghrabi Camels";
-const LONGBOWMAN = "Longbowman";
-const ELITE_LONGBOWMAN = "Elite Longbowman";
-const YEOMEN = "Yeomen";
-const WARWOLF = "Warwolf";
-const KONNIK = "Konnik";
-const ELITE_KONNIK = "Elite Konnik";
-const STIRRUPS = "Stirrups";
-const BAGAINS = "Bagains";
-const ARAMBAI = "Arambai";
-const ELITE_ARAMBAI = "Elite Arambai";
-const HOWDAH = "Howdah";
-const MANIPUR_CAVALRY = "Manipur Cavalry";
-const CATAPHRACT = "Cataphract";
-const ELITE_CATAPHRACT = "Elite Cataphract";
-const GREEK_FIRE = "Greek Fire";
-const LOGISTICA = "Logistica";
-const WOAD_RAIDER = "Woad Raider";
-const ELITE_WOAD_RAIDER = "Elite Woad Raider";
-const STRONGHOLD = "Stronghold";
-const FUROR_CELTICA = "Furor Celtica";
-const CHU_KO_NU = "Chu Ko Nu";
-const ELITE_CHU_KO_NU = "Elite Chu Ko Nu";
-const GREAT_WALL = "Great Wall";
-const ROCKETRY = "Rocketry";
-const KIPCHAK = "Kipchak";
-const ELITE_KIPCHAK = "Elite Kipchak";
-const STEPPE_HUSBANDRY = "Steppe Husbandry";
-const CUMAN_MERCENARIES = "Cuman Mercenaries";
-const SHOTEL_WARRIOR = "Shotel Warrior";
-const ELITE_SHOTEL_WARRIOR = "Elite Shotel Warrior";
-const ROYAL_HEIRS = "Royal Heirs";
-const TORSION_ENGINES = "Torsion Engines";
-const THROWING_AXEMAN = "Throwing Axeman";
-const ELITE_THROWING_AXEMAN = "Elite Throwing Axeman";
-const CHIVALRY = "Chivalry";
-const BEARDED_AXE = "Bearded Axe";
-const HUSKARL = "Huskarl";
-const ELITE_HUSKARL = "Elite Huskarl";
-const ANARCHY = "Anarchy";
-const PERFUSION = "Perfusion";
-const TARKAN = "Tarkan";
-const ELITE_TARKAN = "Elite Tarkan";
-const MARAUDERS = "Marauders";
-const ATHEISM = "Atheism";
-const KAMAYUK = "Kamayuk";
-const ELITE_KAMAYUK = "Elite Kamayuk";
-const ANDEAN_SLING = "Andean Sling";
-const FABRIC_SHIELDS = "Fabric Shields";
-const ELEPHANT_ARCHER = "Elephant Archer";
-const ELITE_ELEPHANT_ARCHER = "Elite Elephant Archer";
-const SULTANS = "Sultans";
-const SHATAGNI = "Shatagni";
-const GENOESE_CROSSBOWMAN = "Genoese Crossbowman";
-const ELITE_GENOESE_CROSSBOWMAN = "Elite Genoese Crossbowman";
-const PAVISE = "Pavise";
-const SILK_ROAD = "Silk Road";
-const SAMURAI = "Samurai";
-const ELITE_SAMURAI = "Elite Samurai";
-const YASAMA = "Yasama";
-const KATAPARUTO = "Kataparuto";
-const BALLISTA_ELEPHANT = "Ballista Elephant";
-const ELITE_BALLISTA_ELEPHANT = "Elite Ballista Elephant";
-const TUSK_SWORDS = "Tusk Swords";
-const DOUBLE_CROSSBOW = "Double Crossbow";
-const WAR_WAGON = "War Wagon";
-const ELITE_WAR_WAGON = "Elite War Wagon";
-const PANOKSEON = "Panokseon";
-const SHINKICHON = "Shinkichon";
-const LEITIS = "Leitis";
-const ELITE_LEITIS = "Elite Leitis";
-const HILL_FORTS = "Hill Forts";
-const TOWER_SHIELDS = "Tower Shields";
-const MAGYAR_HUSZAR = "Magyar Huszar";
-const ELITE_MAGYAR_HUSZAR = "Elite Magyar Huszar";
-const MERCENARIES = "Corvinian Army";
-const RECURVE_BOW = "Recurve Bow";
-const KARAMBIT_WARRIOR = "Karambit Warrior";
-const ELITE_KARAMBIT_WARRIOR = "Elite Karambit Warrior";
-const THALASSOCRACY = "Thalassocracy";
-const FORCED_LEVY = "Forced Levy";
-const GBETO = "Gbeto";
-const ELITE_GBETO = "Elite Gbeto";
-const TIGUI = "Tigui";
-const FARIMBA = "Farimba";
-const PLUMED_ARCHER = "Plumed Archer";
-const ELITE_PLUMED_ARCHER = "Elite Plumed Archer";
-const OBSIDIAN_ARROWS = "Obsidian Arrows";
-const EL_DORADO = "El Dorado";
-const MANGUDAI = "Mangudai";
-const ELITE_MANGUDAI = "Elite Mangudai";
-const NOMADS = "Nomads";
-const DRILL = "Drill";
-const WAR_ELEPHANT = "War Elephant";
-const ELITE_WAR_ELEPHANT = "Elite War Elephant";
-const KAMANDARAN = "Kamandaran";
-const MAHOUTS = "Mahouts";
-const ORGAN_GUN = "Organ Gun";
-const ELITE_ORGAN_GUN = "Elite Organ Gun";
-const CARRACK = "Carrack";
-const ARQUEBUS = "Arquebus";
-const MAMELUKE = "Mameluke";
-const ELITE_MAMELUKE = "Elite Mameluke";
-const MADRASAH = "Madrasah";
-const ZEALOTRY = "Zealotry";
-const BOYAR = "Boyar";
-const ELITE_BOYAR = "Elite Boyar";
-const ORTHODOXY = "Orthodoxy";
-const DRUZHINA = "Druzhina";
-const CONQUISTADOR = "Conquistador";
-const ELITE_CONQUISTADOR = "Elite Conquistador";
-const INQUISITION = "Inquisition";
-const SUPREMACY = "Supremacy";
-const KESHIK = "Keshik";
-const ELITE_KESHIK = "Elite Keshik";
-const SILK_ARMOR = "Silk Armor";
-const TIMURID_SIEGECRAFT = "Timurid Siegecraft";
-const TEUTONIC_KNIGHT = "Teutonic Knight";
-const ELITE_TEUTONIC_KNIGHT = "Elite Teutonic Knight";
-const IRONCLAD = "Ironclad";
-const CRENELLATIONS = "Crenellations";
-const JANISSARY = "Janissary";
-const ELITE_JANISSARY = "Elite Janissary";
-const SIPAHI = "Sipahi";
-const ARTILLERY = "Artillery";
-const RATTAN_ARCHER = "Rattan Archer";
-const ELITE_RATTAN_ARCHER = "Elite Rattan Archer";
-const CHATRAS = "Chatras";
-const PAPER_MONEY = "Paper Money";
-const BERSERK = "Berserk";
-const ELITE_BERSERK = "Elite Berserk";
-const CHIEFTAINS = "Chieftains";
-const BERSERKERGANG = "Berserkergang";
-const FLAMING_CAMEL = "Flaming Camel"
+const BARRACKS = 12;
+const DOCK = 45;
+const SIEGE_WORKSHOP = 49;
+const FARM = 50;
+const GATE = 64;
+const MILL = 68;
+const HOUSE = 70;
+const TOWN_CENTER = 71;
+const PALISADE_WALL = 72;
+const WATCH_TOWER = 79;
+const CASTLE = 82;
+const MARKET = 84;
+const ARCHERY_RANGE = 87;
+const STABLE = 101;
+const BLACKSMITH = 103;
+const MONASTERY = 104;
+const STONE_WALL = 117;
+const FORTIFIED_WALL = 155;
+const FISH_TRAP = 199;
+const UNIVERSITY = 209;
+const GUARD_TOWER = 234;
+const KEEP = 235;
+const BOMBARD_TOWER = 236;
+const WONDER = 276;
+const LUMBER_CAMP = 562;
+const MINING_CAMP = 584;
+const OUTPOST = 598;
+const PALISADE_GATE = 789;
+const FEITORIA = 1021;
+const KREPOST = 1251;
+const ARCHER = 4;
+const HAND_CANNONEER = 5;
+const ELITE_SKIRMISHER = 6;
+const SKIRMISHER = 7;
+const LONGBOWMAN = 8;
+const MANGUDAI = 11;
+const FISHING_SHIP = 13;
+const TRADE_COG = 17;
+const WAR_GALLEY = 21;
+const CROSSBOWMAN = 24;
+const TEUTONIC_KNIGHT = 25;
+const BATTERING_RAM = 35;
+const BOMBARD_CANNON = 36;
+const KNIGHT = 38;
+const CAVALRY_ARCHER = 39;
+const CATAPHRACT = 40;
+const HUSKARL = 41;
+const TREBUCHET = 42;
+const JANISSARY = 46;
+const CHU_KO_NU = 73;
+const MILITIA = 74;
+const MAN_AT_ARMS = 75;
+const LONG_SWORDSMAN = 77;
+const VILLAGER = 83;
+const SPEARMAN = 93;
+const MONK = 125;
+const TRADE_CART = 128;
+const SLINGER = 185;
+const IMPERIAL_CAMEL_RIDER = 207;
+const WOAD_RAIDER = 232;
+const WAR_ELEPHANT = 239;
+const LONGBOAT = 250;
+const SCORPION = 279;
+const MANGONEL = 280;
+const THROWING_AXEMAN = 281;
+const MAMELUKE = 282;
+const CAVALIER = 283;
+const SAMURAI = 291;
+const CAMEL_RIDER = 329;
+const HEAVY_CAMEL_RIDER = 330;
+const PIKEMAN = 358;
+const HALBERDIER = 359;
+const CANNON_GALLEON = 420;
+const CAPPED_RAM = 422;
+const PETARD = 440;
+const HUSSAR = 441;
+const GALLEON = 442;
+const SCOUT_CAVALRY = 448;
+const TWO_HANDED_SWORDSMAN = 473;
+const HEAVY_CAV_ARCHER = 474;
+const ARBALESTER = 492;
+const DEMOLITION_SHIP = 527;
+const HEAVY_DEMO_SHIP = 528;
+const FIRE_SHIP = 529;
+const ELITE_LONGBOWMAN = 530;
+const ELITE_THROWING_AXEMAN = 531;
+const FAST_FIRE_SHIP = 532;
+const ELITE_LONGBOAT = 533;
+const ELITE_WOAD_RAIDER = 534;
+const GALLEY = 539;
+const HEAVY_SCORPION = 542;
+const TRANSPORT_SHIP = 545;
+const LIGHT_CAVALRY = 546;
+const SIEGE_RAM = 548;
+const ONAGER = 550;
+const ELITE_CATAPHRACT = 553;
+const ELITE_TEUTONIC_KNIGHT = 554;
+const ELITE_HUSKARL = 555;
+const ELITE_MAMELUKE = 556;
+const ELITE_JANISSARY = 557;
+const ELITE_WAR_ELEPHANT = 558;
+const ELITE_CHU_KO_NU = 559;
+const ELITE_SAMURAI = 560;
+const ELITE_MANGUDAI = 561;
+const CHAMPION = 567;
+const PALADIN = 569;
+const SIEGE_ONAGER = 588;
+const ELITE_CANNON_GALLEON = 691;
+const BERSERK = 692;
+const ELITE_BERSERK = 694;
+const JAGUAR_WARRIOR = 725;
+const ELITE_JAGUAR_WARRIOR = 726;
+const EAGLE_SCOUT = 751;
+const ELITE_EAGLE_WARRIOR = 752;
+const EAGLE_WARRIOR = 753;
+const TARKAN = 755;
+const ELITE_TARKAN = 757;
+const PLUMED_ARCHER = 763;
+const ELITE_PLUMED_ARCHER = 765;
+const CONQUISTADOR = 771;
+const ELITE_CONQUISTADOR = 773;
+const MISSIONARY = 775;
+const WAR_WAGON = 827;
+const ELITE_WAR_WAGON = 829;
+const TURTLE_SHIP = 831;
+const ELITE_TURTLE_SHIP = 832;
+const GENOESE_CROSSBOWMAN = 866;
+const ELITE_GENOESE_CROSSBOWMAN = 868;
+const MAGYAR_HUSZAR = 869;
+const ELITE_MAGYAR_HUSZAR = 871;
+const ELEPHANT_ARCHER = 873;
+const ELITE_ELEPHANT_ARCHER = 875;
+const BOYAR = 876;
+const ELITE_BOYAR = 878;
+const KAMAYUK = 879;
+const ELITE_KAMAYUK = 881;
+const CONDOTTIERO = 882;
+const ORGAN_GUN = 1001;
+const ELITE_ORGAN_GUN = 1003;
+const CARAVEL = 1004;
+const ELITE_CARAVEL = 1006;
+const CAMEL_ARCHER = 1007;
+const ELITE_CAMEL_ARCHER = 1009;
+const GENITOUR = 1010;
+const ELITE_GENITOUR = 1012;
+const GBETO = 1013;
+const ELITE_GBETO = 1015;
+const SHOTEL_WARRIOR = 1016;
+const ELITE_SHOTEL_WARRIOR = 1018;
+const FIRE_GALLEY = 1103;
+const DEMOLITION_RAFT = 1104;
+const SIEGE_TOWER = 1105;
+const BALLISTA_ELEPHANT = 1120;
+const ELITE_BALLISTA_ELEPHANT = 1122;
+const KARAMBIT_WARRIOR = 1123;
+const ELITE_KARAMBIT_WARRIOR = 1125;
+const ARAMBAI = 1126;
+const ELITE_ARAMBAI = 1128;
+const RATTAN_ARCHER = 1129;
+const ELITE_RATTAN_ARCHER = 1131;
+const BATTLE_ELEPHANT = 1132;
+const ELITE_BATTLE_ELEPHANT = 1134;
+const IMPERIAL_SKIRMISHER = 1155;
+const KESHIK = 1228;
+const ELITE_KESHIK = 1230;
+const KIPCHAK = 1231;
+const ELITE_KIPCHAK = 1233;
+const LEITIS = 1234;
+const ELITE_LEITIS = 1236;
+const KONNIK = 1254;
+const ELITE_KONNIK = 1255;
+const FLAMING_CAMEL = 1263;
+const STEPPE_LANCER = 1370;
+const ELITE_STEPPE_LANCER = 1372;
+const YEOMEN = 3;
+const EL_DORADO = 4;
+const FUROR_CELTICA = 5;
+const DRILL = 6;
+const MAHOUTS = 7;
+const TOWN_WATCH = 8;
+const ZEALOTRY = 9;
+const ARTILLERY = 10;
+const CRENELLATIONS = 11;
+const CROP_ROTATION = 12;
+const HEAVY_PLOW = 13;
+const HORSE_COLLAR = 14;
+const GUILDS = 15;
+const ANARCHY = 16;
+const BANKING = 17;
+const ATHEISM = 21;
+const LOOM = 22;
+const COINAGE = 23;
+const GARLAND_WARS = 24;
+const HUSBANDRY = 39;
+const FAITH = 45;
+const CHEMISTRY = 47;
+const CARAVAN = 48;
+const BERSERKERGANG = 49;
+const MASONRY = 50;
+const ARCHITECTURE = 51;
+const ROCKETRY = 52;
+const TREADMILL_CRANE = 54;
+const GOLD_MINING = 55;
+const KATAPARUTO = 59;
+const LOGISTICA = 61;
+const KEEP_TECH = 63;
+const BOMBARD_TOWER_TECH = 64;
+const GILLNETS = 65;
+const FORGING = 67;
+const IRON_CASTING = 68;
+const SCALE_MAIL_ARMOR = 74;
+const BLAST_FURNACE = 75;
+const CHAIN_MAIL_ARMOR = 76;
+const PLATE_MAIL_ARMOR = 77;
+const PLATE_BARDING_ARMOR = 80;
+const SCALE_BARDING_ARMOR = 81;
+const CHAIN_BARDING_ARMOR = 82;
+const BEARDED_AXE = 83;
+const BALLISTICS = 93;
+const FEUDAL_AGE = 101;
+const CASTLE_AGE = 102;
+const IMPERIAL_AGE = 103;
+const GUARD_TOWER_TECH = 140;
+const GOLD_SHAFT_MINING = 182;
+const FORTIFIED_WALL_TECH = 194;
+const FLETCHING = 199;
+const BODKIN_ARROW = 200;
+const BRACER = 201;
+const DOUBLE_BIT_AXE = 202;
+const BOW_SAW = 203;
+const PADDED_ARCHER_ARMOR = 211;
+const LEATHER_ARCHER_ARMOR = 212;
+const WHEELBARROW = 213;
+const SQUIRES = 215;
+const RING_ARCHER_ARMOR = 219;
+const TWO_MAN_SAW = 221;
+const BLOCK_PRINTING = 230;
+const SANCTITY = 231;
+const ILLUMINATION = 233;
+const HAND_CART = 249;
+const FERVOR = 252;
+const STONE_MINING = 278;
+const STONE_SHAFT_MINING = 279;
+const TOWN_PATROL = 280;
+const CONSCRIPTION = 315;
+const REDEMPTION = 316;
+const ATONEMENT = 319;
+const SAPPERS = 321;
+const MURDER_HOLES = 322;
+const SHIPWRIGHT = 373;
+const CAREENING = 374;
+const DRY_DOCK = 375;
+const SIEGE_ENGINEERS = 377;
+const HOARDINGS = 379;
+const HEATED_SHOT = 380;
+const SPIES_TREASON = 408;
+const BLOODLINES = 435;
+const PARTHIAN_TACTICS = 436;
+const THUMB_RING = 437;
+const THEOCRACY = 438;
+const HERESY = 439;
+const SUPREMACY = 440;
+const HERBAL_MEDICINE = 441;
+const SHINKICHON = 445;
+const PERFUSION = 457;
+const ATLATL = 460;
+const WARWOLF = 461;
+const GREAT_WALL = 462;
+const CHIEFTAINS = 463;
+const GREEK_FIRE = 464;
+const STRONGHOLD = 482;
+const MARAUDERS = 483;
+const YASAMA = 484;
+const OBSIDIAN_ARROWS = 485;
+const PANOKSEON = 486;
+const NOMADS = 487;
+const KAMANDARAN = 488;
+const IRONCLAD = 489;
+const MADRASAH = 490;
+const SIPAHI = 491;
+const INQUISITION = 492;
+const CHIVALRY = 493;
+const PAVISE = 494;
+const SILK_ROAD = 499;
+const SULTANS = 506;
+const SHATAGNI = 507;
+const ORTHODOXY = 512;
+const DRUZHINA = 513;
+const CORVINIAN_ARMY = 514;
+const RECURVE_BOW = 515;
+const ANDEAN_SLING = 516;
+const FABRIC_SHIELDS = 517;
+const CARRACK = 572;
+const ARQUEBUS = 573;
+const ROYAL_HEIRS = 574;
+const TORSION_ENGINES = 575;
+const TIGUI = 576;
+const FARIMBA = 577;
+const KASBAH = 578;
+const MAGHRABI_CAMELS = 579;
+const ARSON = 602;
+const ARROWSLITS = 608;
+const TUSK_SWORDS = 622;
+const DOUBLE_CROSSBOW = 623;
+const THALASSOCRACY = 624;
+const FORCED_LEVY = 625;
+const HOWDAH = 626;
+const MANIPUR_CAVALRY = 627;
+const CHATRAS = 628;
+const PAPER_MONEY = 629;
+const STIRRUPS = 685;
+const BAGAINS = 686;
+const SILK_ARMOR = 687;
+const TIMURID_SIEGECRAFT = 688;
+const STEPPE_HUSBANDRY = 689;
+const CUMAN_MERCENARIES = 690;
+const HILL_FORTS = 691;
+const TOWER_SHIELDS = 692;
+const SUPPLIES = 716;
+
 
 const horseDisabledBuildings = [STABLE];
 const horseDisabledUnits = [SCOUT_CAVALRY, LIGHT_CAVALRY, HUSSAR, KNIGHT, PALADIN, CAMEL_RIDER,
@@ -522,7 +527,7 @@ class Caret {
 }
 
 function formatId(string) {
-    return string.replace(/\s/g, "_").replace(/\//g, "_").toLowerCase();
+    return string.toString().replace(/\s/g, "_").replace(/\//g, "_").toLowerCase();
 }
 
 function checkIdUnique(tree) {
@@ -547,13 +552,13 @@ function resetToDefault(tree) {
 }
 
 function disable(buildings, units, techs) {
-    for (name of buildings) {
+    for (let name of buildings) {
         SVG.get('building_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
     }
-    for (name of units) {
+    for (let name of units) {
         SVG.get('unit_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
     }
-    for (name of techs) {
+    for (let name of techs) {
         SVG.get('tech_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
     }
 }
@@ -581,7 +586,7 @@ function disableUniqueUnits(tree) {
 }
 
 function formatName(originalname) {
-    let name = originalname;
+    let name = originalname.toString();
     if (name.length > 10) {
         let space = originalname.indexOf(" ");
         if (space !== -1) {
@@ -592,25 +597,36 @@ function formatName(originalname) {
                     name = originalname.slice(0, alternativeSpace) + "\n" + originalname.slice(alternativeSpace + 1);
                 }
             }
+        } else {
+            let hyphen = originalname.indexOf("-");
+            if (hyphen !== -1) {
+                name = originalname.slice(0, hyphen) + "-\n" + originalname.slice(hyphen + 1);
+                let alternativeHyphen = hyphen + 1 + originalname.slice(hyphen + 1).indexOf("-");
+                if (alternativeHyphen !== -1) {
+                    if (Math.abs((originalname.length / 2) - alternativeHyphen) < Math.abs((originalname.length / 2) - hyphen)) {
+                        name = originalname.slice(0, alternativeHyphen) + "-\n" + originalname.slice(alternativeHyphen + 1);
+                    }
+                }
+            }
         }
     }
     return name;
 }
 
-function unique(names, monk_prefix) {
+function unique(ids, monk_prefix) {
     if (monk_prefix === undefined) {
         monk_prefix = MONK_PREFIX_GENERIC;
     }
-    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(names[0]));
-    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': names[0]});
-    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(names[1]));
-    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': names[1]});
-    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_text').text(formatName(names[2]));
-    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_overlay').data({'name': names[2]});
-    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_text').text(formatName(names[3]));
-    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': names[3]});
-    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(names[0]) + '.png');
-    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(names[1]) + '.png');
+    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
+    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
+    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
+    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
+    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
+    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
+    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
+    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
+    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
+    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
     SVG.get('unit_' + formatId(MONK) + '_img').load('img/Units/' + monk_prefix + 'monk.png');
 }
 
@@ -619,21 +635,29 @@ function disableHorses() {
     disable(horseDisabledBuildings, horseDisabledUnits, horseDisabledTechs);
 }
 
-
-function building(name) {
-    return new Caret(TYPES.BUILDING, name, name);
+function getName(id, itemtype) {
+    //ToDo handle unique stuff properly
+    if(id.toString().startsWith('UNIQUE')){
+        return id;
+    }
+    const languageNameId = data['data'][itemtype][id]['LanguageNameId'];
+    return data['strings'][languageNameId];
 }
 
-function unit(name) {
-    return new Caret(TYPES.UNIT, name, name);
+function building(id) {
+    return new Caret(TYPES.BUILDING, getName(id, 'buildings'), id);
 }
 
-function uniqueunit(name) {
-    return new Caret(TYPES.UNIQUEUNIT, name, name);
+function unit(id) {
+    return new Caret(TYPES.UNIT, getName(id, 'units'), id);
 }
 
-function tech(name) {
-    return new Caret(TYPES.TECHNOLOGY, name, name);
+function uniqueunit(id) {
+    return new Caret(TYPES.UNIQUEUNIT, getName(id, 'units'), id);
+}
+
+function tech(id) {
+    return new Caret(TYPES.TECHNOLOGY, getName(id, 'techs'), id);
 }
 
 function getDefaultTree() {
@@ -813,7 +837,7 @@ function getDefaultTree() {
 
 
     let additionaltowncenterlane = new Lane();
-    additionaltowncenterlane.rows.castle_1.push(new Caret(TYPES.BUILDING, TOWN_CENTER, "additional Town Center"));
+    additionaltowncenterlane.rows.castle_1.push(new Caret(TYPES.BUILDING, getName(TOWN_CENTER, 'buildings'), `${TOWN_CENTER}_copy`));
     tree.lanes.push(additionaltowncenterlane);
 
 
@@ -855,18 +879,18 @@ function getDefaultTree() {
     let universitylane = new Lane();
     universitylane.rows.castle_1.push(building(UNIVERSITY));
     universitylane.rows.castle_2.push(tech(MASONRY));
-    universitylane.rows.castle_2.push(new Caret(TYPES.TECHNOLOGY, FORTIFIED_WALL, FORTIFIED_WALL));
+    universitylane.rows.castle_2.push(tech(FORTIFIED_WALL_TECH));
     universitylane.rows.castle_2.push(tech(BALLISTICS));
-    universitylane.rows.castle_2.push(new Caret(TYPES.TECHNOLOGY, GUARD_TOWER, GUARD_TOWER));
+    universitylane.rows.castle_2.push(tech(GUARD_TOWER_TECH));
     universitylane.rows.castle_2.push(tech(HEATED_SHOT));
     universitylane.rows.castle_2.push(tech(MURDER_HOLES));
     universitylane.rows.castle_2.push(tech(TREADMILL_CRANE));
     universitylane.rows.imperial_1.push(tech(ARCHITECTURE));
     universitylane.rows.imperial_1.push(tech(CHEMISTRY));
     universitylane.rows.imperial_1.push(tech(SIEGE_ENGINEERS));
-    universitylane.rows.imperial_1.push(new Caret(TYPES.TECHNOLOGY, KEEP, KEEP));
+    universitylane.rows.imperial_1.push(tech(KEEP_TECH));
     universitylane.rows.imperial_1.push(tech(ARROWSLITS));
-    universitylane.rows.imperial_2.push(new Caret(TYPES.TECHNOLOGY, BOMBARD_TOWER, BOMBARD_TOWER));
+    universitylane.rows.imperial_2.push(tech(BOMBARD_TOWER_TECH));
     tree.lanes.push(universitylane);
 
     let miningcamplane = new Lane();
@@ -1033,14 +1057,14 @@ function getConnections() {
         [t(CHAIN_MAIL_ARMOR), t(PLATE_MAIL_ARMOR)],
         [b(UNIVERSITY), t(MASONRY)],
         [t(MASONRY), t(ARCHITECTURE)],
-        [b(UNIVERSITY), t(FORTIFIED_WALL)],
+        [b(UNIVERSITY), t(FORTIFIED_WALL_TECH)],
         [b(UNIVERSITY), t(BALLISTICS)],
-        [b(UNIVERSITY), t(GUARD_TOWER)],
-        [t(GUARD_TOWER), t(KEEP)],
+        [b(UNIVERSITY), t(GUARD_TOWER_TECH)],
+        [t(GUARD_TOWER_TECH), t(KEEP_TECH)],
         [b(UNIVERSITY), t(HEATED_SHOT)],
         [b(UNIVERSITY), t(MURDER_HOLES)],
         [b(UNIVERSITY), t(TREADMILL_CRANE)],
-        [t(CHEMISTRY), t(BOMBARD_TOWER)],
+        [t(CHEMISTRY), t(BOMBARD_TOWER_TECH)],
         [b(MINING_CAMP), t(STONE_MINING)],
         [t(STONE_MINING), t(STONE_SHAFT_MINING)],
         [b(MINING_CAMP), t(GOLD_MINING)],

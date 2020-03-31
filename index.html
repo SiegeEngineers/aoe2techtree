@@ -83,11 +83,11 @@
 <script src="js/techtree.js"></script>
 <script src="js/civs.js"></script>
 <script type="text/javascript">
-    var tree = getDefaultTree();
-    var data = {};
-    let connections = getConnections();
-    let parentConnections = new Map(connections.map(([parent, child]) => [child, parent]));
-    let connectionpoints = getConnectionPoints(tree);
+    let tree;
+    let data = {};
+    let connections;
+    let parentConnections;
+    let connectionpoints;
     let focusedNodeId = null;
 
     const unitClasses = {
@@ -134,13 +134,18 @@
 
         data = JSON.parse(response);
 
+        tree = getDefaultTree();
+        connections = getConnections();
+        parentConnections = new Map(connections.map(([parent, child]) => [child, parent]));
+        connectionpoints = getConnectionPoints(tree);
+
         let hash = window.location.hash.substr(1);
         let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
-        if (capitalisedHash in data.civs) {
+        if (capitalisedHash in data.civ_names) {
             document.getElementById('civselect').value = capitalisedHash;
         }
 
-        var draw = SVG('techtree').size(tree.width, tree.height)
+        const draw = SVG('techtree').size(tree.width, tree.height)
 
         draw.rect(tree.width, tree.height).attr({fill: '#e7c28e'}).click(hideHelp);
         draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4);
@@ -168,7 +173,7 @@
                         id: `${caret.id}_bg`
                     }).move(caret.x, caret.y);
                     let name = formatName(caret.name);
-                    var text = item.text(name)
+                    var text = item.text(name.toString())
                         .font({family: 'Helvetica', size: 8})
                         .attr({fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text'})
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
@@ -207,7 +212,7 @@
     });
 
     function imagePrefix(name) {
-        return name
+        return name.replace('_copy','')
             .replace("building_", "Buildings/")
             .replace("unit_", "Units/")
             .replace("tech_", "Techs/");
@@ -216,8 +221,8 @@
     function loadCiv() {
         const selectedCiv = document.getElementById('civselect').value;
         civ(selectedCiv, tree);
-        if (selectedCiv in data.civs) {
-            document.getElementById('civtext').innerHTML = data.key_value[data.civs[selectedCiv]];
+        if (selectedCiv in data.civ_helptexts) {
+            document.getElementById('civtext').innerHTML = data.strings[data.civ_helptexts[selectedCiv]];
             document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
             window.location.hash = selectedCiv;
         } else {
@@ -280,13 +285,13 @@
         let helptextXRef = document.getElementById("helptext__x_ref");
         let overlay = SVG.get(`${caretId}_overlay`);
         let name = overlay.data('name');
-        let id = overlay.data('id');
+        let id = overlay.data('id').replace('_copy','');
         let caret = overlay.data('caret');
         let type = overlay.data('type');
         let content = getHelpText(name, id, type);
         helptextContent.innerHTML = content;
 
-        styleXRefBadges(name, type);
+        styleXRefBadges(name, id, type);
 
         helptext.style.display = "block";
 
@@ -322,11 +327,13 @@
         if (type === "TECHNOLOGY") {
             entitytype = 'techs';
         }
-        let text = data.key_value[data.name_key[entitytype][name]];
+        const items = id.split('_', 1);
+        id = id.substring(items[0].length + 1);
+        let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
         if (text === undefined) {
             return "?";
         }
-        let meta = data.meta[entitytype][name];
+        let meta = data.data[entitytype][id];
         if (meta !== undefined) {
             text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
             text = text.replace(/‹hp›/, "HP:&nbsp;" + meta.HP + ",");
@@ -362,7 +369,7 @@
         let xRefLinks = document.createElement('div');
         xRefLinks.id = "helptext__x_ref__container";
 
-        for (let civ of Object.keys(data.civs)) {
+        for (let civ of Object.keys(data.civ_names)) {
             let xRefLink = document.createElement('button');
             xRefLink.addEventListener('click', function() {
               document.getElementById('civselect').value=civ;
@@ -385,11 +392,14 @@
      * Set on/off of all cross reference badges for a single unit.
      * 
      * @param {string} name The name of the entity being cross-referenced. 
+     * @param {string} id The id of the entity being cross-referenced.
      * @param {string} type The type of the entity being cross-referenced.
      */
-    function styleXRefBadges(name, type) {
-        let horseDisabledAll = horseDisabledBuildings.concat(horseDisabledUnits).concat(horseDisabledTechs);
-        for (let civ of Object.keys(data.civs)) {
+    function styleXRefBadges(name, id, type) {
+        let horseDisabledAll = horseDisabledBuildings.map((id)=>`building_${id}`)
+            .concat(horseDisabledUnits.map((id)=>`unit_${id}`))
+            .concat(horseDisabledTechs.map((id)=>`tech_${id}`));
+        for (let civ of Object.keys(data.civ_names)) {
             let xRefImage = document.getElementById(`xRef__badge__${civ}`);
             // By default, assume that this unit can be built.
             let found = true;
@@ -402,7 +412,7 @@
             if (civsConfig[`${civ}`]) {
                 // Fast-Fail horses if civ disablesHorses
                 if (civsConfig[`${civ}`]['disableHorses'] &&
-                    horseDisabledAll.includes(name)) {
+                    horseDisabledAll.includes(id)) {
                     found = false;
                 }
                 if (type === "UNIT") {
@@ -410,14 +420,14 @@
                     //      1. The unit is disabled by default, and not 
                     //         specifically enabled in the config.
                     //      2. The unit is disabled in the specific config.
-                    if (defaultDisabledUnits.includes(name) &&
+                    if (defaultDisabledUnits.map((id)=>`unit_${id}`).includes(id) &&
                         (!enabled ||
                          !enabled['units'] ||
-                         !enabled['units'].includes(name))) {
+                         !enabled['units'].map((id)=>`unit_${id}`).includes(id))) {
                         found = false;
                     } else if (disabled &&
                             disabled['units'] &&
-                            disabled['units'].includes(name)) {
+                            disabled['units'].map((id)=>`unit_${id}`).includes(id)) {
                         found = false;
                     }
                 } else if (type === "UNIQUEUNIT") {
@@ -426,15 +436,15 @@
                     //      2. The UNIQUEUNIT can be enabled in 'unit'.
                     //          e.g. genitour
                     if ((!unique ||
-                         !unique.includes(name)) &&
+                         !('unit_'+unique[0] === id || 'unit_'+unique[1] === id)) &&
                         (!enabled || !enabled['units'] ||
-                         !enabled['units'].includes(name))) {
+                         !enabled['units'].map((id)=>`unit_${id}`).includes(id))) {
                         found = false;    
                     }
                 } else if (type === "TECHNOLOGY") {
                     // Technology is only ever disabled. See js/techtree.js#resetToDefault
                     // if there is a tech object in disabled, and this tech is in it
-                    if (disabled['techs'] && disabled['techs'].includes(name)) {
+                    if (disabled['techs'] && disabled['techs'].map((id)=>`tech_${id}`).includes(id)) {
                         found = false;
                     }
                 }
@@ -443,14 +453,14 @@
                     //      1. The building is disabled by default, and not 
                     //         specifically enabled in the config.
                     //      2. The building is disabled in the specific config.
-                    if (defaultDisabledBuildings.includes(name) &&
+                    if (defaultDisabledBuildings.includes(id) &&
                     (!enabled ||
                     !enabled['buildings'] ||
-                    !enabled['buildings'].includes(name))) {
+                    !enabled['buildings'].map((id)=>`building_${id}`).includes(id))) {
                         found = false;
                     } else if (disabled &&
                                disabled['buildings'] &&
-                               disabled['buildings'].includes(name)) {
+                               disabled['buildings'].map((id)=>`building_${id}`).includes(id)) {
                         found = false;
                     }
                 }
