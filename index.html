@@ -60,6 +60,10 @@
             </div>
             <div class="info">
                 <div class="info__margin">
+                    [<a href="#" title="English" data-lang="en">en</a>]
+                    [<a href="#" title="Spanish" data-lang="es">es</a>]
+                </div>
+                <div class="info__margin">
                     Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36202/" target="_blank" title="Changelog">36202</a>
                 </div>
                 <div class="info__margin">
@@ -573,6 +577,19 @@
 
         prepareDomForLocalization();
 
+        // Add click events to localization buttons.
+        var langButtons = document.querySelectorAll('[data-lang]');
+        for (var i=0; i<langButtons.length; ++i) {
+            langButtons[i].addEventListener('click', (event) => {
+                event.preventDefault();
+                const langCode = event.target.getAttribute('data-lang');
+                // Avoid setting the same language again...
+                if (langCode !== i18next.language) {
+                    setLanguage(langCode);
+                }
+            });
+        }
+
         // Both i18next and i18nextXHRBackend are global variables
         // injected by their respective <script> tags.
         i18next
@@ -619,6 +636,7 @@
         if (err)
             return console.log('Error while initializing locales: ', err);
         
+        // Debut output
         console.log('Language:', i18next.language);
         console.log(_t('key'));
 
