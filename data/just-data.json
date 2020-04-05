@@ -887,16 +887,6 @@
                 "ResearchTime": 40,
                 "internal_name": "Magyars UT"
             },
-            "Couriers": {
-                "Cost": {
-                    "Food": 600,
-                    "Gold": 600
-                },
-                "ID": 517,
-                "Name": "Couriers",
-                "ResearchTime": 40,
-                "internal_name": "Indians UT"
-            },
             "Crenellations": {
                 "Cost": {
                     "Food": 600,
@@ -986,6 +976,16 @@
                 "Name": "El Dorado",
                 "ResearchTime": 50,
                 "internal_name": "Mayan El Dorado"
+            },
+            "Fabric Shields": {
+                "Cost": {
+                    "Food": 600,
+                    "Gold": 600
+                },
+                "ID": 517,
+                "Name": "Fabric Shields",
+                "ResearchTime": 40,
+                "internal_name": "Indians UT"
             },
             "Faith": {
                 "Cost": {
@@ -5326,7 +5326,7 @@
                 "Range": 0,
                 "ReloadTime": 1.9,
                 "Speed": 1.4,
-                "TrainTime": 20,
+                "TrainTime": 14,
                 "internal_name": "EKESHIK"
             },
             "Elite Kipchak": {
@@ -6265,10 +6265,10 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 10,
+                "Attack": 11,
                 "Attacks": [
                     {
-                        "Amount": 10,
+                        "Amount": 11,
                         "Class": 4
                     },
                     {
@@ -6982,6 +6982,72 @@
                 "Speed": 1.26,
                 "TrainTime": 40,
                 "internal_name": "FSHSP"
+            },
+            "Flaming Camel": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 20,
+                "Attacks": [
+                    {
+                        "Amount": 100,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 20,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 50,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 50,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 80,
+                        "Class": 5
+                    }
+                ],
+                "Cost": {
+                    "Food": 75,
+                    "Gold": 30
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 55,
+                "ID": 1263,
+                "LineOfSight": 4,
+                "MeleeArmor": 0,
+                "MinRange": 0,
+                "Name": "Flaming Camel",
+                "PierceArmor": 0,
+                "Range": 0,
+                "ReloadTime": 5,
+                "Speed": 1.3,
+                "TrainTime": 20,
+                "internal_name": "FCAMEL"
             },
             "Galleon": {
                 "AccuracyPercent": 100,
@@ -8295,7 +8361,7 @@
                 "Range": 0,
                 "ReloadTime": 1.9,
                 "Speed": 1.4,
-                "TrainTime": 23,
+                "TrainTime": 16,
                 "internal_name": "KESHIK"
             },
             "Kipchak": {
@@ -10349,10 +10415,10 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 8,
+                "Attack": 9,
                 "Attacks": [
                     {
-                        "Amount": 8,
+                        "Amount": 9,
                         "Class": 4
                     },
                     {
@@ -11292,7 +11358,6 @@
             "Coinage": "28023",
             "Conscription": "28319",
             "Corvinian Army": "28275",
-            "Couriers": "28267",
             "Crenellations": "28426",
             "Crop Rotation": "28012",
             "Crossbowman": "28100",
@@ -11349,6 +11414,7 @@
             "Elite War Elephant": "28389",
             "Elite War Wagon": "28436",
             "Elite Woad Raider": "28383",
+            "Fabric Shields": "28267",
             "Faith": "28045",
             "Farimba": "28255",
             "Fast Fire Ship": "28243",
@@ -11592,6 +11658,7 @@
             "Heavy Demolition Ship": "26425",
             "Heavy Pikeman": "26410",
             "Heavy Scorpion": "26439",
+            "Heavy Swordsman": "26077",
             "House": "26344",
             "Huskarl": "26679",
             "Hussar": "26661",
