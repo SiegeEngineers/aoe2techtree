@@ -251,8 +251,7 @@
         const selectedCiv = domSelect.children[domSelect.selectedIndex].getAttribute('data-i18n');
         civ(selectedCiv, tree);
         if (selectedCiv in data.civ_helptexts) {
-            domCivText.innerHTML = data.strings[data.civ_helptexts[selectedCiv]];
-            //TODO: domCivText.innerHTML = i18next.t(data.civs[selectedCiv]);
+            domCivText.innerHTML = i18next.t(data.civ_helptexts[selectedCiv]);
             domCivText.setAttribute('data-i18n', data.civ_helptexts[selectedCiv]);
             domCivLogo.src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
             window.location.hash = selectedCiv;
@@ -267,7 +266,7 @@
 
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-        xobj.open('GET', 'data/just-data.json', true);
+        xobj.open('GET', 'data/data.json', true);
         xobj.onreadystatechange = function () {
             if (xobj.readyState === 4 && xobj.status === 200) {
                 // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -360,8 +359,7 @@
         }
         const items = id.split('_', 1);
         id = id.substring(items[0].length + 1);
-        let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
-        //TODO: let text = i18next.t(data.name_key[entitytype][name]);
+        let text = i18next.t(data.data[entitytype][id]['LanguageHelpId']);
         if (text === undefined) {
             return "?";
         }

@@ -617,14 +617,14 @@ function unique(ids, monk_prefix) {
     if (monk_prefix === undefined) {
         monk_prefix = MONK_PREFIX_GENERIC;
     }
-    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
-    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
-    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
-    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
-    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
-    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
-    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
-    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
+    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(i18next.t(data.data.units[ids[0]].LanguageNameId)));
+    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': i18next.t(data.data.units[ids[0]].LanguageNameId), 'id':'unit_'+ids[0]});
+    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(i18next.t(data.data.units[ids[1]].LanguageNameId)));
+    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': i18next.t(data.data.units[ids[1]].LanguageNameId), 'id':'unit_'+ids[1]});
+    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_text').text(formatName(i18next.t(data.data.techs[ids[2]].LanguageNameId)));
+    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_overlay').data({'name': i18next.t(data.data.techs[ids[2]].LanguageNameId), 'id':'tech_'+ids[2]});
+    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_text').text(formatName(i18next.t(data.data.techs[ids[3]].LanguageNameId)));
+    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': i18next.t(data.data.techs[ids[3]].LanguageNameId), 'id':'tech_'+ids[3]});
     SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
     SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
     SVG.get('unit_' + formatId(MONK) + '_img').load('img/Units/' + monk_prefix + 'monk.png');
@@ -641,7 +641,7 @@ function getName(id, itemtype) {
         return id;
     }
     const languageNameId = data['data'][itemtype][id]['LanguageNameId'];
-    return data['strings'][languageNameId];
+    return i18next.t(languageNameId);
 }
 
 function building(id) {
