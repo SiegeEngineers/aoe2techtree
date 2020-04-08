@@ -1,8 +1,8 @@
 var TYPES = Object.freeze({
-    "BUILDING": {colour: '#922602', type: 'BUILDING'},
-    "UNIT": {colour: '#3a6a80', type: 'UNIT'},
-    "UNIQUEUNIT": {colour: '#af30a3', type: 'UNIQUEUNIT'},
-    "TECHNOLOGY": {colour: '#2c5729', type: 'TECHNOLOGY'}
+    "BUILDING": {colour: '#922602', type: 'BUILDING', dataType: 'buildings'},
+    "UNIT": {colour: '#3a6a80', type: 'UNIT', dataType: 'units'},
+    "UNIQUEUNIT": {colour: '#af30a3', type: 'UNIQUEUNIT', dataType: 'units'},
+    "TECHNOLOGY": {colour: '#2c5729', type: 'TECHNOLOGY', dataType: 'techs'}
 });
 
 var PREFIX = Object.freeze({
@@ -503,6 +503,7 @@ class Caret {
         this.icon = null;
         this.name = name;
         this.id = PREFIX[type.type] + formatId(id);
+        this.data_id = formatId(id);
         this.width = 100;
         this.height = 100;
         this.x = 0;
@@ -523,6 +524,10 @@ class Caret {
 
     isTech() {
         return this.type === TYPES.TECHNOLOGY;
+    }
+
+    getDataType() {
+        return this.type.dataType;
     }
 }
 

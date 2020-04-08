@@ -99,6 +99,7 @@
     let parentConnections;
     let connectionpoints;
     let focusedNodeId = null;
+    let treeTexts = [];
 
     const unitClasses = {
         0: "Unused",
@@ -188,10 +189,19 @@
                         fill: caret.type.colour,
                         id: `${caret.id}_bg`
                     }).move(caret.x, caret.y);
-                    let name = formatName(caret.name);
+                    
+
+                    let entitytype = caret.getDataType();
+                    let langData = data.data[entitytype][caret.data_id];
+                    let name = caret.name;
+                    let languageNameId = "NONE";
+                    if (langData) {
+                        languageNameId = langData['LanguageNameId'];
+                        name = formatName(i18next.t(languageNameId));
+                    }
                     var text = item.text(name.toString())
                         .font({family: 'Helvetica', size: 8})
-                        .attr({fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text'})
+                        .attr({fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text', i18n: languageNameId})
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
                     var image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
                         .attr({fill: 'rgba(0,0,0,0.5)', id: caret.id + '_imgph'})
@@ -218,6 +228,7 @@
                             displayHelp(caret.id);
                         });
 
+                    treeTexts.push(text);
                 }
             }
         }
@@ -234,7 +245,6 @@
         // Make the xref badges
         document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
     }
-
 
     function imagePrefix(name) {
         return name.replace('_copy','')
@@ -349,7 +359,7 @@
         resetHighlightPath();
     }
 
-    function getHelpText(name, id, type) {
+    function getEntityType(type) {
         let entitytype = 'buildings';
         if (type === "UNIT" || type === "UNIQUEUNIT") {
             entitytype = 'units';
@@ -357,6 +367,11 @@
         if (type === "TECHNOLOGY") {
             entitytype = 'techs';
         }
+        return entitytype;
+    }
+
+    function getHelpText(name, id, type) {
+        let entitytype = getEntityType(type);
         const items = id.split('_', 1);
         id = id.substring(items[0].length + 1);
         let text = i18next.t(data.data[entitytype][id]['LanguageHelpId']);
@@ -595,9 +610,7 @@
                 event.preventDefault();
                 const langCode = event.target.getAttribute('data-lang');
                 // Avoid setting the same language again...
-                if (langCode !== i18next.language) {
-                    setLanguage(langCode);
-                }
+                setLanguage(langCode);
             });
         }
 
@@ -630,9 +643,16 @@
      * Changes the language by loading the appropriate
      * localization json from server.
      */
-    function setLanguage(lang) {
+    function setLanguage(langCode) {
+        
+        // Avoid setting the same language again...
+        if (langCode === i18next.language) {
+            return
+        }
 
-        i18next.changeLanguage(lang, onLanguageSet);
+        //document.getElementById('civtext').innerText = '';
+        document.getElementById('loading').style.display = 'block';
+        i18next.changeLanguage(langCode, onLanguageSet);
     }
 
     /**
@@ -649,7 +669,6 @@
         
         // Debut output
         console.log('Language:', i18next.language);
-        console.log(_t('key'));
 
         var elements = document.querySelectorAll('[data-i18n]');
         for (var i=0, len=elements.length; i<len; ++i) {
@@ -680,7 +699,19 @@
             }
         }
 
-        hideHelp(); // This dialog is very complex, might as well rebuild it.
+        // Udpate SVG text nodes
+        treeTexts.forEach(svgText => {
+            let locKey = svgText.node.getAttribute('i18n');
+            if (locKey === "NONE") {
+                return;
+            }
+            let strTxt = i18next.t(locKey);
+            let txt = formatName(strTxt);
+            svgText.text(txt);
+        })
+
+        hideHelp();
+        document.getElementById('loading').style.display = 'none';
     }
 
 
