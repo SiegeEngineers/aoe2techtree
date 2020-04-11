@@ -60,8 +60,11 @@
             </div>
             <div class="info">
                 <div class="info__margin">
+                    <!-- Consider updating the UI to display flags instead of text -->
                     [<a href="#" title="English" data-lang="en">en</a>]
                     [<a href="#" title="Spanish" data-lang="es">es</a>]
+                    [<a href="#" title="French"  data-lang="fr">fr</a>]
+                    [<a href="#" title="Chinese" data-lang="zh">zh</a>]
                 </div>
                 <div class="info__margin">
                     Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36202/" target="_blank" title="Changelog">36202</a>
@@ -691,15 +694,12 @@
      * Invoked every time the languate is set.
      * Responsible for updating the site's locales (strings).
      *
-     * @param {Error} err - populated if there's an error settings the language, else null
+     * @param {Array[]} err - populated if there's an error settings the language, else null
      * @param {function} _t - A reference to function: i18next.t
      */
     function onLanguageSet(err, _t) {
         
         document.getElementById('loading').style.display = 'none';
-
-        if (err)
-            return console.log('Error while initializing locales: ', err);
         
         // Debut output
         console.log('Language:', i18next.language);
