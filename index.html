@@ -320,43 +320,77 @@
 
     function displayHelp(caretId) {
         focusedNodeId = caretId;
-        let helptext = document.getElementById("helptext");
         let helptextContent = document.getElementById("helptext__content");
-        let helptextXRef = document.getElementById("helptext__x_ref");
         let overlay = SVG.get(`${caretId}_overlay`);
         let name = overlay.data('name');
-        let id = overlay.data('id').replace('_copy','');
+        let id = overlay.data('id').replace('_copy', '');
         let caret = overlay.data('caret');
         let type = overlay.data('type');
-        let content = getHelpText(name, id, type);
-        helptextContent.innerHTML = content;
-
+        helptextContent.innerHTML = getHelpText(name, id, type);
         styleXRefBadges(name, id, type);
-
-        helptext.style.display = "block";
-
-        let top = caret.y + caret.height;
-        if (top + helptext.offsetHeight > tree.height) {
-            top = top - helptext.offsetHeight - caret.height;
-        }
-        helptext.style.top = top + "px";
-
-        let destX = caret.x - helptext.offsetWidth;
-
-        let helpbox = helptext.getBoundingClientRect();
-        let tt = document.getElementById('techtree');
-        // If the X would be less than 0 put the helptext all the way to the left.
-        if (destX < 0 || destX - tt.scrollLeft < 0) {
-            destX = tt.scrollLeft;
-        }
-        helptext.style.left = destX + 'px';
+        positionHelptext(caret);
         resetHighlightPath();
     }
 
     function hideHelp() {
         focusedNodeId = null;
+        const helptext = document.getElementById("helptext");
         helptext.style.display = "none";
         resetHighlightPath();
+    }
+
+    function positionHelptext(caret) {
+        const helptext = document.getElementById("helptext");
+        helptext.style.display = "block";
+        positionHelptextBelow(caret, helptext)
+        || positionHelptextAbove(caret, helptext)
+        || positionHelptextToLeftOrRight(caret, helptext);
+    }
+
+    function positionHelptextBelow(caret, helptext) {
+        let top = caret.y + caret.height;
+        let helpbox = helptext.getBoundingClientRect();
+        if (top + helpbox.height > tree.height) {
+            return false;
+        }
+
+        let destX = caret.x - helpbox.width;
+        let techtree = document.getElementById('techtree');
+        if (destX < 0 || destX - techtree.scrollLeft < 0) {
+            destX = techtree.scrollLeft;
+        }
+        helptext.style.top = top + "px";
+        helptext.style.left = destX + 'px';
+        return true;
+    }
+
+    function positionHelptextAbove(caret, helptext) {
+        let helpbox = helptext.getBoundingClientRect();
+        let top = caret.y - helpbox.height;
+        if (top < 0) {
+            return false;
+        }
+
+        let destX = caret.x - helpbox.width;
+        let techtree = document.getElementById('techtree');
+        if (destX < 0 || destX - techtree.scrollLeft < 0) {
+            destX = techtree.scrollLeft;
+        }
+        helptext.style.top = top + "px";
+        helptext.style.left = destX + 'px';
+        return true;
+    }
+
+    function positionHelptextToLeftOrRight(caret, helptext) {
+        let helpbox = helptext.getBoundingClientRect();
+        let top = 0;
+        let destX = caret.x - helpbox.width;
+        let techtree = document.getElementById('techtree');
+        if (destX < 0 || destX - techtree.scrollLeft < 0) {
+            destX = caret.x + caret.width;
+        }
+        helptext.style.top = top + "px";
+        helptext.style.left = destX + 'px';
     }
 
     function getEntityType(type) {

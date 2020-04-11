@@ -533,6 +533,8 @@ def gather_data(content):
                 add_tech(key, value, tech, data)
         tech_id += 1
 
+    data["units"][185]['LanguageHelpId'] = 26690  # Slinger
+    data["units"][207]['LanguageHelpId'] = 26419  # Imperial Camel Rider
     data["units"][879]['LanguageHelpId'] = 26686  # Kamayuk
     data["units"][881]['LanguageHelpId'] = 26688  # Elite Kamayuk
     data["units"][866]['LanguageHelpId'] = 26723  # Genoese Crossbowman
