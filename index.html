@@ -60,11 +60,24 @@
             </div>
             <div class="info">
                 <div class="info__margin">
-                    <!-- Consider updating the UI to display flags instead of text -->
-                    [<a href="#" title="English" data-lang="en">en</a>]
-                    [<a href="#" title="Spanish" data-lang="es">es</a>]
-                    [<a href="#" title="French"  data-lang="fr">fr</a>]
-                    [<a href="#" title="Chinese" data-lang="zh">zh</a>]
+                 <!-- "Language supported" in the same order as they appear in Microsoft's product page:
+                        https://www.microsoft.com/en-us/p/age-of-empires-ii-definitive-edition/9njdd0jgpp2q -->
+                    [<a href="#" title="English (United States)" data-lang="en">en</a>]
+                    [<a href="#" title="中文(中国)" data-lang="zh">zh-Hans</a>]
+                    [<a href="#" title="中文(香港特別行政區)" data-lang="tw">zh-Hant</a>]
+                    [<a href="#" title="Français (France)" data-lang="fr">fr</a>]
+                    [<a href="#" title="Deutsch (Deutschland)" data-lang="de">de</a>]
+                    [<a href="#" title="हिंदी (भारत)" data-lang="hi">hi</a>]
+                    [<a href="#" title="Italiano (Italia)" data-lang="it">it</a>]
+                    [<a href="#" title="日本語 (日本)" data-lang="jp">jp</a>]
+                    [<a href="#" title="한국어(대한민국)" data-lang="ko">ko</a>]
+                    [<a href="#" title="Bahasa Melayu (Malaysia)" data-lang="ms">ms</a>]
+                    [<a href="#" title="Русский (Россия)" data-lang="ru">ru</a>]
+                    [<a href="#" title="Español (España, Internacional)" data-lang="es">es</a>]
+                    [<a href="#" title="Español (México)" data-lang="mx">mx</a>]
+                    [<a href="#" title="Türkçe (Türkiye)" data-lang="tr">tr</a>]
+                    [<a href="#" title="Tiếng Việt (Việt Nam)" data-lang="vi">vi</a>]
+                    [<a href="#" title="Português (Brasil)" data-lang="br">br</a>]
                 </div>
                 <div class="info__margin">
                     Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36202/" target="_blank" title="Changelog">36202</a>
@@ -159,10 +172,9 @@
 
         let hash = window.location.hash.substr(1);
         let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
-        if (capitalisedHash in data.civ_names) {
-            // This code section works only in English locale,
-            // which is OKAY during application's initialiation.
-            document.getElementById('civselect').value = capitalisedHash;
+        const civHashIndex = Object.keys(data.civ_names).indexOf(capitalisedHash);
+        if (civHashIndex !== -1) {
+            document.getElementById('civselect').selectedIndex = civHashIndex;
         }
 
         const draw = SVG('techtree').size(tree.width, tree.height)
@@ -638,13 +650,16 @@
      */
     function initLocalization(callback) {
 
+        // get language from localStorage, or default to English.
+        const initLocale = localStorage.getItem('user-locale') || 'en';
+
         // Add click events to localization buttons.
         var langButtons = document.querySelectorAll('[data-lang]');
         for (var i=0; i<langButtons.length; ++i) {
             langButtons[i].addEventListener('click', (event) => {
                 event.preventDefault();
                 const langCode = event.target.getAttribute('data-lang');
-                // Avoid setting the same language again...
+                localStorage.setItem('user-locale', langCode); // Only store when UI is involved.
                 setLanguage(langCode);
             });
         }
@@ -655,7 +670,7 @@
             .use(i18nextXHRBackend)
             .init({
                 // https://www.i18next.com/overview/configuration-options
-                lng: 'en',
+                lng: initLocale,
                 fallbackLng: 'en',
                 ns: ['common', 'strings'],
                 defaultNS: 'common',
