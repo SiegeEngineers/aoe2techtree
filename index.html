@@ -207,13 +207,15 @@
                     
 
                     let dataType = caret.getDataType();
-                    let langData = data.data[dataType][caret.data_id];
+                    let id = caret.data_id.replace('_copy', '');
+                    let langData = data.data[dataType][id];
                     let name = caret.name;
                     let languageNameId = "NONE";
                     if (langData) {
-                        // TODO: Invesitage this case further.
                         languageNameId = langData['LanguageNameId'];
                         name = formatName(i18next.t(languageNameId));
+                    } else {
+                        // TODO: Invesitage this case further.
                     }
                     var text = item.text(name.toString())
                         .font({family: 'Helvetica', size: 8})
