@@ -276,15 +276,10 @@
 
         const dataKey = domSelect.children[domSelect.selectedIndex].getAttribute('data-key'); // i.e: "Aztecs"
         civ(dataKey, tree);
-        if (dataKey in data.civ_helptexts) {
-            domCivText.innerHTML = i18next.t(data.civ_helptexts[dataKey]);
-            domCivText.setAttribute('data-i18n', data.civ_helptexts[dataKey]);
-            domCivLogo.src = `./img/Civs/${dataKey.toLowerCase()}.png`;
-            window.location.hash = dataKey;
-        } else {
-            domCivText.innerHTML = "";
-            domCivLogo.src = domCivLogo.dataset.transparent;
-        }
+        domCivText.innerHTML = i18next.t(data.civ_helptexts[dataKey]);
+        domCivText.setAttribute('data-i18n', data.civ_helptexts[dataKey]);
+        domCivLogo.src = `./img/Civs/${dataKey.toLowerCase()}.png`;
+        window.location.hash = dataKey;
         hideHelp();
     }
 
@@ -482,8 +477,8 @@
             let xRefImage = document.createElement('img');
 
             xRefImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
-            xRefImage.title = `${civ}`;
-            xRefImage.setAttribute('data-i18n', civ);
+            xRefImage.title = i18next.t(data.civ_names[civ]);
+            xRefImage.setAttribute('data-i18n', data.civ_names[civ]);
             xRefImage.id = `xRef__badge__${civ}`;
             xRefImage.classList.add('xRef__badge');
             xRefLink.appendChild(xRefImage);
