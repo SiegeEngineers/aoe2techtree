@@ -2,7 +2,7 @@ function civ(dataKey, tree) {
     resetToDefault(tree);
 
     let selectedCiv = civsConfig[dataKey];
-    
+
     let enabled = selectedCiv.enabled || {};
     let disabled = selectedCiv.disabled || {};
     let uniqueConfig = selectedCiv.unique || {};

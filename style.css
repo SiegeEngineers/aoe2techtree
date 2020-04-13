@@ -14,7 +14,6 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* start: Loading... */
 #loading {
     margin-top: 40%;
     margin-left: 50%;
@@ -44,7 +43,6 @@ body {
         transform: rotate(360deg);
     }
 }
-/* end: Loading... */
 
 .info,
 .info a {

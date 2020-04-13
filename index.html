@@ -63,8 +63,8 @@
                  <!-- "Language supported" in the same order as they appear in Microsoft's product page:
                         https://www.microsoft.com/en-us/p/age-of-empires-ii-definitive-edition/9njdd0jgpp2q -->
                     [<a href="#" title="English (United States)" data-lang="en">en</a>]
-                    [<a href="#" title="中文(中国)" data-lang="zh">zh-Hans</a>]
-                    [<a href="#" title="中文(香港特別行政區)" data-lang="tw">zh-Hant</a>]
+                    [<a href="#" title="中文(中国)" data-lang="zh">zh</a>]
+                    [<a href="#" title="中文(香港特別行政區)" data-lang="tw">tw</a>]
                     [<a href="#" title="Français (France)" data-lang="fr">fr</a>]
                     [<a href="#" title="Deutsch (Deutschland)" data-lang="de">de</a>]
                     [<a href="#" title="हिंदी (भारत)" data-lang="hi">hi</a>]
@@ -83,11 +83,11 @@
                     Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36202/" target="_blank" title="Changelog">36202</a>
                 </div>
                 <div class="info__margin">
-                    <span>Contribute on</span> <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
+                    Contribute on <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
                 </div>
                 <div>
-                    <span>Made by</span> hszemi, Anda, exterkamp, paulirish,<br>
-                    <span>with thanks to</span> Jineapple, TriRem, pip, and NkoDragaš<br>
+                    Made by hszemi, Anda, exterkamp, paulirish,<br>
+                    with thanks to Jineapple, TriRem, pip, and NkoDragaš<br>
                     Item Metadata (cost, HP etc.) taken from <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
                 </div>
             </div>
@@ -206,11 +206,12 @@
                     }).move(caret.x, caret.y);
                     
 
-                    let entitytype = caret.getDataType();
-                    let langData = data.data[entitytype][caret.data_id];
+                    let dataType = caret.getDataType();
+                    let langData = data.data[dataType][caret.data_id];
                     let name = caret.name;
                     let languageNameId = "NONE";
                     if (langData) {
+                        // TODO: Invesitage this case further.
                         languageNameId = langData['LanguageNameId'];
                         name = formatName(i18next.t(languageNameId));
                     }
@@ -273,7 +274,7 @@
         const domCivText = document.getElementById('civtext');
         const domCivLogo = document.getElementById('civlogo');
 
-        const dataKey = domSelect.children[domSelect.selectedIndex].getAttribute('data-key'); // i.e: "Aztects"
+        const dataKey = domSelect.children[domSelect.selectedIndex].getAttribute('data-key'); // i.e: "Aztecs"
         civ(dataKey, tree);
         if (dataKey in data.civ_helptexts) {
             domCivText.innerHTML = i18next.t(data.civ_helptexts[dataKey]);
@@ -469,7 +470,7 @@
                 const domSelect = document.getElementById('civselect');
                 var index;
                 for (var i=0; i<domSelect.children.length; ++i) {
-                    if (domSelect.children[i].getAttribute('data-i18n')===civ) {
+                    if (domSelect.children[i].getAttribute('data-key')===civ) {
                         index = i;
                         break;
                     }
@@ -716,9 +717,9 @@
         
         document.getElementById('loading').style.display = 'none';
         
-        // Debut output
         console.log('Language:', i18next.language);
 
+        // Update HTML text nodes
         var elements = document.querySelectorAll('[data-i18n]');
         for (var i=0, len=elements.length; i<len; ++i) {
 
@@ -748,7 +749,7 @@
             }
         }
 
-        // Udpate SVG text nodes
+        // Update SVG text nodes
         treeTexts.forEach(svgText => {
             let locKey = svgText.node.getAttribute('i18n');
             if (locKey === "NONE") {

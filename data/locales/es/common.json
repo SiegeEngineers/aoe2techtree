@@ -1,6 +1,4 @@
-{
-    "key": "Hola en Español",
-    
+{    
     "Cost": "Costo: {{value}}",
     "HP": "Ptos resist: {{value}}",
     "Attack": "Ataque: {{value}}",

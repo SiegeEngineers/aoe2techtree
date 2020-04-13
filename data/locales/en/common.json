@@ -1,6 +1,4 @@
-{
-    "key": "Hello in English",
-    
+{    
     "Cost": "Cost: {{value}}",
     "HP": "HP: {{value}}",
     "Attack": "Attack: {{value}}",
