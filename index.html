@@ -476,9 +476,14 @@
                         found = false;    
                     }
                 } else if (type === "TECHNOLOGY") {
-                    // Technology is only ever disabled. See js/techtree.js#resetToDefault
+                    // Unique Technologies are disabled by default
+                    // Regular Technologies are only ever disabled. See js/techtree.js#resetToDefault
                     // if there is a tech object in disabled, and this tech is in it
-                    if (disabled['techs'] && disabled['techs'].map((id)=>`tech_${id}`).includes(id)) {
+                    if (getDefaultDisabledTechs().map((id) => `tech_${id}`).includes(id) &&
+                        (!unique ||
+                         !unique.slice(2,4).map((id) => `tech_${id}`).includes(id))) {
+                        found = false;
+                    } else if (disabled['techs'] && disabled['techs'].map((id) => `tech_${id}`).includes(id)) {
                         found = false;
                     }
                 }
@@ -505,6 +510,10 @@
                 xRefImage.style.opacity = '20%';
             }
         }
+    }
+
+    function getDefaultDisabledTechs() {
+        return Object.keys(civsConfig).map((key) => civsConfig[key].unique.slice(2, 4)).flat();
     }
 
     function ifDefined(value, prefix) {
