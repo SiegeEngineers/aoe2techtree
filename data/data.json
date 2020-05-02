@@ -2188,7 +2188,7 @@
             },
             "692": {
                 "Cost": {
-                    "Food": 800,
+                    "Food": 500,
                     "Gold": 200
                 },
                 "ID": 692,
@@ -2872,7 +2872,7 @@
                 "PierceArmor": 2,
                 "Range": 0,
                 "ReloadTime": 2,
-                "Speed": 0.7,
+                "Speed": 0.8,
                 "TrainTime": 12,
                 "internal_name": "TKNIT"
             },
@@ -6411,7 +6411,7 @@
                 "PierceArmor": 2,
                 "Range": 0,
                 "ReloadTime": 2,
-                "Speed": 0.7,
+                "Speed": 0.8,
                 "TrainTime": 12,
                 "internal_name": "UTKNI"
             },
@@ -8830,7 +8830,7 @@
                         "Class": 8
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 2,
                         "Class": 3
                     },
                     {
@@ -8874,10 +8874,10 @@
                 "LineOfSight": 5,
                 "MeleeArmor": 4,
                 "MinRange": 0,
-                "PierceArmor": 1,
+                "PierceArmor": 2,
                 "Range": 0,
                 "ReloadTime": 1.9,
-                "Speed": 1.4,
+                "Speed": 1.3,
                 "TrainTime": 15,
                 "internal_name": "BOYAR"
             },
@@ -8893,7 +8893,7 @@
                         "Class": 8
                     },
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 3
                     },
                     {
@@ -8937,10 +8937,10 @@
                 "LineOfSight": 5,
                 "MeleeArmor": 6,
                 "MinRange": 0,
-                "PierceArmor": 2,
+                "PierceArmor": 3,
                 "Range": 0,
                 "ReloadTime": 1.9,
-                "Speed": 1.4,
+                "Speed": 1.3,
                 "TrainTime": 15,
                 "internal_name": "EBOYA"
             },
@@ -10045,7 +10045,7 @@
                 "Range": 2.49,
                 "ReloadTime": 0.25,
                 "Speed": 1.3,
-                "TrainTime": 60,
+                "TrainTime": 65,
                 "internal_name": "SFRGAL"
             },
             "1104": {
@@ -11226,8 +11226,8 @@
                     }
                 ],
                 "Cost": {
-                    "Food": 50,
-                    "Gold": 80
+                    "Food": 70,
+                    "Gold": 50
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
@@ -11242,7 +11242,7 @@
                 "Range": 0,
                 "ReloadTime": 1.9,
                 "Speed": 1.4,
-                "TrainTime": 23,
+                "TrainTime": 20,
                 "internal_name": "LEITIS"
             },
             "1236": {
@@ -11289,8 +11289,8 @@
                     }
                 ],
                 "Cost": {
-                    "Food": 50,
-                    "Gold": 80
+                    "Food": 70,
+                    "Gold": 50
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
@@ -11305,7 +11305,7 @@
                 "Range": 0,
                 "ReloadTime": 1.9,
                 "Speed": 1.4,
-                "TrainTime": 20,
+                "TrainTime": 18,
                 "internal_name": "ELEITIS"
             },
             "1254": {
@@ -11853,7 +11853,7 @@
         "7254": "Tigui",
         "7255": "Farimba",
         "7256": "Kasbah",
-        "7257": "Maghrabi Camels",
+        "7257": "Maghrebi Camels",
         "7258": "Arson",
         "7266": "Andean Sling",
         "7267": "Fabric Shields",
@@ -12073,13 +12073,13 @@
         "26313": "Create <b>Keshik</b> (\u2039cost\u203a) <br>\nTatar unique cavalry unit that generates gold when fighting other units.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed, to Elite Keshik 700F, 900G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26314": "Create <b>Elite Keshik</b> (\u2039cost\u203a) <br>\nTatar unique cavalry unit that generates gold when fighting other units.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26315": "Create <b>Kipchak</b> (\u2039cost\u203a) <br>\nCuman unique cavalry archer with rapid-fire attack. Strong vs. infantry. Weak vs. Skirmishers.<i> Upgrades: attack, range, armor (Blacksmith); speed, hit points (Stable); accuracy, armor (Archery Range); attack, accuracy (University); creation speed, to Elite Kipchak 1100F, 1000W (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
-        "26326": "Create <b>Scout Cavalry</b> (\u2039cost\u203a) <br>\nFast cavalry for scouting and raiding. Resistant to conversion. Strong vs. Monks. Weak vs. Pikemen and Camel Riders.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); speed, to Light Cavalry 150F, 50G (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26326": "Create <b>Scout Cavalry</b> (\u2039cost\u203a) <br>\nFast cavalry for scouting and raiding. Resistant to conversion. Strong vs. Monks. Weak vs. Pikemen and Camel Riders.<i> Upgrades: attack, armor (Blacksmith); speed, hit points, to Light Cavalry 150F, 50G (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26327": "Create <b>Elite Kipchak</b> (\u2039cost\u203a) <br>\nCuman unique cavalry archer with rapid-fire attack. Strong vs. infantry. Weak vs. Skirmishers.<i> Upgrades: attack, range, armor (Blacksmith); speed, hit points (Stable); accuracy, armor (Archery Range); attack, accuracy (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26328": "Create <b>Leitis</b> (\u2039cost\u203a) <br>\nLithuanian unique cavalry unit with attack that ignores armor. Strong vs. armored units.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed, to Elite Leitis 750F, 750G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26329": "Create <b>Elite Leitis</b> (\u2039cost\u203a) <br>\nLithuanian unique cavalry unit with attack that ignores armor. Strong vs. armored units.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26344": "Build <b>House</b> (\u2039cost\u203a) <br>\nProvides 5 population each. Your current/supportable population is shown at the top of the screen.<i> Upgrades: line of sight (Town Center); hit points, armor (University); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26349": "Build <b>Krepost</b> (\u2039cost\u203a) <br>\nFortification used to train your unique unit. Unique building of the Bulgarians. Units can garrison inside for protection. Archers and Villagers shoot additional projectiles. Provides 20 population. Cannot be converted by enemy Monks.<i> Upgrades: production speed (Castle); line of sight (Town Center); hit points, armor, accuracy (University); attack, range (Blacksmith).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a \u2039garrison\u203a",
-        "26375": "Create <b>Flaming Camel</b> (\u2039cost\u203a) <br>\nIncendiary camel loaded with flammable hay and brush. Strong vs. mounted units, especially elephants. Weak vs. archers and infantry. Self-destructs when used.<i> Upgrades: creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26375": "Create <b>Flaming Camel</b> (\u2039cost\u203a) <br>\nIncendiary camel loaded with flammable hay and brush. Strong vs. mounted units, especially elephants. Weak vs. archers and infantry. Self-destructs when used.<i> Upgrades: attack (University); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26408": "Create <b>Pikeman</b> (\u2039cost\u203a) <br>\nAnti-cavalry infantry unit. Strong vs. mounted units, especially elephants. Weak vs. archers and infantry.<i> Upgrades: attack, armor (Blacksmith); speed, to Halberdier 300F, 600G (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26409": "Create <b>Halberdier</b> (\u2039cost\u203a) <br>\nAnti-cavalry infantry unit. Strong vs. mounted units, especially elephants. Weak vs. archers and infantry.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26411": "Create <b>Two-Handed Swordsman</b> (\u2039cost\u203a) <br>\nAll-purpose infantry unit. Strong vs. buildings and infantry. Weak vs. archers at long range.<i> Upgrades: attack, armor (Blacksmith); cost, speed, to Champion 750F, 350G (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -12211,7 +12211,7 @@
         "28254": "Research <b>Tigui</b> (\u2039cost\u203a) <br>\nTown Centers fire arrows.",
         "28255": "Research <b>Farimba</b> (\u2039cost\u203a) <br>\nCavalry +5 attack.",
         "28256": "Research <b>Kasbah</b> (\u2039cost\u203a) <br>\nTeam castles work 25% faster.",
-        "28257": "Research <b>Maghrabi Camels</b> (\u2039cost\u203a) <br>\nCamel troops regenerate.",
+        "28257": "Research <b>Maghrebi Camels</b> (\u2039cost\u203a) <br>\nCamel troops regenerate.",
         "28258": "Research <b>Arson</b> (\u2039cost\u203a) <br>\nInfantry do more damage vs. buildings.",
         "28266": "Research <b>Andean Sling</b> (\u2039cost\u203a) <br>\nUpgrades your skirmishers and slingers by removing their minimum range.",
         "28267": "Research <b>Fabric Shields</b> (\u2039cost\u203a) <br>\nKamayuks, Slingers, Eagles have +1 armor/+2 pierce armor.",
@@ -12240,7 +12240,7 @@
         "28296": "Research <b>Manipur Cavalry</b> (\u2039cost\u203a) <br>\nCavalry and Arambai deal +6 bonus attack vs buildings.",
         "28297": "Research <b>Chatras</b> (\u2039cost\u203a) <br>\nBattle Elephants receive +50 HP.",
         "28298": "Research <b>Paper Money</b> (\u2039cost\u203a) <br>\nYou and all your allies receive +500 Gold.",
-        "28307": "Research <b>Stirrups</b> (\u2039cost\u203a) <br>\nLight Cavalry and Konnik attack 25% faster.",
+        "28307": "Research <b>Stirrups</b> (\u2039cost\u203a) <br>\nCavalry attack 25% faster.",
         "28308": "Research <b>Bagains</b> (\u2039cost\u203a) <br>\nMilitia-line receives +5 melee armor.",
         "28309": "Research <b>Silk Armor</b> (\u2039cost\u203a) <br>\nLight Cavalry, Steppe Lancers and Cavalry Archers receive +1 pierce armor.",
         "28310": "Research <b>Timurid Siegecraft</b> (\u2039cost\u203a) <br>\nTrebuchets receive +2 range. Enables Flaming Camels.",
@@ -12271,7 +12271,7 @@
         "28380": "Research <b>Panokseon</b> (\u2039cost\u203a) <br>\nMakes your Turtle Ships move 15% faster.",
         "28398": "Research <b>Cuman Mercenaries</b> (\u2039cost\u203a) <br>\nTeam receives 10 free Elite Kipchak in Castle.",
         "28399": "Research <b>Hill Forts</b> (\u2039cost\u203a) <br>\nTown Centers receive +3 range.",
-        "28400": "Research <b>Tower Shields</b> (\u2039cost\u203a) <br>\nPikemen and Skirmishers receive +1 pierce armor.",
+        "28400": "Research <b>Tower Shields</b> (\u2039cost\u203a) <br>\nPikemen and Skirmishers receive +2 pierce armor.",
         "28403": "Research <b>Supplies</b> (\u2039cost\u203a) <br>\nMilitia-line costs -15 food.",
         "28408": "Research <b>Spies/Treason</b> (Cost: 200 per enemy villager for Spies/400 per use for Treason) <br>\nSpies (Random Map games) reveals all enemy units and buildings by showing you their line of sight. The total cost is 200 gold per each villager from other players; allied villagers are excluded when teams are locked. <br>\n<br>\nTreason (Regicide games) reveals the position of all enemy Kings to your team for a few seconds. The Kings appear on the mini-map as a flashing X. Each time you choose Treason, 400 gold is immediately deducted from your stockpile.",
         "28409": "Research <b>Bloodlines</b> (\u2039cost\u203a) <br>\n Mounted units have +20 hit points.",
@@ -12298,12 +12298,12 @@
         "28439": "Research <b>Perfusion</b> (\u2039cost\u203a) <br>\n Barracks units are created 100% faster.",
         "120150": "Foot Archer civilization <br>\n<br>\n\u2022 Town Centers cost -50% wood in Castle Age <br>\n\u2022 Foot archers (except skirmishers) have +1 range Castle Age, +1 range Imperial Age (for +2 total)<br>\n\u2022 Shepherds work 25% faster <br>\n<br>\n<b>Unique Unit:</b>  <br>\nLongbowman (archer) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Yeomen (+1 foot archer range <br>\n+2 tower attack) <br>\n\u2022 Warwolf (Trebuchets do blast damage)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nArchery Ranges work 20% faster",
         "120151": "Cavalry civilization <br>\n<br>\n\u2022 Castles cost -25% <br>\n\u2022 Cavalry +20% hit points starting in Feudal Age <br>\n\u2022 Farm upgrades free (require Mill)<br>\n\u2022 Foragers work 25% faster <br>\n<br>\n<b>Unique Unit:</b>  <br>\nThrowing Axeman (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Chivalry (Stables work 40% faster) <br>\n\u2022 Bearded Axe (+1 Throwing Axemen range)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nKnights +2 line of sight",
-        "120152": "Infantry civilization <br>\n<br>\n\u2022 Infantry cost -20% in Dark, -25% in Feudal, -30% in Castle, -35% in Imperial Age<br>\n\u2022 Infantry +1 attack vs. buildings per age (starting from Feudal Age) <br>\n\u2022 Villagers +5 attack vs. wild boar; hunters carry +15 meat <br>\n\u2022 +10 population in Imperial Age <br>\n<br>\n<b>Unique Unit:</b>  <br>\nHuskarl (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Anarchy (create Huskarls at Barracks) <br>\n\u2022 Perfusion (Barracks work 100% faster) <br>\n<br>\n<b>Team Bonus:</b>  <br>\nBarracks work 20% faster",
-        "120153": "Infantry civilization <br>\n<br>\n\u2022 Monks healing range 2x <br>\n\u2022 Towers garrison 2x units <br>\n\u2022 Murder Holes, Herbal Medicine free <br>\n\u2022 Farms cost -40% <br>\n\u2022 Town Center garrison +10 <br>\n\u2022 Barracks units +1 armor (starting from Castle Age) <br>\n<br>\n<b>Unique Unit:</b>  <br>\nTeutonic Knight (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Ironclad (siege weapons extra melee armor) <br>\n\u2022 Crenellations (+3 range Castles <br>\ngarrisoned infantry fire arrows)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nUnits resist conversion",
+        "120152": "Infantry civilization <br>\n<br>\n\u2022 Infantry cost -20% in Dark, -25% in Feudal, -30% in Castle, -35% in Imperial Age<br>\n\u2022 Infantry +1 attack vs. buildings per age (starting from Feudal Age) <br>\n\u2022 Villagers +5 attack vs. wild boar; hunters carry +15 meat <br>\n\u2022 Loom free <br>\n\u2022 +10 population in Imperial Age <br>\n<br>\n<b>Unique Unit:</b>  <br>\nHuskarl (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Anarchy (create Huskarls at Barracks) <br>\n\u2022 Perfusion (Barracks work 100% faster) <br>\n<br>\n<b>Team Bonus:</b>  <br>\nBarracks work 20% faster",
+        "120153": "Infantry civilization <br>\n<br>\n\u2022 Monks healing range 2x <br>\n\u2022 Towers garrison 2x units <br>\n\u2022 Murder Holes, Herbal Medicine free <br>\n\u2022 Farms cost -40% <br>\n\u2022 Town Center garrison +10 <br>\n\u2022 Barracks and Stable units have +1 armor Castle Age, +1 armor Imperial Age (for +2 total) <br>\n<br>\n<b>Unique Unit:</b>  <br>\nTeutonic Knight (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Ironclad (siege weapons extra melee armor) <br>\n\u2022 Crenellations (+3 range Castles <br>\ngarrisoned infantry fire arrows)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nUnits resist conversion",
         "120154": "Infantry civilization <br>\n<br>\n\u2022 Fishing Ships 2x hit points; +2P armor; work rate +5% Dark, +10% Feudal, +15% Castle, +20% Imperial Age<br>\n\u2022 Mill, Lumber/Mining Camps cost -50% <br>\n\u2022 Infantry attack 25% faster starting in Feudal Age <br>\n<br>\n<b>Unique Unit:</b>  <br>\nSamurai (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Yasama (Towers shoot extra arrows) <br>\n\u2022 Kataparuto (Trebuchets fire, pack faster)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nGalleys +50% line of sight",
         "120155": "Archer civilization <br>\n<br>\n\u2022 Start with +3 villagers, -50 wood, -200 food <br>\n\u2022 Technologies cost -10% Feudal,  <br>\n-15% Castle, -20% Imperial Age <br>\n\u2022 Town Centers support 10 population and +5 LOS<br>\n\u2022 Demolition ships +50% hit points <br>\n<br>\n<b>Unique Unit:</b>  <br>\nChu Ko Nu (archer) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Great Wall (Walls and towers +30% HP) <br>\n\u2022 Rocketry (Chu Ko Nu +2, scorpions +4 attack)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nFarms +45 food",
         "120156": "Defensive civilization <br>\n<br>\n\u2022 Buildings +10% HPs Dark, +20% Feudal, +30% Castle, +40% Imperial Age <br>\n\u2022 Camel Riders, Skirmishers, Pikemen, Halberdiers cost -25% <br>\n\u2022 Fire ships attack 20% faster <br>\n\u2022 Advance to Imperial Age costs -33% <br>\n\u2022 Town Watch free <br>\n<br>\n<b>Unique Unit:</b>  <br>\nCataphract (cavalry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Greek Fire (Fire Ships +1 range) <br>\n\u2022 Logistica (Cataphracts cause trample damage)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nMonks +50% heal speed",
-        "120157": "Cavalry civilization <br>\n<br>\n\u2022 Start with +50 wood, food <br>\n\u2022 Town Center, Dock 2x hit points; work rate +5% Dark, +10% Feudal, +15% Castle, +20% Imperial Age <br>\n<br>\n<b>Unique Unit:</b>  <br>\nWar Elephant (cavalry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Kamandaran (Archer-line gold cost is replaced by additional wood cost) <br>\n\u2022 Mahouts (War Elephants 30% faster)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nKnights +2 attack vs. Archers",
+        "120157": "Cavalry civilization <br>\n<br>\n\u2022 Start with +50 wood, food <br>\n\u2022 Town Center, Dock 2x hit points; work rate +10% Feudal, +15% Castle, +20% Imperial Age <br>\n<br>\n<b>Unique Unit:</b>  <br>\nWar Elephant (cavalry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Kamandaran (Archer-line gold cost is replaced by additional wood cost) <br>\n\u2022 Mahouts (War Elephants 30% faster)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nKnights +2 attack vs. Archers",
         "120158": "Camel and Naval civilization <br>\n<br>\n\u2022 Market trade cost only 5% <br>\n\u2022 Market costs -100 wood <br>\n\u2022 Transport Ships 2x hit points,  <br>\n2x carry capacity <br>\n\u2022 Galleys attack 20% faster <br>\n\u2022 Archers (except skirmishers) +1 attack vs. buildings per age (starting in the Feudal Age) <br>\n<br>\n<b>Unique Unit:</b>  <br>\nMameluke (camel rider) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Madrasah (Monks return 33% of their cost when killed) <br>\n\u2022 Zealotry (Camel units +30 hit points)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nFoot archers +1 attack vs. buildings",
         "120159": "Gunpowder civilization <br>\n<br>\n\u2022 Gunpowder units +25% hit points; researching gunpowder technologies costs -50%; Chemistry free <br>\n\u2022 Gold miners work 20% faster <br>\n\u2022 Light Cavalry and Hussar upgrades free <br>\n<br>\n<b>Unique Unit:</b>  <br>\nJanissary (hand cannoneer) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Sipahi (Cavalry Archers +20 HP) <br>\n\u2022 Artillery (+2 range Bombard Towers, Bombard Cannons, Cannon Galleons)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nGunpowder units created 20% faster",
         "120160": "Infantry and Naval civilization <br>\n<br>\n\u2022 Warships cost -15% Feudal Age, -15% Castle Age, -20% Imperial Age <br>\n\u2022 Infantry +10% hit points Feudal, +15% Castle, +20% Imperial Age <br>\n\u2022 Wheelbarrow, Hand Cart free <br>\n<br>\n<b>Unique Units:</b>  <br>\nBerserk (infantry), Longboat (warship) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Chieftains (infantry deal bonus damage to cavalry) <br>\n\u2022 Berserkergang (Berserks regenerate faster)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nDocks cost -15%",
@@ -12315,21 +12315,21 @@
         "120166": "Cavalry civilization <br>\n<br>\n\u2022 Do not need houses, but start with -100 wood <br>\n\u2022 Cavalry Archers cost -10% Castle, -20% Imperial Age <br>\n\u2022 Trebuchets +30% accuracy <br>\n<br>\n<b>Unique Unit:</b>  <br>\nTarkan (cavalry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Marauders (Create Tarkans at stables) <br>\n\u2022 Atheism (+100 years Relic, Wonder victories <br>\nSpies/Treason costs -50%)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nStables work 20% faster",
         "120167": "Defensive and Naval civilization <br>\n<br>\n\u2022 Villagers +3 line of sight <br>\n\u2022 Stone miners work 20% faster <br>\n\u2022 Tower upgrades free (Bombard Tower requires Chemistry)<br>\n\u2022 Tower range +1 Castle, +2 Imperial Age<br>\n\u2022 Military units (except siege weapons) cost -15% wood <br>\n<br>\n<b>Unique Units:</b>  <br>\nWar Wagon (cavalry archer), Turtle Ship (war ship)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Panokseon (Turtle Ships move 15% faster) <br>\n\u2022 Shinkichon (Mangonel-line +1 range)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nMangonel-line minimum range reduced",
         "120168": "Archer and Naval civilization <br>\n<br>\n\u2022 Advancing to the next age costs -15% <br>\n\u2022 Dock technologies cost -50% <br>\n\u2022 Fishing Ships cost -15%<br>\n\u2022 Gunpowder units cost -20%<br>\n<br>\n<b>Unique Units:</b>  <br>\nGenoese Crossbowman (archer), Condottiero (infantry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Pavise (foot archers +1 armor/+1 pierce armor) <br>\n\u2022 Silk Road (trade units cost -50%)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nCondottiero available in the Barracks in Imperial Age",
-        "120169": "Camel and Gunpowder civilization <br>\n<br>\n\u2022 Villagers cost -10% Dark, -15% Feudal, -20% Castle, -25% Imperial Age <br>\n\u2022 Fishermen work 15% faster and carry +15 <br>\n\u2022 Camel Riders +1P armor <br>\n<br>\n<b>Unique Units:</b>  <br>\nElephant Archer (cavalry archer), Imperial Camel Rider (camel rider)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Sultans (All gold income 10% faster) <br>\n\u2022 Shatagni (Hand Cannoneers +1 range)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nCamel units +5 attack vs. buildings",
+        "120169": "Camel and Gunpowder civilization <br>\n<br>\n\u2022 Villagers cost -10% Dark, -15% Feudal, -20% Castle, -25% Imperial Age <br>\n\u2022 Fishermen work 10% faster <br>\n\u2022 Camel Riders +1P armor <br>\n<br>\n<b>Unique Units:</b>  <br>\nElephant Archer (cavalry archer), Imperial Camel Rider (camel rider)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Sultans (All gold income 10% faster) <br>\n\u2022 Shatagni (Hand Cannoneers +1 range)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nCamel units +5 attack vs. buildings",
         "120170": "Infantry civilization <br>\n<br>\n\u2022 Start with a free Llama <br>\n\u2022 Villagers affected by Blacksmith upgrades <br>\n\u2022 Houses support 10 population <br>\n\u2022 Buildings cost -15% stone<br>\n<br>\n<b>Unique Units:</b>  <br>\nKamayuk (infantry), Slinger (archer)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Andean Sling (Skirmishers and Slingers no minimum range) <br>\n\u2022 Fabric Shields (Kamayuks, Slingers, Eagles +1/+2P armor)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nFarms built 50% faster",
         "120171": "Cavalry civilization <br>\n<br>\n\u2022 Villagers kill wolves with 1 strike <br>\n\u2022 Forging, Iron Casting, Blast Furnace free<br>\n\u2022 Scout Cavalry, Light Cavalry, Hussar cost -15% <br>\n<br>\n<b>Unique Unit:</b>  <br>\nMagyar Huszar (cavalry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Corvinian Army (Magyar Huszars cost no gold) <br>\n\u2022 Recurve Bow (Cavalry archers +1 range, +1 attack)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nFoot archers +2 LOS",
         "120172": "Infantry and Siege civilization <br>\n<br>\n\u2022 Farmers work 10% faster <br>\n\u2022 Supplies free <br>\n\u2022 Siege Workshop units 15% cheaper<br>\n<br>\n<b>Unique Unit:</b>  <br>\nBoyar (cavalry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Orthodoxy (Monks +3/+3P armor) <br>\n\u2022 Druzhina (Infantry damage adjacent units)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nMilitary buildings provide +5 population room",
         "120173": "Naval and Gunpowder civilization <br>\n<br>\n\u2022 All units cost -15% gold <br>\n\u2022 Ships +10% HP <br>\n\u2022 Can build Feitoria in Imperial Age <br>\n<br>\n<b>Unique Units:</b>  <br>\nOrgan Gun (siege), Caravel (war ship)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Carrack (Ships +1/+1 armor) <br>\n\u2022 Arquebus (gunpowder units more accurate)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nLine of sight is shared with the team starting in the Dark Age",
         "120174": "Archer civilization <br>\n<br>\n\u2022 Archers fire 15% faster <br>\n\u2022 Receive +100 gold, +100 food when advancing to the next age <br>\n\u2022 Pikeman upgrade free<br>\n<br>\n<b>Unique Unit:</b>  <br>\nShotel Warrior (infantry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Royal Heirs (Shotel Warriors train nearly instantly) <br>\n\u2022 Torsion Engines (increases blast radius of Siege Workshop units)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nTowers and Outposts +3 LOS",
         "120175": "Infantry civilization <br>\n<br>\n\u2022 Buildings cost -15% wood <br>\n\u2022 Barracks units +1P armor per age (starting from Feudal Age)<br>\n\u2022 Gold Mining free <br>\n<br>\n<b>Unique Unit:</b>  <br>\nGbeto (infantry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Tigui (Town Centers fire arrows when ungarrisoned) <br>\n\u2022 Farimba (Cavalry +5 attack)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nUniversities work 80% faster",
-        "120176": "Cavalry and Naval civilization <br>\n<br>\n\u2022 Villagers move 10% faster <br>\n\u2022 Stable units cost -15% in Castle, -20% in Imperial Age <br>\n\u2022 Ships move 10% faster <br>\n<br>\n<b>Unique Units:</b>  <br>\nCamel Archer (cavalry archer), Genitour (mounted skirmisher)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Kasbah (team castles work 25% faster) <br>\n\u2022 Maghrabi Camels (Camel units regenerate)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nGenitour available in the Archery Range starting in the Castle Age",
+        "120176": "Cavalry and Naval civilization <br>\n<br>\n\u2022 Villagers move 10% faster <br>\n\u2022 Stable units cost -15% in Castle, -20% in Imperial Age <br>\n\u2022 Ships move 10% faster <br>\n<br>\n<b>Unique Units:</b>  <br>\nCamel Archer (cavalry archer), Genitour (mounted skirmisher)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Kasbah (team castles work 25% faster) <br>\n\u2022 Maghrebi Camels (Camel units regenerate)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nGenitour available in the Archery Range starting in the Castle Age",
         "120177": "Siege and Elephant civilization <br>\n<br>\n\u2022 No buildings required to advance to the next age or to unlock other buildings <br>\n\u2022 Farmers don't require Mills/Town Centers to drop off food <br>\n\u2022 Battle Elephants move 15% faster<br>\n\u2022 Villagers can garrison in Houses <br>\n<br>\n<b>Unique Unit:</b> <br>\nBallista Elephant (mounted scorpion)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Tusk Swords (Battle Elephants +3 attack) <br>\n\u2022 Double Crossbow (Ballista Elephants and Scorpions fire two projectiles) <br>\n<br>\n<b>Team Bonus:</b> <br>\nScorpions +1 range",
         "120178": "Naval civilization <br>\n<br>\n\u2022 Advancing to the next age 66% faster <br>\n\u2022 Fish Traps cost -33%<br>\n\u2022 Fish Traps provide unlimited food <br>\n\u2022 Battle Elephants 30% cheaper <br>\n<br>\n<b>Unique Unit:</b> <br>\nKarambit Warrior (infantry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Thalassocracy (upgrades Docks to Harbors, which fire arrows) <br>\n\u2022 Forced Levy (Militia-line gold cost is replaced by additional food cost)<br>\n<br>\n<b>Team Bonus:</b> <br>\nDocks +100% LOS",
         "120179": "Monk and Elephant civilization <br>\n<br>\n\u2022 Lumber Camp upgrades free <br>\n\u2022 Infantry +1 attack per age (starting in the Feudal Age)<br>\n\u2022 Monastery techs cost -50% <br>\n<br>\n<b>Unique Unit:</b> <br>\nArambai (ranged cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Howdah (Battle Elephants +1/+1P armor) <br>\n\u2022 Manipur Cavalry (Cavalry and Arambai +6 attack vs. buildings)<br>\n<br>\n<b>Team Bonus:</b> <br>\nRelics visible on the map at the start of the game",
         "120180": "Archer civilization <br>\n<br>\n\u2022 Enemy positions are revealed at the start of the game <br>\n\u2022 Economic upgrades cost no wood <br>\n\u2022 Archery Range units +20% HP <br>\n\u2022 Conscription free <br>\n<br>\n<b>Unique Units:</b> <br>\nRattan Archer (foot archer) <br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Chatras (Battle Elephants +50 HP) <br>\n\u2022 Paper Money (Each team member receives 500 gold)<br>\n<br>\n<b>Team Bonus:</b> <br>\nImperial Skirmisher upgrade available in the Imperial Age",
-        "120181": "Infantry and Cavalry civilization <br>\n<br>\n\u2022 Militia-line upgrades free <br>\n\u2022 Town Centers cost -50% stone<br>\n\u2022 Can build Krepost <br>\n<br>\n<b>Unique Unit:</b> <br>\nKonnik (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Stirrups (Light Cavalry and Konniks attack 25% faster) <br>\n\u2022 Bagains (Militia-line gains +5 armor) <br>\n<br>\n<b>Team Bonus:</b> <br>\nBlacksmiths work 50% faster",
+        "120181": "Infantry and Cavalry civilization <br>\n<br>\n\u2022 Militia-line upgrades free <br>\n\u2022 Town Centers cost -50% stone<br>\n\u2022 Can build Krepost <br>\n<br>\n<b>Unique Unit:</b> <br>\nKonnik (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Stirrups (Cavalry attack 25% faster) <br>\n\u2022 Bagains (Militia-line gains +5 armor) <br>\n<br>\n<b>Team Bonus:</b> <br>\nBlacksmiths work 50% faster",
         "120182": "Cavalry Archer civilization <br>\n<br>\n\u2022 Villagers gather +50% food from herdables <br>\n\u2022 Units deal +25% damage when fighting from higher elevation <br>\n\u2022 Thumb Ring, Parthian Tactics free <br>\n<br>\n<b>Unique Units:</b> <br>\nKeshik (raiding cavalry), Flaming Camel (petard)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Silk Armor (Light Cavalry, Steppe Lancers and Cavalry Archers receive +1P armor) <br>\n\u2022 Timurid Siegecraft (Trebuchets +2 range, enables Flaming Camels)<br>\n<br>\n<b>Team Bonus:</b> <br>\nCavalry Archers +2 LOS",
         "120183": "Cavalry civilization <br>\n<br>\n\u2022 Additional Town Center can be built in the Feudal Age <br>\n\u2022 Siege Workshop and Battering Ram available in the Feudal Age; Capped Ram upgrade available in Castle Age<br>\n\u2022 Cavalry 5% faster each age (starting in Feudal Age) <br>\n<br>\n<b>Unique Unit:</b> <br>\nKipchak (cavalry archer)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Steppe Husbandry (Light Cavalry, Steppe Lancers and Cavalry Archers trained 50% faster) <br>\n\u2022 Cuman Mercenaries (team members can create 10 free Elite Kipchaks in the Castle)<br>\n<br>\n<b>Team Bonus:</b> <br>\nPalisade Walls +50% HP",
-        "120184": "Cavalry and Monk civilization <br>\n<br>\n\u2022 Start with +150 food <br>\n\u2022 Spearman-line and Skirmishers move 10% faster<br>\n\u2022 Each garrisoned relic gives +1 attack to Knights and Leitis (maximum +4) <br>\n<br>\n<b>Unique Unit:</b> <br>\nLeitis (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Hill Forts (Town Centers +3 range) <br>\n\u2022 Tower Shields (Spearman-line and Skirmishers +1P armor)<br>\n<br>\n<b>Team Bonus:</b> <br>\nMonasteries work 20% faster"
+        "120184": "Cavalry and Monk civilization <br>\n<br>\n\u2022 Start with +150 food <br>\n\u2022 Spearman-line and Skirmishers move 10% faster<br>\n\u2022 Each garrisoned relic gives +1 attack to Knights and Leitis (maximum +4) <br>\n<br>\n<b>Unique Unit:</b> <br>\nLeitis (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Hill Forts (Town Centers +3 range) <br>\n\u2022 Tower Shields (Spearman-line and Skirmishers +2P armor)<br>\n<br>\n<b>Team Bonus:</b> <br>\nMonasteries work 20% faster"
     }
 }
