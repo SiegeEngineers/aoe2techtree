@@ -3,6 +3,10 @@ The Age of Empires II Tech Tree in your web browser
 
 Hosted on [aoe2techtree.net](https://aoe2techtree.net)
 
+Age of Empires II © Microsoft Corporation.
+**aoe2techtree** was created under Microsoft's "[Game Content Usage Rules](https://www.xbox.com/en-us/developers/rules)" using assets from Age of Empires II,
+and it is not endorsed by or affiliated with Microsoft.
+
 ## Development
 
 To run the website locally, either open `index.html` in Firefox  
