@@ -1851,7 +1851,7 @@
                     "Gold": 300
                 },
                 "ID": 512,
-                "LanguageHelpId": 28270,
+                "LanguageHelpId": 28268,
                 "LanguageNameId": 7268,
                 "ResearchTime": 40,
                 "internal_name": "Slavs UT"
@@ -1862,7 +1862,7 @@
                     "Gold": 500
                 },
                 "ID": 513,
-                "LanguageHelpId": 28270,
+                "LanguageHelpId": 28269,
                 "LanguageNameId": 7269,
                 "ResearchTime": 40,
                 "internal_name": "Slavs UT"
@@ -12215,6 +12215,8 @@
         "28258": "Research <b>Arson</b> (\u2039cost\u203a) <br>\nInfantry do more damage vs. buildings.",
         "28266": "Research <b>Andean Sling</b> (\u2039cost\u203a) <br>\nUpgrades your skirmishers and slingers by removing their minimum range.",
         "28267": "Research <b>Fabric Shields</b> (\u2039cost\u203a) <br>\nKamayuks, Slingers, Eagles have +1 armor/+2 pierce armor.",
+        "28268": "Research <b>Orthodoxy</b> (\u2039cost\u203a) <br>\nMonks have extra armor.",
+        "28269": "Research <b>Druzhina</b> (\u2039cost\u203a) <br>\nInfantry damage adjacent units.",
         "28270": "Research <b>Sultans</b> (\u2039cost\u203a) <br>\nAll gold income 10% faster (Trade, mines, relics).",
         "28271": "Research <b>Shatagni</b> (\u2039cost\u203a) <br>\nHand cannoneers have +1 range.",
         "28272": "Research <b>Pavise</b> (\u2039cost\u203a) <br>\nFoot Archers have +1 armor/+1 pierce armor.",

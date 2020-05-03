@@ -530,6 +530,8 @@ def gather_data(content):
     data["buildings"][64]['LanguageNameId'] = 5185  # Gate
     data["buildings"][789]['LanguageNameId'] = 5186  # Palisade Gate
     data["units"][128]['LanguageNameId'] = 19052  # Trade Cart
+    data["techs"][512]['LanguageHelpId'] = 28268  # Orthodoxy
+    data["techs"][513]['LanguageHelpId'] = 28269  # Druzhina
 
     return data
 
