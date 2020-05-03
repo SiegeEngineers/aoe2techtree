@@ -163,6 +163,7 @@ const civsConfig = {
              ARBALESTER,
              HAND_CANNONEER,
              CHAMPION,
+             PALADIN,
              CAMEL_RIDER,
              HEAVY_CAMEL_RIDER,
              BOMBARD_CANNON,
@@ -725,7 +726,8 @@ const civsConfig = {
              HEAVY_CAMEL_RIDER,
              PALADIN,
              HEAVY_DEMO_SHIP,
-             SIEGE_ONAGER
+             SIEGE_ONAGER,
+             BOMBARD_CANNON,
           ]
        },
        enabled: { 
