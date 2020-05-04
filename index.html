@@ -324,7 +324,7 @@
     }
 
     function positionHelptextBelow(caret, helptext) {
-        let top = caret.y + caret.height;
+        let top = caret.y + caret.height + document.getElementById('root').getBoundingClientRect().top;
         let helpbox = helptext.getBoundingClientRect();
         if (top + helpbox.height > tree.height) {
             return false;
@@ -342,7 +342,7 @@
 
     function positionHelptextAbove(caret, helptext) {
         let helpbox = helptext.getBoundingClientRect();
-        let top = caret.y - helpbox.height;
+        let top = caret.y - helpbox.height + document.getElementById('root').getBoundingClientRect().top;
         if (top < 0) {
             return false;
         }
