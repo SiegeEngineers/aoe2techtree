@@ -143,23 +143,6 @@
                 "TrainTime": 15,
                 "internal_name": "FARM"
             },
-            "64": {
-                "Attack": 0,
-                "Cost": {
-                    "Stone": 30
-                },
-                "GarrisonCapacity": 0,
-                "HP": 1375,
-                "ID": 64,
-                "LanguageHelpId": 26185,
-                "LanguageNameId": 5185,
-                "LineOfSight": 6,
-                "MeleeArmor": 6,
-                "PierceArmor": 6,
-                "Range": 0,
-                "TrainTime": 70,
-                "internal_name": "GTAA2"
-            },
             "68": {
                 "Attack": 0,
                 "Cost": {
@@ -227,6 +210,23 @@
                 "Range": 0,
                 "TrainTime": 6,
                 "internal_name": "WALL"
+            },
+            "78": {
+                "Attack": 0,
+                "Cost": {
+                    "Stone": 30
+                },
+                "GarrisonCapacity": 0,
+                "HP": 1375,
+                "ID": 78,
+                "LanguageHelpId": 26185,
+                "LanguageNameId": 5185,
+                "LineOfSight": 6,
+                "MeleeArmor": 6,
+                "PierceArmor": 6,
+                "Range": 0,
+                "TrainTime": 70,
+                "internal_name": "GTAB2"
             },
             "79": {
                 "Attack": 5,
@@ -559,22 +559,22 @@
                 "TrainTime": 15,
                 "internal_name": "WCTWX"
             },
-            "789": {
+            "790": {
                 "Attack": 0,
                 "Cost": {
                     "Wood": 30
                 },
                 "GarrisonCapacity": 0,
                 "HP": 400,
-                "ID": 789,
-                "LanguageHelpId": 26708,
+                "ID": 790,
+                "LanguageHelpId": 26186,
                 "LanguageNameId": 5186,
                 "LineOfSight": 6,
                 "MeleeArmor": 2,
                 "PierceArmor": 2,
                 "Range": 0,
                 "TrainTime": 30,
-                "internal_name": "PGTAA"
+                "internal_name": "PGTAB"
             },
             "1021": {
                 "Attack": 0,
@@ -979,7 +979,7 @@
                     "Wood": 400
                 },
                 "ID": 64,
-                "LanguageHelpId": 26156,
+                "LanguageHelpId": 28320,
                 "LanguageNameId": 7320,
                 "ResearchTime": 60,
                 "internal_name": "Bombard Tower"
@@ -990,7 +990,7 @@
                     "Wood": 200
                 },
                 "ID": 65,
-                "LanguageHelpId": 26768,
+                "LanguageHelpId": 28314,
                 "LanguageNameId": 7314,
                 "ResearchTime": 45,
                 "internal_name": "Gillnets"
@@ -1851,7 +1851,7 @@
                     "Gold": 300
                 },
                 "ID": 512,
-                "LanguageHelpId": 28270,
+                "LanguageHelpId": 28268,
                 "LanguageNameId": 7268,
                 "ResearchTime": 40,
                 "internal_name": "Slavs UT"
@@ -1862,7 +1862,7 @@
                     "Gold": 500
                 },
                 "ID": 513,
-                "LanguageHelpId": 28270,
+                "LanguageHelpId": 28269,
                 "LanguageNameId": 7269,
                 "ResearchTime": 40,
                 "internal_name": "Slavs UT"
@@ -12061,6 +12061,7 @@
         "26178": "Build <b>Watch Tower</b> (\u2039cost\u203a) <br>\nTower with a ranged attack. Units can garrison inside for protection. Archers and Villagers shoot additional projectiles. Strong vs. archers. Weak vs.units at close range, especially Rams.<i> Upgrades: line of sight (Town Center); attack, range (Blacksmith); attack, hit points, armor, ship attack; to Guard Tower 100F, 250W (University).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a \u2039garrison\u203a",
         "26182": "Build <b>Wonder</b> (\u2039cost\u203a) <br>\nA Wonder of the World that demonstrates the superiority of your civilization. Constructing a Wonder that stands for a certain period of time is one way to win the game. Cannot be converted by enemy Monks.<br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26185": "Build <b>Gate</b> (\u2039cost\u203a) <br>\nCan be built into existing walls to allow movement of friendly units. Can be locked and unlocked. Cannot be converted by enemy Monks.<i> Upgrades: line of sight (Town Center); hit points, armor. Researching Fortified Wall (University) increases gate hit points.</i> <br>\n\u2039hp\u203a",
+        "26186": "Build <b>Palisade Gate</b> (\u2039cost\u203a) <br>\nCan be built into existing walls to allow movement of friendly units. Can be locked and unlocked. Cannot be converted by enemy Monks.<i> Upgrades: line of sight (Town Center); hit points, armor (university).</i> <br>\n\u2039hp\u203a",
         "26190": "Create <b>Imperial Skirmisher</b> (\u2039cost\u203a) <br>\nRanged anti-archer unit that cannot attack at close range. Strong vs. archers. Weak vs. units at close range. Trainable by Vietnamese and their allies.<i> Upgrades: attack, range, armor (Blacksmith); attack, accuracy (University); accuracy (Archery Range); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26202": "Build <b>Palisade Wall</b> (\u2039cost\u203a) <br>\nWooden wall that is cheap and easy to build. Slows down your enemies and warns you of their approach. Cannot be converted by enemy Monks.<i> Upgrades: line of sight (Town Center); hit points, armor (University).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26203": "Build <b>Stone Wall</b> (\u2039cost\u203a) <br>\nStone wall that is difficult to breach without siege weapons. Slows down your enemies and warns you of their approach. Cannot be converted by enemy Monks.<i> Upgrades: line of sight (Town Center); hit points, armor, to Fortified Wall 200F, 100W (University).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -12143,7 +12144,6 @@
         "26689": "Create <b>Elite Conquistador</b> (\u2039cost\u203a) <br>\nSpanish unique mounted hand cannoneer. Strong vs. infantry. Weak vs. Pikemen, Skirmishers, and Monks.<i> Upgrades: armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26690": "Create <b>Slinger</b> (\u2039cost\u203a) <br>\nInca unique unit. Ranged anti-infantry unit that cannot attack at close range. Strong vs. infantry. Weak vs. archers and cavalry.<i> Upgrades: attack, range, armor (Blacksmith); accuracy (Archery Range); attack, accuracy (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26691": "Create <b>Missionary</b> (\u2039cost\u203a) <br>\nSpanish unique mounted monk. Converts enemy units and heals friendly units. Faster than Monk but with less sight and range. Strong vs. slow, non-ranged units. Weak vs. Light Cavalry and ranged units. Cannot collect Relics.<i> Upgrades: at Monastery; speed, hit points (Stable).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
-        "26708": "Build <b>Palisade Gate</b> (\u2039cost\u203a) <br>\nCan be built into existing walls to allow movement of friendly units. Can be locked and unlocked. Cannot be converted by enemy Monks.<i> Upgrades: line of sight (Town Center); hit points, armor (university).</i> <br>\n\u2039hp\u203a",
         "26723": "Create <b>Genoese Crossbowman</b> (\u2039cost\u203a) <br>\nItalian unique archer. Strong vs. cavalry and infantry. Weak vs. archers and siege weapons.<i> Upgrades: attack, range, armor (Blacksmith); accuracy (Archery Range); attack, accuracy (University); creation speed, to Elite Genoese Crossbowman 1000F, 800G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26725": "Create <b>Elite Genoese Crossbowman</b> (\u2039cost\u203a) <br>\nItalian unique archer. Strong vs. cavalry and infantry. Weak vs. archers and siege weapons.<i> Upgrades: attack, range, armor (Blacksmith); accuracy (Archery Range); attack, accuracy (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26727": "Create <b>War Wagon</b> (\u2039cost\u203a) <br>\nKorean unique cavalry archer unit. Strong vs. infantry and archers. Weak vs. Pikemen, Skirmishers, and Camel Riders.<i> Upgrades: attack, range, armor (Blacksmith); speed (Stable); accuracy (Archery Range); attack, accuracy (University); creation speed, to Elite War Wagon 1000W, 800G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -12152,7 +12152,6 @@
         "26730": "Create <b>Elite Magyar Huszar</b> (\u2039cost\u203a) <br>\nMagyar unique light cavalry unit. Strong vs. siege weapons. Weak vs. Pikemen and Camel Riders.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26731": "Build <b>Turtle Ship</b> (\u2039cost\u203a) <br>\nKorean unique ship. Slow and ironclad. Strong vs. warships and buildings.<i> Upgrades: armor, speed, cost, to Elite Turtle Ship 1000F, 800G (Dock); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26732": "Build <b>Elite Turtle Ship</b> (\u2039cost\u203a) <br>\nKorean unique ship. Slow and ironclad. Strong vs. warships and buildings.<i> Upgrades: armor, speed, cost (Dock); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
-        "26768": "Research <b>Gillnets</b> (\u2039cost\u203a) <br>\n Fishing Ships gather 25% faster.",
         "28008": "Research <b>Town Watch</b> (\u2039cost\u203a) <br>\nIncreases the line of sight of all buildings by +4 so they see enemies from a longer distance.",
         "28012": "Research <b>Crop Rotation</b> (\u2039cost\u203a) <br>\nFarms produce +175 food so they last longer before you must rebuild them.",
         "28013": "Research <b>Heavy Plow</b> (\u2039cost\u203a) <br>\nFarms produce +125 food so they last longer before you must rebuild them. Farmers carry +1 food each trip.",
@@ -12215,6 +12214,8 @@
         "28258": "Research <b>Arson</b> (\u2039cost\u203a) <br>\nInfantry do more damage vs. buildings.",
         "28266": "Research <b>Andean Sling</b> (\u2039cost\u203a) <br>\nUpgrades your skirmishers and slingers by removing their minimum range.",
         "28267": "Research <b>Fabric Shields</b> (\u2039cost\u203a) <br>\nKamayuks, Slingers, Eagles have +1 armor/+2 pierce armor.",
+        "28268": "Research <b>Orthodoxy</b> (\u2039cost\u203a) <br>\nMonks have extra armor.",
+        "28269": "Research <b>Druzhina</b> (\u2039cost\u203a) <br>\nInfantry damage adjacent units.",
         "28270": "Research <b>Sultans</b> (\u2039cost\u203a) <br>\nAll gold income 10% faster (Trade, mines, relics).",
         "28271": "Research <b>Shatagni</b> (\u2039cost\u203a) <br>\nHand cannoneers have +1 range.",
         "28272": "Research <b>Pavise</b> (\u2039cost\u203a) <br>\nFoot Archers have +1 armor/+1 pierce armor.",
@@ -12247,10 +12248,12 @@
         "28311": "Research <b>Steppe Husbandry</b> (\u2039cost\u203a) <br>\nLight Cavalry, Steppe Lancers and Cavalry Archers trained 50% faster.",
         "28312": "Research <b>Chieftains</b> (\u2039cost\u203a) <br>\n Infantry get attack bonus vs. cavalry.",
         "28313": "Research <b>Greek Fire</b> (\u2039cost\u203a) <br>\n Fire Ships have +1 range.",
+        "28314": "Research <b>Gillnets</b> (\u2039cost\u203a) <br>\n Fishing Ships gather 25% faster.",
         "28315": "Research <b>Redemption</b> (\u2039cost\u203a) <br>\nMonks can convert enemy buildings (except Town Centers, Castles, Monasteries, Farms, Fish Traps, walls, Gates, and Wonders) and siege weapons. Monks can convert most enemy units from a distance, but they must stand adjacent to buildings, rams, and Trebuchets to convert them.",
         "28316": "Research <b>Atonement</b> (\u2039cost\u203a) <br>\nMonks can convert enemy Monks.",
         "28318": "Research <b>Logistica</b> (\u2039cost\u203a) <br>\n Cataphracts cause trample damage.",
         "28319": "Research <b>Conscription</b> (\u2039cost\u203a) <br>\nUnits at Barracks, Archery Range, Stable, and Castle are produced 33% faster.",
+        "28320": "Research <b>Bombard Tower</b> (\u2039cost\u203a) <br>\nLets you build Bombard Towers, which are powerful and have extensive line of sight.",
         "28321": "Research <b>Murder Holes</b> (\u2039cost\u203a) <br>\nEliminates the minimum range of all towers, Castles and Harbors so they can fire at enemies attacking their base.",
         "28322": "Research <b>Sappers</b> (\u2039cost\u203a) <br>\nVillagers cause +15 damage when attacking buildings.",
         "28324": "Research <b>Bearded Axe</b> (\u2039cost\u203a) <br>\n Throwing Axemen have +1 range.",

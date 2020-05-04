@@ -86,11 +86,11 @@ BUILDINGS = {
     45: {"internal_name": "DOCK"},
     49: {"internal_name": "SIWS"},
     50: {"internal_name": "FARM"},
-    64: {"internal_name": "GTAA2"},
     68: {"internal_name": "MILL"},
     70: {"internal_name": "HOUS"},
     71: {"internal_name": "RTWC2"},
     72: {"internal_name": "WALL"},
+    78: {"internal_name": "GTAB2"},
     79: {"internal_name": "WCTW"},
     82: {"internal_name": "CSTL"},
     84: {"internal_name": "MRKT"},
@@ -110,7 +110,7 @@ BUILDINGS = {
     562: {"internal_name": "SMIL"},
     584: {"internal_name": "MINE"},
     598: {"internal_name": "WCTWX"},
-    789: {"internal_name": "PGTAA"},
+    790: {"internal_name": "PGTAB"},
     1021: {"internal_name": "FEITO"},
     1251: {"internal_name": "KREPOST"},
 }
@@ -513,22 +513,6 @@ def gather_data(content):
                 add_tech(key, value, tech, data)
         tech_id += 1
 
-    data["units"][185]['LanguageHelpId'] = 26690  # Slinger
-    data["units"][207]['LanguageHelpId'] = 26419  # Imperial Camel Rider
-    data["units"][879]['LanguageHelpId'] = 26686  # Kamayuk
-    data["units"][881]['LanguageHelpId'] = 26688  # Elite Kamayuk
-    data["units"][866]['LanguageHelpId'] = 26723  # Genoese Crossbowman
-    data["units"][868]['LanguageHelpId'] = 26725  # Elite Genoese Crossbowman
-    data["units"][869]['LanguageHelpId'] = 26728  # Magyar Huszar
-    data["units"][871]['LanguageHelpId'] = 26730  # Elite Magyar Huszar
-    data["units"][873]['LanguageHelpId'] = 26682  # Elephant Archer
-    data["units"][875]['LanguageHelpId'] = 26684  # Elite Elephant Archer
-    data["units"][876]['LanguageHelpId'] = 26447  # Boyar
-    data["units"][878]['LanguageHelpId'] = 26449  # Elite Boyar
-    data["units"][882]['LanguageHelpId'] = 26114  # Condottiero
-    data["units"][753]['LanguageHelpId'] = 26671  # Eagle Warrior
-    data["buildings"][64]['LanguageNameId'] = 5185  # Gate
-    data["buildings"][789]['LanguageNameId'] = 5186  # Palisade Gate
     data["units"][128]['LanguageNameId'] = 19052  # Trade Cart
 
     return data
@@ -560,7 +544,7 @@ def add_building(building_id, value, unit, data):
         'LineOfSight': unit["LineOfSight"],
         'TrainTime': unit["Creatable"]["TrainTime"],
         'LanguageNameId': unit['LanguageDLLName'],
-        'LanguageHelpId': unit['LanguageDLLHelp'] - 79_000,
+        'LanguageHelpId': unit['LanguageDLLName'] + 21_000,
     }
 
 
@@ -585,7 +569,7 @@ def add_unit(key, value, unit, data):
         'MinRange': unit["Type50"]["MinRange"],
         'TrainTime': unit["Creatable"]["TrainTime"],
         'LanguageNameId': unit['LanguageDLLName'],
-        'LanguageHelpId': unit['LanguageDLLHelp'] - 79_000,
+        'LanguageHelpId': unit['LanguageDLLName'] + 21_000,
     }
 
 
@@ -596,7 +580,7 @@ def add_tech(key, value, tech, data):
         'ID': key,
         'Cost': get_cost(tech),
         'LanguageNameId': tech['LanguageDLLName'],
-        'LanguageHelpId': tech['LanguageDLLHelp'] - 79_000,
+        'LanguageHelpId': tech['LanguageDLLName'] + 21_000,
     }
 
 
