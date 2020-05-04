@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <meta charset="utf-8"/>
     <title>Age of Empires II Tech Tree</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -58,23 +59,22 @@
                 <p id="civtext"></p>
             </div>
             <div class="info">
-                <div class="info__margin">
+                <p>
                     Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36906/" target="_blank" title="Changelog">36906</a>
-                </div>
-                <div class="info__margin">
+                </p>
+                <p>
                     Contribute on <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
-                </div>
-                <div class="info__margin">
+                </p>
+                <p>
                     Made by hszemi, Anda, exterkamp, paulirish,<br>
                     with thanks to Jineapple, TriRem, pip, and NkoDragaš<br>
                     Item Metadata (cost, HP etc.) taken from <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
-                </div>
-                <div id="gcur-notice">
-                    Age of Empires II © Microsoft Corporation.
-                    <b>aoe2techtree</b> was created under Microsoft's "<a
-                        href="https://www.xbox.com/en-us/developers/rules">Game Content Usage Rules</a>" using assets
+                </p>
+                <p>
+                    Age of Empires II &copy; Microsoft Corporation.</br>
+                    <b>aoe2techtree</b> was created under Microsoft's "<a href="https://www.xbox.com/en-us/developers/rules">Game Content Usage Rules</a>" using assets
                     from Age of Empires II, and it is not endorsed by or affiliated with Microsoft.
-                </div>
+                </p>
             </div>
         </div>
         <div id="techtree">
@@ -153,7 +153,7 @@
 
         const draw = SVG('techtree').size(tree.width, tree.height)
 
-        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e'}).click(hideHelp);
+        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e00'}).click(hideHelp);
         draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4);
         draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 2);
         draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 3);
@@ -180,7 +180,7 @@
                     }).move(caret.x, caret.y);
                     let name = formatName(caret.name);
                     var text = item.text(name.toString())
-                        .font({family: 'Helvetica', size: 8})
+                        .font({family: 'Merriweather, Georgia, serif', size: 9})
                         .attr({fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text'})
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
                     var image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
@@ -589,5 +589,4 @@
 
 </script>
 </body>
-
 </html>
