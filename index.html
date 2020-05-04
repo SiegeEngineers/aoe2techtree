@@ -151,9 +151,19 @@
             document.getElementById('civselect').value = capitalisedHash;
         }
 
-        const draw = SVG('techtree').size(tree.width, tree.height)
+        const draw = SVG('techtree').id('root').size(tree.width, tree.height)
+            .click((e) => {
+                if (e.target.id === 'root') {
+                    hideHelp();
+                }
+            });
 
-        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e00'}).click(hideHelp);
+        document.getElementById('techtree').onclick = (e) => {
+            if (e.target.id === 'techtree') {
+                hideHelp();
+            }
+        };
+
         draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4);
         draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 2);
         draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 3);
