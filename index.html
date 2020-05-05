@@ -155,9 +155,19 @@
             document.getElementById('civselect').value = capitalisedHash;
         }
 
-        const draw = SVG('techtree').size(tree.width, tree.height)
+        const draw = SVG('techtree').id('root').size(tree.width, tree.height)
+            .click((e) => {
+                if (e.target.id === 'root') {
+                    hideHelp();
+                }
+            });
 
-        draw.rect(tree.width, tree.height).attr({fill: '#e7c28e00'}).click(hideHelp);
+        document.getElementById('techtree').onclick = (e) => {
+            if (e.target.id === 'techtree') {
+                hideHelp();
+            }
+        };
+
         draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4);
         draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 2);
         draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 3);
@@ -324,7 +334,7 @@
     }
 
     function positionHelptextBelow(caret, helptext) {
-        let top = caret.y + caret.height;
+        let top = caret.y + caret.height + document.getElementById('root').getBoundingClientRect().top;
         let helpbox = helptext.getBoundingClientRect();
         if (top + helpbox.height > tree.height) {
             return false;
@@ -342,7 +352,7 @@
 
     function positionHelptextAbove(caret, helptext) {
         let helpbox = helptext.getBoundingClientRect();
-        let top = caret.y - helpbox.height;
+        let top = caret.y - helpbox.height + document.getElementById('root').getBoundingClientRect().top;
         if (top < 0) {
             return false;
         }
