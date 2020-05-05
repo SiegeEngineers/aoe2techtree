@@ -245,7 +245,7 @@
         civ(selectedCiv, tree);
         if (selectedCiv in data.civ_helptexts) {
             let civText = data.strings[data.civ_helptexts[selectedCiv]];
-            civText = civText.replace(/(.*civilization\s*<br>\s*<br>)/m, "$1<b>Civilization Bonus</b><br>")
+            civText = civText.replace(/(.*civilization\s*<br>\s*<br>)/m, "$1<b>Civilization Bonus:</b><br>")
             document.getElementById('civtext').innerHTML = civText;
             document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
             window.location.hash = selectedCiv;
