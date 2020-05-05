@@ -80,19 +80,18 @@
         <div id="techtree">
             <div id="helptext">
                 <div id="helptext__content"></div>
-                <div id="helptext__x_ref">
-                    <h3>Civilizations</h3>
-                </div>
+                <div id="helptext__advance_stats"></div>
+                <div id="helptext__x_ref"></div>
                 <div id="helptext__more">
-                    <a href="javascript:toggle_more_stats()">More Info &#x25BC;</a>
+                    <a href="javascript:toggle_more_stats()" id="helptext__more_link">More Info &#x25BC;</a>
                 </div>
               </div>
         </div>
     </div>
 </div>
-<script src="js/svg.min.js"></script>
-<script src="js/techtree.js"></script>
-<script src="js/civs.js"></script>
+<script type="text/javascript" src="js/svg.min.js"></script>
+<script type="text/javascript" src="js/techtree.js"></script>
+<script type="text/javascript" src="js/civs.js"></script>
 <script type="text/javascript">
     let tree;
     let data = {};
@@ -219,7 +218,9 @@
 
         loadCiv();
         // Make the xref badges
-        document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
+        createXRefBadges();
+        // Hide Advance Stats and Civilizations
+        toggle_more_stats()
     });
 
     function imagePrefix(name) {
@@ -233,7 +234,9 @@
         const selectedCiv = document.getElementById('civselect').value;
         civ(selectedCiv, tree);
         if (selectedCiv in data.civ_helptexts) {
-            document.getElementById('civtext').innerHTML = data.strings[data.civ_helptexts[selectedCiv]];
+            let civText = data.strings[data.civ_helptexts[selectedCiv]];
+            civText = civText.replace(/(.*civilization\s*<br>\s*<br>)/m, "$1<b>Civilization Bonus</b><br>")
+            document.getElementById('civtext').innerHTML = civText;
             document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
             window.location.hash = selectedCiv;
         } else {
@@ -292,12 +295,14 @@
     function displayHelp(caretId) {
         focusedNodeId = caretId;
         let helptextContent = document.getElementById("helptext__content");
+        let helptextAdvanceStats = document.getElementById("helptext__advance_stats");
         let overlay = SVG.get(`${caretId}_overlay`);
         let name = overlay.data('name');
         let id = overlay.data('id').replace('_copy', '');
         let caret = overlay.data('caret');
         let type = overlay.data('type');
         helptextContent.innerHTML = getHelpText(name, id, type);
+        helptextAdvanceStats.innerHTML = getAdvanceStats(name, id, type);
         styleXRefBadges(name, id, type);
         positionHelptext(caret);
         resetHighlightPath();
@@ -364,7 +369,7 @@
         helptext.style.left = destX + 'px';
     }
 
-    function getHelpText(name, id, type) {
+    function getEntityType(type) {
         let entitytype = 'buildings';
         if (type === "UNIT" || type === "UNIQUEUNIT") {
             entitytype = 'units';
@@ -372,6 +377,11 @@
         if (type === "TECHNOLOGY") {
             entitytype = 'techs';
         }
+        return entitytype;
+    }
+
+    function getHelpText(name, id, type) {
+        let entitytype = getEntityType(type);
         const items = id.split('_', 1);
         id = id.substring(items[0].length + 1);
         let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
@@ -388,12 +398,11 @@
             text = text.replace(/(?<heading>.+?\(‹cost›\))(?<description>.+?)<i>\s*(?<upgrades>Upgrades:.+?)<\/i>(?<stats>.*)/m,
                 '<p>$<heading></p>' +
                 '<p>$<description></p>' +
-                '<p>$<upgrades></p>' +
+                '<p><em>$<upgrades></em></p>' +
                 '<p class="helptext__stats">$<stats></p>');
         }
         let meta = data.data[entitytype][id];
         if (meta !== undefined) {
-            console.log("Metadata found for " + name, meta);
             text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
             let stats = []
             if (text.match(/‹hp›/)) {
@@ -423,10 +432,21 @@
             stats.push(secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;"));
             stats.push(accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;"));
             text = text.replace(/<p class="helptext__stats">(.+?)<\/p>/, "<h3>Stats</h3><p>" + stats.filter(Boolean).join(', ') + "<p>")
-            text += '<div id="helptext__advance_stats">';
+        } else {
+            console.error("No metadata found for " + name);
+        }
+        return text;
+    }
+
+    function getAdvanceStats(name, id, type) {
+        let entitytype = getEntityType(type);
+        const items = id.split('_', 1);
+        id = id.substring(items[0].length + 1);
+        let meta = data.data[entitytype][id];
+        let text = ''
+        if (meta !== undefined) {
             text += arrayIfDefinedAndNonEmpty(meta.Attacks, '<h3>Attacks</h3>');
             text += arrayIfDefinedAndNonEmpty(meta.Armours, '<h3>Armours</h3>');
-            text += '</div>';
         } else {
             console.error("No metadata found for " + name);
         }
@@ -440,9 +460,14 @@
      * @return A container with buttons + images for each civ to be used in cross referencing.
      */
      function createXRefBadges() {
+        let xRef = document.getElementById('helptext__x_ref');
+
+        let xRefTitle = document.createElement('h3');
+        xRefTitle.innerText = 'Civilizations';
+        xRef.appendChild(xRefTitle)
+
         let xRefLinks = document.createElement('div');
         xRefLinks.id = "helptext__x_ref__container";
-
         for (let civ of Object.keys(data.civ_names)) {
             let xRefLink = document.createElement('button');
             xRefLink.addEventListener('click', function() {
@@ -459,7 +484,7 @@
             xRefLink.appendChild(xRefImage);
             xRefLinks.appendChild(xRefLink);
         }
-        return xRefLinks;
+        xRef.appendChild(xRefLinks)
     }
 
     /** 
@@ -623,13 +648,15 @@
     function toggle_more_stats() {
         const stats = document.getElementById('helptext__advance_stats');
         const civs = document.getElementById('helptext__x_ref');
-        console.log(stats, civs)
+        const link = document.getElementById('helptext__more_link');
         if (civs.style.display === 'none') {
             stats.style.display = 'block';
             civs.style.display = 'block';
+            link.innerHTML = 'Less Info &#x25B2;';
         } else {
             stats.style.display = 'none';
             civs.style.display = 'none';
+            link.innerHTML = 'More Info &#x25BC;';
         }
     }
 
