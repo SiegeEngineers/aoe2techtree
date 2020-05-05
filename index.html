@@ -80,7 +80,12 @@
         <div id="techtree">
             <div id="helptext">
                 <div id="helptext__content"></div>
-                <div id="helptext__x_ref"></div>
+                <div id="helptext__x_ref">
+                    <h3>Civilizations</h3>
+                </div>
+                <div id="helptext__more">
+                    <a href="javascript:toggle_more_stats()">More Info &#x25BC;</a>
+                </div>
               </div>
         </div>
     </div>
@@ -373,30 +378,59 @@
         if (text === undefined) {
             return "?";
         }
+        text = text.replace(/\s<br>/g, '');
+        text = text.replace(/\n/g, '');
+        if (type === "TECHNOLOGY") {
+            text = text.replace(/(?<heading>.+?\(‹cost›\))(?<description>.*)/m,
+                '<p class="helptext__heading">$<heading></p>' +
+                '<p class="helptext__desc">$<description></p>');
+        } else {
+            text = text.replace(/(?<heading>.+?\(‹cost›\))(?<description>.+?)<i>\s*(?<upgrades>Upgrades:.+?)<\/i>(?<stats>.*)/m,
+                '<p>$<heading></p>' +
+                '<p>$<description></p>' +
+                '<p>$<upgrades></p>' +
+                '<p class="helptext__stats">$<stats></p>');
+        }
         let meta = data.data[entitytype][id];
         if (meta !== undefined) {
+            console.log("Metadata found for " + name, meta);
             text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
-            text = text.replace(/‹hp›/, "HP:&nbsp;" + meta.HP + ",");
-            text = text.replace(/‹attack›/, "Attack:&nbsp;" + meta.Attack + ",");
-            text = text.replace(/‹(A|a)rmor›/, "Armor:&nbsp;" + meta.MeleeArmor + ",");
-            text = text.replace(/‹(P|p)iercearmor›/, "Piercearmor:&nbsp;" + meta.PierceArmor + ",");
-            text = text.replace(/‹garrison›/, "Garrison:&nbsp;" + meta.GarrisonCapacity + ",");
-            text = text.replace(/‹range›/, "Range:&nbsp;" + meta.Range + ",");
-            text += minRangeIfDefined(meta.MinRange, "Min Range:&nbsp;");
-            text += ifDefined(meta.LineOfSight, "Line of Sight:&nbsp;");
-            text += ifDefined(meta.Speed, "Speed:&nbsp;");
-            text += secondsIfDefined(meta.TrainTime, "Build Time:&nbsp;");
-            text += secondsIfDefined(meta.ResearchTime, "Research Time:&nbsp;");
-            text += ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;");
-            text += secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;");
-            text += accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;");
-            text += arrayIfDefinedAndNonEmpty(meta.Attacks, "<br>Attacks:&nbsp;");
-            text += arrayIfDefinedAndNonEmpty(meta.Armours, "<br>Armours:&nbsp;");
+            let stats = []
+            if (text.match(/‹hp›/)) {
+                stats.push("HP:&nbsp;" + meta.HP);
+            }
+            if (text.match(/‹attack›/)) {
+                stats.push("Attack:&nbsp;" + meta.Attack);
+            }
+            if (text.match(/‹(A|a)rmor›/)) {
+                stats.push("Armor:&nbsp;" + meta.MeleeArmor);
+            }
+            if (text.match(/‹(P|p)iercearmor›/)) {
+                stats.push("Pierce armor:&nbsp;" + meta.PierceArmor);
+            }
+            if (text.match(/‹garrison›/)) {
+                stats.push("Garrison:&nbsp;" + meta.GarrisonCapacity);
+            }
+            if (text.match(/‹range›/)) {
+                stats.push("Range:&nbsp;" + meta.Range);
+            }
+            stats.push(minRangeIfDefined(meta.MinRange, "Min Range:&nbsp;"));
+            stats.push(ifDefined(meta.LineOfSight, "Line of Sight:&nbsp;"));
+            stats.push(ifDefined(meta.Speed, "Speed:&nbsp;"));
+            stats.push(secondsIfDefined(meta.TrainTime, "Build Time:&nbsp;"));
+            stats.push(secondsIfDefined(meta.ResearchTime, "Research Time:&nbsp;"));
+            stats.push(ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;"));
+            stats.push(secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;"));
+            stats.push(accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;"));
+            text = text.replace(/<p class="helptext__stats">(.+?)<\/p>/, "<h3>Stats</h3><p>" + stats.filter(Boolean).join(', ') + "<p>")
+            text += '<div id="helptext__advance_stats">';
+            text += arrayIfDefinedAndNonEmpty(meta.Attacks, '<h3>Attacks</h3>');
+            text += arrayIfDefinedAndNonEmpty(meta.Armours, '<h3>Armours</h3>');
+            text += '</div>';
         } else {
-            console.log("No metadata found for " + name);
+            console.error("No metadata found for " + name);
         }
-        return text.substring(0, text.length - 1);
-
+        return text;
     }
 
     /**
@@ -524,7 +558,7 @@
 
     function ifDefined(value, prefix) {
         if (value !== undefined) {
-            return " " + prefix + value + ",";
+            return " " + prefix + value;
         } else {
             return "";
         }
@@ -532,7 +566,7 @@
 
     function secondsIfDefined(value, prefix) {
         if (value !== undefined) {
-            return " " + prefix + value + "s,";
+            return " " + prefix + value + "s";
         } else {
             return "";
         }
@@ -540,7 +574,7 @@
 
     function accuracyIfDefined(value, prefix) {
         if (value !== undefined && value < 100) {
-            return " " + prefix + value + "%,";
+            return " " + prefix + value + "%";
         } else {
             return "";
         }
@@ -548,7 +582,7 @@
 
     function minRangeIfDefined(value, prefix) {
         if (value !== undefined && value > 0) {
-            return " " + prefix + value + ",";
+            return " " + prefix + value;
         } else {
             return "";
         }
@@ -564,7 +598,7 @@
                 const clazz = unitClasses[attack['Class']];
                 strings.push(`${amount} (${clazz})`);
             }
-            return " " + prefix + strings.join(', ') + ",";
+            return prefix + '<p>' + strings.join(', ') + "</p>";
         }
     }
 
@@ -586,6 +620,18 @@
         return value;
     }
 
+    function toggle_more_stats() {
+        const stats = document.getElementById('helptext__advance_stats');
+        const civs = document.getElementById('helptext__x_ref');
+        console.log(stats, civs)
+        if (civs.style.display === 'none') {
+            stats.style.display = 'block';
+            civs.style.display = 'block';
+        } else {
+            stats.style.display = 'none';
+            civs.style.display = 'none';
+        }
+    }
 
 </script>
 </body>

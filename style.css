@@ -3,7 +3,7 @@ body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    --xRef-badge-size: 30px;
+    --xRef-badge-size: 40px;
 }
 
 body, input, select {
@@ -17,6 +17,10 @@ body {
     justify-content: center;
     align-items: center;
     background: url("img/Backgrounds/bg_aoe2_hd_paper.jpg") repeat;
+}
+
+a, a:hover, a:visited, a:active {
+    color: #4d3617;
 }
 
 .info,
@@ -44,9 +48,10 @@ body {
     display: none;
     width: 300px;
     background-color: #eee;
-    border: 2px solid #bbb;
-    padding: 0.2rem;
+    /*border: 2px solid #bbb;*/
+    padding: 0.4rem;
     font-size: 10pt;
+    box-shadow: 1px 1px 8px 1px #906428;
 }
 
 #helptext__x_ref__container {
@@ -67,6 +72,23 @@ body {
 #helptext #helptext__x_ref div button img {
     width: var(--xRef-badge-size);
     height: var(--xRef-badge-size);
+}
+
+/*.helptext__stats, .helptext__upgrades, .helptext__desc, .helptext__heading {*/
+#helptext p {
+    margin-top: 0px;
+}
+
+.helptext__upgrades {
+    font-style: italic;
+}
+
+#helptext h3 {
+    font-family: sans-serif;
+    font-size: 0.87em;
+    text-transform: uppercase;
+    color: #4d3617;
+    margin-bottom: 5px;
 }
 
 #wrapper {
