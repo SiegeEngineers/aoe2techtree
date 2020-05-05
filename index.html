@@ -379,17 +379,6 @@
         helptext.style.left = destX + 'px';
     }
 
-    function getEntityType(type) {
-        let entitytype = 'buildings';
-        if (type === "UNIT" || type === "UNIQUEUNIT") {
-            entitytype = 'units';
-        }
-        if (type === "TECHNOLOGY") {
-            entitytype = 'techs';
-        }
-        return entitytype;
-    }
-
     function getHelpText(name, id, type) {
         let entitytype = getEntityType(type);
         const items = id.split('_', 1);
@@ -461,6 +450,17 @@
             console.error("No metadata found for " + name);
         }
         return text;
+    }
+
+    function getEntityType(type) {
+        let entitytype = 'buildings';
+        if (type === "UNIT" || type === "UNIQUEUNIT") {
+            entitytype = 'units';
+        }
+        if (type === "TECHNOLOGY") {
+            entitytype = 'techs';
+        }
+        return entitytype;
     }
 
     /**
