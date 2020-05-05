@@ -165,11 +165,11 @@
         };
 
         // Draw Age Row Highlighters
-        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d361740'}).click(hideHelp).y(tree.height / 4);
-        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d361740'}).click(hideHelp).y(tree.height / 4 * 2);
+        let row_height = tree.height / 4;
+        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d361740'}).click(hideHelp);
+        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d361740'}).click(hideHelp).y(row_height * 2);
 
         // Add Age Icons
-        let row_height = tree.height / 4;
         let icon_height = 112;
         let vertical_spacing = (row_height - icon_height) / 2;
         let image_urls = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
