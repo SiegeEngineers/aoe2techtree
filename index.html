@@ -164,9 +164,18 @@
             }
         };
 
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4);
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 2);
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 3);
+        // Draw Age Row Highlighters
+        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d361740'}).click(hideHelp).y(tree.height / 4);
+        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d361740'}).click(hideHelp).y(tree.height / 4 * 2);
+
+        // Add Age Icons
+        let row_height = tree.height / 4;
+        let icon_height = 112;
+        let vertical_spacing = (row_height - icon_height) / 2;
+        let image_urls = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
+        for (let i = 0; i < image_urls.length; i++) {
+            draw.group().image('img/Ages/' + image_urls[i], icon_height, icon_height).click(hideHelp).y(row_height * (i + 1) - icon_height - vertical_spacing).x(20);
+        }
 
         const connectionGroup = draw.group().attr({id: 'connection_lines'});
         for (let connection of connections) {
@@ -190,8 +199,8 @@
                     }).move(caret.x, caret.y);
                     let name = formatName(caret.name);
                     var text = item.text(name.toString())
-                        .font({family: 'Merriweather, Georgia, serif', size: 9})
-                        .attr({fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text'})
+                        .font({family: 'Merriweather, Georgia, serif', size: 9, weight: 'bold'})
+                        .attr({fill: '#ffffffee', 'text-anchor': 'middle', id: caret.id + '_text'})
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
                     var image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
                         .attr({fill: 'rgba(0,0,0,0.5)', id: caret.id + '_imgph'})
