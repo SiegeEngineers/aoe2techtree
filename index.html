@@ -60,31 +60,36 @@
             </div>
             <div class="info">
                 <p>
-                    Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36906/" target="_blank" title="Changelog">36906</a>
+                    Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36906/" target="_blank" title="Changelog" rel="nofollow">36906</a>
                 </p>
                 <p>
-                    Contribute on <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
-                </p>
-                <p>
-                    Made by hszemi, Anda, exterkamp, paulirish,<br>
-                    with thanks to Jineapple, TriRem, pip, and NkoDragaš<br>
-                    Item Metadata (cost, HP etc.) taken from <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
-                </p>
-                <p>
-                    Age of Empires II &copy; Microsoft Corporation.</br>
-                    <b>aoe2techtree</b> was created under Microsoft's "<a href="https://www.xbox.com/en-us/developers/rules">Game Content Usage Rules</a>" using assets
+                    Age of Empires II &copy; Microsoft Corporation.<br>
+                    <b>aoe2techtree</b> was created under Microsoft's "<a href="https://www.xbox.com/en-us/developers/rules" rel="nofollow">Game Content Usage Rules</a>" using assets
                     from Age of Empires II, and it is not endorsed by or affiliated with Microsoft.
                 </p>
+                <details>
+                    <summary>Credits</summary>
+                    <p>
+                        A project by <a href="https://aoe2.se" rel="author" class="has-text-grey">Siege Engineers</a>. Contribute on <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
+                    </p>
+                    <p>
+                        Made by hszemi, Anda, exterkamp, paulirish<br>
+                        with thanks to Jineapple, TriRem, pip, and NkoDragaš<br>
+                    </p>
+                    <p>
+                        Item Metadata (cost, HP etc.) taken from <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
+                    </p>
+                </details>
             </div>
         </div>
         <div id="techtree">
             <div id="helptext">
                 <div id="helptext__content"></div>
-                <div id="helptext__advance_stats"></div>
-                <div id="helptext__x_ref"></div>
-                <div id="helptext__more">
-                    <a href="javascript:toggle_more_stats()" id="helptext__more_link">More Info &#x25BC;</a>
-                </div>
+                <details>
+                    <summary>Advanced Stats</summary>
+                    <div id="helptext__advance_stats"></div>
+                    <div id="helptext__x_ref"><h3>Civilizations</h3></div>
+                </details>
               </div>
         </div>
     </div>
@@ -312,7 +317,7 @@
         let caret = overlay.data('caret');
         let type = overlay.data('type');
         helptextContent.innerHTML = getHelpText(name, id, type);
-        helptextAdvanceStats.innerHTML = getAdvanceStats(name, id, type);
+        helptextAdvanceStats.innerHTML = getAdvancedStats(name, id, type);
         styleXRefBadges(name, id, type);
         positionHelptext(caret);
         resetHighlightPath();
@@ -437,7 +442,7 @@
         return text;
     }
 
-    function getAdvanceStats(name, id, type) {
+    function getAdvancedStats(name, id, type) {
         let entitytype = getEntityType(type);
         const items = id.split('_', 1);
         id = id.substring(items[0].length + 1);
@@ -471,11 +476,6 @@
      */
      function createXRefBadges() {
         let xRef = document.getElementById('helptext__x_ref');
-
-        let xRefTitle = document.createElement('h3');
-        xRefTitle.innerText = 'Civilizations';
-        xRef.appendChild(xRefTitle)
-
         let xRefLinks = document.createElement('div');
         xRefLinks.id = "helptext__x_ref__container";
         for (let civ of Object.keys(data.civ_names)) {
@@ -637,7 +637,6 @@
         }
     }
 
-
     function cost(cost_object) {
         let value = "";
         if ("Food" in cost_object) {
@@ -654,22 +653,6 @@
         }
         return value;
     }
-
-    function toggle_more_stats() {
-        const stats = document.getElementById('helptext__advance_stats');
-        const civs = document.getElementById('helptext__x_ref');
-        const link = document.getElementById('helptext__more_link');
-        if (civs.style.display === 'none') {
-            stats.style.display = 'block';
-            civs.style.display = 'block';
-            link.innerHTML = 'Less Info &#x25B2;';
-        } else {
-            stats.style.display = 'none';
-            civs.style.display = 'none';
-            link.innerHTML = 'More Info &#x25BC;';
-        }
-    }
-
 </script>
 </body>
 </html>
