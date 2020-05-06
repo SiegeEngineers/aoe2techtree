@@ -378,7 +378,7 @@ class Tree {
         this.element_height = this.height / 4 / 3;
         let element_offset = this.element_height / 2;
 
-        this.offsets.dark_1 = this.padding;  // shift the tech tree down by 10px to align center in the row
+        this.offsets.dark_1 = this.padding;
         this.offsets.dark_2 = this.offsets.dark_1 + this.element_height + element_offset;
         this.offsets.feudal_1 = this.offsets.dark_2 + this.element_height + element_offset;
         this.offsets.feudal_2 = this.offsets.feudal_1 + this.element_height + element_offset;
