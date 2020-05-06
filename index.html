@@ -166,8 +166,8 @@
 
         // Draw Age Row Highlighters
         let row_height = tree.height / 4;
-        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d361740'}).click(hideHelp);
-        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d361740'}).click(hideHelp).y(row_height * 2);
+        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d3617', opacity:"0.3"}).click(hideHelp);
+        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d3617', opacity:"0.3"}).click(hideHelp).y(row_height * 2);
 
         // Add Age Icons
         let icon_height = 112;
@@ -200,17 +200,17 @@
                     let name = formatName(caret.name);
                     var text = item.text(name.toString())
                         .font({family: 'Merriweather, Georgia, serif', size: 9, weight: 'bold'})
-                        .attr({fill: '#ffffffee', 'text-anchor': 'middle', id: caret.id + '_text'})
+                        .attr({fill: '#ffffff', opacity:0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
                     var image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
-                        .attr({fill: 'rgba(0,0,0,0.5)', id: caret.id + '_imgph'})
+                        .attr({fill: '#000000', opacity:0.5, id: caret.id + '_imgph'})
                         .move(caret.x + caret.width * 0.2, caret.y);
                     let prefix = 'img/';
                     var image = item.image(prefix + imagePrefix(caret.id) + '.png', caret.width * 0.6, caret.height * 0.6)
                         .attr({id: caret.id + '_img'})
                         .move(caret.x + caret.width * 0.2, caret.y);
                     var cross = item.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
-                        .attr({fill: 'rgba(255,0,0,0.5)', id: caret.id + '_x'})
+                        .attr({fill: '#ff0000', opacity:0.5, id: caret.id + '_x'})
                         .addClass('cross')
                         .size(caret.width * 0.6, caret.height * 0.6)
                         .move(caret.x + caret.width * 0.2, caret.y);
