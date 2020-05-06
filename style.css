@@ -3,7 +3,7 @@ body {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    --xRef-badge-size: 40px;
+    --xRef-badge-size: 30px;
 }
 
 body, input, select {
@@ -55,6 +55,20 @@ a, a:hover, a:visited, a:active {
     font-size: 10pt;
 }
 
+#helptext p {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#helptext h3 {
+    font-family: sans-serif;
+    font-size: 9pt;
+    text-transform: uppercase;
+    color: #4d3617;
+    margin: 2px 10px 0 0;
+    float: left;
+}
+
 #helptext__x_ref__container {
     /* There are 35 civs, 5x7 makes the badges into a nice square. */
     max-width: calc(var(--xRef-badge-size) * 7);
@@ -75,17 +89,8 @@ a, a:hover, a:visited, a:active {
     height: var(--xRef-badge-size);
 }
 
-#helptext p {
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-#helptext h3 {
-    font-family: sans-serif;
-    font-size: 9pt;
-    text-transform: uppercase;
-    color: #4d3617;
-    margin-bottom: 5px;
+#helptext__x_ref h3 {
+    float: none;
 }
 
 #helptext summary {
