@@ -53,6 +53,7 @@ a, a:hover, a:visited, a:active {
     border: 2px solid #bbb;
     padding: 0.4rem;
     font-size: 10pt;
+    margin:5px;
 }
 
 #helptext p {
