@@ -1,4 +1,10 @@
 {
+    "age_names": {
+        "Castle Age": "4203",
+        "Dark Age": "4201",
+        "Feudal Age": "4202",
+        "Imperial Age": "4204"
+    },
     "civ_helptexts": {
         "Aztecs": "120164",
         "Berbers": "120176",
@@ -11622,6 +11628,10 @@
         }
     },
     "strings": {
+        "4201": "Dark Age",
+        "4202": "Feudal Age",
+        "4203": "Castle Age",
+        "4204": "Imperial Age",
         "5009": "Steppe Lancer",
         "5010": "Elite Steppe Lancer",
         "5068": "Knight",

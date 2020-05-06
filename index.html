@@ -174,11 +174,16 @@
         let vertical_spacing = (row_height - icon_height) / 2 - 10;
         let margin_left = 20;
         let image_urls = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
-        let age_texts = ['Dark Age', 'Feudal Age', 'Castle Age', 'Imperial Age'];
+        let age_names = [
+            data.strings[data.age_names["Dark Age"]],
+            data.strings[data.age_names["Feudal Age"]],
+            data.strings[data.age_names["Castle Age"]],
+            data.strings[data.age_names["Imperial Age"]]
+        ];
         for (let i = 0; i < image_urls.length; i++) {
             let age_image_group = draw.group().click(hideHelp);
             let age_image = age_image_group.image('img/Ages/' + image_urls[i], icon_width, icon_height).y(row_height * i + vertical_spacing).x(margin_left);
-            age_image_group.text(age_texts[i])
+            age_image_group.text(age_names[i])
                 .font({family: 'Merriweather, Georgia, serif', size: 16, weight: 'bold'})
                 .attr({fill: '#000000', opacity: 0.8, 'text-anchor': 'middle'})
                 .move(icon_width / 2 + margin_left, age_image.attr('y') + icon_height + 5);
