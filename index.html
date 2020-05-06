@@ -166,8 +166,8 @@
 
         // Draw Age Row Highlighters
         let row_height = tree.height / 4;
-        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp);
-        draw.rect(tree.width, tree.height / 4).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp).y(row_height * 2);
+        draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp);
+        draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp).y(row_height * 2);
 
         // Add Age Icons
         let icon_height = 112, icon_width = 112;
