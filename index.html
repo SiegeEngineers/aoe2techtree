@@ -87,7 +87,7 @@
                 <div id="helptext__content"></div>
                 <details>
                     <summary>Advanced Stats</summary>
-                    <div id="helptext__advance_stats"></div>
+                    <div id="helptext__advanced_stats"></div>
                     <div id="helptext__x_ref"><h3>Civilizations</h3></div>
                 </details>
               </div>
@@ -310,14 +310,14 @@
     function displayHelp(caretId) {
         focusedNodeId = caretId;
         let helptextContent = document.getElementById("helptext__content");
-        let helptextAdvanceStats = document.getElementById("helptext__advance_stats");
+        let helptextAdvancedStats = document.getElementById("helptext__advanced_stats");
         let overlay = SVG.get(`${caretId}_overlay`);
         let name = overlay.data('name');
         let id = overlay.data('id').replace('_copy', '');
         let caret = overlay.data('caret');
         let type = overlay.data('type');
         helptextContent.innerHTML = getHelpText(name, id, type);
-        helptextAdvanceStats.innerHTML = getAdvancedStats(name, id, type);
+        helptextAdvancedStats.innerHTML = getAdvancedStats(name, id, type);
         styleXRefBadges(name, id, type);
         positionHelptext(caret);
         resetHighlightPath();
