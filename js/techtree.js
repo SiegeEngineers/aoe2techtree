@@ -368,9 +368,10 @@ class Tree {
         };
         this.height = Math.max(window.innerHeight - 80, 100);
         this.width = 0;
-        this.padding = 10;
+        this.padding = 20;
         this.element_height = 0;
         this.lanes = [];
+        this.offset_x = 150;  // 150 is starting offset from the left to accommodate age icons
     }
 
     updateOffsets() {
@@ -392,7 +393,7 @@ class Tree {
             lane.updatePositions(this.offsets, this.element_height);
         }
 
-        let x = this.padding;
+        let x = this.padding + this.offset_x;
         for (let i = 0; i < this.lanes.length; i++) {
             this.lanes[i].x = x;
             x = x + this.lanes[i].width + this.padding;
@@ -577,7 +578,7 @@ function enable(buildings, units, techs) {
 
 function disableUniqueUnits(tree) {
     let carets = tree.carets();
-    for (key of carets.keys()) {
+    for (let key of carets.keys()) {
         let caret = carets.get(key);
         if (caret.isUniqueUnit()) {
             SVG.get(caret.id + '_x').animate(animation_duration).attr({'fill-opacity': 1});
@@ -1116,4 +1117,3 @@ function getConnectionPoints(tree) {
     }
     return points;
 }
-

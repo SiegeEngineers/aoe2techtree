@@ -170,9 +170,30 @@
             }
         };
 
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4);
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 2);
-        draw.rect(tree.width, 6).attr({fill: '#4d3617'}).click(hideHelp).y(tree.height / 4 * 3);
+        // Draw Age Row Highlighters
+        let row_height = tree.height / 4;
+        draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp);
+        draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp).y(row_height * 2);
+
+        // Add Age Icons
+        let icon_height = 112, icon_width = 112;
+        let vertical_spacing = (row_height - icon_height) / 2 - 10;
+        let margin_left = 20;
+        let image_urls = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
+        let age_names = [
+            data.strings[data.age_names["Dark Age"]],
+            data.strings[data.age_names["Feudal Age"]],
+            data.strings[data.age_names["Castle Age"]],
+            data.strings[data.age_names["Imperial Age"]]
+        ];
+        for (let i = 0; i < image_urls.length; i++) {
+            let age_image_group = draw.group().click(hideHelp);
+            let age_image = age_image_group.image('img/Ages/' + image_urls[i], icon_width, icon_height).y(row_height * i + vertical_spacing).x(margin_left);
+            age_image_group.text(age_names[i])
+                .font({family: 'Merriweather, Georgia, serif', size: 16, weight: 'bold'})
+                .attr({fill: '#000000', opacity: 0.8, 'text-anchor': 'middle'})
+                .move(icon_width / 2 + margin_left, age_image.attr('y') + icon_height + 5);
+        }
 
         const connectionGroup = draw.group().attr({id: 'connection_lines'});
         for (let connection of connections) {
@@ -196,18 +217,18 @@
                     }).move(caret.x, caret.y);
                     let name = formatName(caret.name);
                     var text = item.text(name.toString())
-                        .font({family: 'Merriweather, Georgia, serif', size: 9})
-                        .attr({fill: '#fff', 'text-anchor': 'middle', id: caret.id + '_text'})
+                        .font({family: 'Merriweather, Georgia, serif', size: 9, weight: 'bold'})
+                        .attr({fill: '#ffffff', opacity:0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
                     var image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
-                        .attr({fill: 'rgba(0,0,0,0.5)', id: caret.id + '_imgph'})
+                        .attr({fill: '#000000', opacity:0.5, id: caret.id + '_imgph'})
                         .move(caret.x + caret.width * 0.2, caret.y);
                     let prefix = 'img/';
                     var image = item.image(prefix + imagePrefix(caret.id) + '.png', caret.width * 0.6, caret.height * 0.6)
                         .attr({id: caret.id + '_img'})
                         .move(caret.x + caret.width * 0.2, caret.y);
                     var cross = item.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
-                        .attr({fill: 'rgba(255,0,0,0.5)', id: caret.id + '_x'})
+                        .attr({fill: '#ff0000', opacity:0.5, id: caret.id + '_x'})
                         .addClass('cross')
                         .size(caret.width * 0.6, caret.height * 0.6)
                         .move(caret.x + caret.width * 0.2, caret.y);

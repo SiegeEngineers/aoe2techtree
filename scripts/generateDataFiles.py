@@ -5,6 +5,14 @@ import json
 import re
 from pathlib import Path
 
+
+AGE_NAMES = {
+    "Dark Age": "4201",
+    "Feudal Age": "4202",
+    "Castle Age": "4203",
+    "Imperial Age": "4204"
+}
+
 CIV_NAMES = {
     "Britons": "10271",
     "Franks": "10272",
@@ -449,7 +457,7 @@ def main():
     key_value_filtered = gather_language_data(resourcesdir, data, 'en')
 
     print(json.dumps(
-        {"civ_names": CIV_NAMES, "civ_helptexts": CIV_HELPTEXTS, "data": data, "strings": key_value_filtered},
+        {"age_names": AGE_NAMES, "civ_names": CIV_NAMES, "civ_helptexts": CIV_HELPTEXTS, "data": data, "strings": key_value_filtered},
         indent=4,
         sort_keys=True))
 
@@ -477,6 +485,9 @@ def gather_language_data(resourcesdir, data, language):
         key_value_filtered[key] = key_value[key]
     for name in CIV_NAMES:
         key = int(CIV_NAMES[name])
+        key_value_filtered[key] = key_value[key]
+    for name in AGE_NAMES:
+        key = int(AGE_NAMES[name])
         key_value_filtered[key] = key_value[key]
     return key_value_filtered
 

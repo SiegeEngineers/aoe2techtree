@@ -115,7 +115,6 @@ a, a:hover, a:visited, a:active {
 
 #techtree {
     border-left: 6px solid #4d3617;
-    padding-top: 1rem;
     flex: 1 0 auto;
     position: relative;
     width: calc(100vw - 22rem - 20px);
