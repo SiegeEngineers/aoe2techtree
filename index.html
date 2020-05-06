@@ -170,11 +170,18 @@
         draw.rect(tree.width, tree.height / 4).attr({fill: '#4d3617', opacity:"0.3"}).click(hideHelp).y(row_height * 2);
 
         // Add Age Icons
-        let icon_height = 112;
-        let vertical_spacing = (row_height - icon_height) / 2;
+        let icon_height = 112, icon_width = 112;
+        let vertical_spacing = (row_height - icon_height) / 2 - 10;
+        let margin_left = 20;
         let image_urls = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
+        let age_texts = ['Dark Age', 'Feudal Age', 'Castle Age', 'Imperial Age'];
         for (let i = 0; i < image_urls.length; i++) {
-            draw.group().image('img/Ages/' + image_urls[i], icon_height, icon_height).click(hideHelp).y(row_height * (i + 1) - icon_height - vertical_spacing).x(20);
+            let age_image_group = draw.group().click(hideHelp);
+            let age_image = age_image_group.image('img/Ages/' + image_urls[i], icon_width, icon_height).y(row_height * i + vertical_spacing).x(margin_left);
+            age_image_group.text(age_texts[i])
+                .font({family: 'Merriweather, Georgia, serif', size: 16, weight: 'bold'})
+                .attr({fill: '#000000', opacity: 0.8, 'text-anchor': 'middle'})
+                .move(icon_width / 2 + margin_left, age_image.attr('y') + icon_height + 5);
         }
 
         const connectionGroup = draw.group().attr({id: 'connection_lines'});
