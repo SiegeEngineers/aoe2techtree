@@ -7,7 +7,7 @@
     <meta charset="utf-8"/>
     <title>Age of Empires II Tech Tree</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap">
 </head>
 
 <body>
@@ -60,19 +60,21 @@
             </div>
             <div class="info">
                 <p>
-                    Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36906/" target="_blank" title="Changelog">36906</a>
+                    Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36906/" target="_blank" title="Changelog" rel="nofollow">36906</a>
                 </p>
                 <p>
-                    Contribute on <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
+                    A project by <a href="https://aoe2.se" rel="author" class="has-text-grey">Siege Engineers</a>. Contribute on <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>
                 </p>
                 <p>
-                    Made by hszemi, Anda, exterkamp, paulirish,<br>
+                    Made by hszemi, Anda, exterkamp, paulirish<br>
                     with thanks to Jineapple, TriRem, pip, and NkoDragaš<br>
+                </p>
+                <p>
                     Item Metadata (cost, HP etc.) taken from <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
                 </p>
                 <p>
                     Age of Empires II &copy; Microsoft Corporation.<br>
-                    <b>aoe2techtree</b> was created under Microsoft's "<a href="https://www.xbox.com/en-us/developers/rules">Game Content Usage Rules</a>" using assets
+                    <b>aoe2techtree</b> was created under Microsoft's "<a href="https://www.xbox.com/en-us/developers/rules" rel="nofollow">Game Content Usage Rules</a>" using assets
                     from Age of Empires II, and it is not endorsed by or affiliated with Microsoft.
                 </p>
             </div>
@@ -80,7 +82,11 @@
         <div id="techtree">
             <div id="helptext">
                 <div id="helptext__content"></div>
-                <div id="helptext__x_ref"></div>
+                <details>
+                    <summary>Advanced Stats</summary>
+                    <div id="helptext__advanced_stats"></div>
+                    <div id="helptext__x_ref"><h3>Civilizations</h3></div>
+                </details>
               </div>
         </div>
     </div>
@@ -245,7 +251,7 @@
 
         loadCiv();
         // Make the xref badges
-        document.getElementById('helptext__x_ref').appendChild(createXRefBadges());
+        createXRefBadges();
     });
 
     function imagePrefix(name) {
@@ -318,12 +324,14 @@
     function displayHelp(caretId) {
         focusedNodeId = caretId;
         let helptextContent = document.getElementById("helptext__content");
+        let helptextAdvancedStats = document.getElementById("helptext__advanced_stats");
         let overlay = SVG.get(`${caretId}_overlay`);
         let name = overlay.data('name');
         let id = overlay.data('id').replace('_copy', '');
         let caret = overlay.data('caret');
         let type = overlay.data('type');
         helptextContent.innerHTML = getHelpText(name, id, type);
+        helptextAdvancedStats.innerHTML = getAdvancedStats(name, id, type);
         styleXRefBadges(name, id, type);
         positionHelptext(caret);
         resetHighlightPath();
@@ -391,6 +399,79 @@
     }
 
     function getHelpText(name, id, type) {
+        let entitytype = getEntityType(type);
+        const items = id.split('_', 1);
+        id = id.substring(items[0].length + 1);
+        let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
+        if (text === undefined) {
+            return "?";
+        }
+        text = text.replace(/\s<br>/g, '');
+        text = text.replace(/\n/g, '');
+        if (type === "TECHNOLOGY") {
+            text = text.replace(/(.+?\(‹cost›\))(.*)/m,
+                '<p class="helptext__heading">$1</p>' +
+                '<p class="helptext__desc">$2</p>');
+        } else {
+            text = text.replace(/(.+?\(‹cost›\))(.+?)<i>\s*(Upgrades:.+?)<\/i>(.*)/m,
+                '<p>$1</p>' +
+                '<p>$2</p>' +
+                '<p><em>$3</em></p>' +
+                '<p class="helptext__stats">$4</p>');
+        }
+        let meta = data.data[entitytype][id];
+        if (meta !== undefined) {
+            text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
+            let stats = []
+            if (text.match(/‹hp›/)) {
+                stats.push("HP:&nbsp;" + meta.HP);
+            }
+            if (text.match(/‹attack›/)) {
+                stats.push("Attack:&nbsp;" + meta.Attack);
+            }
+            if (text.match(/‹(A|a)rmor›/)) {
+                stats.push("Armor:&nbsp;" + meta.MeleeArmor);
+            }
+            if (text.match(/‹(P|p)iercearmor›/)) {
+                stats.push("Pierce armor:&nbsp;" + meta.PierceArmor);
+            }
+            if (text.match(/‹garrison›/)) {
+                stats.push("Garrison:&nbsp;" + meta.GarrisonCapacity);
+            }
+            if (text.match(/‹range›/)) {
+                stats.push("Range:&nbsp;" + meta.Range);
+            }
+            stats.push(minRangeIfDefined(meta.MinRange, "Min Range:&nbsp;"));
+            stats.push(ifDefined(meta.LineOfSight, "Line of Sight:&nbsp;"));
+            stats.push(ifDefined(meta.Speed, "Speed:&nbsp;"));
+            stats.push(secondsIfDefined(meta.TrainTime, "Build Time:&nbsp;"));
+            stats.push(secondsIfDefined(meta.ResearchTime, "Research Time:&nbsp;"));
+            stats.push(ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;"));
+            stats.push(secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;"));
+            stats.push(accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;"));
+            text = text.replace(/<p class="helptext__stats">(.+?)<\/p>/, "<h3>Stats</h3><p>" + stats.filter(Boolean).join(', ') + "<p>")
+        } else {
+            console.error("No metadata found for " + name);
+        }
+        return text;
+    }
+
+    function getAdvancedStats(name, id, type) {
+        let entitytype = getEntityType(type);
+        const items = id.split('_', 1);
+        id = id.substring(items[0].length + 1);
+        let meta = data.data[entitytype][id];
+        let text = ''
+        if (meta !== undefined) {
+            text += arrayIfDefinedAndNonEmpty(meta.Attacks, '<h3>Attacks</h3>');
+            text += arrayIfDefinedAndNonEmpty(meta.Armours, '<h3>Armours</h3>');
+        } else {
+            console.error("No metadata found for " + name);
+        }
+        return text;
+    }
+
+    function getEntityType(type) {
         let entitytype = 'buildings';
         if (type === "UNIT" || type === "UNIQUEUNIT") {
             entitytype = 'units';
@@ -398,36 +479,7 @@
         if (type === "TECHNOLOGY") {
             entitytype = 'techs';
         }
-        const items = id.split('_', 1);
-        id = id.substring(items[0].length + 1);
-        let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
-        if (text === undefined) {
-            return "?";
-        }
-        let meta = data.data[entitytype][id];
-        if (meta !== undefined) {
-            text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
-            text = text.replace(/‹hp›/, "HP:&nbsp;" + meta.HP + ",");
-            text = text.replace(/‹attack›/, "Attack:&nbsp;" + meta.Attack + ",");
-            text = text.replace(/‹(A|a)rmor›/, "Armor:&nbsp;" + meta.MeleeArmor + ",");
-            text = text.replace(/‹(P|p)iercearmor›/, "Piercearmor:&nbsp;" + meta.PierceArmor + ",");
-            text = text.replace(/‹garrison›/, "Garrison:&nbsp;" + meta.GarrisonCapacity + ",");
-            text = text.replace(/‹range›/, "Range:&nbsp;" + meta.Range + ",");
-            text += minRangeIfDefined(meta.MinRange, "Min Range:&nbsp;");
-            text += ifDefined(meta.LineOfSight, "Line of Sight:&nbsp;");
-            text += ifDefined(meta.Speed, "Speed:&nbsp;");
-            text += secondsIfDefined(meta.TrainTime, "Build Time:&nbsp;");
-            text += secondsIfDefined(meta.ResearchTime, "Research Time:&nbsp;");
-            text += ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;");
-            text += secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;");
-            text += accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;");
-            text += arrayIfDefinedAndNonEmpty(meta.Attacks, "<br>Attacks:&nbsp;");
-            text += arrayIfDefinedAndNonEmpty(meta.Armours, "<br>Armours:&nbsp;");
-        } else {
-            console.log("No metadata found for " + name);
-        }
-        return text.substring(0, text.length - 1);
-
+        return entitytype;
     }
 
     /**
@@ -437,9 +489,9 @@
      * @return A container with buttons + images for each civ to be used in cross referencing.
      */
      function createXRefBadges() {
+        let xRef = document.getElementById('helptext__x_ref');
         let xRefLinks = document.createElement('div');
         xRefLinks.id = "helptext__x_ref__container";
-
         for (let civ of Object.keys(data.civ_names)) {
             let xRefLink = document.createElement('button');
             xRefLink.addEventListener('click', function() {
@@ -456,7 +508,7 @@
             xRefLink.appendChild(xRefImage);
             xRefLinks.appendChild(xRefLink);
         }
-        return xRefLinks;
+        xRef.appendChild(xRefLinks)
     }
 
     /** 
@@ -555,7 +607,7 @@
 
     function ifDefined(value, prefix) {
         if (value !== undefined) {
-            return " " + prefix + value + ",";
+            return " " + prefix + value;
         } else {
             return "";
         }
@@ -563,7 +615,7 @@
 
     function secondsIfDefined(value, prefix) {
         if (value !== undefined) {
-            return " " + prefix + value + "s,";
+            return " " + prefix + value + "s";
         } else {
             return "";
         }
@@ -571,7 +623,7 @@
 
     function accuracyIfDefined(value, prefix) {
         if (value !== undefined && value < 100) {
-            return " " + prefix + value + "%,";
+            return " " + prefix + value + "%";
         } else {
             return "";
         }
@@ -579,7 +631,7 @@
 
     function minRangeIfDefined(value, prefix) {
         if (value !== undefined && value > 0) {
-            return " " + prefix + value + ",";
+            return " " + prefix + value;
         } else {
             return "";
         }
@@ -595,10 +647,9 @@
                 const clazz = unitClasses[attack['Class']];
                 strings.push(`${amount} (${clazz})`);
             }
-            return " " + prefix + strings.join(', ') + ",";
+            return prefix + '<p>' + strings.join(', ') + "</p>";
         }
     }
-
 
     function cost(cost_object) {
         let value = "";
@@ -616,8 +667,6 @@
         }
         return value;
     }
-
-
 </script>
 </body>
 </html>
