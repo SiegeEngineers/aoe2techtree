@@ -578,7 +578,7 @@ function enable(buildings, units, techs) {
 
 function disableUniqueUnits(tree) {
     let carets = tree.carets();
-    for (key of carets.keys()) {
+    for (let key of carets.keys()) {
         let caret = carets.get(key);
         if (caret.isUniqueUnit()) {
             SVG.get(caret.id + '_x').animate(animation_duration).attr({'fill-opacity': 1});
@@ -1117,4 +1117,3 @@ function getConnectionPoints(tree) {
     }
     return points;
 }
-
