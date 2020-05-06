@@ -395,15 +395,15 @@
         text = text.replace(/\s<br>/g, '');
         text = text.replace(/\n/g, '');
         if (type === "TECHNOLOGY") {
-            text = text.replace(/(?<heading>.+?\(‹cost›\))(?<description>.*)/m,
-                '<p class="helptext__heading">$<heading></p>' +
-                '<p class="helptext__desc">$<description></p>');
+            text = text.replace(/(.+?\(‹cost›\))(.*)/m,
+                '<p class="helptext__heading">$1</p>' +
+                '<p class="helptext__desc">$2</p>');
         } else {
-            text = text.replace(/(?<heading>.+?\(‹cost›\))(?<description>.+?)<i>\s*(?<upgrades>Upgrades:.+?)<\/i>(?<stats>.*)/m,
-                '<p>$<heading></p>' +
-                '<p>$<description></p>' +
-                '<p><em>$<upgrades></em></p>' +
-                '<p class="helptext__stats">$<stats></p>');
+            text = text.replace(/(.+?\(‹cost›\))(.+?)<i>\s*(Upgrades:.+?)<\/i>(.*)/m,
+                '<p>$1</p>' +
+                '<p>$2</p>' +
+                '<p><em>$3</em></p>' +
+                '<p class="helptext__stats">$4</p>');
         }
         let meta = data.data[entitytype][id];
         if (meta !== undefined) {

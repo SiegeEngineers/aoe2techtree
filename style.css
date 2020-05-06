@@ -50,7 +50,7 @@ a, a:hover, a:visited, a:active {
     display: none;
     width: 300px;
     background-color: #eee;
-    border: 1px solid #bbb;
+    border: 2px solid #bbb;
     padding: 0.4rem;
     font-size: 10pt;
 }
