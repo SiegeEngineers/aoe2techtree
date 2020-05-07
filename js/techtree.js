@@ -1,8 +1,8 @@
 var TYPES = Object.freeze({
-    "BUILDING": {colour: '#922602', type: 'BUILDING'},
-    "UNIT": {colour: '#3a6a80', type: 'UNIT'},
-    "UNIQUEUNIT": {colour: '#af30a3', type: 'UNIQUEUNIT'},
-    "TECHNOLOGY": {colour: '#2c5729', type: 'TECHNOLOGY'}
+    "BUILDING": {colour: '#922602', type: 'BUILDING', dataType: 'buildings'},
+    "UNIT": {colour: '#3a6a80', type: 'UNIT', dataType: 'units'},
+    "UNIQUEUNIT": {colour: '#af30a3', type: 'UNIQUEUNIT', dataType: 'units'},
+    "TECHNOLOGY": {colour: '#2c5729', type: 'TECHNOLOGY', dataType: 'techs'}
 });
 
 var PREFIX = Object.freeze({
@@ -504,6 +504,7 @@ class Caret {
         this.icon = null;
         this.name = name;
         this.id = PREFIX[type.type] + formatId(id);
+        this.data_id = formatId(id);
         this.width = 100;
         this.height = 100;
         this.x = 0;
@@ -524,6 +525,10 @@ class Caret {
 
     isTech() {
         return this.type === TYPES.TECHNOLOGY;
+    }
+
+    getDataType() {
+        return this.type.dataType;
     }
 }
 
@@ -618,14 +623,14 @@ function unique(ids, monk_prefix) {
     if (monk_prefix === undefined) {
         monk_prefix = MONK_PREFIX_GENERIC;
     }
-    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
-    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
-    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
-    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
-    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
-    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
-    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
-    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
+    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(i18next.t(data.data.units[ids[0]].LanguageNameId)));
+    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': i18next.t(data.data.units[ids[0]].LanguageNameId), 'id':'unit_'+ids[0]});
+    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(i18next.t(data.data.units[ids[1]].LanguageNameId)));
+    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': i18next.t(data.data.units[ids[1]].LanguageNameId), 'id':'unit_'+ids[1]});
+    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_text').text(formatName(i18next.t(data.data.techs[ids[2]].LanguageNameId)));
+    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_overlay').data({'name': i18next.t(data.data.techs[ids[2]].LanguageNameId), 'id':'tech_'+ids[2]});
+    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_text').text(formatName(i18next.t(data.data.techs[ids[3]].LanguageNameId)));
+    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': i18next.t(data.data.techs[ids[3]].LanguageNameId), 'id':'tech_'+ids[3]});
     SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
     SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
     SVG.get('unit_' + formatId(MONK) + '_img').load('img/Units/' + monk_prefix + 'monk.png');
@@ -642,7 +647,7 @@ function getName(id, itemtype) {
         return id;
     }
     const languageNameId = data['data'][itemtype][id]['LanguageNameId'];
-    return data['strings'][languageNameId];
+    return i18next.t(languageNameId);
 }
 
 function building(id) {
