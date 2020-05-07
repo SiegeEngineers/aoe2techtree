@@ -6,7 +6,7 @@ body {
     --xRef-badge-size: 30px;
 }
 
-body, input, select {
+body, input, select, tspan {
     font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
     line-height: 1.6;
 }
@@ -17,19 +17,21 @@ body {
     justify-content: center;
     align-items: center;
     background: url("img/Backgrounds/bg_aoe2_hd_paper.jpg") repeat;
+    font-size: 10pt;
 }
 
 a, a:hover, a:visited, a:active {
     color: #4d3617;
 }
 
-.info {
+.credits,
+.credits a {
     font-size: 8pt;
     color: #4d3617;
 }
 
-.info p {
-    margin-top: 0;
+.credits p {
+    margin-bottom: 0;
 }
 
 #container {
@@ -128,11 +130,11 @@ a, a:hover, a:visited, a:active {
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 2rem 1rem 1rem;
+    padding: 1rem;
 }
 
 #civselect {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     background-color: #72604a;
     flex: 1 0 auto;
@@ -140,6 +142,7 @@ a, a:hover, a:visited, a:active {
     color: white;
     text-shadow: #000000 -3px 2px;
     box-shadow: inset 0 2px #3f4806, inset 2px -2px #768141, inset -2px 0 #768141;
+    height: 36px;
     padding: 5px;
 }
 
@@ -157,11 +160,9 @@ a, a:hover, a:visited, a:active {
 }
 
 #civtitle {
-    height: 52px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
 }
 
 #thanks {

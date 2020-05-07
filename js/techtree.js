@@ -1,8 +1,8 @@
 var TYPES = Object.freeze({
-    "BUILDING": {colour: '#922602', type: 'BUILDING'},
-    "UNIT": {colour: '#3a6a80', type: 'UNIT'},
-    "UNIQUEUNIT": {colour: '#af30a3', type: 'UNIQUEUNIT'},
-    "TECHNOLOGY": {colour: '#2c5729', type: 'TECHNOLOGY'}
+    "BUILDING": {colour: '#922602', type: 'BUILDING', name: 'Building'},
+    "UNIT": {colour: '#3a6a80', type: 'UNIT', name: 'Unit'},
+    "UNIQUEUNIT": {colour: '#af30a3', type: 'UNIQUEUNIT', name: 'Unique Unit'},
+    "TECHNOLOGY": {colour: '#2c5729', type: 'TECHNOLOGY', name: 'Technology'}
 });
 
 var PREFIX = Object.freeze({

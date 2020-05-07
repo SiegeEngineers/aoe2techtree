@@ -53,12 +53,22 @@
                         <option>Vietnamese</option>
                         <option>Vikings</option>
                     </select>
-                    <img id="civlogo" height=52 width=52 data-transparent="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
+                    <img id="civlogo" height="81" width="81" data-transparent="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
                 </div>
-                <hr>
                 <p id="civtext"></p>
             </div>
-            <div class="info">
+            <div class="key">
+                <b id="key__label"></b>
+                <table border="0" cellspacing="10" id="color_key">
+                    <colgroup>
+                        <col width="23"/>
+                        <col width="110"/>
+                        <col width="23"/>
+                        <col width="110"/>
+                    </colgroup>
+                </table>
+            </div>
+            <div class="credits">
                 <p>
                     Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36906/" target="_blank" title="Changelog" rel="nofollow">36906</a>
                 </p>
@@ -190,7 +200,7 @@
             let age_image_group = draw.group().click(hideHelp);
             let age_image = age_image_group.image('img/Ages/' + image_urls[i], icon_width, icon_height).y(row_height * i + vertical_spacing).x(margin_left);
             age_image_group.text(age_names[i])
-                .font({family: 'Merriweather, Georgia, serif', size: 16, weight: 'bold'})
+                .font({size: 16, weight: 'bold'})
                 .attr({fill: '#000000', opacity: 0.8, 'text-anchor': 'middle'})
                 .move(icon_width / 2 + margin_left, age_image.attr('y') + icon_height + 5);
         }
@@ -217,7 +227,7 @@
                     }).move(caret.x, caret.y);
                     let name = formatName(caret.name);
                     var text = item.text(name.toString())
-                        .font({family: 'Merriweather, Georgia, serif', size: 9, weight: 'bold'})
+                        .font({size: 9, weight: 'bold'})
                         .attr({fill: '#ffffff', opacity:0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
                     var image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
@@ -252,6 +262,8 @@
         loadCiv();
         // Make the xref badges
         createXRefBadges();
+        // Create Legend
+        create_colour_key();
     });
 
     function imagePrefix(name) {
@@ -666,6 +678,29 @@
             value += " " + cost_object.Stone + "S";
         }
         return value;
+    }
+
+    function create_colour_key() {
+        let legend = [TYPES.UNIQUEUNIT, TYPES.UNIT, TYPES.BUILDING, TYPES.TECHNOLOGY];
+        let kc = document.getElementById('color_key');
+        let tr = null
+        for (let index in legend) {
+            if (index % 2 === 0) {
+                tr = document.createElement('tr');
+            }
+            let td_color = document.createElement('td');
+            td_color.style.backgroundColor = legend[index]['colour'];
+            td_color.style.border = '1px outset #8a5d21';
+            tr.appendChild(td_color);
+            let td_type = document.createElement('td');
+            td_type.innerText = data.strings[data.tech_tree_strings[legend[index]['name']]];
+            // td_type.style.fontWeight = 'bold';
+            tr.appendChild(td_type);
+            if (index % 2 === 1) {
+                kc.appendChild(tr);
+            }
+        }
+        document.getElementById('key__label').innerText = data.strings[data.tech_tree_strings["Key"]];
     }
 </script>
 </body>

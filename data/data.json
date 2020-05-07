@@ -11952,6 +11952,8 @@
         "7435": "Herbal Medicine",
         "7438": "Shinkichon",
         "7439": "Perfusion",
+        "9681": "Civilization",
+        "9799": "Technology Tree",
         "10271": "Britons",
         "10272": "Franks",
         "10273": "Goths",
@@ -12343,6 +12345,20 @@
         "120181": "Infantry and Cavalry civilization <br>\n<br>\n\u2022 Militia-line upgrades free <br>\n\u2022 Town Centers cost -50% stone<br>\n\u2022 Can build Krepost <br>\n<br>\n<b>Unique Unit:</b> <br>\nKonnik (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Stirrups (Cavalry attack 25% faster) <br>\n\u2022 Bagains (Militia-line gains +5 armor) <br>\n<br>\n<b>Team Bonus:</b> <br>\nBlacksmiths work 50% faster",
         "120182": "Cavalry Archer civilization <br>\n<br>\n\u2022 Villagers gather +50% food from herdables <br>\n\u2022 Units deal +25% damage when fighting from higher elevation <br>\n\u2022 Thumb Ring, Parthian Tactics free <br>\n<br>\n<b>Unique Units:</b> <br>\nKeshik (raiding cavalry), Flaming Camel (petard)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Silk Armor (Light Cavalry, Steppe Lancers and Cavalry Archers receive +1P armor) <br>\n\u2022 Timurid Siegecraft (Trebuchets +2 range, enables Flaming Camels)<br>\n<br>\n<b>Team Bonus:</b> <br>\nCavalry Archers +2 LOS",
         "120183": "Cavalry civilization <br>\n<br>\n\u2022 Additional Town Center can be built in the Feudal Age <br>\n\u2022 Siege Workshop and Battering Ram available in the Feudal Age; Capped Ram upgrade available in Castle Age<br>\n\u2022 Cavalry 5% faster each age (starting in Feudal Age) <br>\n<br>\n<b>Unique Unit:</b> <br>\nKipchak (cavalry archer)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Steppe Husbandry (Light Cavalry, Steppe Lancers and Cavalry Archers trained 50% faster) <br>\n\u2022 Cuman Mercenaries (team members can create 10 free Elite Kipchaks in the Castle)<br>\n<br>\n<b>Team Bonus:</b> <br>\nPalisade Walls +50% HP",
-        "120184": "Cavalry and Monk civilization <br>\n<br>\n\u2022 Start with +150 food <br>\n\u2022 Spearman-line and Skirmishers move 10% faster<br>\n\u2022 Each garrisoned relic gives +1 attack to Knights and Leitis (maximum +4) <br>\n<br>\n<b>Unique Unit:</b> <br>\nLeitis (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Hill Forts (Town Centers +3 range) <br>\n\u2022 Tower Shields (Spearman-line and Skirmishers +2P armor)<br>\n<br>\n<b>Team Bonus:</b> <br>\nMonasteries work 20% faster"
+        "120184": "Cavalry and Monk civilization <br>\n<br>\n\u2022 Start with +150 food <br>\n\u2022 Spearman-line and Skirmishers move 10% faster<br>\n\u2022 Each garrisoned relic gives +1 attack to Knights and Leitis (maximum +4) <br>\n<br>\n<b>Unique Unit:</b> <br>\nLeitis (cavalry)<br>\n<br>\n<b>Unique Techs:</b> <br>\n\u2022 Hill Forts (Town Centers +3 range) <br>\n\u2022 Tower Shields (Spearman-line and Skirmishers +2P armor)<br>\n<br>\n<b>Team Bonus:</b> <br>\nMonasteries work 20% faster",
+        "300081": "Key",
+        "300082": "Unique Unit",
+        "300083": "Unit",
+        "300084": "Building",
+        "300085": "Technology"
+    },
+    "tech_tree_strings": {
+        "Building": "300084",
+        "Civilization": "9681",
+        "Key": "300081",
+        "Technology": "300085",
+        "Technology Tree": "9799",
+        "Unique Unit": "300082",
+        "Unit": "300083"
     }
 }
