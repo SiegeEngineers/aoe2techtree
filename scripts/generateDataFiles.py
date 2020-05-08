@@ -5,6 +5,15 @@ import json
 import re
 from pathlib import Path
 
+TECH_TREE_STRINGS = {
+    "Civilization": "9681",
+    "Technology Tree": "9799",
+    "Key": "300081",
+    "Unique Unit": "300082",
+    "Unit": "300083",
+    "Building": "300084",
+    "Technology": "300085"
+}
 
 AGE_NAMES = {
     "Dark Age": "4201",
@@ -457,7 +466,7 @@ def main():
     key_value_filtered = gather_language_data(resourcesdir, data, 'en')
 
     print(json.dumps(
-        {"age_names": AGE_NAMES, "civ_names": CIV_NAMES, "civ_helptexts": CIV_HELPTEXTS, "data": data, "strings": key_value_filtered},
+        {"tech_tree_strings": TECH_TREE_STRINGS, "age_names": AGE_NAMES, "civ_names": CIV_NAMES, "civ_helptexts": CIV_HELPTEXTS, "data": data, "strings": key_value_filtered},
         indent=4,
         sort_keys=True))
 
@@ -488,6 +497,9 @@ def gather_language_data(resourcesdir, data, language):
         key_value_filtered[key] = key_value[key]
     for name in AGE_NAMES:
         key = int(AGE_NAMES[name])
+        key_value_filtered[key] = key_value[key]
+    for name in TECH_TREE_STRINGS:
+        key = int(TECH_TREE_STRINGS[name])
         key_value_filtered[key] = key_value[key]
     return key_value_filtered
 
