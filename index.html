@@ -269,16 +269,24 @@
     });
 
     function setAdvancedStatsState() {
-        let showAdvancedStats = localStorage.getItem('showAdvancedStats');
-        let advancedStats = document.getElementById('advanced-stats');
-        if (showAdvancedStats === 'true') {
-            advancedStats.open = true;
+        try {
+            let showAdvancedStats = localStorage.getItem('showAdvancedStats');
+            let advancedStats = document.getElementById('advanced-stats');
+            if (showAdvancedStats === 'true') {
+                advancedStats.open = true;
+            }
+            advancedStats.onclick = onAdvancedStatsStateUpdate;
+        } catch (e) {
+            // pass
         }
-        advancedStats.onclick = onAdvancedStatsStateUpdate;
     }
 
     function onAdvancedStatsStateUpdate() {
-        localStorage.setItem('showAdvancedStats', (!document.getElementById('advanced-stats').open).toString());
+        try {
+            localStorage.setItem('showAdvancedStats', (!document.getElementById('advanced-stats').open).toString());
+        } catch (e) {
+            // pass
+        }
     }
 
     function imagePrefix(name) {
