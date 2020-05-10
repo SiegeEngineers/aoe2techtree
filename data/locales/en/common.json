@@ -1,0 +1,24 @@
+{    
+    "Cost": "Cost: {{value}}",
+    "HP": "HP: {{value}}",
+    "Attack": "Attack: {{value}}",
+    "Armor": "Armor: {{value}}",
+    "Piercearmor": "Piercearmor: {{value}}",
+    "Garrison": "Garrison: {{value}}",
+    "Range": "Range: {{value}}",
+    "Min Range": "Min Range: {{value}}",
+    "Line of Sight": "Line of Sight: {{value}}",
+    "Speed": "Speed: {{value}}",
+    "Frame Delay": "Frame Delay: {{value}}",
+    "Reload Time": "Reload Time: {{value}}",
+    "Accuracy": "Accuracy: {{value}}",
+    "Build Time": "Build Time: {{value}}",
+    "Research Time": "Research Time: {{value}}",
+
+    "Infantry": "Infantry",
+    "Turtle Ships": "Turtle Ships",
+    "Base Pierce": "Base Pierce",
+    "Base Melee": "Base Melee",
+    "War Elephants": "War Elephants",
+    "Cavalry": "Cavalry"
+}
