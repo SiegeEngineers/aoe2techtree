@@ -92,7 +92,7 @@
         <div id="techtree">
             <div id="helptext">
                 <div id="helptext__content"></div>
-                <details>
+                <details id="advanced-stats">
                     <summary>Advanced Stats</summary>
                     <div id="helptext__advanced_stats"></div>
                     <div id="helptext__x_ref"><h3>Civilizations</h3></div>
@@ -151,6 +151,8 @@
         35: "Mamelukes",
         36: "Heroes and Kings",
     };
+
+    setAdvancedStatsState();
 
     loadJson(function (response) {
 
@@ -266,8 +268,21 @@
         create_colour_key();
     });
 
+    function setAdvancedStatsState() {
+        let showAdvancedStats = localStorage.getItem('showAdvancedStats');
+        let advancedStats = document.getElementById('advanced-stats');
+        if (showAdvancedStats === 'true') {
+            advancedStats.open = true;
+        }
+        advancedStats.onclick = onAdvancedStatsStateUpdate;
+    }
+
+    function onAdvancedStatsStateUpdate() {
+        localStorage.setItem('showAdvancedStats', (!document.getElementById('advanced-stats').open).toString());
+    }
+
     function imagePrefix(name) {
-        return name.replace('_copy','')
+        return name.replace('_copy', '')
             .replace("building_", "Buildings/")
             .replace("unit_", "Units/")
             .replace("tech_", "Techs/");
