@@ -769,13 +769,13 @@
             td_color.style.border = '1px outset #8a5d21';
             tr.appendChild(td_color);
             let td_type = document.createElement('td');
-            td_type.innerText = data.strings[data.tech_tree_strings[legend[index]['name']]];
+            td_type.innerText = i18next.t(data.tech_tree_strings[legend[index]['name']]);
             tr.appendChild(td_type);
             if (index % 2 === 1) {
                 kc.appendChild(tr);
             }
         }
-        document.getElementById('key__label').innerText = data.strings[data.tech_tree_strings["Key"]];
+        document.getElementById('key__label').innerText = i18next.t(data.tech_tree_strings["Key"]);
     }
 
     /**
