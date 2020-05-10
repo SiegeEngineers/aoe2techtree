@@ -17,45 +17,46 @@
             <div id="civinfo">
                 <div id="civtitle">
                     <select id="civselect" onchange="loadCiv()">
-                        <option>Aztecs</option>
-                        <option>Berbers</option>
-                        <option>Britons</option>
-                        <option>Bulgarians</option>
-                        <option>Burmese</option>
-                        <option>Byzantines</option>
-                        <option>Celts</option>
-                        <option>Chinese</option>
-                        <option>Cumans</option>
-                        <option>Ethiopians</option>
-                        <option>Franks</option>
-                        <option>Goths</option>
-                        <option>Huns</option>
-                        <option>Incas</option>
-                        <option>Indians</option>
-                        <option>Italians</option>
-                        <option>Japanese</option>
-                        <option>Khmer</option>
-                        <option>Koreans</option>
-                        <option>Lithuanians</option>
-                        <option>Magyars</option>
-                        <option>Malay</option>
-                        <option>Malians</option>
-                        <option>Mayans</option>
-                        <option>Mongols</option>
-                        <option>Persians</option>
-                        <option>Portuguese</option>
-                        <option>Saracens</option>
-                        <option>Slavs</option>
-                        <option>Spanish</option>
-                        <option>Tatars</option>
-                        <option>Teutons</option>
-                        <option>Turks</option>
-                        <option>Vietnamese</option>
-                        <option>Vikings</option>
+                        <option data-i18n="10285" data-key="Aztecs">Aztecs</option>
+                        <option data-i18n="10297" data-key="Berbers">Berbers</option>
+                        <option data-i18n="10271" data-key="Britons">Britons</option>
+                        <option data-i18n="10302" data-key="Bulgarians">Bulgarians</option>
+                        <option data-i18n="10300" data-key="Burmese">Burmese</option>
+                        <option data-i18n="10277" data-key="Byzantines">Byzantines</option>
+                        <option data-i18n="10283" data-key="Celts">Celts</option>
+                        <option data-i18n="10276" data-key="Chinese">Chinese</option>
+                        <option data-i18n="10304" data-key="Cumans">Cumans</option>
+                        <option data-i18n="10295" data-key="Ethiopians">Ethiopians</option>
+                        <option data-i18n="10272" data-key="Franks">Franks</option>
+                        <option data-i18n="10273" data-key="Goths">Goths</option>
+                        <option data-i18n="10287" data-key="Huns">Huns</option>
+                        <option data-i18n="10291" data-key="Incas">Incas</option>
+                        <option data-i18n="10290" data-key="Indians">Indians</option>
+                        <option data-i18n="10289" data-key="Italians">Italians</option>
+                        <option data-i18n="10275" data-key="Japanese">Japanese</option>
+                        <option data-i18n="10298" data-key="Khmer">Khmer</option>
+                        <option data-i18n="10288" data-key="Koreans">Koreans</option>
+                        <option data-i18n="10305" data-key="Lithuanians">Lithuanians</option>
+                        <option data-i18n="10292" data-key="Magyars">Magyars</option>
+                        <option data-i18n="10299" data-key="Malay">Malay</option>
+                        <option data-i18n="10296" data-key="Malians">Malians</option>
+                        <option data-i18n="10286" data-key="Mayans">Mayans</option>
+                        <option data-i18n="10282" data-key="Mongols">Mongols</option>
+                        <option data-i18n="10278" data-key="Persians">Persians</option>
+                        <option data-i18n="10294" data-key="Portuguese">Portuguese</option>
+                        <option data-i18n="10279" data-key="Saracens">Saracens</option>
+                        <option data-i18n="10293" data-key="Slavs">Slavs</option>
+                        <option data-i18n="10284" data-key="Spanish">Spanish</option>
+                        <option data-i18n="10303" data-key="Tatars">Tatars</option>
+                        <option data-i18n="10274" data-key="Teutons">Teutons</option>
+                        <option data-i18n="10280" data-key="Turks">Turks</option>
+                        <option data-i18n="10301" data-key="Vietnamese">Vietnamese</option>
+                        <option data-i18n="10281" data-key="Vikings">Vikings</option>
                     </select>
                     <img id="civlogo" height="81" width="81" data-transparent="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
                 </div>
                 <p id="civtext"></p>
+                <div id="loading" class="lds-dual-ring"></div>
             </div>
             <div class="key">
                 <b id="key__label"></b>
@@ -69,6 +70,26 @@
                 </table>
             </div>
             <div class="credits">
+                <div>
+                 <!-- "Language supported" in the same order as they appear in Microsoft's product page:
+                        https://www.microsoft.com/en-us/p/age-of-empires-ii-definitive-edition/9njdd0jgpp2q -->
+                    [<a href="#" title="English (United States)" data-lang="en">en</a>]
+                    [<a href="#" title="中文(中国)" data-lang="zh">zh</a>]
+                    [<a href="#" title="中文(香港特別行政區)" data-lang="tw">tw</a>]
+                    [<a href="#" title="Français (France)" data-lang="fr">fr</a>]
+                    [<a href="#" title="Deutsch (Deutschland)" data-lang="de">de</a>]
+                    [<a href="#" title="हिंदी (भारत)" data-lang="hi">hi</a>]
+                    [<a href="#" title="Italiano (Italia)" data-lang="it">it</a>]
+                    [<a href="#" title="日本語 (日本)" data-lang="jp">jp</a>]
+                    [<a href="#" title="한국어(대한민국)" data-lang="ko">ko</a>]
+                    [<a href="#" title="Bahasa Melayu (Malaysia)" data-lang="ms">ms</a>]
+                    [<a href="#" title="Русский (Россия)" data-lang="ru">ru</a>]
+                    [<a href="#" title="Español (España, Internacional)" data-lang="es">es</a>]
+                    [<a href="#" title="Español (México)" data-lang="mx">mx</a>]
+                    [<a href="#" title="Türkçe (Türkiye)" data-lang="tr">tr</a>]
+                    [<a href="#" title="Tiếng Việt (Việt Nam)" data-lang="vi">vi</a>]
+                    [<a href="#" title="Português (Brasil)" data-lang="br">br</a>]
+                </div>
                 <p>
                     Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-36906/" target="_blank" title="Changelog" rel="nofollow">36906</a>
                 </p>
@@ -102,15 +123,21 @@
     </div>
 </div>
 <script type="text/javascript" src="js/svg.min.js"></script>
+<script type="text/javascript" src="js/i18next@19.3.4.min.js"></script>
+<script type="text/javascript" src="js/i18nextXHRBackend.min.js"></script>
 <script type="text/javascript" src="js/techtree.js"></script>
 <script type="text/javascript" src="js/civs.js"></script>
 <script type="text/javascript">
+
+    document.getElementById('civselect').selectedIndex = -1;
+
     let tree;
     let data = {};
     let connections;
     let parentConnections;
     let connectionpoints;
     let focusedNodeId = null;
+    let treeTexts = [];
 
     const unitClasses = {
         0: "Unused",
@@ -152,9 +179,13 @@
         36: "Heroes and Kings",
     };
 
+    initLocalization(function(){
+        loadJson(onJsonData);
+    });
+
     setAdvancedStatsState();
 
-    loadJson(function (response) {
+    function onJsonData(response) {
 
         data = JSON.parse(response);
 
@@ -165,8 +196,9 @@
 
         let hash = window.location.hash.substr(1);
         let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
-        if (capitalisedHash in data.civ_names) {
-            document.getElementById('civselect').value = capitalisedHash;
+        const civHashIndex = Object.keys(data.civ_names).indexOf(capitalisedHash);
+        if (civHashIndex !== -1) {
+            document.getElementById('civselect').selectedIndex = civHashIndex;
         }
 
         const draw = SVG('techtree').id('root').size(tree.width, tree.height)
@@ -193,10 +225,10 @@
         let margin_left = 20;
         let image_urls = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
         let age_names = [
-            data.strings[data.age_names["Dark Age"]],
-            data.strings[data.age_names["Feudal Age"]],
-            data.strings[data.age_names["Castle Age"]],
-            data.strings[data.age_names["Imperial Age"]]
+            i18next.t(data.age_names["Dark Age"]),
+            i18next.t(data.age_names["Feudal Age"]),
+            i18next.t(data.age_names["Castle Age"]),
+            i18next.t(data.age_names["Imperial Age"])
         ];
         for (let i = 0; i < image_urls.length; i++) {
             let age_image_group = draw.group().click(hideHelp);
@@ -227,10 +259,22 @@
                         fill: caret.type.colour,
                         id: `${caret.id}_bg`
                     }).move(caret.x, caret.y);
-                    let name = formatName(caret.name);
+
+
+                    let dataType = caret.getDataType();
+                    let id = caret.data_id.replace('_copy', '');
+                    let langData = data.data[dataType][id];
+                    let name = caret.name;
+                    let languageNameId = "NONE";
+                    if (langData) {
+                        languageNameId = langData['LanguageNameId'];
+                        name = formatName(i18next.t(languageNameId));
+                    } else {
+                        // TODO: Invesitage this case further.
+                    }
                     var text = item.text(name.toString())
                         .font({size: 9, weight: 'bold'})
-                        .attr({fill: '#ffffff', opacity:0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
+                        .attr({fill: '#ffffff', opacity:0.95, 'text-anchor': 'middle', id: caret.id + '_text', i18n: languageNameId})
                         .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
                     var image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
                         .attr({fill: '#000000', opacity:0.5, id: caret.id + '_imgph'})
@@ -257,16 +301,25 @@
                             displayHelp(caret.id);
                         });
 
+                    treeTexts.push(text);
                 }
             }
         }
 
+        const domSelect = document.getElementById('civselect');
+        if (domSelect.selectedIndex === -1) {
+            domSelect.selectedIndex = 0;
+        }
         loadCiv();
         // Make the xref badges
         createXRefBadges();
         // Create Legend
         create_colour_key();
-    });
+
+        requestAnimationFrame(() => {
+            document.getElementById('loading').style.display = 'none';
+        });
+    }
 
     function setAdvancedStatsState() {
         try {
@@ -297,16 +350,16 @@
     }
 
     function loadCiv() {
-        const selectedCiv = document.getElementById('civselect').value;
-        civ(selectedCiv, tree);
-        if (selectedCiv in data.civ_helptexts) {
-            document.getElementById('civtext').innerHTML = data.strings[data.civ_helptexts[selectedCiv]];
-            document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
-            window.location.hash = selectedCiv;
-        } else {
-            document.getElementById('civtext').innerHTML = "";
-            document.getElementById('civlogo').src = document.getElementById('civlogo').dataset.transparent;
-        }
+        const domSelect = document.getElementById('civselect');
+        const domCivText = document.getElementById('civtext');
+        const domCivLogo = document.getElementById('civlogo');
+
+        const dataKey = domSelect.children[domSelect.selectedIndex].getAttribute('data-key'); // i.e: "Aztecs"
+        civ(dataKey, tree);
+        domCivText.innerHTML = i18next.t(data.civ_helptexts[dataKey]);
+        domCivText.setAttribute('data-i18n', data.civ_helptexts[dataKey]);
+        domCivLogo.src = `./img/Civs/${dataKey.toLowerCase()}.png`;
+        window.location.hash = dataKey;
         hideHelp();
     }
 
@@ -433,11 +486,22 @@
         helptext.style.left = destX + 'px';
     }
 
+    function getEntityType(type) {
+        let entitytype = 'buildings';
+        if (type === "UNIT" || type === "UNIQUEUNIT") {
+            entitytype = 'units';
+        }
+        if (type === "TECHNOLOGY") {
+            entitytype = 'techs';
+        }
+        return entitytype;
+    }
+
     function getHelpText(name, id, type) {
         let entitytype = getEntityType(type);
         const items = id.split('_', 1);
         id = id.substring(items[0].length + 1);
-        let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
+        let text = i18next.t(data.data[entitytype][id]['LanguageHelpId']);
         if (text === undefined) {
             return "?";
         }
@@ -456,35 +520,36 @@
         }
         let meta = data.data[entitytype][id];
         if (meta !== undefined) {
-            text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
+            text = text.replace(/‹cost›/, i18next.t('Cost', { value: cost(meta.Cost) }));
             let stats = []
             if (text.match(/‹hp›/)) {
-                stats.push("HP:&nbsp;" + meta.HP);
+                stats.push(i18next.t('HP', { value: meta.HP }));
             }
             if (text.match(/‹attack›/)) {
-                stats.push("Attack:&nbsp;" + meta.Attack);
+                stats.push(i18next.t('Attack', { value: meta.Attack }));
             }
             if (text.match(/‹(A|a)rmor›/)) {
-                stats.push("Armor:&nbsp;" + meta.MeleeArmor);
+                stats.push(i18next.t('Armor', { value: meta.MeleeArmor }));
             }
             if (text.match(/‹(P|p)iercearmor›/)) {
-                stats.push("Pierce armor:&nbsp;" + meta.PierceArmor);
+                stats.push(i18next.t('Piercearmor', { value: meta.PierceArmor }));
             }
             if (text.match(/‹garrison›/)) {
-                stats.push("Garrison:&nbsp;" + meta.GarrisonCapacity);
+                stats.push(i18next.t('Garrison', { value: meta.GarrisonCapacity }));
             }
             if (text.match(/‹range›/)) {
-                stats.push("Range:&nbsp;" + meta.Range);
+                stats.push(i18next.t('Range', { value: meta.Range }));
             }
-            stats.push(minRangeIfDefined(meta.MinRange, "Min Range:&nbsp;"));
-            stats.push(ifDefined(meta.LineOfSight, "Line of Sight:&nbsp;"));
-            stats.push(ifDefined(meta.Speed, "Speed:&nbsp;"));
-            stats.push(secondsIfDefined(meta.TrainTime, "Build Time:&nbsp;"));
-            stats.push(secondsIfDefined(meta.ResearchTime, "Research Time:&nbsp;"));
-            stats.push(ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;"));
-            stats.push(secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;"));
-            stats.push(accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;"));
-            text = text.replace(/<p class="helptext__stats">(.+?)<\/p>/, "<h3>Stats</h3><p>" + stats.filter(Boolean).join(', ') + "<p>")
+            stats.push(minRangeIfDefined(meta.MinRange, "Min Range"));
+            stats.push(ifDefined(meta.LineOfSight, "Line of Sight"));
+            stats.push(ifDefined(meta.Speed, "Speed"));
+            stats.push(secondsIfDefined(meta.TrainTime, "Build Time"));
+            stats.push(secondsIfDefined(meta.ResearchTime, "Research Time"));
+            stats.push(ifDefined(meta.FrameDelay, "Frame Delay"));
+            stats.push(secondsIfDefined(meta.ReloadTime, "Reload Time"));
+            stats.push(accuracyIfDefined(meta.AccuracyPercent, "Accuracy"));
+            const statsFormatted = "<h3>" + i18next.t("Stats") + "</h3><p>" + stats.filter(Boolean).join(', ') + "<p>";
+            text = text.replace(/<p class="helptext__stats">(.+?)<\/p>/, statsFormatted);
         } else {
             console.error("No metadata found for " + name);
         }
@@ -530,16 +595,25 @@
         for (let civ of Object.keys(data.civ_names)) {
             let xRefLink = document.createElement('button');
             xRefLink.addEventListener('click', function() {
-              document.getElementById('civselect').value=civ;
-              loadCiv();
+                const domSelect = document.getElementById('civselect');
+                var index;
+                for (var i=0; i<domSelect.children.length; ++i) {
+                    if (domSelect.children[i].getAttribute('data-key')===civ) {
+                        index = i;
+                        break;
+                    }
+                }
+                domSelect.selectedIndex = index;
+                loadCiv();
             });
 
             let xRefImage = document.createElement('img');
 
             xRefImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
-            xRefImage.title = `${civ}`;
+            xRefImage.title = i18next.t(data.civ_names[civ]);
+            xRefImage.setAttribute('data-i18n', data.civ_names[civ]);
             xRefImage.id = `xRef__badge__${civ}`;
-            xRefImage.classList.add('xRef__badge')
+            xRefImage.classList.add('xRef__badge');
             xRefLink.appendChild(xRefImage);
             xRefLinks.appendChild(xRefLink);
         }
@@ -640,38 +714,39 @@
         return Object.keys(civsConfig).map((key) => civsConfig[key].unique.slice(2, 4)).flat();
     }
 
-    function ifDefined(value, prefix) {
+    function ifDefined(value, locKey) {
         if (value !== undefined) {
-            return " " + prefix + value;
+            return " " + i18next.t(locKey, { value: value });
         } else {
             return "";
         }
     }
 
-    function secondsIfDefined(value, prefix) {
+    function secondsIfDefined(value, locKey) {
         if (value !== undefined) {
-            return " " + prefix + value + "s";
+            return " " + i18next.t(locKey, { value: value }) + "s";
         } else {
             return "";
         }
     }
 
-    function accuracyIfDefined(value, prefix) {
+    function accuracyIfDefined(value, locKey) {
         if (value !== undefined && value < 100) {
-            return " " + prefix + value + "%";
+            return " " + i18next.t(locKey, { value: value }) + "%";
         } else {
             return "";
         }
     }
 
-    function minRangeIfDefined(value, prefix) {
+    function minRangeIfDefined(value, locKey) {
         if (value !== undefined && value > 0) {
-            return " " + prefix + value;
+            return " " + i18next.t(locKey, { value: value });
         } else {
             return "";
         }
     }
 
+    // TODO: Localize
     function arrayIfDefinedAndNonEmpty(attacks, prefix) {
         if (attacks === undefined || attacks.length < 1) {
             return "";
@@ -686,6 +761,7 @@
         }
     }
 
+    // Do not localize F/W/G/S
     function cost(cost_object) {
         let value = "";
         if ("Food" in cost_object) {
@@ -716,14 +792,135 @@
             td_color.style.border = '1px outset #8a5d21';
             tr.appendChild(td_color);
             let td_type = document.createElement('td');
-            td_type.innerText = data.strings[data.tech_tree_strings[legend[index]['name']]];
+            td_type.innerText = i18next.t(data.tech_tree_strings[legend[index]['name']]);
             tr.appendChild(td_type);
             if (index % 2 === 1) {
                 kc.appendChild(tr);
             }
         }
-        document.getElementById('key__label').innerText = data.strings[data.tech_tree_strings["Key"]];
+        document.getElementById('key__label').innerText = i18next.t(data.tech_tree_strings["Key"]);
     }
+
+    /**
+     * Initializes localization engine, and localizes the website
+     * to the last-specified language (stored in localStorage, if available).
+     *
+     * @param {function} [callback] - Invoked when the initialization subsystem is done initializing.
+     */
+    function initLocalization(callback) {
+
+        // get language from localStorage, or default to English.
+        const initLocale = localStorage.getItem('user-locale') || 'en';
+
+        // Add click events to localization buttons.
+        var langButtons = document.querySelectorAll('[data-lang]');
+        for (var i=0; i<langButtons.length; ++i) {
+            langButtons[i].addEventListener('click', (event) => {
+                event.preventDefault();
+                const langCode = event.target.getAttribute('data-lang');
+                localStorage.setItem('user-locale', langCode); // Only store when UI is involved.
+                setLanguage(langCode);
+            });
+        }
+
+        // Both i18next and i18nextXHRBackend are global variables
+        // injected by their respective <script> tags.
+        i18next
+            .use(i18nextXHRBackend)
+            .init({
+                // https://www.i18next.com/overview/configuration-options
+                lng: initLocale,
+                fallbackLng: 'en',
+                ns: ['common', 'strings'],
+                defaultNS: 'common',
+                fallbackNS: ['strings'],
+                backend: {
+                    // Documentation: https://github.com/i18next/i18next-xhr-backend
+                    loadPath: 'data/locales/{{lng}}/{{ns}}.json',
+                    crossDomain: false,
+                    withCredentials: false,
+                    overrideMimeType: false
+                }
+            },
+            function onLocalization(err, _t) {
+                onLanguageSet(err, _t);
+                callback && callback();
+            });
+    }
+
+    /**
+     * Changes the language by loading the appropriate
+     * localization json from server.
+     */
+    function setLanguage(langCode) {
+
+        // Avoid setting the same language again...
+        if (langCode === i18next.language) {
+            return
+        }
+
+        //document.getElementById('civtext').innerText = '';
+        document.getElementById('loading').style.display = 'block';
+        i18next.changeLanguage(langCode, onLanguageSet);
+    }
+
+    /**
+     * Invoked every time the languate is set.
+     * Responsible for updating the site's locales (strings).
+     *
+     * @param {Array[]} err - populated if there's an error settings the language, else null
+     * @param {function} _t - A reference to function: i18next.t
+     */
+    function onLanguageSet(err, _t) {
+
+        document.getElementById('loading').style.display = 'none';
+
+        console.log('Language:', i18next.language);
+
+        // Update HTML text nodes
+        var elements = document.querySelectorAll('[data-i18n]');
+        for (var i=0, len=elements.length; i<len; ++i) {
+
+            var domElem = elements[i];
+            var locKey = domElem.getAttribute('data-i18n');
+
+            if (!locKey) {
+                console.warn('Could not localize: (' + locKey + ')');
+                continue;
+            }
+
+            // Set localized string back into the DOM element's end-user visible property
+            switch (domElem.nodeName) {
+
+                case 'OPTION':
+                case 'SPAN':
+                    domElem.innerText = _t(locKey);
+                    break;
+
+                case "P":
+                    domElem.innerHTML = _t(locKey);
+                    break;
+
+                case "IMG":
+                    domElem.title = _t(locKey);
+
+            }
+        }
+
+        // Update SVG text nodes
+        treeTexts.forEach(svgText => {
+            let locKey = svgText.node.getAttribute('i18n');
+            if (locKey === "NONE") {
+                return;
+            }
+            let strTxt = i18next.t(locKey);
+            let txt = formatName(strTxt);
+            svgText.text(txt);
+        })
+
+        hideHelp();
+    }
+
 </script>
 </body>
 </html>
