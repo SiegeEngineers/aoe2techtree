@@ -14,8 +14,6 @@ body, input, select, tspan {
 body {
     margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
     background: url("img/Backgrounds/bg_aoe2_hd_paper.jpg") repeat;
     font-size: 10pt;
 }
