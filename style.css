@@ -1,8 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     width: 100%;
     height: 100%;
-    box-sizing: border-box;
     --xRef-badge-size: 30px;
 }
 
@@ -129,6 +132,8 @@ a, a:hover, a:visited, a:active {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    overflow: auto;
+    height: 100vh;
 }
 
 #civselect {
