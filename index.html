@@ -188,7 +188,8 @@
         draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp).y(row_height * 2);
 
         // Add Age Icons
-        let icon_height = 112, icon_width = 112;
+        let icon_height = Math.min(row_height / 2, 112);
+        let icon_width = 112;
         let vertical_spacing = (row_height - icon_height) / 2 - 10;
         let margin_left = 20;
         let image_urls = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
