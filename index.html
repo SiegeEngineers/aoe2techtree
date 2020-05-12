@@ -617,7 +617,7 @@
                     //      1. The building is disabled by default, and not 
                     //         specifically enabled in the config.
                     //      2. The building is disabled in the specific config.
-                    if (defaultDisabledBuildings.includes(id) &&
+                    if (defaultDisabledBuildings.map((id)=>`building_${id}`).includes(id) &&
                     (!enabled ||
                     !enabled['buildings'] ||
                     !enabled['buildings'].map((id)=>`building_${id}`).includes(id))) {
