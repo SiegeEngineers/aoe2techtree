@@ -448,8 +448,16 @@
             text = text.replace(/(.+?\(‹cost›\))(.*)/m,
                 '<p class="helptext__heading">$1</p>' +
                 '<p class="helptext__desc">$2</p>');
-        } else {
-            text = text.replace(/(.+?\(‹cost›\))(.+?)<i>\s*(Upgrades:.+?)<\/i>(.*)/m,
+        } else if (type === "UNIT" || type === "UNIQUEUNIT" ) {
+            text = text.replace(/(.+?\(‹cost›\))(.+?)<i>\s*(.+?)<\/i>(.*)/m,
+                '<p>$1</p>' +
+                '<p>$2</p>' +
+                '<p><em>$3</em></p>' +
+                '<p class="helptext__stats">$4</p>');
+        } else if (type === "BUILDING") {
+            // convert the "Required for" text in <i> to <em> so that it doesn't break the next regex
+            text = text.replace(/<b><i>(.+?)<\/b><\/i>/m, '<b><em>$1</em></b>');
+            text = text.replace(/(.+?\(‹cost›\))(.+?)<i>\s*(.+?)<\/i>(.*)/m,
                 '<p>$1</p>' +
                 '<p>$2</p>' +
                 '<p><em>$3</em></p>' +
