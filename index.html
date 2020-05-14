@@ -445,7 +445,7 @@
         text = text.replace(/\s<br>/g, '');
         text = text.replace(/\n/g, '');
         if (type === "TECHNOLOGY") {
-            text = text.replace(/(.+?\(‹cost›.+?\))(.*)/m,
+            text = text.replace(/(.+?\(.+?\))(.*)/m,
                 '<p class="helptext__heading">$1</p>' +
                 '<p class="helptext__desc">$2</p>');
         } else if (type === "UNIT" || type === "UNIQUEUNIT" ) {
