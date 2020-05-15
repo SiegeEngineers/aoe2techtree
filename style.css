@@ -172,26 +172,15 @@ a, a:hover, a:visited, a:active {
     flex: 0 0 auto;
 }
 
-hr {
-    overflow: visible;
-    /* For IE */
-    height: 30px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px 0 0 0;
-    border-radius: 20px;
+#i18n {
+    position: fixed;
+    padding: 5px;
+    right: 0;
+    bottom: 0;
+    opacity: 80%;
 }
-
-hr:before {
-    /* Not really supposed to work, but does */
-    display: block;
-    content: "";
-    height: 30px;
-    margin-top: -31px;
-    border-style: solid;
-    border-color: black;
-    border-width: 0 0 1px 0;
-    border-radius: 20px;
+#i18n:hover {
+    opacity: 100%;
 }
 
 #navigation {
