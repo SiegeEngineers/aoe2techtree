@@ -172,14 +172,21 @@ a, a:hover, a:visited, a:active {
     flex: 0 0 auto;
 }
 
-#i18n {
+#i18n__top {
+    position: fixed;
+    padding: 5px;
+    right: 0;
+    top: 0;
+    opacity: 80%;
+}
+#i18n__bottom {
     position: fixed;
     padding: 5px;
     right: 0;
     bottom: 0;
     opacity: 80%;
 }
-#i18n:hover {
+#i18n__bottom:hover, #i18n__top:hover {
     opacity: 100%;
 }
 
