@@ -177,17 +177,53 @@ a, a:hover, a:visited, a:active {
     padding: 5px;
     right: 0;
     top: 0;
-    opacity: 80%;
 }
 #i18n__bottom {
     position: fixed;
     padding: 5px;
     right: 0;
-    bottom: 0;
-    opacity: 80%;
+    bottom: 0px;
 }
-#i18n__bottom:hover, #i18n__top:hover {
-    opacity: 100%;
+
+select::-ms-expand {
+    display: none;
+}
+
+.styled_select:after {
+    content: '▸';
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 11px;
+    top: 4px;
+    position: absolute;
+    pointer-events: none;
+}
+
+.styled_select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Add some styling */
+
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    float: right;
+    margin: 0;
+    padding: 0 20px 0 3px;
+    background-color: rgba(0,0,0, 0.15);
+    background-image: none;
+    border: 1px solid rgba(0,0,0, 0.25);
+    border-radius: 0px ;
+    -ms-word-break: normal;
+    word-break: normal;
+}
+
+.styled_select:hover select {
+    background-color: rgba(0,0,0, 0.20);
+    border: 1px solid rgba(0,0,0, 0.30);
 }
 
 #navigation {
