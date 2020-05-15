@@ -172,6 +172,9 @@ a, a:hover, a:visited, a:active {
     flex: 0 0 auto;
 }
 
+.i18n__select {
+    line-height: 1;
+}
 #i18n__top {
     position: fixed;
     padding: 5px;
@@ -182,9 +185,8 @@ a, a:hover, a:visited, a:active {
     position: fixed;
     padding: 5px;
     right: 0;
-    bottom: 0px;
+    bottom: 0;
 }
-
 select::-ms-expand {
     display: none;
 }
@@ -200,7 +202,7 @@ select::-ms-expand {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     right: 8px;
-    top: -2px;
+    top: 2px;
     position: absolute;
     pointer-events: none;
 }
@@ -218,7 +220,7 @@ select::-ms-expand {
     background-color: rgba(0,0,0, 0.15);
     background-image: none;
     border: 1px solid rgba(0,0,0, 0.25);
-    border-radius: 0px ;
+    border-radius: 0;
     -ms-word-break: normal;
     word-break: normal;
 }
