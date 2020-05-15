@@ -59,13 +59,7 @@
             </div>
             <div class="key">
                 <b id="key__label"></b>
-                <table border="0" cellspacing="10" id="color_key">
-                    <colgroup>
-                        <col width="23"/>
-                        <col width="110"/>
-                        <col width="23"/>
-                        <col width="110"/>
-                    </colgroup>
+                <table border="0" cellspacing="10" id="key__table">
                 </table>
             </div>
             <div class="credits">
@@ -742,7 +736,7 @@
 
     function create_colour_key() {
         let legend = [TYPES.UNIQUEUNIT, TYPES.UNIT, TYPES.BUILDING, TYPES.TECHNOLOGY];
-        let kc = document.getElementById('color_key');
+        let kc = document.getElementById('key__table');
         let tr = null
         for (let index in legend) {
             if (index % 2 === 0) {
@@ -751,6 +745,7 @@
             let td_color = document.createElement('td');
             td_color.style.backgroundColor = legend[index]['colour'];
             td_color.style.border = '1px outset #8a5d21';
+            td_color.style.width = '23px';
             tr.appendChild(td_color);
             let td_type = document.createElement('td');
             td_type.innerText = data.strings[data.tech_tree_strings[legend[index]['name']]];
