@@ -32,7 +32,7 @@ a, a:hover, a:visited, a:active {
 }
 
 .credits p {
-    margin-bottom: 0;
+    /*margin-bottom: 0;*/
 }
 
 #container {
@@ -131,7 +131,7 @@ a, a:hover, a:visited, a:active {
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 15px;
     overflow: auto;
     height: 100vh;
 }
@@ -188,6 +188,10 @@ a, a:hover, a:visited, a:active {
 select::-ms-expand {
     display: none;
 }
+.styled_select {
+    position: relative;
+    display: inline-block;
+}
 
 .styled_select:after {
     content: '▸';
@@ -195,8 +199,8 @@ select::-ms-expand {
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-    right: 11px;
-    top: 4px;
+    right: 8px;
+    top: -2px;
     position: absolute;
     pointer-events: none;
 }
@@ -205,8 +209,6 @@ select::-ms-expand {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    /* Add some styling */
-
     display: block;
     width: 100%;
     max-width: 320px;
@@ -224,6 +226,10 @@ select::-ms-expand {
 .styled_select:hover select {
     background-color: rgba(0,0,0, 0.20);
     border: 1px solid rgba(0,0,0, 0.30);
+}
+
+.styled_select select:focus {
+    outline: none;
 }
 
 #navigation {
