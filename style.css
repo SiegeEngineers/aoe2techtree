@@ -169,7 +169,12 @@ a, a:hover, a:visited, a:active {
 }
 
 .i18n__select {
+    font-size: 10pt;
     line-height: 1;
+}
+
+.i18n__select .styled_select select  {
+    font-size: 8pt;
 }
 
 #i18n__top {
@@ -196,15 +201,12 @@ select::-ms-expand {
 }
 
 .styled_select:after {
-    content: '▸';
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
+    content: '▾';
     right: 8px;
     top: 2px;
     position: absolute;
     pointer-events: none;
+    font-family: Arial, sans-serif;
 }
 
 .styled_select select {
