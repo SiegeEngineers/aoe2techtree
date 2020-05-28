@@ -638,7 +638,7 @@
                 "ID": 4,
                 "LanguageHelpId": 28420,
                 "LanguageNameId": 7420,
-                "ResearchTime": 50,
+                "ResearchTime": 70,
                 "internal_name": "Mayan El Dorado"
             },
             "5": {
@@ -687,7 +687,7 @@
             "9": {
                 "Cost": {
                     "Food": 750,
-                    "Gold": 800
+                    "Gold": 700
                 },
                 "ID": 9,
                 "LanguageHelpId": 28424,
@@ -8731,7 +8731,7 @@
                 ],
                 "Cost": {
                     "Food": 100,
-                    "Gold": 80
+                    "Gold": 70
                 },
                 "FrameDelay": 24,
                 "GarrisonCapacity": 0,
@@ -8744,7 +8744,7 @@
                 "MinRange": 0,
                 "PierceArmor": 3,
                 "Range": 4,
-                "ReloadTime": 2.5,
+                "ReloadTime": 2,
                 "Speed": 0.8,
                 "TrainTime": 25,
                 "internal_name": "ELEAR"
@@ -8806,7 +8806,7 @@
                 ],
                 "Cost": {
                     "Food": 100,
-                    "Gold": 80
+                    "Gold": 70
                 },
                 "FrameDelay": 24,
                 "GarrisonCapacity": 0,
@@ -8819,7 +8819,7 @@
                 "MinRange": 0,
                 "PierceArmor": 3,
                 "Range": 4,
-                "ReloadTime": 2.5,
+                "ReloadTime": 2,
                 "Speed": 0.8,
                 "TrainTime": 25,
                 "internal_name": "UELEA"
@@ -11485,6 +11485,10 @@
                     {
                         "Amount": 80,
                         "Class": 5
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
                     }
                 ],
                 "Cost": {
@@ -12325,7 +12329,7 @@
         "120161": "Cavalry Archer civilization <br>\n<br>\n\u2022 Cavalry archers fire 20% faster <br>\n\u2022 Light Cavalry, Hussars, Steppe Lancers +30% hit points<br>\n\u2022 Hunters work 40% faster <br>\n<br>\n<b>Unique Unit:</b>  <br>\nMangudai (cavalry archer) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Nomads (lost houses do not decrease population headroom) <br>\n\u2022 Drill (Siege Workshop units move 50% faster)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nScout Cavalry, Light Cavalry, Hussar +2 line of sight",
         "120162": "Infantry and Siege civilization <br>\n<br>\n\u2022 Infantry move 15% faster <br>\n\u2022 Lumberjacks work 15% faster <br>\n\u2022 Siege weapons fire 20% faster <br>\n\u2022 Sheep not converted if in 1 Celt  <br>\nunit's line of sight <br>\n<br>\n<b>Unique Unit:</b>  <br>\nWoad Raider (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Stronghold (Castles and towers fire 20% faster) <br>\n\u2022 Furor Celtica (Siege Workshop units +40% HP)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nSiege Workshops work 20% faster",
         "120163": "Gunpowder and Monk civilization <br>\n<br>\n\u2022 Builders work 30% faster <br>\n\u2022 Blacksmith upgrades don't cost gold <br>\n\u2022 Cannon Galleons benefit from Ballistics (fire faster, more accurately) <br>\n\u2022 Gunpowder units fire 15% faster<br>\n<br>\n<b>Unique Units:</b>  <br>\nConquistador (mounted hand cannoneer), Missionary (mounted Monk) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Inquisition (Monks convert faster) <br>\n\u2022 Supremacy (Villagers stronger in combat)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nTrade units generate +25% gold",
-        "120164": "Infantry and Monk civilization <br>\n<br>\n\u2022 Villagers carry +5 <br>\n\u2022 Military units created 15% faster <br>\n\u2022 +5 Monk hit points for each Monastery technology <br>\n\u2022 Start with +50 gold<br>\n<br>\n<b>Unique Unit:</b>  <br>\nJaguar Warrior (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Atlatl (Skirmishers +1 attack, +1 range) <br>\n\u2022 Garland Wars (+4 infantry attack)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nRelics generate +33% gold",
+        "120164": "Infantry and Monk civilization <br>\n<br>\n\u2022 Villagers carry +5 <br>\n\u2022 Military units created 10% faster <br>\n\u2022 +5 Monk hit points for each Monastery technology <br>\n\u2022 Start with +50 gold<br>\n<br>\n<b>Unique Unit:</b>  <br>\nJaguar Warrior (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Atlatl (Skirmishers +1 attack, +1 range) <br>\n\u2022 Garland Wars (+4 infantry attack)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nRelics generate +33% gold",
         "120165": "Archer civilization <br>\n<br>\n\u2022 Start with +1 villager, but -50 food <br>\n\u2022 Resources last 15% longer <br>\n\u2022 Archers cost -10% Feudal, -20% Castle, -30% Imperial Age <br>\n<br>\n<b>Unique Unit:</b>  <br>\nPlumed Archer (archer) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Obsidian Arrows (Archers, Crossbowmen and Arbalesters +6 attack vs. buildings) <br>\n\u2022 El Dorado (Eagle Warriors have +40 hit points)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nWalls cost -50%",
         "120166": "Cavalry civilization <br>\n<br>\n\u2022 Do not need houses, but start with -100 wood <br>\n\u2022 Cavalry Archers cost -10% Castle, -20% Imperial Age <br>\n\u2022 Trebuchets +30% accuracy <br>\n<br>\n<b>Unique Unit:</b>  <br>\nTarkan (cavalry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Marauders (Create Tarkans at stables) <br>\n\u2022 Atheism (+100 years Relic, Wonder victories <br>\nSpies/Treason costs -50%)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nStables work 20% faster",
         "120167": "Defensive and Naval civilization <br>\n<br>\n\u2022 Villagers +3 line of sight <br>\n\u2022 Stone miners work 20% faster <br>\n\u2022 Tower upgrades free (Bombard Tower requires Chemistry)<br>\n\u2022 Tower range +1 Castle, +2 Imperial Age<br>\n\u2022 Military units (except siege weapons) cost -15% wood <br>\n<br>\n<b>Unique Units:</b>  <br>\nWar Wagon (cavalry archer), Turtle Ship (war ship)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Panokseon (Turtle Ships move 15% faster) <br>\n\u2022 Shinkichon (Mangonel-line +1 range)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nMangonel-line minimum range reduced",

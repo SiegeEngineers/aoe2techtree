@@ -303,7 +303,8 @@ const civsConfig = {
              SIEGE_ENGINEERS,
              TREADMILL_CRANE,
              GUILDS,
-             CROP_ROTATION
+             CROP_ROTATION,
+             SUPPLIES,
           ],
           units: [ 
              HAND_CANNONEER,
@@ -350,7 +351,8 @@ const civsConfig = {
              BLOCK_PRINTING,
              THEOCRACY,
              STONE_SHAFT_MINING,
-             HUSBANDRY
+             HUSBANDRY,
+             SUPPLIES,
           ],
           units: [ 
              ARBALESTER,
@@ -528,7 +530,8 @@ const civsConfig = {
              SIEGE_ENGINEERS,
              ARROWSLITS,
              STONE_SHAFT_MINING,
-             CROP_ROTATION
+             CROP_ROTATION,
+             SUPPLIES,
           ],
           units: [ 
              ARBALESTER,
@@ -718,7 +721,8 @@ const civsConfig = {
              PLATE_MAIL_ARMOR,
              ARROWSLITS,
              TWO_MAN_SAW,
-             GUILDS
+             GUILDS,
+             SUPPLIES,
           ],
           units: [ 
              CHAMPION,
@@ -794,7 +798,8 @@ const civsConfig = {
              SIEGE_ENGINEERS,
              ARROWSLITS,
              SAPPERS,
-             GOLD_SHAFT_MINING
+             GOLD_SHAFT_MINING,
+             SUPPLIES,
           ],
           units: [ 
              ARBALESTER,
@@ -944,7 +949,8 @@ const civsConfig = {
              ILLUMINATION,
              SIEGE_ENGINEERS,
              ARROWSLITS,
-             GOLD_SHAFT_MINING
+             GOLD_SHAFT_MINING,
+             SUPPLIES,
           ],
           units: [ 
              HAND_CANNONEER,
@@ -993,7 +999,8 @@ const civsConfig = {
              ARROWSLITS,
              TWO_MAN_SAW,
              GUILDS,
-             CROP_ROTATION
+             CROP_ROTATION,
+             SUPPLIES,
           ],
           units: [ 
              HAND_CANNONEER,
@@ -1212,7 +1219,8 @@ const civsConfig = {
              FAITH,
              THEOCRACY,
              STONE_SHAFT_MINING,
-             TWO_MAN_SAW
+             TWO_MAN_SAW,
+             SUPPLIES,
           ],
           units: [ 
              ARBALESTER,
