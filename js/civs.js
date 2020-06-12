@@ -175,6 +175,10 @@ const civsConfig = {
        enabled: { 
           buildings: [ 
              KREPOST
+          ],
+          units: [
+             KONNIK,
+             ELITE_KONNIK
           ]
        },
        unique: [ 
