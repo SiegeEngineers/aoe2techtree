@@ -726,16 +726,16 @@ function getDefaultTree() {
 
     let siegeworkshoplane = new Lane();
     siegeworkshoplane.rows.castle_1.push(building(SIEGE_WORKSHOP));
-    siegeworkshoplane.rows.castle_2.push(unit(MANGONEL));
     siegeworkshoplane.rows.castle_2.push(unit(BATTERING_RAM));
+    siegeworkshoplane.rows.castle_2.push(unit(MANGONEL));
     siegeworkshoplane.rows.castle_2.push(unit(SCORPION));
     siegeworkshoplane.rows.castle_2.push(unit(SIEGE_TOWER));
-    siegeworkshoplane.rows.imperial_1.push(unit(ONAGER));
     siegeworkshoplane.rows.imperial_1.push(unit(CAPPED_RAM));
+    siegeworkshoplane.rows.imperial_1.push(unit(ONAGER));
     siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_SCORPION));
     siegeworkshoplane.rows.imperial_1.push(unit(BOMBARD_CANNON));
-    siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_ONAGER));
     siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_RAM));
+    siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_ONAGER));
     tree.lanes.push(siegeworkshoplane);
 
 
@@ -856,14 +856,14 @@ function getDefaultTree() {
     monasterylane.rows.castle_2.push(unit(MONK));
     monasterylane.rows.castle_2.push(uniqueunit(MISSIONARY));
     monasterylane.rows.castle_2.push(tech(REDEMPTION));
-    monasterylane.rows.castle_2.push(tech(FERVOR));
-    monasterylane.rows.castle_2.push(tech(SANCTITY));
     monasterylane.rows.castle_2.push(tech(ATONEMENT));
     monasterylane.rows.castle_2.push(tech(HERBAL_MEDICINE));
     monasterylane.rows.castle_2.push(tech(HERESY));
-    monasterylane.rows.imperial_1.push(tech(BLOCK_PRINTING));
-    monasterylane.rows.imperial_1.push(tech(ILLUMINATION));
+    monasterylane.rows.castle_2.push(tech(SANCTITY));
+    monasterylane.rows.castle_2.push(tech(FERVOR));
     monasterylane.rows.imperial_1.push(tech(FAITH));
+    monasterylane.rows.imperial_1.push(tech(ILLUMINATION));
+    monasterylane.rows.imperial_1.push(tech(BLOCK_PRINTING));
     monasterylane.rows.imperial_1.push(tech(THEOCRACY));
     tree.lanes.push(monasterylane);
 
@@ -903,10 +903,10 @@ function getDefaultTree() {
 
     let miningcamplane = new Lane();
     miningcamplane.rows.dark_1.push(building(MINING_CAMP));
-    miningcamplane.rows.feudal_1.push(tech(STONE_MINING));
     miningcamplane.rows.feudal_1.push(tech(GOLD_MINING));
-    miningcamplane.rows.castle_1.push(tech(STONE_SHAFT_MINING));
+    miningcamplane.rows.feudal_1.push(tech(STONE_MINING));
     miningcamplane.rows.castle_1.push(tech(GOLD_SHAFT_MINING));
+    miningcamplane.rows.castle_1.push(tech(STONE_SHAFT_MINING));
     tree.lanes.push(miningcamplane);
 
 
