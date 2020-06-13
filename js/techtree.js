@@ -724,16 +724,39 @@ function getDefaultTree() {
     tree.lanes.push(stablelane);
 
 
-    let wonderlane = new Lane();
-    wonderlane.rows.imperial_1.push(building(WONDER));
-    tree.lanes.push(wonderlane);
+    let siegeworkshoplane = new Lane();
+    siegeworkshoplane.rows.castle_1.push(building(SIEGE_WORKSHOP));
+    siegeworkshoplane.rows.castle_2.push(unit(BATTERING_RAM));
+    siegeworkshoplane.rows.castle_2.push(unit(MANGONEL));
+    siegeworkshoplane.rows.castle_2.push(unit(SCORPION));
+    siegeworkshoplane.rows.castle_2.push(unit(SIEGE_TOWER));
+    siegeworkshoplane.rows.imperial_1.push(unit(CAPPED_RAM));
+    siegeworkshoplane.rows.imperial_1.push(unit(ONAGER));
+    siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_SCORPION));
+    siegeworkshoplane.rows.imperial_1.push(unit(BOMBARD_CANNON));
+    siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_RAM));
+    siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_ONAGER));
+    tree.lanes.push(siegeworkshoplane);
 
 
-    let feitorialane = new Lane();
-    feitorialane.rows.castle_1.push(building(KREPOST));
-    feitorialane.rows.imperial_1.push(building(FEITORIA));
-    tree.lanes.push(feitorialane);
-
+    let blacksmithlane = new Lane();
+    blacksmithlane.rows.feudal_1.push(building(BLACKSMITH));
+    blacksmithlane.rows.feudal_2.push(tech(PADDED_ARCHER_ARMOR));
+    blacksmithlane.rows.feudal_2.push(tech(FLETCHING));
+    blacksmithlane.rows.feudal_2.push(tech(FORGING));
+    blacksmithlane.rows.feudal_2.push(tech(SCALE_BARDING_ARMOR));
+    blacksmithlane.rows.feudal_2.push(tech(SCALE_MAIL_ARMOR));
+    blacksmithlane.rows.castle_1.push(tech(LEATHER_ARCHER_ARMOR));
+    blacksmithlane.rows.castle_1.push(tech(BODKIN_ARROW));
+    blacksmithlane.rows.castle_1.push(tech(IRON_CASTING));
+    blacksmithlane.rows.castle_1.push(tech(CHAIN_BARDING_ARMOR));
+    blacksmithlane.rows.castle_1.push(tech(CHAIN_MAIL_ARMOR));
+    blacksmithlane.rows.imperial_1.push(tech(RING_ARCHER_ARMOR));
+    blacksmithlane.rows.imperial_1.push(tech(BRACER));
+    blacksmithlane.rows.imperial_1.push(tech(BLAST_FURNACE));
+    blacksmithlane.rows.imperial_1.push(tech(PLATE_BARDING_ARMOR));
+    blacksmithlane.rows.imperial_1.push(tech(PLATE_MAIL_ARMOR));
+    tree.lanes.push(blacksmithlane);
 
     let docklane = new Lane();
     docklane.rows.dark_1.push(building(DOCK));
@@ -769,6 +792,24 @@ function getDefaultTree() {
     tree.lanes.push(fishtraplane);
 
 
+    let universitylane = new Lane();
+    universitylane.rows.castle_1.push(building(UNIVERSITY));
+    universitylane.rows.castle_2.push(tech(MASONRY));
+    universitylane.rows.castle_2.push(tech(FORTIFIED_WALL_TECH));
+    universitylane.rows.castle_2.push(tech(BALLISTICS));
+    universitylane.rows.castle_2.push(tech(GUARD_TOWER_TECH));
+    universitylane.rows.castle_2.push(tech(HEATED_SHOT));
+    universitylane.rows.castle_2.push(tech(MURDER_HOLES));
+    universitylane.rows.castle_2.push(tech(TREADMILL_CRANE));
+    universitylane.rows.imperial_1.push(tech(ARCHITECTURE));
+    universitylane.rows.imperial_1.push(tech(CHEMISTRY));
+    universitylane.rows.imperial_1.push(tech(SIEGE_ENGINEERS));
+    universitylane.rows.imperial_1.push(tech(KEEP_TECH));
+    universitylane.rows.imperial_1.push(tech(ARROWSLITS));
+    universitylane.rows.imperial_2.push(tech(BOMBARD_TOWER_TECH));
+    tree.lanes.push(universitylane);
+
+
     let towerlane = new Lane();
     towerlane.rows.dark_1.push(building(OUTPOST));
     towerlane.rows.feudal_1.push(building(WATCH_TOWER));
@@ -787,22 +828,6 @@ function getDefaultTree() {
     tree.lanes.push(walllane);
 
 
-    let monasterylane = new Lane();
-    monasterylane.rows.castle_1.push(building(MONASTERY));
-    monasterylane.rows.castle_2.push(unit(MONK));
-    monasterylane.rows.castle_2.push(uniqueunit(MISSIONARY));
-    monasterylane.rows.castle_2.push(tech(REDEMPTION));
-    monasterylane.rows.castle_2.push(tech(FERVOR));
-    monasterylane.rows.castle_2.push(tech(SANCTITY));
-    monasterylane.rows.castle_2.push(tech(ATONEMENT));
-    monasterylane.rows.castle_2.push(tech(HERBAL_MEDICINE));
-    monasterylane.rows.castle_2.push(tech(HERESY));
-    monasterylane.rows.imperial_1.push(tech(BLOCK_PRINTING));
-    monasterylane.rows.imperial_1.push(tech(ILLUMINATION));
-    monasterylane.rows.imperial_1.push(tech(FAITH));
-    monasterylane.rows.imperial_1.push(tech(THEOCRACY));
-    tree.lanes.push(monasterylane);
-
     let castlelane = new Lane();
     castlelane.rows.castle_1.push(building(CASTLE));
     castlelane.rows.castle_2.push(new Caret(TYPES.UNIQUEUNIT, UNIQUE_UNIT, UNIQUE_UNIT));
@@ -817,6 +842,30 @@ function getDefaultTree() {
     castlelane.rows.imperial_1.push(tech(CONSCRIPTION));
     castlelane.rows.imperial_1.push(tech(SPIES_TREASON));
     tree.lanes.push(castlelane);
+
+
+    let krepostlane = new Lane();
+    krepostlane.rows.castle_1.push(building(KREPOST));
+    krepostlane.rows.castle_2.push(uniqueunit(KONNIK));
+    krepostlane.rows.imperial_1.push(uniqueunit(ELITE_KONNIK));
+    tree.lanes.push(krepostlane);
+
+
+    let monasterylane = new Lane();
+    monasterylane.rows.castle_1.push(building(MONASTERY));
+    monasterylane.rows.castle_2.push(unit(MONK));
+    monasterylane.rows.castle_2.push(uniqueunit(MISSIONARY));
+    monasterylane.rows.castle_2.push(tech(REDEMPTION));
+    monasterylane.rows.castle_2.push(tech(ATONEMENT));
+    monasterylane.rows.castle_2.push(tech(HERBAL_MEDICINE));
+    monasterylane.rows.castle_2.push(tech(HERESY));
+    monasterylane.rows.castle_2.push(tech(SANCTITY));
+    monasterylane.rows.castle_2.push(tech(FERVOR));
+    monasterylane.rows.imperial_1.push(tech(FAITH));
+    monasterylane.rows.imperial_1.push(tech(ILLUMINATION));
+    monasterylane.rows.imperial_1.push(tech(BLOCK_PRINTING));
+    monasterylane.rows.imperial_1.push(tech(THEOCRACY));
+    tree.lanes.push(monasterylane);
 
 
     let houselane = new Lane();
@@ -842,64 +891,22 @@ function getDefaultTree() {
     tree.lanes.push(additionaltowncenterlane);
 
 
-    let siegeworkshoplane = new Lane();
-    siegeworkshoplane.rows.castle_1.push(building(SIEGE_WORKSHOP));
-    siegeworkshoplane.rows.castle_2.push(unit(MANGONEL));
-    siegeworkshoplane.rows.castle_2.push(unit(BATTERING_RAM));
-    siegeworkshoplane.rows.castle_2.push(unit(SCORPION));
-    siegeworkshoplane.rows.castle_2.push(unit(SIEGE_TOWER));
-    siegeworkshoplane.rows.imperial_1.push(unit(ONAGER));
-    siegeworkshoplane.rows.imperial_1.push(unit(CAPPED_RAM));
-    siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_SCORPION));
-    siegeworkshoplane.rows.imperial_1.push(unit(BOMBARD_CANNON));
-    siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_ONAGER));
-    siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_RAM));
-    tree.lanes.push(siegeworkshoplane);
+    let wonderlane = new Lane();
+    wonderlane.rows.imperial_1.push(building(WONDER));
+    tree.lanes.push(wonderlane);
 
 
-    let blacksmithlane = new Lane();
-    blacksmithlane.rows.feudal_1.push(building(BLACKSMITH));
-    blacksmithlane.rows.feudal_2.push(tech(PADDED_ARCHER_ARMOR));
-    blacksmithlane.rows.feudal_2.push(tech(FLETCHING));
-    blacksmithlane.rows.feudal_2.push(tech(FORGING));
-    blacksmithlane.rows.feudal_2.push(tech(SCALE_BARDING_ARMOR));
-    blacksmithlane.rows.feudal_2.push(tech(SCALE_MAIL_ARMOR));
-    blacksmithlane.rows.castle_1.push(tech(LEATHER_ARCHER_ARMOR));
-    blacksmithlane.rows.castle_1.push(tech(BODKIN_ARROW));
-    blacksmithlane.rows.castle_1.push(tech(IRON_CASTING));
-    blacksmithlane.rows.castle_1.push(tech(CHAIN_BARDING_ARMOR));
-    blacksmithlane.rows.castle_1.push(tech(CHAIN_MAIL_ARMOR));
-    blacksmithlane.rows.imperial_1.push(tech(RING_ARCHER_ARMOR));
-    blacksmithlane.rows.imperial_1.push(tech(BRACER));
-    blacksmithlane.rows.imperial_1.push(tech(BLAST_FURNACE));
-    blacksmithlane.rows.imperial_1.push(tech(PLATE_BARDING_ARMOR));
-    blacksmithlane.rows.imperial_1.push(tech(PLATE_MAIL_ARMOR));
-    tree.lanes.push(blacksmithlane);
+    let feitorialane = new Lane();
+    feitorialane.rows.imperial_1.push(building(FEITORIA));
+    tree.lanes.push(feitorialane);
 
-
-    let universitylane = new Lane();
-    universitylane.rows.castle_1.push(building(UNIVERSITY));
-    universitylane.rows.castle_2.push(tech(MASONRY));
-    universitylane.rows.castle_2.push(tech(FORTIFIED_WALL_TECH));
-    universitylane.rows.castle_2.push(tech(BALLISTICS));
-    universitylane.rows.castle_2.push(tech(GUARD_TOWER_TECH));
-    universitylane.rows.castle_2.push(tech(HEATED_SHOT));
-    universitylane.rows.castle_2.push(tech(MURDER_HOLES));
-    universitylane.rows.castle_2.push(tech(TREADMILL_CRANE));
-    universitylane.rows.imperial_1.push(tech(ARCHITECTURE));
-    universitylane.rows.imperial_1.push(tech(CHEMISTRY));
-    universitylane.rows.imperial_1.push(tech(SIEGE_ENGINEERS));
-    universitylane.rows.imperial_1.push(tech(KEEP_TECH));
-    universitylane.rows.imperial_1.push(tech(ARROWSLITS));
-    universitylane.rows.imperial_2.push(tech(BOMBARD_TOWER_TECH));
-    tree.lanes.push(universitylane);
 
     let miningcamplane = new Lane();
     miningcamplane.rows.dark_1.push(building(MINING_CAMP));
-    miningcamplane.rows.feudal_1.push(tech(STONE_MINING));
     miningcamplane.rows.feudal_1.push(tech(GOLD_MINING));
-    miningcamplane.rows.castle_1.push(tech(STONE_SHAFT_MINING));
+    miningcamplane.rows.feudal_1.push(tech(STONE_MINING));
     miningcamplane.rows.castle_1.push(tech(GOLD_SHAFT_MINING));
+    miningcamplane.rows.castle_1.push(tech(STONE_SHAFT_MINING));
     tree.lanes.push(miningcamplane);
 
 
@@ -921,6 +928,11 @@ function getDefaultTree() {
     tree.lanes.push(marketlane);
 
 
+    let farmlane = new Lane();
+    farmlane.rows.dark_2.push(building(FARM));
+    tree.lanes.push(farmlane);
+    
+
     let milllane = new Lane();
     milllane.rows.dark_1.push(building(MILL));
     milllane.rows.feudal_1.push(tech(HORSE_COLLAR));
@@ -928,10 +940,6 @@ function getDefaultTree() {
     milllane.rows.imperial_1.push(tech(CROP_ROTATION));
     tree.lanes.push(milllane);
 
-
-    let farmlane = new Lane();
-    farmlane.rows.dark_2.push(building(FARM));
-    tree.lanes.push(farmlane);
 
     tree.updatePositions();
 
@@ -1024,6 +1032,8 @@ function getConnections() {
         [b(CASTLE), t(SAPPERS)],
         [b(CASTLE), t(CONSCRIPTION)],
         [b(CASTLE), t(SPIES_TREASON)],
+        [b(KREPOST), u(KONNIK)],
+        [u(KONNIK), u(ELITE_KONNIK)],
         [b(TOWN_CENTER), u(VILLAGER)],
         [b(TOWN_CENTER), t(FEUDAL_AGE)],
         [t(FEUDAL_AGE), t(CASTLE_AGE)],
