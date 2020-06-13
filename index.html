@@ -157,11 +157,6 @@
         parentConnections = new Map(connections.map(([parent, child]) => [child, parent]));
         connectionpoints = getConnectionPoints(tree);
 
-        let hash = window.location.hash.substr(1);
-        let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
-        if (capitalisedHash in data.civ_names) {
-            document.getElementById('civselect').value = capitalisedHash;
-        }
 
         const draw = SVG('techtree').id('root').size(tree.width, tree.height)
             .click((e) => {
@@ -256,12 +251,29 @@
             }
         }
 
-        loadCiv();
-        // Make the xref badges
+
+        let civWasLoaded = updateCivselectValue();
+        if(!civWasLoaded){
+            loadCiv();
+        }
         createXRefBadges();
-        // Create Legend
         create_colour_key();
+        window.onhashchange = function () {
+            updateCivselectValue();
+        };
     });
+
+    function updateCivselectValue() {
+        let hash = window.location.hash.substr(1);
+        let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
+        if (capitalisedHash in data.civ_names) {
+            console.log(capitalisedHash);
+            document.getElementById('civselect').value = capitalisedHash;
+            loadCiv();
+            return true;
+        }
+        return false;
+    }
 
     function setAdvancedStatsState() {
         try {
