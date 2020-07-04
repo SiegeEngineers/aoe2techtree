@@ -11628,6 +11628,65 @@
                 "Speed": 1.45,
                 "TrainTime": 20,
                 "internal_name": "ESLANCER"
+            },
+            "1570": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 10,
+                "Attacks": [
+                    {
+                        "Amount": 10,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    }
+                ],
+                "Cost": {
+                    "Food": 60,
+                    "Gold": 75
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 100,
+                "ID": 1570,
+                "LanguageHelpId": 26040,
+                "LanguageNameId": 5040,
+                "LineOfSight": 4,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 2,
+                "Range": 0,
+                "ReloadTime": 1.8,
+                "Speed": 1.35,
+                "TrainTime": 30,
+                "internal_name": "AZTRAIDER"
             }
         }
     },
@@ -11638,6 +11697,7 @@
         "4204": "Imperial Age",
         "5009": "Steppe Lancer",
         "5010": "Elite Steppe Lancer",
+        "5040": "Xolotl Warrior",
         "5068": "Knight",
         "5070": "Cavalier",
         "5078": "Spearman",
@@ -11996,6 +12056,7 @@
         "19052": "Trade Cart",
         "26009": "Create <b>Steppe Lancer</b> (\u2039cost\u203a) <br>\nLight cavalry unit with increased attack range. Strong in groups. Weak vs. Camel Riders and archers.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed, to Elite Steppe Lancer 900F, 550G (Stable); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26010": "Create <b>Elite Steppe Lancer</b> (\u2039cost\u203a) <br>\nLight cavalry unit with increased attack range. Strong in groups. Weak vs. Camel Riders and archers.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26040": "Create <b>Xolotl Warrior</b> (\u2039cost\u203a) <br>\nMesoamerican cavalry unit. Strong vs. infantry and siege. Weak vs. Pikemen and Camel Riders. <i> Upgrades: attack (Blacksmith); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26068": "Create <b>Knight</b> (\u2039cost\u203a) <br>\nPowerful all-purpose cavalry. Strong vs. infantry and archers. Weak vs. Pikemen, Camel Riders, and Monks.<i> Upgrades: attack, armor (Blacksmith); speed, hit points, to Cavalier 300F, 300G (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26070": "Create <b>Cavalier</b> (\u2039cost\u203a) <br>\nPowerful all-purpose cavalry. Strong vs. infantry and archers. Weak vs. Pikemen, Camel Riders, and Monks.<i> Upgrades: attack, armor (Blacksmith); speed, hit points, to Paladin 1300F, 750G (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26078": "Create <b>Spearman</b> (\u2039cost\u203a) <br>\nAnti-cavalry infantry unit. Strong vs. mounted units, especially elephants. Weak vs. archers and infantry.<i> Upgrades: attack, armor (Blacksmith); speed, to Pikeman 215F, 90G (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",

@@ -46,10 +46,11 @@ const civsConfig = {
           ]
        },
        enabled: { 
-          units: [ 
+          units: [
              EAGLE_SCOUT,
              EAGLE_WARRIOR,
-             ELITE_EAGLE_WARRIOR
+             ELITE_EAGLE_WARRIOR,
+             XOLOTL_WARRIOR,
           ]
        },
        monkPrefix: MONK_PREFIX_MESO,
@@ -582,11 +583,12 @@ const civsConfig = {
           ]
        },
        enabled: { 
-          units: [ 
+          units: [
              EAGLE_SCOUT,
              EAGLE_WARRIOR,
              ELITE_EAGLE_WARRIOR,
-             SLINGER
+             SLINGER,
+             XOLOTL_WARRIOR,
           ]
        },
        monkPrefix: MONK_PREFIX_MESO,
@@ -966,10 +968,11 @@ const civsConfig = {
           ]
        },
        enabled: { 
-          units: [ 
+          units: [
              EAGLE_SCOUT,
              EAGLE_WARRIOR,
-             ELITE_EAGLE_WARRIOR
+             ELITE_EAGLE_WARRIOR,
+             XOLOTL_WARRIOR,
           ]
        },
        monkPrefix: MONK_PREFIX_MESO,

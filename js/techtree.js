@@ -196,6 +196,7 @@ const ELITE_KONNIK = 1255;
 const FLAMING_CAMEL = 1263;
 const STEPPE_LANCER = 1370;
 const ELITE_STEPPE_LANCER = 1372;
+const XOLOTL_WARRIOR = 1570;
 const YEOMEN = 3;
 const EL_DORADO = 4;
 const FUROR_CELTICA = 5;
@@ -350,7 +351,7 @@ const horseDisabledTechs = [BLOODLINES, HUSBANDRY, SCALE_BARDING_ARMOR, CHAIN_BA
     PLATE_BARDING_ARMOR, PARTHIAN_TACTICS];
 
 const defaultDisabledUnits = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,
-    ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER, FLAMING_CAMEL];
+    ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER, FLAMING_CAMEL, XOLOTL_WARRIOR];
     
 const defaultDisabledBuildings = [KREPOST, FEITORIA,];
 
@@ -713,6 +714,7 @@ function getDefaultTree() {
     stablelane.rows.castle_1.push(unit(CAMEL_RIDER));
     stablelane.rows.castle_1.push(unit(BATTLE_ELEPHANT));
     stablelane.rows.castle_1.push(unit(STEPPE_LANCER));
+    stablelane.rows.castle_1.push(uniqueunit(XOLOTL_WARRIOR));
     stablelane.rows.castle_1.push(tech(HUSBANDRY));
     stablelane.rows.imperial_1.push(unit(HUSSAR));
     stablelane.rows.imperial_1.push(unit(CAVALIER));
@@ -995,6 +997,7 @@ function getConnections() {
         [u(BATTLE_ELEPHANT), u(ELITE_BATTLE_ELEPHANT)],
         [b(STABLE), u(STEPPE_LANCER)],
         [u(STEPPE_LANCER), u(ELITE_STEPPE_LANCER)],
+        [b(STABLE), u(XOLOTL_WARRIOR)],
         [b(STABLE), t(HUSBANDRY)],
         [u(KNIGHT), u(CAVALIER)],
         [u(CAVALIER), u(PALADIN)],

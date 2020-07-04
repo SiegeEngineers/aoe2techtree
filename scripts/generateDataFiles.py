@@ -277,6 +277,7 @@ UNITS = {
     1263: {"internal_name": "FCAMEL"},
     1370: {"internal_name": "SLANCER"},
     1372: {"internal_name": "ESLANCER"},
+    1570: {"internal_name": "AZTRAIDER"},
 }
 
 TECHS = {
