@@ -268,9 +268,12 @@
         let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
         if (capitalisedHash in data.civ_names) {
             console.log(capitalisedHash);
-            document.getElementById('civselect').value = capitalisedHash;
-            loadCiv();
-            return true;
+            const civSelect = document.getElementById('civselect');
+            if (civSelect.value !== capitalisedHash) {
+                civSelect.value = capitalisedHash;
+                loadCiv();
+                return true;
+            }
         }
         return false;
     }
