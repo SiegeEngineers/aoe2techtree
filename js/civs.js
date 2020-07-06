@@ -1,18 +1,199 @@
-function civ(name, tree) {
-    resetToDefault(tree);
+function parseCiv(civ) {
+   let builder = new CivBuilder({uniqueUnit: civ.unique[0],
+         uniqueUnitElite: civ.unique[1],
+         uniqueTechOne: civ.unique[2],
+         uniqueTechTwo: civ.unique[3],
+         monkPrefix: civ.monkPrefix});
+   
+   // Disable bldgs, units, techs.
+   if (civ.disabled) {
+      if (civ.disabled.buildings) builder.disableBuildings(civ.disabled.buildings);
+      if (civ.disabled.units) builder.disableUnits(civ.disabled.units);
+      if (civ.disabled.techs) builder.disableTechs(civ.disabled.techs);
+   }
 
-    let selectedCiv = civsConfig[name];
+   // Enable bldgs, units, techs.
+   if (civ.enabled) {
+      if (civ.enabled.buildings) builder.enableBuildings(civ.enabled.buildings);
+      if (civ.enabled.units) builder.enableUnits(civ.enabled.units);
+      if (civ.enabled.techs) builder.enableTechs(civ.enabled.techs);
+   }
 
-    let enabled = selectedCiv.enabled || {};
-    let disabled = selectedCiv.disabled || {};
-    let uniqueConfig = selectedCiv.unique || {};
-    if (selectedCiv.disableHorses) {
-        disableHorses();
-    }
+   if (civ.disableHorses) builder.disableHorses();
+   
+   return builder.build();
+}
 
-    enable(enabled.buildings || [], enabled.units || [], enabled.techs || []);
-    disable(disabled.buildings || [], disabled.units || [], disabled.techs || []);
-    unique(uniqueConfig || [], selectedCiv.monkPrefix);
+function civ(name) {
+   let selectedCiv = parseCiv(civsConfig[name]);
+   const id_regex = /(?<type>.+)_(?<id>([\d]+|unique_unit|elite_unique_unit))_(x|copy)/;
+
+   // On reset, we need to NOT enable things we're about to disable again.
+   SVG.select('.cross').each(function(i) {
+      // If fill opacity is already 0, then this is already enabled.
+      if (this.attr('fill-opacity') === 0) return;
+      
+      // Parse this element's ID number.
+      let elId = this.id();
+      const found = elId.match(id_regex);
+      if (!found) {
+         return;
+      };
+      let id = parseInt(found.groups.id);
+      let type = found.groups.type;
+
+      // If this ID is in the next civ's disable list, then don't enable it.
+      if (type === 'unit') {
+         if (selectedCiv.units.includes(id)) return;
+      } else if (type === 'building') {
+         if (selectedCiv.buildings.includes(id)) return;
+      } else if (type === 'tech') {
+         if (selectedCiv.techs.includes(id)) return;
+      }
+
+      // Enable the element.
+      this.attr({'fill-opacity': 0});
+   });
+
+   // Make sure the uniques are enabled.
+   enable([], [UNIQUE_UNIT, ELITE_UNIQUE_UNIT], []);
+   // Disable based on the civ object.
+   disable(selectedCiv.buildings, selectedCiv.units, selectedCiv.techs);
+   // Setup the unique objects.
+   unique([selectedCiv.uniqueConfig.uniqueUnit,
+     selectedCiv.uniqueConfig.uniqueUnitElite,
+     selectedCiv.uniqueConfig.uniqueTechOne,
+     selectedCiv.uniqueConfig.uniqueTechTwo], selectedCiv.monkPrefix);
+}
+
+// A civ object contains lists of buildings, techs, and units to explicitly
+// disable, as well as unique unit and tech config.
+class Civ {
+  constructor(buildings, techs, units, monkPrefix, uniqueConfig) {
+     this.buildings = buildings || [];
+     this.techs = techs || [];
+     this.units = units || [];
+     this.monkPrefix = monkPrefix;
+     this.uniqueConfig = uniqueConfig;
+  }
+}
+
+class CivBuilder {
+  constructor(uniqueConfig) {
+     // Setup with default config, this is the default disable list...
+     this.buildings = [
+        KREPOST,
+        FEITORIA,
+     ];
+     this.units = [
+        // Units that are not often enabled
+        BATTLE_ELEPHANT,
+        ELITE_BATTLE_ELEPHANT,
+        STEPPE_LANCER,
+        ELITE_STEPPE_LANCER,
+        EAGLE_SCOUT,
+        EAGLE_WARRIOR,
+        ELITE_EAGLE_WARRIOR,
+        // unique units
+        SLINGER,
+        IMPERIAL_SKIRMISHER,
+        GENITOUR,
+        ELITE_GENITOUR,
+        CONDOTTIERO,
+        IMPERIAL_CAMEL_RIDER,
+        XOLOTL_WARRIOR,
+        TURTLE_SHIP,
+        ELITE_TURTLE_SHIP,
+        LONGBOAT,
+        ELITE_LONGBOAT,
+        CARAVEL,
+        ELITE_CARAVEL,
+        FLAMING_CAMEL,
+        KONNIK,
+        ELITE_KONNIK,
+        MISSIONARY,
+     ];
+     this.techs = [];
+     this.uniqueUnit = uniqueConfig.uniqueUnit;
+     this.uniqueUnitElite = uniqueConfig.uniqueUnitElite;
+     this.uniqueTechOne = uniqueConfig.uniqueTechOne;
+     this.uniqueTechTwo = uniqueConfig.uniqueTechTwo;
+     this.monkPrefix = uniqueConfig.monkPrefix;
+  }
+
+  disableHorses() {
+     this.buildings = this.buildings.concat([STABLE]);
+     this.techs = this.techs.concat([
+        BLOODLINES,
+        HUSBANDRY,
+        SCALE_BARDING_ARMOR,
+        CHAIN_BARDING_ARMOR,
+        PLATE_BARDING_ARMOR,
+        PARTHIAN_TACTICS,
+     ]);
+     this.units = this.units.concat([
+        SCOUT_CAVALRY,
+        LIGHT_CAVALRY,
+        HUSSAR,
+        KNIGHT,
+        PALADIN,
+        CAMEL_RIDER,
+        HEAVY_CAMEL_RIDER,
+        CAVALIER,
+        CAVALRY_ARCHER,
+        HEAVY_CAV_ARCHER,
+     ]);
+     return this;
+  }
+
+  disableBuildings(toDisable) {
+     this.buildings = this.buildings.concat(toDisable);
+     return this;
+  }
+
+  disableUnits(toDisable) {
+     this.units = this.units.concat(toDisable);
+     return this;
+  }
+
+  disableTechs(toDisable) {
+     this.techs = this.techs.concat(toDisable);
+     return this;
+  }
+
+  enableUnits(toEnable) {
+     for (let enable of toEnable) {
+        this.units.splice(this.units.indexOf(enable),1)
+     }
+     return this;
+  }
+
+  enableBuildings(toEnable) {
+     for (let enable of toEnable) {
+        this.buildings.splice(this.buildings.indexOf(enable),1)
+     }
+     return this;
+  }
+
+  enableTechs(toEnable) {
+   for (let enable of toEnable) {
+      this.techs.splice(this.techs.indexOf(enable),1)
+   }
+   return this;
+}
+
+  build() {
+     return new Civ(this.buildings,
+                this.techs,
+                this.units,
+                this.monkPrefix,
+                {
+                   uniqueUnit: this.uniqueUnit,
+                   uniqueUnitElite: this.uniqueUnitElite,
+                   uniqueTechOne: this.uniqueTechOne,
+                   uniqueTechTwo: this.uniqueTechTwo,
+                 })
+  }
 }
 
 const civsConfig = { 
