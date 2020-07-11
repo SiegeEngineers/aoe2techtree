@@ -352,6 +352,7 @@ const horseDisabledTechs = [BLOODLINES, HUSBANDRY, SCALE_BARDING_ARMOR, CHAIN_BA
 
 const defaultDisabledUnits = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,
     ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER, FLAMING_CAMEL, XOLOTL_WARRIOR];
+
 const defaultDisabledBuildings = [KREPOST, FEITORIA,];
 
 class Tree {
@@ -613,6 +614,7 @@ function unique(ids, monk_prefix) {
     SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
     SVG.get('unit_' + formatId(MONK) + '_img').load('img/Units/' + monk_prefix + 'monk.png');
 }
+
 
 function disableHorses() {	
     disable(horseDisabledBuildings, horseDisabledUnits, horseDisabledTechs);	
