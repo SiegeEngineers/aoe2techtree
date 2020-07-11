@@ -343,6 +343,18 @@ const HILL_FORTS = 691;
 const TOWER_SHIELDS = 692;
 const SUPPLIES = 716;
 
+
+const horseDisabledBuildings = [STABLE];	
+const horseDisabledUnits = [SCOUT_CAVALRY, LIGHT_CAVALRY, HUSSAR, KNIGHT, PALADIN, CAMEL_RIDER,	
+    HEAVY_CAMEL_RIDER, CAVALIER, CAVALRY_ARCHER, HEAVY_CAV_ARCHER];	
+const horseDisabledTechs = [BLOODLINES, HUSBANDRY, SCALE_BARDING_ARMOR, CHAIN_BARDING_ARMOR,	
+    PLATE_BARDING_ARMOR, PARTHIAN_TACTICS];
+
+const defaultDisabledUnits = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,	
+    ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER, FLAMING_CAMEL, XOLOTL_WARRIOR];
+
+const defaultDisabledBuildings = [KREPOST, FEITORIA,];
+
 class Tree {
     constructor() {
         this.offsets = {
@@ -601,6 +613,10 @@ function unique(ids, monk_prefix) {
     SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
     SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
     SVG.get('unit_' + formatId(MONK) + '_img').load('img/Units/' + monk_prefix + 'monk.png');
+}
+
+function disableHorses() {	
+    disable(horseDisabledBuildings, horseDisabledUnits, horseDisabledTechs);	
 }
 
 function getName(id, itemtype) {
