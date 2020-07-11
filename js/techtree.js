@@ -616,8 +616,8 @@ function unique(ids, monk_prefix) {
 }
 
 
-function disableHorses() {	
-    disable(horseDisabledBuildings, horseDisabledUnits, horseDisabledTechs);	
+function disableHorses() {
+    disable(horseDisabledBuildings, horseDisabledUnits, horseDisabledTechs);
 }
 
 function getName(id, itemtype) {
