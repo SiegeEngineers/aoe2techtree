@@ -95,8 +95,8 @@ class Civ {
 
 class CivBuilder {
   constructor(uniqueConfig) {
-     // Setup with default config, this is the default disable list...
      this.disabledBuildings = [
+        // Unique Buildings
         KREPOST,
         FEITORIA,
      ];
@@ -109,7 +109,7 @@ class CivBuilder {
         EAGLE_SCOUT,
         EAGLE_WARRIOR,
         ELITE_EAGLE_WARRIOR,
-        // unique units
+        // Unique units
         SLINGER,
         IMPERIAL_SKIRMISHER,
         GENITOUR,
