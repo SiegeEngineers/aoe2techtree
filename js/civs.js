@@ -38,22 +38,30 @@ function civ(name) {
    let selectedCiv = parseCiv(civsConfig[name]);
 
    SVG.select('.cross').each(function(i) {
-      if (SVGObjectIsAlreadyEnabled(this)) {
+      if (SVGObjectIsTransparent(this)) {
          return;
       }
 
-      let id = parseSVGObjectId(this.id());
-      if (!id) {
+      let {id, type} = parseSVGObjectId(this.id());
+      if (!id || !type) {
          return;
       }
 
-      if (selectedCiv.disabledUnits.includes(id) ||
-          selectedCiv.disabledBuildings.includes(id) ||
-          selectedCiv.disabledTechs.includes(id)) {
-         return;
+      if (type === 'unit') {
+         if (selectedCiv.disabledUnits.includes(id)) {
+            return;
+         }
+      } else if (type === 'building') {
+         if (selectedCiv.disabledBuildings.includes(id)) {
+            return;
+         }
+      } else if (type === 'tech') {
+         if (selectedCiv.disabledTechs.includes(id)) {
+            return;
+         }
       }
 
-      enableSVGObject(this);
+      makeSVGObjectTransparent(this);
    });
 
    enable([], [UNIQUE_UNIT, ELITE_UNIQUE_UNIT], []);
@@ -64,23 +72,26 @@ function civ(name) {
      selectedCiv.uniqueConfig.uniqueTechTwo], selectedCiv.monkPrefix);
 }
 
-function SVGObjectIsAlreadyEnabled(svgObj) {
+function SVGObjectIsTransparent(svgObj) {
    return svgObj.attr('fill-opacity') === 0
 }
 
-function enableSVGObject(svgObj) {
+function makeSVGObjectTransparent(svgObj) {
    svgObj.attr({'fill-opacity': 0});
 }
 
 function parseSVGObjectId(svgObjId) {
-   const id_regex = /.+_(?<id>([\d]+|unique_unit|elite_unique_unit))_(x|copy)/;
+   const id_regex = /(?<type>.+)_(?<id>([\d]+))_(x|copy)/;
 
    let elId = svgObjId;
    const found = elId.match(id_regex);
    if (!found) {
-      return;
+      return {id: undefined, type: undefined};
    };
-   return parseInt(found.groups.id);
+   let id = parseInt(found.groups.id);	
+   let type = found.groups.type;
+
+   return {id, type}
 }
 
 class Civ {
