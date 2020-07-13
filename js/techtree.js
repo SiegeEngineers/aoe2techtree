@@ -352,7 +352,7 @@ const horseDisabledTechs = [BLOODLINES, HUSBANDRY, SCALE_BARDING_ARMOR, CHAIN_BA
 
 const defaultDisabledUnits = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,
     ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER, FLAMING_CAMEL, XOLOTL_WARRIOR];
-    
+
 const defaultDisabledBuildings = [KREPOST, FEITORIA,];
 
 class Tree {
@@ -546,13 +546,6 @@ function checkIdUnique(tree) {
     }
 }
 
-function resetToDefault(tree) {
-    SVG.select('.cross').animate(animation_duration).attr({'fill-opacity': 0});
-    disableUniqueUnits(tree);
-    enable([], [UNIQUE_UNIT, ELITE_UNIQUE_UNIT], []);
-    disable(defaultDisabledBuildings, defaultDisabledUnits, []);
-}
-
 function disable(buildings, units, techs) {
     for (let name of buildings) {
         SVG.get('building_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
@@ -574,16 +567,6 @@ function enable(buildings, units, techs) {
     }
     for (name of techs) {
         SVG.get('tech_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 0});
-    }
-}
-
-function disableUniqueUnits(tree) {
-    let carets = tree.carets();
-    for (let key of carets.keys()) {
-        let caret = carets.get(key);
-        if (caret.isUniqueUnit()) {
-            SVG.get(caret.id + '_x').animate(animation_duration).attr({'fill-opacity': 1});
-        }
     }
 }
 

@@ -1,18 +1,225 @@
-function civ(name, tree) {
-    resetToDefault(tree);
+function parseCiv(civ) {
+   let builder = new CivBuilder({uniqueUnit: civ.unique[0],
+         uniqueUnitElite: civ.unique[1],
+         uniqueTechOne: civ.unique[2],
+         uniqueTechTwo: civ.unique[3],
+         monkPrefix: civ.monkPrefix});
 
-    let selectedCiv = civsConfig[name];
+   if (civ.disabled) {
+      if (civ.disabled.buildings) {
+         builder.disableBuildings(civ.disabled.buildings);
+      }
+      if (civ.disabled.units) {
+         builder.disableUnits(civ.disabled.units);
+      }
+      if (civ.disabled.techs) {
+         builder.disableTechs(civ.disabled.techs);
+      }
+   }
 
-    let enabled = selectedCiv.enabled || {};
-    let disabled = selectedCiv.disabled || {};
-    let uniqueConfig = selectedCiv.unique || {};
-    if (selectedCiv.disableHorses) {
-        disableHorses();
-    }
+   if (civ.enabled) {
+      if (civ.enabled.buildings) {
+         builder.enableBuildings(civ.enabled.buildings);
+      }
+      if (civ.enabled.units) {
+         builder.enableUnits(civ.enabled.units);
+      }
+      if (civ.enabled.techs) {
+         builder.enableTechs(civ.enabled.techs);
+      }
+   }
 
-    enable(enabled.buildings || [], enabled.units || [], enabled.techs || []);
-    disable(disabled.buildings || [], disabled.units || [], disabled.techs || []);
-    unique(uniqueConfig || [], selectedCiv.monkPrefix);
+   if (civ.disableHorses) builder.disableHorses();
+   
+   return builder.build();
+}
+
+function civ(name) {
+   let selectedCiv = parseCiv(civsConfig[name]);
+
+   SVG.select('.cross').each(function(i) {
+      if (SVGObjectIsTransparent(this)) {
+         return;
+      }
+
+      let {id, type} = parseSVGObjectId(this.id());
+      if (id === undefined || type === undefined) {
+         return;
+      }
+
+      if (type === 'unit') {
+         if (selectedCiv.disabledUnits.includes(id)) {
+            return;
+         }
+      } else if (type === 'building') {
+         if (selectedCiv.disabledBuildings.includes(id)) {
+            return;
+         }
+      } else if (type === 'tech') {
+         if (selectedCiv.disabledTechs.includes(id)) {
+            return;
+         }
+      }
+
+      makeSVGObjectTransparent(this);
+   });
+
+   enable([], [UNIQUE_UNIT, ELITE_UNIQUE_UNIT], []);
+   disable(selectedCiv.disabledBuildings, selectedCiv.disabledUnits, selectedCiv.disabledTechs);
+   unique([selectedCiv.uniqueConfig.uniqueUnit,
+     selectedCiv.uniqueConfig.uniqueUnitElite,
+     selectedCiv.uniqueConfig.uniqueTechOne,
+     selectedCiv.uniqueConfig.uniqueTechTwo], selectedCiv.monkPrefix);
+}
+
+function SVGObjectIsTransparent(svgObj) {
+   return svgObj.attr('fill-opacity') === 0
+}
+
+function makeSVGObjectTransparent(svgObj) {
+   svgObj.attr({'fill-opacity': 0});
+}
+
+function parseSVGObjectId(svgObjId) {
+   const id_regex = /(?<type>.+)_(?<id>([\d]+))_(x|copy)/;
+
+   let elId = svgObjId;
+   const found = elId.match(id_regex);
+   if (!found) {
+      return {id: undefined, type: undefined};
+   };
+   let id = parseInt(found.groups.id);	
+   let type = found.groups.type;
+
+   return {id, type}
+}
+
+class Civ {
+  constructor(buildings, techs, units, monkPrefix, uniqueConfig) {
+     this.disabledBuildings = buildings || [];
+     this.disabledTechs = techs || [];
+     this.disabledUnits = units || [];
+     this.monkPrefix = monkPrefix;
+     this.uniqueConfig = uniqueConfig;
+  }
+}
+
+class CivBuilder {
+  constructor(uniqueConfig) {
+     this.disabledBuildings = [
+        // Unique Buildings
+        KREPOST,
+        FEITORIA,
+     ];
+     this.disabledUnits = [
+        // Units that are not often enabled
+        BATTLE_ELEPHANT,
+        ELITE_BATTLE_ELEPHANT,
+        STEPPE_LANCER,
+        ELITE_STEPPE_LANCER,
+        EAGLE_SCOUT,
+        EAGLE_WARRIOR,
+        ELITE_EAGLE_WARRIOR,
+        // Unique units
+        SLINGER,
+        IMPERIAL_SKIRMISHER,
+        GENITOUR,
+        ELITE_GENITOUR,
+        CONDOTTIERO,
+        IMPERIAL_CAMEL_RIDER,
+        XOLOTL_WARRIOR,
+        TURTLE_SHIP,
+        ELITE_TURTLE_SHIP,
+        LONGBOAT,
+        ELITE_LONGBOAT,
+        CARAVEL,
+        ELITE_CARAVEL,
+        FLAMING_CAMEL,
+        KONNIK,
+        ELITE_KONNIK,
+        MISSIONARY,
+     ];
+     this.disabledTechs = [];
+     this.uniqueUnit = uniqueConfig.uniqueUnit;
+     this.uniqueUnitElite = uniqueConfig.uniqueUnitElite;
+     this.uniqueTechOne = uniqueConfig.uniqueTechOne;
+     this.uniqueTechTwo = uniqueConfig.uniqueTechTwo;
+     this.monkPrefix = uniqueConfig.monkPrefix;
+  }
+
+  disableHorses() {
+     this.disabledBuildings = this.disabledBuildings.concat([STABLE]);
+     this.disabledTechs = this.disabledTechs.concat([
+        BLOODLINES,
+        HUSBANDRY,
+        SCALE_BARDING_ARMOR,
+        CHAIN_BARDING_ARMOR,
+        PLATE_BARDING_ARMOR,
+        PARTHIAN_TACTICS,
+     ]);
+     this.disabledUnits = this.disabledUnits.concat([
+        SCOUT_CAVALRY,
+        LIGHT_CAVALRY,
+        HUSSAR,
+        KNIGHT,
+        PALADIN,
+        CAMEL_RIDER,
+        HEAVY_CAMEL_RIDER,
+        CAVALIER,
+        CAVALRY_ARCHER,
+        HEAVY_CAV_ARCHER,
+     ]);
+     return this;
+  }
+
+  disableBuildings(toDisable) {
+     this.disabledBuildings = this.disabledBuildings.concat(toDisable);
+     return this;
+  }
+
+  disableUnits(toDisable) {
+     this.disabledUnits = this.disabledUnits.concat(toDisable);
+     return this;
+  }
+
+  disableTechs(toDisable) {
+     this.disabledTechs = this.disabledTechs.concat(toDisable);
+     return this;
+  }
+
+  enableUnits(toEnable) {
+     for (let enable of toEnable) {
+        this.disabledUnits.splice(this.disabledUnits.indexOf(enable),1)
+     }
+     return this;
+  }
+
+  enableBuildings(toEnable) {
+     for (let enable of toEnable) {
+        this.disabledBuildings.splice(this.disabledBuildings.indexOf(enable),1)
+     }
+     return this;
+  }
+
+  enableTechs(toEnable) {
+   for (let enable of toEnable) {
+      this.disabledTechs.splice(this.disabledTechs.indexOf(enable),1)
+   }
+   return this;
+}
+
+  build() {
+     return new Civ(this.disabledBuildings,
+                this.disabledTechs,
+                this.disabledUnits,
+                this.monkPrefix,
+                {
+                   uniqueUnit: this.uniqueUnit,
+                   uniqueUnitElite: this.uniqueUnitElite,
+                   uniqueTechOne: this.uniqueTechOne,
+                   uniqueTechTwo: this.uniqueTechTwo,
+                 })
+  }
 }
 
 const civsConfig = { 
