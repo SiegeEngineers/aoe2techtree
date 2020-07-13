@@ -43,7 +43,7 @@ function civ(name) {
       }
 
       let {id, type} = parseSVGObjectId(this.id());
-      if (!id || !type) {
+      if (id === undefined || type === undefined) {
          return;
       }
 
