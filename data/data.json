@@ -959,7 +959,7 @@
             },
             "61": {
                 "Cost": {
-                    "Food": 1000,
+                    "Food": 800,
                     "Gold": 600
                 },
                 "ID": 61,
@@ -8191,7 +8191,7 @@
                 ],
                 "Cost": {
                     "Gold": 60,
-                    "Wood": 110
+                    "Wood": 115
                 },
                 "FrameDelay": 32,
                 "GarrisonCapacity": 0,
@@ -8254,7 +8254,7 @@
                 ],
                 "Cost": {
                     "Gold": 60,
-                    "Wood": 110
+                    "Wood": 115
                 },
                 "FrameDelay": 32,
                 "GarrisonCapacity": 0,
@@ -8313,7 +8313,7 @@
                 ],
                 "Cost": {
                     "Gold": 180,
-                    "Wood": 180
+                    "Wood": 190
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
@@ -8372,7 +8372,7 @@
                 ],
                 "Cost": {
                     "Gold": 180,
-                    "Wood": 180
+                    "Wood": 190
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
@@ -9116,14 +9116,14 @@
                         "Class": 32
                     }
                 ],
-                "Attack": 9,
+                "Attack": 10,
                 "Attacks": [
                     {
                         "Amount": 2,
                         "Class": 21
                     },
                     {
-                        "Amount": 9,
+                        "Amount": 10,
                         "Class": 4
                     },
                     {
@@ -9333,7 +9333,7 @@
                     }
                 ],
                 "Cost": {
-                    "Gold": 40,
+                    "Gold": 43,
                     "Wood": 90
                 },
                 "FrameDelay": 0,
@@ -9400,7 +9400,7 @@
                     }
                 ],
                 "Cost": {
-                    "Gold": 40,
+                    "Gold": 43,
                     "Wood": 90
                 },
                 "FrameDelay": 0,
@@ -10365,7 +10365,7 @@
                     }
                 ],
                 "Cost": {
-                    "Food": 30,
+                    "Food": 25,
                     "Gold": 15
                 },
                 "FrameDelay": 0,
@@ -10424,7 +10424,7 @@
                     }
                 ],
                 "Cost": {
-                    "Food": 30,
+                    "Food": 25,
                     "Gold": 15
                 },
                 "FrameDelay": 0,
@@ -11483,7 +11483,7 @@
                         "Class": 30
                     },
                     {
-                        "Amount": 80,
+                        "Amount": 130,
                         "Class": 5
                     },
                     {
@@ -12079,7 +12079,7 @@
         "26097": "Build <b>Trebuchet</b> (\u2039cost\u203a) <br>\nPowerful anti-building siege weapon with long range. Must be packed to move, unpacked to attack. Cannot attack enemies at close range. Strong vs. buildings. Can attack ground and destroy trees.<i> Upgrades: attack, range (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26099": "Create <b>Monk</b> (\u2039cost\u203a) <br>\nConverts enemy units to your civilization. Heals friendly units (except ships and siege weapons). Strong vs. slow and non-ranged units. Weak vs. Light Cavalry and ranged units. Can collect Relics and bring them to Monasteries.<i> Upgrades: at Monastery.</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26100": "Build <b>Trade Cart</b> (\u2039cost\u203a) <br>\nTrade unit used for generating gold at another player's Market. To trade, click the Trade Cart then right-click another player's Market. Will return with gold to your Market.<i> Upgrades: generate more gold (Market); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
-        "26101": "Create <b>Cataphract</b> (\u2039cost\u203a) <br>\nByzantine unique cavalry unit. Strong vs. infantry. Weak vs. archers. <i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed, to Elite Cataphract 1600F, 800G (Castle); more resistant to Monks.</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26101": "Create <b>Cataphract</b> (\u2039cost\u203a) <br>\nByzantine unique cavalry unit. Strong vs. infantry. Weak vs. archers. <i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed, to Elite Cataphract 1200F, 800G (Castle); more resistant to Monks.</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26102": "Create <b>Chu Ko Nu</b> (\u2039cost\u203a) <br>\nChinese unique archer with rapid-fire attack. Strong vs. infantry. Weak vs. archers and siege weapons. <i> Upgrades: attack, range (Blacksmith); accuracy (Archery Range); attack, accuracy (University); creation speed, to Elite Chu Ko Nu 760F, 760G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26103": "Create <b>Mameluke</b> (\u2039cost\u203a) <br>\nSaracen unique camel unit with ranged melee attack. Strong vs. cavalry. Weak vs. archers and Pikemen. <i> Upgrades: attack, armor (Blacksmith); speed, hit points  (Stable); creation speed, to Elite Mameluke 600F, 500G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26104": "Create <b>Huskarl</b> (\u2039cost\u203a) <br>\nGothic unique infantry unit with high pierce armor. Strong vs. archers and buildings. Weak vs. cavalry. <i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed, to Elite Huskarl 1200F, 550G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
@@ -12103,9 +12103,9 @@
         "26134": "Create <b>Camel Archer</b> (\u2039cost\u203a) <br>\nBerber unique mounted archer. Strong vs. Cavalry Archers and infantry. Weak vs. Pikemen, Skirmishers, and Camel Riders.<i> Upgrades: attack, range, armor (Blacksmith); speed, hit points (Stable); accuracy, armor (Archery Range); attack, accuracy (University); creation speed, to Elite Camel Archer 1000W, 500G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26135": "Build <b>Barracks</b> (\u2039cost\u203a) <br>\nUsed to train and upgrade infantry units.<b><i> Required for Archery Range, Stable.</b></i> <i> Upgrades: production speed (Castle); line of sight (Town Center); hit points, armor (University); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a \u2039garrison\u203a",
         "26136": "Create <b>Elite Camel Archer</b> (\u2039cost\u203a) <br>\nBerber unique mounted archer. Strong vs. Cavalry Archers and infantry. Weak vs. Pikemen, Skirmishers, and Camel Riders.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); accuracy, armor (Archery Range); attack, accuracy (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
-        "26137": "Create <b>Genitour</b> (\u2039cost\u203a) <br>\nMounted skirmisher. Strong vs. archers. Weak vs. units at close range. Trainable by Berbers and their allies.<i> Upgrades: speed, hit points (Stable); attack, range, armor (Blacksmith); attack, accuracy (University); accuracy, armor, to Elite Genitour 500F, 450W (Archery Range); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26137": "Create <b>Genitour</b> (\u2039cost\u203a) <br>\nMounted skirmisher. Strong vs. archers. Weak vs. units at close range. Trainable by Berbers and their allies.<i> Upgrades: speed, hit points (Stable); attack, range, armor (Blacksmith); attack, accuracy (University); accuracy, to Elite Genitour 500F, 450W (Archery Range); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26138": "Build <b>Monastery</b> (\u2039cost\u203a) <br>\nUsed to train and upgrade Monks. Garrison relics to generate gold. Cannot be converted by enemy Monks.<i> Upgrades: line of sight (Town Center); hit points, armor (University).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a \u2039garrison\u203a",
-        "26139": "Create <b>Elite Genitour</b> (\u2039cost\u203a) <br>\nMounted skirmisher. Strong vs. archers. Weak vs. units at close range. Trainable by Berbers and their allies.<i> Upgrades: speed, hit points (Stable); attack, range, armor (Blacksmith); attack, accuracy (University); accuracy, armor (Archery Range); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26139": "Create <b>Elite Genitour</b> (\u2039cost\u203a) <br>\nMounted skirmisher. Strong vs. archers. Weak vs. units at close range. Trainable by Berbers and their allies.<i> Upgrades: speed, hit points (Stable); attack, range, armor (Blacksmith); attack, accuracy (University); accuracy (Archery Range); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26140": "Create <b>Gbeto</b> (\u2039cost\u203a) <br>\nMalian unique infantry unit with ranged melee attack. Fast-moving. Strong vs. infantry. Weak vs. archers and siege weapons.<i> Upgrades: armor (Blacksmith); creation speed, to Elite Gbeto 900F, 600G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26141": "Create <b>Elite Gbeto</b> (\u2039cost\u203a) <br>\nMalian unique infantry unit with ranged melee attack. Fast-moving. Strong vs. infantry. Weak vs. archers and siege weapons.<i> Upgrades: armor (Blacksmith); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26142": "Build <b>Castle</b> (\u2039cost\u203a) <br>\nUsed to train and upgrade your unique unit, build Trebuchets, and research technologies. Automatically attacks enemies within range. Units can garrison inside for protection. Archers and Villagers provide additional projectiles. Provides 20 population. Cannot be converted by enemy Monks.<i> Upgrades: production speed (Castle); line of sight (Town Center); hit points, armor, accuracy (University); attack, range (Blacksmith); attack, range (Castle).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a \u2039garrison\u203a",
@@ -12295,7 +12295,7 @@
         "28269": "Research <b>Druzhina</b> (\u2039cost\u203a) <br>\nInfantry damage adjacent units.",
         "28270": "Research <b>Sultans</b> (\u2039cost\u203a) <br>\nAll gold income 10% faster (Trade, mines, relics).",
         "28271": "Research <b>Shatagni</b> (\u2039cost\u203a) <br>\nHand cannoneers have +1 range.",
-        "28272": "Research <b>Pavise</b> (\u2039cost\u203a) <br>\nFoot Archers have +1 armor/+1 pierce armor.",
+        "28272": "Research <b>Pavise</b> (\u2039cost\u203a) <br>\nFoot Archers and Condottieri have +1 armor/+1 pierce armor.",
         "28273": "Research <b>Silk Road</b> (\u2039cost\u203a) <br>\n Trade units cost -50%.",
         "28274": "Research <b>Recurve Bow</b> (\u2039cost\u203a) <br>\nCavalry archers have +1 range, +1 attack.",
         "28275": "Research <b>Corvinian Army</b> (\u2039cost\u203a) <br>\nMagyar Huszars cost no gold.",
@@ -12393,13 +12393,13 @@
         "120164": "Infantry and Monk civilization <br>\n<br>\n\u2022 Villagers carry +5 <br>\n\u2022 Military units created 10% faster <br>\n\u2022 +5 Monk hit points for each Monastery technology <br>\n\u2022 Start with +50 gold<br>\n<br>\n<b>Unique Unit:</b>  <br>\nJaguar Warrior (infantry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Atlatl (Skirmishers +1 attack, +1 range) <br>\n\u2022 Garland Wars (+4 infantry attack)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nRelics generate +33% gold",
         "120165": "Archer civilization <br>\n<br>\n\u2022 Start with +1 villager, but -50 food <br>\n\u2022 Resources last 15% longer <br>\n\u2022 Archers cost -10% Feudal, -20% Castle, -30% Imperial Age <br>\n<br>\n<b>Unique Unit:</b>  <br>\nPlumed Archer (archer) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Obsidian Arrows (Archers, Crossbowmen and Arbalesters +6 attack vs. buildings) <br>\n\u2022 El Dorado (Eagle Warriors have +40 hit points)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nWalls cost -50%",
         "120166": "Cavalry civilization <br>\n<br>\n\u2022 Do not need houses, but start with -100 wood <br>\n\u2022 Cavalry Archers cost -10% Castle, -20% Imperial Age <br>\n\u2022 Trebuchets +30% accuracy <br>\n<br>\n<b>Unique Unit:</b>  <br>\nTarkan (cavalry) <br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Marauders (Create Tarkans at stables) <br>\n\u2022 Atheism (+100 years Relic, Wonder victories <br>\nSpies/Treason costs -50%)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nStables work 20% faster",
-        "120167": "Defensive and Naval civilization <br>\n<br>\n\u2022 Villagers +3 line of sight <br>\n\u2022 Stone miners work 20% faster <br>\n\u2022 Tower upgrades free (Bombard Tower requires Chemistry)<br>\n\u2022 Tower range +1 Castle, +2 Imperial Age<br>\n\u2022 Military units (except siege weapons) cost -15% wood <br>\n<br>\n<b>Unique Units:</b>  <br>\nWar Wagon (cavalry archer), Turtle Ship (war ship)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Panokseon (Turtle Ships move 15% faster) <br>\n\u2022 Shinkichon (Mangonel-line +1 range)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nMangonel-line minimum range reduced",
-        "120168": "Archer and Naval civilization <br>\n<br>\n\u2022 Advancing to the next age costs -15% <br>\n\u2022 Dock technologies cost -50% <br>\n\u2022 Fishing Ships cost -15%<br>\n\u2022 Gunpowder units cost -20%<br>\n<br>\n<b>Unique Units:</b>  <br>\nGenoese Crossbowman (archer), Condottiero (infantry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Pavise (foot archers +1 armor/+1 pierce armor) <br>\n\u2022 Silk Road (trade units cost -50%)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nCondottiero available in the Barracks in Imperial Age",
+        "120167": "Defensive and Naval civilization <br>\n<br>\n\u2022 Villagers +3 line of sight <br>\n\u2022 Stone miners work 20% faster <br>\n\u2022 Tower upgrades free (Bombard Tower requires Chemistry)<br>\n\u2022 Tower range +1 Castle, +2 Imperial Age<br>\n\u2022 Military units (except siege weapons) cost -20% wood <br>\n<br>\n<b>Unique Units:</b>  <br>\nWar Wagon (cavalry archer), Turtle Ship (war ship)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Panokseon (Turtle Ships move 15% faster) <br>\n\u2022 Shinkichon (Mangonel-line +1 range)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nMangonel-line minimum range reduced",
+        "120168": "Archer and Naval civilization <br>\n<br>\n\u2022 Advancing to the next age costs -15% <br>\n\u2022 Dock technologies cost -50% <br>\n\u2022 Fishing Ships cost -15%<br>\n\u2022 Gunpowder units cost -20%<br>\n<br>\n<b>Unique Units:</b>  <br>\nGenoese Crossbowman (archer), Condottiero (infantry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Pavise (foot archers and Condottieri +1 armor/+1 pierce armor) <br>\n\u2022 Silk Road (trade units cost -50%)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nCondottiero available in the Barracks in Imperial Age",
         "120169": "Camel and Gunpowder civilization <br>\n<br>\n\u2022 Villagers cost -10% Dark, -15% Feudal, -20% Castle, -25% Imperial Age <br>\n\u2022 Fishermen work 10% faster <br>\n\u2022 Camel Riders +1P armor <br>\n<br>\n<b>Unique Units:</b>  <br>\nElephant Archer (cavalry archer), Imperial Camel Rider (camel rider)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Sultans (All gold income 10% faster) <br>\n\u2022 Shatagni (Hand Cannoneers +1 range)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nCamel units +5 attack vs. buildings",
         "120170": "Infantry civilization <br>\n<br>\n\u2022 Start with a free Llama <br>\n\u2022 Villagers affected by Blacksmith upgrades <br>\n\u2022 Houses support 10 population <br>\n\u2022 Buildings cost -15% stone<br>\n<br>\n<b>Unique Units:</b>  <br>\nKamayuk (infantry), Slinger (archer)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Andean Sling (Skirmishers and Slingers no minimum range) <br>\n\u2022 Fabric Shields (Kamayuks, Slingers, Eagles +1/+2P armor)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nFarms built 50% faster",
         "120171": "Cavalry civilization <br>\n<br>\n\u2022 Villagers kill wolves with 1 strike <br>\n\u2022 Forging, Iron Casting, Blast Furnace free<br>\n\u2022 Scout Cavalry, Light Cavalry, Hussar cost -15% <br>\n<br>\n<b>Unique Unit:</b>  <br>\nMagyar Huszar (cavalry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Corvinian Army (Magyar Huszars cost no gold) <br>\n\u2022 Recurve Bow (Cavalry archers +1 range, +1 attack)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nFoot archers +2 LOS",
         "120172": "Infantry and Siege civilization <br>\n<br>\n\u2022 Farmers work 10% faster <br>\n\u2022 Supplies free <br>\n\u2022 Siege Workshop units 15% cheaper<br>\n<br>\n<b>Unique Unit:</b>  <br>\nBoyar (cavalry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Orthodoxy (Monks +3/+3P armor) <br>\n\u2022 Druzhina (Infantry damage adjacent units)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nMilitary buildings provide +5 population room",
-        "120173": "Naval and Gunpowder civilization <br>\n<br>\n\u2022 All units cost -15% gold <br>\n\u2022 Ships +10% HP <br>\n\u2022 Can build Feitoria in Imperial Age <br>\n<br>\n<b>Unique Units:</b>  <br>\nOrgan Gun (siege), Caravel (war ship)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Carrack (Ships +1/+1 armor) <br>\n\u2022 Arquebus (gunpowder units more accurate)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nLine of sight is shared with the team starting in the Dark Age",
+        "120173": "Naval and Gunpowder civilization <br>\n<br>\n\u2022 All units cost -20% gold <br>\n\u2022 Ships +10% HP <br>\n\u2022 Can build Feitoria in Imperial Age <br>\n<br>\n<b>Unique Units:</b>  <br>\nOrgan Gun (siege), Caravel (war ship)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Carrack (Ships +1/+1 armor) <br>\n\u2022 Arquebus (gunpowder units more accurate)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nLine of sight is shared with the team starting in the Dark Age",
         "120174": "Archer civilization <br>\n<br>\n\u2022 Archers fire 15% faster <br>\n\u2022 Receive +100 gold, +100 food when advancing to the next age <br>\n\u2022 Pikeman upgrade free<br>\n<br>\n<b>Unique Unit:</b>  <br>\nShotel Warrior (infantry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Royal Heirs (Shotel Warriors train nearly instantly) <br>\n\u2022 Torsion Engines (increases blast radius of Siege Workshop units)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nTowers and Outposts +3 LOS",
         "120175": "Infantry civilization <br>\n<br>\n\u2022 Buildings cost -15% wood <br>\n\u2022 Barracks units +1P armor per age (starting from Feudal Age)<br>\n\u2022 Gold Mining free <br>\n<br>\n<b>Unique Unit:</b>  <br>\nGbeto (infantry)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Tigui (Town Centers fire arrows when ungarrisoned) <br>\n\u2022 Farimba (Cavalry +5 attack)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nUniversities work 80% faster",
         "120176": "Cavalry and Naval civilization <br>\n<br>\n\u2022 Villagers move 10% faster <br>\n\u2022 Stable units cost -15% in Castle, -20% in Imperial Age <br>\n\u2022 Ships move 10% faster <br>\n<br>\n<b>Unique Units:</b>  <br>\nCamel Archer (cavalry archer), Genitour (mounted skirmisher)<br>\n<br>\n<b>Unique Techs:</b>  <br>\n\u2022 Kasbah (team castles work 25% faster) <br>\n\u2022 Maghrebi Camels (Camel units regenerate)<br>\n<br>\n<b>Team Bonus:</b>  <br>\nGenitour available in the Archery Range starting in the Castle Age",
