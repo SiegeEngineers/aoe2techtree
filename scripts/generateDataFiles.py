@@ -272,6 +272,8 @@ UNITS = {
     1233: {"internal_name": "EKIPCHAK"},
     1234: {"internal_name": "LEITIS"},
     1236: {"internal_name": "ELEITIS"},
+    1252: {"internal_name": "KONNIK_INF"},
+    1253: {"internal_name": "EKONNIK_INF"},
     1254: {"internal_name": "KONNIK"},
     1255: {"internal_name": "EKONNIK"},
     1263: {"internal_name": "FCAMEL"},
@@ -482,6 +484,8 @@ def gather_language_data(resourcesdir, data, language):
     key_value[26708] = key_value[26186]  # Palisade Gate
     key_value[26097] = key_value[26381]  # Trebuchet
     key_value[26768] = key_value[28314]  # Gillnets
+    key_value[26659] = key_value[26288]  # Use Konnik for Dismounted Konnik
+    key_value[26662] = key_value[26290]  # Use Elite Konnik for Dismounted Elite Konnik
 
     key_value_filtered = {}
     for datatype in data:

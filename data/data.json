@@ -11314,6 +11314,140 @@
                 "TrainTime": 18,
                 "internal_name": "ELEITIS"
             },
+            "1252": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 12,
+                "Attacks": [
+                    {
+                        "Amount": 0,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    }
+                ],
+                "Cost": {
+                    "Food": 0,
+                    "Gold": 0
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 45,
+                "ID": 1252,
+                "LanguageHelpId": 26659,
+                "LanguageNameId": 5659,
+                "LineOfSight": 5,
+                "MeleeArmor": 0,
+                "MinRange": 0,
+                "PierceArmor": 0,
+                "Range": 0,
+                "ReloadTime": 2.4,
+                "Speed": 0.9,
+                "TrainTime": 19,
+                "internal_name": "KONNIK_INF"
+            },
+            "1253": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 13,
+                "Attacks": [
+                    {
+                        "Amount": 0,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 13,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    }
+                ],
+                "Cost": {
+                    "Food": 0,
+                    "Gold": 0
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 50,
+                "ID": 1253,
+                "LanguageHelpId": 26662,
+                "LanguageNameId": 5662,
+                "LineOfSight": 5,
+                "MeleeArmor": 0,
+                "MinRange": 0,
+                "PierceArmor": 1,
+                "Range": 0,
+                "ReloadTime": 2.4,
+                "Speed": 0.9,
+                "TrainTime": 19,
+                "internal_name": "EKONNIK_INF"
+            },
             "1254": {
                 "AccuracyPercent": 100,
                 "Armours": [
@@ -11842,8 +11976,10 @@
         "5573": "Elite Cannon Galleon",
         "5574": "Berserk",
         "5576": "Elite Berserk",
+        "5659": "Konnik (Dismounted)",
         "5660": "Petard",
         "5661": "Hussar",
+        "5662": "Elite Konnik (Dismounted)",
         "5667": "Jaguar Warrior",
         "5669": "Elite Jaguar Warrior",
         "5671": "Eagle Warrior",
@@ -12202,8 +12338,10 @@
         "26573": "Build <b>Elite Cannon Galleon</b> (\u2039cost\u203a) <br>\nAnti-building siege warship with long range, but cannot attack enemies at close range. Strong vs. buildings. Weak vs. other units.<i> Upgrades: armor, speed, cost (Dock); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26574": "Create <b>Berserk</b> (\u2039cost\u203a) <br>\nViking unique infantry unit that slowly heals itself. Strong vs. infantry and siege weapons. Weak vs. archers.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed, to Elite Berserk 1300F, 550G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26576": "Create <b>Elite Berserk</b> (\u2039cost\u203a) Viking unique infantry unit that slowly heals itself. Strong vs. infantry and siege weapons. Weak vs. archers.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26659": "Create <b>Konnik</b> (\u2039cost\u203a) <br>\nBulgarian unique cavalry unit that fights on as infantry when felled. Strong vs. infantry and archers. Weak vs. Camel Riders and Monks.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed, to Elite Konnik 1000F, 750G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26660": "Create <b>Petard</b> (\u2039cost\u203a) <br>\nDemolition infantry armed with explosives. Strong vs. buildings. Weak vs. other units. Self-destructs when used.<i> Upgrades: attack (University); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26661": "Create <b>Hussar</b> (\u2039cost\u203a) <br>\nFast cavalry for scouting and raiding. Resistant to conversion. Strong vs. Monks. Weak vs. Pikemen and Camel Riders.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
+        "26662": "Create <b>Elite Konnik</b> (\u2039cost\u203a) <br>\nBulgarian unique cavalry unit that fights on as infantry when felled. Strong vs. infantry and archers. Weak vs. Camel Riders and Monks.<i> Upgrades: attack, armor (Blacksmith); speed, hit points (Stable); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26667": "Create <b>Jaguar Warrior</b> (\u2039cost\u203a) <br>\nAztec unique infantry unit. Strong vs. infantry. Weak vs. cavalry and archers.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed, to Elite Jaguar Warrior 1000F, 500G (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26669": "Create <b>Elite Jaguar Warrior</b> (\u2039cost\u203a) <br>\nAztec unique infantry unit. Strong vs. infantry. Weak vs. cavalry and archers.<i> Upgrades: attack, armor (Blacksmith); speed (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
         "26671": "Create <b>Eagle Warrior</b> (\u2039cost\u203a) <br>\nFast infantry for scouting and raiding. Resistant to conversion. Strong vs. Monks and archers. Weak vs. Long Swordsmen and cavalry.<i> Upgrades: attack, armor (Blacksmith); speed, to Elite Eagle Warrior 800F, 500G (Barracks); creation speed (Castle); more resistant to Monks (Monastery).</i> <br>\n\u2039hp\u203a \u2039attack\u203a \u2039armor\u203a \u2039piercearmor\u203a \u2039range\u203a",
