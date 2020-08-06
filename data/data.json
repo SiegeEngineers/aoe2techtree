@@ -82,7 +82,31 @@
     "data": {
         "buildings": {
             "12": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 175
                 },
@@ -93,13 +117,39 @@
                 "LanguageNameId": 5135,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
+                "MinRange": 0,
                 "PierceArmor": 7,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 50,
                 "internal_name": "Barracks Age1"
             },
             "45": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 150
                 },
@@ -110,13 +160,39 @@
                 "LanguageNameId": 5144,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
+                "MinRange": 2,
                 "PierceArmor": 7,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 35,
                 "internal_name": "DOCK"
             },
             "49": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 200
                 },
@@ -127,13 +203,39 @@
                 "LanguageNameId": 5169,
                 "LineOfSight": 6,
                 "MeleeArmor": 1,
+                "MinRange": 0,
                 "PierceArmor": 8,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 40,
                 "internal_name": "SIWS"
             },
             "50": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 60
                 },
@@ -144,13 +246,39 @@
                 "LanguageNameId": 5149,
                 "LineOfSight": 1,
                 "MeleeArmor": 0,
+                "MinRange": 0,
                 "PierceArmor": 0,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 15,
                 "internal_name": "FARM"
             },
             "68": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 100
                 },
@@ -161,13 +289,39 @@
                 "LanguageNameId": 5157,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
+                "MinRange": 0,
                 "PierceArmor": 7,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 35,
                 "internal_name": "MILL"
             },
             "70": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 25
                 },
@@ -178,13 +332,44 @@
                 "LanguageNameId": 5344,
                 "LineOfSight": 2,
                 "MeleeArmor": 0,
+                "MinRange": 0,
                 "PierceArmor": 7,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 25,
                 "internal_name": "HOUS"
             },
             "71": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 5,
+                "Attacks": [
+                    {
+                        "Amount": 5,
+                        "Class": 3
+                    }
+                ],
                 "Cost": {
                     "Wood": 275
                 },
@@ -195,13 +380,43 @@
                 "LanguageNameId": 5164,
                 "LineOfSight": 8,
                 "MeleeArmor": 4,
+                "MinRange": 0,
                 "PierceArmor": 6,
                 "Range": 6,
+                "ReloadTime": 2,
                 "TrainTime": 100,
                 "internal_name": "RTWC2"
             },
             "72": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 22
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 2
                 },
@@ -212,13 +427,47 @@
                 "LanguageNameId": 5202,
                 "LineOfSight": 2,
                 "MeleeArmor": 2,
+                "MinRange": 0,
                 "PierceArmor": 5,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 6,
                 "internal_name": "WALL"
             },
             "78": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 20,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 22
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Stone": 30
                 },
@@ -229,13 +478,68 @@
                 "LanguageNameId": 5185,
                 "LineOfSight": 6,
                 "MeleeArmor": 6,
+                "MinRange": 0,
                 "PierceArmor": 6,
                 "Range": 0,
+                "ReloadTime": 2.5,
                 "TrainTime": 70,
                 "internal_name": "GTAB2"
             },
             "79": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 5,
+                "Attacks": [
+                    {
+                        "Amount": 2,
+                        "Class": 27
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 34
+                    }
+                ],
                 "Cost": {
                     "Stone": 125,
                     "Wood": 50
@@ -247,13 +551,68 @@
                 "LanguageNameId": 5178,
                 "LineOfSight": 10,
                 "MeleeArmor": 1,
+                "MinRange": 1,
                 "PierceArmor": 7,
                 "Range": 8,
+                "ReloadTime": 2,
                 "TrainTime": 80,
                 "internal_name": "WCTW"
             },
             "82": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 26
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 11,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 11,
+                "Attacks": [
+                    {
+                        "Amount": 2,
+                        "Class": 27
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 11,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 17
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 34
+                    }
+                ],
                 "Cost": {
                     "Stone": 650
                 },
@@ -264,13 +623,39 @@
                 "LanguageNameId": 5142,
                 "LineOfSight": 11,
                 "MeleeArmor": 8,
+                "MinRange": 1,
                 "PierceArmor": 11,
                 "Range": 8,
+                "ReloadTime": 2,
                 "TrainTime": 200,
                 "internal_name": "CSTL"
             },
             "84": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 175
                 },
@@ -281,13 +666,39 @@
                 "LanguageNameId": 5161,
                 "LineOfSight": 6,
                 "MeleeArmor": 1,
+                "MinRange": 0,
                 "PierceArmor": 8,
                 "Range": 0,
+                "ReloadTime": 2.5,
                 "TrainTime": 60,
                 "internal_name": "MRKT"
             },
             "87": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 175
                 },
@@ -298,13 +709,39 @@
                 "LanguageNameId": 5128,
                 "LineOfSight": 6,
                 "MeleeArmor": 1,
+                "MinRange": 0,
                 "PierceArmor": 8,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 50,
                 "internal_name": "ARRG"
             },
             "101": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 175
                 },
@@ -315,13 +752,39 @@
                 "LanguageNameId": 5171,
                 "LineOfSight": 6,
                 "MeleeArmor": 1,
+                "MinRange": 0,
                 "PierceArmor": 8,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 50,
                 "internal_name": "STBL"
             },
             "103": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 150
                 },
@@ -332,13 +795,39 @@
                 "LanguageNameId": 5131,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
+                "MinRange": 0,
                 "PierceArmor": 7,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 40,
                 "internal_name": "BLAC"
             },
             "104": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 175
                 },
@@ -349,13 +838,44 @@
                 "LanguageNameId": 5138,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
+                "MinRange": 0,
                 "PierceArmor": 7,
                 "Range": 0,
+                "ReloadTime": 2.5,
                 "TrainTime": 40,
                 "internal_name": "CRCH"
             },
             "109": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 5,
+                "Attacks": [
+                    {
+                        "Amount": 5,
+                        "Class": 3
+                    }
+                ],
                 "Cost": {
                     "Stone": 100,
                     "Wood": 275
@@ -367,13 +887,47 @@
                 "LanguageNameId": 5164,
                 "LineOfSight": 8,
                 "MeleeArmor": 3,
+                "MinRange": 0,
                 "PierceArmor": 5,
                 "Range": 6,
+                "ReloadTime": 2,
                 "TrainTime": 100,
                 "internal_name": "RTWC"
             },
             "117": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 16,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 22
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Stone": 5
                 },
@@ -384,13 +938,47 @@
                 "LanguageNameId": 5203,
                 "LineOfSight": 2,
                 "MeleeArmor": 8,
+                "MinRange": 0,
                 "PierceArmor": 10,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 10,
                 "internal_name": "WALL2"
             },
             "155": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 24,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 22
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Stone": 5
                 },
@@ -401,13 +989,31 @@
                 "LanguageNameId": 5204,
                 "LineOfSight": 2,
                 "MeleeArmor": 12,
+                "MinRange": 0,
                 "PierceArmor": 12,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 10,
                 "internal_name": "WALL3"
             },
             "199": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 100
                 },
@@ -418,13 +1024,39 @@
                 "LanguageNameId": 5495,
                 "LineOfSight": 1,
                 "MeleeArmor": 0,
+                "MinRange": 0,
                 "PierceArmor": 0,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 40,
                 "internal_name": "FTRAP"
             },
             "209": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 9,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 200
                 },
@@ -435,13 +1067,68 @@
                 "LanguageNameId": 5176,
                 "LineOfSight": 6,
                 "MeleeArmor": 2,
+                "MinRange": 0,
                 "PierceArmor": 9,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 60,
                 "internal_name": "UNIV"
             },
             "234": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 7,
+                "Attacks": [
+                    {
+                        "Amount": 2,
+                        "Class": 27
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 9,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 9,
+                        "Class": 34
+                    }
+                ],
                 "Cost": {
                     "Stone": 125,
                     "Wood": 50
@@ -453,13 +1140,68 @@
                 "LanguageNameId": 5154,
                 "LineOfSight": 10,
                 "MeleeArmor": 2,
+                "MinRange": 1,
                 "PierceArmor": 8,
                 "Range": 8,
+                "ReloadTime": 2,
                 "TrainTime": 80,
                 "internal_name": "WCTW2"
             },
             "235": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 9,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 8,
+                "Attacks": [
+                    {
+                        "Amount": 2,
+                        "Class": 27
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 34
+                    }
+                ],
                 "Cost": {
                     "Stone": 125,
                     "Wood": 50
@@ -471,13 +1213,64 @@
                 "LanguageNameId": 5155,
                 "LineOfSight": 10,
                 "MeleeArmor": 3,
+                "MinRange": 1,
                 "PierceArmor": 9,
                 "Range": 8,
+                "ReloadTime": 2,
                 "TrainTime": 80,
                 "internal_name": "WCTW3"
             },
             "236": {
+                "AccuracyPercent": 92,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 9,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 23
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 120,
+                "Attacks": [
+                    {
+                        "Amount": 40,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 120,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 40,
+                        "Class": 34
+                    }
+                ],
                 "Cost": {
                     "Gold": 100,
                     "Stone": 125
@@ -489,13 +1282,39 @@
                 "LanguageNameId": 5156,
                 "LineOfSight": 10,
                 "MeleeArmor": 3,
+                "MinRange": 1,
                 "PierceArmor": 9,
                 "Range": 8,
+                "ReloadTime": 6,
                 "TrainTime": 80,
                 "internal_name": "WCTW4"
             },
             "276": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 0
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Gold": 1000,
                     "Stone": 1000,
@@ -508,13 +1327,39 @@
                 "LanguageNameId": 5182,
                 "LineOfSight": 8,
                 "MeleeArmor": 3,
+                "MinRange": 0,
                 "PierceArmor": 10,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 3500,
                 "internal_name": "WNDR"
             },
             "562": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 100
                 },
@@ -525,13 +1370,39 @@
                 "LanguageNameId": 5464,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
+                "MinRange": 0,
                 "PierceArmor": 7,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 35,
                 "internal_name": "SMIL"
             },
             "584": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 100
                 },
@@ -542,13 +1413,39 @@
                 "LanguageNameId": 5487,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
+                "MinRange": 0,
                 "PierceArmor": 7,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 35,
                 "internal_name": "MINE"
             },
             "598": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Stone": 5,
                     "Wood": 25
@@ -560,13 +1457,43 @@
                 "LanguageNameId": 5504,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
+                "MinRange": 0,
                 "PierceArmor": 0,
                 "Range": 0,
+                "ReloadTime": 2.5,
                 "TrainTime": 15,
                 "internal_name": "WCTWX"
             },
             "790": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 22
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Wood": 30
                 },
@@ -577,13 +1504,39 @@
                 "LanguageNameId": 5186,
                 "LineOfSight": 6,
                 "MeleeArmor": 2,
+                "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 0,
+                "ReloadTime": 2.5,
                 "TrainTime": 30,
                 "internal_name": "PGTAB"
             },
             "1021": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 10,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 0,
+                "Attacks": [],
                 "Cost": {
                     "Gold": 250,
                     "Stone": 250
@@ -595,13 +1548,68 @@
                 "LanguageNameId": 5159,
                 "LineOfSight": 6,
                 "MeleeArmor": 3,
+                "MinRange": 0,
                 "PierceArmor": 10,
                 "Range": 0,
+                "ReloadTime": 0,
                 "TrainTime": 120,
                 "internal_name": "FEITO"
             },
             "1251": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 26
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 11,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 31
+                    }
+                ],
                 "Attack": 9,
+                "Attacks": [
+                    {
+                        "Amount": 2,
+                        "Class": 27
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 9,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 17
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 34
+                    }
+                ],
                 "Cost": {
                     "Stone": 350
                 },
@@ -612,8 +1620,10 @@
                 "LanguageNameId": 5349,
                 "LineOfSight": 10,
                 "MeleeArmor": 8,
+                "MinRange": 1,
                 "PierceArmor": 11,
                 "Range": 7,
+                "ReloadTime": 2,
                 "TrainTime": 150,
                 "internal_name": "KREPOST"
             }
