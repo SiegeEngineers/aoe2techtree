@@ -81,15 +81,14 @@ function makeSVGObjectTransparent(svgObj) {
 }
 
 function parseSVGObjectId(svgObjId) {
-   const id_regex = /(?<type>.+)_(?<id>([\d]+))_(x|copy)/;
+   const id_regex = /(.+)_([\d]+)_(x|copy)/;
 
-   let elId = svgObjId;
-   const found = elId.match(id_regex);
+   const found = svgObjId.match(id_regex);
    if (!found) {
       return {id: undefined, type: undefined};
-   };
-   let id = parseInt(found.groups.id);	
-   let type = found.groups.type;
+   }
+   let id = parseInt(found[0]);
+   let type = found[1];
 
    return {id, type}
 }
