@@ -194,6 +194,46 @@ hr:before {
     border-radius: 20px;
 }
 
+.locale-switcher {
+    position: relative;
+    display: inline-block;
+}
+
+.locale-switcher:after {
+    content: '▾';
+    right: 8px;
+    top: 2px;
+    position: absolute;
+    pointer-events: none;
+    font-family: Arial, sans-serif;
+}
+
+.locale-switcher select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    max-width: 320px;
+    float: right;
+    margin: 0;
+    padding: 0 20px 0 3px;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-image: none;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    -ms-word-break: normal;
+    word-break: normal;
+}
+
+.locale-switcher:hover select {
+    background-color: rgba(0, 0, 0, 0.20);
+    border: 1px solid rgba(0, 0, 0, 0.30);
+}
+
+.locale-switcher select:focus {
+    outline: none;
+}
+
 #navigation {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
