@@ -1,6 +1,11 @@
 {
+    "4201": "Âge sombre",
+    "4202": "Âge féodal",
+    "4203": "Âge des châteaux",
+    "4204": "Âge impérial",
     "5009": "Lancier des steppes",
     "5010": "Lancier des steppes d'élite",
+    "5040": "Guerrier Xolotl",
     "5068": "Chevalier",
     "5070": "Cavalier",
     "5078": "Lancier",
@@ -707,5 +712,10 @@
     "120181": "Civilisation d'infanterie et de cavalerie <br>\n<br>\n• Améliorations des unités de type milicien gratuites <br>\n• Coût en pierre des forums -50 %<br>\n• Peut construire des kreposts <br>\n<br>\n<b>Unité unique :</b> <br>\nCavalier bulgare (cavalerie)<br>\n<br>\n<b>Technologies uniques :</b> <br>\n• Étriers (vitesse d'attaque des unités de type cavalerie légère et des cavaliers bulgares +25 %) <br>\n• Bagains (armure +5 pour les unités de type milicien) <br>\n<br>\n<b>Bonus d'équipe :</b> c<br>\nCadence de travail +50 % pour les forges",
     "120182": "Civilisation d'archers de cavalerie <br>\n<br>\n• Nourriture offerte par les troupeaux +50 % <br>\n• Dégâts infligés par les unités +25 % quand elles se battent d'une hauteur supérieure <br>\n• Bague de pouce, Tactiques parthes gratuites <br>\n<br>\n<b>Unités uniques :</b> <br>\nKeshik (cavalerie d'attaque), Chamelier incendiaire (bombardier)<br>\n<br>\n<b>Technologies uniques :</b> <br>\n• Armure de soie (protection perçage +1 pour les unités de type cavalerie légère, les lanciers des steppes et les archers de cavalerie) <br>\n• Arme de siège timuride (portée des trébuchets +2, permet de créer les chameliers incendiaires)<br>\n<br>\n<b>Bonus d'équipe :</b> <br>\nLigne de mire des archers de cavalerie +2",
     "120183": "Civilisation de cavalerie <br>\n<br>\n• Des forums supplémentaires peuvent être construits à l'âge féodal <br>\n• Atelier de siège et bélier disponibles à l'âge féodal ; amélioration Bélier renforcé disponible à partir de l'âge des châteaux<br>\n• Vitesse de déplacement de la cavalerie +5 % par âge (dès l'âge féodal) <br>\n<br>\n<b>Unité unique :</b> <br>\nKipchak (archer de cavalerie)<br>\n<br>\n<b>Technologies uniques :</b> <br>\n• Élevage des steppes (vitesse de formation de la cavalerie légère, des lanciers des steppes et des archers de cavalerie +50 %) <br>\n• Mercenaires coumans (les membres de l'équipe peuvent créer 10 Kipchaks d'élite gratuits au château)<br>\n<br>\n<b>Bonus d'équipe :</b> <br>\nPV des palissades +50 %",
-    "120184": "Civilisation de cavalerie et de moines <br>\n<br>\n• Commence avec +150 de nourriture <br>\n• Déplacement des unités de type lancier et des tirailleurs +10 %<br>\n• Attaque des chevaliers et leitis +1 pour chaque relique en garnison (+4 maximum) <br>\n<br>\n<b>Unité unique :</b> <br>\nLeitis (cavalerie)<br>\n<br>\n<b>Technologies uniques :</b> <br>\n• Collines fortifiées (portée des forums +3) <br>\n• Boucliers rectangulaires (protection perçage +1 pour les unités de type lancier et les tirailleurs)<br>\n<br>\n<b> Bonus d'équipe :</b> <br>\nCadence de travail des monastères +20 %"
+    "120184": "Civilisation de cavalerie et de moines <br>\n<br>\n• Commence avec +150 de nourriture <br>\n• Déplacement des unités de type lancier et des tirailleurs +10 %<br>\n• Attaque des chevaliers et leitis +1 pour chaque relique en garnison (+4 maximum) <br>\n<br>\n<b>Unité unique :</b> <br>\nLeitis (cavalerie)<br>\n<br>\n<b>Technologies uniques :</b> <br>\n• Collines fortifiées (portée des forums +3) <br>\n• Boucliers rectangulaires (protection perçage +1 pour les unités de type lancier et les tirailleurs)<br>\n<br>\n<b> Bonus d'équipe :</b> <br>\nCadence de travail des monastères +20 %",
+    "300081": "Légende",
+    "300082": "Unité unique",
+    "300083": "Unité",
+    "300084": "Bâtiment",
+    "300085": "Technologie"
 }

@@ -1,6 +1,11 @@
 {
+    "4201": "Dark Age",
+    "4202": "Feodal Çağ",
+    "4203": "Kale Çağı",
+    "4204": "İmparatorluk Çağı",
     "5009": "Bozkır Mızraklısı",
     "5010": "Elit Bozkır Mızraklısı",
+    "5040": "Xolotl Warrior",
     "5068": "Şövalye",
     "5070": "Süvari",
     "5078": "Mızraklı Adam",
@@ -707,5 +712,10 @@
     "120181": "Piyade ve Süvari medeniyeti <br>\n<br>\n• Milis türevi yükseltmeleri ücretsiz <br>\n• Şehir Merkezleri %50 daha az taşa mal olur<br>\n• Krepost inşa edilebilir <br>\n<br>\n<b>Özgün Birim:</b> <br>\nKonnik (Süvari)<br>\n<br>\n<b>Özgün Teknoloji:</b> <br>\n• Üzengiler (Hafif Süvari ve Konnikler %25 daha hızlı saldırır) <br>\n• Bagainler (Milis türevi +5 zırh kazanır) <br>\n<br>\n<b>Takım Bonusu:</b> <br>\nDemirciler %50 daha hızlı çalışır",
     "120182": "Okçu Süvari medeniyeti <br>\n<br>\n• Köylüler, beslenebilir hayvanlardan %50 daha fazla yiyecek toplar <br>\n• Birimler daha yüksekten saldırdıklarında %25 daha çok hasar verir <br>\n• Zihgir ve Parthialı Taktikleri ücretsizdir <br>\n<br>\n<b>Özgün Birimler:</b> <br>\nKeshik (akıncı süvari), Yanan Deve (patlayıcı)<br>\n<br>\n<b>Özgün Teknoloji:</b> <br>\n• İpek Zırh (Hafif Süvari, Bozkır Mızraklısı ve Okçu Süvariler +1P zırh alır) <br>\n• Timur Kuşatma İşçiliği (Katapultlar +2 menzil alır, Yanan Develer etkinleşir)<br>\n<br>\n<b>Takım Bonusu:</b> <br>\nOkçu Süvariler +2 GŞH alır",
     "120183": "Süvari medeniyeti <br>\n<br>\n• Feodal Çağ'da fazladan Şehir Merkezi inşa edilebilir <br>\n• Kuşatma Atölyesi ve Koçbaşı, Feodal Çağ'da mevcuttur; Metal Koçbaşı yükseltmesi Kale Çağı'nda mevcuttur<br>\n• Süvariler her çağ (Feodal Çağ'dan itibaren) %5 daha hızlı olur <br>\n<br>\n<b>Özgün Birim:</b> <br>\nKıpçak (okçu süvari)<br>\n<br>\n<b>Özgün Teknoloji:</b> <br>\n• Bozkır Hayvancılığı (Hafif Süvari, Bozkır Mızraklısı ve Okçu Süvariler %50 daha hızlı eğitilir) <br>\n• Kuman Paralı Askerleri (takım üyeleri Kale'den 10 adet ücretsiz Elit Kıpçak eğitebilir)<br>\n<br>\n<b>Takım Bonusu:</b> <br>\nÇit Surları +%50 DP",
-    "120184": "Süvari ve Keşiş medeniyeti <br>\n<br>\n• +150 yiyecek ile başlar <br>\n• Mızraklı Adam türevleri ve Akıncılar %10 daha hızlı hareket eder<br>\n• Konuşlanmış her bir kadim eser Şövalyelere ve Leitislere +1 saldırı kazandırır (en çok +4) <br>\n<br>\n<b>Özgün Birim:</b> <br>\nLeitis (süvari)<br>\n<br>\n<b>Özgün Teknoloji:</b> <br>\n• Yüksek Kaleler (Şehir Merkezi +3 menzil) <br>\n• Kule Kalkanlar (Mızraklı Adam türevleri ve Akıncı +1P zırh)<br>\n<br>\n<b>Takım Bonusu:</b> <br>\nManastırlar %20 daha hızlı çalışır"
+    "120184": "Süvari ve Keşiş medeniyeti <br>\n<br>\n• +150 yiyecek ile başlar <br>\n• Mızraklı Adam türevleri ve Akıncılar %10 daha hızlı hareket eder<br>\n• Konuşlanmış her bir kadim eser Şövalyelere ve Leitislere +1 saldırı kazandırır (en çok +4) <br>\n<br>\n<b>Özgün Birim:</b> <br>\nLeitis (süvari)<br>\n<br>\n<b>Özgün Teknoloji:</b> <br>\n• Yüksek Kaleler (Şehir Merkezi +3 menzil) <br>\n• Kule Kalkanlar (Mızraklı Adam türevleri ve Akıncı +1P zırh)<br>\n<br>\n<b>Takım Bonusu:</b> <br>\nManastırlar %20 daha hızlı çalışır",
+    "300081": "Key",
+    "300082": "Unique Unit",
+    "300083": "Unit",
+    "300084": "Building",
+    "300085": "Technology"
 }

@@ -1,6 +1,11 @@
 {
+    "4201": "Dark Age",
+    "4202": "Zaman Feudal",
+    "4203": "Zaman Kastil",
+    "4204": "Zaman Empayar",
     "5009": "Askar Tombak Steppe",
     "5010": "Askar Tombak Steppe Elit",
+    "5040": "Xolotl Warrior",
     "5068": "Satria",
     "5070": "Kavalier",
     "5078": "Askar Lembing",
@@ -707,5 +712,10 @@
     "120181": "Tamadun Infantri dan Pasukan Berkuda <br>\n<br>\n• Naik taraf barisan Militia percuma <br>\n• Kos Pusat Bandar -50% batu<br>\n• Boleh membina Krepost <br>\n<br>\n<b>Unit Unik:</b> <br>\nKonnik (pasukan berkuda)<br>\n<br>\n<b>Teknologi Unik:</b> <br>\n• Rakap (Pasukan Berkuda Ringan dan Konnik serang 25% lebih cepat) <br>\n• Bagain (Barisan Militia mendapat +5 baju zirah) <br>\n<br>\n<b>Bonus Pasukan:</b> <br>\nBengkel Tukang Besi bekerja 50% lebih cepat",
     "120182": "Tamadun Pemanah Berkuda <br>\n<br>\n• Orang kampung mengumpul +50% makanan daripada haiwan boleh gembala <br>\n• Unit mengenakan +25% kerosakan apabila berlawan dari kedudukan yang lebih tinggi <br>\n• Cincin Ibu Jari, Taktik Partia percuma <br>\n<br>\n<b>Unit Unik:</b> <br>\nKeshik (penyerang berkuda), Unta Berapi (petard)<br>\n<br>\n<b>Teknologi Unik:</b> <br>\n• Baju Zirah Sutera (Pasukan Berkuda Ringan, Askar Lembing Steppe dan Pemanah Berkuda menerima +1P baju zirah) <br>\n• Ketukangan Alat Pengepungan Timurid (Trebuchet + 2 jarak, mendayakan Unta Berapi)<br>\n<br>\n<b>Bonus Pasukan:</b> <br>\nPemanah Berkuda +2 Garis penglihatan",
     "120183": "Tamadun pasukan berkuda <br>\n<br>\n• Pusat Bandar tambahan boleh dibina di Zaman Feudal <br>\n• Bengkel Pengepungan dan Kayu Pelantak tersedia di Zaman Feudal; Naik taraf Kayu Pelantak Bertukup tersedia di Zaman Kastil<br>\n• Pasukan Berkuda 5% lebih pantas setiap zaman (bermula di Zaman Feudal) <br>\n<br>\n<b>Unit Unik:</b> <br>\nKipchak (pemanah berkuda)<br>\n<br>\n<b>Teknologi Unik:</b> <br>\n• Penternakan Steppe (Pasukan Berkuda Ringan, Askar Lembing Steppe dan Pemanah Berkuda dilatih 50% lebih cepat) <br>\n• Askar Upahan Cuman (ahli pasukan boleh mencipta 10 Kipchak Elit percuma di Kastil)<br>\n<br>\n<b>Bonus Pasukan:</b> <br>\nDinding Pagar Kubu +50% HP",
-    "120184": "Tamadun Pasukan Berkuda dan Rahib <br>\n<br>\n• Mula dengan +150 makanan <br>\n• Barisan Askar Lembing dan Skirmisher bergerak 10% lebih cepat<br>\n• Setiap relik yang digarison memberikan +1 serangan kepada Satria dan Leitis (maksimum +4) <br>\n<br>\n<b>Unit Unik:</b> <br>\nLeitis (pasukan berkuda)<br>\n<br>\n<b>Teknologi Unik:</b> <br>\n• Kubu Bukit (Pusat Bandar +3 jarak) <br>\n• Perisai Tinggi (barisan Askar Lembing dan Skirmisher +1P baju zirah)<br>\n<br>\n<b>Bonus Pasukan:</b> <br>\nBiara bekerja 20% lebih cepat"
+    "120184": "Tamadun Pasukan Berkuda dan Rahib <br>\n<br>\n• Mula dengan +150 makanan <br>\n• Barisan Askar Lembing dan Skirmisher bergerak 10% lebih cepat<br>\n• Setiap relik yang digarison memberikan +1 serangan kepada Satria dan Leitis (maksimum +4) <br>\n<br>\n<b>Unit Unik:</b> <br>\nLeitis (pasukan berkuda)<br>\n<br>\n<b>Teknologi Unik:</b> <br>\n• Kubu Bukit (Pusat Bandar +3 jarak) <br>\n• Perisai Tinggi (barisan Askar Lembing dan Skirmisher +1P baju zirah)<br>\n<br>\n<b>Bonus Pasukan:</b> <br>\nBiara bekerja 20% lebih cepat",
+    "300081": "Key",
+    "300082": "Unique Unit",
+    "300083": "Unit",
+    "300084": "Building",
+    "300085": "Technology"
 }

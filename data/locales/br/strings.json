@@ -1,6 +1,11 @@
 {
+    "4201": "Dark Age",
+    "4202": "Idade Feudal",
+    "4203": "Idade dos Castelos",
+    "4204": "Idade Imperial",
     "5009": "Lanceiro das Estepes",
     "5010": "Lanceiro das Estepes de Elite",
+    "5040": "Xolotl Warrior",
     "5068": "Cavaleiro",
     "5070": "Fidalgo",
     "5078": "Lanceiro",
@@ -707,5 +712,10 @@
     "120181": "Civilização de Infantaria e Cavalaria <br>\n<br>\n• Aprimoramentos de Milícias grátis <br>\n• Centros da Cidade custam -50% de pedra<br>\n• Pode construir Krepost <br>\n<br>\n<b>Unidade Exclusiva:</b> <br>\nKonnik (cavalaria)<br>\n<br>\n<b>Tecnologias Exclusivas:</b> <br>\n• Estribos (Cavalaria Ligeira e Konniks atacam 25% mais rápido) <br>\n• Bagains (Milícias recebem +3 de armadura) <br>\n<br>\n<b>Bônus de Equipe:</b> <br>\nFerrarias trabalham 50% mais rápido",
     "120182": "Civilização de Arqueiros Montados <br>\n<br>\n• Aldeões coletam +50% de comida de rebanhos <br>\n• Unidades causam +25% de dano quando lutam de uma elevação maior <br>\n• Anel de Arqueria e Táticas Partas grátis <br>\n<br>\n<b>Unidades Exclusivas:</b> <br>\nKeshik (cavalaria saqueadora) e Camelo Flamejante (petardeiro)<br>\n<br>\n<b>Tecnologias Exclusivas:</b> <br>\n• Armadura de Seda (Cavalaria Ligeira, Lanceiros das Estepes e Arqueiros Montados recebem +1 de armadura antiperfuração) <br>\n• Táticas de Cerco Timúridas (Trabucos: +2 de alcance, ativa Camelos Flamejantes)<br>\n<br>\n<b>Bônus de Equipe:</b> <br>\nArqueiros Montados: +2 de LDV",
     "120183": "Civilização de Cavalaria <br>\n<br>\n• Pode-se construir um Centro da Cidade extra na Idade Feudal <br>\n• Oficina de Cerco e Aríete disponíveis na Idade Feudal; aprimoramento de Aríete de Metal disponível na Idade dos Castelos<br>\n• Cavalaria 5% mais rápida para cada era (a partir da Idade Feudal)<br>\n<br>\n<b>Unidade Exclusiva:</b> <br>\nQuipchaco (Arqueiro Montado)<br>\n<br>\n<b>Tecnologias Exclusivas:</b> <br>\n• Pecuária das Estepes (Cavalaria Ligeira, Lanceiros das Estepes e Arqueiros Montados treinam 50% mais rápido) <br>\n• Mercenários Cumanos (membros da equipe podem criar 10 Quipchacos de Elite gratuitos no Castelo)<br>\n<br>\n<b>Bônus de Equipe:</b> <br>\nMuros de Paliçada: +50% de PV",
-    "120184": "Civilização de Cavalaria e Monges <br>\n<br>\n• Comece com +150 de comida <br>\n• Lanceiros e Escaramuçadores se movem 10% mais rápido<br>\n• Cada relíquia guarnecida dá +1 de ataque a Cavaleiros e Leitis (máximo: +5) <br>\n<br>\n<b>Unidade Exclusiva:</b> <br>\nLeitis (cavalaria)<br>\n<br>\n<b>Tecnologias Exclusivas:</b> <br>\n• Fortes de Colina (Centros da Cidade: +3 de alcance) <br>\n• Escudos-Torre (Lanceiros e Escaramuçadores: +1 de armadura antiperfuração)<br>\n<br>\n<b>Bônus de Equipe:</b> <br>\nMosteiros trabalham 20% mais rápido"
+    "120184": "Civilização de Cavalaria e Monges <br>\n<br>\n• Comece com +150 de comida <br>\n• Lanceiros e Escaramuçadores se movem 10% mais rápido<br>\n• Cada relíquia guarnecida dá +1 de ataque a Cavaleiros e Leitis (máximo: +5) <br>\n<br>\n<b>Unidade Exclusiva:</b> <br>\nLeitis (cavalaria)<br>\n<br>\n<b>Tecnologias Exclusivas:</b> <br>\n• Fortes de Colina (Centros da Cidade: +3 de alcance) <br>\n• Escudos-Torre (Lanceiros e Escaramuçadores: +1 de armadura antiperfuração)<br>\n<br>\n<b>Bônus de Equipe:</b> <br>\nMosteiros trabalham 20% mais rápido",
+    "300081": "Key",
+    "300082": "Unique Unit",
+    "300083": "Unit",
+    "300084": "Building",
+    "300085": "Technology"
 }

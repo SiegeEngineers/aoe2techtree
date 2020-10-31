@@ -1,6 +1,11 @@
 {
+    "4201": "Dark Age",
+    "4202": "Edad Feudal",
+    "4203": "Edad de los Castillos",
+    "4204": "Edad Imperial",
     "5009": "Lancero estepario",
     "5010": "Lancero estepario de élite",
+    "5040": "Xolotl Warrior",
     "5068": "Jinete",
     "5070": "Caballero",
     "5078": "Lancero",
@@ -707,5 +712,10 @@
     "120181": "Civilización de infantería y caballería <br>\n<br>\n• Mejoras para la línea de milicia gratis <br>\n• Centros urbanos: cuestan -50% de piedra<br>\n• Pueden construir el Krepost <br>\n<br>\n<b>Unidad única:</b> <br>\nKonnik (caballería)<br>\n<br>\n<b>Tecnologías únicas:</b> <br>\n• Estribos (caballería ligera y Konnik: atacan 25% más rápido) <br>\n• Bagains (línea de milicia: +3 de armadura) <br>\n<br>\n<b>Bonificación en equipo:</b>  <br>\nHerreros: trabajan 50% más rápido",
     "120182": "Civilización de arqueros a caballo <br>\n<br>\n• El ganado da +50% de comida del ganado <br>\n• Las unidades infligen +25% de daño cuando pelean desde una posición elevada. <br>\n•  Anillo para pulgar, Tácticas de los partos gratis <br>\n<br>\n<b>Unidad única:</b> <br>\nKeshik (caballería especializada en saqueos), Camello llameante (petardo)<br>\n<br>\n<b>Tecnologías únicas:</b> <br>\n• Armadura de seda (caballería ligera, lanceros esteparios y arqueros a caballo: +1P de armadura) <br>\n• Tácticas de asedio timúridas (trebuchets: +2 de alcance, activa Camellos llameantes)<br>\n<br>\n<b>Bonificación en equipo:</b> <br>\nArqueros a caballo: +2 LDV",
     "120183": "Civilización de caballería <br>\n<br>\n• Pueden construir centros urbanos adicionales en la Edad Feudal <br>\n• Taller de asedio y ariete disponibles en la Edad Feudal; Mejora a ariete cubierto disponible en la Ed. de los Castillos<br>\n• Caballería: 5% más rápida cada edad (desde la Edad Feudal)<br>\n<br>\n<b>Unidad única:</b> <br>\nKipchak (arquero a caballo)<br>\n<br>\n<b>Tecnologías únicas:</b> <br>\n• Ganadería de la estepa (caballería ligera, lanceros esteparios y arqueros a caballo: entrenamiento 50% más rápido) <br>\n• Mercenarios cumanos (los integrantes del equipo pueden generar 10 guerreros kipchak de élite gratis en el castillo)<br>\n<br>\n<b>Bonificación en equipo:</b> <br>\nMuros de empalizadas: +50% HP",
-    "120184": "Civilización de caballería y monjes <br>\n<br>\n• Inicia con +150 de comida <br>\n• Los lanceros y hostigadores son 10% más rápidos<br>\n• Cada reliquia guardada otorga +1 de ataque a las unidades de caballería y leitis (máximo +4) <br>\n<br>\n<b>Unidad única:</b> <br>\nLeitis (caballería)<br>\n<br>\n<b>Tecnologías únicas:</b> <br>\n• Fuertes en las colinas (Centros urbanos: +3 de alcance) <br>\n• Escudos en torres (lanceros y hostigadores +1 de perf. de armadura)<br>\n<br>\n<b>Bonificación para el equipo:</b> <br>\nLos monasterios funcionan 20% más rápido"
+    "120184": "Civilización de caballería y monjes <br>\n<br>\n• Inicia con +150 de comida <br>\n• Los lanceros y hostigadores son 10% más rápidos<br>\n• Cada reliquia guardada otorga +1 de ataque a las unidades de caballería y leitis (máximo +4) <br>\n<br>\n<b>Unidad única:</b> <br>\nLeitis (caballería)<br>\n<br>\n<b>Tecnologías únicas:</b> <br>\n• Fuertes en las colinas (Centros urbanos: +3 de alcance) <br>\n• Escudos en torres (lanceros y hostigadores +1 de perf. de armadura)<br>\n<br>\n<b>Bonificación para el equipo:</b> <br>\nLos monasterios funcionan 20% más rápido",
+    "300081": "Key",
+    "300082": "Unique Unit",
+    "300083": "Unit",
+    "300084": "Building",
+    "300085": "Technology"
 }

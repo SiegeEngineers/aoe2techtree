@@ -1,6 +1,11 @@
 {
+    "4201": "Dark Age",
+    "4202": "Thời phong kiến",
+    "4203": "Thời lâu đài",
+    "4204": "Thời đế quốc",
     "5009": "Kỵ binh giáo thảo nguyên",
     "5010": "Kỵ binh giáo thảo nguyên siêu cấp",
+    "5040": "Xolotl Warrior",
     "5068": "Hiệp sĩ",
     "5070": "Kỵ sĩ",
     "5078": "Lính giáo",
@@ -707,5 +712,10 @@
     "120181": "Văn minh bộ binh và kỵ binh <br>\n<br>\n• Miễn phí nâng cấp hàng Dân binh <br>\n• –50% đá xây Nhà chính<br>\n• Có thể xây Đồn lũy <br>\n<br>\n<b>Đơn vị chuyên biệt:</b> <br>\nKonnik (kỵ binh)<br>\n<br>\n<b>Công nghệ chuyên biệt:</b> <br>\n• Bàn đạp ngựa (Kỵ binh hạng nhẹ và Konnik tấn công nhanh hơn 25%) <br>\n• Bagains (Hàng dân binh +5 giáp) <br>\n<br>\n<b>Thưởng đội:</b> <br>\nLò rèn làm việc nhanh hơn 50%",
     "120182": "Văn minh cung kỵ binh <br>\n<br>\n• Dân làng thu thập +50% lương thực từ thú nuôi thành đàn <br>\n• Các đơn vị +25% sát thương khi đánh từ trên cao xuống <br>\n• Miễn phí Chiến thuật Parthia, Ban chỉ <br>\n<br>\n<b>Đơn vị chuyên biệt:</b> <br>\nKeshik (kỵ binh đột kích), Lạc đà lửa (lính vác bom)<br>\n<br>\n<b>Công nghệ chuyên biệt:</b> <br>\n• Giáp lụa (Kỵ binh hạng nhẹ, Kỵ binh giáo thảo nguyên và Cung kỵ binh +1 giáp chống xuyên) <br>\n• Thuật công thành Timurid (Máy lăng đá +1 phạm vi, cho phép tạo Lạc đà lửa)<br>\n<br>\n<b>Thưởng đội:</b> <br>\nCung kỵ binh +2 tầm nhìn",
     "120183": "Văn minh kỵ binh <br>\n<br>\n• Có thể xây thêm Nhà chính ở Thời phong kiến <br>\n• Xưởng vũ khí công thành và Trục phá xuất hiện ở Thời phong kiến, có thể nâng cấp Trục phá có mái che ở Thời lâu đài<br>\n• Kỵ binh nhanh hơn 5% ở mỗi thời kỳ (bắt đầu từ Thời phong kiến) <br>\n<br>\n<b>Đơn vị chuyên biệt:</b> <br>\nKipchak (cung kỵ binh)<br>\n<br>\n<b>Công nghệ chuyên biệt:</b> <br>\n• Chăn nuôi trên đồng cỏ (Huấn luyện Kỵ binh hạng nhẹ, Kỵ binh giáo thảo nguyên và Cung kỵ binh nhanh hơn 50%) <br>\n• Lính đánh thuê Cuman (thành viên đội có thể tạo 10 Kipchak siêu cấp miễn phí ở Lâu đài)<br>\n<br>\n<b>Thưởng đội:</b> <br>\nTường rào +50% HP",
-    "120184": "Văn minh kỵ binh và thầy tu <br>\n<br>\n• Bắt đầu với +150 lương thực <br>\n• Hàng Lính giáo và Lính giao tranh di chuyển nhanh hơn 10%<br>\n• Mỗi di vật được đặt sẽ +1 tấn công cho Hiệp sĩ và Leitis (tối đa là +4) <br>\n<br>\n<b>Đơn vị chuyên biệt:</b> <br>\nLeitis (kỵ binh)<br>\n<br>\n<b>Công nghệ chuyên biệt:</b> <br>\n• Hào lũy trên đồi (Nhà chính +3 phạm vi) <br>\n• Khiên tháp (hàng Lính giáo và Lính giao tranh +1 giáp chống xuyên)<br>\n<br>\n<b>Thưởng đội:</b> <br>\nTu viện làm việc nhanh hơn 20%"
+    "120184": "Văn minh kỵ binh và thầy tu <br>\n<br>\n• Bắt đầu với +150 lương thực <br>\n• Hàng Lính giáo và Lính giao tranh di chuyển nhanh hơn 10%<br>\n• Mỗi di vật được đặt sẽ +1 tấn công cho Hiệp sĩ và Leitis (tối đa là +4) <br>\n<br>\n<b>Đơn vị chuyên biệt:</b> <br>\nLeitis (kỵ binh)<br>\n<br>\n<b>Công nghệ chuyên biệt:</b> <br>\n• Hào lũy trên đồi (Nhà chính +3 phạm vi) <br>\n• Khiên tháp (hàng Lính giáo và Lính giao tranh +1 giáp chống xuyên)<br>\n<br>\n<b>Thưởng đội:</b> <br>\nTu viện làm việc nhanh hơn 20%",
+    "300081": "Key",
+    "300082": "Unique Unit",
+    "300083": "Unit",
+    "300084": "Building",
+    "300085": "Technology"
 }

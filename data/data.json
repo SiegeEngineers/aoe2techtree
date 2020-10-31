@@ -12833,5 +12833,14 @@
                 "internal_name": "AZTRAIDER"
             }
         }
+    },
+    "tech_tree_strings": {
+        "Building": "300084",
+        "Civilization": "9681",
+        "Key": "300081",
+        "Technology": "300085",
+        "Technology Tree": "9799",
+        "Unique Unit": "300082",
+        "Unit": "300083"
     }
 }

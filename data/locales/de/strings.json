@@ -1,6 +1,11 @@
 {
+    "4201": "Dark Age",
+    "4202": "Feudalzeit",
+    "4203": "Ritterzeit",
+    "4204": "Imperialzeit",
     "5009": "Steppenreiter",
     "5010": "Elite-Steppenreiter",
+    "5040": "Xolotl Warrior",
     "5068": "Ritter",
     "5070": "Chevalier",
     "5078": "Speerkämpfer",
@@ -707,5 +712,10 @@
     "120181": "Infanterie- und Kavallerievolk <br>\n<br>\n• Weiterentwicklungen für Milizsoldatenzweig gratis <br>\n• Dorfzentren kosten -50 % Steine<br>\n• Kann Kreposte bauen <br>\n<br>\n<b>Spezialeinheit:</b> <br>\nKonnik (Kavallerie)<br>\n<br>\n<b>Spezialtechnologien:</b> <br>\n• Steigbügel (+25 % Angriffsgeschwindigkeit für leichte Kavallerie und Konniken) <br>\n• Bagaine (+3 Nahkampfrüstung für Milizsoldatenzweig) <br>\n<br>\n<b>Teambonus:</b> <br>\nSchmieden arbeiten 50 % schneller",
     "120182": "Berittenes Bogenschützenvolk <br>\n<br>\n• Dorfbewohner sammeln +50 % Nahrung von Herdentieren <br>\n• Einheiten verursachen +25 % Schaden von höherem Gelände <br>\n• Daumenring, Parthisches Manöver gratis <br>\n<br>\n<b>Spezialeinheiten:</b> <br>\nKeshig (Kavallerie-Plünderer), Brandkamel (Petardier)<br>\n<br>\n<b>Spezialtechnologien:</b> <br>\n• Seidenrüstung (Leichte Kavallerie, Steppenreiter und Berittene Bogenschützen erhalten +1 Durchschlagsrüstung) <br>\n• Belagerungskunst der Timuriden (+2 Reichweite für Triboken, ermöglicht Brandkamele)<br>\n<br>\n<b>Teambonus:</b> <br>\n+2 Sichtweite für Berittene Bogenschützen",
     "120183": "Kavallerievolk <br>\n<br>\n• In der Feudalzeit kann ein weiteres Dorfzentrum gebaut werden <br>\n• Waffenschmiede und Rammbock sind in der Feudalzeit, Sturmbock-Aufwertung in der Ritterzeit verfügbar<br>\n• Kavallerie ist pro Zeitalter 5 % schneller (beginnend mit der Feudalzeit) <br>\n<br>\n<b>Spezialeinheit:</b> <br>\nKiptschak (Berittener Bogenschütze)<br>\n<br>\n<b>Spezialtechnologien:</b> <br>\n• Steppentierhaltung (Leichte Kavallerie, Steppenreiter und berittene Bogenschützen werden 50 % schneller erschaffen) <br>\n• Kumanische Söldner (Teammitglieder können 10 kostenlose Elite-Kiptschak in der Burg erschaffen)<br>\n<br>\n<b>Teambonus:</b> <br>\n+50 % LP für Palisadenwälle",
-    "120184": "Kavallerie- und Mönchsvolk <br>\n<br>\n• +150 Nahrung beim Start <br>\n• Speerkämpfer und Plänkler sind 10 % schneller<br>\n• Jede einquartierte Reliquie gewährt Rittern und Leitis +1 Angriffsstärke (maximal +4) <br>\n<br>\n<b>Spezialeinheit:</b> <br>\nLeitis (Kavallerie)<br>\n<br>\n<b>Spezialtechnologien:</b> <br>\n• Hügelfestungen (+3 Reichweite für Dorfzentren)<br>\n• Turmschilde (+1 Durchschlagsrüstung für Speerkämpfer und Plänkler)<br>\n<br>\n<b>Team Bonus:</b> <br>\nKlöster arbeiten 20 % schneller"
+    "120184": "Kavallerie- und Mönchsvolk <br>\n<br>\n• +150 Nahrung beim Start <br>\n• Speerkämpfer und Plänkler sind 10 % schneller<br>\n• Jede einquartierte Reliquie gewährt Rittern und Leitis +1 Angriffsstärke (maximal +4) <br>\n<br>\n<b>Spezialeinheit:</b> <br>\nLeitis (Kavallerie)<br>\n<br>\n<b>Spezialtechnologien:</b> <br>\n• Hügelfestungen (+3 Reichweite für Dorfzentren)<br>\n• Turmschilde (+1 Durchschlagsrüstung für Speerkämpfer und Plänkler)<br>\n<br>\n<b>Team Bonus:</b> <br>\nKlöster arbeiten 20 % schneller",
+    "300081": "Key",
+    "300082": "Unique Unit",
+    "300083": "Unit",
+    "300084": "Building",
+    "300085": "Technology"
 }
