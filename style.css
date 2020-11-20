@@ -1,196 +1,232 @@
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-            --xRef-badge-size: 30px;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
+html,
+body {
+    width: 100%;
+    height: 100%;
+    --xRef-badge-size: 30px;
+}
 
-        .info,
-        .info a {
-            font-size: 8pt;
-            display: inline;
-            font-family: monospace;
-            color: gray;
-        }
+body, input, select, tspan {
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+}
 
-        .info .info__margin {
-            margin-bottom: 1rem;
-        }
+body {
+    margin: 0;
+    display: flex;
+    background: url("img/Backgrounds/bg_aoe2_hd_paper.jpg") repeat;
+    font-size: 10pt;
+}
 
-        #container {
-            min-width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+a, a:hover, a:visited, a:active {
+    color: #4d3617;
+}
 
-        #navigation {
-            padding-left: 1rem;
-        }
+.credits,
+.credits a {
+    font-size: 8pt;
+    color: #4d3617;
+}
 
-        #helptext {
-            position: absolute;
-            display: none;
-            width: 300px;
-            background-color: #eee;
-            border: 2px solid #bbb;
-            padding: 0.2rem;
-            font-size: 10pt;
-        }
+.credits p {
+    margin-bottom: 0;
+}
 
-        #helptext__x_ref__container {
-            /* There are 35 civs, 5x7 makes the badges into a nice square. */
-            max-width: calc(var(--xRef-badge-size) * 7);
-            margin: auto;
-            padding-top: 0.2rem;
-        }
+#container {
+    min-width: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: fill-available;
+    display: flex;
+    flex-direction: column;
+}
 
-        /* Style for helptext Cross-Reference buttons */
-        #helptext #helptext__x_ref div button {
-            background-color: transparent;
-            border: none;
-            padding: 0;
-        }
+#navigation {
+    padding-left: 1rem;
+}
 
-        /* Style for helptext Cross-Reference image badges */
-        #helptext #helptext__x_ref div button img {
-            width: var(--xRef-badge-size);
-            height: var(--xRef-badge-size);
-        }
+#helptext {
+    position: absolute;
+    display: none;
+    width: 300px;
+    background-color: #eee;
+    border: 2px solid #bbb;
+    padding: 0.4rem;
+    font-size: 10pt;
+}
 
-        #wrapper {
-            min-width: 100%;
-            flex: 1 1 auto;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            -ms-overflow-style: -ms-autohiding-scrollbar;
-            background-color: #e7c28e;
-        }
+#helptext p {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#helptext h3 {
+    font-family: sans-serif;
+    font-size: 9pt;
+    text-transform: uppercase;
+    color: #4d3617;
+    margin: 2px 10px 0 0;
+    float: left;
+}
+
+#helptext__x_ref__container {
+    /* There are 35 civs, 5x7 makes the badges into a nice square. */
+    max-width: calc(var(--xRef-badge-size) * 7);
+    margin: auto;
+    padding-top: 0.2rem;
+}
+
+/* Style for helptext Cross-Reference buttons */
+#helptext #helptext__x_ref div button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* Style for helptext Cross-Reference image badges */
+#helptext #helptext__x_ref div button img {
+    width: var(--xRef-badge-size);
+    height: var(--xRef-badge-size);
+}
+
+#helptext__x_ref h3 {
+    float: none;
+}
+
+#helptext summary {
+    font-family: sans-serif;
+    font-size: 8pt;
+    color: #4d3617;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#wrapper {
+    min-width: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 
 
+#techtree {
+    border-left: 6px solid #4d3617;
+    flex: 1 0 auto;
+    position: relative;
+    width: calc(100vw - 22rem - 20px);
+    overflow-x: scroll;
+}
 
-        #techtree {
-            border: 6px solid #4d3617;
-            flex: 1 0 auto;
-            position: relative;
-            width: calc(100vw - 22rem - 20px);
-            overflow-x: scroll;
-        }
+#metainfo {
+    border-right: 6px solid #4d3617;
+    border-right: none;
+    width: 20rem;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow: auto;
+    height: 100vh;
+}
 
-        #metainfo {
-            border: 6px solid #4d3617;
-            border-right: none;
-            width: 20rem;
-            flex: 0 0 auto;
-            display: flex;
-            flex-direction: column;
-            background-color: #e7c28e;
-            padding: 1rem;
-        }
+#civselect {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #72604a;
+    flex: 1 0 auto;
+    margin-right: 1rem;
+    color: white;
+    text-shadow: #000000 -3px 2px;
+    box-shadow: inset 0 2px #3f4806, inset 2px -2px #768141, inset -2px 0 #768141;
+    height: 36px;
+    padding: 5px;
+}
 
-        #civselect {
-            font-size: 24px;
-            font-weight: bold;
-            font-family: 'Times New Roman', Times, serif;
-            background-color: #72604a;
-            flex: 1 0 auto;
-            margin-right: 1rem;
-            color: white;
-            text-shadow: #000000 -3px 2px;
-            box-shadow: inset 0 2px #3f4806, inset 2px -2px #768141, inset -2px 0 #768141;
-            padding: 5px;
-        }
+#civselect option {
+    text-shadow: none;
+}
 
-        #civselect option {
-            text-shadow: none;
-        }
+#civselect:focus {
+    outline: none;
+}
 
-        #civselect:focus {
-            outline: none;
-        }
+#civinfo {
+    flex: 1 0 auto;
+    font-size: 10pt;
+}
 
-        #civinfo {
-            flex: 1 0 auto;
-            font-size: 11pt;
-        }
+#civtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        #civtitle {
-            height: 52px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 1rem;
-        }
+#thanks {
+    flex: 0 0 auto;
+}
 
-        #thanks {
-            flex: 0 0 auto;
-        }
+hr {
+    overflow: visible;
+    /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
 
-        hr {
-            overflow: visible;
-            /* For IE */
-            height: 30px;
-            border-style: solid;
-            border-color: black;
-            border-width: 1px 0 0 0;
-            border-radius: 20px;
-        }
+hr:before {
+    /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
 
-        hr:before {
-            /* Not really supposed to work, but does */
-            display: block;
-            content: "";
-            height: 30px;
-            margin-top: -31px;
-            border-style: solid;
-            border-color: black;
-            border-width: 0 0 1px 0;
-            border-radius: 20px;
-        }
+#navigation {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 
-        #navigation {
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
+.node__overlay {
+    fill: transparent;
+    cursor: pointer;
+}
 
-        .node__overlay {
-            fill: transparent;
-            cursor: pointer;
-        }
-        .node.is-highlight .node__overlay {
-            stroke: #fff;
-            stroke-width: 3px;
-        }
+.node.is-highlight .node__overlay {
+    stroke: #fff;
+    stroke-width: 3px;
+}
 
-        .xRef__badge {
-            cursor: pointer;
-        }
+.xRef__badge {
+    cursor: pointer;
+}
 
-        .connection {
-            fill: none;
-            stroke: #000;
-            stroke-width: 2px;
-        }
-        .connection.is-highlight {
-            stroke: #fff;
-            stroke-width: 3px;
-        }
+.connection {
+    fill: none;
+    stroke: #000;
+    stroke-width: 2px;
+}
 
-        @media (max-width: 900px) {
-            #techtree {
-                width: auto;
-                overflow-x: auto;
-            }
-        }
+.connection.is-highlight {
+    stroke: #fff;
+    stroke-width: 3px;
+}
+
+@media (max-width: 900px) {
+    #techtree {
+        width: auto;
+        overflow-x: auto;
+    }
+}
