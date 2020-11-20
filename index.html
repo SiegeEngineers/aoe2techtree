@@ -93,7 +93,10 @@
                 <details id="advanced-stats">
                     <summary>Advanced Stats</summary>
                     <div id="helptext__advanced_stats"></div>
-                    <div id="helptext__x_ref"><h3>Civilizations</h3></div>
+                    <div id="helptext__x_ref">
+                        <h3>Civilizations</h3>
+                        <div id="helptext__x_ref__container"></div>
+                    </div>
                 </details>
               </div>
         </div>
@@ -177,7 +180,6 @@
 
     loadJson("data/data.json", function (response) {
         data = response;
-        createXRefBadges();
         loadLocale(storedLocale);
     });
 
@@ -188,6 +190,7 @@
         window.localStorage.setItem('locale', localeCode);
         loadJson("data/locales/" + localeCode + "/strings.json", function (strings) {
             data.strings = strings;
+            createXRefBadges();
             displayData();
         });
     }
@@ -599,9 +602,8 @@
      * @return A container with buttons + images for each civ to be used in cross referencing.
      */
      function createXRefBadges() {
-        let xRef = document.getElementById('helptext__x_ref');
-        let xRefLinks = document.createElement('div');
-        xRefLinks.id = "helptext__x_ref__container";
+        let xRefLinks = document.getElementById('helptext__x_ref__container');
+        xRefLinks.innerHTML = '';
         for (let civ of Object.keys(data.civ_names)) {
             let xRefLink = document.createElement('button');
             xRefLink.addEventListener('click', function() {
@@ -612,13 +614,12 @@
             let xRefImage = document.createElement('img');
 
             xRefImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
-            xRefImage.title = `${civ}`;
+            xRefImage.title = data.strings[data.civ_names[civ]];
             xRefImage.id = `xRef__badge__${civ}`;
             xRefImage.classList.add('xRef__badge')
             xRefLink.appendChild(xRefImage);
             xRefLinks.appendChild(xRefLink);
         }
-        xRef.appendChild(xRefLinks)
     }
 
     /** 
