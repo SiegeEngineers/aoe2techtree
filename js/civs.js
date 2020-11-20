@@ -1,18 +1,224 @@
-function civ(name, tree) {
-    resetToDefault(tree);
+function parseCiv(civ) {
+   let builder = new CivBuilder({uniqueUnit: civ.unique[0],
+         uniqueUnitElite: civ.unique[1],
+         uniqueTechOne: civ.unique[2],
+         uniqueTechTwo: civ.unique[3],
+         monkPrefix: civ.monkPrefix});
 
-    let selectedCiv = civsConfig[name];
+   if (civ.disabled) {
+      if (civ.disabled.buildings) {
+         builder.disableBuildings(civ.disabled.buildings);
+      }
+      if (civ.disabled.units) {
+         builder.disableUnits(civ.disabled.units);
+      }
+      if (civ.disabled.techs) {
+         builder.disableTechs(civ.disabled.techs);
+      }
+   }
 
-    let enabled = selectedCiv.enabled || {};
-    let disabled = selectedCiv.disabled || {};
-    let uniqueConfig = selectedCiv.unique || {};
-    if (selectedCiv.disableHorses) {
-        disableHorses();
-    }
+   if (civ.enabled) {
+      if (civ.enabled.buildings) {
+         builder.enableBuildings(civ.enabled.buildings);
+      }
+      if (civ.enabled.units) {
+         builder.enableUnits(civ.enabled.units);
+      }
+      if (civ.enabled.techs) {
+         builder.enableTechs(civ.enabled.techs);
+      }
+   }
 
-    enable(enabled.buildings || [], enabled.units || [], enabled.techs || []);
-    disable(disabled.buildings || [], disabled.units || [], disabled.techs || []);
-    unique(uniqueConfig || [], selectedCiv.monkPrefix);
+   if (civ.disableHorses) builder.disableHorses();
+   
+   return builder.build();
+}
+
+function civ(name) {
+   let selectedCiv = parseCiv(civsConfig[name]);
+
+   SVG.select('.cross').each(function(i) {
+      if (SVGObjectIsTransparent(this)) {
+         return;
+      }
+
+      let {id, type} = parseSVGObjectId(this.id());
+      if (id === undefined || type === undefined) {
+         return;
+      }
+
+      if (type === 'unit') {
+         if (selectedCiv.disabledUnits.includes(id)) {
+            return;
+         }
+      } else if (type === 'building') {
+         if (selectedCiv.disabledBuildings.includes(id)) {
+            return;
+         }
+      } else if (type === 'tech') {
+         if (selectedCiv.disabledTechs.includes(id)) {
+            return;
+         }
+      }
+
+      makeSVGObjectTransparent(this);
+   });
+
+   enable([], [UNIQUE_UNIT, ELITE_UNIQUE_UNIT], []);
+   disable(selectedCiv.disabledBuildings, selectedCiv.disabledUnits, selectedCiv.disabledTechs);
+   unique([selectedCiv.uniqueConfig.uniqueUnit,
+     selectedCiv.uniqueConfig.uniqueUnitElite,
+     selectedCiv.uniqueConfig.uniqueTechOne,
+     selectedCiv.uniqueConfig.uniqueTechTwo], selectedCiv.monkPrefix);
+}
+
+function SVGObjectIsTransparent(svgObj) {
+   return svgObj.attr('fill-opacity') === 0
+}
+
+function makeSVGObjectTransparent(svgObj) {
+   svgObj.attr({'fill-opacity': 0});
+}
+
+function parseSVGObjectId(svgObjId) {
+   const id_regex = /(.+)_([\d]+)_(x|copy)/;
+
+   const found = svgObjId.match(id_regex);
+   if (!found) {
+      return {id: undefined, type: undefined};
+   }
+   let id = parseInt(found[0]);
+   let type = found[1];
+
+   return {id, type}
+}
+
+class Civ {
+  constructor(buildings, techs, units, monkPrefix, uniqueConfig) {
+     this.disabledBuildings = buildings || [];
+     this.disabledTechs = techs || [];
+     this.disabledUnits = units || [];
+     this.monkPrefix = monkPrefix;
+     this.uniqueConfig = uniqueConfig;
+  }
+}
+
+class CivBuilder {
+  constructor(uniqueConfig) {
+     this.disabledBuildings = [
+        // Unique Buildings
+        KREPOST,
+        FEITORIA,
+     ];
+     this.disabledUnits = [
+        // Units that are not often enabled
+        BATTLE_ELEPHANT,
+        ELITE_BATTLE_ELEPHANT,
+        STEPPE_LANCER,
+        ELITE_STEPPE_LANCER,
+        EAGLE_SCOUT,
+        EAGLE_WARRIOR,
+        ELITE_EAGLE_WARRIOR,
+        // Unique units
+        SLINGER,
+        IMPERIAL_SKIRMISHER,
+        GENITOUR,
+        ELITE_GENITOUR,
+        CONDOTTIERO,
+        IMPERIAL_CAMEL_RIDER,
+        XOLOTL_WARRIOR,
+        TURTLE_SHIP,
+        ELITE_TURTLE_SHIP,
+        LONGBOAT,
+        ELITE_LONGBOAT,
+        CARAVEL,
+        ELITE_CARAVEL,
+        FLAMING_CAMEL,
+        KONNIK,
+        ELITE_KONNIK,
+        MISSIONARY,
+     ];
+     this.disabledTechs = [];
+     this.uniqueUnit = uniqueConfig.uniqueUnit;
+     this.uniqueUnitElite = uniqueConfig.uniqueUnitElite;
+     this.uniqueTechOne = uniqueConfig.uniqueTechOne;
+     this.uniqueTechTwo = uniqueConfig.uniqueTechTwo;
+     this.monkPrefix = uniqueConfig.monkPrefix;
+  }
+
+  disableHorses() {
+     this.disabledBuildings = this.disabledBuildings.concat([STABLE]);
+     this.disabledTechs = this.disabledTechs.concat([
+        BLOODLINES,
+        HUSBANDRY,
+        SCALE_BARDING_ARMOR,
+        CHAIN_BARDING_ARMOR,
+        PLATE_BARDING_ARMOR,
+        PARTHIAN_TACTICS,
+     ]);
+     this.disabledUnits = this.disabledUnits.concat([
+        SCOUT_CAVALRY,
+        LIGHT_CAVALRY,
+        HUSSAR,
+        KNIGHT,
+        PALADIN,
+        CAMEL_RIDER,
+        HEAVY_CAMEL_RIDER,
+        CAVALIER,
+        CAVALRY_ARCHER,
+        HEAVY_CAV_ARCHER,
+     ]);
+     return this;
+  }
+
+  disableBuildings(toDisable) {
+     this.disabledBuildings = this.disabledBuildings.concat(toDisable);
+     return this;
+  }
+
+  disableUnits(toDisable) {
+     this.disabledUnits = this.disabledUnits.concat(toDisable);
+     return this;
+  }
+
+  disableTechs(toDisable) {
+     this.disabledTechs = this.disabledTechs.concat(toDisable);
+     return this;
+  }
+
+  enableUnits(toEnable) {
+     for (let enable of toEnable) {
+        this.disabledUnits.splice(this.disabledUnits.indexOf(enable),1)
+     }
+     return this;
+  }
+
+  enableBuildings(toEnable) {
+     for (let enable of toEnable) {
+        this.disabledBuildings.splice(this.disabledBuildings.indexOf(enable),1)
+     }
+     return this;
+  }
+
+  enableTechs(toEnable) {
+   for (let enable of toEnable) {
+      this.disabledTechs.splice(this.disabledTechs.indexOf(enable),1)
+   }
+   return this;
+}
+
+  build() {
+     return new Civ(this.disabledBuildings,
+                this.disabledTechs,
+                this.disabledUnits,
+                this.monkPrefix,
+                {
+                   uniqueUnit: this.uniqueUnit,
+                   uniqueUnitElite: this.uniqueUnitElite,
+                   uniqueTechOne: this.uniqueTechOne,
+                   uniqueTechTwo: this.uniqueTechTwo,
+                 })
+  }
 }
 
 const civsConfig = { 
@@ -29,8 +235,8 @@ const civsConfig = {
              RING_ARCHER_ARMOR,
              MASONRY,
              ARCHITECTURE,
-             BOMBARD_TOWER,
-             KEEP,
+             BOMBARD_TOWER_TECH,
+             KEEP_TECH,
              TWO_MAN_SAW,
              GUILDS
           ],
@@ -46,10 +252,11 @@ const civsConfig = {
           ]
        },
        enabled: { 
-          units: [ 
+          units: [
              EAGLE_SCOUT,
              EAGLE_WARRIOR,
-             ELITE_EAGLE_WARRIOR
+             ELITE_EAGLE_WARRIOR,
+             XOLOTL_WARRIOR,
           ]
        },
        monkPrefix: MONK_PREFIX_MESO,
@@ -73,8 +280,8 @@ const civsConfig = {
              BLOCK_PRINTING,
              SAPPERS,
              ARCHITECTURE,
-             BOMBARD_TOWER,
-             KEEP,
+             BOMBARD_TOWER_TECH,
+             KEEP_TECH,
              TWO_MAN_SAW
           ],
           units: [ 
@@ -111,7 +318,7 @@ const civsConfig = {
              REDEMPTION,
              ATONEMENT,
              HERESY,
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              TREADMILL_CRANE,
              STONE_SHAFT_MINING,
              CROP_ROTATION
@@ -145,10 +352,10 @@ const civsConfig = {
              RING_ARCHER_ARMOR,
              DRY_DOCK,
              SHIPWRIGHT,
-             FORTIFIED_WALL,
+             FORTIFIED_WALL_TECH,
              TREADMILL_CRANE,
              ARROWSLITS,
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              HOARDINGS,
              SAPPERS,
              ATONEMENT,
@@ -163,6 +370,7 @@ const civsConfig = {
              ARBALESTER,
              HAND_CANNONEER,
              CHAMPION,
+             PALADIN,
              CAMEL_RIDER,
              HEAVY_CAMEL_RIDER,
              BOMBARD_CANNON,
@@ -174,6 +382,10 @@ const civsConfig = {
        enabled: { 
           buildings: [ 
              KREPOST
+          ],
+          units: [
+             KONNIK,
+             ELITE_KONNIK
           ]
        },
        unique: [ 
@@ -196,7 +408,7 @@ const civsConfig = {
              SAPPERS,
              LEATHER_ARCHER_ARMOR,
              RING_ARCHER_ARMOR,
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              ARROWSLITS,
              STONE_SHAFT_MINING
           ],
@@ -271,7 +483,7 @@ const civsConfig = {
              BRACER,
              PLATE_BARDING_ARMOR,
              ARCHITECTURE,
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              TWO_MAN_SAW,
              CROP_ROTATION
           ],
@@ -297,11 +509,13 @@ const civsConfig = {
           techs: [ 
              PARTHIAN_TACTICS,
              HERESY,
+             REDEMPTION,
              HOARDINGS,
              SIEGE_ENGINEERS,
              TREADMILL_CRANE,
              GUILDS,
-             CROP_ROTATION
+             CROP_ROTATION,
+             SUPPLIES,
           ],
           units: [ 
              HAND_CANNONEER,
@@ -335,19 +549,21 @@ const civsConfig = {
              BRACER,
              DRY_DOCK,
              SHIPWRIGHT,
-             FORTIFIED_WALL,
-             GUARD_TOWER,
+             FORTIFIED_WALL_TECH,
+             GUARD_TOWER_TECH,
              TREADMILL_CRANE,
              ARCHITECTURE,
              SIEGE_ENGINEERS,
-             KEEP,
+             KEEP_TECH,
              ARROWSLITS,
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              ILLUMINATION,
+             REDEMPTION,
              BLOCK_PRINTING,
              THEOCRACY,
              STONE_SHAFT_MINING,
-             HUSBANDRY
+             HUSBANDRY,
+             SUPPLIES,
           ],
           units: [ 
              ARBALESTER,
@@ -388,7 +604,7 @@ const civsConfig = {
              PLATE_BARDING_ARMOR,
              TREADMILL_CRANE,
              ARROWSLITS,
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              CROP_ROTATION
           ],
           units: [ 
@@ -425,8 +641,8 @@ const civsConfig = {
              RING_ARCHER_ARMOR,
              BRACER,
              HEATED_SHOT,
-             KEEP,
-             BOMBARD_TOWER,
+             KEEP_TECH,
+             BOMBARD_TOWER_TECH,
              STONE_SHAFT_MINING,
              TWO_MAN_SAW,
              GUILDS
@@ -458,14 +674,14 @@ const civsConfig = {
              STONE_WALL,
              FORTIFIED_WALL
           ],
-          techs: [ 
+          techs: [
              THUMB_RING,
              PARTHIAN_TACTICS,
              DRY_DOCK,
-             GUARD_TOWER,
-             KEEP,
-             BOMBARD_TOWER,
-             FORTIFIED_WALL,
+             GUARD_TOWER_TECH,
+             KEEP_TECH,
+             BOMBARD_TOWER_TECH,
+             FORTIFIED_WALL_TECH,
              REDEMPTION,
              ATONEMENT,
              BLOCK_PRINTING,
@@ -477,7 +693,8 @@ const civsConfig = {
              TREADMILL_CRANE,
              ARROWSLITS,
              GOLD_SHAFT_MINING,
-             SUPPLIES
+             SUPPLIES,
+             ARSON,
           ],
           units: [ 
              ARBALESTER,
@@ -502,13 +719,14 @@ const civsConfig = {
              GUARD_TOWER,
              KEEP,
              BOMBARD_TOWER,
-             FORTIFIED_WALL
+             FORTIFIED_WALL,
+             HOUSE
           ],
           techs: [ 
              SHIPWRIGHT,
-             GUARD_TOWER,
-             KEEP,
-             BOMBARD_TOWER,
+             GUARD_TOWER_TECH,
+             KEEP_TECH,
+             BOMBARD_TOWER_TECH,
              REDEMPTION,
              HERBAL_MEDICINE,
              BLOCK_PRINTING,
@@ -516,14 +734,15 @@ const civsConfig = {
              HOARDINGS,
              RING_ARCHER_ARMOR,
              PLATE_MAIL_ARMOR,
-             FORTIFIED_WALL,
+             FORTIFIED_WALL_TECH,
              HEATED_SHOT,
              TREADMILL_CRANE,
              ARCHITECTURE,
              SIEGE_ENGINEERS,
              ARROWSLITS,
              STONE_SHAFT_MINING,
-             CROP_ROTATION
+             CROP_ROTATION,
+             SUPPLIES,
           ],
           units: [ 
              ARBALESTER,
@@ -554,7 +773,7 @@ const civsConfig = {
              BOMBARD_TOWER
           ],
           techs: [ 
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              ATONEMENT,
              FERVOR,
              ARCHITECTURE,
@@ -570,11 +789,12 @@ const civsConfig = {
           ]
        },
        enabled: { 
-          units: [ 
+          units: [
              EAGLE_SCOUT,
              EAGLE_WARRIOR,
              ELITE_EAGLE_WARRIOR,
-             SLINGER
+             SLINGER,
+             XOLOTL_WARRIOR,
           ]
        },
        monkPrefix: MONK_PREFIX_MESO,
@@ -582,7 +802,7 @@ const civsConfig = {
           KAMAYUK,
           ELITE_KAMAYUK,
           ANDEAN_SLING,
-          COURIERS
+          FABRIC_SHIELDS
        ]
     },
     Indians: { 
@@ -593,12 +813,13 @@ const civsConfig = {
           ],
           techs: [ 
              SHIPWRIGHT,
-             KEEP,
-             BOMBARD_TOWER,
+             KEEP_TECH,
+             BOMBARD_TOWER_TECH,
              ATONEMENT,
              HERESY,
              SAPPERS,
              PLATE_MAIL_ARMOR,
+             PLATE_BARDING_ARMOR,
              ARCHITECTURE,
              ARROWSLITS,
              TREADMILL_CRANE,
@@ -667,7 +888,7 @@ const civsConfig = {
              BOMBARD_TOWER
           ],
           techs: [ 
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              HERESY,
              HOARDINGS,
              SAPPERS,
@@ -705,7 +926,7 @@ const civsConfig = {
           techs: [ 
              THUMB_RING,
              SQUIRES,
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              ATONEMENT,
              HERESY,
              BLOCK_PRINTING,
@@ -713,7 +934,8 @@ const civsConfig = {
              PLATE_MAIL_ARMOR,
              ARROWSLITS,
              TWO_MAN_SAW,
-             GUILDS
+             GUILDS,
+             SUPPLIES,
           ],
           units: [ 
              CHAMPION,
@@ -721,7 +943,8 @@ const civsConfig = {
              HEAVY_CAMEL_RIDER,
              PALADIN,
              HEAVY_DEMO_SHIP,
-             SIEGE_ONAGER
+             SIEGE_ONAGER,
+             BOMBARD_CANNON,
           ]
        },
        enabled: { 
@@ -788,7 +1011,8 @@ const civsConfig = {
              SIEGE_ENGINEERS,
              ARROWSLITS,
              SAPPERS,
-             GOLD_SHAFT_MINING
+             GOLD_SHAFT_MINING,
+             SUPPLIES,
           ],
           units: [ 
              ARBALESTER,
@@ -816,9 +1040,9 @@ const civsConfig = {
           ],
           techs: [ 
              SQUIRES,
-             KEEP,
-             BOMBARD_TOWER,
-             FORTIFIED_WALL,
+             KEEP_TECH,
+             BOMBARD_TOWER_TECH,
+             FORTIFIED_WALL_TECH,
              REDEMPTION,
              ATONEMENT,
              FAITH,
@@ -842,7 +1066,7 @@ const civsConfig = {
        unique: [ 
           MAGYAR_HUSZAR,
           ELITE_MAGYAR_HUSZAR,
-          MERCENARIES,
+          CORVINIAN_ARMY,
           RECURVE_BOW
        ]
     },
@@ -854,7 +1078,7 @@ const civsConfig = {
           techs: [ 
              PARTHIAN_TACTICS,
              BLOODLINES,
-             FORTIFIED_WALL,
+             FORTIFIED_WALL_TECH,
              FERVOR,
              THEOCRACY,
              HOARDINGS,
@@ -900,7 +1124,7 @@ const civsConfig = {
           techs: [ 
              PARTHIAN_TACTICS,
              SHIPWRIGHT,
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              BRACER,
              ILLUMINATION,
              BLAST_FURNACE,
@@ -933,12 +1157,13 @@ const civsConfig = {
              BOMBARD_TOWER
           ],
           techs: [ 
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              REDEMPTION,
              ILLUMINATION,
              SIEGE_ENGINEERS,
              ARROWSLITS,
-             GOLD_SHAFT_MINING
+             GOLD_SHAFT_MINING,
+             SUPPLIES,
           ],
           units: [ 
              HAND_CANNONEER,
@@ -950,10 +1175,11 @@ const civsConfig = {
           ]
        },
        enabled: { 
-          units: [ 
+          units: [
              EAGLE_SCOUT,
              EAGLE_WARRIOR,
-             ELITE_EAGLE_WARRIOR
+             ELITE_EAGLE_WARRIOR,
+             XOLOTL_WARRIOR,
           ]
        },
        monkPrefix: MONK_PREFIX_MESO,
@@ -972,8 +1198,8 @@ const civsConfig = {
           ],
           techs: [ 
              DRY_DOCK,
-             KEEP,
-             BOMBARD_TOWER,
+             KEEP_TECH,
+             BOMBARD_TOWER_TECH,
              REDEMPTION,
              ILLUMINATION,
              SANCTITY,
@@ -987,7 +1213,8 @@ const civsConfig = {
              ARROWSLITS,
              TWO_MAN_SAW,
              GUILDS,
-             CROP_ROTATION
+             CROP_ROTATION,
+             SUPPLIES,
           ],
           units: [ 
              HAND_CANNONEER,
@@ -1020,9 +1247,9 @@ const civsConfig = {
           ],
           techs: [ 
              SHIPWRIGHT,
-             FORTIFIED_WALL,
-             KEEP,
-             BOMBARD_TOWER,
+             FORTIFIED_WALL_TECH,
+             KEEP_TECH,
+             BOMBARD_TOWER_TECH,
              REDEMPTION,
              ILLUMINATION,
              ATONEMENT,
@@ -1094,7 +1321,7 @@ const civsConfig = {
           ],
           techs: [ 
              SHIPWRIGHT,
-             BOMBARD_TOWER,
+             BOMBARD_TOWER_TECH,
              SAPPERS,
              ARCHITECTURE,
              HEATED_SHOT,
@@ -1128,8 +1355,8 @@ const civsConfig = {
              THUMB_RING,
              PARTHIAN_TACTICS,
              SHIPWRIGHT,
-             KEEP,
-             BOMBARD_TOWER,
+             KEEP_TECH,
+             BOMBARD_TOWER_TECH,
              HERESY,
              BRACER,
              ARCHITECTURE,
@@ -1197,7 +1424,7 @@ const civsConfig = {
              PLATE_MAIL_ARMOR,
              SHIPWRIGHT,
              ARCHITECTURE,
-             KEEP,
+             KEEP_TECH,
              ARROWSLITS,
              HOARDINGS,
              REDEMPTION,
@@ -1206,7 +1433,8 @@ const civsConfig = {
              FAITH,
              THEOCRACY,
              STONE_SHAFT_MINING,
-             TWO_MAN_SAW
+             TWO_MAN_SAW,
+             SUPPLIES,
           ],
           units: [ 
              ARBALESTER,
@@ -1220,7 +1448,8 @@ const civsConfig = {
        enabled: { 
           units: [ 
              STEPPE_LANCER,
-             ELITE_STEPPE_LANCER
+             ELITE_STEPPE_LANCER,
+             FLAMING_CAMEL,
           ]
        },
        unique: [ 
@@ -1340,8 +1569,8 @@ const civsConfig = {
              BLOODLINES,
              HUSBANDRY,
              SHIPWRIGHT,
-             KEEP,
-             BOMBARD_TOWER,
+             KEEP_TECH,
+             BOMBARD_TOWER_TECH,
              REDEMPTION,
              HERBAL_MEDICINE,
              SANCTITY,
