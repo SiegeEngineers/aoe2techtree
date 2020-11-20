@@ -175,7 +175,12 @@
 
     setAdvancedStatsState();
 
-    const storedLocale = window.localStorage.getItem('locale');
+    let storedLocale = defaultLocale;
+    try {
+        storedLocale = window.localStorage.getItem('locale');
+    } catch (e) {
+        // pass
+    }
     fillLocaleSelector(storedLocale);
 
     loadJson("data/data.json", function (response) {
@@ -187,7 +192,11 @@
         if (!Object.keys(locales).includes(localeCode)) {
             localeCode = defaultLocale;
         }
-        window.localStorage.setItem('locale', localeCode);
+        try {
+            window.localStorage.setItem('locale', localeCode);
+        } catch (e) {
+            // pass
+        }
         loadJson("data/locales/" + localeCode + "/strings.json", function (strings) {
             data.strings = strings;
             createXRefBadges();
