@@ -62,6 +62,10 @@
                 <table border="0" cellspacing="10" id="key__table">
                 </table>
             </div>
+            <div class="locale-switcher">
+                <select id="localeselect" onchange="changeLocale()">
+                </select>
+            </div>
             <div class="credits">
                 <p>
                     Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/aoe2de-update-42848/" target="_blank" title="Changelog" rel="nofollow">42848</a>
@@ -89,7 +93,10 @@
                 <details id="advanced-stats">
                     <summary>Advanced Stats</summary>
                     <div id="helptext__advanced_stats"></div>
-                    <div id="helptext__x_ref"><h3>Civilizations</h3></div>
+                    <div id="helptext__x_ref">
+                        <h3>Civilizations</h3>
+                        <div id="helptext__x_ref__container"></div>
+                    </div>
                 </details>
               </div>
         </div>
@@ -146,17 +153,71 @@
         36: "Heroes and Kings",
     };
 
+    const locales = {
+        en: "English",
+        zh: "中文 (中国)",
+        tw: "中文 (香港特別行政區)",
+        fr: "Français",
+        de: "Deutsch",
+        hi: "हिंदी",
+        it: "Italiano",
+        jp: "日本語",
+        ko: "한국어",
+        ms: "Bahasa Melayu",
+        ru: "Русский",
+        es: "Español",
+        mx: "Español (México)",
+        tr: "Türkçe",
+        vi: "Tiếng Việt",
+        br: "Português (Brasil)",
+    };
+    const defaultLocale = "en";
+
     setAdvancedStatsState();
 
-    loadJson(function (response) {
+    let storedLocale = defaultLocale;
+    try {
+        storedLocale = window.localStorage.getItem('locale');
+    } catch (e) {
+        // pass
+    }
+    fillLocaleSelector(storedLocale);
 
-        data = JSON.parse(response);
+    loadJson("data/data.json", function (response) {
+        data = response;
+        loadLocale(storedLocale);
+    });
+
+    function loadLocale(localeCode) {
+        if (!Object.keys(locales).includes(localeCode)) {
+            localeCode = defaultLocale;
+        }
+        try {
+            window.localStorage.setItem('locale', localeCode);
+        } catch (e) {
+            // pass
+        }
+        loadJson("data/locales/" + localeCode + "/strings.json", function (strings) {
+            data.strings = strings;
+            createXRefBadges();
+            displayData();
+        });
+    }
+
+    function displayData() {
+        // Reset containers
+        const root = document.getElementById('root');
+        if (root) {
+            document.getElementById('techtree').removeChild(root);
+        }
+        document.getElementById('civselect').innerHTML = "";
+        document.getElementById('key__table').innerHTML = "";
 
         tree = getDefaultTree();
         connections = getConnections();
         parentConnections = new Map(connections.map(([parent, child]) => [child, parent]));
         connectionpoints = getConnectionPoints(tree);
-
+        fillCivSelector();
 
         const draw = SVG('techtree').id('root').size(tree.width, tree.height)
             .click((e) => {
@@ -256,12 +317,11 @@
         if(!civWasLoaded){
             loadCiv();
         }
-        createXRefBadges();
         create_colour_key();
         window.onhashchange = function () {
             updateCivselectValue();
         };
-    });
+    }
 
     function updateCivselectValue() {
         let hash = window.location.hash.substr(1);
@@ -320,15 +380,15 @@
         hideHelp();
     }
 
-    function loadJson(callback) {
+    function loadJson(file, callback) {
 
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-        xobj.open('GET', 'data/data.json', true);
+        xobj.open('GET', file, true);
         xobj.onreadystatechange = function () {
             if (xobj.readyState === 4 && xobj.status === 200) {
                 // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                callback(xobj.responseText);
+                callback(JSON.parse(xobj.responseText));
             }
         };
         xobj.send(null);
@@ -551,9 +611,8 @@
      * @return A container with buttons + images for each civ to be used in cross referencing.
      */
      function createXRefBadges() {
-        let xRef = document.getElementById('helptext__x_ref');
-        let xRefLinks = document.createElement('div');
-        xRefLinks.id = "helptext__x_ref__container";
+        let xRefLinks = document.getElementById('helptext__x_ref__container');
+        xRefLinks.innerHTML = '';
         for (let civ of Object.keys(data.civ_names)) {
             let xRefLink = document.createElement('button');
             xRefLink.addEventListener('click', function() {
@@ -564,13 +623,12 @@
             let xRefImage = document.createElement('img');
 
             xRefImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
-            xRefImage.title = `${civ}`;
+            xRefImage.title = data.strings[data.civ_names[civ]];
             xRefImage.id = `xRef__badge__${civ}`;
             xRefImage.classList.add('xRef__badge')
             xRefLink.appendChild(xRefImage);
             xRefLinks.appendChild(xRefLink);
         }
-        xRef.appendChild(xRefLinks)
     }
 
     /** 
@@ -751,6 +809,32 @@
             }
         }
         document.getElementById('key__label').innerText = data.strings[data.tech_tree_strings["Key"]];
+    }
+
+    function changeLocale() {
+        const locale = document.getElementById('localeselect').value;
+        loadLocale(locale);
+    }
+
+    function fillLocaleSelector(currentLocale) {
+        Object.keys(locales).map(function(locale) {
+            const option = document.createElement('option');
+            option.setAttribute('value', locale);
+            option.textContent = locales[locale];
+            if (currentLocale === locale) {
+                option.setAttribute('selected', '')
+            }
+            document.getElementById('localeselect').appendChild(option);
+        });
+    }
+
+    function fillCivSelector() {
+        Object.keys(data.civ_names).map(function(civ_name) {
+            const option = document.createElement('option');
+            option.setAttribute('value', civ_name);
+            option.textContent = data.strings[data.civ_names[civ_name]];
+            document.getElementById('civselect').appendChild(option);
+        });
     }
 </script>
 </body>
