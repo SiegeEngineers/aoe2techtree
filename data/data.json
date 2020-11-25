@@ -11606,7 +11606,7 @@
                 "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 5,
-                "ReloadTime": 2.2,
+                "ReloadTime": 2,
                 "Speed": 1.3,
                 "TrainTime": 21,
                 "internal_name": "EARAMBAI"
