@@ -569,6 +569,7 @@
             stats.push(secondsIfDefined(meta.TrainTime, "Build Time:&nbsp;"));
             stats.push(secondsIfDefined(meta.ResearchTime, "Research Time:&nbsp;"));
             stats.push(ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;"));
+            stats.push(secondsIfDefined_toFixed(meta.AttackDelaySeconds, ""));
             stats.push(secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;"));
             stats.push(accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;"));
             text = text.replace(/<p class="helptext__stats">(.+?)<\/p>/, "<h3>Stats</h3><p>" + stats.filter(Boolean).join(', ') + "<p>")
@@ -736,6 +737,14 @@
     function secondsIfDefined(value, prefix) {
         if (value !== undefined) {
             return " " + prefix + value + "s";
+        } else {
+            return "";
+        }
+    }
+
+    function secondsIfDefined_toFixed(value, prefix, prec=2) {
+        if (value !== undefined) {
+            return " " + prefix + value.toFixed(prec) + "s";
         } else {
             return "";
         }
