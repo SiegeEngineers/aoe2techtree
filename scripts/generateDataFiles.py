@@ -546,6 +546,7 @@ def parse_line(key_value, line):
 def gather_data(content):
     civs = content["Civs"]
     gaia = civs[0]
+    graphics = content["Graphics"]
     data = {"buildings": {}, "units": {}, "techs": {}}
     for unit in gaia["Units"]:
         for key, value in BUILDINGS.items():
@@ -553,7 +554,7 @@ def gather_data(content):
                 add_building(key, value, unit, data)
         for key, value in UNITS.items():
             if unit_matches_unit(unit, key, value):
-                add_unit(key, value, unit, data)
+                add_unit(key, value, unit, graphics, data)
     tech_id = 0
     for tech in content["Techs"]:
         for key, value in TECHS.items():
@@ -601,7 +602,15 @@ def add_building(building_id, value, unit, data):
     }
 
 
-def add_unit(key, value, unit, data):
+def add_unit(key, value, unit, graphics, data):
+    if unit["Type50"]["FrameDelay"] == 0 or unit["Type50"]["AttackGraphic"] == -1:
+        attack_delay_seconds = 0.0
+    else:
+        attack_graphic = graphics[unit["Type50"]["AttackGraphic"]]
+        animation_duration = attack_graphic["AnimationDuration"]
+        frame_delay = unit["Type50"]["FrameDelay"]
+        frame_count = attack_graphic["FrameCount"]
+        attack_delay_seconds = animation_duration * frame_delay / frame_count
     data['units'][key] = {
         'internal_name': value['internal_name'],
         'ID': key,
@@ -619,6 +628,7 @@ def add_unit(key, value, unit, data):
         'ReloadTime': unit["Type50"]["ReloadTime"],
         'AccuracyPercent': unit["Type50"]["AccuracyPercent"],
         'FrameDelay': unit["Type50"]["FrameDelay"],
+        'AttackDelaySeconds': attack_delay_seconds,
         'MinRange': unit["Type50"]["MinRange"],
         'TrainTime': unit["Creatable"]["TrainTime"],
         'LanguageNameId': unit['LanguageDLLName'],
