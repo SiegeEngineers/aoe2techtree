@@ -3247,6 +3247,7 @@
                     }
                 ],
                 "Attack": 4,
+                "AttackDelaySeconds": 0.35,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -3314,6 +3315,7 @@
                     }
                 ],
                 "Attack": 17,
+                "AttackDelaySeconds": 0.35,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -3377,6 +3379,7 @@
                     }
                 ],
                 "Attack": 3,
+                "AttackDelaySeconds": 0.5066666666666667,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -3444,6 +3447,7 @@
                     }
                 ],
                 "Attack": 2,
+                "AttackDelaySeconds": 0.5066666666666667,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -3511,6 +3515,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.5,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -3582,6 +3587,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.49833333333333335,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -3645,6 +3651,7 @@
                     }
                 ],
                 "Attack": 0,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [],
                 "Cost": {
                     "Wood": 75
@@ -3686,6 +3693,7 @@
                     }
                 ],
                 "Attack": 0,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [],
                 "Cost": {
                     "Gold": 50,
@@ -3728,6 +3736,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 7,
@@ -3791,6 +3800,7 @@
                     }
                 ],
                 "Attack": 5,
+                "AttackDelaySeconds": 0.35,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -3858,6 +3868,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 4,
@@ -3917,6 +3928,7 @@
                     }
                 ],
                 "Attack": 2,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 125,
@@ -3976,6 +3988,7 @@
                     }
                 ],
                 "Attack": 40,
+                "AttackDelaySeconds": 0.21,
                 "Attacks": [
                     {
                         "Amount": 200,
@@ -4043,6 +4056,7 @@
                     }
                 ],
                 "Attack": 10,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 10,
@@ -4110,6 +4124,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 1.011111111111111,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -4173,6 +4188,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 9,
@@ -4244,6 +4260,7 @@
                     }
                 ],
                 "Attack": 10,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -4307,6 +4324,7 @@
                     }
                 ],
                 "Attack": 200,
+                "AttackDelaySeconds": 0.8800000000000001,
                 "Attacks": [
                     {
                         "Amount": 250,
@@ -4366,6 +4384,7 @@
                     }
                 ],
                 "Attack": 17,
+                "AttackDelaySeconds": 0.4,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -4425,6 +4444,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.22166666666666665,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -4492,6 +4512,7 @@
                     }
                 ],
                 "Attack": 4,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -4555,6 +4576,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -4618,6 +4640,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -4677,6 +4700,7 @@
                     }
                 ],
                 "Attack": 3,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -4739,6 +4763,7 @@
                     }
                 ],
                 "Attack": 3,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -4818,6 +4843,7 @@
                     }
                 ],
                 "Attack": 0,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [],
                 "Cost": {
                     "Gold": 100
@@ -4855,6 +4881,7 @@
                     }
                 ],
                 "Attack": 0,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [],
                 "Cost": {
                     "Gold": 50,
@@ -4901,6 +4928,7 @@
                     }
                 ],
                 "Attack": 4,
+                "AttackDelaySeconds": 0.795872,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -4968,6 +4996,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 9,
@@ -5047,6 +5076,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -5114,6 +5144,7 @@
                     }
                 ],
                 "Attack": 15,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 7,
@@ -5177,6 +5208,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 7,
@@ -5240,6 +5272,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.21,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -5303,6 +5336,7 @@
                     }
                 ],
                 "Attack": 40,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 35,
@@ -5362,6 +5396,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.9955555555555556,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -5433,6 +5468,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.4,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -5492,6 +5528,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 12,
@@ -5555,6 +5592,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -5614,6 +5652,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -5685,6 +5724,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 7,
@@ -5764,6 +5804,7 @@
                     }
                 ],
                 "Attack": 4,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -5847,6 +5888,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -5930,6 +5972,7 @@
                     }
                 ],
                 "Attack": 35,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 200,
@@ -6005,6 +6048,7 @@
                     }
                 ],
                 "Attack": 3,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 150,
@@ -6056,6 +6100,7 @@
                     }
                 ],
                 "Attack": 25,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 100,
@@ -6119,6 +6164,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 12,
@@ -6177,6 +6223,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 8,
@@ -6240,6 +6287,7 @@
                     }
                 ],
                 "Attack": 3,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -6298,6 +6346,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 8,
@@ -6369,6 +6418,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.9966666666666667,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -6428,6 +6478,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.3422222222222222,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -6491,6 +6542,7 @@
                     }
                 ],
                 "Attack": 110,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 220,
@@ -6542,6 +6594,7 @@
                     }
                 ],
                 "Attack": 140,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 280,
@@ -6593,6 +6646,7 @@
                     }
                 ],
                 "Attack": 2,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -6664,6 +6718,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.5,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -6727,6 +6782,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.8177777777777778,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -6786,6 +6842,7 @@
                     }
                 ],
                 "Attack": 3,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -6857,6 +6914,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 8,
@@ -6924,6 +6982,7 @@
                     }
                 ],
                 "Attack": 13,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -6983,6 +7042,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -7046,6 +7106,7 @@
                     }
                 ],
                 "Attack": 16,
+                "AttackDelaySeconds": 0.20800000000000002,
                 "Attacks": [
                     {
                         "Amount": 4,
@@ -7109,6 +7170,7 @@
                     }
                 ],
                 "Attack": 0,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [],
                 "Cost": {
                     "Wood": 125
@@ -7150,6 +7212,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 10,
@@ -7212,6 +7275,7 @@
                     }
                 ],
                 "Attack": 4,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 200,
@@ -7267,6 +7331,7 @@
                     }
                 ],
                 "Attack": 50,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 45,
@@ -7326,6 +7391,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 12,
@@ -7397,6 +7463,7 @@
                     }
                 ],
                 "Attack": 17,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 4,
@@ -7456,6 +7523,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -7527,6 +7595,7 @@
                     }
                 ],
                 "Attack": 10,
+                "AttackDelaySeconds": 0.2,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -7598,6 +7667,7 @@
                     }
                 ],
                 "Attack": 22,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -7661,6 +7731,7 @@
                     }
                 ],
                 "Attack": 20,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 10,
@@ -7724,6 +7795,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.22166666666666665,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -7795,6 +7867,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -7866,6 +7939,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.49833333333333335,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -7929,6 +8003,7 @@
                     }
                 ],
                 "Attack": 13,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 8,
@@ -7992,6 +8067,7 @@
                     }
                 ],
                 "Attack": 14,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 14,
@@ -8051,6 +8127,7 @@
                     }
                 ],
                 "Attack": 75,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 60,
@@ -8110,6 +8187,7 @@
                     }
                 ],
                 "Attack": 45,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 275,
@@ -8185,6 +8263,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -8252,6 +8331,7 @@
                     }
                 ],
                 "Attack": 14,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -8319,6 +8399,7 @@
                     }
                 ],
                 "Attack": 10,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -8390,6 +8471,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -8461,6 +8543,7 @@
                     }
                 ],
                 "Attack": 4,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 8,
@@ -8540,6 +8623,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 10,
@@ -8619,6 +8703,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 8,
@@ -8698,6 +8783,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 10,
@@ -8773,6 +8859,7 @@
                     }
                 ],
                 "Attack": 11,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 10,
@@ -8848,6 +8935,7 @@
                     }
                 ],
                 "Attack": 5,
+                "AttackDelaySeconds": 0.5,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -8919,6 +9007,7 @@
                     }
                 ],
                 "Attack": 5,
+                "AttackDelaySeconds": 0.5,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -9002,6 +9091,7 @@
                     }
                 ],
                 "Attack": 16,
+                "AttackDelaySeconds": 0.40444444444444444,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -9073,6 +9163,7 @@
                     }
                 ],
                 "Attack": 18,
+                "AttackDelaySeconds": 0.40444444444444444,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -9136,6 +9227,7 @@
                     }
                 ],
                 "Attack": 0,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [],
                 "Cost": {
                     "Gold": 100
@@ -9189,6 +9281,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.9955555555555555,
                 "Attacks": [
                     {
                         "Amount": 5,
@@ -9252,6 +9345,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.9955555555555555,
                 "Attacks": [
                     {
                         "Amount": 5,
@@ -9315,6 +9409,7 @@
                     }
                 ],
                 "Attack": 50,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 50,
@@ -9374,6 +9469,7 @@
                     }
                 ],
                 "Attack": 50,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 50,
@@ -9425,6 +9521,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.5,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -9500,6 +9597,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.5,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -9575,6 +9673,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 9,
@@ -9642,6 +9741,7 @@
                     }
                 ],
                 "Attack": 10,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 10,
@@ -9721,6 +9821,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.394,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -9796,6 +9897,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.394,
                 "Attacks": [
                     {
                         "Amount": 4,
@@ -9859,6 +9961,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 12,
@@ -9922,6 +10025,7 @@
                     }
                 ],
                 "Attack": 14,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 14,
@@ -9985,6 +10089,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 7,
@@ -10052,6 +10157,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 8,
@@ -10127,6 +10233,7 @@
                     }
                 ],
                 "Attack": 10,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -10198,6 +10305,7 @@
                     }
                 ],
                 "Attack": 16,
+                "AttackDelaySeconds": 0.6,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -10261,6 +10369,7 @@
                     }
                 ],
                 "Attack": 20,
+                "AttackDelaySeconds": 0.6,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -10320,6 +10429,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 8,
@@ -10387,6 +10497,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 9,
@@ -10462,6 +10573,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.625,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -10545,6 +10657,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.625,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -10628,6 +10741,7 @@
                     }
                 ],
                 "Attack": 3,
+                "AttackDelaySeconds": 0.5,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -10707,6 +10821,7 @@
                     }
                 ],
                 "Attack": 4,
+                "AttackDelaySeconds": 0.5,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -10778,6 +10893,7 @@
                     }
                 ],
                 "Attack": 10,
+                "AttackDelaySeconds": 1.0,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -10841,6 +10957,7 @@
                     }
                 ],
                 "Attack": 13,
+                "AttackDelaySeconds": 1.0,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -10904,6 +11021,7 @@
                     }
                 ],
                 "Attack": 16,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -10963,6 +11081,7 @@
                     }
                 ],
                 "Attack": 18,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -11018,6 +11137,7 @@
                     }
                 ],
                 "Attack": 1,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -11085,6 +11205,7 @@
                     }
                 ],
                 "Attack": 90,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 180,
@@ -11140,6 +11261,7 @@
                     }
                 ],
                 "Attack": 0,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [],
                 "Cost": {
                     "Gold": 160,
@@ -11194,6 +11316,7 @@
                     }
                 ],
                 "Attack": 8,
+                "AttackDelaySeconds": 0.394,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -11281,6 +11404,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.394,
                 "Attacks": [
                     {
                         "Amount": 4,
@@ -11360,6 +11484,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -11419,6 +11544,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -11486,6 +11612,7 @@
                     }
                 ],
                 "Attack": 17,
+                "AttackDelaySeconds": 0.6,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -11565,6 +11692,7 @@
                     }
                 ],
                 "Attack": 19,
+                "AttackDelaySeconds": 0.6,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -11606,7 +11734,7 @@
                 "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 5,
-                "ReloadTime": 2,
+                "ReloadTime": 2.2,
                 "Speed": 1.3,
                 "TrainTime": 21,
                 "internal_name": "EARAMBAI"
@@ -11636,6 +11764,7 @@
                     }
                 ],
                 "Attack": 6,
+                "AttackDelaySeconds": 0.6900000000000001,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -11703,6 +11832,7 @@
                     }
                 ],
                 "Attack": 7,
+                "AttackDelaySeconds": 0.6900000000000001,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -11770,6 +11900,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 4,
@@ -11833,6 +11964,7 @@
                     }
                 ],
                 "Attack": 14,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 7,
@@ -11892,6 +12024,7 @@
                     }
                 ],
                 "Attack": 4,
+                "AttackDelaySeconds": 0.5066666666666667,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -11963,6 +12096,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 9,
@@ -12026,6 +12160,7 @@
                     }
                 ],
                 "Attack": 11,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 11,
@@ -12097,6 +12232,7 @@
                     }
                 ],
                 "Attack": 4,
+                "AttackDelaySeconds": 0.49,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -12164,6 +12300,7 @@
                     }
                 ],
                 "Attack": 5,
+                "AttackDelaySeconds": 0.49,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -12223,6 +12360,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -12286,6 +12424,7 @@
                     }
                 ],
                 "Attack": 14,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -12349,6 +12488,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -12416,6 +12556,7 @@
                     }
                 ],
                 "Attack": 13,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -12483,6 +12624,7 @@
                     }
                 ],
                 "Attack": 12,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 12,
@@ -12546,6 +12688,7 @@
                     }
                 ],
                 "Attack": 14,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 14,
@@ -12609,6 +12752,7 @@
                     }
                 ],
                 "Attack": 20,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 100,
@@ -12676,6 +12820,7 @@
                     }
                 ],
                 "Attack": 9,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 9,
@@ -12735,6 +12880,7 @@
                     }
                 ],
                 "Attack": 11,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 11,
@@ -12794,6 +12940,7 @@
                     }
                 ],
                 "Attack": 10,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 10,
