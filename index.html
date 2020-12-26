@@ -841,6 +841,15 @@
             document.getElementById('civselect').appendChild(option);
         });
     }
+
+    const techtreeElement = document.getElementById('techtree');
+    techtreeElement.addEventListener('wheel', function (e) {
+        if (e.deltaY > 0) {
+            techtreeElement.scrollLeft += 100;
+        } else {
+            techtreeElement.scrollLeft -= 100;
+        }
+    });
 </script>
 </body>
 </html>
