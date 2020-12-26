@@ -21,6 +21,10 @@ body {
     font-size: 10pt;
 }
 
+#techtree {
+    background: url("img/Backgrounds/bg_aoe2_hd_paper.jpg") repeat local;
+}
+
 a, a:hover, a:visited, a:active {
     color: #4d3617;
 }
