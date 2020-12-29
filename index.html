@@ -846,7 +846,7 @@
     techtreeElement.addEventListener('wheel', function (e) {
         if (e.deltaY > 0) {
             techtreeElement.scrollLeft += 100;
-        } else {
+        } else if (e.deltaY < 0) {
             techtreeElement.scrollLeft -= 100;
         }
     });
