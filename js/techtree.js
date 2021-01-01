@@ -573,31 +573,35 @@ function enable(buildings, units, techs) {
 }
 
 function formatName(originalname) {
-    let name = originalname.toString();
-    if (name.length > 10) {
-        let space = originalname.indexOf(" ");
-        if (space !== -1) {
-            name = originalname.slice(0, space) + "\n" + originalname.slice(space + 1);
-            let alternativeSpace = space + 1 + originalname.slice(space + 1).indexOf(" ");
-            if (alternativeSpace !== -1) {
-                if (Math.abs((originalname.length / 2) - alternativeSpace) < Math.abs((originalname.length / 2) - space)) {
-                    name = originalname.slice(0, alternativeSpace) + "\n" + originalname.slice(alternativeSpace + 1);
+    let name = originalname.toString().replace(/<br>/g, "\n").replace(/\n+/g, "\n");
+    const items = name.split("\n");
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (items[i].length > 10) {
+            let space = item.indexOf(" ");
+            if (space !== -1) {
+                items[i] = item.slice(0, space) + "\n" + item.slice(space + 1);
+                let alternativeSpace = space + 1 + item.slice(space + 1).indexOf(" ");
+                if (alternativeSpace !== -1) {
+                    if (Math.abs((item.length / 2) - alternativeSpace) < Math.abs((item.length / 2) - space)) {
+                        items[i] = item.slice(0, alternativeSpace) + "\n" + item.slice(alternativeSpace + 1);
+                    }
                 }
-            }
-        } else {
-            let hyphen = originalname.indexOf("-");
-            if (hyphen !== -1) {
-                name = originalname.slice(0, hyphen) + "-\n" + originalname.slice(hyphen + 1);
-                let alternativeHyphen = hyphen + 1 + originalname.slice(hyphen + 1).indexOf("-");
-                if (alternativeHyphen !== -1) {
-                    if (Math.abs((originalname.length / 2) - alternativeHyphen) < Math.abs((originalname.length / 2) - hyphen)) {
-                        name = originalname.slice(0, alternativeHyphen) + "-\n" + originalname.slice(alternativeHyphen + 1);
+            } else {
+                let hyphen = item.indexOf("-");
+                if (hyphen !== -1) {
+                    items[i] = item.slice(0, hyphen) + "-\n" + item.slice(hyphen + 1);
+                    let alternativeHyphen = hyphen + 1 + item.slice(hyphen + 1).indexOf("-");
+                    if (alternativeHyphen !== -1) {
+                        if (Math.abs((item.length / 2) - alternativeHyphen) < Math.abs((item.length / 2) - hyphen)) {
+                            items[i] = item.slice(0, alternativeHyphen) + "-\n" + item.slice(alternativeHyphen + 1);
+                        }
                     }
                 }
             }
         }
     }
-    return name;
+    return items.join("\n");
 }
 
 function unique(ids, monk_prefix) {
