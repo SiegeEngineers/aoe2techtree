@@ -734,11 +734,17 @@ function fillCivSelector() {
     });
 }
 
+let doVerticalScroll = true;
 const techtreeElement = document.getElementById('techtree');
 techtreeElement.addEventListener('wheel', function (e) {
-    if (e.deltaY > 0) {
-        techtreeElement.scrollLeft += 100;
-    } else if (e.deltaY < 0) {
-        techtreeElement.scrollLeft -= 100;
+    if (e.deltaX !== 0) {
+        doVerticalScroll = false;
+    }
+    if (doVerticalScroll) {
+        if (e.deltaY > 0) {
+            techtreeElement.scrollLeft += 100;
+        } else if (e.deltaY < 0) {
+            techtreeElement.scrollLeft -= 100;
+        }
     }
 });
