@@ -128,6 +128,7 @@ BUILDINGS = {
     562: {"internal_name": "SMIL"},
     584: {"internal_name": "MINE"},
     598: {"internal_name": "WCTWX"},
+    621: {"internal_name": "RTWC1X"},
     790: {"internal_name": "PGTAB"},
     1021: {"internal_name": "FEITO"},
     1251: {"internal_name": "KREPOST"},

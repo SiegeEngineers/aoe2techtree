@@ -1464,6 +1464,50 @@
                 "TrainTime": 15,
                 "internal_name": "WCTWX"
             },
+            "621": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 0,
+                "Attacks": [],
+                "Cost": {
+                    "Stone": 100,
+                    "Wood": 275
+                },
+                "GarrisonCapacity": 0,
+                "HP": 2400,
+                "ID": 621,
+                "LanguageHelpId": 26164,
+                "LanguageNameId": 5164,
+                "LineOfSight": 8,
+                "MeleeArmor": 0,
+                "MinRange": 0,
+                "PierceArmor": 7,
+                "Range": 6,
+                "ReloadTime": 2,
+                "TrainTime": 150,
+                "internal_name": "RTWC1X"
+            },
             "790": {
                 "AccuracyPercent": 100,
                 "Armours": [
