@@ -37,7 +37,7 @@ function parseCiv(civ) {
 function civ(name) {
    let selectedCiv = parseCiv(civsConfig[name]);
 
-   SVG.select('.cross').each(function(i) {
+   SVG.select('.cross').each(function (i) {
       if (SVGObjectIsTransparent(this)) {
          return;
       }
@@ -109,6 +109,7 @@ class CivBuilder {
         // Unique Buildings
         KREPOST,
         FEITORIA,
+        DONJON,
      ];
      this.disabledUnits = [
         // Units that are not often enabled
@@ -137,6 +138,9 @@ class CivBuilder {
         KONNIK,
         ELITE_KONNIK,
         MISSIONARY,
+        DSERJEANT,
+        ELITE_DSERJEANT,
+        FLEMISHPIKEMAN,
      ];
      this.disabledTechs = [];
      this.uniqueUnit = uniqueConfig.uniqueUnit;
@@ -397,42 +401,82 @@ const civsConfig = {
              ELITE_KONNIK
           ]
        },
-       unique: [ 
+       unique: [
           KONNIK,
           ELITE_KONNIK,
           STIRRUPS,
           BAGAINS
        ]
     },
-    Burmese: { 
-       disabled: { 
-          buildings: [ 
-             BOMBARD_TOWER
-          ],
-          techs: [ 
-             THUMB_RING,
-             SHIPWRIGHT,
-             HERESY,
-             HOARDINGS,
-             SAPPERS,
-             LEATHER_ARCHER_ARMOR,
-             RING_ARCHER_ARMOR,
-             BOMBARD_TOWER_TECH,
-             ARROWSLITS,
-             STONE_SHAFT_MINING
-          ],
-          units: [ 
-             ARBALESTER,
-             HAND_CANNONEER,
-             CAMEL_RIDER,
-             HEAVY_CAMEL_RIDER,
-             PALADIN,
-             FAST_FIRE_SHIP,
-             HEAVY_DEMO_SHIP,
-             SIEGE_RAM,
-             SIEGE_ONAGER
-          ]
-       },
+   Burgundians: {
+      disabled: {
+         buildings: [],
+         techs: [
+            THUMB_RING,
+            PARTHIAN_TACTICS,
+            SUPPLIES,
+            BLOODLINES,
+            RING_ARCHER_ARMOR,
+            DRY_DOCK,
+            SHIPWRIGHT,
+            SIEGE_ENGINEERS,
+            HEATED_SHOT,
+            THEOCRACY,
+            HERESY,
+         ],
+         units: [
+            ARBALESTER,
+            HEAVY_CAV_ARCHER,
+            CAMEL_RIDER,
+            HEAVY_CAMEL_RIDER,
+            SIEGE_RAM,
+            SIEGE_ONAGER,
+            HEAVY_SCORPION,
+            HEAVY_DEMO_SHIP,
+         ]
+      },
+      enabled: {
+         buildings: [],
+         units: [
+            FLEMISHPIKEMAN,
+         ]
+      },
+      unique: [
+         COUSTILLIER,
+         ELITE_COUSTILLIER,
+         BURGUNDIAN_VINEYARDS,
+         FLEMISH_REVOLUTION,
+      ]
+   },
+   Burmese: {
+      disabled: {
+         buildings: [
+            BOMBARD_TOWER
+         ],
+         techs: [
+            THUMB_RING,
+            SHIPWRIGHT,
+            HERESY,
+            HOARDINGS,
+            SAPPERS,
+            LEATHER_ARCHER_ARMOR,
+            RING_ARCHER_ARMOR,
+            BOMBARD_TOWER_TECH,
+            ARROWSLITS,
+            STONE_SHAFT_MINING
+         ],
+         units: [
+            ARBALESTER,
+            HAND_CANNONEER,
+            CAMEL_RIDER,
+            HEAVY_CAMEL_RIDER,
+            PALADIN,
+            FAST_FIRE_SHIP,
+            HEAVY_DEMO_SHIP,
+            SIEGE_RAM,
+            SIEGE_ONAGER
+         ]
+      },
        enabled: { 
           units: [ 
              BATTLE_ELEPHANT,
@@ -652,6 +696,7 @@ const civsConfig = {
              HEATED_SHOT,
              KEEP_TECH,
              BOMBARD_TOWER_TECH,
+             TREADMILL_CRANE,
              STONE_SHAFT_MINING,
              TWO_MAN_SAW,
              GUILDS
@@ -942,6 +987,7 @@ const civsConfig = {
              SHIPWRIGHT,
              PLATE_MAIL_ARMOR,
              ARROWSLITS,
+             TREADMILL_CRANE,
              TWO_MAN_SAW,
              GUILDS,
              SUPPLIES,
@@ -989,7 +1035,6 @@ const civsConfig = {
              CAMEL_RIDER,
              HEAVY_CAMEL_RIDER,
              PALADIN,
-             ELITE_CANNON_GALLEON,
              DEMOLITION_RAFT,
              DEMOLITION_SHIP,
              HEAVY_DEMO_SHIP,
@@ -1347,42 +1392,96 @@ const civsConfig = {
           ]
        },
        monkPrefix: MONK_PREFIX_AFRICAN,
-       unique: [ 
+       unique: [
           MAMELUKE,
           ELITE_MAMELUKE,
           MADRASAH,
           ZEALOTRY
        ]
     },
-    Slavs: { 
-       disabled: { 
-          buildings: [ 
-             KEEP,
-             BOMBARD_TOWER
-          ],
-          techs: [ 
-             THUMB_RING,
-             PARTHIAN_TACTICS,
-             SHIPWRIGHT,
-             KEEP_TECH,
-             BOMBARD_TOWER_TECH,
-             HERESY,
-             BRACER,
-             ARCHITECTURE,
-             ARROWSLITS,
-             HEATED_SHOT,
-             STONE_SHAFT_MINING,
-             GUILDS
-          ],
-          units: [ 
-             ARBALESTER,
-             HAND_CANNONEER,
-             CAMEL_RIDER,
-             HEAVY_CAMEL_RIDER,
-             PALADIN,
-             ELITE_CANNON_GALLEON,
-             HEAVY_DEMO_SHIP,
-             BOMBARD_CANNON
+   Sicilians: {
+      disabled: {
+         buildings: [
+            FORTIFIED_WALL,
+            WATCH_TOWER,
+            GUARD_TOWER,
+            KEEP,
+            BOMBARD_TOWER,
+         ],
+         techs: [
+            THUMB_RING,
+            PARTHIAN_TACTICS,
+            RING_ARCHER_ARMOR,
+            ARCHITECTURE,
+            FORTIFIED_WALL_TECH,
+            BOMBARD_TOWER_TECH,
+            GUARD_TOWER_TECH,
+            KEEP_TECH,
+            REDEMPTION,
+            ATONEMENT,
+            BLOCK_PRINTING,
+            THEOCRACY,
+            HERESY,
+            TWO_MAN_SAW,
+         ],
+         units: [
+            HAND_CANNONEER,
+            HEAVY_CAV_ARCHER,
+            HUSSAR,
+            PALADIN,
+            CAMEL_RIDER,
+            HEAVY_CAMEL_RIDER,
+            SIEGE_ONAGER,
+            BOMBARD_CANNON,
+            ELITE_CANNON_GALLEON,
+         ]
+      },
+      enabled: {
+         buildings: [
+            DONJON,
+         ],
+         units: [
+            DSERJEANT,
+            ELITE_DSERJEANT,
+         ]
+      },
+      unique: [
+         SERJEANT,
+         ELITE_SERJEANT,
+         FIRST_CRUSADE,
+         SCUTAGE,
+      ]
+   },
+   Slavs: {
+      disabled: {
+         buildings: [
+            KEEP,
+            BOMBARD_TOWER
+         ],
+         techs: [
+            THUMB_RING,
+            PARTHIAN_TACTICS,
+            SHIPWRIGHT,
+            KEEP_TECH,
+            BOMBARD_TOWER_TECH,
+            HERESY,
+            BRACER,
+            ARCHITECTURE,
+            ARROWSLITS,
+            HEATED_SHOT,
+            TREADMILL_CRANE,
+            STONE_SHAFT_MINING,
+            GUILDS
+         ],
+         units: [
+            ARBALESTER,
+            HAND_CANNONEER,
+            CAMEL_RIDER,
+            HEAVY_CAMEL_RIDER,
+            PALADIN,
+            ELITE_CANNON_GALLEON,
+            HEAVY_DEMO_SHIP,
+            BOMBARD_CANNON
           ]
        },
        unique: [ 

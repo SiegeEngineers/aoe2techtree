@@ -77,8 +77,8 @@ a, a:hover, a:visited, a:active {
 }
 
 #helptext__x_ref__container {
-    /* There are 35 civs, 5x7 makes the badges into a nice square. */
-    max-width: calc(var(--xRef-badge-size) * 7);
+    /* There are 37 civs, 4x8+5 makes the badges fit into a square. */
+    max-width: calc(var(--xRef-badge-size) * 8);
     margin: auto;
     padding-top: 0.2rem;
 }

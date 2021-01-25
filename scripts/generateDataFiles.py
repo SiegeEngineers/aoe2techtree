@@ -59,6 +59,8 @@ CIV_NAMES = {
     "Tatars": "10303",
     "Cumans": "10304",
     "Lithuanians": "10305",
+    "Burgundians": "10306",
+    "Sicilians": "10307",
 }
 
 CIV_HELPTEXTS = {
@@ -97,6 +99,8 @@ CIV_HELPTEXTS = {
     "Cumans": "120183",
     "Lithuanians": "120184",
     "Tatars": "120182",
+    "Burgundians": "120185",
+    "Sicilians": "120186",
 }
 
 BUILDINGS = {
@@ -132,6 +136,7 @@ BUILDINGS = {
     790: {"internal_name": "PGTAB"},
     1021: {"internal_name": "FEITO"},
     1251: {"internal_name": "KREPOST"},
+    1665: {"internal_name": "DONJON"},
 }
 
 UNITS = {
@@ -282,6 +287,13 @@ UNITS = {
     1370: {"internal_name": "SLANCER"},
     1372: {"internal_name": "ESLANCER"},
     1570: {"internal_name": "AZTRAIDER"},
+    1655: {"internal_name": "COUSTILLIER"},
+    1657: {"internal_name": "ECOUSTILLIER"},
+    1658: {"internal_name": "SERJEANT"},
+    1659: {"internal_name": "ESERJEANT"},
+    1660: {"internal_name": "DSERJEANT"},
+    1661: {"internal_name": "EDSERJEANT"},
+    1663: {"internal_name": "FLEMISHPIKEMAN"},
 }
 
 TECHS = {
@@ -432,6 +444,10 @@ TECHS = {
     691: {"internal_name": "Vietnamese UT"},
     692: {"internal_name": "Vietnamese UT"},
     716: {"internal_name": "Tracking"},
+    754: {"internal_name": "Burgundian Vineyards"},
+    755: {"internal_name": "Flemish Revolution"},
+    756: {"internal_name": "First Crusade"},
+    757: {"internal_name": "Scutage"},
 }
 
 
@@ -505,8 +521,8 @@ def gather_language_data(resourcesdir, data, language):
     key_value[26708] = key_value[26186]  # Palisade Gate
     key_value[26097] = key_value[26381]  # Trebuchet
     key_value[26768] = key_value[28314]  # Gillnets
-    key_value[26659] = key_value[26288]  # Use Konnik for Dismounted Konnik
-    key_value[26662] = key_value[26290]  # Use Elite Konnik for Dismounted Elite Konnik
+    key_value[42057] = key_value[26288]  # Use Konnik for Dismounted Konnik
+    key_value[42058] = key_value[26290]  # Use Elite Konnik for Dismounted Elite Konnik
 
     key_value_filtered = {}
     for datatype in data:

@@ -52,6 +52,7 @@ const TOWN_CENTER = 621;
 const PALISADE_GATE = 790;
 const FEITORIA = 1021;
 const KREPOST = 1251;
+const DONJON = 1665;
 const ARCHER = 4;
 const HAND_CANNONEER = 5;
 const ELITE_SKIRMISHER = 6;
@@ -199,6 +200,13 @@ const FLAMING_CAMEL = 1263;
 const STEPPE_LANCER = 1370;
 const ELITE_STEPPE_LANCER = 1372;
 const XOLOTL_WARRIOR = 1570;
+const COUSTILLIER = 1655;
+const ELITE_COUSTILLIER = 1657;
+const SERJEANT = 1658;
+const ELITE_SERJEANT = 1659;
+const DSERJEANT = 1660;
+const ELITE_DSERJEANT = 1661;
+const FLEMISHPIKEMAN = 1663;
 const YEOMEN = 3;
 const EL_DORADO = 4;
 const FUROR_CELTICA = 5;
@@ -344,6 +352,10 @@ const CUMAN_MERCENARIES = 690;
 const HILL_FORTS = 691;
 const TOWER_SHIELDS = 692;
 const SUPPLIES = 716;
+const BURGUNDIAN_VINEYARDS = 754;
+const FLEMISH_REVOLUTION = 755;
+const FIRST_CRUSADE = 756;
+const SCUTAGE = 757;
 
 
 const horseDisabledBuildings = [STABLE];
@@ -353,9 +365,10 @@ const horseDisabledTechs = [BLOODLINES, HUSBANDRY, SCALE_BARDING_ARMOR, CHAIN_BA
     PLATE_BARDING_ARMOR, PARTHIAN_TACTICS];
 
 const defaultDisabledUnits = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,
-    ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER, FLAMING_CAMEL, XOLOTL_WARRIOR];
+    ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER, FLAMING_CAMEL, XOLOTL_WARRIOR,
+    DSERJEANT, ELITE_DSERJEANT];
 
-const defaultDisabledBuildings = [KREPOST, FEITORIA,];
+const defaultDisabledBuildings = [KREPOST, FEITORIA, DONJON];
 
 class Tree {
     constructor() {
@@ -842,6 +855,13 @@ function getDefaultTree() {
     tree.lanes.push(krepostlane);
 
 
+    let donjonlane = new Lane();
+    donjonlane.rows.feudal_1.push(building(DONJON));
+    donjonlane.rows.feudal_2.push(uniqueunit(DSERJEANT));
+    donjonlane.rows.imperial_1.push(uniqueunit(ELITE_DSERJEANT));
+    tree.lanes.push(donjonlane);
+
+
     let monasterylane = new Lane();
     monasterylane.rows.castle_1.push(building(MONASTERY));
     monasterylane.rows.castle_2.push(unit(MONK));
@@ -874,6 +894,7 @@ function getDefaultTree() {
     towncenterlane.rows.castle_1.push(tech(TOWN_PATROL));
     towncenterlane.rows.castle_1.push(tech(IMPERIAL_AGE));
     towncenterlane.rows.castle_1.push(tech(HAND_CART));
+    towncenterlane.rows.imperial_1.push(uniqueunit(FLEMISHPIKEMAN));
     tree.lanes.push(towncenterlane);
 
 
@@ -1026,6 +1047,8 @@ function getConnections() {
         [b(CASTLE), t(SPIES_TREASON)],
         [b(KREPOST), u(KONNIK)],
         [u(KONNIK), u(ELITE_KONNIK)],
+        [b(DONJON), u(DSERJEANT)],
+        [u(DSERJEANT), u(ELITE_DSERJEANT)],
         [b(TOWN_CENTER), u(VILLAGER)],
         [b(TOWN_CENTER), t(FEUDAL_AGE)],
         [t(FEUDAL_AGE), t(CASTLE_AGE)],
