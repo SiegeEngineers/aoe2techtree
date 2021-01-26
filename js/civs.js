@@ -188,21 +188,30 @@ class CivBuilder {
 
   enableUnits(toEnable) {
      for (let enable of toEnable) {
-        this.disabledUnits.splice(this.disabledUnits.indexOf(enable),1)
+        let index = this.disabledUnits.indexOf(enable);
+        if (index >= 0) {
+           this.disabledUnits.splice(index, 1);
+        }
      }
      return this;
   }
 
   enableBuildings(toEnable) {
      for (let enable of toEnable) {
-        this.disabledBuildings.splice(this.disabledBuildings.indexOf(enable),1)
+        let index = this.disabledBuildings.indexOf(enable);
+        if (index >= 0) {
+           this.disabledBuildings.splice(index, 1);
+        }
      }
      return this;
   }
 
   enableTechs(toEnable) {
    for (let enable of toEnable) {
-      this.disabledTechs.splice(this.disabledTechs.indexOf(enable),1)
+      let index = this.disabledTechs.indexOf(enable);
+      if (index >= 0) {
+         this.disabledTechs.splice(index, 1);
+      }
    }
    return this;
 }
