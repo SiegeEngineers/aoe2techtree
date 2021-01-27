@@ -13512,7 +13512,7 @@
                 "TrainTime": 20,
                 "internal_name": "EDSERJEANT"
             },
-            "1663": {
+            "1699": {
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
@@ -13569,12 +13569,13 @@
                     }
                 ],
                 "Cost": {
-                    "Food": 50
+                    "Food": 60,
+                    "Gold": 25
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
                 "HP": 75,
-                "ID": 1663,
+                "ID": 1699,
                 "LanguageHelpId": 26542,
                 "LanguageNameId": 5542,
                 "LineOfSight": 5,
@@ -13584,8 +13585,8 @@
                 "Range": 0,
                 "ReloadTime": 2,
                 "Speed": 0.9,
-                "TrainTime": 21,
-                "internal_name": "FLEMISHPIKEMAN"
+                "TrainTime": 14,
+                "internal_name": "FLEMISHPIKEMAN2"
             }
         }
     },

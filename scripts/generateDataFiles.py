@@ -293,7 +293,7 @@ UNITS = {
     1659: {"internal_name": "ESERJEANT"},
     1660: {"internal_name": "DSERJEANT"},
     1661: {"internal_name": "EDSERJEANT"},
-    1663: {"internal_name": "FLEMISHPIKEMAN"},
+    1699: {"internal_name": "FLEMISHPIKEMAN2"},
 }
 
 TECHS = {
