@@ -648,9 +648,13 @@ def add_unit(key, value, unit, graphics, data):
         'AttackDelaySeconds': attack_delay_seconds,
         'MinRange': unit["Type50"]["MinRange"],
         'TrainTime': unit["Creatable"]["TrainTime"],
+        'MaxCharge': unit["Creatable"]["MaxCharge"],
+        'RechargeRate': unit["Creatable"]["RechargeRate"],
         'LanguageNameId': unit['LanguageDLLName'],
         'LanguageHelpId': unit['LanguageDLLName'] + 21_000,
     }
+    if unit["Creatable"]["RechargeRate"] > 0:
+        data['units'][key]['RechargeDuration'] = unit["Creatable"]["MaxCharge"] / unit["Creatable"]["RechargeRate"]
 
 
 def add_tech(key, value, tech, data):

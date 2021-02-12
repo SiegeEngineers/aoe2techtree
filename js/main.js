@@ -455,12 +455,15 @@ function getHelpText(name, id, type) {
         if (text.match(/‹range›/)) {
             stats.push("Range:&nbsp;" + meta.Range);
         }
-        stats.push(minRangeIfDefined(meta.MinRange, "Min Range:&nbsp;"));
+        stats.push(ifDefinedAndGreaterZero(meta.MinRange, "Min Range:&nbsp;"));
         stats.push(ifDefined(meta.LineOfSight, "Line of Sight:&nbsp;"));
         stats.push(ifDefined(meta.Speed, "Speed:&nbsp;"));
         stats.push(secondsIfDefined(meta.TrainTime, "Build Time:&nbsp;"));
         stats.push(secondsIfDefined(meta.ResearchTime, "Research Time:&nbsp;"));
         stats.push(ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;"));
+        stats.push(ifDefinedAndGreaterZero(meta.MaxCharge, "Charge Attack:&nbsp;"));
+        stats.push(ifDefinedAndGreaterZero(meta.RechargeRate, "Recharge Rate:&nbsp;"));
+        stats.push(secondsIfDefined(meta.RechargeDuration, "Recharge Duration:&nbsp;"));
         stats.push(secondsIfDefined(meta.AttackDelaySeconds, "Attack Delay:&nbsp;"));
         stats.push(secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;"));
         stats.push(accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;"));
@@ -646,7 +649,7 @@ function accuracyIfDefined(value, prefix) {
     }
 }
 
-function minRangeIfDefined(value, prefix) {
+function ifDefinedAndGreaterZero(value, prefix) {
     if (value !== undefined && value > 0) {
         return " " + prefix + value;
     } else {
