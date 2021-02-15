@@ -29,7 +29,6 @@ const FARM = 50;
 const MILL = 68;
 const HOUSE = 70;
 const PALISADE_WALL = 72;
-const GATE = 78;
 const WATCH_TOWER = 79;
 const CASTLE = 82;
 const MARKET = 84;
@@ -37,6 +36,7 @@ const ARCHERY_RANGE = 87;
 const STABLE = 101;
 const BLACKSMITH = 103;
 const MONASTERY = 104;
+const TOWN_CENTER = 109;
 const STONE_WALL = 117;
 const FORTIFIED_WALL = 155;
 const FISH_TRAP = 199;
@@ -45,11 +45,12 @@ const GUARD_TOWER = 234;
 const KEEP = 235;
 const BOMBARD_TOWER = 236;
 const WONDER = 276;
+const GATE = 487;
 const LUMBER_CAMP = 562;
 const MINING_CAMP = 584;
 const OUTPOST = 598;
-const TOWN_CENTER = 621;
-const PALISADE_GATE = 790;
+const TOWN_CENTER_2 = 621;
+const PALISADE_GATE = 792;
 const FEITORIA = 1021;
 const KREPOST = 1251;
 const DONJON = 1665;
@@ -64,13 +65,11 @@ const TRADE_COG = 17;
 const WAR_GALLEY = 21;
 const CROSSBOWMAN = 24;
 const TEUTONIC_KNIGHT = 25;
-const BATTERING_RAM = 35;
 const BOMBARD_CANNON = 36;
 const KNIGHT = 38;
 const CAVALRY_ARCHER = 39;
 const CATAPHRACT = 40;
 const HUSKARL = 41;
-const TREBUCHET = 42;
 const JANISSARY = 46;
 const CHU_KO_NU = 73;
 const MILITIA = 74;
@@ -93,6 +92,7 @@ const CAVALIER = 283;
 const SAMURAI = 291;
 const CAMEL_RIDER = 329;
 const HEAVY_CAMEL_RIDER = 330;
+const TREBUCHET = 331;
 const PIKEMAN = 358;
 const HALBERDIER = 359;
 const CANNON_GALLEON = 420;
@@ -186,6 +186,8 @@ const ELITE_RATTAN_ARCHER = 1131;
 const BATTLE_ELEPHANT = 1132;
 const ELITE_BATTLE_ELEPHANT = 1134;
 const IMPERIAL_SKIRMISHER = 1155;
+const KONNIK = 1225;
+const ELITE_KONNIK = 1227;
 const KESHIK = 1228;
 const ELITE_KESHIK = 1230;
 const KIPCHAK = 1231;
@@ -194,8 +196,9 @@ const LEITIS = 1234;
 const ELITE_LEITIS = 1236;
 const DISMOUNTED_KONNIK = 1252;
 const DISMOUNTED_ELITE_KONNIK = 1253;
-const KONNIK = 1254;
-const ELITE_KONNIK = 1255;
+const KONNIK_2 = 1254;
+const ELITE_KONNIK_2 = 1255;
+const BATTERING_RAM = 1258;
 const FLAMING_CAMEL = 1263;
 const STEPPE_LANCER = 1370;
 const ELITE_STEPPE_LANCER = 1372;
@@ -357,19 +360,6 @@ const FLEMISH_REVOLUTION = 755;
 const FIRST_CRUSADE = 756;
 const SCUTAGE = 757;
 
-
-const horseDisabledBuildings = [STABLE];
-const horseDisabledUnits = [SCOUT_CAVALRY, LIGHT_CAVALRY, HUSSAR, KNIGHT, PALADIN, CAMEL_RIDER,
-    HEAVY_CAMEL_RIDER, CAVALIER, CAVALRY_ARCHER, HEAVY_CAV_ARCHER];
-const horseDisabledTechs = [BLOODLINES, HUSBANDRY, SCALE_BARDING_ARMOR, CHAIN_BARDING_ARMOR,
-    PLATE_BARDING_ARMOR, PARTHIAN_TACTICS];
-
-const defaultDisabledUnits = [EAGLE_SCOUT, EAGLE_WARRIOR, ELITE_EAGLE_WARRIOR, BATTLE_ELEPHANT,
-    ELITE_BATTLE_ELEPHANT, STEPPE_LANCER, ELITE_STEPPE_LANCER, FLAMING_CAMEL, XOLOTL_WARRIOR,
-    DSERJEANT, ELITE_DSERJEANT];
-
-const defaultDisabledBuildings = [KREPOST, FEITORIA, DONJON];
-
 class Tree {
     constructor() {
         this.offsets = {
@@ -419,17 +409,6 @@ class Tree {
         for (let lane of this.lanes) {
             lane.updatePositions(this.offsets, this.element_height);
         }
-    }
-
-    carets() {
-        let c = new Map();
-        for (let lane of this.lanes) {
-            let lanecarets = lane.carets();
-            for (let key of lanecarets.keys()) {
-                c.set(key, lanecarets.get(key));
-            }
-        }
-        return c;
     }
 }
 
@@ -501,23 +480,11 @@ class Lane {
         }
         return c;
     }
-
-    carets() {
-        let c = new Map();
-        for (let r of Object.keys(this.rows)) {
-            for (let caret of this.rows[r]) {
-                c.set(caret.id, caret);
-            }
-        }
-        return c;
-    }
-
 }
 
 class Caret {
     constructor(type, name, id) {
         this.type = type;
-        this.icon = null;
         this.name = name;
         this.id = PREFIX[type.type] + formatId(id);
         this.width = 100;
@@ -528,18 +495,6 @@ class Caret {
 
     isBuilding() {
         return this.type === TYPES.BUILDING;
-    }
-
-    isUniqueUnit() {
-        return this.type === TYPES.UNIQUEUNIT;
-    }
-
-    isUnit() {
-        return this.type === TYPES.UNIT;
-    }
-
-    isTech() {
-        return this.type === TYPES.TECHNOLOGY;
     }
 }
 
@@ -561,26 +516,14 @@ function checkIdUnique(tree) {
     }
 }
 
-function disable(buildings, units, techs) {
-    for (let name of buildings) {
-        SVG.get('building_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
-    }
-    for (let name of units) {
-        SVG.get('unit_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
-    }
-    for (let name of techs) {
-        SVG.get('tech_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 1});
-    }
-}
-
 function enable(buildings, units, techs) {
-    for (name of buildings) {
+    for (let name of buildings) {
         SVG.get('building_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 0});
     }
-    for (name of units) {
+    for (let name of units) {
         SVG.get('unit_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 0});
     }
-    for (name of techs) {
+    for (let name of techs) {
         SVG.get('tech_' + formatId(name) + '_x').animate(animation_duration).attr({'fill-opacity': 0});
     }
 }
@@ -631,12 +574,7 @@ function unique(ids, monk_prefix) {
     SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
     SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
     SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
-    SVG.get('unit_' + formatId(MONK) + '_img').load('img/Units/' + monk_prefix + 'monk.png');
-}
-
-
-function disableHorses() {
-    disable(horseDisabledBuildings, horseDisabledUnits, horseDisabledTechs);
+    SVG.get('unit_' + formatId(MONK) + '_img').load('img/Units/' + monk_prefix + '125.png');
 }
 
 function getName(id, itemtype) {
@@ -850,8 +788,8 @@ function getDefaultTree() {
 
     let krepostlane = new Lane();
     krepostlane.rows.castle_1.push(building(KREPOST));
-    krepostlane.rows.castle_2.push(uniqueunit(KONNIK));
-    krepostlane.rows.imperial_1.push(uniqueunit(ELITE_KONNIK));
+    krepostlane.rows.castle_2.push(uniqueunit(KONNIK_2));
+    krepostlane.rows.imperial_1.push(uniqueunit(ELITE_KONNIK_2));
     tree.lanes.push(krepostlane);
 
 
@@ -899,7 +837,7 @@ function getDefaultTree() {
 
 
     let additionaltowncenterlane = new Lane();
-    additionaltowncenterlane.rows.castle_1.push(new Caret(TYPES.BUILDING, getName(TOWN_CENTER, 'buildings'), `${TOWN_CENTER}_copy`));
+    additionaltowncenterlane.rows.castle_1.push(building(TOWN_CENTER_2));
     tree.lanes.push(additionaltowncenterlane);
 
 
@@ -1045,8 +983,8 @@ function getConnections() {
         [b(CASTLE), t(SAPPERS)],
         [b(CASTLE), t(CONSCRIPTION)],
         [b(CASTLE), t(SPIES_TREASON)],
-        [b(KREPOST), u(KONNIK)],
-        [u(KONNIK), u(ELITE_KONNIK)],
+        [b(KREPOST), u(KONNIK_2)],
+        [u(KONNIK_2), u(ELITE_KONNIK_2)],
         [b(DONJON), u(DSERJEANT)],
         [u(DSERJEANT), u(ELITE_DSERJEANT)],
         [b(TOWN_CENTER), u(VILLAGER)],

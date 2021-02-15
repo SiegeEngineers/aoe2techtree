@@ -1,5 +1,6 @@
 let tree;
 let data = {};
+let civs = {};
 let connections;
 let parentConnections;
 let connectionpoints;
@@ -64,21 +65,6 @@ const locales = {
     br: "Português (Brasil)",
 };
 const defaultLocale = "en";
-
-setAdvancedStatsState();
-
-let storedLocale = defaultLocale;
-try {
-    storedLocale = window.localStorage.getItem('locale');
-} catch (e) {
-    // pass
-}
-fillLocaleSelector(storedLocale);
-
-loadJson("data/data.json", function (response) {
-    data = response;
-    loadLocale(storedLocale);
-});
 
 function loadLocale(localeCode) {
     if (!Object.keys(locales).includes(localeCode)) {
@@ -219,7 +205,6 @@ function updateCivselectValue() {
     let hash = window.location.hash.substr(1);
     let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
     if (capitalisedHash in data.civ_names) {
-        console.log(capitalisedHash);
         const civSelect = document.getElementById('civselect');
         if (civSelect.value !== capitalisedHash) {
             civSelect.value = capitalisedHash;
@@ -443,10 +428,10 @@ function getHelpText(name, id, type) {
         if (text.match(/‹attack›/)) {
             stats.push("Attack:&nbsp;" + meta.Attack);
         }
-        if (text.match(/‹(A|a)rmor›/)) {
+        if (text.match(/‹[Aa]rmor›/)) {
             stats.push("Armor:&nbsp;" + meta.MeleeArmor);
         }
-        if (text.match(/‹(P|p)iercearmor›/)) {
+        if (text.match(/‹[Pp]iercearmor›/)) {
             stats.push("Pierce armor:&nbsp;" + meta.PierceArmor);
         }
         if (text.match(/‹garrison›/)) {
@@ -535,77 +520,26 @@ function getEntityType(type) {
  * @param {string} type The type of the entity being cross-referenced.
  */
 function styleXRefBadges(name, id, type) {
-    let horseDisabledAll = horseDisabledBuildings.map((id)=>`building_${id}`)
-        .concat(horseDisabledUnits.map((id)=>`unit_${id}`))
-        .concat(horseDisabledTechs.map((id)=>`tech_${id}`));
     for (let civ of Object.keys(data.civ_names)) {
         let xRefImage = document.getElementById(`xRef__badge__${civ}`);
-        // By default, assume that this unit can be built.
-        let found = true;
-        // Get the config objects
-        let enabled = civsConfig[`${civ}`]['enabled'];
-        let disabled = civsConfig[`${civ}`]['disabled'];
-        let unique = civsConfig[`${civ}`]['unique'];
-
+        let found = false;
         // Make sure this civ exists
-        if (civsConfig[`${civ}`]) {
-            // Fast-Fail horses if civ disablesHorses
-            if (civsConfig[`${civ}`]['disableHorses'] &&
-                horseDisabledAll.includes(id)) {
-                found = false;
-            }
-            if (type === "UNIT") {
-                // There are 2 ways for a UNIT to be disabled.
-                //      1. The unit is disabled by default, and not
-                //         specifically enabled in the config.
-                //      2. The unit is disabled in the specific config.
-                if (defaultDisabledUnits.map((id)=>`unit_${id}`).includes(id) &&
-                    (!enabled ||
-                      !enabled['units'] ||
-                      !enabled['units'].map((id)=>`unit_${id}`).includes(id))) {
-                    found = false;
-                } else if (disabled &&
-                        disabled['units'] &&
-                        disabled['units'].map((id)=>`unit_${id}`).includes(id)) {
-                    found = false;
-                }
-            } else if (type === "UNIQUEUNIT") {
-                // There are 2 ways for a UNIQUEUNIT to be disabled.
-                //      1. The UNIQUEUNIT can be enabled in 'unique'.
-                //      2. The UNIQUEUNIT can be enabled in 'unit'.
-                //          e.g. genitour
-                if ((!unique ||
-                      !('unit_'+unique[0] === id || 'unit_'+unique[1] === id)) &&
-                    (!enabled || !enabled['units'] ||
-                      !enabled['units'].map((id)=>`unit_${id}`).includes(id))) {
-                    found = false;
+        if (civs[civ]) {
+            if (type === "UNIT" || type === "UNIQUEUNIT") {
+                if (civs[civ].units.map((id) => `unit_${id}`).includes(id)) {
+                    found = true;
+                } else if (`unit_${civs[`${civ}`].unique.castleAgeUniqueUnit}` === id || `unit_${civs[`${civ}`].unique.imperialAgeUniqueUnit}` === id) {
+                    found = true;
                 }
             } else if (type === "TECHNOLOGY") {
-                // Unique Technologies are disabled by default
-                // Regular Technologies are only ever disabled. See js/techtree.js#resetToDefault
-                // if there is a tech object in disabled, and this tech is in it
-                if (getDefaultDisabledTechs().map((id) => `tech_${id}`).includes(id) &&
-                    (!unique ||
-                      !unique.slice(2,4).map((id) => `tech_${id}`).includes(id))) {
-                    found = false;
-                } else if (disabled['techs'] && disabled['techs'].map((id) => `tech_${id}`).includes(id)) {
-                    found = false;
+                if (civs[civ].techs.map((id) => `tech_${id}`).includes(id)) {
+                    found = true;
+                } else if (`tech_${civs[`${civ}`].unique.castleAgeUniqueTech}` === id || `tech_${civs[`${civ}`].unique.imperialAgeUniqueTech}` === id) {
+                    found = true;
                 }
-            }
-            else if (type === "BUILDING") {
-                // There are 2 ways for a BUILDING to be disabled.
-                //      1. The building is disabled by default, and not
-                //         specifically enabled in the config.
-                //      2. The building is disabled in the specific config.
-                if (defaultDisabledBuildings.map((id)=>`building_${id}`).includes(id) &&
-                (!enabled ||
-                !enabled['buildings'] ||
-                !enabled['buildings'].map((id)=>`building_${id}`).includes(id))) {
-                    found = false;
-                } else if (disabled &&
-                            disabled['buildings'] &&
-                            disabled['buildings'].map((id)=>`building_${id}`).includes(id)) {
-                    found = false;
+            } else if (type === "BUILDING") {
+                if (civs[civ].buildings.map((id) => `building_${id}`).includes(id)) {
+                    found = true;
                 }
             }
         }
@@ -615,10 +549,6 @@ function styleXRefBadges(name, id, type) {
             xRefImage.style.opacity = '0.2';
         }
     }
-}
-
-function getDefaultDisabledTechs() {
-    return Object.keys(civsConfig).map((key) => civsConfig[key].unique.slice(2, 4)).flat();
 }
 
 function ifDefined(value, prefix) {
@@ -737,17 +667,94 @@ function fillCivSelector() {
     });
 }
 
-let doVerticalScroll = true;
-const techtreeElement = document.getElementById('techtree');
-techtreeElement.addEventListener('wheel', function (e) {
-    if (e.deltaX !== 0) {
-        doVerticalScroll = false;
-    }
-    if (doVerticalScroll) {
-        if (e.deltaY > 0) {
-            techtreeElement.scrollLeft += 100;
-        } else if (e.deltaY < 0) {
-            techtreeElement.scrollLeft -= 100;
+function civ(name) {
+    let selectedCiv = civs[name];
+
+    SVG.select('.cross').each(function () {
+        if (SVGObjectIsOpaque(this)) {
+            return;
         }
+
+        let {id, type} = parseSVGObjectId(this.id());
+        if (id === undefined || type === undefined) {
+            return;
+        }
+
+        if (type === 'unit') {
+            if (selectedCiv.units.includes(id)) {
+                return;
+            }
+        } else if (type === 'building') {
+            if (selectedCiv.buildings.includes(id)) {
+                return;
+            }
+        } else if (type === 'tech') {
+            if (selectedCiv.techs.includes(id)) {
+                return;
+            }
+        }
+        makeSVGObjectOpaque(this);
+    });
+
+    enable(selectedCiv.buildings, [...selectedCiv.units, UNIQUE_UNIT, ELITE_UNIQUE_UNIT], [...selectedCiv.techs, UNIQUE_TECH_1, UNIQUE_TECH_2]);
+    unique([selectedCiv.unique.castleAgeUniqueUnit,
+        selectedCiv.unique.imperialAgeUniqueUnit,
+        selectedCiv.unique.castleAgeUniqueTech,
+        selectedCiv.unique.imperialAgeUniqueTech], selectedCiv.monkPrefix);
+}
+
+function SVGObjectIsOpaque(svgObj) {
+    return svgObj.attr('fill-opacity') === 1
+}
+
+function makeSVGObjectOpaque(svgObj) {
+    svgObj.attr({'fill-opacity': 1});
+}
+
+function parseSVGObjectId(svgObjId) {
+    const id_regex = /(.+)_([\d]+)_(x|copy)/;
+
+    const found = svgObjId.match(id_regex);
+    if (!found) {
+        return {id: undefined, type: undefined};
     }
-});
+    let id = parseInt(found[2]);
+    let type = found[1];
+
+    return {id, type}
+}
+
+function main(){
+    setAdvancedStatsState();
+
+    let storedLocale = defaultLocale;
+    try {
+        storedLocale = window.localStorage.getItem('locale');
+    } catch (e) {
+        // pass
+    }
+    fillLocaleSelector(storedLocale);
+
+    loadJson("data/data.json", function (response) {
+        data = response;
+        civs = data.techtrees;
+        loadLocale(storedLocale);
+    });
+
+    let doVerticalScroll = true;
+    const techtreeElement = document.getElementById('techtree');
+    techtreeElement.addEventListener('wheel', function (e) {
+        if (e.deltaX !== 0) {
+            doVerticalScroll = false;
+        }
+        if (doVerticalScroll) {
+            if (e.deltaY > 0) {
+                techtreeElement.scrollLeft += 100;
+            } else if (e.deltaY < 0) {
+                techtreeElement.scrollLeft -= 100;
+            }
+        }
+    });
+}
+
+main();
