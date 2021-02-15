@@ -87,7 +87,7 @@ function parseSVGObjectId(svgObjId) {
    if (!found) {
       return {id: undefined, type: undefined};
    }
-   let id = parseInt(found[0]);
+   let id = parseInt(found[2]);
    let type = found[1];
 
    return {id, type}
