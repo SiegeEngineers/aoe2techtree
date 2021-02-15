@@ -724,6 +724,15 @@ function parseSVGObjectId(svgObjId) {
     return {id, type}
 }
 
+function techtreeDoesNotHaveScrollbar() {
+    const techtreeElement = document.getElementById('techtree');
+    return techtreeElement.scrollHeight <= techtreeElement.clientHeight;
+}
+
+function shiftKeyIsNotPressed(e) {
+    return !e.shiftKey;
+}
+
 function main(){
     setAdvancedStatsState();
 
@@ -747,11 +756,11 @@ function main(){
         if (e.deltaX !== 0) {
             doVerticalScroll = false;
         }
-        if (doVerticalScroll) {
+        if (doVerticalScroll && techtreeDoesNotHaveScrollbar() && shiftKeyIsNotPressed(e)) {
             if (e.deltaY > 0) {
-                techtreeElement.scrollLeft += 100;
+                techtreeElement.scrollLeft += 150;
             } else if (e.deltaY < 0) {
-                techtreeElement.scrollLeft -= 100;
+                techtreeElement.scrollLeft -= 150;
             }
         }
     });
