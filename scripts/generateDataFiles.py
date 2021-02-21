@@ -541,7 +541,9 @@ def gather_data(content):
                 add_tech(key, value, tech, data)
         tech_id += 1
 
+    data["units"][83]['LanguageNameId'] = 5606  # Villager
     data["units"][128]['LanguageNameId'] = 19052  # Trade Cart
+    data["units"][331]['LanguageNameId'] = 5097  # Trebuchet
 
     return data
 
