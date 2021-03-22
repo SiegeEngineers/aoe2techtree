@@ -89,6 +89,7 @@ function displayData() {
         document.getElementById('techtree').removeChild(root);
     }
     document.getElementById('civselect').innerHTML = "";
+    document.getElementById('buildingindex__table').innerHTML = "";
     document.getElementById('key__table').innerHTML = "";
 
     tree = getDefaultTree();
@@ -196,6 +197,7 @@ function displayData() {
         loadCiv();
     }
     create_colour_key();
+    create_building_index();
     window.onhashchange = function () {
         updateCivselectValue();
     };
@@ -618,6 +620,49 @@ function cost(cost_object) {
     return value;
 }
 
+function create_building_index() {
+    const buildingIndexShowIds = [
+        ARCHERY_RANGE,
+        BARRACKS,
+        STABLE,
+        SIEGE_WORKSHOP,
+        BLACKSMITH,
+        DOCK,
+        UNIVERSITY,
+        WATCH_TOWER,
+        CASTLE,
+        MONASTERY,
+        TOWN_CENTER,
+        MARKET
+    ];
+    const buildingIndexRowLength = 6;
+
+    let kc = document.getElementById('buildingindex__table');
+    let tr = null;
+    let count = 0;
+    for (let index in buildingIndexShowIds) {
+        let buildingId = buildingIndexShowIds[index];
+        if ((count % buildingIndexRowLength) === 0) {
+            if (tr) {
+              kc.appendChild(tr);
+            }
+            tr = document.createElement('tr');
+        }
+        ++count;
+        let img = document.createElement('img');
+        img.src = 'img/Buildings/' + String(buildingId) + '.png';
+        img.style.height = '24px';
+        img.style.width = '24px';
+        let td = document.createElement('td');
+        td.onclick = function() { scrollToBuildingId(buildingId); }
+        td.appendChild(img);
+        tr.appendChild(td);
+    }
+    if (tr) {
+      kc.appendChild(tr);
+    }
+}
+
 function create_colour_key() {
     let legend = [TYPES.UNIQUEUNIT, TYPES.UNIT, TYPES.BUILDING, TYPES.TECHNOLOGY];
     let kc = document.getElementById('key__table');
@@ -731,6 +776,12 @@ function techtreeDoesNotHaveScrollbar() {
 
 function shiftKeyIsNotPressed(e) {
     return !e.shiftKey;
+}
+
+function scrollToBuildingId(buildingId) {
+    const buildingElementId = `building_${buildingId}_bg`;
+    const buildingElement = document.getElementById(buildingElementId);
+    buildingElement.scrollIntoView({block: "center", inline: "center"});
 }
 
 function main(){
