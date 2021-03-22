@@ -89,6 +89,7 @@ function displayData() {
         document.getElementById('techtree').removeChild(root);
     }
     document.getElementById('civselect').innerHTML = "";
+    document.getElementById('buildingindex__table').innerHTML = "";
     document.getElementById('key__table').innerHTML = "";
 
     tree = getDefaultTree();
@@ -196,6 +197,7 @@ function displayData() {
         loadCiv();
     }
     create_colour_key();
+    create_building_index();
     window.onhashchange = function () {
         updateCivselectValue();
     };
@@ -618,6 +620,50 @@ function cost(cost_object) {
     return value;
 }
 
+function create_building_index() {
+    let buildingIndexEntries = [
+        {'label': 'archery', 'image': "img/Buildings/87.png"},
+        {'label': 'barracks', 'image': "img/Buildings/12.png"},
+        {'label': 'stable', 'image': "img/Buildings/101.png"},
+        {'label': 'siege', 'image': "img/Buildings/49.png"},
+        {'label': 'blacksmith', 'image': "img/Buildings/103.png"},
+        {'label': 'dock', 'image': "img/Buildings/45.png"},
+        {'label': 'university', 'image': "img/Buildings/209.png"},
+        {'label': 'defenses', 'image': "img/Buildings/79.png"},
+        {'label': 'castle', 'image': "img/Buildings/82.png"},
+        {'label': 'monastery', 'image': "img/Buildings/104.png"},
+        {'label': 'tc', 'image': "img/Buildings/109.png"},
+        {'label': 'market', 'image': "img/Buildings/84.png"},
+    ];
+    let kc = document.getElementById('buildingindex__table');
+    let tr = null;
+    for (let index in buildingIndexEntries) {
+        let building = buildingIndexEntries[index];
+        if (index % 6 === 0) {
+            if (tr) {
+              kc.appendChild(tr);
+            }
+            tr = document.createElement('tr');
+        }
+        // <td onclick="scrollToBuilding('market')">
+        //     <img src="img/Buildings/84.png" width="24" height="24">
+        // </td>
+        let img = document.createElement('img');
+        img.src = building['image'];
+        img.style.height = '24px';
+        img.style.width = '24px';
+        let td = document.createElement('td');
+        td.onclick = function() { scrollToBuilding(building['label']); }
+        td.appendChild(img);
+        tr.appendChild(td);
+    }
+    if (tr) {
+      kc.appendChild(tr);
+    }
+    // TODO: Internationalization for this string
+    document.getElementById('buildingindex__label').innerText = "Building Index";
+}
+
 function create_colour_key() {
     let legend = [TYPES.UNIQUEUNIT, TYPES.UNIT, TYPES.BUILDING, TYPES.TECHNOLOGY];
     let kc = document.getElementById('key__table');
@@ -731,6 +777,33 @@ function techtreeDoesNotHaveScrollbar() {
 
 function shiftKeyIsNotPressed(e) {
     return !e.shiftKey;
+}
+
+function scrollToBuilding(buildingName) {
+    // Map building name to first (left most) unit in that building.
+    let unitByBuilding = new Map([
+        ["archery", "unit_4_bg"], // Archer
+        ["barracks", "unit_74_bg"], // Militia
+        ["stable", "unit_448_bg"], // Scout
+        ["siege", "unit_1258_bg"], // Battering Ram
+        ["blacksmith", "tech_211_bg"], // Padded Archer Armor
+        ["dock", "unit_13_bg"], // Fishing Ship
+        ["university", "tech_50_bg"], // Masonry
+        // "defenses" is intended to be towers, gates, walls
+        ["defenses", "building_598_bg"], // Outpost
+        // "castle" is intended to include krepost and donjon
+        ["castle", "unit_unique_unit_bg"], // Unique Unit
+        ["monastery", "unit_125_bg"], // Monk
+        ["tc", "unit_83_bg"], // Villager
+        ["market", "unit_128_bg"], // Trade Cart
+    ])
+    let unit = unitByBuilding.get(buildingName);
+    if (!unit) {
+        console.error("No unit found to scroll to " + buildingName);
+        return
+    }
+    var e = document.getElementById(unit);
+    e.scrollIntoView({block: "center", inline: "start"});
 }
 
 function main(){
