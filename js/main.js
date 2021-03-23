@@ -621,47 +621,49 @@ function cost(cost_object) {
 }
 
 function create_building_index() {
-    let buildingIndexEntries = [
-        {'label': 'archery', 'image': "img/Buildings/87.png"},
-        {'label': 'barracks', 'image': "img/Buildings/12.png"},
-        {'label': 'stable', 'image': "img/Buildings/101.png"},
-        {'label': 'siege', 'image': "img/Buildings/49.png"},
-        {'label': 'blacksmith', 'image': "img/Buildings/103.png"},
-        {'label': 'dock', 'image': "img/Buildings/45.png"},
-        {'label': 'university', 'image': "img/Buildings/209.png"},
-        {'label': 'defenses', 'image': "img/Buildings/79.png"},
-        {'label': 'castle', 'image': "img/Buildings/82.png"},
-        {'label': 'monastery', 'image': "img/Buildings/104.png"},
-        {'label': 'tc', 'image': "img/Buildings/109.png"},
-        {'label': 'market', 'image': "img/Buildings/84.png"},
+    const buildingIndexShowIds = [
+        87, // Archery
+        12, // Barracks
+        101, // Stable
+        49, // Siege
+        103, // Blacksmith
+        45, // Dock
+        209, // University
+        79, // Tower
+        82, // Castle
+        104, // Monastery
+        109, // TC
+        84, // Market
     ];
+    const buildingIndexRowLength = 6;
+
     let kc = document.getElementById('buildingindex__table');
     let tr = null;
-    for (let index in buildingIndexEntries) {
-        let building = buildingIndexEntries[index];
-        if (index % 6 === 0) {
+    let count = 0;
+    for (let index in buildingIndexShowIds) {
+        let buildingId = buildingIndexShowIds[index];
+        if ((count % buildingIndexRowLength) === 0) {
             if (tr) {
               kc.appendChild(tr);
             }
             tr = document.createElement('tr');
         }
-        // <td onclick="scrollToBuilding('market')">
+        ++count;
+        // <td onclick="scrollToBuildingId(84)">
         //     <img src="img/Buildings/84.png" width="24" height="24">
         // </td>
         let img = document.createElement('img');
-        img.src = building['image'];
+        img.src = 'img/Buildings/' + String(buildingId) + '.png';
         img.style.height = '24px';
         img.style.width = '24px';
         let td = document.createElement('td');
-        td.onclick = function() { scrollToBuilding(building['label']); }
+        td.onclick = function() { scrollToBuildingId(buildingId); }
         td.appendChild(img);
         tr.appendChild(td);
     }
     if (tr) {
       kc.appendChild(tr);
     }
-    // TODO: Internationalization for this string
-    document.getElementById('buildingindex__label').innerText = "Building Index";
 }
 
 function create_colour_key() {
@@ -779,31 +781,14 @@ function shiftKeyIsNotPressed(e) {
     return !e.shiftKey;
 }
 
-function scrollToBuilding(buildingName) {
-    // Map building name to first (left most) unit in that building.
-    let unitByBuilding = new Map([
-        ["archery", "unit_4_bg"], // Archer
-        ["barracks", "unit_74_bg"], // Militia
-        ["stable", "unit_448_bg"], // Scout
-        ["siege", "unit_1258_bg"], // Battering Ram
-        ["blacksmith", "tech_211_bg"], // Padded Archer Armor
-        ["dock", "unit_13_bg"], // Fishing Ship
-        ["university", "tech_50_bg"], // Masonry
-        // "defenses" is intended to be towers, gates, walls
-        ["defenses", "building_598_bg"], // Outpost
-        // "castle" is intended to include krepost and donjon
-        ["castle", "unit_unique_unit_bg"], // Unique Unit
-        ["monastery", "unit_125_bg"], // Monk
-        ["tc", "unit_83_bg"], // Villager
-        ["market", "unit_128_bg"], // Trade Cart
-    ])
-    let unit = unitByBuilding.get(buildingName);
-    if (!unit) {
-        console.error("No unit found to scroll to " + buildingName);
+function scrollToBuildingId(buildingId) {
+    let buildingElementId = 'building_' + String(buildingId) + '_bg';
+    if (!buildingElementId) {
+        console.error("No building found to scroll to " + buildingName);
         return
     }
-    var e = document.getElementById(unit);
-    e.scrollIntoView({block: "center", inline: "start"});
+    var e = document.getElementById(buildingElementId);
+    e.scrollIntoView({block: "center", inline: "center"});
 }
 
 function main(){
