@@ -480,6 +480,16 @@ class Lane {
         }
         return c;
     }
+
+    caretIds() {
+        const idList = [];
+        for (let r of Object.keys(this.rows)) {
+            for (let i = 0; i < this.rows[r].length; i++) {
+                idList.push(this.rows[r][i].id);
+            }
+        }
+        return idList;
+    }
 }
 
 class Caret {

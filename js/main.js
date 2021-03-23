@@ -149,6 +149,10 @@ function displayData() {
     }
 
     for (let lane of tree.lanes) {
+        draw.rect(lane.width + 10, tree.height)
+            .attr({fill: '#ffeeaa', 'fill-opacity': 0, class: lane.caretIds().map((id) => `lane-with-${id}`)})
+            .move(lane.x - 10, lane.y)
+            .click(hideHelp);
         for (let r of Object.keys(lane.rows)) {
             let row = lane.rows[r];
             for (let caret of row) {
@@ -780,6 +784,11 @@ function shiftKeyIsNotPressed(e) {
 
 function scrollToBuildingId(buildingId) {
     const buildingElementId = `building_${buildingId}_bg`;
+    const laneBackground = SVG.select(`.lane-with-building_${buildingId}`);
+    laneBackground.attr({'fill-opacity': 0.5});
+    setTimeout(() => {
+        laneBackground.animate(animation_duration * 10).attr({'fill-opacity': 0});
+    }, 500);
     const buildingElement = document.getElementById(buildingElementId);
     buildingElement.scrollIntoView({block: "center", inline: "center"});
 }
