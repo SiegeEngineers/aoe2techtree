@@ -70,15 +70,11 @@ function loadLocale(localeCode) {
     if (!Object.keys(locales).includes(localeCode)) {
         localeCode = defaultLocale;
     }
-    try {
-        window.localStorage.setItem('locale', localeCode);
-    } catch (e) {
-        // pass
-    }
     loadJson("data/locales/" + localeCode + "/strings.json", function (strings) {
         data.strings = strings;
         createXRefBadges();
         displayData();
+        document.getElementById('localeselect').value = localeCode;
     });
 }
 
@@ -691,8 +687,10 @@ function create_colour_key() {
 }
 
 function changeLocale() {
-    const locale = document.getElementById('localeselect').value;
-    loadLocale(locale);
+    const newLocale = document.getElementById('localeselect').value;
+    setLocaleInUrl(newLocale);
+    setLocaleInLocalStorage(newLocale);
+    loadLocale(newLocale);
 }
 
 function fillLocaleSelector(currentLocale) {
@@ -793,15 +791,71 @@ function scrollToBuildingId(buildingId) {
     buildingElement.scrollIntoView({block: "center", inline: "center"});
 }
 
-function main(){
-    setAdvancedStatsState();
+function getLocaleFromUrlIfExists(defaultValue) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lng = urlParams.get('lng');
+    if (Object.keys(locales).includes(lng)) {
+        return lng;
+    }
+    return defaultValue;
+}
 
+function setLocaleInUrl(locale) {
+    let searchParams = new URLSearchParams(window.location.search);
+    searchParams.set('lng', locale);
+    history.pushState({}, null, `?${searchParams}${window.location.hash}`);
+}
+
+function setLocaleInLocalStorage(localeCode) {
+    try {
+        window.localStorage.setItem('locale', localeCode);
+    } catch (e) {
+        // pass
+    }
+}
+
+function getInitialLocale() {
     let storedLocale = defaultLocale;
     try {
         storedLocale = window.localStorage.getItem('locale');
     } catch (e) {
         // pass
     }
+    storedLocale = getLocaleFromUrlIfExists(storedLocale);
+    return storedLocale;
+}
+
+function main() {
+
+    history.pushState = (f => function pushState() {
+        const ret = f.apply(this, arguments);
+        window.dispatchEvent(new Event('pushstate'));
+        window.dispatchEvent(new Event('locationchange'));
+        return ret;
+    })(history.pushState);
+
+    history.replaceState = (f => function replaceState() {
+        const ret = f.apply(this, arguments);
+        window.dispatchEvent(new Event('replacestate'));
+        window.dispatchEvent(new Event('locationchange'));
+        return ret;
+    })(history.replaceState);
+
+    window.addEventListener('popstate', () => {
+        window.dispatchEvent(new Event('locationchange'));
+    });
+
+    window.addEventListener('locationchange', () => {
+        const newLocale = getLocaleFromUrlIfExists(undefined);
+        const oldLocale = document.getElementById('localeselect').value;
+        if (newLocale && (newLocale !== oldLocale)) {
+            loadLocale(newLocale);
+        }
+    })
+
+    setAdvancedStatsState();
+
+    let storedLocale = getInitialLocale();
     fillLocaleSelector(storedLocale);
 
     loadJson("data/data.json", function (response) {
