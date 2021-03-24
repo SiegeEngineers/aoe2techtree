@@ -72,10 +72,17 @@ function loadLocale(localeCode) {
     }
     loadJson("data/locales/" + localeCode + "/strings.json", function (strings) {
         data.strings = strings;
+        updatePageTitle();
         createXRefBadges();
         displayData();
         document.getElementById('localeselect').value = localeCode;
     });
+}
+
+function updatePageTitle() {
+    const aoe2 = data.strings[data.tech_tree_strings['Age of Empires II']];
+    const techtree = data.strings[data.tech_tree_strings['Technology Tree']];
+    document.title = `${aoe2} ${techtree}`;
 }
 
 function displayData() {

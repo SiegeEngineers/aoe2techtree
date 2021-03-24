@@ -7,13 +7,14 @@ import sys
 from pathlib import Path
 
 TECH_TREE_STRINGS = {
+    "Age of Empires II": "1001",
     "Civilization": "9681",
     "Technology Tree": "9799",
     "Key": "300081",
     "Unique Unit": "300082",
     "Unit": "300083",
     "Building": "300084",
-    "Technology": "300085"
+    "Technology": "300085",
 }
 
 AGE_NAMES = {
