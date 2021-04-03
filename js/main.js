@@ -887,4 +887,9 @@ function main() {
     });
 }
 
+window.onload = function() {
+    // Focus to civ selection, so you can start typing a civ name when the page loads.
+    document.getElementById("civselect").focus();
+}
+
 main();
