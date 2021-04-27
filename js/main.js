@@ -76,6 +76,7 @@ function loadLocale(localeCode) {
         createXRefBadges();
         displayData();
         document.getElementById('localeselect').value = localeCode;
+        document.documentElement.setAttribute('lang', localeCode);
     });
 }
 
