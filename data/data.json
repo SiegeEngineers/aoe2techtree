@@ -1731,7 +1731,7 @@
                     }
                 ],
                 "Cost": {
-                    "Stone": 200,
+                    "Stone": 175,
                     "Wood": 75
                 },
                 "GarrisonCapacity": 10,
@@ -2230,8 +2230,8 @@
             },
             "83": {
                 "Cost": {
-                    "Food": 400,
-                    "Gold": 400
+                    "Food": 300,
+                    "Gold": 300
                 },
                 "ID": 83,
                 "LanguageHelpId": 28324,
@@ -2929,8 +2929,8 @@
             },
             "493": {
                 "Cost": {
-                    "Gold": 400,
-                    "Wood": 400
+                    "Gold": 500,
+                    "Wood": 600
                 },
                 "ID": 493,
                 "LanguageHelpId": 28287,
@@ -3803,7 +3803,7 @@
                 "Range": 4,
                 "RechargeRate": 0,
                 "ReloadTime": 2.1,
-                "Speed": 1.45,
+                "Speed": 1.4,
                 "TrainTime": 26,
                 "internal_name": "MOSUN"
             },
@@ -8283,7 +8283,7 @@
                 "Range": 4,
                 "RechargeRate": 0,
                 "ReloadTime": 2.1,
-                "Speed": 1.45,
+                "Speed": 1.4,
                 "TrainTime": 26,
                 "internal_name": "UMOSU"
             },
@@ -11888,7 +11888,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 6,
+                "Attack": 7,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
@@ -11900,7 +11900,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 6,
+                        "Amount": 7,
                         "Class": 4
                     }
                 ],
@@ -11950,7 +11950,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 7,
+                "Attack": 8,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
@@ -11962,7 +11962,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 7,
+                        "Amount": 8,
                         "Class": 4
                     }
                 ],
@@ -13480,7 +13480,7 @@
                 ],
                 "Cost": {
                     "Food": 70,
-                    "Gold": 45
+                    "Gold": 40
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
@@ -13542,7 +13542,7 @@
                 ],
                 "Cost": {
                     "Food": 70,
-                    "Gold": 45
+                    "Gold": 40
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
@@ -13766,7 +13766,7 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 2,
                         "Class": 4
                     },
                     {
@@ -13810,7 +13810,7 @@
                 "LanguageNameId": 5538,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
-                "MeleeArmor": 1,
+                "MeleeArmor": 2,
                 "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 0,
@@ -13866,7 +13866,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 75,
+                "HP": 85,
                 "ID": 1659,
                 "LanguageHelpId": 26540,
                 "LanguageNameId": 5540,
@@ -13890,7 +13890,7 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 2,
                         "Class": 4
                     },
                     {
@@ -13934,7 +13934,7 @@
                 "LanguageNameId": 5538,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
-                "MeleeArmor": 1,
+                "MeleeArmor": 2,
                 "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 0,
@@ -13990,7 +13990,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 75,
+                "HP": 85,
                 "ID": 1661,
                 "LanguageHelpId": 26540,
                 "LanguageNameId": 5540,
@@ -14046,15 +14046,15 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 12,
+                        "Amount": 8,
                         "Class": 8
                     },
                     {
-                        "Amount": 8,
+                        "Amount": 6,
                         "Class": 16
                     },
                     {
-                        "Amount": 8,
+                        "Amount": 6,
                         "Class": 30
                     },
                     {
@@ -15856,9 +15856,9 @@
                 716
             ],
             "unique": {
-                "castleAgeUniqueTech": 493,
+                "castleAgeUniqueTech": 83,
                 "castleAgeUniqueUnit": 281,
-                "imperialAgeUniqueTech": 83,
+                "imperialAgeUniqueTech": 493,
                 "imperialAgeUniqueUnit": 531
             },
             "units": [
@@ -18617,6 +18617,7 @@
                 548,
                 550,
                 567,
+                588,
                 1103,
                 1104,
                 1105,
