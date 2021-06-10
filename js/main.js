@@ -713,6 +713,19 @@ function fillLocaleSelector(currentLocale) {
     });
 }
 
+function sortChildren(wrap, f) {
+    var l = wrap.children.length,
+        arr = new Array(l);
+    for(var i=0; i<l; ++i)
+        arr[i] = [f(wrap.children[i]), wrap.children[i]];
+    arr.sort(function(a,b){ return a[0].localeCompare(b[0],document.documentElement.getAttribute('lang')); });
+    var par = wrap.parentNode,
+        ref = wrap.nextSibling;
+    par.removeChild(wrap);
+    for(var i=0; i<l; ++i) wrap.appendChild(arr[i][1]);
+    par.insertBefore(wrap, ref);
+}
+
 function fillCivSelector() {
     Object.keys(data.civ_names).map(function(civ_name) {
         const option = document.createElement('option');
@@ -720,6 +733,9 @@ function fillCivSelector() {
         option.textContent = data.strings[data.civ_names[civ_name]];
         document.getElementById('civselect').appendChild(option);
     });
+	
+	sortChildren(document.getElementById('civselect'), function(op) { return op.textContent.toUpperCase();});
+	document.getElementById('civselect').selectedIndex = 0;
 }
 
 function civ(name) {
