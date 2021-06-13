@@ -714,12 +714,18 @@ function fillLocaleSelector(currentLocale) {
 }
 
 function fillCivSelector() {
-    Object.keys(data.civ_names).map(function(civ_name) {
+    const sorted_civ_names = Object.keys(data.civ_names).sort((a, b) => {
+        const localised_name_a = data.strings[data.civ_names[a]];
+        const localised_name_b = data.strings[data.civ_names[b]];
+        return localised_name_a.localeCompare(localised_name_b);
+    });
+
+    for (let civ_name of sorted_civ_names) {
         const option = document.createElement('option');
         option.setAttribute('value', civ_name);
         option.textContent = data.strings[data.civ_names[civ_name]];
         document.getElementById('civselect').appendChild(option);
-    });
+    }
 }
 
 function civ(name) {
