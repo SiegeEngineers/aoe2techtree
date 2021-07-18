@@ -1829,7 +1829,7 @@
             "10": {
                 "Cost": {
                     "Gold": 500,
-                    "Stone": 450
+                    "Wood": 450
                 },
                 "ID": 10,
                 "LanguageHelpId": 28425,
@@ -3358,8 +3358,8 @@
             },
             "755": {
                 "Cost": {
-                    "Food": 800,
-                    "Gold": 450
+                    "Food": 1200,
+                    "Gold": 650
                 },
                 "ID": 755,
                 "LanguageHelpId": 28343,
@@ -3458,7 +3458,7 @@
                 "internal_name": "ARCHR"
             },
             "5": {
-                "AccuracyPercent": 65,
+                "AccuracyPercent": 75,
                 "Armours": [
                     {
                         "Amount": 1,
@@ -4255,7 +4255,7 @@
                     }
                 ],
                 "Attack": 6,
-                "AttackDelaySeconds": 0.8944444444444445,
+                "AttackDelaySeconds": 0.9099999999999999,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -5327,8 +5327,8 @@
                     }
                 ],
                 "Cost": {
-                    "Food": 200,
-                    "Gold": 75
+                    "Food": 170,
+                    "Gold": 85
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
@@ -5345,7 +5345,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 0.6,
-                "TrainTime": 31,
+                "TrainTime": 25,
                 "internal_name": "MPCAV"
             },
             "250": {
@@ -6318,7 +6318,7 @@
                 "LanguageNameId": 5289,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": -3,
                 "MinRange": 0,
                 "PierceArmor": 190,
                 "Range": 0,
@@ -6673,7 +6673,7 @@
                     }
                 ],
                 "Attack": 7,
-                "AttackDelaySeconds": 0.8816666666666666,
+                "AttackDelaySeconds": 0.8969999999999999,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -7585,7 +7585,7 @@
                 "LanguageNameId": 5446,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": -3,
                 "MinRange": 0,
                 "PierceArmor": 195,
                 "Range": 0,
@@ -8048,8 +8048,8 @@
                     }
                 ],
                 "Cost": {
-                    "Food": 200,
-                    "Gold": 75
+                    "Food": 170,
+                    "Gold": 85
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
@@ -8066,7 +8066,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 0.6,
-                "TrainTime": 31,
+                "TrainTime": 25,
                 "internal_name": "UMPCAV"
             },
             "559": {
@@ -10367,7 +10367,7 @@
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
-                        "Amount": 6,
+                        "Amount": 8,
                         "Class": 4
                     },
                     {
@@ -10419,7 +10419,7 @@
                 "LanguageNameId": 5449,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
-                "MeleeArmor": 6,
+                "MeleeArmor": 8,
                 "MinRange": 0,
                 "PierceArmor": 3,
                 "Range": 0,
@@ -11674,7 +11674,7 @@
                 "LanguageNameId": 5445,
                 "LineOfSight": 8,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": -2,
                 "MinRange": 0,
                 "PierceArmor": 100,
                 "Range": 0,
@@ -13354,7 +13354,7 @@
                 "LanguageNameId": 5094,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": -3,
                 "MinRange": 0,
                 "PierceArmor": 180,
                 "Range": 0,
@@ -14038,7 +14038,7 @@
                         "Class": 29
                     },
                     {
-                        "Amount": 2,
+                        "Amount": 0,
                         "Class": 21
                     },
                     {
