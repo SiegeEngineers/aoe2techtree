@@ -62,6 +62,8 @@ CIV_NAMES = {
     "Lithuanians": "10305",
     "Burgundians": "10306",
     "Sicilians": "10307",
+    "Poles": "10308",
+    "Bohemians": "10309",
 }
 
 CIV_HELPTEXTS = {
@@ -102,6 +104,8 @@ CIV_HELPTEXTS = {
     "Tatars": "120182",
     "Burgundians": "120185",
     "Sicilians": "120186",
+    "Poles": "120187",
+    "Bohemians": "120188",
 }
 
 BUILDINGS = {
@@ -138,6 +142,7 @@ BUILDINGS = {
     1021: {"internal_name": "FEITO"},
     1251: {"internal_name": "KREPOST"},
     1665: {"internal_name": "DONJON"},
+    1734: {"internal_name": "FOLWARK1"},
 }
 
 UNITS = {
@@ -298,6 +303,12 @@ UNITS = {
     1660: {"internal_name": "DSERJEANT"},
     1661: {"internal_name": "EDSERJEANT"},
     1699: {"internal_name": "FLEMISHPIKEMAN2"},
+    1701: {"internal_name": "OBUCH"},
+    1703: {"internal_name": "EOBUCH"},
+    1704: {"internal_name": "HUSSITEWAGON"},
+    1706: {"internal_name": "EHUSSITEWAGON"},
+    1707: {"internal_name": "WINGEDHUSSAR"},
+    1709: {"internal_name": "HOUFNICE"},
 }
 
 TECHS = {
@@ -451,7 +462,11 @@ TECHS = {
     754: {"internal_name": "Burgundian Vineyards"},
     755: {"internal_name": "Flemish Revolution"},
     756: {"internal_name": "First Crusade"},
-    757: {"internal_name": "Scutage"},
+    757: {"internal_name": "Hauberk"},
+    782: {"internal_name": "Szlachta Privileges"},
+    783: {"internal_name": "Lechitic Legacy"},
+    784: {"internal_name": "Wagenburg Tactics"},
+    785: {"internal_name": "Hussite Reforms"},
 }
 
 
@@ -683,7 +698,7 @@ def is_imperial_age_unique_tech(tech):
 
 def write_language_files(args, data, outputdir):
     resourcesdir = Path(args.programdir) / 'resources'
-    for language in ('br', 'de', 'en', 'es', 'fr', 'hi', 'it', 'jp', 'ko', 'ms', 'mx', 'ru', 'tr', 'tw', 'vi', 'zh'):
+    for language in ('br', 'de', 'en', 'es', 'fr', 'hi', 'it', 'jp', 'ko', 'ms', 'mx', 'pl', 'ru', 'tr', 'tw', 'vi', 'zh'):
         key_value_filtered = gather_language_data(resourcesdir, data, language)
 
         languagedir = outputdir / 'locales' / language

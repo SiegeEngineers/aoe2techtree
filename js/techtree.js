@@ -210,6 +210,13 @@ const ELITE_SERJEANT = 1659;
 const DSERJEANT = 1660;
 const ELITE_DSERJEANT = 1661;
 const FLEMISHPIKEMAN = 1699;
+const OBUCH = 1701;
+const ELITE_OBUCH = 1703;
+const HUSSITE_WAGON = 1704;
+const ELITE_HUSSITE_WAGON = 1706;
+const WINGED_HUSSAR = 1707;
+const HOUFNICE = 1709;
+const FOLWARK = 1734;
 const YEOMEN = 3;
 const EL_DORADO = 4;
 const FUROR_CELTICA = 5;
@@ -671,8 +678,9 @@ function getDefaultTree() {
     stablelane.rows.imperial_1.push(unit(HEAVY_CAMEL_RIDER));
     stablelane.rows.imperial_1.push(unit(ELITE_BATTLE_ELEPHANT));
     stablelane.rows.imperial_1.push(unit(ELITE_STEPPE_LANCER));
-    stablelane.rows.imperial_2.push(uniqueunit(IMPERIAL_CAMEL_RIDER));
+    stablelane.rows.imperial_2.push(uniqueunit(WINGED_HUSSAR));
     stablelane.rows.imperial_2.push(unit(PALADIN));
+    stablelane.rows.imperial_2.push(uniqueunit(IMPERIAL_CAMEL_RIDER));
     tree.lanes.push(stablelane);
 
 
@@ -688,6 +696,7 @@ function getDefaultTree() {
     siegeworkshoplane.rows.imperial_1.push(unit(BOMBARD_CANNON));
     siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_RAM));
     siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_ONAGER));
+    siegeworkshoplane.rows.imperial_2.push(uniqueunit(HOUFNICE));
     tree.lanes.push(siegeworkshoplane);
 
 
@@ -889,9 +898,10 @@ function getDefaultTree() {
 
 
     let farmlane = new Lane();
+    farmlane.rows.dark_1.push(building(FOLWARK));
     farmlane.rows.dark_2.push(building(FARM));
     tree.lanes.push(farmlane);
-    
+
 
     let milllane = new Lane();
     milllane.rows.dark_1.push(building(MILL));
@@ -948,6 +958,7 @@ function getConnections() {
         [b(STABLE), u(SCOUT_CAVALRY)],
         [u(SCOUT_CAVALRY), u(LIGHT_CAVALRY)],
         [u(LIGHT_CAVALRY), u(HUSSAR)],
+        [u(LIGHT_CAVALRY), u(WINGED_HUSSAR)],
         [b(STABLE), t(BLOODLINES)],
         [b(STABLE), u(CAMEL_RIDER)],
         [u(CAMEL_RIDER), u(HEAVY_CAMEL_RIDER)],
@@ -1013,6 +1024,7 @@ function getConnections() {
         [b(SIEGE_WORKSHOP), u(SCORPION)],
         [u(SCORPION), u(HEAVY_SCORPION)],
         [b(SIEGE_WORKSHOP), u(SIEGE_TOWER)],
+        [u(BOMBARD_CANNON), u(HOUFNICE)],
         [b(BLACKSMITH), b(SIEGE_WORKSHOP)],
         [b(BLACKSMITH), t(PADDED_ARCHER_ARMOR)],
         [t(PADDED_ARCHER_ARMOR), t(LEATHER_ARCHER_ARMOR)],
@@ -1054,6 +1066,7 @@ function getConnections() {
         [t(HORSE_COLLAR), t(HEAVY_PLOW)],
         [t(HEAVY_PLOW), t(CROP_ROTATION)],
         [b(MILL), b(FARM)],
+        [b(FOLWARK), b(FARM)],
         [u(GENITOUR), u(ELITE_GENITOUR)],
         [u(HEAVY_CAMEL_RIDER), u(IMPERIAL_CAMEL_RIDER)],
         [u(TURTLE_SHIP), u(ELITE_TURTLE_SHIP)],

@@ -57,6 +57,7 @@ const locales = {
     jp: "日本語",
     ko: "한국어",
     ms: "Bahasa Melayu",
+    pl: "Polski",
     ru: "Русский",
     es: "Español",
     mx: "Español (México)",
