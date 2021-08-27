@@ -463,6 +463,7 @@ function getHelpText(name, id, type) {
         stats.push(secondsIfDefined(meta.AttackDelaySeconds, "Attack Delay:&nbsp;"));
         stats.push(secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;"));
         stats.push(accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;"));
+        stats.push(repeatableIfDefined(meta.Repeatable));
         text = text.replace(/<p class="helptext__stats">(.+?)<\/p>/, "<h3>Stats</h3><p>" + stats.filter(Boolean).join(', ') + "<p>")
     } else {
         console.error("No metadata found for " + name);
@@ -609,6 +610,14 @@ function arrayIfDefinedAndNonEmpty(attacks, prefix) {
             strings.push(`${amount} (${clazz})`);
         }
         return prefix + '<p>' + strings.join(', ') + "</p>";
+    }
+}
+
+function repeatableIfDefined(value) {
+    if (value !== undefined) {
+        return value ? "Repeatable" : "Not Repeatable";
+    } else {
+        return "";
     }
 }
 

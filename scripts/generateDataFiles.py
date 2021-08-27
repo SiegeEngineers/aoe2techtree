@@ -645,6 +645,7 @@ def add_tech(key, value, tech, data):
         'Cost': get_cost(tech),
         'LanguageNameId': tech['LanguageDLLName'],
         'LanguageHelpId': tech['LanguageDLLName'] + 21_000,
+        'Repeatable': tech['Repeatable'] == "1",
     }
 
 
