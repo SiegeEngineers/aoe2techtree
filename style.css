@@ -279,3 +279,9 @@ hr:before {
         overflow-x: auto;
     }
 }
+
+a.inverted {
+    background-color: rgba(50,50,50,.5);
+    color: #ccc;
+    padding: .2em;
+}
