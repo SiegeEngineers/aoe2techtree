@@ -617,7 +617,7 @@
                 "Cost": {
                     "Wood": 175
                 },
-                "GarrisonCapacity": 0,
+                "GarrisonCapacity": 10,
                 "HP": 1800,
                 "ID": 84,
                 "LanguageHelpId": 26161,
@@ -1595,7 +1595,7 @@
                     "Stone": 250
                 },
                 "GarrisonCapacity": 0,
-                "HP": 5200,
+                "HP": 2700,
                 "ID": 1021,
                 "LanguageHelpId": 26159,
                 "LanguageNameId": 5159,
@@ -1636,7 +1636,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 9,
+                "Attack": 10,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -1647,7 +1647,7 @@
                         "Class": 16
                     },
                     {
-                        "Amount": 9,
+                        "Amount": 10,
                         "Class": 3
                     },
                     {
@@ -3539,8 +3539,8 @@
             },
             "716": {
                 "Cost": {
-                    "Food": 150,
-                    "Gold": 100
+                    "Food": 75,
+                    "Gold": 75
                 },
                 "ID": 716,
                 "LanguageHelpId": 28403,
@@ -3593,7 +3593,7 @@
                 "ID": 757,
                 "LanguageHelpId": 28345,
                 "LanguageNameId": 7345,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 45,
                 "internal_name": "Hauberk"
             },
@@ -3617,7 +3617,7 @@
                 "ID": 783,
                 "LanguageHelpId": 28349,
                 "LanguageNameId": 7349,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Lechitic Legacy"
             },
@@ -3641,7 +3641,7 @@
                 "ID": 785,
                 "LanguageHelpId": 28351,
                 "LanguageNameId": 7351,
-                "Repeatable": true,
+                "Repeatable": false,
                 "ResearchTime": 45,
                 "internal_name": "Hussite Reforms"
             }
@@ -5034,7 +5034,7 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 1,
                         "Class": 4
                     },
                     {
@@ -5082,7 +5082,7 @@
                 "LanguageNameId": 5081,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": 1,
                 "MinRange": 0,
                 "PierceArmor": 1,
                 "Range": 0,
@@ -6859,7 +6859,7 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 1,
                         "Class": 4
                     },
                     {
@@ -6907,7 +6907,7 @@
                 "LanguageNameId": 5411,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": 1,
                 "MinRange": 0,
                 "PierceArmor": 1,
                 "Range": 0,
