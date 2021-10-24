@@ -179,7 +179,7 @@ function displayData() {
                     .attr({id: caret.id + '_img'})
                     .move(caret.x + caret.width * 0.2, caret.y);
                 var cross = item.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
-                    .attr({fill: '#ff0000', opacity:0.5, id: caret.id + '_x'})
+                    .attr({fill: '#ff0000', opacity:0.8, id: caret.id + '_x'})
                     .addClass('cross')
                     .size(caret.width * 0.6, caret.height * 0.6)
                     .move(caret.x + caret.width * 0.2, caret.y);
