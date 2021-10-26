@@ -167,10 +167,6 @@ function displayData() {
                     id: `${caret.id}_bg`
                 }).move(caret.x, caret.y);
                 let name = formatName(caret.name);
-                var text = item.text(name.toString())
-                    .font({size: 9, weight: 'bold'})
-                    .attr({fill: '#ffffff', opacity:0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
-                    .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
                 var image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
                     .attr({fill: '#000000', opacity:0.5, id: caret.id + '_imgph'})
                     .move(caret.x + caret.width * 0.2, caret.y);
@@ -178,11 +174,18 @@ function displayData() {
                 var image = item.image(prefix + imagePrefix(caret.id) + '.png', caret.width * 0.6, caret.height * 0.6)
                     .attr({id: caret.id + '_img'})
                     .move(caret.x + caret.width * 0.2, caret.y);
+                var crossBackground = item.rect(caret.width, caret.height)
+                    .attr({id: caret.id + '_x_bg', fill: '#232323', opacity: 0.8})
+                    .move(caret.x, caret.y);
+                var text = item.text(name.toString())
+                    .font({size: 9, weight: 'bold'})
+                    .attr({fill: '#ffffff', opacity:0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
+                    .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
                 var cross = item.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
-                    .attr({fill: '#ff0000', opacity:0.8, id: caret.id + '_x'})
+                    .attr({fill: '#910000', opacity:0.6, id: caret.id + '_x'})
                     .addClass('cross')
-                    .size(caret.width * 0.6, caret.height * 0.6)
-                    .move(caret.x + caret.width * 0.2, caret.y);
+                    .size(caret.width * 0.7, caret.height * 0.7)
+                    .move(caret.x + caret.width * 0.15, caret.y);
                 var overlaytrigger = item.rect(caret.width, caret.height)
                     .attr({id: caret.id + '_overlay'})
                     .addClass('node__overlay')

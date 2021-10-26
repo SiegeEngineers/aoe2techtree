@@ -536,12 +536,15 @@ function checkIdUnique(tree) {
 function enable(buildings, units, techs) {
     for (let name of buildings) {
         SVG.get('building_' + formatId(name) + '_x').attr({'fill-opacity': 0});
+        SVG.get('building_' + formatId(name) + '_x_bg').attr({'fill-opacity': 0});
     }
     for (let name of units) {
         SVG.get('unit_' + formatId(name) + '_x').attr({'fill-opacity': 0});
+        SVG.get('unit_' + formatId(name) + '_x_bg').attr({'fill-opacity': 0});
     }
     for (let name of techs) {
         SVG.get('tech_' + formatId(name) + '_x').attr({'fill-opacity': 0});
+        SVG.get('tech_' + formatId(name) + '_x_bg').attr({'fill-opacity': 0});
     }
 }
 
