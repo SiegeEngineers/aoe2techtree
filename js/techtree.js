@@ -1,18 +1,18 @@
-var TYPES = Object.freeze({
+const TYPES = Object.freeze({
     "BUILDING": {colour: '#922602', type: 'BUILDING', name: 'Building'},
     "UNIT": {colour: '#3a6a80', type: 'UNIT', name: 'Unit'},
     "UNIQUEUNIT": {colour: '#af30a3', type: 'UNIQUEUNIT', name: 'Unique Unit'},
     "TECHNOLOGY": {colour: '#2c5729', type: 'TECHNOLOGY', name: 'Technology'}
 });
 
-var PREFIX = Object.freeze({
+const PREFIX = Object.freeze({
     "BUILDING": 'building_',
     "UNIT": 'unit_',
     "UNIQUEUNIT": 'unit_',
     "TECHNOLOGY": 'tech_'
 });
 
-var animation_duration = 50;
+const animation_duration = 50;
 
 const UNIQUE_UNIT = "UNIQUE UNIT";
 const ELITE_UNIQUE_UNIT = "ELITE UNIQUE UNIT";
@@ -445,7 +445,7 @@ class Lane {
             for (let i = 0; i < this.rows[r].length; i++) {
                 this.rows[r][i].y = offsets[r];
                 this.rows[r][i].x = x;
-                this.rows[r][i].width = element_height;
+                this.rows[r][i].width = element_height; // Todo: check warning `lane_width`?
                 this.rows[r][i].height = element_height;
                 x = x + this.rows[r][i].width + this.padding;
                 row_width = row_width + this.rows[r][i].width + this.padding;
@@ -535,13 +535,13 @@ function checkIdUnique(tree) {
 
 function enable(buildings, units, techs) {
     for (let name of buildings) {
-        SVG.get('building_' + formatId(name) + '_x').attr({'fill-opacity': 0});
+        SVG('#building_' + formatId(name) + '_x').attr({'opacity': 0});
     }
     for (let name of units) {
-        SVG.get('unit_' + formatId(name) + '_x').attr({'fill-opacity': 0});
+        SVG('#unit_' + formatId(name) + '_x').attr({'opacity': 0});
     }
     for (let name of techs) {
-        SVG.get('tech_' + formatId(name) + '_x').attr({'fill-opacity': 0});
+        SVG('#tech_' + formatId(name) + '_x').attr({'opacity': 0});
     }
 }
 
@@ -581,17 +581,17 @@ function unique(ids, monk_prefix) {
     if (monk_prefix === undefined) {
         monk_prefix = MONK_PREFIX_GENERIC;
     }
-    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
-    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
-    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
-    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
-    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
-    SVG.get('tech_' + formatId(UNIQUE_TECH_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
-    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
-    SVG.get('tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
-    SVG.get('unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
-    SVG.get('unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
-    SVG.get('unit_' + formatId(MONK) + '_img').load('img/Units/' + monk_prefix + '125.png');
+    SVG('#unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
+    SVG('#unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
+    SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
+    SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
+    SVG('#tech_' + formatId(UNIQUE_TECH_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
+    SVG('#tech_' + formatId(UNIQUE_TECH_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
+    SVG('#tech_' + formatId(UNIQUE_TECH_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
+    SVG('#tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
+    SVG('#unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
+    SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
+    SVG('#unit_' + formatId(MONK) + '_img').load('img/Units/' + monk_prefix + '125.png');
 }
 
 function getName(id, itemtype) {

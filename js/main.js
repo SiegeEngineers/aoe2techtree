@@ -103,7 +103,8 @@ function displayData() {
     connectionpoints = getConnectionPoints(tree);
     fillCivSelector();
 
-    const draw = SVG('techtree').id('root').size(tree.width, tree.height)
+    // const draw = SVG('#techtree').id('root').size(tree.width, tree.height)
+    const draw = SVG().addTo('#techtree').id('root').size(tree.width, tree.height)
         .click((e) => {
             if (e.target.id === 'root') {
                 hideHelp();
@@ -135,11 +136,16 @@ function displayData() {
     ];
     for (let i = 0; i < image_urls.length; i++) {
         let age_image_group = draw.group().click(hideHelp);
-        let age_image = age_image_group.image('img/Ages/' + image_urls[i], icon_width, icon_height).y(row_height * i + vertical_spacing).x(margin_left);
-        age_image_group.text(age_names[i])
-            .font({size: 16, weight: 'bold'})
-            .attr({fill: '#000000', opacity: 0.8, 'text-anchor': 'middle'})
-            .move(icon_width / 2 + margin_left, age_image.attr('y') + icon_height + 5);
+        let age_image = age_image_group.image('img/Ages/' + image_urls[i])
+            .size(icon_width, icon_height)
+            .x(margin_left)
+            .y(row_height * i + vertical_spacing);
+        age_image_group
+            .text(age_names[i])
+            .font({size: 16, weight: 'bold'}) /* Text-anchor: middle does not work. */
+            .cx(icon_width / 2 + margin_left)
+            .y(age_image.attr('y') + age_image.attr('height') + 5)
+        ;
     }
 
     const connectionGroup = draw.group().attr({id: 'connection_lines'});
@@ -155,35 +161,40 @@ function displayData() {
 
     for (let lane of tree.lanes) {
         draw.rect(lane.width + 10, tree.height)
-            .attr({fill: '#ffeeaa', 'fill-opacity': 0, class: lane.caretIds().map((id) => `lane-with-${id}`)})
+            .attr({fill: '#ffeeaa', 'opacity': 0, class: lane.caretIds().map((id) => `lane-with-${id}`)})
             .move(lane.x - 10, lane.y)
             .click(hideHelp);
         for (let r of Object.keys(lane.rows)) {
             let row = lane.rows[r];
             for (let caret of row) {
-                var item = draw.group().attr({id: caret.id}).addClass('node')
-                var rect = item.rect(caret.width, caret.height).attr({
+                const item = draw.group().attr({id: caret.id}).addClass('node');
+                const rect = item.rect(caret.width, caret.height).attr({
                     fill: caret.type.colour,
                     id: `${caret.id}_bg`
                 }).move(caret.x, caret.y);
                 let name = formatName(caret.name);
-                var text = item.text(name.toString())
+                const text = item.text(name.toString())
                     .font({size: 9, weight: 'bold'})
-                    .attr({fill: '#ffffff', opacity:0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
-                    .move(caret.x + caret.width / 2, caret.y + caret.height / 1.5);
-                var image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
-                    .attr({fill: '#000000', opacity:0.5, id: caret.id + '_imgph'})
+                    .attr({fill: '#ffffff', opacity: 0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
+                    .cx(caret.x + caret.width / 2)
+                    .y(caret.y + caret.height / 1.5);
+                const image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
+                    .attr({fill: '#000000', opacity: 0.5, id: caret.id + '_imgph'})
                     .move(caret.x + caret.width * 0.2, caret.y);
-                let prefix = 'img/';
-                var image = item.image(prefix + imagePrefix(caret.id) + '.png', caret.width * 0.6, caret.height * 0.6)
+                const prefix = 'img/';
+                const image = item.image(prefix + imagePrefix(caret.id) + '.png')
+                    .size(caret.width * 0.6, caret.height * 0.6)
                     .attr({id: caret.id + '_img'})
                     .move(caret.x + caret.width * 0.2, caret.y);
-                var cross = item.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
-                    .attr({fill: '#ff0000', opacity:0.5, id: caret.id + '_x'})
+                const cross = item.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
+                    .id(caret.id + '_x')
+                    .fill({color: '#910000', opacity: 0.6})
+                    .stroke({color: 'black', opacity: 1, width: 1})
                     .addClass('cross')
-                    .size(caret.width * 0.6, caret.height * 0.6)
-                    .move(caret.x + caret.width * 0.2, caret.y);
-                var overlaytrigger = item.rect(caret.width, caret.height)
+                    .size(caret.width * 0.7, caret.height * 0.7)
+                    .cx(caret.x + caret.width / 2)
+                    .y(caret.y);
+                const overlaytrigger = item.rect(caret.width, caret.height)
                     .attr({id: caret.id + '_overlay'})
                     .addClass('node__overlay')
                     .move(caret.x, caret.y)
@@ -191,11 +202,13 @@ function displayData() {
                     .mouseover(function () {
                         highlightPath(caret.id);
                     })
-                    .mouseout(resetHighlightPath)
+                    .mouseout(function () {
+                        resetHighlightPath();
+                    })
                     .click(function () {
                         displayHelp(caret.id);
                     });
-
+    
             }
         }
     }
@@ -269,8 +282,7 @@ function loadCiv() {
 }
 
 function loadJson(file, callback) {
-
-    var xobj = new XMLHttpRequest();
+    const xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
     xobj.open('GET', file, true);
     xobj.onreadystatechange = function () {
@@ -290,20 +302,20 @@ function resetHighlightPath() {
 }
 
 function unhighlightPath() {
-    SVG.select('.node.is-highlight, .connection.is-highlight')
-        .removeClass('is-highlight');
+    SVG.find('.node.is-highlight, .connection.is-highlight')
+        .each((el) => {el.removeClass('is-highlight')});
 }
 
 function highlightPath(caretId) {
     recurse(caretId);
 
     function recurse(caretId) {
-        SVG.get(caretId).addClass('is-highlight');
+        SVG('#'+caretId).addClass('is-highlight');
 
         const parentId = parentConnections.get(caretId);
         if (!parentId) return;
 
-        const line = SVG.get(`connection_${parentId}_${caretId}`);
+        const line = SVG(`#connection_${parentId}_${caretId}`);
         if (line) {
             // Move to the end of the <g> element so that it is drawn on top.
             // Without this, the line would be highlighted, but other unhighlighted
@@ -318,7 +330,7 @@ function displayHelp(caretId) {
     focusedNodeId = caretId;
     let helptextContent = document.getElementById("helptext__content");
     let helptextAdvancedStats = document.getElementById("helptext__advanced_stats");
-    let overlay = SVG.get(`${caretId}_overlay`);
+    let overlay = SVG(`#${caretId}_overlay`);
     let name = overlay.data('name');
     let id = overlay.data('id').replace('_copy', '');
     let caret = overlay.data('caret');
@@ -741,7 +753,7 @@ function fillCivSelector() {
 function civ(name) {
     let selectedCiv = civs[name];
 
-    SVG.select('.cross').each(function () {
+    SVG.find('.cross').each(function () {
         if (SVGObjectIsOpaque(this)) {
             return;
         }
@@ -775,11 +787,11 @@ function civ(name) {
 }
 
 function SVGObjectIsOpaque(svgObj) {
-    return svgObj.attr('fill-opacity') === 1
+    return svgObj.attr('opacity') === 1
 }
 
 function makeSVGObjectOpaque(svgObj) {
-    svgObj.attr({'fill-opacity': 1});
+    svgObj.attr({'opacity': 1});
 }
 
 function parseSVGObjectId(svgObjId) {
@@ -806,10 +818,10 @@ function shiftKeyIsNotPressed(e) {
 
 function scrollToBuildingId(buildingId) {
     const buildingElementId = `building_${buildingId}_bg`;
-    const laneBackground = SVG.select(`.lane-with-building_${buildingId}`);
-    laneBackground.attr({'fill-opacity': 0.5});
+    const laneBackground = SVG(`.lane-with-building_${buildingId}`);
+    laneBackground.attr({'opacity': 0.5});
     setTimeout(() => {
-        laneBackground.animate(animation_duration * 10).attr({'fill-opacity': 0});
+        laneBackground.animate(animation_duration * 10).attr({'opacity': 0});
     }, 500);
     const buildingElement = document.getElementById(buildingElementId);
     buildingElement.scrollIntoView({block: "center", inline: "center"});
@@ -852,14 +864,14 @@ function getInitialLocale() {
 function main() {
 
     history.pushState = (f => function pushState() {
-        const ret = f.apply(this, arguments);
+        const ret = f.apply(this, arguments); // Fixme: Void function return value is used.
         window.dispatchEvent(new Event('pushstate'));
         window.dispatchEvent(new Event('locationchange'));
         return ret;
     })(history.pushState);
 
     history.replaceState = (f => function replaceState() {
-        const ret = f.apply(this, arguments);
+        const ret = f.apply(this, arguments); // Fixme: Void function return value is used.
         window.dispatchEvent(new Event('replacestate'));
         window.dispatchEvent(new Event('locationchange'));
         return ret;
