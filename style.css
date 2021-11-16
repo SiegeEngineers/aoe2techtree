@@ -17,12 +17,12 @@ body, input, select, tspan {
 body {
     margin: 0;
     display: flex;
-    background: url("img/Backgrounds/bg_aoe2_hd_paper.jpg") repeat;
+    background: url('img/Backgrounds/bg_aoe2_hd_paper.jpg') repeat;
     font-size: 10pt;
 }
 
 #techtree {
-    background: url("img/Backgrounds/bg_aoe2_hd_paper.jpg") repeat local;
+    background: url('img/Backgrounds/bg_aoe2_hd_paper.jpg') repeat local;
 }
 
 a, a:hover, a:visited, a:active {
@@ -190,7 +190,7 @@ hr {
 hr:before {
     /* Not really supposed to work, but does */
     display: block;
-    content: "";
+    content: '';
     height: 30px;
     margin-top: -31px;
     border-style: solid;
@@ -230,7 +230,6 @@ hr:before {
     background-image: none;
     border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 0;
-    -ms-word-break: normal;
     word-break: normal;
 }
 

@@ -7,71 +7,71 @@ let connectionpoints;
 let focusedNodeId = null;
 
 const unitClasses = {
-    0: "Unused",
-    1: "Infantry",
-    2: "Turtle Ships",
-    3: "Base Pierce",
-    4: "Base Melee",
-    5: "War Elephants",
-    6: "Unused",
-    7: "Unused",
-    8: "Cavalry",
-    9: "Unused",
-    10: "Unused",
-    11: "<abbr title='(except Port)'>All Buildings</abbr>",
-    12: "Unused",
-    13: "Stone Defense",
-    14: "FE Predator Animals",
-    15: "Archers",
-    16: "Ships & Camels & Saboteurs",
-    17: "Rams",
-    18: "Trees",
-    19: "<abbr title='(except Turtle Ship)'>Unique Units</abbr>",
-    20: "Siege Weapons",
-    21: "Standard Buildings",
-    22: "Walls & Gates",
-    23: "FE Gunpowder Units",
-    24: "Boars",
-    25: "Monks",
-    26: "Castle",
-    27: "Spearmen",
-    28: "Cavalry Archers",
-    29: "Eagle Warriors",
-    30: "HD Camels",
-    31: "Anti-Leitis",
-    32: "Condottieros",
-    33: "Organ Gun Damage",
-    34: "Fishing Ships",
-    35: "Mamelukes",
-    36: "Heroes and Kings",
+    0: 'Unused',
+    1: 'Infantry',
+    2: 'Turtle Ships',
+    3: 'Base Pierce',
+    4: 'Base Melee',
+    5: 'War Elephants',
+    6: 'Unused',
+    7: 'Unused',
+    8: 'Cavalry',
+    9: 'Unused',
+    10: 'Unused',
+    11: '<abbr title="(except Port)">All Buildings</abbr>',
+    12: 'Unused',
+    13: 'Stone Defense',
+    14: 'FE Predator Animals',
+    15: 'Archers',
+    16: 'Ships & Camels & Saboteurs',
+    17: 'Rams',
+    18: 'Trees',
+    19: '<abbr title="(except Turtle Ship)">Unique Units</abbr>',
+    20: 'Siege Weapons',
+    21: 'Standard Buildings',
+    22: 'Walls & Gates',
+    23: 'FE Gunpowder Units',
+    24: 'Boars',
+    25: 'Monks',
+    26: 'Castle',
+    27: 'Spearmen',
+    28: 'Cavalry Archers',
+    29: 'Eagle Warriors',
+    30: 'HD Camels',
+    31: 'Anti-Leitis',
+    32: 'Condottieros',
+    33: 'Organ Gun Damage',
+    34: 'Fishing Ships',
+    35: 'Mamelukes',
+    36: 'Heroes and Kings',
 };
 
 const locales = {
-    en: "English",
-    zh: "简体中文",
-    tw: "繁體中文",
-    fr: "Français",
-    de: "Deutsch",
-    hi: "हिंदी",
-    it: "Italiano",
-    jp: "日本語",
-    ko: "한국어",
-    ms: "Bahasa Melayu",
-    pl: "Polski",
-    ru: "Русский",
-    es: "Español",
-    mx: "Español (México)",
-    tr: "Türkçe",
-    vi: "Tiếng Việt",
-    br: "Português (Brasil)",
+    en: 'English',
+    zh: '简体中文',
+    tw: '繁體中文',
+    fr: 'Français',
+    de: 'Deutsch',
+    hi: 'हिंदी',
+    it: 'Italiano',
+    jp: '日本語',
+    ko: '한국어',
+    ms: 'Bahasa Melayu',
+    pl: 'Polski',
+    ru: 'Русский',
+    es: 'Español',
+    mx: 'Español (México)',
+    tr: 'Türkçe',
+    vi: 'Tiếng Việt',
+    br: 'Português (Brasil)',
 };
-const defaultLocale = "en";
+const defaultLocale = 'en';
 
 function loadLocale(localeCode) {
     if (!Object.keys(locales).includes(localeCode)) {
         localeCode = defaultLocale;
     }
-    loadJson("data/locales/" + localeCode + "/strings.json", function (strings) {
+    loadJson('data/locales/' + localeCode + '/strings.json', function (strings) {
         data.strings = strings;
         updatePageTitle();
         createXRefBadges();
@@ -93,9 +93,9 @@ function displayData() {
     if (root) {
         document.getElementById('techtree').removeChild(root);
     }
-    document.getElementById('civselect').innerHTML = "";
-    document.getElementById('buildingindex__table').innerHTML = "";
-    document.getElementById('key__table').innerHTML = "";
+    document.getElementById('civselect').innerHTML = '';
+    document.getElementById('buildingindex__table').innerHTML = '';
+    document.getElementById('key__table').innerHTML = '';
 
     tree = getDefaultTree();
     connections = getConnections();
@@ -129,10 +129,10 @@ function displayData() {
     let margin_left = 20;
     let image_urls = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
     let age_names = [
-        data.strings[data.age_names["Dark Age"]],
-        data.strings[data.age_names["Feudal Age"]],
-        data.strings[data.age_names["Castle Age"]],
-        data.strings[data.age_names["Imperial Age"]]
+        data.strings[data.age_names['Dark Age']],
+        data.strings[data.age_names['Feudal Age']],
+        data.strings[data.age_names['Castle Age']],
+        data.strings[data.age_names['Imperial Age']]
     ];
     for (let i = 0; i < image_urls.length; i++) {
         let age_image_group = draw.group().click(hideHelp);
@@ -262,9 +262,9 @@ function onAdvancedStatsStateUpdate() {
 
 function imagePrefix(name) {
     return name.replace('_copy', '')
-        .replace("building_", "Buildings/")
-        .replace("unit_", "Units/")
-        .replace("tech_", "Techs/");
+        .replace('building_', 'Buildings/')
+        .replace('unit_', 'Units/')
+        .replace('tech_', 'Techs/');
 }
 
 function loadCiv() {
@@ -275,7 +275,7 @@ function loadCiv() {
         document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
         window.location.hash = selectedCiv;
     } else {
-        document.getElementById('civtext').innerHTML = "";
+        document.getElementById('civtext').innerHTML = '';
         document.getElementById('civlogo').src = document.getElementById('civlogo').dataset.transparent;
     }
     hideHelp();
@@ -283,7 +283,7 @@ function loadCiv() {
 
 function loadJson(file, callback) {
     const xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
+    xobj.overrideMimeType('application/json');
     xobj.open('GET', file, true);
     xobj.onreadystatechange = function () {
         if (xobj.readyState === 4 && xobj.status === 200) {
@@ -328,8 +328,8 @@ function highlightPath(caretId) {
 
 function displayHelp(caretId) {
     focusedNodeId = caretId;
-    let helptextContent = document.getElementById("helptext__content");
-    let helptextAdvancedStats = document.getElementById("helptext__advanced_stats");
+    let helptextContent = document.getElementById('helptext__content');
+    let helptextAdvancedStats = document.getElementById('helptext__advanced_stats');
     let overlay = SVG(`#${caretId}_overlay`);
     let name = overlay.data('name');
     let id = overlay.data('id').replace('_copy', '');
@@ -344,14 +344,14 @@ function displayHelp(caretId) {
 
 function hideHelp() {
     focusedNodeId = null;
-    const helptext = document.getElementById("helptext");
-    helptext.style.display = "none";
+    const helptext = document.getElementById('helptext');
+    helptext.style.display = 'none';
     resetHighlightPath();
 }
 
 function positionHelptext(caret) {
-    const helptext = document.getElementById("helptext");
-    helptext.style.display = "block";
+    const helptext = document.getElementById('helptext');
+    helptext.style.display = 'block';
     positionHelptextBelow(caret, helptext)
     || positionHelptextAbove(caret, helptext)
     || positionHelptextToLeftOrRight(caret, helptext);
@@ -369,7 +369,7 @@ function positionHelptextBelow(caret, helptext) {
     if (destX < 0 || destX - techtree.scrollLeft < 0) {
         destX = techtree.scrollLeft;
     }
-    helptext.style.top = top + "px";
+    helptext.style.top = top + 'px';
     helptext.style.left = destX + 'px';
     return true;
 }
@@ -386,7 +386,7 @@ function positionHelptextAbove(caret, helptext) {
     if (destX < 0 || destX - techtree.scrollLeft < 0) {
         destX = techtree.scrollLeft;
     }
-    helptext.style.top = top + "px";
+    helptext.style.top = top + 'px';
     helptext.style.left = destX + 'px';
     return true;
 }
@@ -399,7 +399,7 @@ function positionHelptextToLeftOrRight(caret, helptext) {
     if (destX < 0 || destX - techtree.scrollLeft < 0) {
         destX = caret.x + caret.width;
     }
-    helptext.style.top = top + "px";
+    helptext.style.top = top + 'px';
     helptext.style.left = destX + 'px';
 }
 
@@ -409,11 +409,11 @@ function getHelpText(name, id, type) {
     id = id.substring(items[0].length + 1);
     let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
     if (text === undefined) {
-        return "?";
+        return '?';
     }
     text = text.replace(/\s<br>/g, '');
     text = text.replace(/\n/g, '');
-    if (type === "TECHNOLOGY") {
+    if (type === 'TECHNOLOGY') {
         text = text.replace(/(.+?\(.+?\))(.*)/m,
             '<p class="helptext__heading">$1</p>' +
             '<p class="helptext__desc">$2</p>' +
@@ -424,8 +424,8 @@ function getHelpText(name, id, type) {
             '<p>$2</p>' +
             '<p><em>$3</em></p>' +
             '<p class="helptext__stats">$4</p>');
-    } else if (type === "BUILDING") {
-        // convert the "Required for" text in <i> to <em> so that it doesn't break the next regex
+    } else if (type === 'BUILDING') {
+        // convert the 'Required for' text in <i> to <em> so that it doesn't break the next regex
         text = text.replace(/<b><i>(.+?)<\/b><\/i>/m, '<b><em>$1</em></b>');
         if (text.indexOf('<i>') >= 0) {
             text = text.replace(/(.+?\(‹cost›\))(.+?)<i>\s*(.+?)<\/i>(.*)/m,
@@ -443,42 +443,42 @@ function getHelpText(name, id, type) {
     }
     let meta = data.data[entitytype][id];
     if (meta !== undefined) {
-        text = text.replace(/‹cost›/, "Cost: " + cost(meta.Cost));
+        text = text.replace(/‹cost›/, 'Cost: ' + cost(meta.Cost));
         let stats = []
         if (text.match(/‹hp›/)) {
-            stats.push("HP:&nbsp;" + meta.HP);
+            stats.push('HP:&nbsp;' + meta.HP);
         }
         if (text.match(/‹attack›/)) {
-            stats.push("Attack:&nbsp;" + meta.Attack);
+            stats.push('Attack:&nbsp;' + meta.Attack);
         }
         if (text.match(/‹[Aa]rmor›/)) {
-            stats.push("Armor:&nbsp;" + meta.MeleeArmor);
+            stats.push('Armor:&nbsp;' + meta.MeleeArmor);
         }
         if (text.match(/‹[Pp]iercearmor›/)) {
-            stats.push("Pierce armor:&nbsp;" + meta.PierceArmor);
+            stats.push('Pierce armor:&nbsp;' + meta.PierceArmor);
         }
         if (text.match(/‹garrison›/)) {
-            stats.push("Garrison:&nbsp;" + meta.GarrisonCapacity);
+            stats.push('Garrison:&nbsp;' + meta.GarrisonCapacity);
         }
         if (text.match(/‹range›/)) {
-            stats.push("Range:&nbsp;" + meta.Range);
+            stats.push('Range:&nbsp;' + meta.Range);
         }
-        stats.push(ifDefinedAndGreaterZero(meta.MinRange, "Min Range:&nbsp;"));
-        stats.push(ifDefined(meta.LineOfSight, "Line of Sight:&nbsp;"));
-        stats.push(ifDefined(meta.Speed, "Speed:&nbsp;"));
-        stats.push(secondsIfDefined(meta.TrainTime, "Build Time:&nbsp;"));
-        stats.push(secondsIfDefined(meta.ResearchTime, "Research Time:&nbsp;"));
-        stats.push(ifDefined(meta.FrameDelay, "Frame Delay:&nbsp;"));
-        stats.push(ifDefinedAndGreaterZero(meta.MaxCharge, "Charge Attack:&nbsp;"));
-        stats.push(ifDefinedAndGreaterZero(meta.RechargeRate, "Recharge Rate:&nbsp;"));
-        stats.push(secondsIfDefined(meta.RechargeDuration, "Recharge Duration:&nbsp;"));
-        stats.push(secondsIfDefined(meta.AttackDelaySeconds, "Attack Delay:&nbsp;"));
-        stats.push(secondsIfDefined(meta.ReloadTime, "Reload Time:&nbsp;"));
-        stats.push(accuracyIfDefined(meta.AccuracyPercent, "Accuracy:&nbsp;"));
+        stats.push(ifDefinedAndGreaterZero(meta.MinRange, 'Min Range:&nbsp;'));
+        stats.push(ifDefined(meta.LineOfSight, 'Line of Sight:&nbsp;'));
+        stats.push(ifDefined(meta.Speed, 'Speed:&nbsp;'));
+        stats.push(secondsIfDefined(meta.TrainTime, 'Build Time:&nbsp;'));
+        stats.push(secondsIfDefined(meta.ResearchTime, 'Research Time:&nbsp;'));
+        stats.push(ifDefined(meta.FrameDelay, 'Frame Delay:&nbsp;'));
+        stats.push(ifDefinedAndGreaterZero(meta.MaxCharge, 'Charge Attack:&nbsp;'));
+        stats.push(ifDefinedAndGreaterZero(meta.RechargeRate, 'Recharge Rate:&nbsp;'));
+        stats.push(secondsIfDefined(meta.RechargeDuration, 'Recharge Duration:&nbsp;'));
+        stats.push(secondsIfDefined(meta.AttackDelaySeconds, 'Attack Delay:&nbsp;'));
+        stats.push(secondsIfDefined(meta.ReloadTime, 'Reload Time:&nbsp;'));
+        stats.push(accuracyIfDefined(meta.AccuracyPercent, 'Accuracy:&nbsp;'));
         stats.push(repeatableIfDefined(meta.Repeatable));
-        text = text.replace(/<p class="helptext__stats">(.+?)<\/p>/, "<h3>Stats</h3><p>" + stats.filter(Boolean).join(', ') + "<p>")
+        text = text.replace(/<p class='helptext__stats'>(.+?)<\/p>/, '<h3>Stats</h3><p>' + stats.filter(Boolean).join(', ') + '<p>')
     } else {
-        console.error("No metadata found for " + name);
+        console.error('No metadata found for ' + name);
     }
     return text;
 }
@@ -493,17 +493,17 @@ function getAdvancedStats(name, id, type) {
         text += arrayIfDefinedAndNonEmpty(meta.Attacks, '<h3>Attacks</h3>');
         text += arrayIfDefinedAndNonEmpty(meta.Armours, '<h3>Armours</h3>');
     } else {
-        console.error("No metadata found for " + name);
+        console.error('No metadata found for ' + name);
     }
     return text;
 }
 
 function getEntityType(type) {
     let entitytype = 'buildings';
-    if (type === "UNIT" || type === "UNIQUEUNIT") {
+    if (type === 'UNIT' || type === 'UNIQUEUNIT') {
         entitytype = 'units';
     }
-    if (type === "TECHNOLOGY") {
+    if (type === 'TECHNOLOGY') {
         entitytype = 'techs';
     }
     return entitytype;
@@ -549,19 +549,19 @@ function styleXRefBadges(name, id, type) {
         let found = false;
         // Make sure this civ exists
         if (civs[civ]) {
-            if (type === "UNIT" || type === "UNIQUEUNIT") {
+            if (type === 'UNIT' || type === 'UNIQUEUNIT') {
                 if (civs[civ].units.map((id) => `unit_${id}`).includes(id)) {
                     found = true;
                 } else if (`unit_${civs[`${civ}`].unique.castleAgeUniqueUnit}` === id || `unit_${civs[`${civ}`].unique.imperialAgeUniqueUnit}` === id) {
                     found = true;
                 }
-            } else if (type === "TECHNOLOGY") {
+            } else if (type === 'TECHNOLOGY') {
                 if (civs[civ].techs.map((id) => `tech_${id}`).includes(id)) {
                     found = true;
                 } else if (`tech_${civs[`${civ}`].unique.castleAgeUniqueTech}` === id || `tech_${civs[`${civ}`].unique.imperialAgeUniqueTech}` === id) {
                     found = true;
                 }
-            } else if (type === "BUILDING") {
+            } else if (type === 'BUILDING') {
                 if (civs[civ].buildings.map((id) => `building_${id}`).includes(id)) {
                     found = true;
                 }
@@ -577,17 +577,17 @@ function styleXRefBadges(name, id, type) {
 
 function ifDefined(value, prefix) {
     if (value !== undefined) {
-        return " " + prefix + value;
+        return ' ' + prefix + value;
     } else {
-        return "";
+        return '';
     }
 }
 
 function secondsIfDefined(value, prefix) {
     if (value !== undefined) {
-        return " " + prefix + toMaxFixed2(value) + "s";
+        return ' ' + prefix + toMaxFixed2(value) + 's';
     } else {
-        return "";
+        return '';
     }
 }
 
@@ -597,23 +597,23 @@ function toMaxFixed2(value) {
 
 function accuracyIfDefined(value, prefix) {
     if (value !== undefined && value < 100) {
-        return " " + prefix + value + "%";
+        return ' ' + prefix + value + '%';
     } else {
-        return "";
+        return '';
     }
 }
 
 function ifDefinedAndGreaterZero(value, prefix) {
     if (value !== undefined && value > 0) {
-        return " " + prefix + value;
+        return ' ' + prefix + value;
     } else {
-        return "";
+        return '';
     }
 }
 
 function arrayIfDefinedAndNonEmpty(attacks, prefix) {
     if (attacks === undefined || attacks.length < 1) {
-        return "";
+        return '';
     } else {
         const strings = [];
         for (let attack of attacks) {
@@ -621,31 +621,31 @@ function arrayIfDefinedAndNonEmpty(attacks, prefix) {
             const clazz = unitClasses[attack['Class']];
             strings.push(`${amount} (${clazz})`);
         }
-        return prefix + '<p>' + strings.join(', ') + "</p>";
+        return prefix + '<p>' + strings.join(', ') + '</p>';
     }
 }
 
 function repeatableIfDefined(value) {
     if (value !== undefined) {
-        return value ? "Repeatable" : "Not Repeatable";
+        return value ? 'Repeatable' : 'Not Repeatable';
     } else {
-        return "";
+        return '';
     }
 }
 
 function cost(cost_object) {
-    let value = "";
-    if ("Food" in cost_object) {
-        value += " " + cost_object.Food + "F";
+    let value = '';
+    if ('Food' in cost_object) {
+        value += ' ' + cost_object.Food + 'F';
     }
-    if ("Wood" in cost_object) {
-        value += " " + cost_object.Wood + "W";
+    if ('Wood' in cost_object) {
+        value += ' ' + cost_object.Wood + 'W';
     }
-    if ("Gold" in cost_object) {
-        value += " " + cost_object.Gold + "G";
+    if ('Gold' in cost_object) {
+        value += ' ' + cost_object.Gold + 'G';
     }
-    if ("Stone" in cost_object) {
-        value += " " + cost_object.Stone + "S";
+    if ('Stone' in cost_object) {
+        value += ' ' + cost_object.Stone + 'S';
     }
     return value;
 }
@@ -713,7 +713,7 @@ function create_colour_key() {
             kc.appendChild(tr);
         }
     }
-    document.getElementById('key__label').innerText = data.strings[data.tech_tree_strings["Key"]];
+    document.getElementById('key__label').innerText = data.strings[data.tech_tree_strings['Key']];
 }
 
 function changeLocale() {
@@ -824,7 +824,7 @@ function scrollToBuildingId(buildingId) {
         laneBackground.animate(animation_duration * 10).attr({'opacity': 0});
     }, 500);
     const buildingElement = document.getElementById(buildingElementId);
-    buildingElement.scrollIntoView({block: "center", inline: "center"});
+    buildingElement.scrollIntoView({block: 'center', inline: 'center'});
 }
 
 function getLocaleFromUrlIfExists(defaultValue) {
@@ -894,7 +894,7 @@ function main() {
     let storedLocale = getInitialLocale();
     fillLocaleSelector(storedLocale);
 
-    loadJson("data/data.json", function (response) {
+    loadJson('data/data.json', function (response) {
         data = response;
         civs = data.techtrees;
         loadLocale(storedLocale);

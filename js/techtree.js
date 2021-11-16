@@ -1,27 +1,27 @@
 const TYPES = Object.freeze({
-    "BUILDING": {colour: '#922602', type: 'BUILDING', name: 'Building'},
-    "UNIT": {colour: '#3a6a80', type: 'UNIT', name: 'Unit'},
-    "UNIQUEUNIT": {colour: '#af30a3', type: 'UNIQUEUNIT', name: 'Unique Unit'},
-    "TECHNOLOGY": {colour: '#2c5729', type: 'TECHNOLOGY', name: 'Technology'}
+    'BUILDING': {colour: '#922602', type: 'BUILDING', name: 'Building'},
+    'UNIT': {colour: '#3a6a80', type: 'UNIT', name: 'Unit'},
+    'UNIQUEUNIT': {colour: '#af30a3', type: 'UNIQUEUNIT', name: 'Unique Unit'},
+    'TECHNOLOGY': {colour: '#2c5729', type: 'TECHNOLOGY', name: 'Technology'}
 });
 
 const PREFIX = Object.freeze({
-    "BUILDING": 'building_',
-    "UNIT": 'unit_',
-    "UNIQUEUNIT": 'unit_',
-    "TECHNOLOGY": 'tech_'
+    'BUILDING': 'building_',
+    'UNIT': 'unit_',
+    'UNIQUEUNIT': 'unit_',
+    'TECHNOLOGY': 'tech_'
 });
 
 const animation_duration = 50;
 
-const UNIQUE_UNIT = "UNIQUE UNIT";
-const ELITE_UNIQUE_UNIT = "ELITE UNIQUE UNIT";
-const UNIQUE_TECH_1 = "UNIQUE TECH 1";
-const UNIQUE_TECH_2 = "UNIQUE TECH 2";
-const MONK_PREFIX_MESO = "meso_";
-const MONK_PREFIX_AFRICAN = "african_";
-const MONK_PREFIX_ASIAN = "asian_";
-const MONK_PREFIX_GENERIC = "";
+const UNIQUE_UNIT = 'UNIQUE UNIT';
+const ELITE_UNIQUE_UNIT = 'ELITE UNIQUE UNIT';
+const UNIQUE_TECH_1 = 'UNIQUE TECH 1';
+const UNIQUE_TECH_2 = 'UNIQUE TECH 2';
+const MONK_PREFIX_MESO = 'meso_';
+const MONK_PREFIX_AFRICAN = 'african_';
+const MONK_PREFIX_ASIAN = 'asian_';
+const MONK_PREFIX_GENERIC = '';
 const BARRACKS = 12;
 const DOCK = 45;
 const SIEGE_WORKSHOP = 49;
@@ -516,7 +516,7 @@ class Caret {
 }
 
 function formatId(string) {
-    return string.toString().replace(/\s/g, "_").replace(/\//g, "_").toLowerCase();
+    return string.toString().replace(/\s/g, '_').replace(/\//g, '_').toLowerCase();
 }
 
 function checkIdUnique(tree) {
@@ -525,7 +525,7 @@ function checkIdUnique(tree) {
         for (let r of Object.keys(lane.rows)) {
             for (let caret of lane.rows[r]) {
                 if (ids.has(caret.id)) {
-                    console.error("ID " + caret.id + " is not unique!");
+                    console.error('ID ' + caret.id + ' is not unique!');
                 }
                 ids.add(caret.id);
             }
@@ -546,35 +546,35 @@ function enable(buildings, units, techs) {
 }
 
 function formatName(originalname) {
-    let name = originalname.toString().replace(/<br>/g, "\n").replace(/\n+/g, "\n");
-    const items = name.split("\n");
+    let name = originalname.toString().replace(/<br>/g, '\n').replace(/\n+/g, '\n');
+    const items = name.split('\n');
     for (let i = 0; i < items.length; i++) {
         const item = items[i];
         if (items[i].length > 10) {
-            let space = item.indexOf(" ");
+            let space = item.indexOf(' ');
             if (space !== -1) {
-                items[i] = item.slice(0, space) + "\n" + item.slice(space + 1);
-                let alternativeSpace = space + 1 + item.slice(space + 1).indexOf(" ");
+                items[i] = item.slice(0, space) + '\n' + item.slice(space + 1);
+                let alternativeSpace = space + 1 + item.slice(space + 1).indexOf(' ');
                 if (alternativeSpace !== -1) {
                     if (Math.abs((item.length / 2) - alternativeSpace) < Math.abs((item.length / 2) - space)) {
-                        items[i] = item.slice(0, alternativeSpace) + "\n" + item.slice(alternativeSpace + 1);
+                        items[i] = item.slice(0, alternativeSpace) + '\n' + item.slice(alternativeSpace + 1);
                     }
                 }
             } else {
-                let hyphen = item.indexOf("-");
+                let hyphen = item.indexOf('-');
                 if (hyphen !== -1) {
-                    items[i] = item.slice(0, hyphen) + "-\n" + item.slice(hyphen + 1);
-                    let alternativeHyphen = hyphen + 1 + item.slice(hyphen + 1).indexOf("-");
+                    items[i] = item.slice(0, hyphen) + '-\n' + item.slice(hyphen + 1);
+                    let alternativeHyphen = hyphen + 1 + item.slice(hyphen + 1).indexOf('-');
                     if (alternativeHyphen !== -1) {
                         if (Math.abs((item.length / 2) - alternativeHyphen) < Math.abs((item.length / 2) - hyphen)) {
-                            items[i] = item.slice(0, alternativeHyphen) + "-\n" + item.slice(alternativeHyphen + 1);
+                            items[i] = item.slice(0, alternativeHyphen) + '-\n' + item.slice(alternativeHyphen + 1);
                         }
                     }
                 }
             }
         }
     }
-    return items.join("\n");
+    return items.join('\n');
 }
 
 function unique(ids, monk_prefix) {
