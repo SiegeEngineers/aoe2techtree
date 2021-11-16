@@ -208,7 +208,6 @@ function displayData() {
                     .click(function () {
                         displayHelp(caret.id);
                     });
-    
             }
         }
     }
