@@ -316,7 +316,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 0,
+                        "Amount": -2,
                         "Class": 4
                     },
                     {
@@ -339,7 +339,7 @@
                 "LanguageHelpId": 26344,
                 "LanguageNameId": 5344,
                 "LineOfSight": 2,
-                "MeleeArmor": 0,
+                "MeleeArmor": -2,
                 "MinRange": 0,
                 "PierceArmor": 7,
                 "Range": 0,
@@ -427,7 +427,7 @@
                 "Attack": 0,
                 "Attacks": [],
                 "Cost": {
-                    "Wood": 2
+                    "Wood": 3
                 },
                 "GarrisonCapacity": 0,
                 "HP": 150,
@@ -3581,7 +3581,7 @@
                 "ID": 756,
                 "LanguageHelpId": 28344,
                 "LanguageNameId": 7344,
-                "Repeatable": true,
+                "Repeatable": false,
                 "ResearchTime": 60,
                 "internal_name": "First Crusade"
             },
@@ -4292,7 +4292,7 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 5,
+                        "Amount": 7,
                         "Class": 4
                     },
                     {
@@ -4308,7 +4308,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 12,
+                "Attack": 14,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
@@ -4320,7 +4320,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 12,
+                        "Amount": 14,
                         "Class": 4
                     }
                 ],
@@ -4336,7 +4336,7 @@
                 "LanguageNameId": 5112,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
-                "MeleeArmor": 5,
+                "MeleeArmor": 7,
                 "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 0,
@@ -5497,7 +5497,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 8,
+                "Attack": 10,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
@@ -5509,7 +5509,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 8,
+                        "Amount": 10,
                         "Class": 4
                     },
                     {
@@ -5581,6 +5581,10 @@
                     {
                         "Amount": 7,
                         "Class": 13
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
                     },
                     {
                         "Amount": 0,
@@ -6033,7 +6037,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 8,
+                "Attack": 10,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
@@ -6045,7 +6049,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 8,
+                        "Amount": 10,
                         "Class": 4
                     },
                     {
@@ -6059,7 +6063,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 60,
+                "HP": 70,
                 "ID": 291,
                 "LanguageHelpId": 26110,
                 "LanguageNameId": 5110,
@@ -8325,6 +8329,10 @@
                     },
                     {
                         "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
                         "Class": 21
                     }
                 ],
@@ -8844,7 +8852,7 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 1,
                         "Class": 4
                     },
                     {
@@ -8860,7 +8868,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 9,
+                "Attack": 12,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
@@ -8872,7 +8880,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 9,
+                        "Amount": 12,
                         "Class": 4
                     },
                     {
@@ -8896,7 +8904,7 @@
                 "LanguageNameId": 5574,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": 1,
                 "MinRange": 0,
                 "PierceArmor": 1,
                 "Range": 0,
@@ -8973,7 +8981,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 1.05,
-                "TrainTime": 14,
+                "TrainTime": 12,
                 "internal_name": "UVBRK"
             },
             "725": {
@@ -9034,7 +9042,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 50,
+                "HP": 65,
                 "ID": 725,
                 "LanguageHelpId": 26667,
                 "LanguageNameId": 5667,
@@ -10722,7 +10730,7 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 1,
                         "Class": 4
                     },
                     {
@@ -10768,13 +10776,13 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 60,
+                "HP": 70,
                 "ID": 879,
                 "LanguageHelpId": 26686,
                 "LanguageNameId": 5686,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": 1,
                 "MinRange": 0,
                 "PierceArmor": 0,
                 "Range": 1,
@@ -11590,7 +11598,7 @@
                 },
                 "FrameDelay": 30,
                 "GarrisonCapacity": 0,
-                "HP": 30,
+                "HP": 35,
                 "ID": 1013,
                 "LanguageHelpId": 26140,
                 "LanguageNameId": 5140,
@@ -11718,7 +11726,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 40,
+                "HP": 45,
                 "ID": 1016,
                 "LanguageHelpId": 26143,
                 "LanguageNameId": 5143,
@@ -12618,6 +12626,10 @@
                     },
                     {
                         "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
                         "Class": 21
                     }
                 ],
@@ -12681,6 +12693,10 @@
                     {
                         "Amount": 7,
                         "Class": 13
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
                     },
                     {
                         "Amount": 0,
@@ -14428,7 +14444,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 0.9,
-                "TrainTime": 9,
+                "TrainTime": 12,
                 "internal_name": "OBUCH"
             },
             "1703": {
@@ -14490,7 +14506,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 0.9,
-                "TrainTime": 9,
+                "TrainTime": 12,
                 "internal_name": "EOBUCH"
             },
             "1704": {
@@ -14559,7 +14575,7 @@
                 "Range": 6,
                 "RechargeRate": 0,
                 "ReloadTime": 3.45,
-                "Speed": 0.85,
+                "Speed": 0.8,
                 "TrainTime": 21,
                 "internal_name": "HUSSITEWAGON"
             },
@@ -14629,7 +14645,7 @@
                 "Range": 6,
                 "RechargeRate": 0,
                 "ReloadTime": 3.45,
-                "Speed": 0.85,
+                "Speed": 0.8,
                 "TrainTime": 21,
                 "internal_name": "EHUSSITEWAGON"
             },
@@ -19097,6 +19113,7 @@
                 321,
                 322,
                 374,
+                377,
                 379,
                 408,
                 435,
@@ -20647,7 +20664,6 @@
                 379,
                 380,
                 408,
-                437,
                 439,
                 602,
                 608,
