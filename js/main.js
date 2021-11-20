@@ -178,11 +178,15 @@ function displayData() {
                 var image = item.image(prefix + imagePrefix(caret.id) + '.png', caret.width * 0.6, caret.height * 0.6)
                     .attr({id: caret.id + '_img'})
                     .move(caret.x + caret.width * 0.2, caret.y);
-                var cross = item.polygon([1, 0, 3, 2, 5, 0, 6, 1, 4, 3, 6, 5, 5, 6, 3, 4, 1, 6, 0, 5, 2, 3, 0, 1])
-                    .attr({fill: '#ff0000', opacity:0.5, id: caret.id + '_x'})
+                var rect_disabled_gray = item.rect(caret.width, caret.height).attr({
+                    fill: '#000',
+                    opacity: 0.2,
+                    id: `${caret.id}_disabled_gray`
+                }).move(caret.x, caret.y);
+                var cross =item.image(prefix + 'cross.png', caret.width * 0.7, caret.height * 0.7)
+                    .attr({id: caret.id + '_x'})
                     .addClass('cross')
-                    .size(caret.width * 0.6, caret.height * 0.6)
-                    .move(caret.x + caret.width * 0.2, caret.y);
+                    .move(caret.x + caret.width * 0.15, caret.y - caret.height * 0.04);
                 var overlaytrigger = item.rect(caret.width, caret.height)
                     .attr({id: caret.id + '_overlay'})
                     .addClass('node__overlay')
@@ -765,6 +769,7 @@ function civ(name) {
             }
         }
         makeSVGObjectOpaque(this);
+        makeSVGObjectOpaque(SVG.get(this.id().replace('_x', '_disabled_gray')), 0.2);
     });
 
     enable(selectedCiv.buildings, [...selectedCiv.units, UNIQUE_UNIT, ELITE_UNIQUE_UNIT], [...selectedCiv.techs, UNIQUE_TECH_1, UNIQUE_TECH_2]);
@@ -775,11 +780,11 @@ function civ(name) {
 }
 
 function SVGObjectIsOpaque(svgObj) {
-    return svgObj.attr('fill-opacity') === 1
+    return svgObj.attr('opacity') === 1
 }
 
-function makeSVGObjectOpaque(svgObj) {
-    svgObj.attr({'fill-opacity': 1});
+function makeSVGObjectOpaque(svgObj, opacity = 1) {
+    svgObj.attr({'opacity': opacity});
 }
 
 function parseSVGObjectId(svgObjId) {
