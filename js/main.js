@@ -420,18 +420,18 @@ function getHelpText(name, id, type) {
             '<p class="helptext__stats">&nbsp;</p>');
     } else if (type === 'UNIT' || type === 'UNIQUEUNIT' ) {
         text = text.replace(/(.+?\(‹cost›\))(.+?)<i>\s*(.+?)<\/i>(.*)/m,
-            '<p>$1</p>' +
-            '<p>$2</p>' +
-            '<p><em>$3</em></p>' +
+            '<p class="helptext__heading">$1</p>' +
+            '<p class="helptext__desc">$2</p>' +
+            '<p class="helptext__upgrade_info"><em>$3</em></p>' +
             '<p class="helptext__stats">$4</p>');
     } else if (type === 'BUILDING') {
         // convert the 'Required for' text in <i> to <em> so that it doesn't break the next regex
         text = text.replace(/<b><i>(.+?)<\/b><\/i>/m, '<b><em>$1</em></b>');
         if (text.indexOf('<i>') >= 0) {
             text = text.replace(/(.+?\(‹cost›\))(.+?)<i>\s*(.+?)<\/i>(.*)/m,
-                '<p>$1</p>' +
-                '<p>$2</p>' +
-                '<p><em>$3</em></p>' +
+                '<p class="helptext__heading">$1</p>' +
+                '<p class="helptext__desc">$2</p>' +
+                '<p class="helptext__upgrade_info"><em>$3</em></p>' +
                 '<p class="helptext__stats">$4</p>');
         } else {
             // Handle certain buildings like Wonders separately as the upgrades text is missing for them.
@@ -443,7 +443,7 @@ function getHelpText(name, id, type) {
     }
     if (id in data.data.unit_upgrades) {
         text = text.replace(/<p class="helptext__stats">/,
-            '<h3>Upgrade cost</h3><p>' + cost(data.data.unit_upgrades[id].Cost) + '<p><p class="helptext__stats">');
+            '<h3>Upgrade cost</h3><p class="helptext__upgrade_cost">' + cost(data.data.unit_upgrades[id].Cost) + '<p><p class="helptext__stats">');
     }
     let meta = data.data[entitytype][id];
     if (meta !== undefined) {
@@ -640,16 +640,16 @@ function repeatableIfDefined(value) {
 function cost(cost_object) {
     let value = '';
     if ('Food' in cost_object) {
-        value += ' ' + cost_object.Food + 'F';
+        value += `<span class="cost food" title="${cost_object.Food} Food">${cost_object.Food}</span>`;
     }
     if ('Wood' in cost_object) {
-        value += ' ' + cost_object.Wood + 'W';
+        value += `<span class="cost wood" title="${cost_object.Wood} Wood">${cost_object.Wood}</span>`;
     }
     if ('Gold' in cost_object) {
-        value += ' ' + cost_object.Gold + 'G';
+        value += `<span class="cost gold" title="${cost_object.Gold} Gold">${cost_object.Gold}</span>`;
     }
     if ('Stone' in cost_object) {
-        value += ' ' + cost_object.Stone + 'S';
+        value += `<span class="cost stone" title="${cost_object.Stone} Stone">${cost_object.Stone}</span>`;
     }
     return value;
 }

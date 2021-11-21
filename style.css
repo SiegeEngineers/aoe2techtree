@@ -284,3 +284,30 @@ a.inverted {
     color: #ccc;
     padding: .2em;
 }
+
+.helptext__heading,
+.helptext__upgrade_cost {
+    line-height: 1;
+}
+
+.cost {
+    white-space: nowrap;
+    padding-left: .25em;
+}
+.cost:after {
+    vertical-align: -40%;
+    padding-left: 2px;
+    margin-bottom: -2px;
+}
+.cost.wood:after {
+    content: url("img/wood.png");
+}
+.cost.food:after {
+    content: url("img/food.png");
+}
+.cost.gold:after {
+    content: url("img/gold.png");
+}
+.cost.stone:after {
+    content: url("img/stone.png");
+}
