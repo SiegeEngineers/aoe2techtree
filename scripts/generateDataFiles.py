@@ -108,367 +108,12 @@ CIV_HELPTEXTS = {
     "Bohemians": "120188",
 }
 
-BUILDINGS = {
-    12: {"internal_name": "Barracks Age1"},
-    45: {"internal_name": "DOCK"},
-    49: {"internal_name": "SIWS"},
-    50: {"internal_name": "FARM"},
-    68: {"internal_name": "MILL"},
-    70: {"internal_name": "HOUS"},
-    71: {"internal_name": "RTWC2"},
-    72: {"internal_name": "WALL"},
-    79: {"internal_name": "WCTW"},
-    82: {"internal_name": "CSTL"},
-    84: {"internal_name": "MRKT"},
-    87: {"internal_name": "ARRG"},
-    101: {"internal_name": "STBL"},
-    103: {"internal_name": "BLAC"},
-    104: {"internal_name": "CRCH"},
-    109: {"internal_name": "RTWC"},
-    117: {"internal_name": "WALL2"},
-    155: {"internal_name": "WALL3"},
-    199: {"internal_name": "FTRAP"},
-    209: {"internal_name": "UNIV"},
-    234: {"internal_name": "WCTW2"},
-    235: {"internal_name": "WCTW3"},
-    236: {"internal_name": "WCTW4"},
-    276: {"internal_name": "WNDR"},
-    487: {"internal_name": "GTAX2"},
-    562: {"internal_name": "SMIL"},
-    584: {"internal_name": "MINE"},
-    598: {"internal_name": "WCTWX"},
-    621: {"internal_name": "RTWC1X"},
-    792: {"internal_name": "PGTAX"},
-    1021: {"internal_name": "FEITO"},
-    1251: {"internal_name": "KREPOST"},
-    1665: {"internal_name": "DONJON"},
-    1734: {"internal_name": "FOLWARK1"},
-}
-
-UNITS = {
-    4: {"internal_name": "ARCHR"},
-    5: {"internal_name": "HCANR"},
-    6: {"internal_name": "HXBOW"},
-    7: {"internal_name": "XBOWM"},
-    8: {"internal_name": "LNGBW"},
-    11: {"internal_name": "MOSUN"},
-    13: {"internal_name": "FSHSP"},
-    17: {"internal_name": "COGXX"},
-    21: {"internal_name": "GALLY"},
-    24: {"internal_name": "CARCH"},
-    25: {"internal_name": "TKNIT"},
-    36: {"internal_name": "BCANN"},
-    38: {"internal_name": "KNGHT"},
-    39: {"internal_name": "CVRCH"},
-    40: {"internal_name": "CATAP"},
-    41: {"internal_name": "GBRSK"},
-    42: {"internal_name": "TREBU"},
-    46: {"internal_name": "JANNI"},
-    73: {"internal_name": "CHUKN"},
-    74: {"internal_name": "SPRMN"},
-    75: {"internal_name": "SWDMN"},
-    77: {"internal_name": "THSWD"},
-    83: {"internal_name": "VMBAS"},
-    93: {"internal_name": "PKEMN"},
-    125: {"internal_name": "MONKX"},
-    128: {"internal_name": "TCART"},
-    185: {"internal_name": "SLINGR"},
-    207: {"internal_name": "SHCLRY"},
-    232: {"internal_name": "WBRSK"},
-    239: {"internal_name": "MPCAV"},
-    250: {"internal_name": "LNGBT"},
-    279: {"internal_name": "SCBAL"},
-    280: {"internal_name": "MANGO"},
-    281: {"internal_name": "TAXEM"},
-    282: {"internal_name": "DERVI"},
-    283: {"internal_name": "PALDN"},
-    291: {"internal_name": "SMURI"},
-    329: {"internal_name": "CVLRY"},
-    330: {"internal_name": "HCLRY"},
-    331: {"internal_name": "PTREB"},
-    358: {"internal_name": "ISPKM"},
-    359: {"internal_name": "HLBDM"},
-    420: {"internal_name": "CANGA"},
-    422: {"internal_name": "CBATR"},
-    440: {"internal_name": "PETARD"},
-    441: {"internal_name": "HUSSAR"},
-    442: {"internal_name": "WARGA"},
-    448: {"internal_name": "SCOUT"},
-    473: {"internal_name": "HTHSW"},
-    474: {"internal_name": "HCVAR"},
-    492: {"internal_name": "ACOAR"},
-    527: {"internal_name": "RMSHP"},
-    528: {"internal_name": "CRMSH"},
-    529: {"internal_name": "FRGAL"},
-    530: {"internal_name": "ULGBW"},
-    531: {"internal_name": "UTAXE"},
-    532: {"internal_name": "HFGAL"},
-    533: {"internal_name": "ULNGB"},
-    534: {"internal_name": "UWBRS"},
-    539: {"internal_name": "SGALY"},
-    542: {"internal_name": "HWBAL"},
-    545: {"internal_name": "XPORT"},
-    546: {"internal_name": "LTCAV"},
-    548: {"internal_name": "SGRAM"},
-    550: {"internal_name": "ONAGR"},
-    553: {"internal_name": "UCATA"},
-    554: {"internal_name": "UTKNI"},
-    555: {"internal_name": "UGBRS"},
-    556: {"internal_name": "UDERV"},
-    557: {"internal_name": "UJANI"},
-    558: {"internal_name": "UMPCAV"},
-    559: {"internal_name": "UCHUK"},
-    560: {"internal_name": "USMUR"},
-    561: {"internal_name": "UMOSU"},
-    567: {"internal_name": "HEROI"},
-    569: {"internal_name": "HEROC"},
-    588: {"internal_name": "SNAGR"},
-    691: {"internal_name": "CNGAU"},
-    692: {"internal_name": "VBRSK"},
-    694: {"internal_name": "UVBRK"},
-    725: {"internal_name": "JAGUAR"},
-    726: {"internal_name": "JAGUARX"},
-    751: {"internal_name": "EAGLE"},
-    752: {"internal_name": "EAGLEX"},
-    753: {"internal_name": "EAGLEH"},
-    755: {"internal_name": "TARKAN"},
-    757: {"internal_name": "UTARK"},
-    763: {"internal_name": "PLUME"},
-    765: {"internal_name": "UPLUM"},
-    771: {"internal_name": "CONQI"},
-    773: {"internal_name": "UCONQ"},
-    775: {"internal_name": "MONKY"},
-    827: {"internal_name": "WAGON"},
-    829: {"internal_name": "UWAGO"},
-    831: {"internal_name": "TURTL"},
-    832: {"internal_name": "UTURT"},
-    866: {"internal_name": "GENOE"},
-    868: {"internal_name": "GENOE_E"},
-    869: {"internal_name": "UMAGYX"},
-    871: {"internal_name": "UMAGYX"},
-    873: {"internal_name": "ELEAR"},
-    875: {"internal_name": "UELEA"},
-    876: {"internal_name": "BOYAR"},
-    878: {"internal_name": "EBOYA"},
-    879: {"internal_name": "KAMAY"},
-    881: {"internal_name": "EKAMA"},
-    882: {"internal_name": "CONDO"},
-    1001: {"internal_name": "ORGAN"},
-    1003: {"internal_name": "EORGAN"},
-    1004: {"internal_name": "CARAV"},
-    1006: {"internal_name": "CARAV"},
-    1007: {"internal_name": "CAMAR"},
-    1009: {"internal_name": "ECAMAR"},
-    1010: {"internal_name": "GENITO"},
-    1012: {"internal_name": "EGENITO"},
-    1013: {"internal_name": "GBETO"},
-    1015: {"internal_name": "EGBETO"},
-    1016: {"internal_name": "SHOTEL"},
-    1018: {"internal_name": "ESHOTEL"},
-    1103: {"internal_name": "SFRGAL"},
-    1104: {"internal_name": "SDGAL"},
-    1105: {"internal_name": "SIEGTWR"},
-    1120: {"internal_name": "ELEBALI"},
-    1122: {"internal_name": "EELEBALI"},
-    1123: {"internal_name": "KARAM"},
-    1125: {"internal_name": "EKARAM"},
-    1126: {"internal_name": "ARAMBAI"},
-    1128: {"internal_name": "EARAMBAI"},
-    1129: {"internal_name": "RATAN"},
-    1131: {"internal_name": "ERATAN"},
-    1132: {"internal_name": "BATELE"},
-    1134: {"internal_name": "EBATELE"},
-    1155: {"internal_name": "IHXBOW"},
-    1225: {"internal_name": "KONNIK"},
-    1227: {"internal_name": "EKONNIK"},
-    1228: {"internal_name": "KESHIK"},
-    1230: {"internal_name": "EKESHIK"},
-    1231: {"internal_name": "KIPCHAK"},
-    1233: {"internal_name": "EKIPCHAK"},
-    1234: {"internal_name": "LEITIS"},
-    1236: {"internal_name": "ELEITIS"},
-    1252: {"internal_name": "KONNIK_INF"},
-    1253: {"internal_name": "EKONNIK_INF"},
-    1254: {"internal_name": "KONNIK"},
-    1255: {"internal_name": "EKONNIK"},
-    1258: {"internal_name": "BTRAM"},
-    1263: {"internal_name": "FCAMEL"},
-    1370: {"internal_name": "SLANCER"},
-    1372: {"internal_name": "ESLANCER"},
-    1570: {"internal_name": "AZTRAIDER"},
-    1655: {"internal_name": "COUSTILLIER"},
-    1657: {"internal_name": "ECOUSTILLIER"},
-    1658: {"internal_name": "SERJEANT"},
-    1659: {"internal_name": "ESERJEANT"},
-    1660: {"internal_name": "DSERJEANT"},
-    1661: {"internal_name": "EDSERJEANT"},
-    1699: {"internal_name": "FLEMISHPIKEMAN2"},
-    1701: {"internal_name": "OBUCH"},
-    1703: {"internal_name": "EOBUCH"},
-    1704: {"internal_name": "HUSSITEWAGON"},
-    1706: {"internal_name": "EHUSSITEWAGON"},
-    1707: {"internal_name": "WINGEDHUSSAR"},
-    1709: {"internal_name": "HOUFNICE"},
-}
-
-TECHS = {
-    3: {"internal_name": "British Yeoman"},
-    4: {"internal_name": "Mayan El Dorado"},
-    5: {"internal_name": "Celtic Furor Celtica"},
-    6: {"internal_name": "Mongol Siege Drill"},
-    7: {"internal_name": "Persian Mahouts"},
-    8: {"internal_name": "Town Watch"},
-    9: {"internal_name": "Saracen Zealotry"},
-    10: {"internal_name": "Turkish Artillery"},
-    11: {"internal_name": "Teuton Crenellations"},
-    12: {"internal_name": "Crop rotation"},
-    13: {"internal_name": "Heavy plow"},
-    14: {"internal_name": "Horse collar"},
-    15: {"internal_name": "Guilds"},
-    16: {"internal_name": "Gothic Anarchy"},
-    17: {"internal_name": "Banking"},
-    19: {"internal_name": "Cartography"},
-    21: {"internal_name": "Hun Atheism"},
-    22: {"internal_name": "Loom"},
-    23: {"internal_name": "Coinage"},
-    24: {"internal_name": "Aztec Garland Wars"},
-    39: {"internal_name": "Husbandry"},
-    45: {"internal_name": "Faith"},
-    47: {"internal_name": "Chemistry"},
-    48: {"internal_name": "Caravan"},
-    49: {"internal_name": "Viking Berserkergang"},
-    50: {"internal_name": "Masonry"},
-    51: {"internal_name": "Architecture"},
-    52: {"internal_name": "Chinese Rocketry"},
-    54: {"internal_name": "Stone cutting"},
-    55: {"internal_name": "Gold Mining"},
-    59: {"internal_name": "Japanese Kataparuto"},
-    61: {"internal_name": "Byzantine Logistica"},
-    63: {"internal_name": "Keep"},
-    64: {"internal_name": "Bombard Tower"},
-    65: {"internal_name": "Gillnets"},
-    67: {"internal_name": "Forging"},
-    68: {"internal_name": "Iron casting"},
-    74: {"internal_name": "Scale Mail Armor"},
-    75: {"internal_name": "Blast Furnace"},
-    76: {"internal_name": "Chain Mail Armor"},
-    77: {"internal_name": "Plate Mail Armor"},
-    80: {"internal_name": "Plate Barding Armor"},
-    81: {"internal_name": "Scale Barding Armor"},
-    82: {"internal_name": "Chain Barding Armor"},
-    83: {"internal_name": "Frankish Bearded Axe"},
-    90: {"internal_name": "Tracking"},
-    93: {"internal_name": "Ballistics"},
-    101: {"internal_name": "Middle Age"},
-    102: {"internal_name": "Feudal Age"},
-    103: {"internal_name": "Imperial Age"},
-    140: {"internal_name": "Guard Tower"},
-    182: {"internal_name": "Gold Shaft Mining"},
-    194: {"internal_name": "Fortified Wall"},
-    199: {"internal_name": "Fletching"},
-    200: {"internal_name": "Bodkin Arrow"},
-    201: {"internal_name": "Bracer"},
-    202: {"internal_name": "Double Bit Axe"},
-    203: {"internal_name": "Bow Saw"},
-    211: {"internal_name": "Padded Archer Armor"},
-    212: {"internal_name": "Leather Archer Armor"},
-    213: {"internal_name": "Wheel Barrow"},
-    215: {"internal_name": "Squires"},
-    219: {"internal_name": "Ring Archer Armor"},
-    221: {"internal_name": "Two Man Saw"},
-    230: {"internal_name": "Block Printing"},
-    231: {"internal_name": "Sanctity"},
-    233: {"internal_name": "Illumination"},
-    249: {"internal_name": "Hand Cart"},
-    252: {"internal_name": "Fervor"},
-    278: {"internal_name": "Stone Mining"},
-    279: {"internal_name": "Stone Shaft Mining"},
-    280: {"internal_name": "Town Patrol"},
-    315: {"internal_name": "Conscription"},
-    316: {"internal_name": "Redemption"},
-    319: {"internal_name": "Atonement"},
-    321: {"internal_name": "Sappers"},
-    322: {"internal_name": "Murder Holes"},
-    373: {"internal_name": "Shipwright"},
-    374: {"internal_name": "Careening"},
-    375: {"internal_name": "Dry Dock"},
-    377: {"internal_name": "Siege Engineers"},
-    379: {"internal_name": "Hoardings"},
-    380: {"internal_name": "Heated Shot"},
-    408: {"internal_name": "Spy Technology"},
-    435: {"internal_name": "Bloodlines"},
-    436: {"internal_name": "Parthian Tactics"},
-    437: {"internal_name": "Thumb Ring"},
-    438: {"internal_name": "Theocracy"},
-    439: {"internal_name": "Heresy"},
-    440: {"internal_name": "Spanish Supremacy"},
-    441: {"internal_name": "Herbal Medicine"},
-    445: {"internal_name": "Korean catapults"},
-    457: {"internal_name": "Gothic Perfusion"},
-    460: {"internal_name": "Aztec Sacrifice"},
-    461: {"internal_name": "Britons City Rights"},
-    462: {"internal_name": "Chinese Great Wall"},
-    463: {"internal_name": "Viking Chieftains"},
-    464: {"internal_name": "Byzantines Greek Fire"},
-    482: {"internal_name": "Stronghold"},
-    483: {"internal_name": "Huns UT"},
-    484: {"internal_name": "Japanese UT"},
-    485: {"internal_name": "Mayans UT"},
-    486: {"internal_name": "Koreans UT"},
-    487: {"internal_name": "Mongols UT"},
-    488: {"internal_name": "Persians UT"},
-    489: {"internal_name": "Teutons UT"},
-    490: {"internal_name": "Saracens UT"},
-    491: {"internal_name": "Sipahi"},
-    492: {"internal_name": "Spanish UT"},
-    493: {"internal_name": "Franks UT"},
-    494: {"internal_name": "Pavise"},
-    499: {"internal_name": "Silk Route"},
-    506: {"internal_name": "Indians UT"},
-    507: {"internal_name": "Indians UT2"},
-    512: {"internal_name": "Slavs UT"},
-    513: {"internal_name": "Slavs UT"},
-    514: {"internal_name": "Magyars UT"},
-    515: {"internal_name": "Indians UT"},
-    516: {"internal_name": "Incas UT"},
-    517: {"internal_name": "Indians UT"},
-    572: {"internal_name": "Portuguese UT"},
-    573: {"internal_name": "Portuguese UT"},
-    574: {"internal_name": "Ethiopian UT"},
-    575: {"internal_name": "Ethiopian UT"},
-    576: {"internal_name": "Malian UT"},
-    577: {"internal_name": "Malian UT"},
-    578: {"internal_name": "Berber UT"},
-    579: {"internal_name": "Berber UT"},
-    602: {"internal_name": "Arson"},
-    608: {"internal_name": "Arrowslits"},
-    622: {"internal_name": "Khmer UT"},
-    623: {"internal_name": "Khmer UT"},
-    624: {"internal_name": "Malay UT"},
-    625: {"internal_name": "Malay UT"},
-    626: {"internal_name": "Burmese UT"},
-    627: {"internal_name": "Burmese UT"},
-    628: {"internal_name": "Vietnamese UT"},
-    629: {"internal_name": "Vietnamese UT"},
-    685: {"internal_name": "Khmer UT"},
-    686: {"internal_name": "Khmer UT"},
-    687: {"internal_name": "Malay UT"},
-    688: {"internal_name": "Malay UT"},
-    689: {"internal_name": "Burmese UT"},
-    690: {"internal_name": "Burmese UT"},
-    691: {"internal_name": "Vietnamese UT"},
-    692: {"internal_name": "Vietnamese UT"},
-    716: {"internal_name": "Tracking"},
-    754: {"internal_name": "Burgundian Vineyards"},
-    755: {"internal_name": "Flemish Revolution"},
-    756: {"internal_name": "First Crusade"},
-    757: {"internal_name": "Hauberk"},
-    782: {"internal_name": "Szlachta Privileges"},
-    783: {"internal_name": "Lechitic Legacy"},
-    784: {"internal_name": "Wagenburg Tactics"},
-    785: {"internal_name": "Hussite Reforms"},
-}
-
+RTWC2 = 71
+PTREB = 42
+KONNIK_INF = 1252
+EKONNIK_INF = 1253
+CARTOGRAPHY = 19
+TRACKING = 90
 
 def get_unit_cost(unit):
     return get_cost(unit["Creatable"])
@@ -503,7 +148,7 @@ def gather_language_data(resourcesdir, data, language):
     key_value[42058] = key_value[26290]  # Use Elite Konnik for Dismounted Elite Konnik
 
     key_value_filtered = {}
-    for datatype in data:
+    for datatype in ("buildings", "units", "techs"):
         for item_id in data[datatype]:
             name_id = data[datatype][item_id]['LanguageNameId']
             help_id = data[datatype][item_id]['LanguageHelpId']
@@ -538,24 +183,34 @@ def parse_line(key_value, line):
             key_value[number] = text
 
 
-def gather_data(content):
-    civs = content["Civs"]
-    gaia = civs[0]
+def gather_data(content, civs, unit_upgrades):
+    building_ids = set.union({b for c in civs.values() for b in c['buildings']}, \
+        {RTWC2})
+    unit_ids = set.union({u for c in civs.values() for u in c['units']}, \
+        {c['unique']['castleAgeUniqueUnit'] for c in civs.values()}, \
+        {c['unique']['imperialAgeUniqueUnit'] for c in civs.values()}, \
+        {PTREB, KONNIK_INF, EKONNIK_INF})
+    tech_ids = set.union({t for c in civs.values() for t in c['techs']}, \
+        {c['unique']['castleAgeUniqueTech'] for c in civs.values()}, \
+        {c['unique']['imperialAgeUniqueTech'] for c in civs.values()}, \
+        {CARTOGRAPHY, TRACKING})
+    gaia = content["Civs"][0]
     graphics = content["Graphics"]
-    data = {"buildings": {}, "units": {}, "techs": {}}
+    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}}
     for unit in gaia["Units"]:
-        for key, value in BUILDINGS.items():
-            if unit_matches_building(unit, key, value):
-                add_building(key, value, unit, data)
-        for key, value in UNITS.items():
-            if unit_matches_unit(unit, key, value):
-                add_unit(key, value, unit, graphics, data)
+        if unit["ID"] in building_ids:
+            add_building(unit["ID"], unit, data)
+        if unit["ID"] in unit_ids:
+            add_unit(unit["ID"], unit, graphics, data)
     tech_id = 0
     for tech in content["Techs"]:
-        for key, value in TECHS.items():
-            if tech_matches(tech_id, tech, key, value):
-                add_tech(key, value, tech, data)
+        if tech_id in tech_ids:
+            add_tech(tech_id, tech, data)
         tech_id += 1
+
+    for unit_id, upgrade_id in unit_upgrades.items():
+        tech = content["Techs"][upgrade_id]
+        add_unit_upgrade(unit_id, tech_id, tech, data)
 
     data["units"][83]['LanguageNameId'] = 5606  # Villager
     data["units"][128]['LanguageNameId'] = 19052  # Trade Cart
@@ -564,21 +219,9 @@ def gather_data(content):
     return data
 
 
-def unit_matches_building(gaia_unit, building_id, building):
-    return gaia_unit["ID"] == building_id and gaia_unit["Name"] == building['internal_name']
-
-
-def unit_matches_unit(gaia_unit, unit_id, unit):
-    return gaia_unit["ID"] == unit_id and gaia_unit["Name"] == unit['internal_name']
-
-
-def tech_matches(tech_id, tech, key, value):
-    return tech_id == key and tech["Name"] == value['internal_name']
-
-
-def add_building(building_id, value, unit, data):
+def add_building(building_id, unit, data):
     data['buildings'][building_id] = {
-        'internal_name': value['internal_name'],
+        'internal_name': unit['Name'],
         'ID': building_id,
         'HP': unit["HitPoints"],
         'Cost': get_unit_cost(unit),
@@ -599,7 +242,7 @@ def add_building(building_id, value, unit, data):
     }
 
 
-def add_unit(key, value, unit, graphics, data):
+def add_unit(key, unit, graphics, data):
     if unit["Type50"]["FrameDelay"] == 0 or unit["Type50"]["AttackGraphic"] == -1:
         attack_delay_seconds = 0.0
     else:
@@ -609,7 +252,7 @@ def add_unit(key, value, unit, graphics, data):
         frame_count = attack_graphic["FrameCount"]
         attack_delay_seconds = animation_duration * frame_delay / frame_count
     data['units'][key] = {
-        'internal_name': value['internal_name'],
+        'internal_name': unit['Name'],
         'ID': key,
         'HP': unit["HitPoints"],
         'Cost': get_unit_cost(unit),
@@ -637,15 +280,24 @@ def add_unit(key, value, unit, graphics, data):
         data['units'][key]['RechargeDuration'] = unit["Creatable"]["MaxCharge"] / unit["Creatable"]["RechargeRate"]
 
 
-def add_tech(key, value, tech, data):
+def add_tech(key, tech, data):
     data['techs'][key] = {
-        'internal_name': value['internal_name'],
+        'internal_name': tech['Name'],
         'ResearchTime': tech['ResearchTime'],
         'ID': key,
         'Cost': get_cost(tech),
         'LanguageNameId': tech['LanguageDLLName'],
         'LanguageHelpId': tech['LanguageDLLName'] + 21_000,
         'Repeatable': tech['Repeatable'] == "1",
+    }
+
+
+def add_unit_upgrade(key, tech_id, tech, data):
+    data['unit_upgrades'][key] = {
+        'internal_name': tech['Name'],
+        'ResearchTime': tech['ResearchTime'],
+        'ID': tech_id,
+        'Cost': get_cost(tech),
     }
 
 
@@ -719,6 +371,7 @@ def gather_civs(techtrees):
         1260,  # Elite Kipchak from the Cuman Mercenaries tech
     )
     civs = {}
+    unit_upgrades = {}
     for civ in techtrees['civs']:
         current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkPrefix': ''}
         for building in civ['civ_techs_buildings']:
@@ -734,6 +387,8 @@ def gather_civs(techtrees):
                     current_civ['unique']['imperialAgeUniqueUnit'] = unit['Node ID']
                 elif unit['Node ID'] not in unit_excludelist:
                     current_civ['units'].append(unit['Node ID'])
+                if unit['Trigger Tech ID'] > -1:
+                    unit_upgrades[unit['Node ID']] = unit['Trigger Tech ID']
 
         for tech in civ['civ_techs_units']:
             if tech['Node Type'] == 'Research' and tech['Node Status'] != 'NotAvailable':
@@ -757,7 +412,7 @@ def gather_civs(techtrees):
     for civname in ('Aztecs', 'Mayans', 'Incas'):
         civs[civname]['units'].append(XOLOTL_WARRIOR)
         civs[civname]['units'] = sorted(civs[civname]['units'])
-    return civs
+    return civs, unit_upgrades
 
 
 def write_datafile(data, techtrees, outputdir):
@@ -786,13 +441,13 @@ def main():
     if args.output:
         outputdir = Path(args.output)
 
-    datafile = Path(args.datafile)
-    content = json.loads(datafile.read_text())
-    data = gather_data(content)
-
     techtreesfile = Path(args.programdir) / 'widgetui' / 'civTechTrees.json'
     techtrees = json.loads(techtreesfile.read_text())
-    civs = gather_civs(techtrees)
+    civs, unit_upgrades = gather_civs(techtrees)
+
+    datafile = Path(args.datafile)
+    content = json.loads(datafile.read_text())
+    data = gather_data(content, civs, unit_upgrades)
 
     write_datafile(data, civs, outputdir)
     write_language_files(args, data, outputdir)
