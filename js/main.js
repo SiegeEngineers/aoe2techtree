@@ -441,6 +441,10 @@ function getHelpText(name, id, type) {
                 '<p class="helptext__stats">$3</p>');
         }
     }
+    if (id in data.data.unit_upgrades) {
+        text = text.replace(/<p class="helptext__stats">/,
+            '<h3>Upgrade cost</h3><p>' + cost(data.data.unit_upgrades[id].Cost) + '<p><p class="helptext__stats">');
+    }
     let meta = data.data[entitytype][id];
     if (meta !== undefined) {
         text = text.replace(/‹cost›/, 'Cost: ' + cost(meta.Cost));
