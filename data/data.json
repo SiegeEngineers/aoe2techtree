@@ -3798,12 +3798,12 @@
             },
             "527": {
                 "Cost": {
-                    "Food": 500,
-                    "Gold": 500
+                    "Food": 230,
+                    "Gold": 100
                 },
                 "ID": 851,
-                "ResearchTime": 60,
-                "internal_name": "Hun Atheism"
+                "ResearchTime": 50,
+                "internal_name": "War Galley"
             },
             "528": {
                 "Cost": {
@@ -3816,12 +3816,12 @@
             },
             "529": {
                 "Cost": {
-                    "Food": 500,
-                    "Gold": 500
+                    "Food": 230,
+                    "Gold": 100
                 },
                 "ID": 851,
-                "ResearchTime": 60,
-                "internal_name": "Hun Atheism"
+                "ResearchTime": 50,
+                "internal_name": "War Galley"
             },
             "530": {
                 "Cost": {

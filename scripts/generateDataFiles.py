@@ -412,6 +412,13 @@ def gather_civs(techtrees):
     for civname in ('Aztecs', 'Mayans', 'Incas'):
         civs[civname]['units'].append(XOLOTL_WARRIOR)
         civs[civname]['units'] = sorted(civs[civname]['units'])
+
+    DEMOLITION_SHIP = 527
+    FIRE_SHIP = 529
+    WAR_GALLEY_UPGRADE = 34
+    unit_upgrades[DEMOLITION_SHIP] = WAR_GALLEY_UPGRADE
+    unit_upgrades[FIRE_SHIP] = WAR_GALLEY_UPGRADE
+
     return civs, unit_upgrades
 
 
