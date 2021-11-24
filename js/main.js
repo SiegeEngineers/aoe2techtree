@@ -447,7 +447,7 @@ function getHelpText(name, id, type) {
     }
     let meta = data.data[entitytype][id];
     if (meta !== undefined) {
-        text = text.replace(/‹cost›/, 'Cost: ' + cost(meta.Cost));
+        text = text.replace(/‹cost›/, cost(meta.Cost));
         let stats = []
         if (text.match(/‹hp›/)) {
             stats.push('HP:&nbsp;' + meta.HP);
