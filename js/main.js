@@ -44,6 +44,7 @@ const unitClasses = {
     34: 'Fishing Ships',
     35: 'Mamelukes',
     36: 'Heroes and Kings',
+    37: 'Hussite Wagons',
 };
 
 const locales = {
