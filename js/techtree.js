@@ -217,6 +217,13 @@ const ELITE_HUSSITE_WAGON = 1706;
 const WINGED_HUSSAR = 1707;
 const HOUFNICE = 1709;
 const FOLWARK = 1734;
+const ARMORED_ELEPHANT = 1744;
+const SIEGE_ELEPHANT = 1746;
+const THIRISADAI = 1750;
+const SHRIVAMSHA_RIDER = 1751;
+const ELITE_SHRIVAMSHA_RIDER = 1753;
+const CARAVANSERAI = 1754;
+const CAMEL_SCOUT = 1755;
 const YEOMEN = 3;
 const EL_DORADO = 4;
 const FUROR_CELTICA = 5;
@@ -634,12 +641,14 @@ function getDefaultTree() {
     archerylane.rows.castle_1.push(unit(ELITE_SKIRMISHER));
     archerylane.rows.castle_1.push(uniqueunit(SLINGER));
     archerylane.rows.castle_1.push(unit(CAVALRY_ARCHER));
+    archerylane.rows.castle_1.push(unit(ELEPHANT_ARCHER));
     archerylane.rows.castle_1.push(uniqueunit(GENITOUR));
     archerylane.rows.castle_1.push(tech(THUMB_RING));
     archerylane.rows.imperial_1.push(unit(ARBALESTER));
     archerylane.rows.imperial_1.push(uniqueunit(IMPERIAL_SKIRMISHER));
     archerylane.rows.imperial_1.push(unit(HAND_CANNONEER));
     archerylane.rows.imperial_1.push(unit(HEAVY_CAV_ARCHER));
+    archerylane.rows.imperial_1.push(unit(ELITE_ELEPHANT_ARCHER));
     archerylane.rows.imperial_1.push(uniqueunit(ELITE_GENITOUR));
     archerylane.rows.imperial_1.push(tech(PARTHIAN_TACTICS));
     tree.lanes.push(archerylane);
@@ -669,31 +678,36 @@ function getDefaultTree() {
     stablelane.rows.feudal_1.push(building(STABLE));
     stablelane.rows.feudal_2.push(unit(SCOUT_CAVALRY));
     stablelane.rows.feudal_2.push(tech(BLOODLINES));
+    stablelane.rows.feudal_2.push(uniqueunit(CAMEL_SCOUT));
     stablelane.rows.castle_1.push(unit(LIGHT_CAVALRY));
-    stablelane.rows.castle_1.push(unit(KNIGHT));
+    stablelane.rows.castle_1.push(uniqueunit(SHRIVAMSHA_RIDER));
     stablelane.rows.castle_1.push(unit(CAMEL_RIDER));
+    stablelane.rows.castle_1.push(unit(KNIGHT));
     stablelane.rows.castle_1.push(unit(BATTLE_ELEPHANT));
     stablelane.rows.castle_1.push(unit(STEPPE_LANCER));
     stablelane.rows.castle_1.push(uniqueunit(XOLOTL_WARRIOR));
     stablelane.rows.castle_1.push(tech(HUSBANDRY));
     stablelane.rows.imperial_1.push(unit(HUSSAR));
-    stablelane.rows.imperial_1.push(unit(CAVALIER));
+    stablelane.rows.imperial_1.push(uniqueunit(ELITE_SHRIVAMSHA_RIDER));
     stablelane.rows.imperial_1.push(unit(HEAVY_CAMEL_RIDER));
+    stablelane.rows.imperial_1.push(unit(CAVALIER));
     stablelane.rows.imperial_1.push(unit(ELITE_BATTLE_ELEPHANT));
     stablelane.rows.imperial_1.push(unit(ELITE_STEPPE_LANCER));
     stablelane.rows.imperial_2.push(uniqueunit(WINGED_HUSSAR));
-    stablelane.rows.imperial_2.push(unit(PALADIN));
     stablelane.rows.imperial_2.push(uniqueunit(IMPERIAL_CAMEL_RIDER));
+    stablelane.rows.imperial_2.push(unit(PALADIN));
     tree.lanes.push(stablelane);
 
 
     let siegeworkshoplane = new Lane();
     siegeworkshoplane.rows.castle_1.push(building(SIEGE_WORKSHOP));
     siegeworkshoplane.rows.castle_2.push(unit(BATTERING_RAM));
+    siegeworkshoplane.rows.castle_2.push(unit(ARMORED_ELEPHANT));
     siegeworkshoplane.rows.castle_2.push(unit(MANGONEL));
     siegeworkshoplane.rows.castle_2.push(unit(SCORPION));
     siegeworkshoplane.rows.castle_2.push(unit(SIEGE_TOWER));
     siegeworkshoplane.rows.imperial_1.push(unit(CAPPED_RAM));
+    siegeworkshoplane.rows.imperial_1.push(unit(SIEGE_ELEPHANT));
     siegeworkshoplane.rows.imperial_1.push(unit(ONAGER));
     siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_SCORPION));
     siegeworkshoplane.rows.imperial_1.push(unit(BOMBARD_CANNON));
@@ -745,9 +759,10 @@ function getDefaultTree() {
     docklane.rows.imperial_1.push(uniqueunit(ELITE_TURTLE_SHIP));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_LONGBOAT));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_CARAVEL));
-    docklane.rows.imperial_2.push(unit(ELITE_CANNON_GALLEON));
+    docklane.rows.imperial_1.push(uniqueunit(THIRISADAI));
     docklane.rows.imperial_1.push(tech(DRY_DOCK));
     docklane.rows.imperial_1.push(tech(SHIPWRIGHT));
+    docklane.rows.imperial_2.push(unit(ELITE_CANNON_GALLEON));
     tree.lanes.push(docklane);
 
 
@@ -872,6 +887,10 @@ function getDefaultTree() {
     feitorialane.rows.imperial_1.push(building(FEITORIA));
     tree.lanes.push(feitorialane);
 
+    let caravanserailane = new Lane();
+    caravanserailane.rows.imperial_1.push(building(CARAVANSERAI));
+    tree.lanes.push(caravanserailane);
+
 
     let miningcamplane = new Lane();
     miningcamplane.rows.dark_1.push(building(MINING_CAMP));
@@ -942,6 +961,8 @@ function getConnections() {
         [u(SKIRMISHER), u(ELITE_SKIRMISHER)],
         [b(ARCHERY_RANGE), u(CAVALRY_ARCHER)],
         [u(CAVALRY_ARCHER), u(HEAVY_CAV_ARCHER)],
+        [b(ARCHERY_RANGE), u(ELEPHANT_ARCHER)],
+        [u(ELEPHANT_ARCHER), u(ELITE_ELEPHANT_ARCHER)],
         [b(ARCHERY_RANGE), t(THUMB_RING)],
         [b(BARRACKS), b(ARCHERY_RANGE)],
         [b(BARRACKS), b(STABLE)],
@@ -962,6 +983,8 @@ function getConnections() {
         [u(SCOUT_CAVALRY), u(LIGHT_CAVALRY)],
         [u(LIGHT_CAVALRY), u(HUSSAR)],
         [u(LIGHT_CAVALRY), u(WINGED_HUSSAR)],
+        [u(SHRIVAMSHA_RIDER), u(ELITE_SHRIVAMSHA_RIDER)],
+        [b(STABLE), u(CAMEL_SCOUT)],
         [b(STABLE), t(BLOODLINES)],
         [b(STABLE), u(CAMEL_RIDER)],
         [u(CAMEL_RIDER), u(HEAVY_CAMEL_RIDER)],
@@ -971,6 +994,7 @@ function getConnections() {
         [u(STEPPE_LANCER), u(ELITE_STEPPE_LANCER)],
         [b(STABLE), u(XOLOTL_WARRIOR)],
         [b(STABLE), t(HUSBANDRY)],
+        [b(STABLE), u(KNIGHT)],
         [u(KNIGHT), u(CAVALIER)],
         [u(CAVALIER), u(PALADIN)],
         [b(DOCK), u(FISHING_SHIP)],
@@ -1024,6 +1048,8 @@ function getConnections() {
         [b(SIEGE_WORKSHOP), u(BATTERING_RAM)],
         [u(BATTERING_RAM), u(CAPPED_RAM)],
         [u(CAPPED_RAM), u(SIEGE_RAM)],
+        [b(SIEGE_WORKSHOP), u(ARMORED_ELEPHANT)],
+        [u(ARMORED_ELEPHANT), u(SIEGE_ELEPHANT)],
         [b(SIEGE_WORKSHOP), u(SCORPION)],
         [u(SCORPION), u(HEAVY_SCORPION)],
         [b(SIEGE_WORKSHOP), u(SIEGE_TOWER)],
@@ -1081,7 +1107,8 @@ function getConnections() {
         [b(DOCK), u(TURTLE_SHIP)],
         [b(ARCHERY_RANGE), u(SLINGER)],
         [b(ARCHERY_RANGE), u(GENITOUR)],
-        [b(DOCK), u(LONGBOAT)]
+        [b(DOCK), u(LONGBOAT)],
+        [b(DOCK), u(THIRISADAI)],
     ];
 
     let connection_ids = [];

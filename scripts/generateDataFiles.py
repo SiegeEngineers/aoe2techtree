@@ -44,7 +44,7 @@ CIV_NAMES = {
     "Huns": "10287",
     "Koreans": "10288",
     "Italians": "10289",
-    "Indians": "10290",
+    "Hindustanis": "10290",
     "Incas": "10291",
     "Magyars": "10292",
     "Slavs": "10293",
@@ -64,6 +64,9 @@ CIV_NAMES = {
     "Sicilians": "10307",
     "Poles": "10308",
     "Bohemians": "10309",
+    "Bengalis": "10311",
+    "Dravidians": "10310",
+    "Gurjaras": "10312",
 }
 
 CIV_HELPTEXTS = {
@@ -86,7 +89,7 @@ CIV_HELPTEXTS = {
     "Huns": "120166",
     "Koreans": "120167",
     "Italians": "120168",
-    "Indians": "120169",
+    "Hindustanis": "120169",
     "Incas": "120170",
     "Magyars": "120171",
     "Slavs": "120172",
@@ -106,6 +109,9 @@ CIV_HELPTEXTS = {
     "Sicilians": "120186",
     "Poles": "120187",
     "Bohemians": "120188",
+    "Bengalis": "120190",
+    "Dravidians": "120189",
+    "Gurjaras": "120191",
 }
 
 RTWC2 = 71
@@ -146,6 +152,10 @@ def gather_language_data(resourcesdir, data, language):
     key_value[26768] = key_value[28314]  # Gillnets
     key_value[42057] = key_value[26288]  # Use Konnik for Dismounted Konnik
     key_value[42058] = key_value[26290]  # Use Elite Konnik for Dismounted Elite Konnik
+    key_value[21104] = key_value[5414]  # Fix Ratha name
+    key_value[42104] = key_value[26414]  # Fix Ratha description
+    key_value[21105] = key_value[5420]  # Fix Elite Ratha name
+    key_value[42105] = key_value[26420]  # Fix Elite Ratha description
 
     key_value_filtered = {}
     for datatype in ("buildings", "units", "techs"):
@@ -406,6 +416,8 @@ def gather_civs(techtrees):
         civname = civ['civ_id'].capitalize()
         if civname == 'Magyar':
             civname = 'Magyars'
+        if civname == 'Indians':
+            civname = 'Hindustanis'
         civs[civname] = current_civ
 
     XOLOTL_WARRIOR = 1570
