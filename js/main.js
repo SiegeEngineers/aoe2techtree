@@ -412,7 +412,7 @@ function getHelpText(name, id, type) {
     if (text === undefined) {
         return '?';
     }
-    text = text.replace(/\s<br>/g, '');
+    text = text.replace(/<br>/g, '');
     text = text.replace(/\n/g, '');
     if (type === 'TECHNOLOGY') {
         text = text.replace(/(.+?\(.+?\))(.*)/m,
