@@ -118,6 +118,8 @@ RTWC2 = 71
 PTREB = 42
 KONNIK_INF = 1252
 EKONNIK_INF = 1253
+RATHA = 1738
+ERATHA = 1740
 CARTOGRAPHY = 19
 TRACKING = 90
 
@@ -154,8 +156,10 @@ def gather_language_data(resourcesdir, data, language):
     key_value[42058] = key_value[26290]  # Use Elite Konnik for Dismounted Elite Konnik
     key_value[21104] = key_value[5414]  # Fix Ratha name
     key_value[42104] = key_value[26414]  # Fix Ratha description
+    key_value[42096] = key_value[26414]  # Fix Ratha (melee) description
     key_value[21105] = key_value[5420]  # Fix Elite Ratha name
     key_value[42105] = key_value[26420]  # Fix Elite Ratha description
+    key_value[42097] = key_value[26420]  # Fix Elite Ratha (melee) description
 
     key_value_filtered = {}
     for datatype in ("buildings", "units", "techs"):
@@ -199,7 +203,7 @@ def gather_data(content, civs, unit_upgrades):
     unit_ids = set.union({u for c in civs.values() for u in c['units']}, \
         {c['unique']['castleAgeUniqueUnit'] for c in civs.values()}, \
         {c['unique']['imperialAgeUniqueUnit'] for c in civs.values()}, \
-        {PTREB, KONNIK_INF, EKONNIK_INF})
+        {PTREB, KONNIK_INF, EKONNIK_INF, RATHA, ERATHA})
     tech_ids = set.union({t for c in civs.values() for t in c['techs']}, \
         {c['unique']['castleAgeUniqueTech'] for c in civs.values()}, \
         {c['unique']['imperialAgeUniqueTech'] for c in civs.values()}, \
@@ -273,6 +277,8 @@ def add_unit(key, unit, graphics, data):
         'GarrisonCapacity': unit["GarrisonCapacity"],
         'LineOfSight': unit["LineOfSight"],
         'Speed': unit["Speed"],
+        'Trait': unit["Trait"],
+        'TraitPiece': unit["Nothing"],
         'Attacks': unit["Type50"]["Attacks"],
         'Armours': unit["Type50"]["Armours"],
         'ReloadTime': unit["Type50"]["ReloadTime"],
@@ -283,6 +289,8 @@ def add_unit(key, unit, graphics, data):
         'TrainTime': unit["Creatable"]["TrainTime"],
         'MaxCharge': unit["Creatable"]["MaxCharge"],
         'RechargeRate': unit["Creatable"]["RechargeRate"],
+        'ChargeEvent': unit["Creatable"]["ChargeEvent"],
+        'ChargeType': unit["Creatable"]["ChargeType"],
         'LanguageNameId': unit['LanguageDLLName'],
         'LanguageHelpId': unit['LanguageDLLName'] + 21_000,
     }

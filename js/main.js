@@ -404,6 +404,59 @@ function positionHelptextToLeftOrRight(caret, helptext) {
     helptext.style.left = destX + 'px';
 }
 
+function chargeText(type) {
+    switch (type) {
+        case 1:
+            return 'Charge Attack:&nbsp;';
+        case 3:
+            return 'Charged Area Attack:&nbsp;';
+        case 4:
+            return 'Projectile Dodging:&nbsp;';
+        default:
+            return 'Unknown Charge:&nbsp;';
+    }
+}
+
+function splitTrait(trait) {
+    const traits = [];
+    for (let x of [1, 2, 4, 8, 16, 32, 64, 128]) {
+        if ((trait & x) > 0) {
+            traits.push(x);
+        }
+    }
+    return traits;
+}
+
+function traitsIfDefined(trait, traitPiece) {
+    let traitdescriptions = [];
+    if (trait === undefined || trait === 0) {
+        return false;
+    }
+    const traits = splitTrait(trait);
+    for (let singleTrait of traits) {
+        switch (singleTrait) {
+            case 1:
+                traitdescriptions.push('Garrison Unit');
+                break;
+            case 2:
+                traitdescriptions.push('Ship Unit');
+                break;
+            case 4:
+                traitdescriptions.push('Builds:&nbsp;' + data.strings[data.data['buildings'][traitPiece]['LanguageNameId']]);
+                break;
+            case 8:
+                traitdescriptions.push('Transforms into:&nbsp;' + data.strings[(data.data['buildings'][traitPiece]||data.data['units'][traitPiece])['LanguageNameId']]);
+                break;
+            case 16:
+                traitdescriptions.push('Scout Unit');
+                break;
+            default:
+                traitdescriptions.push('Unknown Trait:&nbsp;' + trait);
+        }
+    }
+    return traitdescriptions;
+}
+
 function getHelpText(name, id, type) {
     let entitytype = getEntityType(type);
     const items = id.split('_', 1);
@@ -475,8 +528,9 @@ function getHelpText(name, id, type) {
         stats.push(secondsIfDefined(meta.TrainTime, 'Build Time:&nbsp;'));
         stats.push(secondsIfDefined(meta.ResearchTime, 'Research Time:&nbsp;'));
         stats.push(ifDefined(meta.FrameDelay, 'Frame Delay:&nbsp;'));
-        stats.push(ifDefinedAndGreaterZero(meta.MaxCharge, 'Charge Attack:&nbsp;'));
+        stats.push(ifDefinedAndGreaterZero(meta.MaxCharge, chargeText(meta.ChargeType)));
         stats.push(ifDefinedAndGreaterZero(meta.RechargeRate, 'Recharge Rate:&nbsp;'));
+        stats.push(traitsIfDefined(meta.Trait, meta.TraitPiece));
         stats.push(secondsIfDefined(meta.RechargeDuration, 'Recharge Duration:&nbsp;'));
         stats.push(secondsIfDefined(meta.AttackDelaySeconds, 'Attack Delay:&nbsp;'));
         stats.push(secondsIfDefined(meta.ReloadTime, 'Reload Time:&nbsp;'));

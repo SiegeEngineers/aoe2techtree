@@ -4618,6 +4618,8 @@
                         "Class": 13
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 45,
                     "Wood": 25
@@ -4638,6 +4640,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.96,
                 "TrainTime": 35,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ARCHR"
             },
             "5": {
@@ -4688,6 +4692,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 45,
                     "Gold": 50
@@ -4708,6 +4714,8 @@
                 "ReloadTime": 3.45,
                 "Speed": 0.96,
                 "TrainTime": 34,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HCANR"
             },
             "6": {
@@ -4758,6 +4766,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 25,
                     "Wood": 35
@@ -4778,6 +4788,8 @@
                 "ReloadTime": 3,
                 "Speed": 0.96,
                 "TrainTime": 22,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HXBOW"
             },
             "7": {
@@ -4828,6 +4840,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 25,
                     "Wood": 35
@@ -4848,6 +4862,8 @@
                 "ReloadTime": 3,
                 "Speed": 0.96,
                 "TrainTime": 22,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "XBOWM"
             },
             "8": {
@@ -4894,6 +4910,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 40,
                     "Wood": 35
@@ -4914,6 +4932,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.96,
                 "TrainTime": 18,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "LNGBW"
             },
             "11": {
@@ -4972,6 +4992,8 @@
                         "Class": 20
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 65,
                     "Wood": 55
@@ -4992,6 +5014,8 @@
                 "ReloadTime": 2.1,
                 "Speed": 1.4,
                 "TrainTime": 26,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "MOSUN"
             },
             "13": {
@@ -5017,6 +5041,8 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Wood": 75
                 },
@@ -5036,6 +5062,8 @@
                 "ReloadTime": 0,
                 "Speed": 1.26,
                 "TrainTime": 40,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "FSHSP"
             },
             "17": {
@@ -5061,6 +5089,8 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 50,
                     "Wood": 100
@@ -5081,6 +5111,8 @@
                 "ReloadTime": 0,
                 "Speed": 1.32,
                 "TrainTime": 36,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "COGXX"
             },
             "21": {
@@ -5127,6 +5159,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 30,
                     "Wood": 90
@@ -5147,6 +5181,8 @@
                 "ReloadTime": 3,
                 "Speed": 1.43,
                 "TrainTime": 36,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "GALLY"
             },
             "24": {
@@ -5193,6 +5229,8 @@
                         "Class": 13
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 45,
                     "Wood": 25
@@ -5213,6 +5251,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.96,
                 "TrainTime": 27,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "CARCH"
             },
             "25": {
@@ -5255,6 +5295,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 85,
                     "Gold": 40
@@ -5275,6 +5317,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.8,
                 "TrainTime": 12,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "TKNIT"
             },
             "36": {
@@ -5333,6 +5377,8 @@
                         "Class": 37
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 225,
                     "Wood": 225
@@ -5353,6 +5399,8 @@
                 "ReloadTime": 6.5,
                 "Speed": 0.7,
                 "TrainTime": 56,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "BCANN"
             },
             "38": {
@@ -5395,6 +5443,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 75
@@ -5415,6 +5465,8 @@
                 "ReloadTime": 1.8,
                 "Speed": 1.35,
                 "TrainTime": 30,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "KNGHT"
             },
             "39": {
@@ -5465,6 +5517,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 40
@@ -5485,6 +5539,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.4,
                 "TrainTime": 34,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "CVRCH"
             },
             "40": {
@@ -5539,6 +5595,8 @@
                         "Class": 32
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 70,
                     "Gold": 75
@@ -5559,6 +5617,8 @@
                 "ReloadTime": 1.8,
                 "Speed": 1.35,
                 "TrainTime": 20,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "CATAP"
             },
             "41": {
@@ -5605,6 +5665,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 80,
                     "Gold": 40
@@ -5625,6 +5687,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.05,
                 "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "GBRSK"
             },
             "42": {
@@ -5663,6 +5727,8 @@
                         "Class": 3
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 200,
                     "Wood": 200
@@ -5683,6 +5749,8 @@
                 "ReloadTime": 10,
                 "Speed": 0,
                 "TrainTime": 50,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "TREBU"
             },
             "46": {
@@ -5729,6 +5797,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 55
@@ -5749,6 +5819,8 @@
                 "ReloadTime": 3.45,
                 "Speed": 0.96,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "JANNI"
             },
             "73": {
@@ -5803,6 +5875,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 35,
                     "Wood": 40
@@ -5823,6 +5897,8 @@
                 "ReloadTime": 3,
                 "Speed": 0.96,
                 "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "CHUKN"
             },
             "74": {
@@ -5869,6 +5945,8 @@
                         "Class": 30
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 20
@@ -5889,6 +5967,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "SPRMN"
             },
             "75": {
@@ -5935,6 +6015,8 @@
                         "Class": 30
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 20
@@ -5955,6 +6037,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "SWDMN"
             },
             "77": {
@@ -6001,6 +6085,8 @@
                         "Class": 30
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 20
@@ -6021,6 +6107,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "THSWD"
             },
             "83": {
@@ -6059,6 +6147,8 @@
                         "Class": 14
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 50
                 },
@@ -6078,6 +6168,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.8,
                 "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "VMBAS"
             },
             "93": {
@@ -6144,6 +6236,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 35,
                     "Wood": 25
@@ -6164,6 +6258,8 @@
                 "ReloadTime": 3,
                 "Speed": 1,
                 "TrainTime": 22,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "PKEMN"
             },
             "125": {
@@ -6189,6 +6285,8 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 0,
                     "Gold": 100
@@ -6209,6 +6307,8 @@
                 "ReloadTime": 1,
                 "Speed": 0.7,
                 "TrainTime": 51,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "MONKX"
             },
             "128": {
@@ -6230,6 +6330,8 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 50,
                     "Wood": 100
@@ -6250,6 +6352,8 @@
                 "ReloadTime": 0,
                 "Speed": 1,
                 "TrainTime": 51,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "TCART"
             },
             "185": {
@@ -6304,6 +6408,8 @@
                         "Class": 32
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 30,
                     "Gold": 40
@@ -6324,6 +6430,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.96,
                 "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "SLINGR"
             },
             "207": {
@@ -6382,6 +6490,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 55,
                     "Gold": 60
@@ -6402,6 +6512,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.45,
                 "TrainTime": 20,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "SHCLRY"
             },
             "232": {
@@ -6448,6 +6560,8 @@
                         "Class": 8
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 65,
                     "Gold": 25
@@ -6468,6 +6582,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.2,
                 "TrainTime": 10,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "WBRSK"
             },
             "239": {
@@ -6522,6 +6638,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 170,
                     "Gold": 85
@@ -6542,6 +6660,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.6,
                 "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "MPCAV"
             },
             "250": {
@@ -6592,6 +6712,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 50,
                     "Wood": 100
@@ -6612,6 +6734,8 @@
                 "ReloadTime": 3,
                 "Speed": 1.54,
                 "TrainTime": 25,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "LNGBT"
             },
             "279": {
@@ -6658,6 +6782,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 75,
                     "Wood": 75
@@ -6678,6 +6804,8 @@
                 "ReloadTime": 3.6,
                 "Speed": 0.65,
                 "TrainTime": 30,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "SCBAL"
             },
             "280": {
@@ -6720,6 +6848,8 @@
                         "Class": 37
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 135,
                     "Wood": 160
@@ -6740,6 +6870,8 @@
                 "ReloadTime": 6,
                 "Speed": 0.6,
                 "TrainTime": 46,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "MANGO"
             },
             "281": {
@@ -6786,6 +6918,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 55,
                     "Gold": 25
@@ -6806,6 +6940,8 @@
                 "ReloadTime": 2,
                 "Speed": 1,
                 "TrainTime": 17,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "TAXEM"
             },
             "282": {
@@ -6856,6 +6992,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 55,
                     "Gold": 85
@@ -6876,6 +7014,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.4,
                 "TrainTime": 23,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "DERVI"
             },
             "283": {
@@ -6918,6 +7058,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 75
@@ -6938,6 +7080,8 @@
                 "ReloadTime": 1.8,
                 "Speed": 1.35,
                 "TrainTime": 30,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "PALDN"
             },
             "291": {
@@ -6984,6 +7128,8 @@
                         "Class": 19
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 30
@@ -7004,6 +7150,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1,
                 "TrainTime": 9,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "SMURI"
             },
             "329": {
@@ -7058,6 +7206,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 55,
                     "Gold": 60
@@ -7078,6 +7228,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.45,
                 "TrainTime": 22,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "CVLRY"
             },
             "330": {
@@ -7136,6 +7288,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 55,
                     "Gold": 60
@@ -7156,6 +7310,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.45,
                 "TrainTime": 22,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HCLRY"
             },
             "331": {
@@ -7190,6 +7346,8 @@
                         "Class": 3
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 200,
                     "Wood": 200
@@ -7210,6 +7368,8 @@
                 "ReloadTime": 10,
                 "Speed": 0.8,
                 "TrainTime": 50,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "PTREB"
             },
             "358": {
@@ -7276,6 +7436,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 35,
                     "Wood": 25
@@ -7296,6 +7458,8 @@
                 "ReloadTime": 3,
                 "Speed": 1,
                 "TrainTime": 22,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ISPKM"
             },
             "359": {
@@ -7362,6 +7526,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 35,
                     "Wood": 25
@@ -7382,6 +7548,8 @@
                 "ReloadTime": 3,
                 "Speed": 1,
                 "TrainTime": 22,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HLBDM"
             },
             "420": {
@@ -7440,6 +7608,8 @@
                         "Class": 35
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 150,
                     "Wood": 200
@@ -7460,6 +7630,8 @@
                 "ReloadTime": 10,
                 "Speed": 1.1,
                 "TrainTime": 46,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "CANGA"
             },
             "422": {
@@ -7502,6 +7674,8 @@
                         "Class": 20
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 75,
                     "Wood": 160
@@ -7522,6 +7696,8 @@
                 "ReloadTime": 5,
                 "Speed": 0.5,
                 "TrainTime": 36,
+                "Trait": 1,
+                "TraitPiece": 0,
                 "internal_name": "CBATR"
             },
             "440": {
@@ -7564,6 +7740,8 @@
                         "Class": 22
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 65,
                     "Gold": 20
@@ -7584,6 +7762,8 @@
                 "ReloadTime": 5,
                 "Speed": 0.8,
                 "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "PETARD"
             },
             "441": {
@@ -7630,6 +7810,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 80
                 },
@@ -7649,6 +7831,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.5,
                 "TrainTime": 30,
+                "Trait": 16,
+                "TraitPiece": 0,
                 "internal_name": "HUSSAR"
             },
             "442": {
@@ -7695,6 +7879,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 30,
                     "Wood": 90
@@ -7715,6 +7901,8 @@
                 "ReloadTime": 3,
                 "Speed": 1.43,
                 "TrainTime": 36,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "WARGA"
             },
             "448": {
@@ -7761,6 +7949,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 80
                 },
@@ -7780,6 +7970,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.2,
                 "TrainTime": 30,
+                "Trait": 16,
+                "TraitPiece": 0,
                 "internal_name": "SCOUT"
             },
             "473": {
@@ -7826,6 +8018,8 @@
                         "Class": 30
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 20
@@ -7846,6 +8040,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HTHSW"
             },
             "474": {
@@ -7896,6 +8092,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 40
@@ -7916,6 +8114,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.4,
                 "TrainTime": 27,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HCVAR"
             },
             "492": {
@@ -7962,6 +8162,8 @@
                         "Class": 13
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 45,
                     "Wood": 25
@@ -7982,6 +8184,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.96,
                 "TrainTime": 27,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ACOAR"
             },
             "527": {
@@ -8016,6 +8220,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 50,
                     "Wood": 70
@@ -8036,6 +8242,8 @@
                 "ReloadTime": 5,
                 "Speed": 1.6,
                 "TrainTime": 31,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "RMSHP"
             },
             "528": {
@@ -8070,6 +8278,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 50,
                     "Wood": 70
@@ -8090,6 +8300,8 @@
                 "ReloadTime": 5,
                 "Speed": 1.6,
                 "TrainTime": 31,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "CRMSH"
             },
             "529": {
@@ -8140,6 +8352,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 45,
                     "Wood": 75
@@ -8160,6 +8374,8 @@
                 "ReloadTime": 0.25,
                 "Speed": 1.35,
                 "TrainTime": 36,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "FRGAL"
             },
             "530": {
@@ -8206,6 +8422,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 40,
                     "Wood": 35
@@ -8226,6 +8444,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.96,
                 "TrainTime": 18,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ULGBW"
             },
             "531": {
@@ -8272,6 +8492,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 55,
                     "Gold": 25
@@ -8292,6 +8514,8 @@
                 "ReloadTime": 2,
                 "Speed": 1,
                 "TrainTime": 17,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UTAXE"
             },
             "532": {
@@ -8342,6 +8566,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 45,
                     "Wood": 75
@@ -8362,6 +8588,8 @@
                 "ReloadTime": 0.25,
                 "Speed": 1.43,
                 "TrainTime": 36,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "HFGAL"
             },
             "533": {
@@ -8412,6 +8640,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 50,
                     "Wood": 100
@@ -8432,6 +8662,8 @@
                 "ReloadTime": 3,
                 "Speed": 1.54,
                 "TrainTime": 25,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "ULNGB"
             },
             "534": {
@@ -8478,6 +8710,8 @@
                         "Class": 8
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 65,
                     "Gold": 25
@@ -8498,6 +8732,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.2,
                 "TrainTime": 10,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UWBRS"
             },
             "539": {
@@ -8544,6 +8780,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 30,
                     "Wood": 90
@@ -8564,6 +8802,8 @@
                 "ReloadTime": 3,
                 "Speed": 1.43,
                 "TrainTime": 60,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "SGALY"
             },
             "542": {
@@ -8610,6 +8850,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 75,
                     "Wood": 75
@@ -8630,6 +8872,8 @@
                 "ReloadTime": 3.6,
                 "Speed": 0.65,
                 "TrainTime": 30,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HWBAL"
             },
             "545": {
@@ -8655,6 +8899,8 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Wood": 125
                 },
@@ -8674,6 +8920,8 @@
                 "ReloadTime": 0,
                 "Speed": 1.45,
                 "TrainTime": 46,
+                "Trait": 3,
+                "TraitPiece": 0,
                 "internal_name": "XPORT"
             },
             "546": {
@@ -8720,6 +8968,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 80
                 },
@@ -8739,6 +8989,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.5,
                 "TrainTime": 30,
+                "Trait": 16,
+                "TraitPiece": 0,
                 "internal_name": "LTCAV"
             },
             "548": {
@@ -8781,6 +9033,8 @@
                         "Class": 20
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 75,
                     "Wood": 160
@@ -8801,6 +9055,8 @@
                 "ReloadTime": 5,
                 "Speed": 0.6,
                 "TrainTime": 36,
+                "Trait": 1,
+                "TraitPiece": 0,
                 "internal_name": "SGRAM"
             },
             "550": {
@@ -8843,6 +9099,8 @@
                         "Class": 37
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 135,
                     "Wood": 160
@@ -8863,6 +9121,8 @@
                 "ReloadTime": 6,
                 "Speed": 0.6,
                 "TrainTime": 46,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ONAGR"
             },
             "553": {
@@ -8917,6 +9177,8 @@
                         "Class": 32
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 70,
                     "Gold": 75
@@ -8937,6 +9199,8 @@
                 "ReloadTime": 1.7,
                 "Speed": 1.35,
                 "TrainTime": 20,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UCATA"
             },
             "554": {
@@ -8979,6 +9243,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 85,
                     "Gold": 40
@@ -8999,6 +9265,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.8,
                 "TrainTime": 12,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UTKNI"
             },
             "555": {
@@ -9045,6 +9313,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 80,
                     "Gold": 40
@@ -9065,6 +9335,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.05,
                 "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UGBRS"
             },
             "556": {
@@ -9119,6 +9391,8 @@
                         "Class": 35
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 55,
                     "Gold": 85
@@ -9139,6 +9413,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.4,
                 "TrainTime": 23,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UDERV"
             },
             "557": {
@@ -9185,6 +9461,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 55
@@ -9205,6 +9483,8 @@
                 "ReloadTime": 3.45,
                 "Speed": 0.96,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UJANI"
             },
             "558": {
@@ -9259,6 +9539,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 170,
                     "Gold": 85
@@ -9279,6 +9561,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.6,
                 "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UMPCAV"
             },
             "559": {
@@ -9333,6 +9617,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 35,
                     "Wood": 40
@@ -9353,6 +9639,8 @@
                 "ReloadTime": 3,
                 "Speed": 0.96,
                 "TrainTime": 13,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UCHUK"
             },
             "560": {
@@ -9399,6 +9687,8 @@
                         "Class": 19
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 30
@@ -9419,6 +9709,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1,
                 "TrainTime": 9,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "USMUR"
             },
             "561": {
@@ -9477,6 +9769,8 @@
                         "Class": 20
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 65,
                     "Wood": 55
@@ -9497,6 +9791,8 @@
                 "ReloadTime": 2.1,
                 "Speed": 1.4,
                 "TrainTime": 26,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UMOSU"
             },
             "567": {
@@ -9543,6 +9839,8 @@
                         "Class": 30
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 20
@@ -9563,6 +9861,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HEROI"
             },
             "569": {
@@ -9605,6 +9905,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 75
@@ -9625,6 +9927,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.35,
                 "TrainTime": 30,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HEROC"
             },
             "588": {
@@ -9667,6 +9971,8 @@
                         "Class": 37
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 135,
                     "Wood": 160
@@ -9687,6 +9993,8 @@
                 "ReloadTime": 6,
                 "Speed": 0.6,
                 "TrainTime": 46,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "SNAGR"
             },
             "691": {
@@ -9745,6 +10053,8 @@
                         "Class": 35
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 150,
                     "Wood": 200
@@ -9765,6 +10075,8 @@
                 "ReloadTime": 10,
                 "Speed": 1.1,
                 "TrainTime": 46,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "CNGAU"
             },
             "692": {
@@ -9815,6 +10127,8 @@
                         "Class": 30
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 65,
                     "Gold": 25
@@ -9835,6 +10149,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.05,
                 "TrainTime": 14,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "VBRSK"
             },
             "694": {
@@ -9885,6 +10201,8 @@
                         "Class": 30
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 65,
                     "Gold": 25
@@ -9905,6 +10223,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.05,
                 "TrainTime": 12,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UVBRK"
             },
             "725": {
@@ -9959,6 +10279,8 @@
                         "Class": 32
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 30
@@ -9979,6 +10301,8 @@
                 "ReloadTime": 2,
                 "Speed": 1,
                 "TrainTime": 12,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "JAGUAR"
             },
             "726": {
@@ -10033,6 +10357,8 @@
                         "Class": 32
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 30
@@ -10053,6 +10379,8 @@
                 "ReloadTime": 2,
                 "Speed": 1,
                 "TrainTime": 12,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "JAGUARX"
             },
             "751": {
@@ -10115,6 +10443,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 20,
                     "Gold": 50
@@ -10135,6 +10465,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.1,
                 "TrainTime": 60,
+                "Trait": 16,
+                "TraitPiece": 0,
                 "internal_name": "EAGLE"
             },
             "752": {
@@ -10197,6 +10529,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 20,
                     "Gold": 50
@@ -10217,6 +10551,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.3,
                 "TrainTime": 20,
+                "Trait": 16,
+                "TraitPiece": 0,
                 "internal_name": "EAGLEX"
             },
             "753": {
@@ -10279,6 +10615,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 20,
                     "Gold": 50
@@ -10299,6 +10637,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.15,
                 "TrainTime": 35,
+                "Trait": 16,
+                "TraitPiece": 0,
                 "internal_name": "EAGLEH"
             },
             "755": {
@@ -10357,6 +10697,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 60
@@ -10377,6 +10719,8 @@
                 "ReloadTime": 2.1,
                 "Speed": 1.35,
                 "TrainTime": 14,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "TARKAN"
             },
             "757": {
@@ -10435,6 +10779,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 60
@@ -10455,6 +10801,8 @@
                 "ReloadTime": 2.1,
                 "Speed": 1.35,
                 "TrainTime": 14,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UTARK"
             },
             "763": {
@@ -10509,6 +10857,8 @@
                         "Class": 32
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 55,
                     "Wood": 55
@@ -10529,6 +10879,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.2,
                 "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "PLUME"
             },
             "765": {
@@ -10583,6 +10935,8 @@
                         "Class": 32
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 55,
                     "Wood": 55
@@ -10603,6 +10957,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.2,
                 "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UPLUM"
             },
             "771": {
@@ -10657,6 +11013,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 70
@@ -10677,6 +11035,8 @@
                 "ReloadTime": 2.9,
                 "Speed": 1.3,
                 "TrainTime": 24,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "CONQI"
             },
             "773": {
@@ -10731,6 +11091,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 70
@@ -10751,6 +11113,8 @@
                 "ReloadTime": 2.9,
                 "Speed": 1.3,
                 "TrainTime": 24,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UCONQ"
             },
             "775": {
@@ -10784,6 +11148,8 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 100
                 },
@@ -10803,6 +11169,8 @@
                 "ReloadTime": 1,
                 "Speed": 1.1,
                 "TrainTime": 51,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "MONKY"
             },
             "827": {
@@ -10849,6 +11217,8 @@
                         "Class": 3
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 125
@@ -10869,6 +11239,8 @@
                 "ReloadTime": 2.5,
                 "Speed": 1.2,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "WAGON"
             },
             "829": {
@@ -10915,6 +11287,8 @@
                         "Class": 3
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 125
@@ -10935,6 +11309,8 @@
                 "ReloadTime": 2.5,
                 "Speed": 1.2,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UWAGO"
             },
             "831": {
@@ -10977,6 +11353,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 180,
                     "Wood": 190
@@ -10997,6 +11375,8 @@
                 "ReloadTime": 6,
                 "Speed": 0.9,
                 "TrainTime": 50,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "TURTL"
             },
             "832": {
@@ -11039,6 +11419,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 180,
                     "Wood": 190
@@ -11059,6 +11441,8 @@
                 "ReloadTime": 6,
                 "Speed": 1.035,
                 "TrainTime": 50,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "UTURT"
             },
             "866": {
@@ -11117,6 +11501,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 40,
                     "Wood": 45
@@ -11137,6 +11523,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.96,
                 "TrainTime": 18,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "GENOE"
             },
             "868": {
@@ -11195,6 +11583,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 40,
                     "Wood": 45
@@ -11215,6 +11605,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.96,
                 "TrainTime": 14,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "GENOE_E"
             },
             "869": {
@@ -11265,6 +11657,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 80,
                     "Gold": 10
@@ -11285,6 +11679,8 @@
                 "ReloadTime": 1.8,
                 "Speed": 1.5,
                 "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UMAGYX"
             },
             "871": {
@@ -11335,6 +11731,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 80,
                     "Gold": 10
@@ -11355,6 +11753,8 @@
                 "ReloadTime": 1.8,
                 "Speed": 1.5,
                 "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UMAGYX"
             },
             "873": {
@@ -11405,6 +11805,8 @@
                         "Class": 27
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 90,
                     "Gold": 70
@@ -11425,6 +11827,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 34,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ELEAR"
             },
             "875": {
@@ -11475,6 +11879,8 @@
                         "Class": 27
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 90,
                     "Gold": 70
@@ -11495,6 +11901,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 34,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "UELEA"
             },
             "876": {
@@ -11541,6 +11949,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 50,
                     "Gold": 80
@@ -11561,6 +11971,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.3,
                 "TrainTime": 15,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "BOYAR"
             },
             "878": {
@@ -11607,6 +12019,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 50,
                     "Gold": 80
@@ -11627,6 +12041,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.3,
                 "TrainTime": 15,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EBOYA"
             },
             "879": {
@@ -11677,6 +12093,8 @@
                         "Class": 5
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 30
@@ -11697,6 +12115,8 @@
                 "ReloadTime": 2,
                 "Speed": 1,
                 "TrainTime": 10,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "KAMAY"
             },
             "881": {
@@ -11751,6 +12171,8 @@
                         "Class": 35
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 30
@@ -11771,6 +12193,8 @@
                 "ReloadTime": 2,
                 "Speed": 1,
                 "TrainTime": 10,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EKAMA"
             },
             "882": {
@@ -11825,6 +12249,8 @@
                         "Class": 8
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 50,
                     "Gold": 35
@@ -11845,6 +12271,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.2,
                 "TrainTime": 18,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "CONDO"
             },
             "1001": {
@@ -11891,6 +12319,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 70,
                     "Wood": 80
@@ -11911,6 +12341,8 @@
                 "ReloadTime": 3.45,
                 "Speed": 0.85,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ORGAN"
             },
             "1003": {
@@ -11957,6 +12389,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 70,
                     "Wood": 80
@@ -11977,6 +12411,8 @@
                 "ReloadTime": 3.45,
                 "Speed": 0.85,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EORGAN"
             },
             "1004": {
@@ -12027,6 +12463,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 43,
                     "Wood": 90
@@ -12047,6 +12485,8 @@
                 "ReloadTime": 3,
                 "Speed": 1.43,
                 "TrainTime": 36,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "CARAV"
             },
             "1006": {
@@ -12097,6 +12537,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 43,
                     "Wood": 90
@@ -12117,6 +12559,8 @@
                 "ReloadTime": 3,
                 "Speed": 1.43,
                 "TrainTime": 36,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "CARAV"
             },
             "1007": {
@@ -12183,6 +12627,8 @@
                         "Class": 11
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 50
@@ -12203,6 +12649,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.4,
                 "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "CAMAR"
             },
             "1009": {
@@ -12269,6 +12717,8 @@
                         "Class": 11
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 50
@@ -12289,6 +12739,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.4,
                 "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ECAMAR"
             },
             "1010": {
@@ -12351,6 +12803,8 @@
                         "Class": 27
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 40,
                     "Wood": 35
@@ -12371,6 +12825,8 @@
                 "ReloadTime": 3,
                 "Speed": 1.35,
                 "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "GENITO"
             },
             "1012": {
@@ -12433,6 +12889,8 @@
                         "Class": 27
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 40,
                     "Wood": 35
@@ -12453,6 +12911,8 @@
                 "ReloadTime": 3,
                 "Speed": 1.35,
                 "TrainTime": 23,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EGENITO"
             },
             "1013": {
@@ -12499,6 +12959,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 50,
                     "Gold": 40
@@ -12519,6 +12981,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.25,
                 "TrainTime": 17,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "GBETO"
             },
             "1015": {
@@ -12565,6 +13029,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 50,
                     "Gold": 40
@@ -12585,6 +13051,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.25,
                 "TrainTime": 17,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EGBETO"
             },
             "1016": {
@@ -12627,6 +13095,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 50,
                     "Gold": 30
@@ -12647,6 +13117,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.2,
                 "TrainTime": 8,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "SHOTEL"
             },
             "1018": {
@@ -12689,6 +13161,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 50,
                     "Gold": 30
@@ -12709,6 +13183,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.2,
                 "TrainTime": 8,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ESHOTEL"
             },
             "1103": {
@@ -12759,6 +13235,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 45,
                     "Wood": 75
@@ -12779,6 +13257,8 @@
                 "ReloadTime": 0.25,
                 "Speed": 1.3,
                 "TrainTime": 65,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "SFRGAL"
             },
             "1104": {
@@ -12813,6 +13293,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 50,
                     "Wood": 70
@@ -12833,6 +13315,8 @@
                 "ReloadTime": 5,
                 "Speed": 1.5,
                 "TrainTime": 45,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "SDGAL"
             },
             "1105": {
@@ -12862,6 +13346,8 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 160,
                     "Wood": 200
@@ -12882,6 +13368,8 @@
                 "ReloadTime": 0,
                 "Speed": 0.8,
                 "TrainTime": 36,
+                "Trait": 1,
+                "TraitPiece": 0,
                 "internal_name": "SIEGTWR"
             },
             "1120": {
@@ -12952,6 +13440,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 100,
                     "Gold": 80
@@ -12972,6 +13462,8 @@
                 "ReloadTime": 2.5,
                 "Speed": 0.8,
                 "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ELEBALI"
             },
             "1122": {
@@ -13042,6 +13534,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 100,
                     "Gold": 80
@@ -13062,6 +13556,8 @@
                 "ReloadTime": 2.5,
                 "Speed": 0.8,
                 "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EELEBALI"
             },
             "1123": {
@@ -13104,6 +13600,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 25,
                     "Gold": 15
@@ -13124,6 +13622,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.2,
                 "TrainTime": 6,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "KARAM"
             },
             "1125": {
@@ -13166,6 +13666,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 25,
                     "Gold": 15
@@ -13186,6 +13688,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.2,
                 "TrainTime": 6,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EKARAM"
             },
             "1126": {
@@ -13248,6 +13752,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 75
@@ -13268,6 +13774,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.3,
                 "TrainTime": 18,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ARAMBAI"
             },
             "1128": {
@@ -13330,6 +13838,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 75
@@ -13350,6 +13860,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.3,
                 "TrainTime": 18,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EARAMBAI"
             },
             "1129": {
@@ -13400,6 +13912,8 @@
                         "Class": 1
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 45,
                     "Wood": 50
@@ -13420,6 +13934,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.1,
                 "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "RATAN"
             },
             "1131": {
@@ -13470,6 +13986,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 45,
                     "Wood": 50
@@ -13490,6 +14008,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.1,
                 "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ERATAN"
             },
             "1132": {
@@ -13540,6 +14060,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 120,
                     "Gold": 70
@@ -13560,6 +14082,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.85,
                 "TrainTime": 24,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "BATELE"
             },
             "1134": {
@@ -13610,6 +14134,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 120,
                     "Gold": 70
@@ -13630,6 +14156,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.85,
                 "TrainTime": 24,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EBATELE"
             },
             "1155": {
@@ -13680,6 +14208,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 25,
                     "Wood": 35
@@ -13700,6 +14230,8 @@
                 "ReloadTime": 3,
                 "Speed": 0.96,
                 "TrainTime": 22,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "IHXBOW"
             },
             "1225": {
@@ -13746,6 +14278,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 70
@@ -13766,6 +14300,8 @@
                 "ReloadTime": 2.4,
                 "Speed": 1.35,
                 "TrainTime": 19,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "KONNIK"
             },
             "1227": {
@@ -13812,6 +14348,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 70
@@ -13832,6 +14370,8 @@
                 "ReloadTime": 2.4,
                 "Speed": 1.35,
                 "TrainTime": 19,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EKONNIK"
             },
             "1228": {
@@ -13878,6 +14418,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 40
@@ -13898,6 +14440,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.4,
                 "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "KESHIK"
             },
             "1230": {
@@ -13944,6 +14488,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 40
@@ -13964,6 +14510,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.4,
                 "TrainTime": 14,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EKESHIK"
             },
             "1231": {
@@ -14014,6 +14562,8 @@
                         "Class": 3
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 35,
                     "Wood": 60
@@ -14034,6 +14584,8 @@
                 "ReloadTime": 2.2,
                 "Speed": 1.4,
                 "TrainTime": 20,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "KIPCHAK"
             },
             "1233": {
@@ -14084,6 +14636,8 @@
                         "Class": 3
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 35,
                     "Wood": 60
@@ -14104,6 +14658,8 @@
                 "ReloadTime": 2.2,
                 "Speed": 1.4,
                 "TrainTime": 20,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EKIPCHAK"
             },
             "1234": {
@@ -14150,6 +14706,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 70,
                     "Gold": 50
@@ -14170,6 +14728,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.4,
                 "TrainTime": 20,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "LEITIS"
             },
             "1236": {
@@ -14216,6 +14776,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 70,
                     "Gold": 50
@@ -14236,6 +14798,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.4,
                 "TrainTime": 18,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ELEITIS"
             },
             "1252": {
@@ -14286,6 +14850,8 @@
                         "Class": 30
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 0,
                     "Gold": 0
@@ -14306,6 +14872,8 @@
                 "ReloadTime": 2.4,
                 "Speed": 0.9,
                 "TrainTime": 19,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "KONNIK_INF"
             },
             "1253": {
@@ -14356,6 +14924,8 @@
                         "Class": 30
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 0,
                     "Gold": 0
@@ -14376,6 +14946,8 @@
                 "ReloadTime": 2.4,
                 "Speed": 0.9,
                 "TrainTime": 19,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EKONNIK_INF"
             },
             "1254": {
@@ -14422,6 +14994,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 70
@@ -14442,6 +15016,8 @@
                 "ReloadTime": 2.4,
                 "Speed": 1.35,
                 "TrainTime": 19,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "KONNIK"
             },
             "1255": {
@@ -14488,6 +15064,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 70
@@ -14508,6 +15086,8 @@
                 "ReloadTime": 2.4,
                 "Speed": 1.35,
                 "TrainTime": 19,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EKONNIK"
             },
             "1258": {
@@ -14550,6 +15130,8 @@
                         "Class": 20
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 75,
                     "Wood": 160
@@ -14570,6 +15152,8 @@
                 "ReloadTime": 5,
                 "Speed": 0.5,
                 "TrainTime": 36,
+                "Trait": 1,
+                "TraitPiece": 0,
                 "internal_name": "BTRAM"
             },
             "1263": {
@@ -14628,6 +15212,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 75,
                     "Gold": 30
@@ -14648,6 +15234,8 @@
                 "ReloadTime": 5,
                 "Speed": 1.3,
                 "TrainTime": 20,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "FCAMEL"
             },
             "1370": {
@@ -14690,6 +15278,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 70,
                     "Gold": 40
@@ -14710,6 +15300,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.45,
                 "TrainTime": 24,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "SLANCER"
             },
             "1372": {
@@ -14752,6 +15344,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 70,
                     "Gold": 40
@@ -14772,6 +15366,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.45,
                 "TrainTime": 20,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ESLANCER"
             },
             "1570": {
@@ -14814,6 +15410,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 75
@@ -14834,6 +15432,8 @@
                 "ReloadTime": 1.8,
                 "Speed": 1.35,
                 "TrainTime": 30,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "AZTRAIDER"
             },
             "1655": {
@@ -14880,6 +15480,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 1,
+                "ChargeType": 1,
                 "Cost": {
                     "Food": 55,
                     "Gold": 55
@@ -14901,6 +15503,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.35,
                 "TrainTime": 15,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "COUSTILLIER"
             },
             "1657": {
@@ -14947,6 +15551,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 1,
+                "ChargeType": 1,
                 "Cost": {
                     "Food": 55,
                     "Gold": 55
@@ -14968,6 +15574,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.35,
                 "TrainTime": 14,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ECOUSTILLIER"
             },
             "1658": {
@@ -15010,6 +15618,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 35
@@ -15030,6 +15640,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 12,
+                "Trait": 4,
+                "TraitPiece": 1665,
                 "internal_name": "SERJEANT"
             },
             "1659": {
@@ -15072,6 +15684,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 35
@@ -15092,6 +15706,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 12,
+                "Trait": 4,
+                "TraitPiece": 1665,
                 "internal_name": "ESERJEANT"
             },
             "1660": {
@@ -15134,6 +15750,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 35
@@ -15154,6 +15772,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 16,
+                "Trait": 4,
+                "TraitPiece": 1665,
                 "internal_name": "DSERJEANT"
             },
             "1661": {
@@ -15196,6 +15816,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 35
@@ -15216,6 +15838,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 12,
+                "Trait": 4,
+                "TraitPiece": 1665,
                 "internal_name": "EDSERJEANT"
             },
             "1699": {
@@ -15278,6 +15902,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 60,
                     "Gold": 25
@@ -15298,6 +15924,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 14,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "FLEMISHPIKEMAN2"
             },
             "1701": {
@@ -15340,6 +15968,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 55,
                     "Gold": 20
@@ -15360,6 +15990,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 12,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "OBUCH"
             },
             "1703": {
@@ -15402,6 +16034,8 @@
                         "Class": 4
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 55,
                     "Gold": 20
@@ -15422,6 +16056,8 @@
                 "ReloadTime": 2,
                 "Speed": 0.9,
                 "TrainTime": 12,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EOBUCH"
             },
             "1704": {
@@ -15472,6 +16108,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 70,
                     "Wood": 110
@@ -15492,6 +16130,8 @@
                 "ReloadTime": 3.45,
                 "Speed": 0.8,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HUSSITEWAGON"
             },
             "1706": {
@@ -15542,6 +16182,8 @@
                         "Class": 17
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 70,
                     "Wood": 110
@@ -15562,6 +16204,8 @@
                 "ReloadTime": 3.45,
                 "Speed": 0.8,
                 "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EHUSSITEWAGON"
             },
             "1707": {
@@ -15612,6 +16256,8 @@
                         "Class": 23
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 80
                 },
@@ -15631,6 +16277,8 @@
                 "ReloadTime": 1.9,
                 "Speed": 1.5,
                 "TrainTime": 30,
+                "Trait": 16,
+                "TraitPiece": 0,
                 "internal_name": "WINGEDHUSSAR"
             },
             "1709": {
@@ -15689,6 +16337,8 @@
                         "Class": 37
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 225,
                     "Wood": 225
@@ -15709,6 +16359,8 @@
                 "ReloadTime": 6.5,
                 "Speed": 0.7,
                 "TrainTime": 56,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "HOUFNICE"
             },
             "1735": {
@@ -15751,6 +16403,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 1,
+                "ChargeType": 3,
                 "Cost": {
                     "Food": 65,
                     "Gold": 20
@@ -15772,6 +16426,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.05,
                 "TrainTime": 9,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "URUMI"
             },
             "1737": {
@@ -15814,6 +16470,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 1,
+                "ChargeType": 3,
                 "Cost": {
                     "Food": 65,
                     "Gold": 20
@@ -15835,7 +16493,173 @@
                 "ReloadTime": 2,
                 "Speed": 1.05,
                 "TrainTime": 9,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EURUMI"
+            },
+            "1738": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 28
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 10,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 10,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 27
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Gold": 60,
+                    "Wood": 60
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 105,
+                "ID": 1738,
+                "LanguageHelpId": 42096,
+                "LanguageNameId": 21096,
+                "LineOfSight": 6,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 1,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 1.3,
+                "TrainTime": 18,
+                "Trait": 8,
+                "TraitPiece": 1759,
+                "internal_name": "RATHA"
+            },
+            "1740": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 28
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 12,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 12,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 27
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Gold": 60,
+                    "Wood": 60
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 115,
+                "ID": 1740,
+                "LanguageHelpId": 42097,
+                "LanguageNameId": 21097,
+                "LineOfSight": 6,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 1,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 1.3,
+                "TrainTime": 18,
+                "Trait": 8,
+                "TraitPiece": 1761,
+                "internal_name": "ERATHA"
             },
             "1741": {
                 "AccuracyPercent": 100,
@@ -15881,6 +16705,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 65,
                     "Gold": 30
@@ -15901,6 +16727,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.15,
                 "TrainTime": 15,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "CHAKRAM"
             },
             "1743": {
@@ -15947,6 +16775,8 @@
                         "Class": 15
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 65,
                     "Gold": 30
@@ -15967,6 +16797,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.15,
                 "TrainTime": 15,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ECHAKRAM"
             },
             "1744": {
@@ -16021,6 +16853,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 130,
                     "Gold": 95
@@ -16041,6 +16875,8 @@
                 "ReloadTime": 3,
                 "Speed": 0.6,
                 "TrainTime": 36,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ARELE"
             },
             "1746": {
@@ -16095,6 +16931,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 130,
                     "Gold": 95
@@ -16115,6 +16953,8 @@
                 "ReloadTime": 3,
                 "Speed": 0.6,
                 "TrainTime": 36,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EARELE"
             },
             "1747": {
@@ -16161,6 +17001,8 @@
                         "Class": 29
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 30,
                     "Gold": 45
@@ -16181,6 +17023,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.15,
                 "TrainTime": 12,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "GHULAM"
             },
             "1749": {
@@ -16227,6 +17071,8 @@
                         "Class": 29
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 30,
                     "Gold": 45
@@ -16247,6 +17093,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.2,
                 "TrainTime": 12,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "EGHULAM"
             },
             "1750": {
@@ -16301,6 +17149,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 180
@@ -16321,6 +17171,8 @@
                 "ReloadTime": 3.45,
                 "Speed": 1.3,
                 "TrainTime": 40,
+                "Trait": 2,
+                "TraitPiece": 0,
                 "internal_name": "THIRISADAI"
             },
             "1751": {
@@ -16367,6 +17219,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 4,
                 "Cost": {
                     "Food": 70,
                     "Gold": 20
@@ -16388,6 +17242,8 @@
                 "ReloadTime": 1.75,
                 "Speed": 1.6,
                 "TrainTime": 20,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "SHRIVAMSHA"
             },
             "1753": {
@@ -16434,6 +17290,8 @@
                         "Class": 21
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 4,
                 "Cost": {
                     "Food": 70,
                     "Gold": 20
@@ -16455,6 +17313,8 @@
                 "ReloadTime": 1.75,
                 "Speed": 1.6,
                 "TrainTime": 20,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "ESHRIVAMSHA"
             },
             "1755": {
@@ -16509,6 +17369,8 @@
                         "Class": 34
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Food": 55,
                     "Gold": 60
@@ -16529,6 +17391,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.2,
                 "TrainTime": 48,
+                "Trait": 0,
+                "TraitPiece": 0,
                 "internal_name": "CAMELSC"
             },
             "1759": {
@@ -16587,6 +17451,8 @@
                         "Class": 27
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 60
@@ -16607,6 +17473,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.3,
                 "TrainTime": 18,
+                "Trait": 8,
+                "TraitPiece": 1738,
                 "internal_name": "RATHA2"
             },
             "1761": {
@@ -16665,6 +17533,8 @@
                         "Class": 27
                     }
                 ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
                 "Cost": {
                     "Gold": 60,
                     "Wood": 60
@@ -16685,6 +17555,8 @@
                 "ReloadTime": 2,
                 "Speed": 1.3,
                 "TrainTime": 18,
+                "Trait": 8,
+                "TraitPiece": 1740,
                 "internal_name": "ERATHA2"
             }
         }
