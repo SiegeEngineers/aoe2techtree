@@ -100,7 +100,13 @@ function displayData() {
 
     tree = getDefaultTree();
     connections = getConnections();
-    parentConnections = new Map(connections.map(([parent, child]) => [child, parent]));
+    parentConnections = new Map();
+    connections.forEach(([parent, child]) => {
+        if (!parentConnections.has(child)) {
+            parentConnections.set(child, []);
+        }
+        parentConnections.get(child).push(parent);
+    });
     connectionpoints = getConnectionPoints(tree);
     fillCivSelector();
 
@@ -311,19 +317,21 @@ function highlightPath(caretId) {
     recurse(caretId);
 
     function recurse(caretId) {
-        SVG('#'+caretId).addClass('is-highlight');
+        SVG('#' + caretId).addClass('is-highlight');
 
-        const parentId = parentConnections.get(caretId);
-        if (!parentId) return;
+        const parentIds = parentConnections.get(caretId);
+        if (!parentIds) return;
 
-        const line = SVG(`#connection_${parentId}_${caretId}`);
-        if (line) {
-            // Move to the end of the <g> element so that it is drawn on top.
-            // Without this, the line would be highlighted, but other unhighlighted
-            // connection lines could be drawn on top, undoing the highlighting.
-            line.front().addClass('is-highlight');
+        for (let parentId of parentIds) {
+            const line = SVG(`#connection_${parentId}_${caretId}`);
+            if (line) {
+                // Move to the end of the <g> element so that it is drawn on top.
+                // Without this, the line would be highlighted, but other unhighlighted
+                // connection lines could be drawn on top, undoing the highlighting.
+                line.front().addClass('is-highlight');
+            }
+            recurse(parentId);
         }
-        recurse(parentId);
     }
 }
 
