@@ -1616,6 +1616,66 @@
                 "TrainTime": 120,
                 "internal_name": "FEITO"
             },
+            "1189": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 3,
+                "Attacks": [
+                    {
+                        "Amount": 10,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 34
+                    }
+                ],
+                "Cost": {
+                    "Wood": 150
+                },
+                "GarrisonCapacity": 10,
+                "HP": 2000,
+                "ID": 1189,
+                "LanguageHelpId": 26249,
+                "LanguageNameId": 5249,
+                "LineOfSight": 10,
+                "MeleeArmor": 3,
+                "MinRange": 1,
+                "PierceArmor": 10,
+                "Range": 7,
+                "ReloadTime": 3,
+                "TrainTime": 35,
+                "internal_name": "HARBOR"
+            },
             "1251": {
                 "AccuracyPercent": 100,
                 "Armours": [
@@ -21520,7 +21580,8 @@
                 584,
                 598,
                 621,
-                792
+                792,
+                1189
             ],
             "monkPrefix": "",
             "techs": [

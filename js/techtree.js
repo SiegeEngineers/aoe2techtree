@@ -52,6 +52,7 @@ const OUTPOST = 598;
 const TOWN_CENTER_2 = 621;
 const PALISADE_GATE = 792;
 const FEITORIA = 1021;
+const HARBOR = 1189;
 const KREPOST = 1251;
 const DONJON = 1665;
 const ARCHER = 4;
@@ -768,6 +769,7 @@ function getDefaultTree() {
 
     let fishtraplane = new Lane();
     fishtraplane.rows.feudal_1.push(building(FISH_TRAP));
+    fishtraplane.rows.castle_1.push(building(HARBOR));
     tree.lanes.push(fishtraplane);
 
 
