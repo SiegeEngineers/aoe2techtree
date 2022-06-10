@@ -531,7 +531,7 @@ function getHelpText(name, id, type) {
         if (text.match(/‹garrison›/)) {
             stats.push('Garrison:&nbsp;' + meta.GarrisonCapacity);
         }
-        if (text.match(/‹range›/) && meta.Attack > 0) {
+        if (text.match(/‹range›/) && attackFound) {
             stats.push('Range:&nbsp;' + meta.Range);
         }
         if (attackFound) stats.push(ifDefinedAndGreaterZero(meta.MinRange, 'Min Range:&nbsp;'));
