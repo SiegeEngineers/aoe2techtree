@@ -511,14 +511,16 @@ function getHelpText(name, id, type) {
             + ' (' + data.data.unit_upgrades[id].ResearchTime + 's)<p><p class="helptext__stats">');
     }
     let meta = data.data[entitytype][id];
+    bool attackFound = 0;
     if (meta !== undefined) {
         text = text.replace(/‹cost›/, cost(meta.Cost));
         let stats = []
         if (text.match(/‹hp›/)) {
             stats.push('HP:&nbsp;' + meta.HP);
         }
-        if (text.match(/‹attack›/)) {
+        if (text.match(/‹attack›/) && meta.Attack > 0) {
             stats.push('Attack:&nbsp;' + meta.Attack);
+            attackFound = 1;
         }
         if (text.match(/‹[Aa]rmor›/)) {
             stats.push('Armor:&nbsp;' + meta.MeleeArmor);
@@ -529,22 +531,22 @@ function getHelpText(name, id, type) {
         if (text.match(/‹garrison›/)) {
             stats.push('Garrison:&nbsp;' + meta.GarrisonCapacity);
         }
-        if (text.match(/‹range›/)) {
+        if (text.match(/‹range›/) && meta.Attack > 0) {
             stats.push('Range:&nbsp;' + meta.Range);
         }
-        stats.push(ifDefinedAndGreaterZero(meta.MinRange, 'Min Range:&nbsp;'));
+        if (attackFound) stats.push(ifDefinedAndGreaterZero(meta.MinRange, 'Min Range:&nbsp;'));
         stats.push(ifDefined(meta.LineOfSight, 'Line of Sight:&nbsp;'));
         stats.push(ifDefined(meta.Speed, 'Speed:&nbsp;'));
         stats.push(secondsIfDefined(meta.TrainTime, 'Build Time:&nbsp;'));
         stats.push(secondsIfDefined(meta.ResearchTime, 'Research Time:&nbsp;'));
         stats.push(ifDefined(meta.FrameDelay, 'Frame Delay:&nbsp;'));
-        stats.push(ifDefinedAndGreaterZero(meta.MaxCharge, chargeText(meta.ChargeType)));
-        stats.push(ifDefinedAndGreaterZero(meta.RechargeRate, 'Recharge Rate:&nbsp;'));
+        if (attackFound) stats.push(ifDefinedAndGreaterZero(meta.MaxCharge, chargeText(meta.ChargeType)));
+        if (attackFound && meta.ChargeEvent == 0) stats.push(ifDefinedAndGreaterZero(meta.RechargeRate, 'Recharge Rate:&nbsp;'));
         stats.push(traitsIfDefined(meta.Trait, meta.TraitPiece));
-        stats.push(secondsIfDefined(meta.RechargeDuration, 'Recharge Duration:&nbsp;'));
-        stats.push(secondsIfDefined(meta.AttackDelaySeconds, 'Attack Delay:&nbsp;'));
-        stats.push(secondsIfDefined(meta.ReloadTime, 'Reload Time:&nbsp;'));
-        stats.push(accuracyIfDefined(meta.AccuracyPercent, 'Accuracy:&nbsp;'));
+        if (attackFound && meta.ChargeEvent == 1) stats.push(secondsIfDefined(meta.RechargeDuration, 'Recharge Duration:&nbsp;'));
+        if (attackFound) stats.push(secondsIfDefined(meta.AttackDelaySeconds, 'Attack Delay:&nbsp;'));
+        if (attackFound) stats.push(secondsIfDefined(meta.ReloadTime, 'Reload Time:&nbsp;'));
+        if (attackFound) stats.push(accuracyIfDefined(meta.AccuracyPercent, 'Accuracy:&nbsp;'));
         stats.push(repeatableIfDefined(meta.Repeatable));
         text = text.replace(/<p class="helptext__stats">(.+?)<\/p>/, '<h3>Stats</h3><p>' + stats.filter(Boolean).join(', ') + '<p>')
     } else {
@@ -666,7 +668,7 @@ function toMaxFixed2(value) {
 }
 
 function accuracyIfDefined(value, prefix) {
-    if (value !== undefined && value < 100) {
+    if (value !== undefined) {
         return ' ' + prefix + value + '%';
     } else {
         return '';
