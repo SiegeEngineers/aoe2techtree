@@ -473,7 +473,6 @@ function getHelpText(name, id, type) {
     if (text === undefined) {
         return '?';
     }
-    text = text.replace(/<br>/g, '');
     text = text.replace(/\n/g, '');
     if (type === 'TECHNOLOGY') {
         text = text.replace(/(.+?\(.+?\))(.*)/m,
@@ -503,6 +502,7 @@ function getHelpText(name, id, type) {
                 '<p class="helptext__stats">$3</p>');
         }
     }
+    text = text.replace(/<br>/g, '');
     if (id in data.data.unit_upgrades) {
         text = text.replace(/<p class="helptext__stats">/,
             '<h3>Upgrade</h3><p class="helptext__upgrade_cost">' + cost(data.data.unit_upgrades[id].Cost)
