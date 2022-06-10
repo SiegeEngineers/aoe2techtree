@@ -382,6 +382,22 @@
                     {
                         "Amount": 5,
                         "Class": 3
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 34
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 30
                     }
                 ],
                 "Cost": {
