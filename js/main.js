@@ -7,7 +7,7 @@ let connectionpoints;
 let focusedNodeId = null;
 
 const unitClasses = {
-    0: '<abbr title="(unused)">Wonders</abbr>',
+    0: '<abbr title="unused">Wonders</abbr>',
     1: 'Infantry',
     2: 'Turtle Ships and Thirisadai',
     3: 'Base Pierce',
@@ -15,20 +15,20 @@ const unitClasses = {
     5: 'Elephants',
     6: 'Unused',
     7: 'Unused',
-    8: '<abbr title="(except Camels)">Mounted Units</abbr>',
+    8: '<abbr title="except Camels">Mounted Units</abbr>',
     9: 'Unused',
     10: 'Unused',
-    11: '<abbr title="(except Fish Traps)">All Buildings</abbr>',
+    11: '<abbr title="except Fish Traps">All Buildings</abbr>',
     12: 'Unused',
-    13: '<abbr title="(except Castles and Kreposts)">Stone Defense & Harbors</abbr>',
+    13: '<abbr title="except Castles and Kreposts">Stone Defense & Harbors</abbr>',
     14: 'Wolves etc.',
     15: 'All Archers',
-    16: '<abbr title="(except Fishing Ships)">Ships</abbr>',
+    16: '<abbr title="except Fishing Ships">Ships</abbr>',
     17: 'High Pierce Armor Siege Units',
     18: 'Trees',
     19: 'Unique Units',
     20: 'Siege Units',
-    21: '<abbr title="(except Fish Traps and Wonders)">Standard Buildings</abbr>',
+    21: '<abbr title="except Fish Traps and Wonders">Standard Buildings</abbr>',
     22: 'Walls & Gates',
     23: 'Gunpowder Units',
     24: 'Boars etc.',
@@ -38,12 +38,12 @@ const unitClasses = {
     28: 'Mounted Archers',
     29: 'Eagle Warriors',
     30: 'Camels',
-    31: '<abbr title="(obsolete)">Anti-Leitis</abbr>',
+    31: '<abbr title="previously used by the Leitis as armor-ignoring attack">Obsolete</abbr>',
     32: 'Condottieri',
-    33: '<abbr title="(no unit has this armor class)">Gunpowder units secondary projectile attack</abbr>',
+    33: '<abbr title="no unit has this armor class">Gunpowder units secondary projectile attack</abbr>',
     34: 'Fishing Ships',
     35: 'Mamelukes',
-    36: '<abbr title="(unused)">Heroes & Kings</abbr>',
+    36: '<abbr title="unused">Heroes & Kings</abbr>',
     37: 'Hussite Wagons',
 };
 
@@ -416,6 +416,8 @@ function chargeText(type) {
     switch (type) {
         case 1:
             return 'Charge Attack:&nbsp;';
+        case 2:
+            return 'Charge Hit Points:&nbsp;';
         case 3:
             return 'Charged Area Attack:&nbsp;';
         case 4:
@@ -456,7 +458,7 @@ function traitsIfDefined(trait, traitPiece) {
                 traitdescriptions.push('Transforms into:&nbsp;' + data.strings[(data.data['buildings'][traitPiece]||data.data['units'][traitPiece])['LanguageNameId']]);
                 break;
             case 16:
-                traitdescriptions.push('Scout Unit');
+                traitdescriptions.push('<abbr title="has auto-scout behaviour if placed at start">Scout Unit</abbr>');
                 break;
             default:
                 traitdescriptions.push('Unknown Trait:&nbsp;' + trait);
