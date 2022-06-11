@@ -546,7 +546,7 @@ function getHelpText(name, id, type) {
         if (attackFound && meta.ChargeEvent == 1) stats.push(secondsIfDefined(meta.RechargeDuration, 'Recharge Duration:&nbsp;'));
         if (attackFound) stats.push(secondsIfDefined(meta.AttackDelaySeconds, 'Attack Delay:&nbsp;'));
         if (attackFound) stats.push(secondsIfDefined(meta.ReloadTime, 'Reload Time:&nbsp;'));
-        if (attackFound) stats.push(accuracyIfDefined(meta.AccuracyPercent, 'Accuracy:&nbsp;'));
+        if (attackFound) stats.push(accuracyIfDefined(meta.AccuracyPercent, 'Accuracy:&nbsp;', meta.Range));
         stats.push(repeatableIfDefined(meta.Repeatable));
         text = text.replace(/<p class="helptext__stats">(.+?)<\/p>/, '<h3>Stats</h3><p>' + stats.filter(Boolean).join(', ') + '<p>')
     } else {
@@ -667,8 +667,8 @@ function toMaxFixed2(value) {
     return Math.round(value * 100) / 100;
 }
 
-function accuracyIfDefined(value, prefix) {
-    if (value !== undefined) {
+function accuracyIfDefined(value, prefix, range) {
+    if (value !== undefined && range > 1) {
         return ' ' + prefix + value + '%';
     } else {
         return '';
