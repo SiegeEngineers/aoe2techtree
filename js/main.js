@@ -671,7 +671,7 @@ function toMaxFixed2(value) {
 }
 
 function accuracyIfDefined(value, prefix, alwaysDisplay) {
-    if (value !== undefined && (alwaysDisplay || value < 100)) {
+    if (value !== undefined && (alwaysDisplay || (0 < value && value < 100))) {
         return ' ' + prefix + value + '%';
     }
     return '';
