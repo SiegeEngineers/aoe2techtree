@@ -214,7 +214,11 @@ function displayData() {
                         resetHighlightPath();
                     })
                     .click(function () {
-                        displayHelp(caret.id);
+                        if (focusedNodeId === caret.id) {
+                            hideHelp();
+                        } else {
+                            displayHelp(caret.id);
+                        }
                     });
             }
         }
