@@ -505,7 +505,7 @@ function getHelpText(name, id, type) {
         }
     }
     text = text.replace(/<br>/g, '');
-    if (id in data.data.unit_upgrades) {
+    if ((type === 'UNIT' || type === 'UNIQUEUNIT') && id in data.data.unit_upgrades) {
         text = text.replace(/<p class="helptext__stats">/,
             '<h3>Upgrade</h3><p class="helptext__upgrade_cost">' + cost(data.data.unit_upgrades[id].Cost)
             + ' (' + data.data.unit_upgrades[id].ResearchTime + 's)<p><p class="helptext__stats">');
