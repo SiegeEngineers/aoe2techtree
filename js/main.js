@@ -49,21 +49,21 @@ const unitClasses = {
 
 const locales = {
     en: 'English',
-    zh: '简体中文',
-    tw: '繁體中文',
+    zh: '????',
+    tw: '????',
     fr: 'Français',
     de: 'Deutsch',
-    hi: 'हिंदी',
+    hi: '?????',
     it: 'Italiano',
-    jp: '日本語',
-    ko: '한국어',
+    jp: '???',
+    ko: '???',
     ms: 'Bahasa Melayu',
     pl: 'Polski',
-    ru: 'Русский',
+    ru: '???????',
     es: 'Español',
     mx: 'Español (México)',
     tr: 'Türkçe',
-    vi: 'Tiếng Việt',
+    vi: 'Tiê?ng Vi?t',
     br: 'Português (Brasil)',
 };
 const defaultLocale = 'en';
@@ -565,8 +565,8 @@ function getAdvancedStats(name, id, type) {
     let meta = data.data[entitytype][id];
     let text = ''
     if (meta !== undefined) {
-        text += arrayIfDefinedAndNonEmpty(meta.Attacks, '<h3>Attacks</h3>');
-        text += arrayIfDefinedAndNonEmpty(meta.Armours, '<h3>Armours</h3>');
+        text += findAttacks(meta.Attacks);
+        text += findArmours(meta.Armours);
     } else {
         console.error('No metadata found for ' + name);
     }
@@ -685,7 +685,7 @@ function ifDefinedAndGreaterZero(value, prefix) {
     }
 }
 
-function arrayIfDefinedAndNonEmpty(attacks, prefix) {
+function findAttacks(attacks) {
     if (attacks === undefined || attacks.length < 1) {
         return '';
     } else {
@@ -693,9 +693,24 @@ function arrayIfDefinedAndNonEmpty(attacks, prefix) {
         for (let attack of attacks) {
             const amount = attack['Amount'];
             const clazz = unitClasses[attack['Class']];
-            strings.push(`${amount} (${clazz})`);
+            if (amount > 0) strings.push(`${amount} (${clazz})`); // eliminating 0 attacks
+            else if (clazz == 4 || clazz == 5 || clazz == 8 || clazz == 20 | clazz == 28) strings.push(`${amount} (${clazz})`); // some units in these armor classes have negative armor, so 0 attack becomes significant here
         }
-        return prefix + '<p>' + strings.join(', ') + '</p>';
+        return '<h3>Attacks</h3><p>' + strings.join(', ') + '</p>';
+    }
+}
+
+function findArmours(attacks) {
+    if (attacks === undefined || attacks.length < 1) {
+        return '';
+    } else {
+        const strings = [];
+        for (let attack of attacks) {
+            const amount = attack['Amount'];
+            const clazz = unitClasses[attack['Class']];
+            if (clazz != 31) strings.push(`${amount} (${clazz})`); // removing 31 since it is obsolete
+        }
+        return '<h3>Attacks</h3><p>' + strings.join(', ') + '</p>';
     }
 }
 
