@@ -49,21 +49,21 @@ const unitClasses = {
 
 const locales = {
     en: 'English',
-    zh: '????',
-    tw: '????',
+    zh: '简体中文',
+    tw: '繁體中文',
     fr: 'Français',
     de: 'Deutsch',
-    hi: '?????',
+    hi: 'हिंदी',
     it: 'Italiano',
-    jp: '???',
-    ko: '???',
+    jp: '日本語',
+    ko: '한국어',
     ms: 'Bahasa Melayu',
     pl: 'Polski',
-    ru: '???????',
+    ru: 'Русский',
     es: 'Español',
     mx: 'Español (México)',
     tr: 'Türkçe',
-    vi: 'Tiê?ng Vi?t',
+    vi: 'Tiếng Việt',
     br: 'Português (Brasil)',
 };
 const defaultLocale = 'en';
