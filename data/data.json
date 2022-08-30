@@ -897,7 +897,7 @@
                     "Stone": 5
                 },
                 "GarrisonCapacity": 0,
-                "HP": 900,
+                "HP": 1080,
                 "ID": 117,
                 "LanguageHelpId": 26203,
                 "LanguageNameId": 5203,
@@ -1338,7 +1338,7 @@
                     "Stone": 30
                 },
                 "GarrisonCapacity": 0,
-                "HP": 1375,
+                "HP": 1650,
                 "ID": 487,
                 "LanguageHelpId": 26185,
                 "LanguageNameId": 5185,
@@ -3851,8 +3851,8 @@
             },
             "24": {
                 "Cost": {
-                    "Food": 125,
-                    "Gold": 75
+                    "Food": 175,
+                    "Gold": 125
                 },
                 "ID": 901,
                 "ResearchTime": 35,
@@ -3973,8 +3973,8 @@
             },
             "492": {
                 "Cost": {
-                    "Food": 350,
-                    "Gold": 300
+                    "Food": 450,
+                    "Gold": 400
                 },
                 "ID": 901,
                 "ResearchTime": 50,
@@ -4607,17 +4607,17 @@
             },
             "1749": {
                 "Cost": {
-                    "Food": 1000,
-                    "Gold": 800
+                    "Food": 950,
+                    "Gold": 575
                 },
                 "ID": 901,
-                "ResearchTime": 80,
-                "internal_name": "Elite Elephant Archer"
+                "ResearchTime": 45,
+                "internal_name": "Elite Ghulam"
             },
             "1753": {
                 "Cost": {
-                    "Food": 800,
-                    "Gold": 600
+                    "Food": 850,
+                    "Gold": 500
                 },
                 "ID": 901,
                 "ResearchTime": 45,
@@ -11257,7 +11257,7 @@
                         "Class": 19
                     },
                     {
-                        "Amount": 0,
+                        "Amount": -1,
                         "Class": 28
                     },
                     {
@@ -11327,7 +11327,7 @@
                         "Class": 19
                     },
                     {
-                        "Amount": 0,
+                        "Amount": -1,
                         "Class": 28
                     },
                     {
@@ -11841,7 +11841,7 @@
                         "Class": 5
                     },
                     {
-                        "Amount": -7,
+                        "Amount": -4,
                         "Class": 28
                     },
                     {
@@ -11868,7 +11868,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 90,
+                    "Food": 80,
                     "Gold": 70
                 },
                 "FrameDelay": 12,
@@ -11915,7 +11915,7 @@
                         "Class": 5
                     },
                     {
-                        "Amount": -7,
+                        "Amount": -4,
                         "Class": 28
                     },
                     {
@@ -11942,7 +11942,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 90,
+                    "Food": 80,
                     "Gold": 70
                 },
                 "FrameDelay": 24,
@@ -15553,13 +15553,13 @@
                 "LanguageHelpId": 26534,
                 "LanguageNameId": 5534,
                 "LineOfSight": 5,
-                "MaxCharge": 25,
+                "MaxCharge": 20,
                 "MeleeArmor": 2,
                 "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 0,
                 "RechargeDuration": 40.0,
-                "RechargeRate": 0.625,
+                "RechargeRate": 0.5,
                 "ReloadTime": 1.9,
                 "Speed": 1.35,
                 "TrainTime": 15,
@@ -15624,13 +15624,13 @@
                 "LanguageHelpId": 26536,
                 "LanguageNameId": 5536,
                 "LineOfSight": 5,
-                "MaxCharge": 30,
+                "MaxCharge": 25,
                 "MeleeArmor": 2,
                 "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 0,
                 "RechargeDuration": 40.0,
-                "RechargeRate": 0.75,
+                "RechargeRate": 0.625,
                 "ReloadTime": 1.9,
                 "Speed": 1.35,
                 "TrainTime": 14,
@@ -17069,7 +17069,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 65,
+                "HP": 55,
                 "ID": 1747,
                 "LanguageHelpId": 26431,
                 "LanguageNameId": 5431,
@@ -17139,7 +17139,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 75,
+                "HP": 65,
                 "ID": 1749,
                 "LanguageHelpId": 26432,
                 "LanguageNameId": 5432,
@@ -17297,8 +17297,8 @@
                 "MinRange": 0,
                 "PierceArmor": 1,
                 "Range": 0,
-                "RechargeDuration": 15.000015000015,
-                "RechargeRate": 0.333333,
+                "RechargeDuration": 20.0,
+                "RechargeRate": 0.25,
                 "ReloadTime": 1.75,
                 "Speed": 1.6,
                 "TrainTime": 20,
@@ -17368,8 +17368,8 @@
                 "MinRange": 0,
                 "PierceArmor": 1,
                 "Range": 0,
-                "RechargeDuration": 14.99998928572194,
-                "RechargeRate": 0.466667,
+                "RechargeDuration": 20.0,
+                "RechargeRate": 0.35,
                 "ReloadTime": 1.75,
                 "Speed": 1.6,
                 "TrainTime": 20,
@@ -18284,6 +18284,7 @@
                 48,
                 50,
                 51,
+                54,
                 55,
                 63,
                 65,
@@ -18891,6 +18892,7 @@
                 45,
                 47,
                 48,
+                54,
                 55,
                 63,
                 64,
@@ -19561,6 +19563,7 @@
                 17,
                 21,
                 24,
+                36,
                 74,
                 75,
                 77,
@@ -20320,7 +20323,6 @@
                 330,
                 331,
                 358,
-                359,
                 420,
                 440,
                 441,
@@ -21598,6 +21600,7 @@
                 47,
                 48,
                 50,
+                54,
                 55,
                 63,
                 64,
@@ -22815,7 +22818,6 @@
                 47,
                 48,
                 50,
-                54,
                 55,
                 65,
                 67,
@@ -23429,7 +23431,6 @@
                 47,
                 48,
                 50,
-                54,
                 55,
                 63,
                 64,
