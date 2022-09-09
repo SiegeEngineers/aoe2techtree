@@ -430,7 +430,7 @@ export const buildings: any = [
       { techName: 'gold mining' },
       { techName: 'stone mining' },
       { techName: 'gold shaft mining' },
-      { techName: 'gold shaft mining' },
+      { techName: 'stone shaft mining' },
     ],
     age: 'dark age',
   },

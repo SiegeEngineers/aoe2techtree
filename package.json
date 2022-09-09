@@ -1,0 +1,22 @@
+{
+  "name": "aoe2techtree",
+  "version": "0.0.0",
+  "description": "data conversion fork for aoe2-data-api project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amrtgaber/aoe2techtree.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amrtgaber/aoe2techtree/issues"
+  },
+  "homepage": "https://github.com/amrtgaber/aoe2techtree#readme",
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
