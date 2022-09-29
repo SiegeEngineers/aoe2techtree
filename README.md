@@ -2,7 +2,28 @@
 
 This project is a fork of the aoe2techtree project for generating the seed data for the [aoe2 data api](https://github.com/amrtgaber/aoe2-data-api).
 
+It also generates the correct filenames for the images used in [aoe2 random civ draft](https://github.com/amrtgaber/aoe2-random-civ-draft).
+
 The conversion scripts can be found in the `data-conversion` folder.
+
+### Images
+
+The data conversion scripts currently do not create the images for the unique techs. Careful to avoid overwriting these images when copying the data over.
+
+## Installation
+
+```bash
+npm install
+```
+
+## Running
+
+To run the data conversions run these two scripts in this order.
+
+```bash
+npx ts-node convert-base-data.ts
+npx ts-node full-tech-tree.ts
+```
 
 ---
 
