@@ -331,7 +331,7 @@ export const units: any = [
   },
   {
     unitName: 'elite huskarl',
-    buildings: [{ buildingName: 'castle' }],
+    buildings: [{ buildingName: 'barracks' }, { buildingName: 'castle' }],
     age: 'imperial age',
   },
   {
@@ -426,7 +426,7 @@ export const units: any = [
   },
   {
     unitName: 'elite tarkan',
-    buildings: [{ buildingName: 'castle' }],
+    buildings: [{ buildingName: 'castle' }, { buildingName: 'stable' }],
     age: 'imperial age',
   },
   {

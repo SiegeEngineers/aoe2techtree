@@ -4,6 +4,7 @@
   "description": "data conversion fork for aoe2-data-api project",
   "main": "index.js",
   "scripts": {
+    "start": "cd ./data-conversion && ts-node ./convert-base-data.ts && ts-node ./full-tech-tree.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

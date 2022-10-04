@@ -122,6 +122,7 @@ function constructFullTechTree() {
   barracks.units.push({ unitName: 'pikeman', age: 'castle age' });
   barracks.units.push({ unitName: 'eagle warrior', age: 'castle age' });
   barracks.units.push({ unitName: 'huskarl', age: 'castle age' });
+  barracks.units.push({ unitName: 'elite huskarl', age: 'imperial age' });
   barracks.units.push({
     unitName: 'two-handed swordsman',
     age: 'imperial age',
@@ -149,6 +150,7 @@ function constructFullTechTree() {
   stable.units.push({ unitName: 'steppe lancer', age: 'castle age' });
   stable.units.push({ unitName: 'xolotl warrior', age: 'castle age' });
   stable.units.push({ unitName: 'tarkan', age: 'castle age' });
+  stable.units.push({ unitName: 'elite tarkan', age: 'imperial age' });
   stable.units.push({ unitName: 'hussar', age: 'imperial age' });
   stable.units.push({
     unitName: 'elite shrivamsha rider',
