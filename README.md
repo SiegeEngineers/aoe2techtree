@@ -18,11 +18,8 @@ npm install
 
 ## Running
 
-To run the data conversions run these two scripts in this order.
-
 ```bash
-npx ts-node convert-base-data.ts
-npx ts-node full-tech-tree.ts
+npm start
 ```
 
 ---
