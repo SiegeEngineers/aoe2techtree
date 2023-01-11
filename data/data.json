@@ -8136,7 +8136,7 @@
                 "AttackDelaySeconds": 0.8969999999999999,
                 "Attacks": [
                     {
-                        "Amount": 2,
+                        "Amount": 4,
                         "Class": 27
                     },
                     {
@@ -11275,6 +11275,10 @@
                     {
                         "Amount": 9,
                         "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 27
                     }
                 ],
                 "ChargeEvent": 0,
@@ -11345,6 +11349,10 @@
                     {
                         "Amount": 9,
                         "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 27
                     }
                 ],
                 "ChargeEvent": 0,
@@ -14123,7 +14131,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 120,
+                    "Food": 110,
                     "Gold": 70
                 },
                 "FrameDelay": 0,
@@ -14197,7 +14205,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 120,
+                    "Food": 110,
                     "Gold": 70
                 },
                 "FrameDelay": 0,
@@ -16745,7 +16753,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 5,
+                "Attack": 3,
                 "AttackDelaySeconds": 0.8,
                 "Attacks": [
                     {
@@ -16757,12 +16765,12 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 5,
+                        "Amount": 3,
                         "Class": 4
                     },
                     {
                         "Amount": 0,
-                        "Class": 15
+                        "Class": 1
                     }
                 ],
                 "ChargeEvent": 0,
@@ -16815,7 +16823,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 6,
+                "Attack": 4,
                 "AttackDelaySeconds": 0.8,
                 "Attacks": [
                     {
@@ -16827,12 +16835,12 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 6,
+                        "Amount": 4,
                         "Class": 4
                     },
                     {
-                        "Amount": 0,
-                        "Class": 15
+                        "Amount": 1,
+                        "Class": 1
                     }
                 ],
                 "ChargeEvent": 0,
