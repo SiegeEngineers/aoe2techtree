@@ -15654,11 +15654,11 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 4
                     },
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 3
                     },
                     {
@@ -15670,7 +15670,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 5,
+                "Attack": 8,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
@@ -15694,15 +15694,15 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 45,
+                "HP": 65,
                 "ID": 1658,
                 "LanguageHelpId": 26538,
                 "LanguageNameId": 5538,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
-                "MeleeArmor": 2,
+                "MeleeArmor": 3,
                 "MinRange": 0,
-                "PierceArmor": 2,
+                "PierceArmor": 3,
                 "Range": 0,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
