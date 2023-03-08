@@ -4572,8 +4572,8 @@
             },
             "1709": {
                 "Cost": {
-                    "Food": 950,
-                    "Gold": 750
+                    "Food": 1100,
+                    "Gold": 800
                 },
                 "ID": 901,
                 "ResearchTime": 140,
@@ -16771,6 +16771,10 @@
                     {
                         "Amount": 0,
                         "Class": 1
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 32
                     }
                 ],
                 "ChargeEvent": 0,
@@ -16841,6 +16845,10 @@
                     {
                         "Amount": 1,
                         "Class": 1
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 32
                     }
                 ],
                 "ChargeEvent": 0,
@@ -16929,7 +16937,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 200,
+                "HP": 180,
                 "ID": 1744,
                 "LanguageHelpId": 26428,
                 "LanguageNameId": 5428,
@@ -16951,7 +16959,7 @@
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
-                        "Amount": 18,
+                        "Amount": 20,
                         "Class": 5
                     },
                     {
@@ -16959,7 +16967,7 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 8,
+                        "Amount": 10,
                         "Class": 8
                     },
                     {
@@ -16967,7 +16975,7 @@
                         "Class": 20
                     },
                     {
-                        "Amount": 2,
+                        "Amount": 0,
                         "Class": 17
                     },
                     {
@@ -17007,7 +17015,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 250,
+                "HP": 220,
                 "ID": 1746,
                 "LanguageHelpId": 26430,
                 "LanguageNameId": 5430,
