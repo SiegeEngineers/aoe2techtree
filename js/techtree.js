@@ -374,6 +374,7 @@ const BURGUNDIAN_VINEYARDS = 754;
 const FLEMISH_REVOLUTION = 755;
 const FIRST_CRUSADE = 756;
 const SCUTAGE = 757;
+const GAMBESONS = 875;
 
 class Tree {
     constructor() {
@@ -665,6 +666,7 @@ function getDefaultTree() {
     barrackslane.rows.castle_1.push(unit(LONG_SWORDSMAN));
     barrackslane.rows.castle_1.push(unit(PIKEMAN));
     barrackslane.rows.castle_1.push(unit(EAGLE_WARRIOR));
+    barrackslane.rows.castle_1.push(tech(GAMBESONS));
     barrackslane.rows.castle_1.push(tech(SQUIRES));
     barrackslane.rows.castle_1.push(tech(ARSON));
     barrackslane.rows.imperial_1.push(unit(TWO_HANDED_SWORDSMAN));
@@ -980,6 +982,8 @@ function getConnections() {
         [u(EAGLE_SCOUT), u(EAGLE_WARRIOR)],
         [u(EAGLE_WARRIOR), u(ELITE_EAGLE_WARRIOR)],
         [b(BARRACKS), t(SUPPLIES)],
+        [t(SUPPLIES), t(GAMBESONS)],
+        [b(BARRACKS), t(SQUIRES)],
         [b(BARRACKS), t(ARSON)],
         [b(STABLE), u(SCOUT_CAVALRY)],
         [u(SCOUT_CAVALRY), u(LIGHT_CAVALRY)],
