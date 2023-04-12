@@ -45,6 +45,8 @@ const unitClasses = {
     35: 'Mamelukes',
     36: '<abbr title="unused">Heroes & Kings</abbr>',
     37: 'Hussite Wagons',
+    38: 'Skirmishers',
+    39: 'Cavalry Resistance',
 };
 
 const locales = {
