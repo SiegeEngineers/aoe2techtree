@@ -114,11 +114,7 @@ export const techs: any = [
     buildings: [{ buildingName: 'market' }],
     age: 'castle age',
   },
-  {
-    techName: 'berserkergang',
-    buildings: [{ buildingName: 'castle' }],
-    age: 'imperial age',
-  },
+  { techName: 'bogsveigar', buildings: [] },
   {
     techName: 'masonry',
     buildings: [{ buildingName: 'university' }],
@@ -793,5 +789,10 @@ export const techs: any = [
     techName: 'frontier guards',
     buildings: [{ buildingName: 'castle' }],
     age: 'imperial age',
+  },
+  {
+    techName: 'gambesons',
+    buildings: [{ buildingName: 'barracks' }],
+    age: 'castle age',
   },
 ];

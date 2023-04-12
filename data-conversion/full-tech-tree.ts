@@ -9,24 +9,34 @@ import {
   techsWriteStream,
   openWriteStreams,
   writeToFile,
-} from './convert-base-data';
+} from './lib/file-io';
 import {
   ConvertedBuilding,
   ConvertedTech,
   ConvertedUnit,
-} from './data-conversion-types';
+} from './lib/data-conversion-types';
 
 // main
+console.log('populating full tech tree...');
 constructFullTechTree();
 addBuildingsToUnits();
 addBuildingsToTechs();
 writeFiles();
+console.log('populating full tech tree complete');
 
-function writeFiles() {
-  openWriteStreams();
-  writeToFile(buildings, buildingsWriteStream);
-  writeToFile(units, unitsWriteStream);
-  writeToFile(techs, techsWriteStream);
+function addBuildingsToUnits() {
+  units.forEach((unit: ConvertedUnit) => {
+    unit.buildings = [];
+    buildings.forEach((building: ConvertedBuilding) => {
+      building.units.forEach((bunit: ConvertedUnit) => {
+        if (unit.unitName === bunit.unitName) {
+          unit.age = bunit.age;
+          delete bunit.age;
+          unit.buildings.push({ buildingName: building.buildingName });
+        }
+      });
+    });
+  });
 }
 
 function addBuildingsToTechs() {
@@ -44,19 +54,11 @@ function addBuildingsToTechs() {
   });
 }
 
-function addBuildingsToUnits() {
-  units.forEach((unit: ConvertedUnit) => {
-    unit.buildings = [];
-    buildings.forEach((building: ConvertedBuilding) => {
-      building.units.forEach((bunit: ConvertedUnit) => {
-        if (unit.unitName === bunit.unitName) {
-          unit.age = bunit.age;
-          delete bunit.age;
-          unit.buildings.push({ buildingName: building.buildingName });
-        }
-      });
-    });
-  });
+function writeFiles() {
+  openWriteStreams({ units: true, techs: true, buildings: true, civs: false });
+  writeToFile(buildings, buildingsWriteStream);
+  writeToFile(units, unitsWriteStream);
+  writeToFile(techs, techsWriteStream);
 }
 
 function getBuilding(name: string): ConvertedBuilding {
@@ -135,6 +137,7 @@ function constructFullTechTree() {
   barracks.techs.push({ techName: 'supplies', age: 'feudal age' });
   barracks.techs.push({ techName: 'squires', age: 'castle age' });
   barracks.techs.push({ techName: 'arson', age: 'castle age' });
+  barracks.techs.push({ techName: 'gambesons', age: 'castle age' });
 
   const stable = getBuilding('stable');
 
@@ -295,7 +298,10 @@ function constructFullTechTree() {
   donjon.age = 'feudal age';
 
   donjon.units.push({ unitName: 'serjeant', age: 'feudal age' });
+  donjon.units.push({ unitName: 'spearman', age: 'feudal age' });
+  donjon.units.push({ unitName: 'pikeman', age: 'castle age' });
   donjon.units.push({ unitName: 'elite serjeant', age: 'imperial age' });
+  donjon.units.push({ unitName: 'halberdier', age: 'imperial age' });
 
   const monastery = getBuilding('monastery');
 

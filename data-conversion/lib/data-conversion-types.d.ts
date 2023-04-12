@@ -1,4 +1,4 @@
-import DATA from '../data/data.json';
+import DATA from '../../data/data.json';
 
 export type DataTechTree = typeof DATA.techtrees.Aztecs;
 export type DataTechTrees = Record<string, DataTechTree>;

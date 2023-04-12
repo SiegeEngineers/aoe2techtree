@@ -4,6 +4,18 @@ import DATA from '../data/data.json';
 import STRINGS from '../data/locales/en/strings.json';
 
 import {
+  OUTPUT_DIR,
+  buildingsWriteStream,
+  unitsWriteStream,
+  techsWriteStream,
+  civsWriteStream,
+  openWriteStreams,
+  writeToFile,
+  createImageFolders,
+  copyImageFile,
+} from './lib/file-io';
+
+import {
   ConvertedBuilding,
   ConvertedTech,
   ConvertedUnit,
@@ -14,11 +26,9 @@ import {
   DataTechTrees,
   DataUniques,
   LocaleStrings,
-} from './data-conversion-types';
+} from './lib/data-conversion-types';
 
 // globals
-export const OUTPUT_DIR = './converted-data';
-
 const ENGLISH_STRINGS = STRINGS as LocaleStrings;
 
 const TECH_TREES = DATA.techtrees as DataTechTrees;
@@ -26,56 +36,18 @@ const UNITS = DATA.data.units as DataUnits;
 const TECHS = DATA.data.techs as DataTechs;
 const BUILDINGS = DATA.data.buildings as DataBuildings;
 
-export let unitsWriteStream: fs.WriteStream;
-export let techsWriteStream: fs.WriteStream;
-export let buildingsWriteStream: fs.WriteStream;
-export let civsWriteStream: fs.WriteStream;
-
 // main()
+console.log('converting base data...');
 createImageFolders();
 
-openWriteStreams();
+openWriteStreams({ units: true, techs: true, buildings: true, civs: true });
 
 convertAllUnits(`${OUTPUT_DIR}/units.json`);
 convertAllTechs(`${OUTPUT_DIR}/techs.json`);
 convertAllBuildings(`${OUTPUT_DIR}/buildings.json`);
 convertAllCivs(`${OUTPUT_DIR}/tech-trees.json`);
 
-/**
- * preps the folders to copy the images into
- */
-function createImageFolders() {
-  fs.rmSync(`${OUTPUT_DIR}/images`, { recursive: true, force: true });
-  fs.mkdirSync(`${OUTPUT_DIR}/images`);
-  fs.mkdirSync(`${OUTPUT_DIR}/images/units`);
-  fs.mkdirSync(`${OUTPUT_DIR}/images/techs`);
-  fs.mkdirSync(`${OUTPUT_DIR}/images/buildings`);
-}
-
-export function openWriteStreams() {
-  unitsWriteStream = fs.createWriteStream(`${OUTPUT_DIR}/units.ts`);
-  unitsWriteStream.write('export const units: any = ');
-
-  techsWriteStream = fs.createWriteStream(`${OUTPUT_DIR}/techs.ts`);
-  techsWriteStream.write('export const techs: any = ');
-
-  buildingsWriteStream = fs.createWriteStream(`${OUTPUT_DIR}/buildings.ts`);
-  buildingsWriteStream.write('export const buildings: any = ');
-
-  civsWriteStream = fs.createWriteStream(`${OUTPUT_DIR}/civs.ts`);
-  civsWriteStream.write('export const civs: any = ');
-}
-
-function copyImageFile(id: string, name: string, srcDir: string) {
-  const imgSrc = `../img/${srcDir}/${id}.png`;
-
-  if (fs.existsSync(imgSrc)) {
-    fs.copyFileSync(
-      imgSrc,
-      `${OUTPUT_DIR}/images/${srcDir.toLowerCase()}/${name}.png`,
-    );
-  }
-}
+console.log('converting base data complete');
 
 /**
  * converts all units to the aoe2-data-api format then writes to file
@@ -282,14 +254,4 @@ function convertUniques(uniques: DataUniques): {
     uniqueUnits: [{ unitName: castleUnit }, { unitName: impUnit }],
     uniqueTechs: [{ techName: castleTech }, { techName: impTech }],
   };
-}
-
-/**
- * writes data to stream
- * @param data
- * @param writeStream
- */
-export function writeToFile(data: any, writeStream: fs.WriteStream) {
-  const jsonString = JSON.stringify(data, null, '');
-  writeStream.write(jsonString);
 }

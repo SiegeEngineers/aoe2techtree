@@ -116,7 +116,7 @@ export const units: any = [
   },
   {
     unitName: 'spearman',
-    buildings: [{ buildingName: 'barracks' }],
+    buildings: [{ buildingName: 'barracks' }, { buildingName: 'donjon' }],
     age: 'feudal age',
   },
   {
@@ -196,12 +196,12 @@ export const units: any = [
   },
   {
     unitName: 'pikeman',
-    buildings: [{ buildingName: 'barracks' }],
+    buildings: [{ buildingName: 'barracks' }, { buildingName: 'donjon' }],
     age: 'castle age',
   },
   {
     unitName: 'halberdier',
-    buildings: [{ buildingName: 'barracks' }],
+    buildings: [{ buildingName: 'barracks' }, { buildingName: 'donjon' }],
     age: 'imperial age',
   },
   {
