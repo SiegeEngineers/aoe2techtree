@@ -225,6 +225,9 @@ const SHRIVAMSHA_RIDER = 1751;
 const ELITE_SHRIVAMSHA_RIDER = 1753;
 const CARAVANSERAI = 1754;
 const CAMEL_SCOUT = 1755;
+const DSPEARMAN = 1786;
+const DPIKEMAN = 1787;
+const DHALBERDIER = 1788;
 const YEOMEN = 3;
 const EL_DORADO = 4;
 const FUROR_CELTICA = 5;
@@ -837,7 +840,10 @@ function getDefaultTree() {
     let donjonlane = new Lane();
     donjonlane.rows.feudal_1.push(building(DONJON));
     donjonlane.rows.feudal_2.push(uniqueunit(DSERJEANT));
+    donjonlane.rows.feudal_2.push(unit(DSPEARMAN));
+    donjonlane.rows.castle_1.push(unit(DPIKEMAN));
     donjonlane.rows.imperial_1.push(uniqueunit(ELITE_DSERJEANT));
+    donjonlane.rows.imperial_1.push(unit(DHALBERDIER));
     tree.lanes.push(donjonlane);
 
 
@@ -1041,6 +1047,9 @@ function getConnections() {
         [u(KONNIK_2), u(ELITE_KONNIK_2)],
         [b(DONJON), u(DSERJEANT)],
         [u(DSERJEANT), u(ELITE_DSERJEANT)],
+        [b(DONJON), u(DSPEARMAN)],
+        [u(DSPEARMAN), u(DPIKEMAN)],
+        [u(DPIKEMAN), u(DHALBERDIER)],
         [b(TOWN_CENTER), u(VILLAGER)],
         [b(TOWN_CENTER), t(FEUDAL_AGE)],
         [t(FEUDAL_AGE), t(CASTLE_AGE)],
