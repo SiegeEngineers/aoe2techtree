@@ -114,7 +114,11 @@ export const techs: any = [
     buildings: [{ buildingName: 'market' }],
     age: 'castle age',
   },
-  { techName: 'bogsveigar', buildings: [] },
+  {
+    techName: 'bogsveigar',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'imperial age',
+  },
   {
     techName: 'masonry',
     buildings: [{ buildingName: 'university' }],

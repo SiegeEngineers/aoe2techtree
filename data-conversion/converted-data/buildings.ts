@@ -286,7 +286,7 @@ export const buildings: any = [
       { techName: 'chatras' },
       { techName: 'paper money' },
       { techName: 'chieftains' },
-      { techName: 'berserkergang', age: 'imperial age' },
+      { techName: 'bogsveigar' },
     ],
     age: 'castle age',
   },

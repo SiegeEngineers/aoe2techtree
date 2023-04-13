@@ -24,6 +24,8 @@ addBuildingsToTechs();
 writeFiles();
 console.log('populating full tech tree complete');
 
+// functions
+
 function addBuildingsToUnits() {
   units.forEach((unit: ConvertedUnit) => {
     unit.buildings = [];
@@ -702,5 +704,5 @@ function constructFullTechTree() {
   castle.units.push({ unitName: 'berserk', age: 'castle age' });
   castle.units.push({ unitName: 'elite berserk', age: 'imperial age' });
   castle.techs.push({ techName: 'chieftains', age: 'castle age' });
-  castle.techs.push({ techName: 'berserkergang', age: 'imperial age' });
+  castle.techs.push({ techName: 'bogsveigar', age: 'imperial age' });
 }

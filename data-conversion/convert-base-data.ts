@@ -49,6 +49,8 @@ convertAllCivs(`${OUTPUT_DIR}/tech-trees.json`);
 
 console.log('converting base data complete');
 
+// functions
+
 /**
  * converts all units to the aoe2-data-api format then writes to file
  * @param filename
