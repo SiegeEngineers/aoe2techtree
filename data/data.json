@@ -1186,7 +1186,7 @@
                 "internal_name": "WCTW3"
             },
             "236": {
-                "AccuracyPercent": 92,
+                "AccuracyPercent": 100,
                 "Armours": [
                     {
                         "Amount": 0,
@@ -12707,6 +12707,10 @@
                     {
                         "Amount": 1,
                         "Class": 17
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -12781,6 +12785,10 @@
                     {
                         "Amount": 1,
                         "Class": 17
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
