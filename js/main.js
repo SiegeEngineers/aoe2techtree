@@ -521,6 +521,11 @@ function getHelpText(name, id, type) {
         let displayAttack = false;
         let ranged = meta.Range > 1;
         text = text.replace(/‹cost›/, cost(meta.Cost));
+        // The format is ‹static_cost=Gold,200› as with Spies/Treason.
+        text = text.replaceAll(/‹static_cost=([^,›]*),([^›]*)›/g, (_, resource, cost) => {
+          const className = resource.toLowerCase();
+          return `<span class="cost ${className}" title="${cost} ${resource}">${cost}</span>`;
+        });
         let stats = []
         if (text.match(/‹hp›/)) {
             stats.push('HP:&nbsp;' + meta.HP);
