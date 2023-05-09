@@ -997,4 +997,10 @@ function main() {
     });
 }
 
-main();
+if('loading' === document.readyState) {
+    // Loading hasn't finished yet.
+    document.addEventListener('DOMContentLoaded', main)
+} else {
+    // `DOMContentLoaded` has already fired.
+    main();
+}
