@@ -677,6 +677,7 @@ function getDefaultTree() {
     barrackslane.rows.imperial_1.push(unit(HALBERDIER));
     barrackslane.rows.imperial_1.push(unit(ELITE_EAGLE_WARRIOR));
     barrackslane.rows.imperial_1.push(uniqueunit(CONDOTTIERO));
+    barrackslane.rows.imperial_1.push(uniqueunit(FLEMISHPIKEMAN));
     tree.lanes.push(barrackslane);
 
 
@@ -879,7 +880,6 @@ function getDefaultTree() {
     towncenterlane.rows.castle_1.push(tech(TOWN_PATROL));
     towncenterlane.rows.castle_1.push(tech(IMPERIAL_AGE));
     towncenterlane.rows.castle_1.push(tech(HAND_CART));
-    towncenterlane.rows.imperial_1.push(uniqueunit(FLEMISHPIKEMAN));
     tree.lanes.push(towncenterlane);
 
 
