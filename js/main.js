@@ -664,17 +664,15 @@ function styleXRefBadges(name, id, type) {
 function ifDefined(value, prefix, alwaysDisplay = true) {
     if (value !== undefined && (alwaysDisplay || value > 0)) {
         return ' ' + prefix + value;
-    } else {
-        return '';
     }
+    return '';
 }
 
 function secondsIfDefined(value, prefix, alwaysDisplay = true) {
     if (value !== undefined && (alwaysDisplay || value > 0)) {
         return ' ' + prefix + toMaxFixed2(value) + 's';
-    } else {
-        return '';
     }
+    return '';
 }
 
 function toMaxFixed2(value) {
@@ -691,15 +689,12 @@ function accuracyIfDefined(value, prefix, alwaysDisplay) {
 function ifDefinedAndGreaterZero(value, prefix) {
     if (value !== undefined && value > 0) {
         return ' ' + prefix + value;
-    } else {
-        return '';
     }
+    return '';
 }
 
 function arrayIfDefinedAndNonEmpty(attacks, prefix) {
-    if (attacks === undefined || attacks.length < 1) {
-        return '';
-    } else {
+    if (attacks !== undefined && 0 < attacks.length) {
         const strings = [];
         for (let attack of attacks) {
             const amount = attack['Amount'];
@@ -708,14 +703,14 @@ function arrayIfDefinedAndNonEmpty(attacks, prefix) {
         }
         return prefix + '<p>' + strings.join(', ') + '</p>';
     }
+    return '';
 }
 
 function repeatableIfDefined(value) {
     if (value !== undefined) {
         return value ? 'Repeatable' : 'Not Repeatable';
-    } else {
-        return '';
     }
+    return '';
 }
 
 function cost(cost_object) {
