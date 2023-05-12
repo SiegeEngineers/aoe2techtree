@@ -239,7 +239,7 @@ function displayData() {
 }
 
 function updateCivselectValue() {
-    let hash = window.location.hash.substr(1);
+    let hash = window.location.hash.substring(1);
     let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
     if (capitalisedHash in data.civ_names) {
         const civSelect = document.getElementById('civselect');
