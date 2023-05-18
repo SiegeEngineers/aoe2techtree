@@ -39,6 +39,7 @@
         "Persians": "120157",
         "Poles": "120187",
         "Portuguese": "120173",
+        "Romans": "120192",
         "Saracens": "120158",
         "Sicilians": "120186",
         "Slavs": "120172",
@@ -83,6 +84,7 @@
         "Persians": "10278",
         "Poles": "10308",
         "Portuguese": "10294",
+        "Romans": "10313",
         "Saracens": "10279",
         "Sicilians": "10307",
         "Slavs": "10293",
@@ -3840,6 +3842,30 @@
                 "Repeatable": false,
                 "ResearchTime": 25,
                 "internal_name": "Gambesons"
+            },
+            "883": {
+                "Cost": {
+                    "Gold": 300,
+                    "Wood": 400
+                },
+                "ID": 883,
+                "LanguageHelpId": 28444,
+                "LanguageNameId": 7444,
+                "Repeatable": false,
+                "ResearchTime": 45,
+                "internal_name": "Ballistas"
+            },
+            "884": {
+                "Cost": {
+                    "Food": 700,
+                    "Gold": 800
+                },
+                "ID": 884,
+                "LanguageHelpId": 28445,
+                "LanguageNameId": 7445,
+                "Repeatable": true,
+                "ResearchTime": 60,
+                "internal_name": "Comitatenses"
             }
         },
         "unit_upgrades": {
@@ -4661,6 +4687,24 @@
                 "ID": 901,
                 "ResearchTime": 50,
                 "internal_name": "Halberdier"
+            },
+            "1792": {
+                "Cost": {
+                    "Food": 1100,
+                    "Gold": 900
+                },
+                "ID": 901,
+                "ResearchTime": 60,
+                "internal_name": "Elite Centurion"
+            },
+            "1793": {
+                "Cost": {
+                    "Food": 800,
+                    "Gold": 400
+                },
+                "ID": 901,
+                "ResearchTime": 100,
+                "internal_name": "Legionary"
             }
         },
         "units": {
@@ -18666,6 +18710,294 @@
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "DHLBDM"
+            },
+            "1790": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 13,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 13,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 75,
+                    "Gold": 85
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 120,
+                "ID": 1790,
+                "LanguageHelpId": 26052,
+                "LanguageNameId": 5052,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 3,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 1.9,
+                "Speed": 1.35,
+                "TrainTime": 24,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "CENTURION"
+            },
+            "1792": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 3,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 15,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 15,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 75,
+                    "Gold": 85
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 155,
+                "ID": 1792,
+                "LanguageHelpId": 26053,
+                "LanguageNameId": 5053,
+                "LineOfSight": 5,
+                "MaxCharge": 0,
+                "MeleeArmor": 3,
+                "MinRange": 0,
+                "PierceArmor": 3,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 1.9,
+                "Speed": 1.35,
+                "TrainTime": 24,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "ECENTURION"
+            },
+            "1793": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 12,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 8,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 60,
+                    "Gold": 20
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 75,
+                "ID": 1793,
+                "LanguageHelpId": 26054,
+                "LanguageNameId": 5054,
+                "LineOfSight": 5,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 2,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 0.9,
+                "TrainTime": 21,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "LEGIONARY"
+            },
+            "1795": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 50,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 50,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 135,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 30,
+                        "Class": 20
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Gold": 150,
+                    "Wood": 175
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 125,
+                "ID": 1795,
+                "LanguageHelpId": 26055,
+                "LanguageNameId": 5055,
+                "LineOfSight": 14,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 3,
+                "PierceArmor": 6,
+                "Range": 12,
+                "RechargeRate": 0,
+                "ReloadTime": 8,
+                "Speed": 1.2,
+                "TrainTime": 50,
+                "Trait": 2,
+                "TraitPiece": 0,
+                "internal_name": "DROMON"
             }
         }
     },
@@ -20034,7 +20366,6 @@
                 331,
                 358,
                 359,
-                420,
                 422,
                 440,
                 441,
@@ -20054,11 +20385,11 @@
                 550,
                 567,
                 569,
-                691,
                 1103,
                 1104,
                 1105,
-                1258
+                1258,
+                1795
             ]
         },
         "Celts": {
@@ -21100,7 +21431,8 @@
                 1103,
                 1104,
                 1105,
-                1258
+                1258,
+                1795
             ]
         },
         "Gurjaras": {
@@ -21534,7 +21866,8 @@
                 1103,
                 1104,
                 1105,
-                1258
+                1258,
+                1795
             ]
         },
         "Incas": {
@@ -23677,6 +24010,148 @@
                 1104,
                 1105,
                 1258
+            ]
+        },
+        "Romans": {
+            "buildings": [
+                12,
+                45,
+                49,
+                50,
+                68,
+                70,
+                72,
+                79,
+                82,
+                84,
+                87,
+                101,
+                103,
+                104,
+                109,
+                117,
+                155,
+                199,
+                209,
+                234,
+                235,
+                276,
+                487,
+                562,
+                584,
+                598,
+                621,
+                792
+            ],
+            "monkPrefix": "",
+            "techs": [
+                8,
+                12,
+                13,
+                14,
+                15,
+                17,
+                22,
+                23,
+                39,
+                45,
+                47,
+                48,
+                50,
+                51,
+                55,
+                63,
+                65,
+                67,
+                68,
+                74,
+                75,
+                76,
+                80,
+                81,
+                82,
+                93,
+                101,
+                102,
+                103,
+                140,
+                182,
+                194,
+                199,
+                200,
+                202,
+                203,
+                211,
+                212,
+                213,
+                215,
+                219,
+                230,
+                233,
+                249,
+                252,
+                278,
+                280,
+                315,
+                316,
+                319,
+                321,
+                322,
+                373,
+                374,
+                377,
+                408,
+                435,
+                441,
+                602
+            ],
+            "unique": {
+                "castleAgeUniqueTech": 883,
+                "castleAgeUniqueUnit": 1790,
+                "imperialAgeUniqueTech": 884,
+                "imperialAgeUniqueUnit": 1792
+            },
+            "units": [
+                4,
+                6,
+                7,
+                13,
+                17,
+                21,
+                24,
+                38,
+                39,
+                74,
+                75,
+                77,
+                83,
+                93,
+                125,
+                128,
+                279,
+                280,
+                283,
+                331,
+                358,
+                359,
+                422,
+                440,
+                442,
+                448,
+                474,
+                529,
+                532,
+                539,
+                542,
+                545,
+                546,
+                548,
+                550,
+                1103,
+                1105,
+                1258,
+                1793,
+                1795
             ]
         },
         "Saracens": {

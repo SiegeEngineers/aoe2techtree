@@ -228,6 +228,8 @@ const CAMEL_SCOUT = 1755;
 const DSPEARMAN = 1786;
 const DPIKEMAN = 1787;
 const DHALBERDIER = 1788;
+const LEGIONARY = 1793;
+const DROMON = 1795;
 const YEOMEN = 3;
 const EL_DORADO = 4;
 const FUROR_CELTICA = 5;
@@ -479,11 +481,14 @@ class Lane {
         for (let connection of connections) {
             let from = connection[0];
             let to = connection[1];
-            if (carets.has(from) && carets.has(to)) {
-                let from_x = carets.get(from).x;
-                let to_x = carets.get(to).x;
-                carets.get(from).x = Math.max(from_x, to_x);
-                carets.get(to).x = Math.max(from_x, to_x);
+            let allConnectionsForFrom = connections.filter(c => c[0] === from && carets.has(c[0]) && carets.has(c[1]));
+            let allRelevantTos = allConnectionsForFrom.map(c => c[1]);
+            if (carets.has(from) && carets.get(from).x < Math.min(allRelevantTos.map(to_ => carets.get(to_).x))){
+                carets.get(from).x = Math.min(allRelevantTos.map(to_ => carets.get(to_).x));
+            }
+            if (carets.has(from) && carets.get(from).x > Math.max(allRelevantTos.map(to_ => carets.get(to_).x))){
+                console.assert(allRelevantTos.length === 1, `Overlapping carets: ${allRelevantTos}`)
+                allRelevantTos.forEach(to_ => carets.get(to_).x = carets.get(from).x);
             }
         }
     }
@@ -663,16 +668,17 @@ function getDefaultTree() {
     barrackslane.rows.dark_1.push(building(BARRACKS));
     barrackslane.rows.dark_2.push(unit(MILITIA));
     barrackslane.rows.feudal_1.push(unit(MAN_AT_ARMS));
+    barrackslane.rows.feudal_1.push(tech(SUPPLIES));
     barrackslane.rows.feudal_1.push(unit(SPEARMAN));
     barrackslane.rows.feudal_1.push(unit(EAGLE_SCOUT));
-    barrackslane.rows.feudal_1.push(tech(SUPPLIES));
     barrackslane.rows.castle_1.push(unit(LONG_SWORDSMAN));
+    barrackslane.rows.castle_1.push(tech(GAMBESONS));
     barrackslane.rows.castle_1.push(unit(PIKEMAN));
     barrackslane.rows.castle_1.push(unit(EAGLE_WARRIOR));
-    barrackslane.rows.castle_1.push(tech(GAMBESONS));
     barrackslane.rows.castle_1.push(tech(SQUIRES));
     barrackslane.rows.castle_1.push(tech(ARSON));
     barrackslane.rows.imperial_1.push(unit(TWO_HANDED_SWORDSMAN));
+    barrackslane.rows.imperial_1.push(uniqueunit(LEGIONARY));
     barrackslane.rows.imperial_2.push(unit(CHAMPION));
     barrackslane.rows.imperial_1.push(unit(HALBERDIER));
     barrackslane.rows.imperial_1.push(unit(ELITE_EAGLE_WARRIOR));
@@ -763,6 +769,7 @@ function getDefaultTree() {
     docklane.rows.imperial_1.push(unit(CANNON_GALLEON));
     docklane.rows.imperial_1.push(unit(HEAVY_DEMO_SHIP));
     docklane.rows.imperial_1.push(unit(GALLEON));
+    docklane.rows.imperial_1.push(unit(DROMON));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_TURTLE_SHIP));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_LONGBOAT));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_CARAVEL));
@@ -980,6 +987,7 @@ function getConnections() {
         [u(MILITIA), u(MAN_AT_ARMS)],
         [u(MAN_AT_ARMS), u(LONG_SWORDSMAN)],
         [u(LONG_SWORDSMAN), u(TWO_HANDED_SWORDSMAN)],
+        [u(LONG_SWORDSMAN), u(LEGIONARY)],
         [u(TWO_HANDED_SWORDSMAN), u(CHAMPION)],
         [b(BARRACKS), u(SPEARMAN)],
         [u(SPEARMAN), u(PIKEMAN)],
@@ -1011,6 +1019,7 @@ function getConnections() {
         [u(CAVALIER), u(PALADIN)],
         [b(DOCK), u(FISHING_SHIP)],
         [b(DOCK), u(TRANSPORT_SHIP)],
+        [b(DOCK), u(DROMON)],
         [b(DOCK), u(DEMOLITION_RAFT)],
         [u(DEMOLITION_RAFT), u(DEMOLITION_SHIP)],
         [u(DEMOLITION_SHIP), u(HEAVY_DEMO_SHIP)],

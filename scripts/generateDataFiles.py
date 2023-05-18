@@ -67,6 +67,7 @@ CIV_NAMES = {
     "Bengalis": "10311",
     "Dravidians": "10310",
     "Gurjaras": "10312",
+    "Romans": "10313",
 }
 
 CIV_HELPTEXTS = {
@@ -112,6 +113,7 @@ CIV_HELPTEXTS = {
     "Bengalis": "120190",
     "Dravidians": "120189",
     "Gurjaras": "120191",
+    "Romans": "120192",
 }
 
 RTWC2 = 71
@@ -471,7 +473,7 @@ def main():
     if args.output:
         outputdir = Path(args.output)
 
-    techtreesfile = Path(args.programdir) / 'widgetui' / 'civTechTrees.json'
+    techtreesfile = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'civTechTrees.json'
     techtrees = json.loads(techtreesfile.read_text())
     civs, unit_upgrades = gather_civs(techtrees)
 
