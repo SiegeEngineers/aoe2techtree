@@ -19009,7 +19009,8 @@
         "Technology": "300085",
         "Technology Tree": "9799",
         "Unique Unit": "300082",
-        "Unit": "300083"
+        "Unit": "300083",
+        "mode": "1"
     },
     "techtrees": {
         "Aztecs": {

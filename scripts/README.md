@@ -9,5 +9,5 @@ and the tech tree data from the civTechTrees.json file from aoe2de.
 Example invocation:
 
 ```
-./generateDataFiles.py ~/git/aoe2dat/data/full.json ~/aoe/Aoe2DE\ proton/
+./generateDataFiles.py ~/git/aoe2dat/data/full.json ~/git/aoe2dat/data/full.ror.json ~/aoe/Aoe2DE\ proton/
 ```
