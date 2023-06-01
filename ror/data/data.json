@@ -225,7 +225,7 @@
                 "PierceArmor": 3,
                 "Range": 0,
                 "ReloadTime": 2.5,
-                "TrainTime": 70,
+                "TrainTime": 35,
                 "internal_name": "GTAA3"
             },
             "64": {
@@ -268,7 +268,7 @@
                 "PierceArmor": 2,
                 "Range": 0,
                 "ReloadTime": 2.5,
-                "TrainTime": 70,
+                "TrainTime": 35,
                 "internal_name": "GTAA2"
             },
             "68": {
@@ -1054,7 +1054,7 @@
                 "PierceArmor": 1,
                 "Range": 0,
                 "ReloadTime": 2.5,
-                "TrainTime": 30,
+                "TrainTime": 35,
                 "internal_name": "PGTAA"
             }
         },
@@ -1762,8 +1762,8 @@
             },
             "77": {
                 "Cost": {
-                    "Food": 160,
-                    "Gold": 50
+                    "Food": 240,
+                    "Gold": 100
                 },
                 "ID": 181,
                 "ResearchTime": 90,
@@ -1842,7 +1842,7 @@
             },
             "542": {
                 "Cost": {
-                    "Food": 1500,
+                    "Food": 1200,
                     "Wood": 1000
                 },
                 "ID": 181,
@@ -2554,7 +2554,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 70,
+                "HP": 80,
                 "ID": 75,
                 "LanguageHelpId": 326186,
                 "LanguageNameId": 305186,
@@ -2604,7 +2604,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 80,
+                "HP": 100,
                 "ID": 77,
                 "LanguageHelpId": 326187,
                 "LanguageNameId": 305187,
@@ -2857,7 +2857,7 @@
                 "PierceArmor": 0,
                 "Range": 9,
                 "RechargeRate": 0,
-                "ReloadTime": 3.1,
+                "ReloadTime": 2.7,
                 "Speed": 0.66,
                 "TrainTime": 50,
                 "Trait": 0,
@@ -3339,7 +3339,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 160,
+                "HP": 140,
                 "ID": 473,
                 "LanguageHelpId": 326340,
                 "LanguageNameId": 305340,
@@ -3571,11 +3571,11 @@
                         "Class": 3
                     }
                 ],
-                "Attack": 40,
+                "Attack": 45,
                 "AttackDelaySeconds": 0.09000000000000001,
                 "Attacks": [
                     {
-                        "Amount": 40,
+                        "Amount": 45,
                         "Class": 3
                     },
                     {
@@ -3735,7 +3735,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 220,
+                "HP": 240,
                 "ID": 569,
                 "LanguageHelpId": 326341,
                 "LanguageNameId": 305341,
@@ -3889,7 +3889,7 @@
                 "ChargeType": 0,
                 "Cost": {
                     "Food": 180,
-                    "Gold": 45
+                    "Gold": 60
                 },
                 "FrameDelay": 20,
                 "GarrisonCapacity": 0,
@@ -4245,6 +4245,7 @@
                 31,
                 32,
                 35,
+                37,
                 40,
                 41,
                 42,
@@ -4372,7 +4373,10 @@
                 45,
                 46,
                 47,
+                48,
+                50,
                 51,
+                52,
                 52,
                 80,
                 81,
