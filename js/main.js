@@ -26,11 +26,13 @@ const locales = {
     br: 'Português (Brasil)',
 };
 const defaultLocale = 'en';
+let currentLocale = 'en';
 
 function loadLocale(localeCode) {
     if (!Object.keys(locales).includes(localeCode)) {
         localeCode = defaultLocale;
     }
+    currentLocale = localeCode;
     loadJson('data/locales/' + localeCode + '/strings.json', function (strings) {
         data.strings = strings;
         updatePageTitle();
@@ -757,11 +759,23 @@ function fillLocaleSelector(currentLocale) {
     });
 }
 
+function getCompareLocale() {
+    switch (currentLocale){
+        case 'tw':
+            return 'zh-TW'
+        case 'jp':
+            return 'ja';
+        default:
+            return currentLocale;
+    }
+}
+
 function fillCivSelector() {
+    const compareLocale = getCompareLocale();
     const sorted_civ_names = Object.keys(data.civ_names).sort((a, b) => {
         const localised_name_a = data.strings[data.civ_names[a]];
         const localised_name_b = data.strings[data.civ_names[b]];
-        return localised_name_a.localeCompare(localised_name_b);
+        return localised_name_a.localeCompare(localised_name_b, compareLocale);
     });
 
     for (let civ_name of sorted_civ_names) {
