@@ -649,7 +649,10 @@ def ror_gather_civs(techtrees):
             if unit['Trigger Tech ID'] > -1:
                 unit_upgrades[unit['Node ID']] = unit['Trigger Tech ID']
         for tech in filter(ror_is_tech, civ['civ_techs_units']):
-            current_civ['techs'].append(tech['Node ID'])
+            if tech['Name'] == 'Chain Mail for Archers':
+                current_civ['techs'].append(49)
+            else:
+                current_civ['techs'].append(tech['Node ID'])
 
         current_civ['buildings'] = sorted(current_civ['buildings'])
         current_civ['units'] = sorted(current_civ['units'])
