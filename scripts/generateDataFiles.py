@@ -379,7 +379,6 @@ def ror_gather_data(content, civs, unit_upgrades):
         {t for t, tech in enumerate(content['Techs']) if tech['Name'] in ages},
         {t for t, tech in enumerate(content['Techs']) if 'Wall' in tech['Name']},
         {t for t, tech in enumerate(content['Techs']) if 'Tower' in tech['Name']},
-        {49},  # archer chain mail
     )
     gaia = content["Civs"][0]
     graphics = content["Graphics"]
@@ -649,10 +648,7 @@ def ror_gather_civs(techtrees):
             if unit['Trigger Tech ID'] > -1:
                 unit_upgrades[unit['Node ID']] = unit['Trigger Tech ID']
         for tech in filter(ror_is_tech, civ['civ_techs_units']):
-            if tech['Name'] == 'Chain Mail for Archers':
-                current_civ['techs'].append(49)
-            else:
-                current_civ['techs'].append(tech['Node ID'])
+            current_civ['techs'].append(tech['Node ID'])
 
         current_civ['buildings'] = sorted(current_civ['buildings'])
         current_civ['units'] = sorted(current_civ['units'])
