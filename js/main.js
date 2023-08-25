@@ -308,15 +308,15 @@ function highlightPath(caretId) {
 }
 
 function toggleFiltering(isFilteringEnabled) {
+    filtering = isFilteringEnabled;
+
     let filteringToggleElement = document.getElementById('filtering__toggle');
     let filteringCivsContainerElement = document.getElementById('filtering__civs');
     if (isFilteringEnabled) {
         filteringToggleElement.textContent = 'Disable Filtering';
-        filtering = true;
         filteringCivsContainerElement.style.display = 'inherit';
     } else {
         filteringToggleElement.textContent = 'Enable Filtering';
-        filtering = false;
         filteringCivsContainerElement.style.display = 'none';
     }
 }
@@ -334,28 +334,6 @@ function toggleFilter(caretId) {
     }
 
     recalculateFilterMatches();
-}
-
-// can be refactored with createXRefBadges()
-function createFilterCivsBadges() {
-    let container = document.getElementById('filtering__civs__container');
-    container.innerHTML = '';
-    for (let civ of Object.keys(data.civ_names)) {
-        let civBadge = document.createElement('button');
-        civBadge.addEventListener('click', function() {
-          document.getElementById('civselect').value=civ;
-          loadCiv();
-        });
-
-        let civBadgeImage = document.createElement('img');
-
-        civBadgeImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
-        civBadgeImage.title = data.strings[data.civ_names[civ]];
-        civBadgeImage.id = `filter__badge__${civ}`;
-        civBadgeImage.classList.add('filter__badge')
-        civBadge.appendChild(civBadgeImage);
-        container.appendChild(civBadge);
-    }
 }
 
 function recalculateFilterMatches() {
@@ -378,6 +356,28 @@ function recalculateFilterMatches() {
         } else {
             civBadgeImage.style.opacity = 0.2;
         }
+    }
+}
+
+// can be refactored with createXRefBadges()
+function createFilterCivsBadges() {
+    let container = document.getElementById('filtering__civs__container');
+    container.innerHTML = '';
+    for (let civ of Object.keys(data.civ_names)) {
+        let civBadge = document.createElement('button');
+        civBadge.addEventListener('click', function() {
+          document.getElementById('civselect').value=civ;
+          loadCiv();
+        });
+
+        let civBadgeImage = document.createElement('img');
+
+        civBadgeImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
+        civBadgeImage.title = data.strings[data.civ_names[civ]];
+        civBadgeImage.id = `filter__badge__${civ}`;
+        civBadgeImage.classList.add('filter__badge')
+        civBadge.appendChild(civBadgeImage);
+        container.appendChild(civBadge);
     }
 }
 
