@@ -5,6 +5,8 @@ let connections;
 let parentConnections;
 let connectionpoints;
 let focusedNodeId = null;
+let filtering = false;
+let filters = [];
 
 const locales = {
     en: 'English',
@@ -37,6 +39,7 @@ function loadLocale(localeCode) {
         data.strings = strings;
         updatePageTitle();
         createXRefBadges();
+        createFilterCivsBadges();
         displayData();
         document.getElementById('localeselect').value = localeCode;
         document.documentElement.setAttribute('lang', localeCode);
@@ -85,6 +88,10 @@ function displayData() {
             hideHelp();
         }
     };
+
+    document.getElementById('filtering__toggle').onclick = (e) => {
+        toggleFiltering(!filtering);
+    }
 
     // Draw Age Row Highlighters
     let row_height = tree.height / 4;
@@ -175,7 +182,11 @@ function displayData() {
                         if (focusedNodeId === caret.id) {
                             hideHelp();
                         } else {
-                            displayHelp(caret.id);
+                            if (filtering) {
+                                toggleFilter(caret.id);
+                            } else {
+                                displayHelp(caret.id);
+                            }
                         }
                     });
             }
@@ -292,6 +303,80 @@ function highlightPath(caretId) {
                 line.front().addClass('is-highlight');
             }
             recurse(parentId);
+        }
+    }
+}
+
+function toggleFiltering(isFilteringEnabled) {
+    let filteringToggleElement = document.getElementById('filtering__toggle');
+    let filteringCivsContainerElement = document.getElementById('filtering__civs');
+    if (isFilteringEnabled) {
+        filteringToggleElement.textContent = 'Disable Filtering';
+        filtering = true;
+        filteringCivsContainerElement.style.display = 'inherit';
+    } else {
+        filteringToggleElement.textContent = 'Enable Filtering';
+        filtering = false;
+        filteringCivsContainerElement.style.display = 'none';
+    }
+}
+
+function toggleFilter(caretId) {
+    const isInFilters = filters.includes(caretId);
+    if (isInFilters) {
+        // Remove caret from filters
+        filters.splice(filters.findIndex((filter) => filter === caretId), 1);
+        SVG('#' + caretId).removeClass('is-filter-highlight');
+    } else {
+        // Add caret to filters
+        filters.push(caretId);
+        SVG('#' + caretId).addClass('is-filter-highlight');
+    }
+
+    recalculateFilterMatches();
+}
+
+// can be refactored with createXRefBadges()
+function createFilterCivsBadges() {
+    let container = document.getElementById('filtering__civs__container');
+    container.innerHTML = '';
+    for (let civ of Object.keys(data.civ_names)) {
+        let civBadge = document.createElement('button');
+        civBadge.addEventListener('click', function() {
+          document.getElementById('civselect').value=civ;
+          loadCiv();
+        });
+
+        let civBadgeImage = document.createElement('img');
+
+        civBadgeImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
+        civBadgeImage.title = data.strings[data.civ_names[civ]];
+        civBadgeImage.id = `filter__badge__${civ}`;
+        civBadgeImage.classList.add('filter__badge')
+        civBadge.appendChild(civBadgeImage);
+        container.appendChild(civBadge);
+    }
+}
+
+function recalculateFilterMatches() {
+    for (let civ of Object.keys(data.filtertechtrees)) {
+        const allCarets = data.filtertechtrees[civ];
+        const hasAllFilters = filters.map((id) => {
+            return (
+                allCarets.includes(id) ||
+                `unit_${civs[civ]?.unique?.castleAgeUniqueUnit}` === id ||
+                `unit_${civs[civ]?.unique?.imperialAgeUniqueUnit}` === id ||
+                `tech_${civs[civ]?.unique?.castleAgeUniqueTech}` === id ||
+                `tech_${civs[civ]?.unique?.imperialAgeUniqueTech}` === id
+            );
+        }).every((isTrue) => isTrue);
+
+        // can be refactored with part of styleXRefBadges()
+        let civBadgeImage = document.getElementById(`filter__badge__${civ}`);
+        if (hasAllFilters) {
+            civBadgeImage.style.opacity = 1;
+        } else {
+            civBadgeImage.style.opacity = 0.2;
         }
     }
 }

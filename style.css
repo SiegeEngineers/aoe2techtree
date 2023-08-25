@@ -76,7 +76,7 @@ a, a:hover, a:visited, a:active {
     float: left;
 }
 
-#helptext__x_ref__container {
+#helptext__x_ref__container #filtering__civs__container {
     /* There are 37 civs, 4x8+5 makes the badges fit into a square. */
     max-width: calc(var(--xRef-badge-size) * 8);
     margin: auto;
@@ -84,14 +84,14 @@ a, a:hover, a:visited, a:active {
 }
 
 /* Style for helptext Cross-Reference buttons */
-#helptext #helptext__x_ref div button {
+#helptext #helptext__x_ref div button, #filtering__civs div button {
     background-color: transparent;
     border: none;
     padding: 0;
 }
 
 /* Style for helptext Cross-Reference image badges */
-#helptext #helptext__x_ref div button img {
+#helptext #helptext__x_ref div button img, #filtering__civs div button img {
     width: var(--xRef-badge-size);
     height: var(--xRef-badge-size);
 }
@@ -106,6 +106,10 @@ a, a:hover, a:visited, a:active {
     color: #4d3617;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+#filtering__civs {
+    display: none;
 }
 
 #wrapper {
@@ -264,7 +268,12 @@ hr:before {
     stroke-width: 3px;
 }
 
-.xRef__badge {
+.node.is-filter-highlight .node__overlay {
+    stroke: #0d0;
+    stroke-width: 3px;
+};
+
+.xRef__badge .filter__badge {
     cursor: pointer;
 }
 
