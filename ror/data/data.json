@@ -1148,7 +1148,7 @@
                 "ID": 18,
                 "LanguageHelpId": 28020,
                 "LanguageNameId": 7020,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 75,
                 "internal_name": "Afterlife"
             },
@@ -1171,7 +1171,7 @@
                 "ID": 20,
                 "LanguageHelpId": 28022,
                 "LanguageNameId": 7022,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Fanaticism"
             },
@@ -1182,7 +1182,7 @@
                 "ID": 21,
                 "LanguageHelpId": 28019,
                 "LanguageNameId": 7019,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 50,
                 "internal_name": "Mysticism"
             },
@@ -1193,7 +1193,7 @@
                 "ID": 22,
                 "LanguageHelpId": 28016,
                 "LanguageNameId": 7016,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 50,
                 "internal_name": "Astrology"
             },
@@ -1215,7 +1215,7 @@
                 "ID": 24,
                 "LanguageHelpId": 28017,
                 "LanguageNameId": 7017,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 50,
                 "internal_name": "Polytheism"
             },
@@ -1227,7 +1227,7 @@
                 "ID": 28,
                 "LanguageHelpId": 28025,
                 "LanguageNameId": 7025,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 90,
                 "internal_name": "Wheel"
             },
@@ -1239,7 +1239,7 @@
                 "ID": 30,
                 "LanguageHelpId": 28027,
                 "LanguageNameId": 7027,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Coinage"
             },
@@ -1251,7 +1251,7 @@
                 "ID": 31,
                 "LanguageHelpId": 28028,
                 "LanguageNameId": 7028,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 75,
                 "internal_name": "Plow"
             },
@@ -1263,7 +1263,7 @@
                 "ID": 32,
                 "LanguageHelpId": 28029,
                 "LanguageNameId": 7029,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 80,
                 "internal_name": "Artisanship"
             },
@@ -1275,7 +1275,7 @@
                 "ID": 34,
                 "LanguageHelpId": 28030,
                 "LanguageNameId": 7030,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 70,
                 "internal_name": "Nobility"
             },
@@ -1287,7 +1287,7 @@
                 "ID": 35,
                 "LanguageHelpId": 28031,
                 "LanguageNameId": 7031,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 70,
                 "internal_name": "Engineering"
             },
@@ -1299,7 +1299,7 @@
                 "ID": 37,
                 "LanguageHelpId": 28033,
                 "LanguageNameId": 7033,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 100,
                 "internal_name": "Alchemy"
             },
@@ -1310,7 +1310,7 @@
                 "ID": 40,
                 "LanguageHelpId": 28035,
                 "LanguageNameId": 7035,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 30,
                 "internal_name": "Leather Armor - Soldiers"
             },
@@ -1321,7 +1321,7 @@
                 "ID": 41,
                 "LanguageHelpId": 28036,
                 "LanguageNameId": 7036,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 30,
                 "internal_name": "Leather Armor - Archers"
             },
@@ -1332,7 +1332,7 @@
                 "ID": 42,
                 "LanguageHelpId": 28037,
                 "LanguageNameId": 7037,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 30,
                 "internal_name": "Leather Armor Mounted"
             },
@@ -1344,7 +1344,7 @@
                 "ID": 43,
                 "LanguageHelpId": 28038,
                 "LanguageNameId": 7038,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Scale Armor - Soldiers"
             },
@@ -1356,7 +1356,7 @@
                 "ID": 44,
                 "LanguageHelpId": 28039,
                 "LanguageNameId": 7039,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Scale Armor - Archers"
             },
@@ -1368,7 +1368,7 @@
                 "ID": 45,
                 "LanguageHelpId": 28040,
                 "LanguageNameId": 7040,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Scale Armor - Cavalry"
             },
@@ -1379,7 +1379,7 @@
                 "ID": 46,
                 "LanguageHelpId": 28041,
                 "LanguageNameId": 7041,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 40,
                 "internal_name": "Tool Working"
             },
@@ -1391,7 +1391,7 @@
                 "ID": 47,
                 "LanguageHelpId": 28056,
                 "LanguageNameId": 7056,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 50,
                 "internal_name": "Bronze Shield"
             },
@@ -1403,7 +1403,7 @@
                 "ID": 48,
                 "LanguageHelpId": 28042,
                 "LanguageNameId": 7042,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 75,
                 "internal_name": "Chain Mail - Soldiers"
             },
@@ -1415,7 +1415,7 @@
                 "ID": 49,
                 "LanguageHelpId": 28043,
                 "LanguageNameId": 7043,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 75,
                 "internal_name": "Chain Mail - Archers"
             },
@@ -1427,7 +1427,7 @@
                 "ID": 50,
                 "LanguageHelpId": 28044,
                 "LanguageNameId": 7044,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 75,
                 "internal_name": "Chain Mail - Cavalry"
             },
@@ -1439,7 +1439,7 @@
                 "ID": 51,
                 "LanguageHelpId": 28045,
                 "LanguageNameId": 7045,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 75,
                 "internal_name": "Metal Working"
             },
@@ -1451,7 +1451,7 @@
                 "ID": 52,
                 "LanguageHelpId": 28046,
                 "LanguageNameId": 7046,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 100,
                 "internal_name": "Metalurgy"
             },
@@ -1463,7 +1463,7 @@
                 "ID": 80,
                 "LanguageHelpId": 28024,
                 "LanguageNameId": 7024,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 100,
                 "internal_name": "Irrigation"
             },
@@ -1475,7 +1475,7 @@
                 "ID": 81,
                 "LanguageHelpId": 28026,
                 "LanguageNameId": 7026,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 40,
                 "internal_name": "Domestication"
             },
@@ -1533,7 +1533,7 @@
                 "ID": 107,
                 "LanguageHelpId": 28068,
                 "LanguageNameId": 7068,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Wood Working"
             },
@@ -1545,7 +1545,7 @@
                 "ID": 108,
                 "LanguageHelpId": 28069,
                 "LanguageNameId": 7069,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 50,
                 "internal_name": "Gold Mining"
             },
@@ -1557,7 +1557,7 @@
                 "ID": 109,
                 "LanguageHelpId": 28070,
                 "LanguageNameId": 7070,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 30,
                 "internal_name": "Stone Mining"
             },
@@ -1569,7 +1569,7 @@
                 "ID": 110,
                 "LanguageHelpId": 28071,
                 "LanguageNameId": 7071,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 100,
                 "internal_name": "Craftmanship"
             },
@@ -1581,7 +1581,7 @@
                 "ID": 111,
                 "LanguageHelpId": 28072,
                 "LanguageNameId": 7072,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Siege Craft"
             },
@@ -1593,7 +1593,7 @@
                 "ID": 112,
                 "LanguageHelpId": 28073,
                 "LanguageNameId": 7073,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 50,
                 "internal_name": "Architecture"
             },
@@ -1605,7 +1605,7 @@
                 "ID": 113,
                 "LanguageHelpId": 28074,
                 "LanguageNameId": 7074,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Aristocracy"
             },
@@ -1628,7 +1628,7 @@
                 "ID": 117,
                 "LanguageHelpId": 28078,
                 "LanguageNameId": 7078,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 75,
                 "internal_name": "Iron Shield"
             },
@@ -1639,7 +1639,7 @@
                 "ID": 119,
                 "LanguageHelpId": 28094,
                 "LanguageNameId": 7094,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 50,
                 "internal_name": "Medicine"
             },
@@ -1674,13 +1674,13 @@
                 "ID": 122,
                 "LanguageHelpId": 28096,
                 "LanguageNameId": 7096,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 100,
                 "internal_name": "Tower Shield"
             },
             "128": {
                 "Cost": {
-                    "Food": 200
+                    "Food": 100
                 },
                 "ID": 128,
                 "LanguageHelpId": 28097,
@@ -1697,14 +1697,14 @@
                 "ID": 129,
                 "LanguageHelpId": 28098,
                 "LanguageNameId": 7098,
-                "Repeatable": false,
+                "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Conscription"
             },
             "150": {
                 "Cost": {
-                    "Stone": 150,
-                    "Wood": 350
+                    "Stone": 100,
+                    "Wood": 300
                 },
                 "ID": 150,
                 "LanguageHelpId": 28099,
@@ -2021,7 +2021,7 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 3
                     }
                 ],
@@ -2029,7 +2029,7 @@
                 "AttackDelaySeconds": 0.5800000000000001,
                 "Attacks": [
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 15
                     },
                     {
@@ -2057,7 +2057,7 @@
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
                 "MinRange": 0,
-                "PierceArmor": 2,
+                "PierceArmor": 3,
                 "Range": 4,
                 "RechargeRate": 0,
                 "ReloadTime": 1.5,
@@ -2872,7 +2872,7 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 3,
                         "Class": 3
                     }
                 ],
@@ -2904,7 +2904,7 @@
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
                 "MinRange": 3,
-                "PierceArmor": 0,
+                "PierceArmor": 3,
                 "Range": 10,
                 "RechargeRate": 0,
                 "ReloadTime": 5.375,
@@ -3657,7 +3657,7 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 4,
                         "Class": 3
                     }
                 ],
@@ -3689,7 +3689,7 @@
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
                 "MinRange": 3,
-                "PierceArmor": 0,
+                "PierceArmor": 4,
                 "Range": 12,
                 "RechargeRate": 0,
                 "ReloadTime": 5.375,
@@ -3761,7 +3761,7 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 5,
                         "Class": 3
                     }
                 ],
@@ -3793,7 +3793,7 @@
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
                 "MinRange": 3,
-                "PierceArmor": 0,
+                "PierceArmor": 5,
                 "Range": 13,
                 "RechargeRate": 0,
                 "ReloadTime": 5.375,
@@ -4261,7 +4261,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -4381,7 +4384,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -4442,7 +4448,6 @@
                 45,
                 49,
                 50,
-                63,
                 64,
                 68,
                 70,
@@ -4495,7 +4500,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -4614,7 +4622,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -4729,7 +4740,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -4844,7 +4858,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -4957,7 +4974,10 @@
                 52,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -5067,7 +5087,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -5130,7 +5153,6 @@
                 45,
                 49,
                 50,
-                63,
                 64,
                 68,
                 70,
@@ -5180,7 +5202,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -5238,7 +5263,6 @@
                 45,
                 49,
                 50,
-                63,
                 64,
                 68,
                 70,
@@ -5288,7 +5312,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -5405,7 +5432,10 @@
                 51,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -5523,7 +5553,10 @@
                 52,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -5642,7 +5675,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -5759,7 +5795,10 @@
                 52,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -5880,7 +5919,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -5998,7 +6040,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,
@@ -6058,7 +6103,6 @@
                 45,
                 49,
                 50,
-                63,
                 64,
                 68,
                 70,
@@ -6109,7 +6153,10 @@
                 80,
                 81,
                 101,
+                101,
                 102,
+                102,
+                103,
                 103,
                 106,
                 107,

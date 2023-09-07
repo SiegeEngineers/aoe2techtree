@@ -6339,6 +6339,10 @@
                     {
                         "Amount": 0,
                         "Class": 17
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 37
                     }
                 ],
                 "ChargeEvent": 0,
@@ -6868,7 +6872,7 @@
                 "ID": 239,
                 "LanguageHelpId": 26109,
                 "LanguageNameId": 5109,
-                "LineOfSight": 4,
+                "LineOfSight": 7,
                 "MaxCharge": 0,
                 "MeleeArmor": 1,
                 "MinRange": 0,
@@ -8323,7 +8327,7 @@
                 "internal_name": "HTHSW"
             },
             "474": {
-                "AccuracyPercent": 50,
+                "AccuracyPercent": 80,
                 "Armours": [
                     {
                         "Amount": 0,
@@ -9897,7 +9901,7 @@
                 "ID": 558,
                 "LanguageHelpId": 26459,
                 "LanguageNameId": 5459,
-                "LineOfSight": 5,
+                "LineOfSight": 8,
                 "MaxCharge": 0,
                 "MeleeArmor": 1,
                 "MinRange": 0,
@@ -10333,7 +10337,7 @@
                         "Class": 20
                     },
                     {
-                        "Amount": 75,
+                        "Amount": 50,
                         "Class": 37
                     }
                 ],
@@ -16339,7 +16343,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 60,
+                    "Food": 50,
                     "Gold": 35
                 },
                 "FrameDelay": 0,
@@ -16413,7 +16417,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 60,
+                    "Food": 50,
                     "Gold": 35
                 },
                 "FrameDelay": 0,
@@ -16487,7 +16491,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 60,
+                    "Food": 50,
                     "Gold": 35
                 },
                 "FrameDelay": 0,
@@ -16561,7 +16565,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 60,
+                    "Food": 50,
                     "Gold": 35
                 },
                 "FrameDelay": 0,
@@ -16850,7 +16854,7 @@
                         "Class": 37
                     }
                 ],
-                "Attack": 17,
+                "Attack": 11,
                 "AttackDelaySeconds": 0.6222222222222222,
                 "Attacks": [
                     {
@@ -16858,7 +16862,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 17,
+                        "Amount": 11,
                         "Class": 3
                     },
                     {
@@ -16874,7 +16878,7 @@
                 },
                 "FrameDelay": 20,
                 "GarrisonCapacity": 0,
-                "HP": 200,
+                "HP": 180,
                 "ID": 1704,
                 "LanguageHelpId": 26561,
                 "LanguageNameId": 5561,
@@ -16924,7 +16928,7 @@
                         "Class": 37
                     }
                 ],
-                "Attack": 20,
+                "Attack": 13,
                 "AttackDelaySeconds": 0.6222222222222222,
                 "Attacks": [
                     {
@@ -16932,7 +16936,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 20,
+                        "Amount": 13,
                         "Class": 3
                     },
                     {
@@ -16948,7 +16952,7 @@
                 },
                 "FrameDelay": 20,
                 "GarrisonCapacity": 0,
-                "HP": 250,
+                "HP": 230,
                 "ID": 1706,
                 "LanguageHelpId": 26563,
                 "LanguageNameId": 5563,
@@ -17686,7 +17690,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 130,
+                    "Food": 120,
                     "Gold": 95
                 },
                 "FrameDelay": 0,
@@ -17772,7 +17776,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 130,
+                    "Food": 120,
                     "Gold": 95
                 },
                 "FrameDelay": 0,
@@ -18775,7 +18779,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 120,
+                "HP": 110,
                 "ID": 1790,
                 "LanguageHelpId": 26052,
                 "LanguageNameId": 5052,
@@ -20376,7 +20380,6 @@
                 331,
                 358,
                 359,
-                420,
                 422,
                 440,
                 441,
