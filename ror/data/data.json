@@ -1720,7 +1720,7 @@
                     "Food": 200,
                     "Wood": 75
                 },
-                "ID": 181,
+                "ID": 6,
                 "ResearchTime": 102,
                 "internal_name": "Merchant Ship"
             },
@@ -1729,7 +1729,7 @@
                     "Food": 50,
                     "Wood": 100
                 },
-                "ID": 181,
+                "ID": 4,
                 "ResearchTime": 51,
                 "internal_name": "Fishing Ship"
             },
@@ -1738,7 +1738,7 @@
                     "Food": 150,
                     "Wood": 75
                 },
-                "ID": 181,
+                "ID": 5,
                 "ResearchTime": 128,
                 "internal_name": "Medium War Ship"
             },
@@ -1747,7 +1747,7 @@
                     "Food": 150,
                     "Wood": 125
                 },
-                "ID": 181,
+                "ID": 8,
                 "ResearchTime": 180,
                 "internal_name": "Heavy Transport"
             },
@@ -1756,7 +1756,7 @@
                     "Food": 140,
                     "Gold": 50
                 },
-                "ID": 181,
+                "ID": 65,
                 "ResearchTime": 90,
                 "internal_name": "Broad Sword"
             },
@@ -1765,7 +1765,7 @@
                     "Food": 240,
                     "Gold": 100
                 },
-                "ID": 181,
+                "ID": 66,
                 "ResearchTime": 90,
                 "internal_name": "Long Sword"
             },
@@ -1774,7 +1774,7 @@
                     "Food": 350,
                     "Gold": 125
                 },
-                "ID": 181,
+                "ID": 71,
                 "ResearchTime": 90,
                 "internal_name": "Heavy Cavalry"
             },
@@ -1783,7 +1783,7 @@
                     "Food": 300,
                     "Gold": 100
                 },
-                "ID": 181,
+                "ID": 73,
                 "ResearchTime": 90,
                 "internal_name": "Phalanx"
             },
@@ -1792,7 +1792,7 @@
                     "Food": 1800,
                     "Gold": 700
                 },
-                "ID": 181,
+                "ID": 79,
                 "ResearchTime": 150,
                 "internal_name": "Centurion"
             },
@@ -1801,7 +1801,7 @@
                     "Food": 250,
                     "Wood": 100
                 },
-                "ID": 181,
+                "ID": 7,
                 "ResearchTime": 200,
                 "internal_name": "Trireme"
             },
@@ -1810,7 +1810,7 @@
                     "Food": 1400,
                     "Gold": 600
                 },
-                "ID": 181,
+                "ID": 77,
                 "ResearchTime": 150,
                 "internal_name": "Legion"
             },
@@ -1819,7 +1819,7 @@
                     "Food": 1750,
                     "Gold": 800
                 },
-                "ID": 181,
+                "ID": 38,
                 "ResearchTime": 150,
                 "internal_name": "Advanced Horse Archer"
             },
@@ -1828,7 +1828,7 @@
                     "Food": 180,
                     "Wood": 100
                 },
-                "ID": 181,
+                "ID": 57,
                 "ResearchTime": 100,
                 "internal_name": "Composite bow"
             },
@@ -1836,7 +1836,7 @@
                 "Cost": {
                     "Food": 100
                 },
-                "ID": 181,
+                "ID": 63,
                 "ResearchTime": 40,
                 "internal_name": "Axe"
             },
@@ -1845,7 +1845,7 @@
                     "Food": 1200,
                     "Wood": 1000
                 },
-                "ID": 181,
+                "ID": 27,
                 "ResearchTime": 150,
                 "internal_name": "Helepolis"
             },
@@ -1854,7 +1854,7 @@
                     "Food": 300,
                     "Wood": 250
                 },
-                "ID": 181,
+                "ID": 54,
                 "ResearchTime": 100,
                 "internal_name": "Heavy Catapult"
             },
@@ -1863,7 +1863,7 @@
                     "Food": 1600,
                     "Gold": 600
                 },
-                "ID": 181,
+                "ID": 78,
                 "ResearchTime": 150,
                 "internal_name": "Cataphracts"
             },
@@ -1872,7 +1872,7 @@
                     "Food": 1800,
                     "Wood": 900
                 },
-                "ID": 181,
+                "ID": 36,
                 "ResearchTime": 150,
                 "internal_name": "Massive Catapult"
             },
@@ -1881,7 +1881,7 @@
                     "Food": 1300,
                     "Wood": 700
                 },
-                "ID": 181,
+                "ID": 25,
                 "ResearchTime": 200,
                 "internal_name": "Juggernaught"
             },
@@ -1890,7 +1890,7 @@
                     "Food": 1000,
                     "Gold": 1200
                 },
-                "ID": 181,
+                "ID": 125,
                 "ResearchTime": 150,
                 "internal_name": "Armored Elephants"
             },
@@ -1899,7 +1899,7 @@
                     "Gold": 1000,
                     "Wood": 1400
                 },
-                "ID": 181,
+                "ID": 126,
                 "ResearchTime": 200,
                 "internal_name": "Heavy Chariots"
             }

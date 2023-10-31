@@ -361,7 +361,7 @@ def gather_data(content, civs, unit_upgrades):
 
     for unit_id, upgrade_id in unit_upgrades.items():
         tech = content["Techs"][upgrade_id]
-        add_unit_upgrade(unit_id, tech_id, tech, data)
+        add_unit_upgrade(unit_id, upgrade_id, tech, data)
 
     data["units"][83]['LanguageNameId'] = 5606  # Villager
     data["units"][128]['LanguageNameId'] = 19052  # Trade Cart
@@ -396,7 +396,7 @@ def ror_gather_data(content, civs, unit_upgrades):
 
     for unit_id, upgrade_id in unit_upgrades.items():
         tech = content["Techs"][upgrade_id]
-        add_unit_upgrade(unit_id, tech_id, tech, data)
+        add_unit_upgrade(unit_id, upgrade_id, tech, data)
 
     return data
 

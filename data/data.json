@@ -4030,7 +4030,7 @@
                     "Gold": 130,
                     "Wood": 230
                 },
-                "ID": 981,
+                "ID": 98,
                 "ResearchTime": 50,
                 "internal_name": "Elite Skirmisher"
             },
@@ -4039,7 +4039,7 @@
                     "Food": 230,
                     "Gold": 100
                 },
-                "ID": 981,
+                "ID": 34,
                 "ResearchTime": 50,
                 "internal_name": "War Galley"
             },
@@ -4048,7 +4048,7 @@
                     "Food": 175,
                     "Gold": 125
                 },
-                "ID": 981,
+                "ID": 100,
                 "ResearchTime": 35,
                 "internal_name": "Crossbow"
             },
@@ -4057,7 +4057,7 @@
                     "Food": 100,
                     "Gold": 40
                 },
-                "ID": 981,
+                "ID": 222,
                 "ResearchTime": 40,
                 "internal_name": "Man-At-Arms"
             },
@@ -4066,7 +4066,7 @@
                     "Food": 150,
                     "Gold": 65
                 },
-                "ID": 981,
+                "ID": 207,
                 "ResearchTime": 40,
                 "internal_name": "Long Swordsman"
             },
@@ -4075,7 +4075,7 @@
                     "Food": 1000,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 521,
                 "ResearchTime": 125,
                 "internal_name": "Heavy Camel"
             },
@@ -4084,7 +4084,7 @@
                     "Food": 300,
                     "Gold": 300
                 },
-                "ID": 981,
+                "ID": 209,
                 "ResearchTime": 100,
                 "internal_name": "Cavalier"
             },
@@ -4093,7 +4093,7 @@
                     "Food": 325,
                     "Gold": 360
                 },
-                "ID": 981,
+                "ID": 236,
                 "ResearchTime": 105,
                 "internal_name": "Heavy Camel"
             },
@@ -4102,7 +4102,7 @@
                     "Food": 160,
                     "Gold": 90
                 },
-                "ID": 981,
+                "ID": 197,
                 "ResearchTime": 35,
                 "internal_name": "Pikeman"
             },
@@ -4111,13 +4111,13 @@
                     "Food": 300,
                     "Gold": 600
                 },
-                "ID": 981,
+                "ID": 429,
                 "ResearchTime": 50,
                 "internal_name": "Halberdier"
             },
             "420": {
                 "Cost": {},
-                "ID": 981,
+                "ID": 37,
                 "ResearchTime": 0,
                 "internal_name": "Cannon Galleon"
             },
@@ -4125,7 +4125,7 @@
                 "Cost": {
                     "Food": 300
                 },
-                "ID": 981,
+                "ID": 96,
                 "ResearchTime": 50,
                 "internal_name": "Capped Ram"
             },
@@ -4134,7 +4134,7 @@
                     "Food": 500,
                     "Gold": 600
                 },
-                "ID": 981,
+                "ID": 428,
                 "ResearchTime": 50,
                 "internal_name": "Hussar"
             },
@@ -4143,7 +4143,7 @@
                     "Food": 400,
                     "Wood": 315
                 },
-                "ID": 981,
+                "ID": 35,
                 "ResearchTime": 65,
                 "internal_name": "Galleon"
             },
@@ -4152,7 +4152,7 @@
                     "Food": 300,
                     "Gold": 100
                 },
-                "ID": 981,
+                "ID": 217,
                 "ResearchTime": 60,
                 "internal_name": "Two-Handed Swordsman"
             },
@@ -4161,7 +4161,7 @@
                     "Food": 900,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 218,
                 "ResearchTime": 50,
                 "internal_name": "Heavy Cavalry Archer"
             },
@@ -4170,7 +4170,7 @@
                     "Food": 450,
                     "Gold": 400
                 },
-                "ID": 981,
+                "ID": 237,
                 "ResearchTime": 50,
                 "internal_name": "Arbalest"
             },
@@ -4179,7 +4179,7 @@
                     "Food": 230,
                     "Gold": 100
                 },
-                "ID": 981,
+                "ID": 34,
                 "ResearchTime": 50,
                 "internal_name": "War Galley"
             },
@@ -4188,7 +4188,7 @@
                     "Gold": 300,
                     "Wood": 200
                 },
-                "ID": 981,
+                "ID": 244,
                 "ResearchTime": 50,
                 "internal_name": "Heavy Demolition"
             },
@@ -4197,7 +4197,7 @@
                     "Food": 230,
                     "Gold": 100
                 },
-                "ID": 981,
+                "ID": 34,
                 "ResearchTime": 50,
                 "internal_name": "War Galley"
             },
@@ -4206,7 +4206,7 @@
                     "Food": 850,
                     "Gold": 850
                 },
-                "ID": 981,
+                "ID": 360,
                 "ResearchTime": 60,
                 "internal_name": "Elite Longbow"
             },
@@ -4215,7 +4215,7 @@
                     "Food": 1000,
                     "Gold": 750
                 },
-                "ID": 981,
+                "ID": 363,
                 "ResearchTime": 45,
                 "internal_name": "Elite Throwing Axemen"
             },
@@ -4224,7 +4224,7 @@
                     "Gold": 250,
                     "Wood": 280
                 },
-                "ID": 981,
+                "ID": 246,
                 "ResearchTime": 50,
                 "internal_name": "Fast Fire Ship"
             },
@@ -4233,7 +4233,7 @@
                     "Food": 750,
                     "Gold": 475
                 },
-                "ID": 981,
+                "ID": 372,
                 "ResearchTime": 60,
                 "internal_name": "Unique Heroic Viking LBT"
             },
@@ -4242,7 +4242,7 @@
                     "Food": 1000,
                     "Gold": 800
                 },
-                "ID": 981,
+                "ID": 370,
                 "ResearchTime": 45,
                 "internal_name": "Elite Woad Raider"
             },
@@ -4251,7 +4251,7 @@
                     "Food": 800,
                     "Wood": 900
                 },
-                "ID": 981,
+                "ID": 239,
                 "ResearchTime": 50,
                 "internal_name": "Heavy Scorpion"
             },
@@ -4260,7 +4260,7 @@
                     "Food": 150,
                     "Gold": 50
                 },
-                "ID": 981,
+                "ID": 254,
                 "ResearchTime": 45,
                 "internal_name": "Light Cavalry"
             },
@@ -4268,7 +4268,7 @@
                 "Cost": {
                     "Food": 1000
                 },
-                "ID": 981,
+                "ID": 255,
                 "ResearchTime": 75,
                 "internal_name": "Siege Ram"
             },
@@ -4277,7 +4277,7 @@
                     "Food": 800,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 257,
                 "ResearchTime": 75,
                 "internal_name": "Onager"
             },
@@ -4286,7 +4286,7 @@
                     "Food": 1200,
                     "Gold": 800
                 },
-                "ID": 981,
+                "ID": 361,
                 "ResearchTime": 50,
                 "internal_name": "Elite Cataphract"
             },
@@ -4295,7 +4295,7 @@
                     "Food": 950,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 364,
                 "ResearchTime": 50,
                 "internal_name": "Elite Teutonic Knight"
             },
@@ -4304,7 +4304,7 @@
                     "Food": 1200,
                     "Gold": 550
                 },
-                "ID": 981,
+                "ID": 365,
                 "ResearchTime": 40,
                 "internal_name": "Elite Huskarl"
             },
@@ -4313,7 +4313,7 @@
                     "Food": 600,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 368,
                 "ResearchTime": 50,
                 "internal_name": "Elite Mameluke"
             },
@@ -4322,7 +4322,7 @@
                     "Food": 850,
                     "Gold": 750
                 },
-                "ID": 981,
+                "ID": 369,
                 "ResearchTime": 55,
                 "internal_name": "Elite Jannisary"
             },
@@ -4331,7 +4331,7 @@
                     "Food": 1350,
                     "Gold": 800
                 },
-                "ID": 981,
+                "ID": 367,
                 "ResearchTime": 75,
                 "internal_name": "Elite War Elephant"
             },
@@ -4340,7 +4340,7 @@
                     "Food": 950,
                     "Gold": 950
                 },
-                "ID": 981,
+                "ID": 362,
                 "ResearchTime": 50,
                 "internal_name": "Elite Chu Ko Nu"
             },
@@ -4349,7 +4349,7 @@
                     "Food": 750,
                     "Gold": 650
                 },
-                "ID": 981,
+                "ID": 366,
                 "ResearchTime": 60,
                 "internal_name": "Elite Samurai"
             },
@@ -4358,7 +4358,7 @@
                     "Food": 1100,
                     "Gold": 675
                 },
-                "ID": 981,
+                "ID": 371,
                 "ResearchTime": 50,
                 "internal_name": "Elite Mangudai"
             },
@@ -4367,7 +4367,7 @@
                     "Food": 750,
                     "Gold": 350
                 },
-                "ID": 981,
+                "ID": 264,
                 "ResearchTime": 85,
                 "internal_name": "Champion"
             },
@@ -4376,7 +4376,7 @@
                     "Food": 1300,
                     "Gold": 750
                 },
-                "ID": 981,
+                "ID": 265,
                 "ResearchTime": 170,
                 "internal_name": "Paladin"
             },
@@ -4385,7 +4385,7 @@
                     "Food": 1450,
                     "Gold": 1000
                 },
-                "ID": 981,
+                "ID": 320,
                 "ResearchTime": 150,
                 "internal_name": "Siege Onager"
             },
@@ -4394,7 +4394,7 @@
                     "Gold": 500,
                     "Wood": 525
                 },
-                "ID": 981,
+                "ID": 376,
                 "ResearchTime": 30,
                 "internal_name": "Elite Cannon Galley"
             },
@@ -4403,7 +4403,7 @@
                     "Food": 1075,
                     "Gold": 475
                 },
-                "ID": 981,
+                "ID": 398,
                 "ResearchTime": 45,
                 "internal_name": "Elite Berserk"
             },
@@ -4412,7 +4412,7 @@
                     "Food": 1000,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 432,
                 "ResearchTime": 45,
                 "internal_name": "Elite Jaguar Man"
             },
@@ -4421,7 +4421,7 @@
                     "Food": 800,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 434,
                 "ResearchTime": 50,
                 "internal_name": "Elite Eagle Warrior"
             },
@@ -4430,7 +4430,7 @@
                     "Food": 200,
                     "Gold": 200
                 },
-                "ID": 981,
+                "ID": 384,
                 "ResearchTime": 50,
                 "internal_name": "Heavy Eagle Warrior"
             },
@@ -4439,7 +4439,7 @@
                     "Food": 1000,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 2,
                 "ResearchTime": 45,
                 "internal_name": "Elite Tarkan"
             },
@@ -4448,7 +4448,7 @@
                     "Food": 1200,
                     "Gold": 550
                 },
-                "ID": 981,
+                "ID": 365,
                 "ResearchTime": 40,
                 "internal_name": "Elite Huskarl"
             },
@@ -4457,7 +4457,7 @@
                     "Food": 700,
                     "Wood": 1000
                 },
-                "ID": 981,
+                "ID": 27,
                 "ResearchTime": 45,
                 "internal_name": "Elite Plumed Archer"
             },
@@ -4466,7 +4466,7 @@
                     "Food": 1200,
                     "Gold": 600
                 },
-                "ID": 981,
+                "ID": 60,
                 "ResearchTime": 60,
                 "internal_name": "Elite Conquistador"
             },
@@ -4475,7 +4475,7 @@
                     "Gold": 800,
                     "Wood": 1000
                 },
-                "ID": 981,
+                "ID": 450,
                 "ResearchTime": 75,
                 "internal_name": "Elite War Wagon"
             },
@@ -4484,7 +4484,7 @@
                     "Food": 1000,
                     "Gold": 800
                 },
-                "ID": 981,
+                "ID": 448,
                 "ResearchTime": 65,
                 "internal_name": "Elite Turtle Ship"
             },
@@ -4493,7 +4493,7 @@
                     "Food": 900,
                     "Gold": 750
                 },
-                "ID": 981,
+                "ID": 468,
                 "ResearchTime": 60,
                 "internal_name": "Elite Genoese Bow"
             },
@@ -4502,7 +4502,7 @@
                     "Food": 800,
                     "Gold": 600
                 },
-                "ID": 981,
+                "ID": 472,
                 "ResearchTime": 60,
                 "internal_name": "Elite Magyar Huszar"
             },
@@ -4511,7 +4511,7 @@
                     "Food": 900,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 481,
                 "ResearchTime": 80,
                 "internal_name": "Elite Elephant Archer"
             },
@@ -4520,7 +4520,7 @@
                     "Food": 1000,
                     "Gold": 600
                 },
-                "ID": 981,
+                "ID": 504,
                 "ResearchTime": 60,
                 "internal_name": "Elite Siege Tower"
             },
@@ -4529,7 +4529,7 @@
                     "Food": 900,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 509,
                 "ResearchTime": 45,
                 "internal_name": "Elite Kamayuk"
             },
@@ -4538,7 +4538,7 @@
                     "Food": 1000,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 2,
                 "ResearchTime": 45,
                 "internal_name": "Elite Tarkan"
             },
@@ -4547,7 +4547,7 @@
                     "Food": 1200,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 563,
                 "ResearchTime": 45,
                 "internal_name": "Elite Organ Gun"
             },
@@ -4556,7 +4556,7 @@
                     "Food": 700,
                     "Gold": 525
                 },
-                "ID": 981,
+                "ID": 597,
                 "ResearchTime": 60,
                 "internal_name": "Elite Caravel"
             },
@@ -4565,7 +4565,7 @@
                     "Gold": 500,
                     "Wood": 1000
                 },
-                "ID": 981,
+                "ID": 565,
                 "ResearchTime": 45,
                 "internal_name": "Elite Camel Archer"
             },
@@ -4574,7 +4574,7 @@
                     "Food": 500,
                     "Wood": 450
                 },
-                "ID": 981,
+                "ID": 599,
                 "ResearchTime": 60,
                 "internal_name": "Elite Genitour"
             },
@@ -4583,7 +4583,7 @@
                     "Food": 900,
                     "Gold": 600
                 },
-                "ID": 981,
+                "ID": 567,
                 "ResearchTime": 45,
                 "internal_name": "Elite Mali Unit"
             },
@@ -4592,7 +4592,7 @@
                     "Food": 900,
                     "Gold": 450
                 },
-                "ID": 981,
+                "ID": 569,
                 "ResearchTime": 45,
                 "internal_name": "Elite Ethiopia Unit"
             },
@@ -4601,7 +4601,7 @@
                     "Food": 1000,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 615,
                 "ResearchTime": 70,
                 "internal_name": "Elite Ballista Elephant"
             },
@@ -4610,7 +4610,7 @@
                     "Food": 900,
                     "Gold": 600
                 },
-                "ID": 981,
+                "ID": 617,
                 "ResearchTime": 40,
                 "internal_name": "Elite Karambit Warrior"
             },
@@ -4619,7 +4619,7 @@
                     "Food": 1000,
                     "Gold": 750
                 },
-                "ID": 981,
+                "ID": 619,
                 "ResearchTime": 65,
                 "internal_name": "Elite Arambai"
             },
@@ -4628,13 +4628,13 @@
                     "Food": 1000,
                     "Gold": 750
                 },
-                "ID": 981,
+                "ID": 621,
                 "ResearchTime": 45,
                 "internal_name": "Elite Rattan Archer"
             },
             "1132": {
                 "Cost": {},
-                "ID": 981,
+                "ID": 630,
                 "ResearchTime": 0,
                 "internal_name": "Battle Elephant (make avail)"
             },
@@ -4643,7 +4643,7 @@
                     "Food": 1100,
                     "Gold": 700
                 },
-                "ID": 981,
+                "ID": 631,
                 "ResearchTime": 100,
                 "internal_name": "Elite Battle Elephant"
             },
@@ -4652,7 +4652,7 @@
                     "Gold": 300,
                     "Wood": 300
                 },
-                "ID": 981,
+                "ID": 655,
                 "ResearchTime": 50,
                 "internal_name": "Imperial Skirmisher"
             },
@@ -4661,7 +4661,7 @@
                     "Food": 1000,
                     "Gold": 750
                 },
-                "ID": 981,
+                "ID": 678,
                 "ResearchTime": 70,
                 "internal_name": "Elite Konnik"
             },
@@ -4670,7 +4670,7 @@
                     "Food": 700,
                     "Gold": 900
                 },
-                "ID": 981,
+                "ID": 680,
                 "ResearchTime": 40,
                 "internal_name": "Elite Keshik"
             },
@@ -4679,7 +4679,7 @@
                     "Food": 1100,
                     "Wood": 1000
                 },
-                "ID": 981,
+                "ID": 682,
                 "ResearchTime": 65,
                 "internal_name": "Elite Kipchak"
             },
@@ -4688,7 +4688,7 @@
                     "Food": 750,
                     "Gold": 750
                 },
-                "ID": 981,
+                "ID": 684,
                 "ResearchTime": 45,
                 "internal_name": "Elite Leitis"
             },
@@ -4697,7 +4697,7 @@
                     "Food": 1000,
                     "Gold": 750
                 },
-                "ID": 981,
+                "ID": 678,
                 "ResearchTime": 70,
                 "internal_name": "Elite Konnik"
             },
@@ -4706,7 +4706,7 @@
                     "Food": 900,
                     "Gold": 550
                 },
-                "ID": 981,
+                "ID": 715,
                 "ResearchTime": 55,
                 "internal_name": "Elite Steppe Lancer"
             },
@@ -4715,7 +4715,7 @@
                     "Food": 1000,
                     "Gold": 800
                 },
-                "ID": 981,
+                "ID": 751,
                 "ResearchTime": 45,
                 "internal_name": "Elite Coustillier"
             },
@@ -4724,7 +4724,7 @@
                     "Food": 800,
                     "Gold": 675
                 },
-                "ID": 981,
+                "ID": 753,
                 "ResearchTime": 45,
                 "internal_name": "Elite Serjeant"
             },
@@ -4733,7 +4733,7 @@
                     "Food": 800,
                     "Gold": 675
                 },
-                "ID": 981,
+                "ID": 753,
                 "ResearchTime": 45,
                 "internal_name": "Elite Serjeant"
             },
@@ -4742,7 +4742,7 @@
                     "Food": 800,
                     "Gold": 600
                 },
-                "ID": 981,
+                "ID": 779,
                 "ResearchTime": 45,
                 "internal_name": "Elite Obuch"
             },
@@ -4751,7 +4751,7 @@
                     "Gold": 600,
                     "Wood": 800
                 },
-                "ID": 981,
+                "ID": 781,
                 "ResearchTime": 45,
                 "internal_name": "Elite Hussite Wagon"
             },
@@ -4760,7 +4760,7 @@
                     "Food": 600,
                     "Gold": 800
                 },
-                "ID": 981,
+                "ID": 786,
                 "ResearchTime": 60,
                 "internal_name": "Winged Hussar"
             },
@@ -4769,7 +4769,7 @@
                     "Food": 1100,
                     "Gold": 800
                 },
-                "ID": 981,
+                "ID": 787,
                 "ResearchTime": 140,
                 "internal_name": "Houfnice"
             },
@@ -4778,7 +4778,7 @@
                     "Food": 900,
                     "Gold": 450
                 },
-                "ID": 981,
+                "ID": 826,
                 "ResearchTime": 45,
                 "internal_name": "Elite Urumi Swordsman"
             },
@@ -4787,7 +4787,7 @@
                     "Food": 1000,
                     "Gold": 650
                 },
-                "ID": 981,
+                "ID": 830,
                 "ResearchTime": 45,
                 "internal_name": "Elite Chakram Thrower"
             },
@@ -4795,7 +4795,7 @@
                 "Cost": {
                     "Food": 850
                 },
-                "ID": 981,
+                "ID": 838,
                 "ResearchTime": 60,
                 "internal_name": "Elite Armored Elephant"
             },
@@ -4804,7 +4804,7 @@
                     "Food": 950,
                     "Gold": 575
                 },
-                "ID": 981,
+                "ID": 840,
                 "ResearchTime": 45,
                 "internal_name": "Elite Ghulam"
             },
@@ -4813,7 +4813,7 @@
                     "Food": 850,
                     "Gold": 500
                 },
-                "ID": 981,
+                "ID": 843,
                 "ResearchTime": 45,
                 "internal_name": "Elite Shrivamsha Rider"
             },
@@ -4822,7 +4822,7 @@
                     "Food": 800,
                     "Wood": 800
                 },
-                "ID": 981,
+                "ID": 828,
                 "ResearchTime": 45,
                 "internal_name": "Elite Ratha"
             },
@@ -4831,7 +4831,7 @@
                     "Food": 160,
                     "Gold": 90
                 },
-                "ID": 981,
+                "ID": 197,
                 "ResearchTime": 35,
                 "internal_name": "Pikeman"
             },
@@ -4840,7 +4840,7 @@
                     "Food": 300,
                     "Gold": 600
                 },
-                "ID": 981,
+                "ID": 429,
                 "ResearchTime": 50,
                 "internal_name": "Halberdier"
             },
@@ -4849,7 +4849,7 @@
                     "Food": 1100,
                     "Gold": 900
                 },
-                "ID": 981,
+                "ID": 882,
                 "ResearchTime": 60,
                 "internal_name": "Elite Centurion"
             },
@@ -4858,7 +4858,7 @@
                     "Food": 800,
                     "Gold": 400
                 },
-                "ID": 981,
+                "ID": 885,
                 "ResearchTime": 100,
                 "internal_name": "Legionary"
             },
@@ -4867,7 +4867,7 @@
                     "Gold": 500,
                     "Wood": 600
                 },
-                "ID": 981,
+                "ID": 918,
                 "ResearchTime": 45,
                 "internal_name": "Elite Composite Bowman"
             },
@@ -4876,7 +4876,7 @@
                     "Food": 1000,
                     "Gold": 700
                 },
-                "ID": 981,
+                "ID": 920,
                 "ResearchTime": 45,
                 "internal_name": "Elite Monaspa"
             },
@@ -4885,7 +4885,7 @@
                     "Food": 1000,
                     "Gold": 600
                 },
-                "ID": 981,
+                "ID": 526,
                 "ResearchTime": 150,
                 "internal_name": "Savar"
             }
