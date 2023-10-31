@@ -76,6 +76,8 @@ CIV_NAMES = {
     "Dravidians": "10310",
     "Gurjaras": "10312",
     "Romans": "10313",
+    "Armenians": "10314",
+    "Georgians": "10315",
 }
 
 ROR_CIV_NAMES = {
@@ -142,6 +144,8 @@ CIV_HELPTEXTS = {
     "Dravidians": "120189",
     "Gurjaras": "120191",
     "Romans": "120192",
+    "Armenians": "120193",
+    "Georgians": "120194",
 }
 
 ROR_CIV_HELPTEXTS = {

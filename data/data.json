@@ -6,6 +6,7 @@
         "Imperial Age": "4204"
     },
     "civ_helptexts": {
+        "Armenians": "120193",
         "Aztecs": "120164",
         "Bengalis": "120190",
         "Berbers": "120176",
@@ -21,6 +22,7 @@
         "Dravidians": "120189",
         "Ethiopians": "120174",
         "Franks": "120151",
+        "Georgians": "120194",
         "Goths": "120152",
         "Gurjaras": "120191",
         "Hindustanis": "120169",
@@ -51,6 +53,7 @@
         "Vikings": "120160"
     },
     "civ_names": {
+        "Armenians": "10314",
         "Aztecs": "10285",
         "Bengalis": "10311",
         "Berbers": "10297",
@@ -66,6 +69,7 @@
         "Dravidians": "10310",
         "Ethiopians": "10295",
         "Franks": "10272",
+        "Georgians": "10315",
         "Goths": "10273",
         "Gurjaras": "10312",
         "Hindustanis": "10290",
