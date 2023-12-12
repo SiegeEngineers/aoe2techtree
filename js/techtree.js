@@ -311,6 +311,7 @@ const COINAGE = 23;
 const GARLAND_WARS = 24;
 const HUSBANDRY = 39;
 const FAITH = 45;
+const DEVOTION = 46;
 const CHEMISTRY = 47;
 const CARAVAN = 48;
 const BERSERKERGANG = 49;
@@ -943,15 +944,16 @@ function getDefaultTree() {
     monasterylane.rows.castle_1.push(building(MONASTERY));
     monasterylane.rows.castle_2.push(unit(MONK));
     monasterylane.rows.castle_2.push(uniqueunit(MISSIONARY));
+    monasterylane.rows.castle_2.push(tech(DEVOTION));
     monasterylane.rows.castle_2.push(tech(REDEMPTION));
     monasterylane.rows.castle_2.push(tech(ATONEMENT));
     monasterylane.rows.castle_2.push(tech(HERBAL_MEDICINE));
     monasterylane.rows.castle_2.push(tech(HERESY));
     monasterylane.rows.castle_2.push(tech(SANCTITY));
     monasterylane.rows.castle_2.push(tech(FERVOR));
-    monasterylane.rows.imperial_1.push(tech(FAITH));
     monasterylane.rows.imperial_1.push(tech(ILLUMINATION));
     monasterylane.rows.imperial_1.push(tech(BLOCK_PRINTING));
+    monasterylane.rows.imperial_1.push(tech(FAITH));
     monasterylane.rows.imperial_1.push(tech(THEOCRACY));
     tree.lanes.push(monasterylane);
 
@@ -1132,12 +1134,14 @@ function getConnections() {
         [b(GUARD_TOWER), b(KEEP)],
         [b(STONE_WALL), b(FORTIFIED_WALL)],
         [b(MONASTERY), u(MONK)],
+        [b(MONASTERY), t(DEVOTION)],
         [b(MONASTERY), t(REDEMPTION)],
         [b(MONASTERY), t(ATONEMENT)],
         [b(MONASTERY), t(HERBAL_MEDICINE)],
         [b(MONASTERY), t(HERESY)],
         [b(MONASTERY), t(SANCTITY)],
         [b(MONASTERY), t(FERVOR)],
+        [t(DEVOTION), t(FAITH)],
         [b(FORTIFIED_CHURCH), u(MONK)],
         [b(FORTIFIED_CHURCH), u(WARRIOR_PRIEST)],
         [b(FORTIFIED_CHURCH), t(REDEMPTION)],

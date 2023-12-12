@@ -644,7 +644,7 @@
                 "MinRange": 0,
                 "PierceArmor": 8,
                 "Range": 0,
-                "ReloadTime": 2.5,
+                "ReloadTime": 0,
                 "TrainTime": 60,
                 "internal_name": "MRKT"
             },
@@ -816,7 +816,7 @@
                 "MinRange": 0,
                 "PierceArmor": 7,
                 "Range": 0,
-                "ReloadTime": 2.5,
+                "ReloadTime": 0,
                 "TrainTime": 40,
                 "internal_name": "CRCH"
             },
@@ -1361,11 +1361,11 @@
                 "LanguageHelpId": 26185,
                 "LanguageNameId": 5185,
                 "LineOfSight": 6,
-                "MeleeArmor": 6,
+                "MeleeArmor": 0,
                 "MinRange": 0,
-                "PierceArmor": 6,
+                "PierceArmor": 0,
                 "Range": 0,
-                "ReloadTime": 2.5,
+                "ReloadTime": 0,
                 "TrainTime": 70,
                 "internal_name": "GTAX2"
             },
@@ -1495,7 +1495,7 @@
                 "MinRange": 0,
                 "PierceArmor": 0,
                 "Range": 0,
-                "ReloadTime": 2.5,
+                "ReloadTime": 0,
                 "TrainTime": 15,
                 "internal_name": "WCTWX"
             },
@@ -1582,11 +1582,11 @@
                 "LanguageHelpId": 26186,
                 "LanguageNameId": 5186,
                 "LineOfSight": 6,
-                "MeleeArmor": 2,
+                "MeleeArmor": 0,
                 "MinRange": 0,
-                "PierceArmor": 2,
+                "PierceArmor": 0,
                 "Range": 0,
-                "ReloadTime": 2.5,
+                "ReloadTime": 0,
                 "TrainTime": 30,
                 "internal_name": "PGTAX"
             },
@@ -1866,7 +1866,7 @@
                 "Attack": 0,
                 "Attacks": [],
                 "Cost": {
-                    "Wood": 125
+                    "Wood": 100
                 },
                 "GarrisonCapacity": 0,
                 "HP": 1000,
@@ -1922,7 +1922,7 @@
                 "MinRange": 0,
                 "PierceArmor": 10,
                 "Range": 0,
-                "ReloadTime": 2.5,
+                "ReloadTime": 0,
                 "TrainTime": 60,
                 "internal_name": "CARAVANSERAI"
             },
@@ -2006,7 +2006,7 @@
                 "Attacks": [],
                 "Cost": {
                     "Food": 20,
-                    "Wood": 100
+                    "Wood": 80
                 },
                 "GarrisonCapacity": 0,
                 "HP": 300,
@@ -2275,8 +2275,8 @@
             },
             "45": {
                 "Cost": {
-                    "Food": 750,
-                    "Gold": 1000
+                    "Food": 550,
+                    "Gold": 750
                 },
                 "ID": 45,
                 "LanguageHelpId": 28045,
@@ -2284,6 +2284,18 @@
                 "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Faith"
+            },
+            "46": {
+                "Cost": {
+                    "Food": 100,
+                    "Gold": 150
+                },
+                "ID": 46,
+                "LanguageHelpId": 28462,
+                "LanguageNameId": 7462,
+                "Repeatable": true,
+                "ResearchTime": 40,
+                "internal_name": "Devotion"
             },
             "47": {
                 "Cost": {
@@ -4089,7 +4101,7 @@
                     "Gold": 300
                 },
                 "ID": 209,
-                "ResearchTime": 100,
+                "ResearchTime": 80,
                 "internal_name": "Cavalier"
             },
             "330": {
@@ -4890,7 +4902,7 @@
                     "Gold": 600
                 },
                 "ID": 526,
-                "ResearchTime": 150,
+                "ResearchTime": 160,
                 "internal_name": "Savar"
             }
         },
@@ -5327,6 +5339,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -5876,6 +5892,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -6648,7 +6668,7 @@
                 "internal_name": "PKEMN"
             },
             "125": {
-                "AccuracyPercent": 25,
+                "AccuracyPercent": 38,
                 "Armours": [
                     {
                         "Amount": 0,
@@ -8212,7 +8232,7 @@
                 "PierceArmor": 2,
                 "Range": 0,
                 "RechargeRate": 0,
-                "ReloadTime": 5,
+                "ReloadTime": 0,
                 "Speed": 0.8,
                 "TrainTime": 25,
                 "Trait": 0,
@@ -8567,6 +8587,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -8716,7 +8740,7 @@
                 "PierceArmor": 3,
                 "Range": 0,
                 "RechargeRate": 0,
-                "ReloadTime": 5,
+                "ReloadTime": 0,
                 "Speed": 1.6,
                 "TrainTime": 31,
                 "Trait": 2,
@@ -8774,7 +8798,7 @@
                 "PierceArmor": 5,
                 "Range": 0,
                 "RechargeRate": 0,
-                "ReloadTime": 5,
+                "ReloadTime": 0,
                 "Speed": 1.6,
                 "TrainTime": 31,
                 "Trait": 2,
@@ -8846,7 +8870,7 @@
                 "MeleeArmor": 0,
                 "MinRange": 0,
                 "PierceArmor": 6,
-                "Range": 2.49,
+                "Range": 2.5,
                 "RechargeRate": 0,
                 "ReloadTime": 0.25,
                 "Speed": 1.35,
@@ -9068,7 +9092,7 @@
                 "MeleeArmor": 0,
                 "MinRange": 0,
                 "PierceArmor": 8,
-                "Range": 2.49,
+                "Range": 2.5,
                 "RechargeRate": 0,
                 "ReloadTime": 0.25,
                 "Speed": 1.43,
@@ -10324,6 +10348,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -11282,7 +11310,7 @@
                 "Range": 0,
                 "RechargeRate": 0,
                 "ReloadTime": 2.1,
-                "Speed": 1.35,
+                "Speed": 1.4,
                 "TrainTime": 14,
                 "Trait": 0,
                 "TraitPiece": 0,
@@ -11372,7 +11400,7 @@
                 "Range": 0,
                 "RechargeRate": 0,
                 "ReloadTime": 2.1,
-                "Speed": 1.35,
+                "Speed": 1.4,
                 "TrainTime": 14,
                 "Trait": 0,
                 "TraitPiece": 0,
@@ -11699,7 +11727,7 @@
                 "internal_name": "UCONQ"
             },
             "775": {
-                "AccuracyPercent": 25,
+                "AccuracyPercent": 38,
                 "Armours": [
                     {
                         "Amount": 0,
@@ -11808,6 +11836,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -11890,6 +11922,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -12432,6 +12468,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -12514,6 +12554,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -12749,7 +12793,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 65,
+                    "Food": 60,
                     "Gold": 30
                 },
                 "FrameDelay": 0,
@@ -12827,7 +12871,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 65,
+                    "Food": 60,
                     "Gold": 30
                 },
                 "FrameDelay": 0,
@@ -12956,11 +13000,11 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 7,
+                "Attack": 6,
                 "AttackDelaySeconds": 0.6,
                 "Attacks": [
                     {
-                        "Amount": 1,
+                        "Amount": 2,
                         "Class": 1
                     },
                     {
@@ -12968,7 +13012,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 7,
+                        "Amount": 6,
                         "Class": 3
                     },
                     {
@@ -12976,7 +13020,7 @@
                         "Class": 17
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 2,
                         "Class": 38
                     }
                 ],
@@ -13034,11 +13078,11 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 9,
+                "Attack": 8,
                 "AttackDelaySeconds": 0.6,
                 "Attacks": [
                     {
-                        "Amount": 1,
+                        "Amount": 2,
                         "Class": 1
                     },
                     {
@@ -13046,7 +13090,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 9,
+                        "Amount": 8,
                         "Class": 3
                     },
                     {
@@ -13054,7 +13098,7 @@
                         "Class": 17
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 2,
                         "Class": 38
                     }
                 ],
@@ -13306,6 +13350,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -13408,6 +13456,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -13502,6 +13554,10 @@
                     {
                         "Amount": -3,
                         "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -13596,6 +13652,10 @@
                     {
                         "Amount": -3,
                         "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -14001,7 +14061,7 @@
                 "MeleeArmor": 0,
                 "MinRange": 0,
                 "PierceArmor": 4,
-                "Range": 2.49,
+                "Range": 2.5,
                 "RechargeRate": 0,
                 "ReloadTime": 0.25,
                 "Speed": 1.3,
@@ -14061,7 +14121,7 @@
                 "PierceArmor": 2,
                 "Range": 0,
                 "RechargeRate": 0,
-                "ReloadTime": 5,
+                "ReloadTime": 0,
                 "Speed": 1.5,
                 "TrainTime": 45,
                 "Trait": 2,
@@ -15417,6 +15477,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -15499,6 +15563,10 @@
                     {
                         "Amount": 0,
                         "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -16132,7 +16200,7 @@
                 "PierceArmor": 0,
                 "Range": 0,
                 "RechargeRate": 0,
-                "ReloadTime": 5,
+                "ReloadTime": 0,
                 "Speed": 1.3,
                 "TrainTime": 20,
                 "Trait": 0,
@@ -17081,7 +17149,7 @@
                         "Class": 37
                     }
                 ],
-                "Attack": 11,
+                "Attack": 10,
                 "AttackDelaySeconds": 0.6222222222222222,
                 "Attacks": [
                     {
@@ -17089,7 +17157,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 11,
+                        "Amount": 10,
                         "Class": 3
                     },
                     {
@@ -17105,7 +17173,7 @@
                 },
                 "FrameDelay": 20,
                 "GarrisonCapacity": 0,
-                "HP": 180,
+                "HP": 160,
                 "ID": 1704,
                 "LanguageHelpId": 26561,
                 "LanguageNameId": 5561,
@@ -17118,7 +17186,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 3.45,
                 "Speed": 0.8,
-                "TrainTime": 21,
+                "TrainTime": 26,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "HUSSITEWAGON"
@@ -17192,7 +17260,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 3.45,
                 "Speed": 0.8,
-                "TrainTime": 21,
+                "TrainTime": 26,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "EHUSSITEWAGON"
@@ -17534,7 +17602,7 @@
                         "Class": 19
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 1,
                         "Class": 28
                     },
                     {
@@ -17624,7 +17692,7 @@
                         "Class": 19
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 1,
                         "Class": 28
                     },
                     {
@@ -18532,7 +18600,7 @@
                         "Class": 19
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 1,
                         "Class": 28
                     },
                     {
@@ -18566,6 +18634,10 @@
                     {
                         "Amount": -3,
                         "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -18618,7 +18690,7 @@
                         "Class": 19
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 1,
                         "Class": 28
                     },
                     {
@@ -18652,6 +18724,10 @@
                     {
                         "Amount": -3,
                         "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
                     }
                 ],
                 "ChargeEvent": 0,
@@ -19196,20 +19272,28 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 50,
+                "Attack": 8,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
-                        "Amount": 50,
+                        "Amount": 8,
                         "Class": 4
                     },
                     {
-                        "Amount": 135,
+                        "Amount": 34,
                         "Class": 11
                     },
                     {
-                        "Amount": 30,
+                        "Amount": 2,
                         "Class": 20
+                    },
+                    {
+                        "Amount": 15,
+                        "Class": 22
+                    },
+                    {
+                        "Amount": 9,
+                        "Class": 26
                     }
                 ],
                 "ChargeEvent": 0,
@@ -19233,7 +19317,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 8,
                 "Speed": 1.2,
-                "TrainTime": 50,
+                "TrainTime": 65,
                 "Trait": 2,
                 "TraitPiece": 0,
                 "internal_name": "DROMON"
@@ -19640,7 +19724,7 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 3,
+                        "Amount": 2,
                         "Class": 15
                     },
                     {
@@ -19741,6 +19825,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -19772,7 +19857,6 @@
                 213,
                 215,
                 219,
-                221,
                 230,
                 231,
                 233,
@@ -19890,6 +19974,7 @@
                 22,
                 23,
                 45,
+                46,
                 47,
                 48,
                 54,
@@ -20035,6 +20120,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -20190,6 +20276,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -20349,6 +20436,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -20502,6 +20590,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -20655,6 +20744,7 @@
                 22,
                 23,
                 39,
+                46,
                 47,
                 48,
                 50,
@@ -20806,6 +20896,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -20959,6 +21050,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -21115,6 +21207,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 54,
@@ -21274,6 +21367,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -21424,6 +21518,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -21575,6 +21670,7 @@
                 22,
                 23,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -21722,6 +21818,7 @@
                 22,
                 23,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -21875,6 +21972,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -22029,6 +22127,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -22178,6 +22277,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -22328,6 +22428,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -22470,6 +22571,7 @@
                 22,
                 23,
                 39,
+                46,
                 47,
                 48,
                 50,
@@ -22621,6 +22723,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -22765,6 +22868,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -22904,6 +23008,7 @@
                 22,
                 23,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -23054,6 +23159,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -23210,6 +23316,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -23366,6 +23473,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -23520,6 +23628,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -23677,6 +23786,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -23828,6 +23938,7 @@
                 22,
                 23,
                 39,
+                46,
                 47,
                 48,
                 50,
@@ -23982,6 +24093,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -24134,6 +24246,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -24287,6 +24400,7 @@
                 22,
                 23,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -24431,6 +24545,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -24582,6 +24697,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -24737,6 +24853,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -24889,6 +25006,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -25047,6 +25165,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -25187,6 +25306,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -25345,6 +25465,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -25497,6 +25618,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -25648,6 +25770,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -25809,6 +25932,7 @@
                 22,
                 23,
                 39,
+                46,
                 47,
                 48,
                 50,
@@ -25963,6 +26087,7 @@
                 22,
                 23,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -26119,6 +26244,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 50,
@@ -26278,6 +26404,7 @@
                 23,
                 39,
                 45,
+                46,
                 47,
                 48,
                 54,
@@ -26431,6 +26558,7 @@
                 22,
                 23,
                 45,
+                46,
                 47,
                 48,
                 50,

@@ -224,7 +224,7 @@
                 "MinRange": 0,
                 "PierceArmor": 3,
                 "Range": 0,
-                "ReloadTime": 2.5,
+                "ReloadTime": 0,
                 "TrainTime": 35,
                 "internal_name": "GTAA3"
             },
@@ -267,7 +267,7 @@
                 "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 0,
-                "ReloadTime": 2.5,
+                "ReloadTime": 0,
                 "TrainTime": 35,
                 "internal_name": "GTAA2"
             },
@@ -429,7 +429,7 @@
                 "PierceArmor": 3,
                 "Range": 6,
                 "ReloadTime": 1.5,
-                "TrainTime": 72,
+                "TrainTime": 65,
                 "internal_name": "Watch Tower"
             },
             "84": {
@@ -808,7 +808,7 @@
                 "PierceArmor": 4,
                 "Range": 7,
                 "ReloadTime": 1.5,
-                "TrainTime": 72,
+                "TrainTime": 65,
                 "internal_name": "Sentry Tower"
             },
             "235": {
@@ -856,7 +856,7 @@
                 "PierceArmor": 5,
                 "Range": 8,
                 "ReloadTime": 1.5,
-                "TrainTime": 72,
+                "TrainTime": 65,
                 "internal_name": "Guard Tower"
             },
             "236": {
@@ -904,7 +904,7 @@
                 "PierceArmor": 5,
                 "Range": 8,
                 "ReloadTime": 3.1,
-                "TrainTime": 72,
+                "TrainTime": 65,
                 "internal_name": "Ballista Tower"
             },
             "276": {
@@ -1053,7 +1053,7 @@
                 "MinRange": 0,
                 "PierceArmor": 1,
                 "Range": 0,
-                "ReloadTime": 2.5,
+                "ReloadTime": 0,
                 "TrainTime": 35,
                 "internal_name": "PGTAA"
             }
@@ -1686,7 +1686,7 @@
                 "LanguageHelpId": 28097,
                 "LanguageNameId": 7097,
                 "Repeatable": false,
-                "ResearchTime": 45,
+                "ResearchTime": 15,
                 "internal_name": "City Watch"
             },
             "129": {
@@ -2864,7 +2864,7 @@
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
-                        "Amount": 0,
+                        "Amount": -2,
                         "Class": 4
                     },
                     {
@@ -2898,7 +2898,7 @@
                 "LanguageNameId": 305174,
                 "LineOfSight": 13,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": -2,
                 "MinRange": 3,
                 "PierceArmor": 3,
                 "Range": 10,
@@ -3281,7 +3281,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 100
+                    "Food": 90
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
@@ -3649,7 +3649,7 @@
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
-                        "Amount": 0,
+                        "Amount": -2,
                         "Class": 4
                     },
                     {
@@ -3683,7 +3683,7 @@
                 "LanguageNameId": 305175,
                 "LineOfSight": 15,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": -2,
                 "MinRange": 3,
                 "PierceArmor": 4,
                 "Range": 12,
@@ -3753,7 +3753,7 @@
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
-                        "Amount": 0,
+                        "Amount": -2,
                         "Class": 4
                     },
                     {
@@ -3787,7 +3787,7 @@
                 "LanguageNameId": 305338,
                 "LineOfSight": 16,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": -2,
                 "MinRange": 3,
                 "PierceArmor": 5,
                 "Range": 13,
