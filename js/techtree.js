@@ -627,22 +627,24 @@ function checkIdUnique(tree) {
 }
 
 function enable(buildings, units, techs) {
-    for (let name of buildings) {
-        SVG('#building_' + formatId(name) + '_x').attr({'opacity': 0});
-        SVG('#building_' + formatId(name) + '_disabled_gray').attr({'opacity': 0});
+    for (let item of buildings) {
+        SVG('#building_' + formatId(item.id) + '_x').attr({'opacity': 0});
+        SVG('#building_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
-    for (let name of units) {
-        SVG('#unit_' + formatId(name) + '_x').attr({'opacity': 0});
-        SVG('#unit_' + formatId(name) + '_disabled_gray').attr({'opacity': 0});
+    for (let item of units) {
+        SVG('#unit_' + formatId(item.id) + '_x').attr({'opacity': 0});
+        SVG('#unit_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
-    for (let name of techs) {
-        SVG('#tech_' + formatId(name) + '_x').attr({'opacity': 0});
-        SVG('#tech_' + formatId(name) + '_disabled_gray').attr({'opacity': 0});
+    for (let item of techs) {
+        SVG('#tech_' + formatId(item.id) + '_x').attr({'opacity': 0});
+        SVG('#tech_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
 }
 
 function applySelectedCiv(selectedCiv) {
-    enable(selectedCiv.buildings, [...selectedCiv.units, UNIQUE_UNIT, ELITE_UNIQUE_UNIT], [...selectedCiv.techs, UNIQUE_TECH_1, UNIQUE_TECH_2]);
+    enable(selectedCiv.buildings,
+        [...selectedCiv.units, {id:UNIQUE_UNIT, age: 3}, {id: ELITE_UNIQUE_UNIT, age: 4}],
+        [...selectedCiv.techs, {id: UNIQUE_TECH_1, age: 3}, {id: UNIQUE_TECH_2, age: 4}]);
     unique([selectedCiv.unique.castleAgeUniqueUnit,
         selectedCiv.unique.imperialAgeUniqueUnit,
         selectedCiv.unique.castleAgeUniqueTech,

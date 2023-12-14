@@ -51,6 +51,28 @@ function updatePageTitle() {
     document.title = `${aoe2}${suffix} ${techtree}`;
 }
 
+function getShieldForEarlierRow(row) {
+    const age = row.split('_')[0];
+    for (let i = 1; i < AGE_IMAGES.length; i++) {
+        const ageimage = AGE_IMAGES[i];
+        if (ageimage.includes(age)) {
+            return AGE_IMAGES[i - 1];
+        }
+    }
+    return AGE_IMAGES[0];
+}
+
+function getAgeNumber(row) {
+    const age = row.split('_')[0];
+    for (let i = 0; i < AGE_IMAGES.length; i++) {
+        const ageimage = AGE_IMAGES[i];
+        if (ageimage.includes(age)) {
+            return i;
+        }
+    }
+    return 1;
+}
+
 function displayData() {
     // Reset containers
     const root = document.getElementById('root');
@@ -130,6 +152,7 @@ function displayData() {
             .click(hideHelp);
         for (let r of Object.keys(lane.rows)) {
             let row = lane.rows[r];
+            const ageNumber = getAgeNumber(r);
             for (let caret of row) {
                 const item = draw.group().attr({id: caret.id}).addClass('node');
                 const rect = item.rect(caret.width, caret.height).attr({
@@ -160,6 +183,11 @@ function displayData() {
                     .attr({id: caret.id + '_x'})
                     .addClass('cross')
                     .move(caret.x + caret.width * 0.15, caret.y - caret.height * 0.04);
+                const earlier_age_image = item.image('img/Ages/' + getShieldForEarlierRow(r))
+                    .size(caret.width * 0.3, caret.height * 0.3)
+                    .attr({id: caret.id + '_earlier_age_img_' + ageNumber, 'opacity': 0})
+                    .addClass('earlier-age')
+                    .move(caret.x + caret.width * 0.85, caret.y - caret.width * 0.15);
                 const overlaytrigger = item.rect(caret.width, caret.height)
                     .attr({id: caret.id + '_overlay'})
                     .addClass('node__overlay')
@@ -591,19 +619,19 @@ function styleXRefBadges(name, id, type) {
         // Make sure this civ exists
         if (civs[civ]) {
             if (type === 'UNIT' || type === 'UNIQUEUNIT') {
-                if (civs[civ].units.map((id) => `unit_${id}`).includes(id)) {
+                if (civs[civ].units.map((item) => `unit_${item.id}`).includes(id)) {
                     found = true;
                 } else if (`unit_${civs[civ]?.unique?.castleAgeUniqueUnit}` === id || `unit_${civs[civ]?.unique?.imperialAgeUniqueUnit}` === id) {
                     found = true;
                 }
             } else if (type === 'TECHNOLOGY') {
-                if (civs[civ].techs.map((id) => `tech_${id}`).includes(id)) {
+                if (civs[civ].techs.map((item) => `tech_${item.id}`).includes(id)) {
                     found = true;
                 } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech}` === id) {
                     found = true;
                 }
             } else if (type === 'BUILDING') {
-                if (civs[civ].buildings.map((id) => `building_${id}`).includes(id)) {
+                if (civs[civ].buildings.map((item) => `building_${item.id}`).includes(id)) {
                     found = true;
                 }
             }
@@ -800,15 +828,15 @@ function civ(name) {
         }
 
         if (type === 'unit') {
-            if (selectedCiv.units.includes(id)) {
+            if (selectedCiv.units.map((item) => item.id).includes(id)) {
                 return;
             }
         } else if (type === 'building') {
-            if (selectedCiv.buildings.includes(id)) {
+            if (selectedCiv.buildings.map((item) => item.id).includes(id)) {
                 return;
             }
         } else if (type === 'tech') {
-            if (selectedCiv.techs.includes(id)) {
+            if (selectedCiv.techs.map((item) => item.id).includes(id)) {
                 return;
             }
         }
@@ -816,11 +844,42 @@ function civ(name) {
         makeSVGObjectOpaque(SVG('#' + this.id().replace('_x', '_disabled_gray')), 0.2);
     });
 
+    SVG.find('.earlier-age').each(function () {
+        let {id, type, ageId} = parseSVGObjectId2(this.id());
+        if (id === undefined || type === undefined || ageId === undefined) {
+            return;
+        }
+
+        if (type === 'unit') {
+            if (selectedCiv.units.some((item) => item.id === id && item.age === ageId)) {
+                makeSVGObjectOpaque(this);
+                return;
+            }
+        } else if (type === 'building') {
+            if (selectedCiv.buildings.some((item) => item.id === id && item.age === ageId)) {
+                makeSVGObjectOpaque(this);
+                return;
+            }
+        } else if (type === 'tech') {
+            if (selectedCiv.techs.some((item) => item.id === id && item.age === ageId)) {
+                makeSVGObjectOpaque(this);
+                return;
+            }
+        }
+        if (SVGObjectIsOpaque(this)) {
+            makeSVGObjectOpaque(this, 0);
+        }
+    });
+
     applySelectedCiv(selectedCiv);
 }
 
 function SVGObjectIsOpaque(svgObj) {
     return svgObj.attr('opacity') === 1
+}
+
+function SVGObjectIsTransparent(svgObj) {
+    return svgObj.attr('opacity') === 0
 }
 
 function makeSVGObjectOpaque(svgObj, opacity = 1) {
@@ -838,6 +897,20 @@ function parseSVGObjectId(svgObjId) {
     let type = found[1];
 
     return {id, type}
+}
+
+function parseSVGObjectId2(svgObjId) {
+    const id_regex = /(.+)_([\d]+)_earlier_age_img_([\d]+)/;
+
+    const found = svgObjId.match(id_regex);
+    if (!found) {
+        return {id: undefined, type: undefined, ageId: undefined};
+    }
+    let id = parseInt(found[2]);
+    let type = found[1];
+    let ageId = parseInt(found[3]);
+
+    return {id, type, ageId}
 }
 
 function techtreeDoesNotHaveScrollbar() {
