@@ -201,6 +201,13 @@ hr:before {
 
 #buildingindex__table {
     margin: auto;
+    border: none;
+    border-spacing: 5px;
+}
+
+#key__table {
+    border: none;
+    border-spacing: 10px;
 }
 
 .locale-switcher {

@@ -5,12 +5,68 @@ const TYPES = Object.freeze({
     'TECHNOLOGY': {colour: '#2c5729', type: 'TECHNOLOGY', name: 'Technology'}
 });
 
+const LEGEND = [TYPES.UNIQUEUNIT, TYPES.UNIT, TYPES.BUILDING, TYPES.TECHNOLOGY];
+
 const PREFIX = Object.freeze({
     'BUILDING': 'building_',
     'UNIT': 'unit_',
     'UNIQUEUNIT': 'unit_',
     'TECHNOLOGY': 'tech_'
 });
+
+const AGE_IMAGES = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
+
+const getAgeNames = (data)=>{
+    return [
+        data.strings[data.age_names['Dark Age']],
+        data.strings[data.age_names['Feudal Age']],
+        data.strings[data.age_names['Castle Age']],
+        data.strings[data.age_names['Imperial Age']],
+    ];
+}
+
+const unitClasses = {
+    0: '<abbr title="unused">Wonders</abbr>',
+    1: 'Infantry',
+    2: 'Turtle Ships and Thirisadai',
+    3: 'Base Pierce',
+    4: 'Base Melee',
+    5: 'Elephants',
+    6: 'Unused',
+    7: 'Unused',
+    8: '<abbr title="except Camels">Mounted Units</abbr>',
+    9: 'Unused',
+    10: 'Unused',
+    11: '<abbr title="except Fish Traps">All Buildings</abbr>',
+    12: 'Unused',
+    13: '<abbr title="except Castles and Kreposts">Stone Defense & Harbors</abbr>',
+    14: 'Wolves etc.',
+    15: 'All Archers',
+    16: '<abbr title="except Fishing Ships">Ships</abbr>',
+    17: 'High Pierce Armor Siege Units',
+    18: 'Trees',
+    19: 'Unique Units',
+    20: 'Siege Units',
+    21: '<abbr title="except Fish Traps and Wonders">Standard Buildings</abbr>',
+    22: 'Walls & Gates',
+    23: 'Gunpowder Units',
+    24: 'Boars etc.',
+    25: 'Monks',
+    26: 'Castles & Kreposts',
+    27: 'Spearmen',
+    28: 'Mounted Archers',
+    29: 'Eagle Warriors',
+    30: 'Camels',
+    31: '<abbr title="previously used by the Leitis as armor-ignoring attack">Obsolete</abbr>',
+    32: 'Condottieri',
+    33: '<abbr title="no unit has this armor class">Gunpowder units secondary projectile attack</abbr>',
+    34: 'Fishing Ships',
+    35: 'Mamelukes',
+    36: '<abbr title="unused">Heroes & Kings</abbr>',
+    37: 'Hussite Wagons',
+    38: 'Skirmishers',
+    39: 'Cavalry Resistance',
+};
 
 const animation_duration = 50;
 
@@ -55,6 +111,8 @@ const FEITORIA = 1021;
 const HARBOR = 1189;
 const KREPOST = 1251;
 const DONJON = 1665;
+const FORTIFIED_CHURCH = 1806;
+const MULE_CART = 1808;
 const ARCHER = 4;
 const HAND_CANNONEER = 5;
 const ELITE_SKIRMISHER = 6;
@@ -225,6 +283,13 @@ const SHRIVAMSHA_RIDER = 1751;
 const ELITE_SHRIVAMSHA_RIDER = 1753;
 const CARAVANSERAI = 1754;
 const CAMEL_SCOUT = 1755;
+const DSPEARMAN = 1786;
+const DPIKEMAN = 1787;
+const DHALBERDIER = 1788;
+const LEGIONARY = 1793;
+const DROMON = 1795;
+const WARRIOR_PRIEST = 1811;
+const SAVAR = 1813;
 const YEOMEN = 3;
 const EL_DORADO = 4;
 const FUROR_CELTICA = 5;
@@ -246,6 +311,7 @@ const COINAGE = 23;
 const GARLAND_WARS = 24;
 const HUSBANDRY = 39;
 const FAITH = 45;
+const DEVOTION = 46;
 const CHEMISTRY = 47;
 const CARAVAN = 48;
 const BERSERKERGANG = 49;
@@ -376,6 +442,21 @@ const FIRST_CRUSADE = 756;
 const SCUTAGE = 757;
 const GAMBESONS = 875;
 
+const BUILDING_INDEX = [
+    ARCHERY_RANGE,
+    BARRACKS,
+    STABLE,
+    SIEGE_WORKSHOP,
+    BLACKSMITH,
+    DOCK,
+    UNIVERSITY,
+    WATCH_TOWER,
+    CASTLE,
+    MONASTERY,
+    TOWN_CENTER,
+    MARKET
+];
+
 class Tree {
     constructor() {
         this.offsets = {
@@ -476,11 +557,14 @@ class Lane {
         for (let connection of connections) {
             let from = connection[0];
             let to = connection[1];
-            if (carets.has(from) && carets.has(to)) {
-                let from_x = carets.get(from).x;
-                let to_x = carets.get(to).x;
-                carets.get(from).x = Math.max(from_x, to_x);
-                carets.get(to).x = Math.max(from_x, to_x);
+            let allConnectionsForFrom = connections.filter(c => c[0] === from && carets.has(c[0]) && carets.has(c[1]));
+            let allRelevantTos = allConnectionsForFrom.map(c => c[1]);
+            if (carets.has(from) && carets.get(from).x < Math.min(allRelevantTos.map(to_ => carets.get(to_).x))){
+                carets.get(from).x = Math.min(allRelevantTos.map(to_ => carets.get(to_).x));
+            }
+            if (carets.has(from) && carets.get(from).x > Math.max(allRelevantTos.map(to_ => carets.get(to_).x))){
+                console.assert(allRelevantTos.length === 1, `Overlapping carets: ${allRelevantTos}`)
+                allRelevantTos.forEach(to_ => carets.get(to_).x = carets.get(from).x);
             }
         }
     }
@@ -543,18 +627,28 @@ function checkIdUnique(tree) {
 }
 
 function enable(buildings, units, techs) {
-    for (let name of buildings) {
-        SVG('#building_' + formatId(name) + '_x').attr({'opacity': 0});
-        SVG('#building_' + formatId(name) + '_disabled_gray').attr({'opacity': 0});
+    for (let item of buildings) {
+        SVG('#building_' + formatId(item.id) + '_x').attr({'opacity': 0});
+        SVG('#building_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
-    for (let name of units) {
-        SVG('#unit_' + formatId(name) + '_x').attr({'opacity': 0});
-        SVG('#unit_' + formatId(name) + '_disabled_gray').attr({'opacity': 0});
+    for (let item of units) {
+        SVG('#unit_' + formatId(item.id) + '_x').attr({'opacity': 0});
+        SVG('#unit_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
-    for (let name of techs) {
-        SVG('#tech_' + formatId(name) + '_x').attr({'opacity': 0});
-        SVG('#tech_' + formatId(name) + '_disabled_gray').attr({'opacity': 0});
+    for (let item of techs) {
+        SVG('#tech_' + formatId(item.id) + '_x').attr({'opacity': 0});
+        SVG('#tech_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
+}
+
+function applySelectedCiv(selectedCiv) {
+    enable(selectedCiv.buildings,
+        [...selectedCiv.units, {id:UNIQUE_UNIT, age: 3}, {id: ELITE_UNIQUE_UNIT, age: 4}],
+        [...selectedCiv.techs, {id: UNIQUE_TECH_1, age: 3}, {id: UNIQUE_TECH_2, age: 4}]);
+    unique([selectedCiv.unique.castleAgeUniqueUnit,
+        selectedCiv.unique.imperialAgeUniqueUnit,
+        selectedCiv.unique.castleAgeUniqueTech,
+        selectedCiv.unique.imperialAgeUniqueTech], selectedCiv.monkPrefix);
 }
 
 function formatName(originalname) {
@@ -660,20 +754,22 @@ function getDefaultTree() {
     barrackslane.rows.dark_1.push(building(BARRACKS));
     barrackslane.rows.dark_2.push(unit(MILITIA));
     barrackslane.rows.feudal_1.push(unit(MAN_AT_ARMS));
+    barrackslane.rows.feudal_1.push(tech(SUPPLIES));
     barrackslane.rows.feudal_1.push(unit(SPEARMAN));
     barrackslane.rows.feudal_1.push(unit(EAGLE_SCOUT));
-    barrackslane.rows.feudal_1.push(tech(SUPPLIES));
     barrackslane.rows.castle_1.push(unit(LONG_SWORDSMAN));
+    barrackslane.rows.castle_1.push(tech(GAMBESONS));
     barrackslane.rows.castle_1.push(unit(PIKEMAN));
     barrackslane.rows.castle_1.push(unit(EAGLE_WARRIOR));
-    barrackslane.rows.castle_1.push(tech(GAMBESONS));
     barrackslane.rows.castle_1.push(tech(SQUIRES));
     barrackslane.rows.castle_1.push(tech(ARSON));
     barrackslane.rows.imperial_1.push(unit(TWO_HANDED_SWORDSMAN));
+    barrackslane.rows.imperial_1.push(uniqueunit(LEGIONARY));
     barrackslane.rows.imperial_2.push(unit(CHAMPION));
     barrackslane.rows.imperial_1.push(unit(HALBERDIER));
     barrackslane.rows.imperial_1.push(unit(ELITE_EAGLE_WARRIOR));
     barrackslane.rows.imperial_1.push(uniqueunit(CONDOTTIERO));
+    barrackslane.rows.imperial_1.push(uniqueunit(FLEMISHPIKEMAN));
     tree.lanes.push(barrackslane);
 
 
@@ -684,21 +780,22 @@ function getDefaultTree() {
     stablelane.rows.feudal_2.push(uniqueunit(CAMEL_SCOUT));
     stablelane.rows.castle_1.push(unit(LIGHT_CAVALRY));
     stablelane.rows.castle_1.push(uniqueunit(SHRIVAMSHA_RIDER));
-    stablelane.rows.castle_1.push(unit(CAMEL_RIDER));
     stablelane.rows.castle_1.push(unit(KNIGHT));
-    stablelane.rows.castle_1.push(unit(BATTLE_ELEPHANT));
     stablelane.rows.castle_1.push(unit(STEPPE_LANCER));
+    stablelane.rows.castle_1.push(unit(CAMEL_RIDER));
+    stablelane.rows.castle_1.push(unit(BATTLE_ELEPHANT));
     stablelane.rows.castle_1.push(uniqueunit(XOLOTL_WARRIOR));
     stablelane.rows.castle_1.push(tech(HUSBANDRY));
     stablelane.rows.imperial_1.push(unit(HUSSAR));
     stablelane.rows.imperial_1.push(uniqueunit(ELITE_SHRIVAMSHA_RIDER));
-    stablelane.rows.imperial_1.push(unit(HEAVY_CAMEL_RIDER));
     stablelane.rows.imperial_1.push(unit(CAVALIER));
-    stablelane.rows.imperial_1.push(unit(ELITE_BATTLE_ELEPHANT));
     stablelane.rows.imperial_1.push(unit(ELITE_STEPPE_LANCER));
+    stablelane.rows.imperial_1.push(unit(HEAVY_CAMEL_RIDER));
+    stablelane.rows.imperial_1.push(unit(ELITE_BATTLE_ELEPHANT));
     stablelane.rows.imperial_2.push(uniqueunit(WINGED_HUSSAR));
     stablelane.rows.imperial_2.push(uniqueunit(IMPERIAL_CAMEL_RIDER));
     stablelane.rows.imperial_2.push(unit(PALADIN));
+    stablelane.rows.imperial_2.push(uniqueunit(SAVAR));
     tree.lanes.push(stablelane);
 
 
@@ -759,6 +856,7 @@ function getDefaultTree() {
     docklane.rows.imperial_1.push(unit(CANNON_GALLEON));
     docklane.rows.imperial_1.push(unit(HEAVY_DEMO_SHIP));
     docklane.rows.imperial_1.push(unit(GALLEON));
+    docklane.rows.imperial_1.push(unit(DROMON));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_TURTLE_SHIP));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_LONGBOAT));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_CARAVEL));
@@ -837,7 +935,10 @@ function getDefaultTree() {
     let donjonlane = new Lane();
     donjonlane.rows.feudal_1.push(building(DONJON));
     donjonlane.rows.feudal_2.push(uniqueunit(DSERJEANT));
+    donjonlane.rows.feudal_2.push(unit(DSPEARMAN));
+    donjonlane.rows.castle_1.push(unit(DPIKEMAN));
     donjonlane.rows.imperial_1.push(uniqueunit(ELITE_DSERJEANT));
+    donjonlane.rows.imperial_1.push(unit(DHALBERDIER));
     tree.lanes.push(donjonlane);
 
 
@@ -845,17 +946,23 @@ function getDefaultTree() {
     monasterylane.rows.castle_1.push(building(MONASTERY));
     monasterylane.rows.castle_2.push(unit(MONK));
     monasterylane.rows.castle_2.push(uniqueunit(MISSIONARY));
+    monasterylane.rows.castle_2.push(tech(DEVOTION));
     monasterylane.rows.castle_2.push(tech(REDEMPTION));
     monasterylane.rows.castle_2.push(tech(ATONEMENT));
     monasterylane.rows.castle_2.push(tech(HERBAL_MEDICINE));
     monasterylane.rows.castle_2.push(tech(HERESY));
     monasterylane.rows.castle_2.push(tech(SANCTITY));
     monasterylane.rows.castle_2.push(tech(FERVOR));
-    monasterylane.rows.imperial_1.push(tech(FAITH));
     monasterylane.rows.imperial_1.push(tech(ILLUMINATION));
     monasterylane.rows.imperial_1.push(tech(BLOCK_PRINTING));
+    monasterylane.rows.imperial_1.push(tech(FAITH));
     monasterylane.rows.imperial_1.push(tech(THEOCRACY));
     tree.lanes.push(monasterylane);
+
+    let fortifiedchurchlane = new Lane();
+    fortifiedchurchlane.rows.castle_1.push(building(FORTIFIED_CHURCH));
+    fortifiedchurchlane.rows.castle_2.push(uniqueunit(WARRIOR_PRIEST));
+    tree.lanes.push(fortifiedchurchlane);
 
 
     let houselane = new Lane();
@@ -873,7 +980,6 @@ function getDefaultTree() {
     towncenterlane.rows.castle_1.push(tech(TOWN_PATROL));
     towncenterlane.rows.castle_1.push(tech(IMPERIAL_AGE));
     towncenterlane.rows.castle_1.push(tech(HAND_CART));
-    towncenterlane.rows.imperial_1.push(uniqueunit(FLEMISHPIKEMAN));
     tree.lanes.push(towncenterlane);
 
 
@@ -903,6 +1009,10 @@ function getDefaultTree() {
     miningcamplane.rows.castle_1.push(tech(GOLD_SHAFT_MINING));
     miningcamplane.rows.castle_1.push(tech(STONE_SHAFT_MINING));
     tree.lanes.push(miningcamplane);
+
+    let mulecartlane = new Lane();
+    mulecartlane.rows.dark_1.push(building(MULE_CART));
+    tree.lanes.push(mulecartlane);
 
 
     let lumbercamplane = new Lane();
@@ -974,6 +1084,7 @@ function getConnections() {
         [u(MILITIA), u(MAN_AT_ARMS)],
         [u(MAN_AT_ARMS), u(LONG_SWORDSMAN)],
         [u(LONG_SWORDSMAN), u(TWO_HANDED_SWORDSMAN)],
+        [u(LONG_SWORDSMAN), u(LEGIONARY)],
         [u(TWO_HANDED_SWORDSMAN), u(CHAMPION)],
         [b(BARRACKS), u(SPEARMAN)],
         [u(SPEARMAN), u(PIKEMAN)],
@@ -992,7 +1103,8 @@ function getConnections() {
         [u(SHRIVAMSHA_RIDER), u(ELITE_SHRIVAMSHA_RIDER)],
         [b(STABLE), u(CAMEL_SCOUT)],
         [b(STABLE), t(BLOODLINES)],
-        [b(STABLE), u(CAMEL_RIDER)],
+        // [b(STABLE), u(CAMEL_RIDER)],
+        [u(CAMEL_SCOUT), u(CAMEL_RIDER)],
         [u(CAMEL_RIDER), u(HEAVY_CAMEL_RIDER)],
         [b(STABLE), u(BATTLE_ELEPHANT)],
         [u(BATTLE_ELEPHANT), u(ELITE_BATTLE_ELEPHANT)],
@@ -1002,9 +1114,11 @@ function getConnections() {
         [b(STABLE), t(HUSBANDRY)],
         [b(STABLE), u(KNIGHT)],
         [u(KNIGHT), u(CAVALIER)],
+        [u(CAVALIER), u(SAVAR)],
         [u(CAVALIER), u(PALADIN)],
         [b(DOCK), u(FISHING_SHIP)],
         [b(DOCK), u(TRANSPORT_SHIP)],
+        [b(DOCK), u(DROMON)],
         [b(DOCK), u(DEMOLITION_RAFT)],
         [u(DEMOLITION_RAFT), u(DEMOLITION_SHIP)],
         [u(DEMOLITION_SHIP), u(HEAVY_DEMO_SHIP)],
@@ -1022,12 +1136,22 @@ function getConnections() {
         [b(GUARD_TOWER), b(KEEP)],
         [b(STONE_WALL), b(FORTIFIED_WALL)],
         [b(MONASTERY), u(MONK)],
+        [b(MONASTERY), t(DEVOTION)],
         [b(MONASTERY), t(REDEMPTION)],
         [b(MONASTERY), t(ATONEMENT)],
         [b(MONASTERY), t(HERBAL_MEDICINE)],
         [b(MONASTERY), t(HERESY)],
         [b(MONASTERY), t(SANCTITY)],
         [b(MONASTERY), t(FERVOR)],
+        [t(DEVOTION), t(FAITH)],
+        [b(FORTIFIED_CHURCH), u(MONK)],
+        [b(FORTIFIED_CHURCH), u(WARRIOR_PRIEST)],
+        [b(FORTIFIED_CHURCH), t(REDEMPTION)],
+        [b(FORTIFIED_CHURCH), t(ATONEMENT)],
+        [b(FORTIFIED_CHURCH), t(HERBAL_MEDICINE)],
+        [b(FORTIFIED_CHURCH), t(HERESY)],
+        [b(FORTIFIED_CHURCH), t(SANCTITY)],
+        [b(FORTIFIED_CHURCH), t(FERVOR)],
         [b(CASTLE), u(UNIQUE_UNIT)],
         [u(UNIQUE_UNIT), u(ELITE_UNIQUE_UNIT)],
         [b(CASTLE), u(PETARD)],
@@ -1041,6 +1165,9 @@ function getConnections() {
         [u(KONNIK_2), u(ELITE_KONNIK_2)],
         [b(DONJON), u(DSERJEANT)],
         [u(DSERJEANT), u(ELITE_DSERJEANT)],
+        [b(DONJON), u(DSPEARMAN)],
+        [u(DSPEARMAN), u(DPIKEMAN)],
+        [u(DPIKEMAN), u(DHALBERDIER)],
         [b(TOWN_CENTER), u(VILLAGER)],
         [b(TOWN_CENTER), t(FEUDAL_AGE)],
         [t(FEUDAL_AGE), t(CASTLE_AGE)],
@@ -1090,6 +1217,9 @@ function getConnections() {
         [t(STONE_MINING), t(STONE_SHAFT_MINING)],
         [b(MINING_CAMP), t(GOLD_MINING)],
         [t(GOLD_MINING), t(GOLD_SHAFT_MINING)],
+        [b(MULE_CART), t(STONE_MINING)],
+        [b(MULE_CART), t(GOLD_MINING)],
+        [b(MULE_CART), t(DOUBLE_BIT_AXE)],
         [b(LUMBER_CAMP), t(DOUBLE_BIT_AXE)],
         [t(DOUBLE_BIT_AXE), t(BOW_SAW)],
         [t(BOW_SAW), t(TWO_MAN_SAW)],

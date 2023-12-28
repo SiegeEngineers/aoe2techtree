@@ -6,47 +6,6 @@ let parentConnections;
 let connectionpoints;
 let focusedNodeId = null;
 
-const unitClasses = {
-    0: '<abbr title="unused">Wonders</abbr>',
-    1: 'Infantry',
-    2: 'Turtle Ships and Thirisadai',
-    3: 'Base Pierce',
-    4: 'Base Melee',
-    5: 'Elephants',
-    6: 'Unused',
-    7: 'Unused',
-    8: '<abbr title="except Camels">Mounted Units</abbr>',
-    9: 'Unused',
-    10: 'Unused',
-    11: '<abbr title="except Fish Traps">All Buildings</abbr>',
-    12: 'Unused',
-    13: '<abbr title="except Castles and Kreposts">Stone Defense & Harbors</abbr>',
-    14: 'Wolves etc.',
-    15: 'All Archers',
-    16: '<abbr title="except Fishing Ships">Ships</abbr>',
-    17: 'High Pierce Armor Siege Units',
-    18: 'Trees',
-    19: 'Unique Units',
-    20: 'Siege Units',
-    21: '<abbr title="except Fish Traps and Wonders">Standard Buildings</abbr>',
-    22: 'Walls & Gates',
-    23: 'Gunpowder Units',
-    24: 'Boars etc.',
-    25: 'Monks',
-    26: 'Castles & Kreposts',
-    27: 'Spearmen',
-    28: 'Mounted Archers',
-    29: 'Eagle Warriors',
-    30: 'Camels',
-    31: '<abbr title="previously used by the Leitis as armor-ignoring attack">Obsolete</abbr>',
-    32: 'Condottieri',
-    33: '<abbr title="no unit has this armor class">Gunpowder units secondary projectile attack</abbr>',
-    34: 'Fishing Ships',
-    35: 'Mamelukes',
-    36: '<abbr title="unused">Heroes & Kings</abbr>',
-    37: 'Hussite Wagons',
-};
-
 const locales = {
     en: 'English',
     zh: '简体中文',
@@ -67,11 +26,13 @@ const locales = {
     br: 'Português (Brasil)',
 };
 const defaultLocale = 'en';
+let currentLocale = 'en';
 
 function loadLocale(localeCode) {
     if (!Object.keys(locales).includes(localeCode)) {
         localeCode = defaultLocale;
     }
+    currentLocale = localeCode;
     loadJson('data/locales/' + localeCode + '/strings.json', function (strings) {
         data.strings = strings;
         updatePageTitle();
@@ -84,8 +45,32 @@ function loadLocale(localeCode) {
 
 function updatePageTitle() {
     const aoe2 = data.strings[data.tech_tree_strings['Age of Empires II']];
+    const mode = data.strings[data.tech_tree_strings['mode']]
+    const suffix = mode ? ' – ' + mode : ''
     const techtree = data.strings[data.tech_tree_strings['Technology Tree']];
-    document.title = `${aoe2} ${techtree}`;
+    document.title = `${aoe2}${suffix} ${techtree}`;
+}
+
+function getShieldForEarlierRow(row) {
+    const age = row.split('_')[0];
+    for (let i = 1; i < AGE_IMAGES.length; i++) {
+        const ageimage = AGE_IMAGES[i];
+        if (ageimage.includes(age)) {
+            return AGE_IMAGES[i - 1];
+        }
+    }
+    return AGE_IMAGES[0];
+}
+
+function getAgeNumber(row) {
+    const age = row.split('_')[0];
+    for (let i = 0; i < AGE_IMAGES.length; i++) {
+        const ageimage = AGE_IMAGES[i];
+        if (ageimage.includes(age)) {
+            return i;
+        }
+    }
+    return 1;
 }
 
 function displayData() {
@@ -133,13 +118,8 @@ function displayData() {
     let icon_width = 112;
     let vertical_spacing = (row_height - icon_height) / 2 - 10;
     let margin_left = 20;
-    let image_urls = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
-    let age_names = [
-        data.strings[data.age_names['Dark Age']],
-        data.strings[data.age_names['Feudal Age']],
-        data.strings[data.age_names['Castle Age']],
-        data.strings[data.age_names['Imperial Age']]
-    ];
+    let image_urls = AGE_IMAGES;
+    let age_names = getAgeNames(data);
     for (let i = 0; i < image_urls.length; i++) {
         let age_image_group = draw.group().click(hideHelp);
         let age_image = age_image_group.image('img/Ages/' + image_urls[i])
@@ -172,6 +152,7 @@ function displayData() {
             .click(hideHelp);
         for (let r of Object.keys(lane.rows)) {
             let row = lane.rows[r];
+            const ageNumber = getAgeNumber(r);
             for (let caret of row) {
                 const item = draw.group().attr({id: caret.id}).addClass('node');
                 const rect = item.rect(caret.width, caret.height).attr({
@@ -202,6 +183,11 @@ function displayData() {
                     .attr({id: caret.id + '_x'})
                     .addClass('cross')
                     .move(caret.x + caret.width * 0.15, caret.y - caret.height * 0.04);
+                const earlier_age_image = item.image('img/Ages/' + getShieldForEarlierRow(r))
+                    .size(caret.width * 0.3, caret.height * 0.3)
+                    .attr({id: caret.id + '_earlier_age_img_' + ageNumber, 'opacity': 0})
+                    .addClass('earlier-age')
+                    .move(caret.x + caret.width * 0.85, caret.y - caret.width * 0.15);
                 const overlaytrigger = item.rect(caret.width, caret.height)
                     .attr({id: caret.id + '_overlay'})
                     .addClass('node__overlay')
@@ -224,20 +210,19 @@ function displayData() {
         }
     }
 
-
+    create_building_index();
     let civWasLoaded = updateCivselectValue();
     if(!civWasLoaded){
         loadCiv();
     }
     create_colour_key();
-    create_building_index();
     window.onhashchange = function () {
         updateCivselectValue();
     };
 }
 
 function updateCivselectValue() {
-    let hash = window.location.hash.substr(1);
+    let hash = window.location.hash.substring(1);
     let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
     if (capitalisedHash in data.civ_names) {
         const civSelect = document.getElementById('civselect');
@@ -519,6 +504,11 @@ function getHelpText(name, id, type) {
         let displayAttack = false;
         let ranged = meta.Range > 1;
         text = text.replace(/‹cost›/, cost(meta.Cost));
+        // The format is ‹static_cost=Gold,200› as with Spies/Treason.
+        text = text.replaceAll(/‹static_cost=([^,›]*),([^›]*)›/g, (_, resource, cost) => {
+          const className = resource.toLowerCase();
+          return `<span class="cost ${className}" title="${cost} ${resource}">${cost}</span>`;
+        });
         let stats = []
         if (text.match(/‹hp›/)) {
             stats.push('HP:&nbsp;' + meta.HP);
@@ -629,19 +619,19 @@ function styleXRefBadges(name, id, type) {
         // Make sure this civ exists
         if (civs[civ]) {
             if (type === 'UNIT' || type === 'UNIQUEUNIT') {
-                if (civs[civ].units.map((id) => `unit_${id}`).includes(id)) {
+                if (civs[civ].units.map((item) => `unit_${item.id}`).includes(id)) {
                     found = true;
-                } else if (`unit_${civs[`${civ}`].unique.castleAgeUniqueUnit}` === id || `unit_${civs[`${civ}`].unique.imperialAgeUniqueUnit}` === id) {
+                } else if (`unit_${civs[civ]?.unique?.castleAgeUniqueUnit}` === id || `unit_${civs[civ]?.unique?.imperialAgeUniqueUnit}` === id) {
                     found = true;
                 }
             } else if (type === 'TECHNOLOGY') {
-                if (civs[civ].techs.map((id) => `tech_${id}`).includes(id)) {
+                if (civs[civ].techs.map((item) => `tech_${item.id}`).includes(id)) {
                     found = true;
-                } else if (`tech_${civs[`${civ}`].unique.castleAgeUniqueTech}` === id || `tech_${civs[`${civ}`].unique.imperialAgeUniqueTech}` === id) {
+                } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech}` === id) {
                     found = true;
                 }
             } else if (type === 'BUILDING') {
-                if (civs[civ].buildings.map((id) => `building_${id}`).includes(id)) {
+                if (civs[civ].buildings.map((item) => `building_${item.id}`).includes(id)) {
                     found = true;
                 }
             }
@@ -657,17 +647,15 @@ function styleXRefBadges(name, id, type) {
 function ifDefined(value, prefix, alwaysDisplay = true) {
     if (value !== undefined && (alwaysDisplay || value > 0)) {
         return ' ' + prefix + value;
-    } else {
-        return '';
     }
+    return '';
 }
 
 function secondsIfDefined(value, prefix, alwaysDisplay = true) {
     if (value !== undefined && (alwaysDisplay || value > 0)) {
         return ' ' + prefix + toMaxFixed2(value) + 's';
-    } else {
-        return '';
     }
+    return '';
 }
 
 function toMaxFixed2(value) {
@@ -684,15 +672,12 @@ function accuracyIfDefined(value, prefix, alwaysDisplay) {
 function ifDefinedAndGreaterZero(value, prefix) {
     if (value !== undefined && value > 0) {
         return ' ' + prefix + value;
-    } else {
-        return '';
     }
+    return '';
 }
 
 function arrayIfDefinedAndNonEmpty(attacks, prefix) {
-    if (attacks === undefined || attacks.length < 1) {
-        return '';
-    } else {
+    if (attacks !== undefined && 0 < attacks.length) {
         const strings = [];
         for (let attack of attacks) {
             const amount = attack['Amount'];
@@ -701,14 +686,14 @@ function arrayIfDefinedAndNonEmpty(attacks, prefix) {
         }
         return prefix + '<p>' + strings.join(', ') + '</p>';
     }
+    return '';
 }
 
 function repeatableIfDefined(value) {
     if (value !== undefined) {
         return value ? 'Repeatable' : 'Not Repeatable';
-    } else {
-        return '';
     }
+    return '';
 }
 
 function cost(cost_object) {
@@ -729,27 +714,13 @@ function cost(cost_object) {
 }
 
 function create_building_index() {
-    const buildingIndexShowIds = [
-        ARCHERY_RANGE,
-        BARRACKS,
-        STABLE,
-        SIEGE_WORKSHOP,
-        BLACKSMITH,
-        DOCK,
-        UNIVERSITY,
-        WATCH_TOWER,
-        CASTLE,
-        MONASTERY,
-        TOWN_CENTER,
-        MARKET
-    ];
     const buildingIndexRowLength = 6;
 
     let kc = document.getElementById('buildingindex__table');
     let tr = null;
     let count = 0;
-    for (let index in buildingIndexShowIds) {
-        let buildingId = buildingIndexShowIds[index];
+    for (let index in BUILDING_INDEX) {
+        let buildingId = BUILDING_INDEX[index];
         if ((count % buildingIndexRowLength) === 0) {
             if (tr) {
               kc.appendChild(tr);
@@ -758,6 +729,7 @@ function create_building_index() {
         }
         ++count;
         let img = document.createElement('img');
+        img.id = 'building_index_' + String(buildingId) + '_img';
         img.src = 'img/Buildings/' + String(buildingId) + '.png';
         img.style.height = '24px';
         img.style.width = '24px';
@@ -772,24 +744,26 @@ function create_building_index() {
 }
 
 function create_colour_key() {
-    let legend = [TYPES.UNIQUEUNIT, TYPES.UNIT, TYPES.BUILDING, TYPES.TECHNOLOGY];
     let kc = document.getElementById('key__table');
     let tr = null
-    for (let index in legend) {
+    for (let index in LEGEND) {
         if (index % 2 === 0) {
             tr = document.createElement('tr');
         }
         let td_color = document.createElement('td');
-        td_color.style.backgroundColor = legend[index]['colour'];
+        td_color.style.backgroundColor = LEGEND[index]['colour'];
         td_color.style.border = '1px outset #8a5d21';
         td_color.style.width = '23px';
         tr.appendChild(td_color);
         let td_type = document.createElement('td');
-        td_type.innerText = data.strings[data.tech_tree_strings[legend[index]['name']]];
+        td_type.innerText = data.strings[data.tech_tree_strings[LEGEND[index]['name']]];
         tr.appendChild(td_type);
         if (index % 2 === 1) {
             kc.appendChild(tr);
         }
+    }
+    if (LEGEND.length % 2 > 0) {
+        kc.appendChild(tr)
     }
     document.getElementById('key__label').innerText = data.strings[data.tech_tree_strings['Key']];
 }
@@ -813,11 +787,23 @@ function fillLocaleSelector(currentLocale) {
     });
 }
 
+function getCompareLocale() {
+    switch (currentLocale){
+        case 'tw':
+            return 'zh-TW'
+        case 'jp':
+            return 'ja';
+        default:
+            return currentLocale;
+    }
+}
+
 function fillCivSelector() {
+    const compareLocale = getCompareLocale();
     const sorted_civ_names = Object.keys(data.civ_names).sort((a, b) => {
         const localised_name_a = data.strings[data.civ_names[a]];
         const localised_name_b = data.strings[data.civ_names[b]];
-        return localised_name_a.localeCompare(localised_name_b);
+        return localised_name_a.localeCompare(localised_name_b, compareLocale);
     });
 
     for (let civ_name of sorted_civ_names) {
@@ -842,15 +828,15 @@ function civ(name) {
         }
 
         if (type === 'unit') {
-            if (selectedCiv.units.includes(id)) {
+            if (selectedCiv.units.map((item) => item.id).includes(id)) {
                 return;
             }
         } else if (type === 'building') {
-            if (selectedCiv.buildings.includes(id)) {
+            if (selectedCiv.buildings.map((item) => item.id).includes(id)) {
                 return;
             }
         } else if (type === 'tech') {
-            if (selectedCiv.techs.includes(id)) {
+            if (selectedCiv.techs.map((item) => item.id).includes(id)) {
                 return;
             }
         }
@@ -858,15 +844,42 @@ function civ(name) {
         makeSVGObjectOpaque(SVG('#' + this.id().replace('_x', '_disabled_gray')), 0.2);
     });
 
-    enable(selectedCiv.buildings, [...selectedCiv.units, UNIQUE_UNIT, ELITE_UNIQUE_UNIT], [...selectedCiv.techs, UNIQUE_TECH_1, UNIQUE_TECH_2]);
-    unique([selectedCiv.unique.castleAgeUniqueUnit,
-        selectedCiv.unique.imperialAgeUniqueUnit,
-        selectedCiv.unique.castleAgeUniqueTech,
-        selectedCiv.unique.imperialAgeUniqueTech], selectedCiv.monkPrefix);
+    SVG.find('.earlier-age').each(function () {
+        let {id, type, ageId} = parseSVGObjectId2(this.id());
+        if (id === undefined || type === undefined || ageId === undefined) {
+            return;
+        }
+
+        if (type === 'unit') {
+            if (selectedCiv.units.some((item) => item.id === id && item.age === ageId)) {
+                makeSVGObjectOpaque(this);
+                return;
+            }
+        } else if (type === 'building') {
+            if (selectedCiv.buildings.some((item) => item.id === id && item.age === ageId)) {
+                makeSVGObjectOpaque(this);
+                return;
+            }
+        } else if (type === 'tech') {
+            if (selectedCiv.techs.some((item) => item.id === id && item.age === ageId)) {
+                makeSVGObjectOpaque(this);
+                return;
+            }
+        }
+        if (SVGObjectIsOpaque(this)) {
+            makeSVGObjectOpaque(this, 0);
+        }
+    });
+
+    applySelectedCiv(selectedCiv);
 }
 
 function SVGObjectIsOpaque(svgObj) {
     return svgObj.attr('opacity') === 1
+}
+
+function SVGObjectIsTransparent(svgObj) {
+    return svgObj.attr('opacity') === 0
 }
 
 function makeSVGObjectOpaque(svgObj, opacity = 1) {
@@ -884,6 +897,20 @@ function parseSVGObjectId(svgObjId) {
     let type = found[1];
 
     return {id, type}
+}
+
+function parseSVGObjectId2(svgObjId) {
+    const id_regex = /(.+)_([\d]+)_earlier_age_img_([\d]+)/;
+
+    const found = svgObjId.match(id_regex);
+    if (!found) {
+        return {id: undefined, type: undefined, ageId: undefined};
+    }
+    let id = parseInt(found[2]);
+    let type = found[1];
+    let ageId = parseInt(found[3]);
+
+    return {id, type, ageId}
 }
 
 function techtreeDoesNotHaveScrollbar() {
@@ -995,4 +1022,10 @@ function main() {
     });
 }
 
-main();
+if('loading' === document.readyState) {
+    // Loading hasn't finished yet.
+    document.addEventListener('DOMContentLoaded', main)
+} else {
+    // `DOMContentLoaded` has already fired.
+    main();
+}

@@ -4,28 +4,31 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="img/favicon.png">
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
     <title>Age of Empires II Tech Tree</title>
-    <link rel="alternate" hreflang="x-default" href="https://aoe2techtree.net" />
-    <link rel="alternate" hreflang="en" href="https://aoe2techtree.net/?lng=en" />
-    <link rel="alternate" hreflang="zh-CN" href="https://aoe2techtree.net/?lng=zh" />
-    <link rel="alternate" hreflang="zh-TW" href="https://aoe2techtree.net/?lng=tw" />
-    <link rel="alternate" hreflang="fr" href="https://aoe2techtree.net/?lng=fr" />
-    <link rel="alternate" hreflang="de" href="https://aoe2techtree.net/?lng=de" />
-    <link rel="alternate" hreflang="hi" href="https://aoe2techtree.net/?lng=hi" />
-    <link rel="alternate" hreflang="it" href="https://aoe2techtree.net/?lng=it" />
-    <link rel="alternate" hreflang="ja" href="https://aoe2techtree.net/?lng=jp" />
-    <link rel="alternate" hreflang="ko" href="https://aoe2techtree.net/?lng=ko" />
-    <link rel="alternate" hreflang="ms" href="https://aoe2techtree.net/?lng=ms" />
-    <link rel="alternate" hreflang="pl" href="https://aoe2techtree.net/?lng=pl" />
-    <link rel="alternate" hreflang="ru" href="https://aoe2techtree.net/?lng=ru" />
-    <link rel="alternate" hreflang="es-ES" href="https://aoe2techtree.net/?lng=es" />
-    <link rel="alternate" hreflang="es-MX" href="https://aoe2techtree.net/?lng=mx" />
-    <link rel="alternate" hreflang="tr" href="https://aoe2techtree.net/?lng=tr" />
-    <link rel="alternate" hreflang="vi" href="https://aoe2techtree.net/?lng=vi" />
-    <link rel="alternate" hreflang="pt-BR" href="https://aoe2techtree.net/?lng=br" />
+    <link rel="alternate" hreflang="x-default" href="https://aoe2techtree.net">
+    <link rel="alternate" hreflang="en" href="https://aoe2techtree.net/?lng=en">
+    <link rel="alternate" hreflang="zh-CN" href="https://aoe2techtree.net/?lng=zh">
+    <link rel="alternate" hreflang="zh-TW" href="https://aoe2techtree.net/?lng=tw">
+    <link rel="alternate" hreflang="fr" href="https://aoe2techtree.net/?lng=fr">
+    <link rel="alternate" hreflang="de" href="https://aoe2techtree.net/?lng=de">
+    <link rel="alternate" hreflang="hi" href="https://aoe2techtree.net/?lng=hi">
+    <link rel="alternate" hreflang="it" href="https://aoe2techtree.net/?lng=it">
+    <link rel="alternate" hreflang="ja" href="https://aoe2techtree.net/?lng=jp">
+    <link rel="alternate" hreflang="ko" href="https://aoe2techtree.net/?lng=ko">
+    <link rel="alternate" hreflang="ms" href="https://aoe2techtree.net/?lng=ms">
+    <link rel="alternate" hreflang="pl" href="https://aoe2techtree.net/?lng=pl">
+    <link rel="alternate" hreflang="ru" href="https://aoe2techtree.net/?lng=ru">
+    <link rel="alternate" hreflang="es-ES" href="https://aoe2techtree.net/?lng=es">
+    <link rel="alternate" hreflang="es-MX" href="https://aoe2techtree.net/?lng=mx">
+    <link rel="alternate" hreflang="tr" href="https://aoe2techtree.net/?lng=tr">
+    <link rel="alternate" hreflang="vi" href="https://aoe2techtree.net/?lng=vi">
+    <link rel="alternate" hreflang="pt-BR" href="https://aoe2techtree.net/?lng=br">
     <link rel="stylesheet" href="fonts/merriweather.css">
     <link rel="stylesheet" href="style.css">
+    <script defer src="js/svg.min.js"></script>
+    <script defer src="js/techtree.js"></script>
+    <script defer src="js/main.js"></script>
 </head>
 
 <body>
@@ -35,6 +38,7 @@
             <div id="civinfo">
                 <div id="civtitle">
                     <select id="civselect" onchange="loadCiv()" autofocus>
+                        <option>Armenians</option>
                         <option>Aztecs</option>
                         <option>Bengalis</option>
                         <option>Berbers</option>
@@ -48,6 +52,7 @@
                         <option>Dravidians</option>
                         <option>Ethiopians</option>
                         <option>Franks</option>
+                        <option>Georgians</option>
                         <option>Goths</option>
                         <option>Gurjaras</option>
                         <option>Huns</option>
@@ -65,6 +70,7 @@
                         <option>Mongols</option>
                         <option>Persians</option>
                         <option>Portuguese</option>
+                        <option>Romans</option>
                         <option>Saracens</option>
                         <option>Slavs</option>
                         <option>Spanish</option>
@@ -74,18 +80,18 @@
                         <option>Vietnamese</option>
                         <option>Vikings</option>
                     </select>
-                    <img id="civlogo" height="81" width="81" data-transparent="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
+                    <img id="civlogo" height="81" width="81" data-transparent="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
                 </div>
                 <p id="civtext"></p>
             </div>
             <div class="buildingindex">
                 <hr>
-                <table border="0" cellspacing="5" id="buildingindex__table">
+                <table id="buildingindex__table">
                 </table>
             </div>
             <div class="key">
                 <b id="key__label"></b>
-                <table border="0" cellspacing="10" id="key__table">
+                <table id="key__table">
                 </table>
             </div>
             <div class="locale-switcher">
@@ -94,7 +100,9 @@
             </div>
             <div class="credits">
                 <p>
-                    Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/age-of-empires-ii-definitive-edition-update-81058/" target="_blank" title="Changelog" rel="nofollow">81058</a>
+                    Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/age-of-empires-ii-definitive-edition-update-99311/" target="_blank" title="Changelog" rel="nofollow">99311</a>
+                    |
+                    <a href="/ror">» RoR</a>
                 </p>
                 <p>
                     A project by <a href="https://siegeengineers.org" rel="author" class="has-text-grey">Siege Engineers</a>.
@@ -130,8 +138,5 @@
         </div>
     </div>
 </div>
-<script src="js/svg.min.js"></script>
-<script src="js/techtree.js"></script>
-<script src="js/main.js"></script>
 </body>
 </html>
