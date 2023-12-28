@@ -27,6 +27,7 @@ import {
   DataUniques,
   LocaleStrings,
 } from './lib/data-conversion-types';
+import { buildings } from './converted-data/buildings';
 
 // globals
 const ENGLISH_STRINGS = STRINGS as LocaleStrings;
@@ -145,9 +146,11 @@ function convertAllCivs(filename: string) {
       buildings: [],
     };
 
-    convertedCiv.units = convertCivUnits(civ.units);
-    convertedCiv.techs = convertCivTechs(civ.techs);
-    convertedCiv.buildings = convertCivBuildings(civ.buildings);
+    convertedCiv.units = convertCivUnits(civ.units.map((unit) => unit.id));
+    convertedCiv.techs = convertCivTechs(civ.techs.map((tech) => tech.id));
+    convertedCiv.buildings = convertCivBuildings(
+      civ.buildings.map((building) => building.id),
+    );
 
     const { uniqueUnits, uniqueTechs } = convertUniques(civ.unique);
     convertedCiv.units = [...convertedCiv.units, ...uniqueUnits];

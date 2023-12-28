@@ -20,7 +20,7 @@ export const techs: any = [
     age: 'imperial age',
   },
   {
-    techName: 'mahouts',
+    techName: 'citadels',
     buildings: [{ buildingName: 'castle' }],
     age: 'imperial age',
   },
@@ -28,11 +28,6 @@ export const techs: any = [
     techName: 'town watch',
     buildings: [{ buildingName: 'town center' }],
     age: 'feudal age',
-  },
-  {
-    techName: 'zealotry',
-    buildings: [{ buildingName: 'castle' }],
-    age: 'castle age',
   },
   {
     techName: 'artillery',
@@ -95,14 +90,30 @@ export const techs: any = [
     age: 'imperial age',
   },
   {
+    techName: 'bimaristan',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'castle age',
+  },
+  {
     techName: 'husbandry',
     buildings: [{ buildingName: 'stable' }],
     age: 'castle age',
   },
   {
     techName: 'faith',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'imperial age',
+  },
+  {
+    techName: 'devotion',
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
+    age: 'castle age',
   },
   {
     techName: 'chemistry',
@@ -141,7 +152,7 @@ export const techs: any = [
   },
   {
     techName: 'gold mining',
-    buildings: [{ buildingName: 'mining camp' }],
+    buildings: [{ buildingName: 'mining camp' }, { buildingName: 'mule cart' }],
     age: 'feudal age',
   },
   {
@@ -246,7 +257,7 @@ export const techs: any = [
   },
   {
     techName: 'gold shaft mining',
-    buildings: [{ buildingName: 'mining camp' }],
+    buildings: [{ buildingName: 'mining camp' }, { buildingName: 'mule cart' }],
     age: 'castle age',
   },
   {
@@ -271,12 +282,12 @@ export const techs: any = [
   },
   {
     techName: 'double-bit axe',
-    buildings: [{ buildingName: 'lumber camp' }],
+    buildings: [{ buildingName: 'lumber camp' }, { buildingName: 'mule cart' }],
     age: 'feudal age',
   },
   {
     techName: 'bow saw',
-    buildings: [{ buildingName: 'lumber camp' }],
+    buildings: [{ buildingName: 'lumber camp' }, { buildingName: 'mule cart' }],
     age: 'castle age',
   },
   {
@@ -306,22 +317,31 @@ export const techs: any = [
   },
   {
     techName: 'two-man saw',
-    buildings: [{ buildingName: 'lumber camp' }],
+    buildings: [{ buildingName: 'lumber camp' }, { buildingName: 'mule cart' }],
     age: 'imperial age',
   },
   {
     techName: 'block printing',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'imperial age',
   },
   {
     techName: 'sanctity',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'castle age',
   },
   {
     techName: 'illumination',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'imperial age',
   },
   {
@@ -331,17 +351,20 @@ export const techs: any = [
   },
   {
     techName: 'fervor',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'castle age',
   },
   {
     techName: 'stone mining',
-    buildings: [{ buildingName: 'mining camp' }],
+    buildings: [{ buildingName: 'mining camp' }, { buildingName: 'mule cart' }],
     age: 'feudal age',
   },
   {
     techName: 'stone shaft mining',
-    buildings: [{ buildingName: 'mining camp' }],
+    buildings: [{ buildingName: 'mining camp' }, { buildingName: 'mule cart' }],
     age: 'castle age',
   },
   {
@@ -356,12 +379,18 @@ export const techs: any = [
   },
   {
     techName: 'redemption',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'castle age',
   },
   {
     techName: 'atonement',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'castle age',
   },
   {
@@ -426,12 +455,18 @@ export const techs: any = [
   },
   {
     techName: 'theocracy',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'imperial age',
   },
   {
     techName: 'heresy',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'castle age',
   },
   {
@@ -441,7 +476,10 @@ export const techs: any = [
   },
   {
     techName: 'herbal medicine',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'castle age',
   },
   {
@@ -798,5 +836,35 @@ export const techs: any = [
     techName: 'gambesons',
     buildings: [{ buildingName: 'barracks' }],
     age: 'castle age',
+  },
+  {
+    techName: 'ballistas',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'castle age',
+  },
+  {
+    techName: 'comitatenses',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'imperial age',
+  },
+  {
+    techName: 'fereters',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'imperial age',
+  },
+  {
+    techName: 'cilician fleet',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'castle age',
+  },
+  {
+    techName: 'svan towers',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'castle age',
+  },
+  {
+    techName: 'aznauri cavalry',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'imperial age',
   },
 ];

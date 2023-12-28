@@ -135,6 +135,7 @@ function constructFullTechTree() {
   barracks.units.push({ unitName: 'halberdier', age: 'imperial age' });
   barracks.units.push({ unitName: 'elite eagle warrior', age: 'imperial age' });
   barracks.units.push({ unitName: 'condottiero', age: 'imperial age' });
+  barracks.units.push({ unitName: 'legionary', age: 'imperial age' });
 
   barracks.techs.push({ techName: 'supplies', age: 'feudal age' });
   barracks.techs.push({ techName: 'squires', age: 'castle age' });
@@ -168,6 +169,7 @@ function constructFullTechTree() {
   stable.units.push({ unitName: 'winged hussar', age: 'imperial age' });
   stable.units.push({ unitName: 'imperial camel rider', age: 'imperial age' });
   stable.units.push({ unitName: 'paladin', age: 'imperial age' });
+  stable.units.push({ unitName: 'savar', age: 'imperial age' });
 
   stable.techs.push({ techName: 'bloodlines', age: 'feudal age' });
   stable.techs.push({ techName: 'husbandry', age: 'castle age' });
@@ -241,6 +243,7 @@ function constructFullTechTree() {
   dock.units.push({ unitName: 'elite caravel', age: 'imperial age' });
   dock.units.push({ unitName: 'thirisadai', age: 'imperial age' });
   dock.units.push({ unitName: 'elite cannon galleon', age: 'imperial age' });
+  dock.units.push({ unitName: 'dromon', age: 'imperial age' });
 
   dock.techs.push({ techName: 'gillnets', age: 'castle age' });
   dock.techs.push({ techName: 'careening', age: 'castle age' });
@@ -318,10 +321,36 @@ function constructFullTechTree() {
   monastery.techs.push({ techName: 'heresy', age: 'castle age' });
   monastery.techs.push({ techName: 'sanctity', age: 'castle age' });
   monastery.techs.push({ techName: 'fervor', age: 'castle age' });
+  monastery.techs.push({ techName: 'devotion', age: 'castle age' });
   monastery.techs.push({ techName: 'faith', age: 'imperial age' });
   monastery.techs.push({ techName: 'illumination', age: 'imperial age' });
   monastery.techs.push({ techName: 'block printing', age: 'imperial age' });
   monastery.techs.push({ techName: 'theocracy', age: 'imperial age' });
+
+  const fortifiedChurch = getBuilding('fortified church');
+
+  fortifiedChurch.age = 'castle age';
+
+  fortifiedChurch.units.push({ unitName: 'monk', age: 'castle age' });
+  fortifiedChurch.units.push({ unitName: 'warrior priest', age: 'castle age' });
+
+  fortifiedChurch.techs.push({ techName: 'redemption', age: 'castle age' });
+  fortifiedChurch.techs.push({ techName: 'atonement', age: 'castle age' });
+  fortifiedChurch.techs.push({
+    techName: 'herbal medicine',
+    age: 'castle age',
+  });
+  fortifiedChurch.techs.push({ techName: 'heresy', age: 'castle age' });
+  fortifiedChurch.techs.push({ techName: 'sanctity', age: 'castle age' });
+  fortifiedChurch.techs.push({ techName: 'fervor', age: 'castle age' });
+  fortifiedChurch.techs.push({ techName: 'devotion', age: 'castle age' });
+  fortifiedChurch.techs.push({ techName: 'faith', age: 'imperial age' });
+  fortifiedChurch.techs.push({ techName: 'illumination', age: 'imperial age' });
+  fortifiedChurch.techs.push({
+    techName: 'block printing',
+    age: 'imperial age',
+  });
+  fortifiedChurch.techs.push({ techName: 'theocracy', age: 'imperial age' });
 
   const townCenter = getBuilding('town center');
 
@@ -381,6 +410,18 @@ function constructFullTechTree() {
   folwark.techs.push({ techName: 'horse collar', age: 'feudal age' });
   folwark.techs.push({ techName: 'heavy plow', age: 'castle age' });
   folwark.techs.push({ techName: 'crop rotation', age: 'imperial age' });
+
+  const muleCart = getBuilding('mule cart');
+
+  muleCart.age = 'dark age';
+
+  muleCart.techs.push({ techName: 'double-bit axe', age: 'feudal age' });
+  muleCart.techs.push({ techName: 'bow saw', age: 'castle age' });
+  muleCart.techs.push({ techName: 'two-man saw', age: 'imperial age' });
+  muleCart.techs.push({ techName: 'gold mining', age: 'feudal age' });
+  muleCart.techs.push({ techName: 'stone mining', age: 'feudal age' });
+  muleCart.techs.push({ techName: 'gold shaft mining', age: 'castle age' });
+  muleCart.techs.push({ techName: 'stone shaft mining', age: 'castle age' });
 
   const fishTrap = getBuilding('fish trap');
   fishTrap.age = 'feudal age';
@@ -444,6 +485,15 @@ function constructFullTechTree() {
   castle.techs.push({ techName: 'spies - treason', age: 'imperial age' });
 
   /* uniques */
+
+  // armenians
+  castle.units.push({ unitName: 'composite bowman', age: 'castle age' });
+  castle.units.push({
+    unitName: 'elite composite bowman',
+    age: 'imperial age',
+  });
+  castle.techs.push({ techName: 'cilician fleet', age: 'castle age' });
+  castle.techs.push({ techName: 'fereters', age: 'imperial age' });
 
   // aztecs
   castle.units.push({ unitName: 'jaguar warrior', age: 'castle age' });
@@ -534,6 +584,12 @@ function constructFullTechTree() {
   castle.units.push({ unitName: 'elite throwing axeman', age: 'imperial age' });
   castle.techs.push({ techName: 'bearded axe', age: 'castle age' });
   castle.techs.push({ techName: 'chivalry', age: 'imperial age' });
+
+  // georgians
+  castle.units.push({ unitName: 'monaspa', age: 'castle age' });
+  castle.units.push({ unitName: 'elite monaspa', age: 'imperial age' });
+  castle.techs.push({ techName: 'svan towers', age: 'castle age' });
+  castle.techs.push({ techName: 'aznauri cavalry', age: 'imperial age' });
 
   // goths
   castle.units.push({ unitName: 'huskarl', age: 'castle age' });
@@ -638,7 +694,7 @@ function constructFullTechTree() {
   castle.units.push({ unitName: 'war elephant', age: 'castle age' });
   castle.units.push({ unitName: 'elite war elephant', age: 'imperial age' });
   castle.techs.push({ techName: 'kamandaran', age: 'castle age' });
-  castle.techs.push({ techName: 'mahouts', age: 'imperial age' });
+  castle.techs.push({ techName: 'citadels', age: 'imperial age' });
 
   // poles
   castle.units.push({ unitName: 'obuch', age: 'castle age' });
@@ -652,10 +708,16 @@ function constructFullTechTree() {
   castle.techs.push({ techName: 'carrack', age: 'castle age' });
   castle.techs.push({ techName: 'arquebus', age: 'imperial age' });
 
+  // romans
+  castle.units.push({ unitName: 'centurion', age: 'castle age' });
+  castle.units.push({ unitName: 'elite centurion', age: 'imperial age' });
+  castle.techs.push({ techName: 'ballistas', age: 'castle age' });
+  castle.techs.push({ techName: 'comitatenses', age: 'imperial age' });
+
   // saracens
   castle.units.push({ unitName: 'mameluke', age: 'castle age' });
   castle.units.push({ unitName: 'elite mameluke', age: 'imperial age' });
-  castle.techs.push({ techName: 'zealotry', age: 'castle age' });
+  castle.techs.push({ techName: 'bimaristan', age: 'castle age' });
   castle.techs.push({ techName: 'counterweights', age: 'imperial age' });
 
   // sicilians

@@ -121,7 +121,10 @@ export const units: any = [
   },
   {
     unitName: 'monk',
-    buildings: [{ buildingName: 'monastery' }],
+    buildings: [
+      { buildingName: 'monastery' },
+      { buildingName: 'fortified church' },
+    ],
     age: 'castle age',
   },
   {
@@ -847,6 +850,56 @@ export const units: any = [
   {
     unitName: 'elite ratha',
     buildings: [{ buildingName: 'castle' }],
+    age: 'imperial age',
+  },
+  {
+    unitName: 'centurion',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'castle age',
+  },
+  {
+    unitName: 'elite centurion',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'imperial age',
+  },
+  {
+    unitName: 'legionary',
+    buildings: [{ buildingName: 'barracks' }],
+    age: 'imperial age',
+  },
+  {
+    unitName: 'dromon',
+    buildings: [{ buildingName: 'dock' }],
+    age: 'imperial age',
+  },
+  {
+    unitName: 'composite bowman',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'castle age',
+  },
+  {
+    unitName: 'elite composite bowman',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'imperial age',
+  },
+  {
+    unitName: 'monaspa',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'castle age',
+  },
+  {
+    unitName: 'elite monaspa',
+    buildings: [{ buildingName: 'castle' }],
+    age: 'imperial age',
+  },
+  {
+    unitName: 'warrior priest',
+    buildings: [{ buildingName: 'fortified church' }],
+    age: 'castle age',
+  },
+  {
+    unitName: 'savar',
+    buildings: [{ buildingName: 'stable' }],
     age: 'imperial age',
   },
 ];
