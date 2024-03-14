@@ -812,6 +812,7 @@ function getDefaultTree() {
     siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_SCORPION));
     siegeworkshoplane.rows.imperial_1.push(unit(BOMBARD_CANNON));
     siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_RAM));
+    siegeworkshoplane.rows.imperial_2.push(uniqueunit(FLAMING_CAMEL));
     siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_ONAGER));
     siegeworkshoplane.rows.imperial_2.push(uniqueunit(HOUFNICE));
     tree.lanes.push(siegeworkshoplane);
@@ -916,7 +917,6 @@ function getDefaultTree() {
     castlelane.rows.castle_2.push(tech(UNIQUE_TECH_1));
     castlelane.rows.imperial_1.push(new Caret(TYPES.UNIQUEUNIT, ELITE_UNIQUE_UNIT, ELITE_UNIQUE_UNIT));
     castlelane.rows.imperial_1.push(unit(TREBUCHET));
-    castlelane.rows.imperial_1.push(uniqueunit(FLAMING_CAMEL));
     castlelane.rows.imperial_1.push(tech(UNIQUE_TECH_2));
     castlelane.rows.imperial_1.push(tech(HOARDINGS));
     castlelane.rows.imperial_1.push(tech(SAPPERS));
