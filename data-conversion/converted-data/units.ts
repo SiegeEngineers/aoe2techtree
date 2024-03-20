@@ -709,7 +709,7 @@ export const units: any = [
   },
   {
     unitName: 'flaming camel',
-    buildings: [{ buildingName: 'castle' }],
+    buildings: [{ buildingName: 'siege workshop' }],
     age: 'imperial age',
   },
   {

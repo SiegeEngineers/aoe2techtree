@@ -191,6 +191,7 @@ function constructFullTechTree() {
   siegeWorkshop.units.push({ unitName: 'siege ram', age: 'imperial age' });
   siegeWorkshop.units.push({ unitName: 'siege onager', age: 'imperial age' });
   siegeWorkshop.units.push({ unitName: 'houfnice', age: 'imperial age' });
+  siegeWorkshop.units.push({ unitName: 'flaming camel', age: 'imperial age' });
 
   const blacksmith = getBuilding('blacksmith');
 
@@ -477,7 +478,6 @@ function constructFullTechTree() {
 
   castle.units.push({ unitName: 'petard', age: 'castle age' });
   castle.units.push({ unitName: 'trebuchet', age: 'imperial age' });
-  castle.units.push({ unitName: 'flaming camel', age: 'imperial age' });
 
   castle.techs.push({ techName: 'hoardings', age: 'imperial age' });
   castle.techs.push({ techName: 'sappers', age: 'imperial age' });

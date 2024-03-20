@@ -76,6 +76,7 @@ export const buildings: any = [
       { unitName: 'siege ram' },
       { unitName: 'siege onager' },
       { unitName: 'houfnice' },
+      { unitName: 'flaming camel' },
     ],
     techs: [],
     age: 'castle age',
@@ -114,7 +115,6 @@ export const buildings: any = [
     units: [
       { unitName: 'petard' },
       { unitName: 'trebuchet' },
-      { unitName: 'flaming camel' },
       { unitName: 'composite bowman' },
       { unitName: 'elite composite bowman' },
       { unitName: 'jaguar warrior' },
