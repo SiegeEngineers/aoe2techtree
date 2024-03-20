@@ -326,6 +326,8 @@ def parse_line(key_value, line):
         match = re.search('".+"', line)
         if match:
             text = match.group(0)[1:-1]
+            if len(re.findall(r'<i>', text)) == 1:
+                text = re.sub(r'<i>', r'', text)
             text = re.sub(r'<(.+?)>', r'‹\1›', text)
             text = re.sub(r'‹b›(.+?)‹b›', r'<b>\1</b>', text)
             text = re.sub(r'‹i›(.+?)‹i›', r'<i>\1</i>', text)
