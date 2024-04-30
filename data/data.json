@@ -512,7 +512,7 @@
                 ],
                 "Cost": {
                     "Stone": 125,
-                    "Wood": 50
+                    "Wood": 35
                 },
                 "GarrisonCapacity": 5,
                 "HP": 850,
@@ -1114,7 +1114,7 @@
                 ],
                 "Cost": {
                     "Stone": 125,
-                    "Wood": 50
+                    "Wood": 35
                 },
                 "GarrisonCapacity": 5,
                 "HP": 1500,
@@ -1187,7 +1187,7 @@
                 ],
                 "Cost": {
                     "Stone": 125,
-                    "Wood": 50
+                    "Wood": 35
                 },
                 "GarrisonCapacity": 5,
                 "HP": 2250,
@@ -1823,7 +1823,7 @@
                 ],
                 "Cost": {
                     "Stone": 175,
-                    "Wood": 75
+                    "Wood": 50
                 },
                 "GarrisonCapacity": 10,
                 "HP": 1250,
@@ -1836,7 +1836,7 @@
                 "PierceArmor": 7,
                 "Range": 8,
                 "ReloadTime": 2,
-                "TrainTime": 90,
+                "TrainTime": 125,
                 "internal_name": "DONJON"
             },
             "1734": {
@@ -2288,7 +2288,7 @@
             "46": {
                 "Cost": {
                     "Food": 100,
-                    "Gold": 150
+                    "Gold": 200
                 },
                 "ID": 46,
                 "LanguageHelpId": 28462,
@@ -3897,8 +3897,8 @@
             },
             "832": {
                 "Cost": {
-                    "Food": 750,
-                    "Gold": 600
+                    "Food": 650,
+                    "Gold": 550
                 },
                 "ID": 832,
                 "LanguageHelpId": 28358,
@@ -4265,7 +4265,7 @@
             "542": {
                 "Cost": {
                     "Food": 800,
-                    "Wood": 900
+                    "Wood": 750
                 },
                 "ID": 239,
                 "ResearchTime": 50,
@@ -9323,7 +9323,7 @@
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
-                        "Amount": 0,
+                        "Amount": 1,
                         "Class": 4
                     },
                     {
@@ -9371,13 +9371,13 @@
                 },
                 "FrameDelay": 26,
                 "GarrisonCapacity": 0,
-                "HP": 55,
+                "HP": 60,
                 "ID": 542,
                 "LanguageHelpId": 26439,
                 "LanguageNameId": 5439,
                 "LineOfSight": 9,
                 "MaxCharge": 0,
-                "MeleeArmor": 0,
+                "MeleeArmor": 1,
                 "MinRange": 2,
                 "PierceArmor": 8,
                 "Range": 7,
@@ -14928,7 +14928,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 110,
+                    "Food": 100,
                     "Gold": 70
                 },
                 "FrameDelay": 0,
@@ -14945,7 +14945,7 @@
                 "Range": 0,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
-                "Speed": 0.88,
+                "Speed": 0.9,
                 "TrainTime": 24,
                 "Trait": 0,
                 "TraitPiece": 0,
@@ -15010,7 +15010,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 110,
+                    "Food": 100,
                     "Gold": 70
                 },
                 "FrameDelay": 0,
@@ -15027,7 +15027,7 @@
                 "Range": 0,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
-                "Speed": 0.88,
+                "Speed": 0.9,
                 "TrainTime": 24,
                 "Trait": 0,
                 "TraitPiece": 0,
@@ -15184,7 +15184,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2.4,
                 "Speed": 1.35,
-                "TrainTime": 19,
+                "TrainTime": 16,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "KONNIK"
@@ -15262,7 +15262,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2.4,
                 "Speed": 1.35,
-                "TrainTime": 19,
+                "TrainTime": 16,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "EKONNIK"
@@ -15820,7 +15820,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2.4,
                 "Speed": 0.9,
-                "TrainTime": 19,
+                "TrainTime": 16,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "KONNIK_INF"
@@ -15894,7 +15894,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2.4,
                 "Speed": 0.9,
-                "TrainTime": 19,
+                "TrainTime": 16,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "EKONNIK_INF"
@@ -15972,7 +15972,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2.4,
                 "Speed": 1.35,
-                "TrainTime": 19,
+                "TrainTime": 16,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "KONNIK"
@@ -16050,7 +16050,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2.4,
                 "Speed": 1.35,
-                "TrainTime": 19,
+                "TrainTime": 16,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "EKONNIK"
@@ -17582,7 +17582,7 @@
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 4
                     },
                     {
@@ -17590,7 +17590,7 @@
                         "Class": 8
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 2,
                         "Class": 3
                     },
                     {
@@ -17656,9 +17656,9 @@
                 "LanguageNameId": 21096,
                 "LineOfSight": 6,
                 "MaxCharge": 0,
-                "MeleeArmor": 2,
+                "MeleeArmor": 3,
                 "MinRange": 0,
-                "PierceArmor": 1,
+                "PierceArmor": 2,
                 "Range": 0,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
@@ -17672,7 +17672,7 @@
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 4
                     },
                     {
@@ -17680,7 +17680,7 @@
                         "Class": 8
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 3,
                         "Class": 3
                     },
                     {
@@ -17746,9 +17746,9 @@
                 "LanguageNameId": 21097,
                 "LineOfSight": 6,
                 "MaxCharge": 0,
-                "MeleeArmor": 2,
+                "MeleeArmor": 3,
                 "MinRange": 0,
-                "PierceArmor": 1,
+                "PierceArmor": 3,
                 "Range": 0,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
@@ -18580,7 +18580,7 @@
                 "AccuracyPercent": 80,
                 "Armours": [
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 4
                     },
                     {
@@ -18588,7 +18588,7 @@
                         "Class": 8
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 2,
                         "Class": 3
                     },
                     {
@@ -18628,7 +18628,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 1,
                         "Class": 27
                     },
                     {
@@ -18654,9 +18654,9 @@
                 "LanguageNameId": 21104,
                 "LineOfSight": 6,
                 "MaxCharge": 0,
-                "MeleeArmor": 2,
+                "MeleeArmor": 3,
                 "MinRange": 0,
-                "PierceArmor": 1,
+                "PierceArmor": 2,
                 "Range": 4,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
@@ -18670,7 +18670,7 @@
                 "AccuracyPercent": 90,
                 "Armours": [
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 4
                     },
                     {
@@ -18678,7 +18678,7 @@
                         "Class": 8
                     },
                     {
-                        "Amount": 1,
+                        "Amount": 3,
                         "Class": 3
                     },
                     {
@@ -18718,7 +18718,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 0,
+                        "Amount": 2,
                         "Class": 27
                     },
                     {
@@ -18744,9 +18744,9 @@
                 "LanguageNameId": 21105,
                 "LineOfSight": 6,
                 "MaxCharge": 0,
-                "MeleeArmor": 2,
+                "MeleeArmor": 3,
                 "MinRange": 0,
-                "PierceArmor": 1,
+                "PierceArmor": 3,
                 "Range": 4,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
@@ -20110,10 +20110,6 @@
                     "id": 322
                 },
                 {
-                    "age": 4,
-                    "id": 373
-                },
-                {
                     "age": 3,
                     "id": 374
                 },
@@ -21237,10 +21233,6 @@
                 },
                 {
                     "age": 4,
-                    "id": 436
-                },
-                {
-                    "age": 4,
                     "id": 438
                 },
                 {
@@ -21773,6 +21765,10 @@
                 {
                     "age": 3,
                     "id": 322
+                },
+                {
+                    "age": 4,
+                    "id": 373
                 },
                 {
                     "age": 3,
