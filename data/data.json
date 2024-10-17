@@ -338,6 +338,10 @@
                     {
                         "Amount": -2,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 40
                     }
                 ],
                 "Attack": 0,
@@ -434,6 +438,10 @@
                     {
                         "Amount": 2,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 40
                     }
                 ],
                 "Attack": 0,
@@ -4062,7 +4070,7 @@
             "24": {
                 "Cost": {
                     "Food": 175,
-                    "Gold": 125
+                    "Gold": 100
                 },
                 "ID": 100,
                 "ResearchTime": 35,
@@ -4184,7 +4192,7 @@
             "492": {
                 "Cost": {
                     "Food": 450,
-                    "Gold": 400
+                    "Gold": 350
                 },
                 "ID": 237,
                 "ResearchTime": 50,
@@ -4497,8 +4505,8 @@
             },
             "832": {
                 "Cost": {
-                    "Food": 1000,
-                    "Gold": 800
+                    "Food": 650,
+                    "Gold": 500
                 },
                 "ID": 448,
                 "ResearchTime": 65,
@@ -8135,7 +8143,7 @@
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
-                        "Amount": 150,
+                        "Amount": 160,
                         "Class": 11
                     },
                     {
@@ -12014,7 +12022,7 @@
                 "Range": 6,
                 "RechargeRate": 0,
                 "ReloadTime": 6,
-                "Speed": 0.9,
+                "Speed": 1.05,
                 "TrainTime": 50,
                 "Trait": 2,
                 "TraitPiece": 0,
@@ -12080,7 +12088,7 @@
                 "Range": 7,
                 "RechargeRate": 0,
                 "ReloadTime": 6,
-                "Speed": 1.035,
+                "Speed": 1.05,
                 "TrainTime": 50,
                 "Trait": 2,
                 "TraitPiece": 0,
@@ -13045,7 +13053,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 3.45,
                 "Speed": 0.85,
-                "TrainTime": 21,
+                "TrainTime": 25,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "ORGAN"
@@ -13197,7 +13205,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 3,
                 "Speed": 1.43,
-                "TrainTime": 36,
+                "TrainTime": 25,
                 "Trait": 2,
                 "TraitPiece": 0,
                 "internal_name": "CARAV"
@@ -13271,7 +13279,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 3,
                 "Speed": 1.43,
-                "TrainTime": 36,
+                "TrainTime": 25,
                 "Trait": 2,
                 "TraitPiece": 0,
                 "internal_name": "CARAV"
@@ -15010,7 +15018,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 100,
+                    "Food": 110,
                     "Gold": 70
                 },
                 "FrameDelay": 0,
@@ -15027,7 +15035,7 @@
                 "Range": 0,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
-                "Speed": 0.9,
+                "Speed": 0.88,
                 "TrainTime": 24,
                 "Trait": 0,
                 "TraitPiece": 0,
@@ -16083,7 +16091,7 @@
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
-                        "Amount": 125,
+                        "Amount": 150,
                         "Class": 11
                     },
                     {
@@ -17186,7 +17194,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 3.45,
                 "Speed": 0.8,
-                "TrainTime": 26,
+                "TrainTime": 30,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "HUSSITEWAGON"
@@ -17958,7 +17966,7 @@
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
-                        "Amount": 75,
+                        "Amount": 90,
                         "Class": 11
                     },
                     {
@@ -18314,12 +18322,12 @@
                 "ID": 1750,
                 "LanguageHelpId": 26435,
                 "LanguageNameId": 5435,
-                "LineOfSight": 8,
+                "LineOfSight": 9,
                 "MaxCharge": 0,
                 "MeleeArmor": 2,
                 "MinRange": 0,
                 "PierceArmor": 10,
-                "Range": 6,
+                "Range": 7,
                 "RechargeRate": 0,
                 "ReloadTime": 3.45,
                 "Speed": 1.3,
@@ -19522,7 +19530,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 75,
+                "HP": 70,
                 "ID": 1803,
                 "LanguageHelpId": 26035,
                 "LanguageNameId": 5035,
@@ -19600,7 +19608,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 90,
+                "HP": 80,
                 "ID": 1805,
                 "LanguageHelpId": 26036,
                 "LanguageNameId": 5036,
