@@ -565,6 +565,8 @@ def gather_civs(techtrees):
     civs = {}
     unit_upgrades = {}
     for civ in techtrees['civs']:
+        if civ['civ_id'] in ('ACHAEMENIDS','ATHENIANS','SPARTANS'):
+            continue
         current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkPrefix': ''}
         for building in civ['civ_techs_buildings']:
             if building['Node Status'] != 'NotAvailable':

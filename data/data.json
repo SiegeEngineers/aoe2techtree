@@ -15018,7 +15018,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 110,
+                    "Food": 100,
                     "Gold": 70
                 },
                 "FrameDelay": 0,
@@ -15035,7 +15035,7 @@
                 "Range": 0,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
-                "Speed": 0.88,
+                "Speed": 0.9,
                 "TrainTime": 24,
                 "Trait": 0,
                 "TraitPiece": 0,
