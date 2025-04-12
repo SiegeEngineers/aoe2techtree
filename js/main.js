@@ -1,5 +1,6 @@
 let tree;
 let data = {};
+let ctt = {};
 let civs = {};
 let connections;
 let parentConnections;
@@ -75,16 +76,34 @@ function getAgeNumber(row) {
 
 function displayData() {
     // Reset containers
-    const root = document.getElementById('root');
-    if (root) {
-        document.getElementById('techtree').removeChild(root);
-    }
+
     document.getElementById('civselect').innerHTML = '';
     document.getElementById('buildingindex__table').innerHTML = '';
     document.getElementById('key__table').innerHTML = '';
 
-    tree = getDefaultTree();
-    connections = getConnections();
+    fillCivSelector();
+
+    create_building_index();
+    let civWasLoaded = updateCivselectValue();
+    if(!civWasLoaded){
+        loadCiv();
+    }
+    create_colour_key();
+
+    window.onhashchange = function () {
+        updateCivselectValue();
+    };
+}
+
+function buildTree(civ) {
+    const root = document.getElementById('root');
+    if (root) {
+        document.getElementById('techtree').removeChild(root);
+    }
+    // tree = getDefaultTree();
+    tree = getCustomTree(civ)
+    // connections = getConnections();
+    connections = getCustomConnections(civ);
     parentConnections = new Map();
     connections.forEach(([parent, child]) => {
         if (!parentConnections.has(child)) {
@@ -93,7 +112,6 @@ function displayData() {
         parentConnections.get(child).push(parent);
     });
     connectionpoints = getConnectionPoints(tree);
-    fillCivSelector();
 
     const draw = SVG().addTo('#techtree').id('root').size(tree.width, tree.height)
         .click((e) => {
@@ -110,8 +128,8 @@ function displayData() {
 
     // Draw Age Row Highlighters
     let row_height = tree.height / 4;
-    draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp);
-    draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp).y(row_height * 2);
+    draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity: 0.3}).click(hideHelp);
+    draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity: 0.3}).click(hideHelp).y(row_height * 2);
 
     // Add Age Icons
     let icon_height = Math.min(row_height / 2, 112);
@@ -136,6 +154,10 @@ function displayData() {
 
     const connectionGroup = draw.group().attr({id: 'connection_lines'});
     for (let connection of connections) {
+        console.log(connection)
+        if (connection[0] === 'building_528') {  // fucking dromon; heavy demo is _not_ a building ffs
+            continue
+        }
         let from = connectionpoints.get(connection[0]);
         let to = connectionpoints.get(connection[1]);
         let intermediate_height = from.y + (tree.element_height * 2 / 3);
@@ -178,11 +200,13 @@ function displayData() {
                     opacity: 0.2,
                     id: `${caret.id}_disabled_gray`
                 }).move(caret.x, caret.y);
-                const cross = item.image(prefix + 'cross.png')
-                    .size(caret.width * 0.7, caret.height * 0.7)
-                    .attr({id: caret.id + '_x'})
-                    .addClass('cross')
-                    .move(caret.x + caret.width * 0.15, caret.y - caret.height * 0.04);
+                if (['NotAvailable'].includes(caret.status)) {
+                    const cross = item.image(prefix + 'cross.png')
+                        .size(caret.width * 0.7, caret.height * 0.7)
+                        .attr({id: caret.id + '_x'})
+                        .addClass('cross')
+                        .move(caret.x + caret.width * 0.15, caret.y - caret.height * 0.04);
+                }
                 const earlier_age_image = item.image('img/Ages/' + getShieldForEarlierRow(r))
                     .size(caret.width * 0.3, caret.height * 0.3)
                     .attr({id: caret.id + '_earlier_age_img_' + ageNumber, 'opacity': 0})
@@ -209,16 +233,6 @@ function displayData() {
             }
         }
     }
-
-    create_building_index();
-    let civWasLoaded = updateCivselectValue();
-    if(!civWasLoaded){
-        loadCiv();
-    }
-    create_colour_key();
-    window.onhashchange = function () {
-        updateCivselectValue();
-    };
 }
 
 function updateCivselectValue() {
@@ -265,7 +279,7 @@ function imagePrefix(name) {
 
 function loadCiv() {
     const selectedCiv = document.getElementById('civselect').value;
-    civ(selectedCiv, tree);
+    buildTree(ctt.civs.find(value => value.civ_id === selectedCiv.toUpperCase()));
     if (selectedCiv in data.civ_helptexts) {
         document.getElementById('civtext').innerHTML = data.strings[data.civ_helptexts[selectedCiv]];
         document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
@@ -1003,7 +1017,10 @@ function main() {
     loadJson('data/data.json', function (response) {
         data = response;
         civs = data.techtrees;
-        loadLocale(storedLocale);
+        loadJson('data/civTechTrees.json', function (response) {
+            ctt = response;
+            loadLocale(storedLocale);
+        });
     });
 
     let doVerticalScroll = true;

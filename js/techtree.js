@@ -552,21 +552,21 @@ class Lane {
             }
         }
 
-        let connections = getConnections();
-        let carets = this.nonBuildingCarets();
-        for (let connection of connections) {
-            let from = connection[0];
-            let to = connection[1];
-            let allConnectionsForFrom = connections.filter(c => c[0] === from && carets.has(c[0]) && carets.has(c[1]));
-            let allRelevantTos = allConnectionsForFrom.map(c => c[1]);
-            if (carets.has(from) && carets.get(from).x < Math.min(allRelevantTos.map(to_ => carets.get(to_).x))){
-                carets.get(from).x = Math.min(allRelevantTos.map(to_ => carets.get(to_).x));
-            }
-            if (carets.has(from) && carets.get(from).x > Math.max(allRelevantTos.map(to_ => carets.get(to_).x))){
-                console.assert(allRelevantTos.length === 1, `Overlapping carets: ${allRelevantTos}`)
-                allRelevantTos.forEach(to_ => carets.get(to_).x = carets.get(from).x);
-            }
-        }
+        // let connections = getConnections();
+        // let carets = this.nonBuildingCarets();
+        // for (let connection of connections) {
+        //     let from = connection[0];
+        //     let to = connection[1];
+        //     let allConnectionsForFrom = connections.filter(c => c[0] === from && carets.has(c[0]) && carets.has(c[1]));
+        //     let allRelevantTos = allConnectionsForFrom.map(c => c[1]);
+        //     if (carets.has(from) && carets.get(from).x < Math.min(allRelevantTos.map(to_ => carets.get(to_).x))){
+        //         carets.get(from).x = Math.min(allRelevantTos.map(to_ => carets.get(to_).x));
+        //     }
+        //     if (carets.has(from) && carets.get(from).x > Math.max(allRelevantTos.map(to_ => carets.get(to_).x))){
+        //         console.assert(allRelevantTos.length === 1, `Overlapping carets: ${allRelevantTos}`)
+        //         allRelevantTos.forEach(to_ => carets.get(to_).x = carets.get(from).x);
+        //     }
+        // }
     }
 
     nonBuildingCarets() {
@@ -593,7 +593,7 @@ class Lane {
 }
 
 class Caret {
-    constructor(type, name, id) {
+    constructor(type, name, id, status) {
         this.type = type;
         this.name = name;
         this.id = PREFIX[type.type] + formatId(id);
@@ -601,6 +601,7 @@ class Caret {
         this.height = 100;
         this.x = 0;
         this.y = 0;
+        this.status = status;
     }
 
     isBuilding() {
@@ -705,24 +706,110 @@ function getName(id, itemtype) {
     if(id.toString().startsWith('UNIQUE')){
         return id;
     }
+    console.log(itemtype, id)
     const languageNameId = data['data'][itemtype][id]['LanguageNameId'];
     return data['strings'][languageNameId];
 }
 
-function building(id) {
-    return new Caret(TYPES.BUILDING, getName(id, 'buildings'), id);
+function building(id, status) {
+    return new Caret(TYPES.BUILDING, getName(id, 'buildings'), id, status);
 }
 
-function unit(id) {
-    return new Caret(TYPES.UNIT, getName(id, 'units'), id);
+function unit(id, status) {
+    return new Caret(TYPES.UNIT, getName(id, 'units'), id, status);
 }
 
-function uniqueunit(id) {
+function uniqueunit(id, status) {
     return new Caret(TYPES.UNIQUEUNIT, getName(id, 'units'), id);
 }
 
-function tech(id) {
-    return new Caret(TYPES.TECHNOLOGY, getName(id, 'techs'), id);
+function tech(id, status) {
+    return new Caret(TYPES.TECHNOLOGY, getName(id, 'techs'), id, status);
+}
+
+const AGES = [
+    '', 'dark_1', 'feudal_1', 'castle_1', 'imperial_1',
+    'dark_2', 'feudal_2', 'castle_2', 'imperial_2',
+]
+
+class BuildingLane {
+    constructor(buildingId, startAgeId) {
+        this.buildingId = buildingId;
+        this.startAgeId = startAgeId;
+        this.elements = [];
+    }
+}
+
+function newLane(item, lastAgeId) {
+    return item["Building in new column"] || item["Age ID"] < lastAgeId;
+}
+
+function collectLanes(civ) {
+    const lanes = [];
+    let lastAgeId = 1;
+    let lane = new BuildingLane(null);
+    for (let item of civ.civ_techs_buildings) {
+        if (newLane(item, lastAgeId)) {
+            if (lane.buildingId) {
+                lanes.push(lane);
+            }
+            lane = new BuildingLane(item["Node ID"], item["Age ID"]);
+        }
+        lastAgeId = item["Age ID"];
+        if (item["Node ID"] !== item["Building ID"]) {
+            alert(item["Node ID"])
+        }
+        lane.elements.push(item);
+    }
+    if (lane.buildingId) {
+        lanes.push(lane);
+    }
+    for (let item of civ.civ_techs_units) {
+        const lane = lanes.find(value => value.buildingId === item["Building ID"])
+        if (!lane) {
+            console.log(item)
+        } else {
+            lane.elements.push(item);
+        }
+    }
+    return lanes;
+}
+
+function getCustomTree(civ) {
+    const tree = new Tree();
+    tree.updateOffsets();
+    const buildingLanes = collectLanes(civ);
+    for (const buildingLane of buildingLanes) {
+        const lane = new Lane();
+        let lastAge = -1;
+        for (const item of buildingLane.elements) {
+            let index = item["Age ID"]
+            if (item["Age ID"] === lastAge) {
+                index = item["Age ID"] + 4;
+            }
+            if (item["Age ID"] === buildingLane.startAgeId && item["Node ID"] !== buildingLane.buildingId) {
+                index = item["Age ID"] + 4;
+            }
+            lastAge = item["Age ID"];
+            const age = AGES[index];
+            if (item["Use Type"] === 'Building') {
+                lane.rows[age].push(building(item["Node ID"], item["Node Status"]));
+            } else if (item["Use Type"] === 'Unit') {
+                lane.rows[age].push(unit(item["Node ID"], item["Node Status"]));
+            } else if (item["Use Type"] === 'Tech') {
+                lane.rows[age].push(tech(item["Node ID"], item["Node Status"]));
+            } else {
+                alert(item["Use Type"])
+            }
+        }
+        tree.lanes.push(lane);
+    }
+    console.log(tree);
+    tree.updatePositions();
+
+    checkIdUnique(tree);
+
+    return tree;
 }
 
 function getDefaultTree() {
@@ -1066,6 +1153,71 @@ function t(tech) {
     return 'tech_' + tech;
 }
 
+function getCustomConnections(civ) {
+    const connections = [];
+
+    for(const lane of tree.lanes){
+        let active = false;
+        let usedIndexes = new Set();
+        let from = null;
+        for(const rowId of [
+            'dark_1',
+            'dark_2',
+            'feudal_1',
+            'feudal_2',
+            'castle_1',
+            'castle_2',
+            'imperial_1',
+            'imperial_2',
+        ]){
+            if(active){
+                for(let i=0; i < lane.rows[rowId].length; i++){
+                    if(!usedIndexes.has(i)){
+                        connections.push([from.id, lane.rows[rowId][i].id]);
+                        usedIndexes.add(i);
+                    }
+                }
+            }
+            if(!active && lane.rows[rowId].length){
+                active = true;
+                from = lane.rows[rowId][0];
+            }
+        }
+    }
+    console.log(connections);
+
+    for (let item of civ.civ_techs_buildings) {
+        if (item["Link ID"] >= 0) {
+            connections.push([b(item["Link ID"]), b(item["Node ID"])]);
+        }
+    }
+    for (let item of civ.civ_techs_units) {
+        let from = null;
+        let to = null;
+        if (item["Link ID"] >= 0) {
+            if (item["Link Node Type"] === 'BuildingTech') {
+                from = b(item["Link ID"]);
+            } else if (['UnitTech', 'UnitUpgrade', 'Unit', 'UniqueUnit'].includes(item["Link Node Type"])) {
+                from = u(item["Link ID"]);
+            } else if (item["Link Node Type"] === 'Research') {
+                from = t(item["Link ID"]);
+            } else {
+                alert('from' + item["Link Node Type"])
+            }
+            if (item["Use Type"] === 'Building') {
+                to = b(item["Node ID"]);
+            } else if (item["Use Type"] === 'Unit') {
+                to = u(item["Node ID"]);
+            } else if (item["Use Type"] === 'Tech') {
+                to = t(item["Node ID"]);
+            } else {
+                alert('to' + item["Use Type"])
+            }
+            connections.push([from, to]);
+        }
+    }
+    return connections;
+}
 function getConnections() {
     let connections = [
         [b(ARCHERY_RANGE), u(ARCHER)],
