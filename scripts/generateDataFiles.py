@@ -328,6 +328,8 @@ def parse_line(key_value, line):
             text = match.group(0)[1:-1]
             if len(re.findall(r'<i>', text)) == 1:
                 text = re.sub(r'<i>', r'', text)
+            if len(re.findall(r'<GREY>', text)) == 1:
+                text = re.sub(r'<GREY>', r'', text)
             text = re.sub(r'<(.+?)>', r'‹\1›', text)
             text = re.sub(r'‹b›(.+?)‹b›', r'<b>\1</b>', text)
             text = re.sub(r'‹i›(.+?)‹i›', r'<i>\1</i>', text)
@@ -574,7 +576,7 @@ def gather_civs(techtrees):
         for unit in civ['civ_techs_units']:
             if unit['Name'] == 'Monk' and unit['Picture Index'] == 131:
                 current_civ['monkPrefix'] = 'meso_'
-            if unit['Node Type'] in ('Unit', 'UniqueUnit', 'UnitUpgrade') and unit['Node Status'] != 'NotAvailable':
+            if unit['Node Type'] in ('Unit', 'UniqueUnit', 'UnitUpgrade', 'RegionalUnit') and unit['Node Status'] != 'NotAvailable':
                 if is_castle_age_unique_unit(unit):
                     current_civ['unique']['castleAgeUniqueUnit'] = unit['Node ID']
                 elif is_imperial_age_unique_unit(unit):
@@ -583,6 +585,9 @@ def gather_civs(techtrees):
                     current_civ['units'].append({'id': unit['Node ID'], 'age': unit['Age ID']})
                 if unit['Trigger Tech ID'] > -1:
                     unit_upgrades[unit['Node ID']] = unit['Trigger Tech ID']
+            if unit['Node Type'] in ('BuildingNonTech',):
+                current_civ['buildings'].append({'id': unit['Node ID'], 'age': unit['Age ID']})
+
 
         for tech in civ['civ_techs_units']:
             if tech['Node Type'] == 'Research' and tech['Node Status'] != 'NotAvailable':
@@ -724,7 +729,9 @@ def ror_write_language_files(args, data, outputdir):
 
 def process_ror(args, outputdir):
     techtreesfile = Path(args.programdir) / 'modes' / 'Pompeii' / 'resources' / '_common' / 'dat' / 'civTechTrees.json'
-    techtrees = json.loads(techtreesfile.read_text())
+    ttfcontent = techtreesfile.read_text()
+    ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
+    techtrees = json.loads(ttfcontent)
     civs, unit_upgrades = ror_gather_civs(techtrees)
     datafile = Path(args.rordatafile)
     content = json.loads(datafile.read_text())
@@ -736,7 +743,10 @@ def process_ror(args, outputdir):
 
 def process_aoe2(args, outputdir):
     techtreesfile = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'civTechTrees.json'
-    techtrees = json.loads(techtreesfile.read_text())
+    ttfcontent = techtreesfile.read_text()
+    ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
+    Path('/tmp/test.json').write_text(ttfcontent)
+    techtrees = json.loads(ttfcontent)
     civs, unit_upgrades = gather_civs(techtrees)
     datafile = Path(args.datafile)
     content = json.loads(datafile.read_text())

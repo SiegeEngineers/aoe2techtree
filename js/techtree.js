@@ -259,6 +259,7 @@ const KONNIK_2 = 1254;
 const ELITE_KONNIK_2 = 1255;
 const BATTERING_RAM = 1258;
 const FLAMING_CAMEL = 1263;
+const DRAGON_FIRE_SHIP = 1302;
 const STEPPE_LANCER = 1370;
 const ELITE_STEPPE_LANCER = 1372;
 const XOLOTL_WARRIOR = 1570;
@@ -290,6 +291,11 @@ const LEGIONARY = 1793;
 const DROMON = 1795;
 const WARRIOR_PRIEST = 1811;
 const SAVAR = 1813;
+const FIRE_LANCER = 1901;
+const ELITE_FIRE_LANCER = 1903;
+const ROCKET_CART = 1904;
+const HEAVY_ROCKET_CART = 1907;
+const LOU_CHUAN = 1948;
 const YEOMEN = 3;
 const EL_DORADO = 4;
 const FUROR_CELTICA = 5;
@@ -754,22 +760,23 @@ function getDefaultTree() {
     barrackslane.rows.dark_1.push(building(BARRACKS));
     barrackslane.rows.dark_2.push(unit(MILITIA));
     barrackslane.rows.feudal_1.push(unit(MAN_AT_ARMS));
-    barrackslane.rows.feudal_1.push(tech(SUPPLIES));
+    barrackslane.rows.feudal_1.push(tech(ARSON));
     barrackslane.rows.feudal_1.push(unit(SPEARMAN));
     barrackslane.rows.feudal_1.push(unit(EAGLE_SCOUT));
+    barrackslane.rows.feudal_1.push(uniqueunit(FLEMISHPIKEMAN));
     barrackslane.rows.castle_1.push(unit(LONG_SWORDSMAN));
     barrackslane.rows.castle_1.push(tech(GAMBESONS));
     barrackslane.rows.castle_1.push(unit(PIKEMAN));
     barrackslane.rows.castle_1.push(unit(EAGLE_WARRIOR));
+    barrackslane.rows.castle_1.push(unit(FIRE_LANCER));
     barrackslane.rows.castle_1.push(tech(SQUIRES));
-    barrackslane.rows.castle_1.push(tech(ARSON));
     barrackslane.rows.imperial_1.push(unit(TWO_HANDED_SWORDSMAN));
     barrackslane.rows.imperial_1.push(uniqueunit(LEGIONARY));
     barrackslane.rows.imperial_2.push(unit(CHAMPION));
     barrackslane.rows.imperial_1.push(unit(HALBERDIER));
     barrackslane.rows.imperial_1.push(unit(ELITE_EAGLE_WARRIOR));
+    barrackslane.rows.imperial_1.push(unit(ELITE_FIRE_LANCER));
     barrackslane.rows.imperial_1.push(uniqueunit(CONDOTTIERO));
-    barrackslane.rows.imperial_1.push(uniqueunit(FLEMISHPIKEMAN));
     tree.lanes.push(barrackslane);
 
 
@@ -804,11 +811,13 @@ function getDefaultTree() {
     siegeworkshoplane.rows.castle_2.push(unit(BATTERING_RAM));
     siegeworkshoplane.rows.castle_2.push(unit(ARMORED_ELEPHANT));
     siegeworkshoplane.rows.castle_2.push(unit(MANGONEL));
+    siegeworkshoplane.rows.castle_2.push(unit(ROCKET_CART));
     siegeworkshoplane.rows.castle_2.push(unit(SCORPION));
     siegeworkshoplane.rows.castle_2.push(unit(SIEGE_TOWER));
     siegeworkshoplane.rows.imperial_1.push(unit(CAPPED_RAM));
     siegeworkshoplane.rows.imperial_1.push(unit(SIEGE_ELEPHANT));
     siegeworkshoplane.rows.imperial_1.push(unit(ONAGER));
+    siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_ROCKET_CART));
     siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_SCORPION));
     siegeworkshoplane.rows.imperial_1.push(unit(BOMBARD_CANNON));
     siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_RAM));
@@ -864,7 +873,9 @@ function getDefaultTree() {
     docklane.rows.imperial_1.push(uniqueunit(THIRISADAI));
     docklane.rows.imperial_1.push(tech(DRY_DOCK));
     docklane.rows.imperial_1.push(tech(SHIPWRIGHT));
+    docklane.rows.imperial_2.push(uniqueunit(DRAGON_FIRE_SHIP));
     docklane.rows.imperial_2.push(unit(ELITE_CANNON_GALLEON));
+    docklane.rows.imperial_2.push(uniqueunit(LOU_CHUAN));
     tree.lanes.push(docklane);
 
 
@@ -1092,8 +1103,8 @@ function getConnections() {
         [b(BARRACKS), u(EAGLE_SCOUT)],
         [u(EAGLE_SCOUT), u(EAGLE_WARRIOR)],
         [u(EAGLE_WARRIOR), u(ELITE_EAGLE_WARRIOR)],
-        [b(BARRACKS), t(SUPPLIES)],
-        [t(SUPPLIES), t(GAMBESONS)],
+        [b(BARRACKS), u(FLEMISHPIKEMAN)],
+        [u(FIRE_LANCER), u(ELITE_FIRE_LANCER)],
         [b(BARRACKS), t(SQUIRES)],
         [b(BARRACKS), t(ARSON)],
         [b(STABLE), u(SCOUT_CAVALRY)],
@@ -1131,6 +1142,7 @@ function getConnections() {
         [b(DOCK), b(FISH_TRAP)],
         [u(FIRE_GALLEY), u(FIRE_SHIP)],
         [u(FIRE_SHIP), u(FAST_FIRE_SHIP)],
+        [u(FAST_FIRE_SHIP), u(DRAGON_FIRE_SHIP)],
         [u(CANNON_GALLEON), u(ELITE_CANNON_GALLEON)],
         [b(WATCH_TOWER), b(GUARD_TOWER)],
         [b(GUARD_TOWER), b(KEEP)],
@@ -1183,6 +1195,8 @@ function getConnections() {
         [u(CAPPED_RAM), u(SIEGE_RAM)],
         [b(SIEGE_WORKSHOP), u(ARMORED_ELEPHANT)],
         [u(ARMORED_ELEPHANT), u(SIEGE_ELEPHANT)],
+        [b(SIEGE_WORKSHOP), u(ROCKET_CART)],
+        [u(ROCKET_CART), u(HEAVY_ROCKET_CART)],
         [b(SIEGE_WORKSHOP), u(SCORPION)],
         [u(SCORPION), u(HEAVY_SCORPION)],
         [b(SIEGE_WORKSHOP), u(SIEGE_TOWER)],
