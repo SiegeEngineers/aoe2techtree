@@ -78,6 +78,11 @@ CIV_NAMES = {
     "Romans": "10313",
     "Armenians": "10314",
     "Georgians": "10315",
+    "Shu": "10319",
+    "Wu": "10320",
+    "Wei": "10321",
+    "Jurchens": "10322",
+    "Khitans": "10323",
 }
 
 ROR_CIV_NAMES = {
@@ -146,6 +151,11 @@ CIV_HELPTEXTS = {
     "Romans": "120192",
     "Armenians": "120193",
     "Georgians": "120194",
+    "Shu": "120198",
+    "Wu": "120199",
+    "Wei": "120200",
+    "Jurchens": "120201",
+    "Khitans": "120202",
 }
 
 ROR_CIV_HELPTEXTS = {
@@ -214,6 +224,8 @@ KONNIK_INF = 1252
 EKONNIK_INF = 1253
 RATHA = 1738
 ERATHA = 1740
+WARCHAR_FF = 1962
+WARCHAR_B = 1980
 CARTOGRAPHY = 19
 TRACKING = 90
 
@@ -254,6 +266,7 @@ def gather_language_data(resourcesdir, data, language):
     key_value[21105] = key_value[5420]  # Fix Elite Ratha name
     key_value[42105] = key_value[26420]  # Fix Elite Ratha description
     key_value[42097] = key_value[26420]  # Fix Elite Ratha (melee) description
+    key_value[42198] = key_value[26364]  # Fix War Chariot (Barrage) description
 
     key_value_filtered = {}
     for datatype in ("buildings", "units", "techs"):
@@ -348,7 +361,7 @@ def gather_data(content, civs, unit_upgrades):
     unit_ids = set.union({u['id'] for c in civs.values() for u in c['units']}, \
                          {c['unique']['castleAgeUniqueUnit'] for c in civs.values()}, \
         {c['unique']['imperialAgeUniqueUnit'] for c in civs.values()}, \
-        {PTREB, KONNIK_INF, EKONNIK_INF, RATHA, ERATHA})
+        {PTREB, KONNIK_INF, EKONNIK_INF, RATHA, ERATHA, WARCHAR_FF, WARCHAR_B})
     tech_ids = set.union({t['id'] for c in civs.values() for t in c['techs']}, \
                          {c['unique']['castleAgeUniqueTech'] for c in civs.values()}, \
         {c['unique']['imperialAgeUniqueTech'] for c in civs.values()}, \

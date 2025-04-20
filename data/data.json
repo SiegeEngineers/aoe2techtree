@@ -30,6 +30,8 @@
         "Incas": "120170",
         "Italians": "120168",
         "Japanese": "120154",
+        "Jurchens": "120201",
+        "Khitans": "120202",
         "Khmer": "120177",
         "Koreans": "120167",
         "Lithuanians": "120184",
@@ -43,6 +45,7 @@
         "Portuguese": "120173",
         "Romans": "120192",
         "Saracens": "120158",
+        "Shu": "120198",
         "Sicilians": "120186",
         "Slavs": "120172",
         "Spanish": "120163",
@@ -50,7 +53,9 @@
         "Teutons": "120153",
         "Turks": "120159",
         "Vietnamese": "120180",
-        "Vikings": "120160"
+        "Vikings": "120160",
+        "Wei": "120200",
+        "Wu": "120199"
     },
     "civ_names": {
         "Armenians": "10314",
@@ -77,6 +82,8 @@
         "Incas": "10291",
         "Italians": "10289",
         "Japanese": "10275",
+        "Jurchens": "10322",
+        "Khitans": "10323",
         "Khmer": "10298",
         "Koreans": "10288",
         "Lithuanians": "10305",
@@ -90,6 +97,7 @@
         "Portuguese": "10294",
         "Romans": "10313",
         "Saracens": "10279",
+        "Shu": "10319",
         "Sicilians": "10307",
         "Slavs": "10293",
         "Spanish": "10284",
@@ -97,7 +105,9 @@
         "Teutons": "10274",
         "Turks": "10280",
         "Vietnamese": "10301",
-        "Vikings": "10281"
+        "Vikings": "10281",
+        "Wei": "10321",
+        "Wu": "10320"
     },
     "data": {
         "buildings": {
@@ -22671,6 +22681,88 @@
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "SUNJIAN"
+            },
+            "1980": {
+                "AccuracyPercent": 0,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 37
+                    }
+                ],
+                "Attack": 8,
+                "AttackDelaySeconds": 0.25,
+                "Attacks": [
+                    {
+                        "Amount": 8,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 27
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 90
+                },
+                "FrameDelay": 3,
+                "GarrisonCapacity": 0,
+                "HP": 65,
+                "ID": 1980,
+                "LanguageHelpId": 42198,
+                "LanguageNameId": 21198,
+                "LineOfSight": 8,
+                "MaxCharge": 0,
+                "MeleeArmor": 0,
+                "MinRange": 1,
+                "PierceArmor": 5,
+                "Range": 6,
+                "RechargeRate": 0,
+                "ReloadTime": 8,
+                "Speed": 0.8,
+                "TrainTime": 28,
+                "Trait": 8,
+                "TraitPiece": 1962,
+                "internal_name": "WARCHAR"
             }
         }
     },
