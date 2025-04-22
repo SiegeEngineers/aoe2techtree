@@ -74,10 +74,7 @@ const UNIQUE_UNIT = 'UNIQUE UNIT';
 const ELITE_UNIQUE_UNIT = 'ELITE UNIQUE UNIT';
 const UNIQUE_TECH_1 = 'UNIQUE TECH 1';
 const UNIQUE_TECH_2 = 'UNIQUE TECH 2';
-const MONK_PREFIX_MESO = 'meso_';
-const MONK_PREFIX_AFRICAN = 'african_';
-const MONK_PREFIX_ASIAN = 'asian_';
-const MONK_PREFIX_GENERIC = '';
+const MONK_SUFFIX_GENERIC = '_33';
 const BARRACKS = 12;
 const DOCK = 45;
 const SIEGE_WORKSHOP = 49;
@@ -670,7 +667,7 @@ function applySelectedCiv(selectedCiv) {
     unique([selectedCiv.unique.castleAgeUniqueUnit,
         selectedCiv.unique.imperialAgeUniqueUnit,
         selectedCiv.unique.castleAgeUniqueTech,
-        selectedCiv.unique.imperialAgeUniqueTech], selectedCiv.monkPrefix);
+        selectedCiv.unique.imperialAgeUniqueTech], selectedCiv.monkSuffix);
 }
 
 function formatName(originalname) {
@@ -705,9 +702,9 @@ function formatName(originalname) {
     return items.join('\n');
 }
 
-function unique(ids, monk_prefix) {
-    if (monk_prefix === undefined) {
-        monk_prefix = MONK_PREFIX_GENERIC;
+function unique(ids, monk_suffix) {
+    if (monk_suffix === undefined) {
+        monk_suffix = MONK_SUFFIX_GENERIC;
     }
     SVG('#unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
     SVG('#unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
@@ -719,7 +716,7 @@ function unique(ids, monk_prefix) {
     SVG('#tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
     SVG('#unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
     SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
-    SVG('#unit_' + formatId(MONK) + '_img').load('img/Units/' + monk_prefix + '125.png');
+    SVG('#unit_' + formatId(MONK) + '_img').load('img/Units/' + '125' + monk_suffix + '.png');
 }
 
 function getName(id, itemtype) {

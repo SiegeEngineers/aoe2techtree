@@ -582,13 +582,13 @@ def gather_civs(techtrees):
     for civ in techtrees['civs']:
         if civ['civ_id'] in ('ACHAEMENIDS','ATHENIANS','SPARTANS'):
             continue
-        current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkPrefix': ''}
+        current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkSuffix': ''}
         for building in civ['civ_techs_buildings']:
             if building['Node Status'] != 'NotAvailable':
                 current_civ['buildings'].append({'id': building['Node ID'], 'age': building['Age ID']})
         for unit in civ['civ_techs_units']:
-            if unit['Name'] == 'Monk' and unit['Picture Index'] == 131:
-                current_civ['monkPrefix'] = 'meso_'
+            if unit['Name'] == 'Monk':
+                current_civ['monkSuffix'] = f"_{unit['Picture Index']}"
             if unit['Node Type'] in ('Unit', 'UniqueUnit', 'UnitUpgrade', 'RegionalUnit') and unit['Node Status'] != 'NotAvailable':
                 if is_castle_age_unique_unit(unit):
                     current_civ['unique']['castleAgeUniqueUnit'] = unit['Node ID']

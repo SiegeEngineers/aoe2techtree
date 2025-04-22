@@ -149,6 +149,8 @@ def main():
                 raise AssertionError(f'list too long for {id_=}, {type_=}, {picture_index=}')
             source_dds = source_dds_list[0]
             target_file = Path(__file__).parent.resolve().parent / 'img' / type_ / f'{id_}.png'
+            if id_ == 125:  # Monk
+                target_file = Path(__file__).parent.resolve().parent / 'img' / type_ / f'{id_}_{picture_index}.png'
             convert(source_dds, target_file)
 
 
