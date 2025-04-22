@@ -636,6 +636,9 @@ def gather_civs(techtrees):
     unit_upgrades[DEMOLITION_SHIP] = WAR_GALLEY_UPGRADE
     unit_upgrades[FIRE_SHIP] = WAR_GALLEY_UPGRADE
 
+    assert civs['Wu']['unique']['imperialAgeUniqueTech'] == 1080
+    civs['Wu']['unique']['imperialAgeUniqueTech'] = 1081
+
     return civs, unit_upgrades
 
 

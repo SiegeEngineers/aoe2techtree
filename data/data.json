@@ -4231,6 +4231,18 @@
                 "Repeatable": false,
                 "ResearchTime": 40,
                 "internal_name": "Red Cliffs Tactics"
+            },
+            "1081": {
+                "Cost": {
+                    "Gold": 300,
+                    "Wood": 600
+                },
+                "ID": 1081,
+                "LanguageHelpId": 28481,
+                "LanguageNameId": 7481,
+                "Repeatable": true,
+                "ResearchTime": 40,
+                "internal_name": "Ming-Kuang Armor"
             }
         },
         "unit_upgrades": {
@@ -50762,7 +50774,7 @@
             "unique": {
                 "castleAgeUniqueTech": 1080,
                 "castleAgeUniqueUnit": 1968,
-                "imperialAgeUniqueTech": 1080,
+                "imperialAgeUniqueTech": 1081,
                 "imperialAgeUniqueUnit": 1970
             },
             "units": [

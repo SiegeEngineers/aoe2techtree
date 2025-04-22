@@ -1139,7 +1139,7 @@ function getConnections() {
         [u(EAGLE_SCOUT), u(EAGLE_WARRIOR)],
         [u(EAGLE_WARRIOR), u(ELITE_EAGLE_WARRIOR)],
         [b(BARRACKS), u(FLEMISHPIKEMAN)],
-        [b(BARRACKS), u(JIAN_SWORDSMAN)],   
+        [b(BARRACKS), u(JIAN_SWORDSMAN)],
         [u(FIRE_LANCER), u(ELITE_FIRE_LANCER)],
         [b(BARRACKS), t(SQUIRES)],
         [b(BARRACKS), t(ARSON)],
