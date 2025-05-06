@@ -884,19 +884,19 @@ function getDefaultTree() {
     docklane.rows.castle_1.push(uniqueunit(CARAVEL));
     docklane.rows.castle_1.push(tech(CAREENING));
     docklane.rows.imperial_1.push(unit(FAST_FIRE_SHIP));
-    docklane.rows.imperial_1.push(unit(CANNON_GALLEON));
+    docklane.rows.imperial_1.push(uniqueunit(DRAGON_FIRE_SHIP));
     docklane.rows.imperial_1.push(unit(HEAVY_DEMO_SHIP));
     docklane.rows.imperial_1.push(unit(GALLEON));
-    docklane.rows.imperial_1.push(unit(DROMON));
+    docklane.rows.imperial_1.push(unit(CANNON_GALLEON));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_TURTLE_SHIP));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_LONGBOAT));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_CARAVEL));
-    docklane.rows.imperial_1.push(uniqueunit(THIRISADAI));
     docklane.rows.imperial_1.push(tech(DRY_DOCK));
     docklane.rows.imperial_1.push(tech(SHIPWRIGHT));
-    docklane.rows.imperial_2.push(uniqueunit(DRAGON_FIRE_SHIP));
-    docklane.rows.imperial_2.push(unit(ELITE_CANNON_GALLEON));
+    docklane.rows.imperial_2.push(unit(DROMON));
     docklane.rows.imperial_2.push(uniqueunit(LOU_CHUAN));
+    docklane.rows.imperial_2.push(uniqueunit(THIRISADAI));
+    docklane.rows.imperial_2.push(unit(ELITE_CANNON_GALLEON));
     tree.lanes.push(docklane);
 
 
@@ -1164,7 +1164,6 @@ function getConnections() {
         [u(CAVALIER), u(PALADIN)],
         [b(DOCK), u(FISHING_SHIP)],
         [b(DOCK), u(TRANSPORT_SHIP)],
-        [b(DOCK), u(DROMON)],
         [b(DOCK), u(DEMOLITION_RAFT)],
         [u(DEMOLITION_RAFT), u(DEMOLITION_SHIP)],
         [u(DEMOLITION_SHIP), u(HEAVY_DEMO_SHIP)],
@@ -1177,7 +1176,8 @@ function getConnections() {
         [b(DOCK), b(FISH_TRAP)],
         [u(FIRE_GALLEY), u(FIRE_SHIP)],
         [u(FIRE_SHIP), u(FAST_FIRE_SHIP)],
-        [u(FAST_FIRE_SHIP), u(DRAGON_FIRE_SHIP)],
+        [u(FIRE_SHIP), u(DRAGON_FIRE_SHIP)],
+        [b(DOCK), u(CANNON_GALLEON)],
         [u(CANNON_GALLEON), u(ELITE_CANNON_GALLEON)],
         [b(WATCH_TOWER), b(GUARD_TOWER)],
         [b(GUARD_TOWER), b(KEEP)],
@@ -1301,7 +1301,6 @@ function getConnections() {
         [b(ARCHERY_RANGE), u(GRENADIER)],
         [b(ARCHERY_RANGE), u(XIANBEI_RAIDER)],
         [b(DOCK), u(LONGBOAT)],
-        [b(DOCK), u(THIRISADAI)],
     ];
 
     let connection_ids = [];
