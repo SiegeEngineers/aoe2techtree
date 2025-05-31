@@ -318,6 +318,12 @@ function highlightPath(caretId) {
                 // Without this, the line would be highlighted, but other unhighlighted
                 // connection lines could be drawn on top, undoing the highlighting.
                 line.front().addClass('is-highlight');
+            } else {
+                // Check for redirect connections (e.g., when Camel Scout is hidden)
+                const redirectLine = SVG(`#connection_${parentId}_${caretId}_redirect`);
+                if (redirectLine) {
+                    redirectLine.front().addClass('is-highlight');
+                }
             }
             recurse(parentId);
         }
@@ -814,8 +820,138 @@ function fillCivSelector() {
     }
 }
 
+function resetCiv() {
+    SVG.find('.node').each(function () {
+        makeSVGObjectOpaque(this);
+    });
+    SVG.find('.connection').each(function () {
+        makeSVGObjectOpaque(this);
+    });
+    SVG.find('.cross').each(function () {
+        makeSVGObjectOpaque(this, 0);
+    });
+
+    SVG.find('[id$="_disabled_gray"]').each(function () {
+        makeSVGObjectOpaque(this, 0);
+    });
+    SVG.find('.node__overlay').each(function () {
+        makeSVGObjectOpaque(this);
+        this.css('pointer-events', 'auto');
+        
+        this.off('mouseover mouseout click');
+        
+        let caretId = this.data('caret').id;
+        
+        this.mouseover(function () {
+            highlightPath(caretId);
+        })
+        .mouseout(function () {
+            resetHighlightPath();
+        })
+        .click(function () {
+            if (focusedNodeId === caretId) {
+                hideHelp();
+            } else {
+                displayHelp(caretId);
+            }
+        });
+    });
+
+    // Remove any redirect connections from previous civilization
+    let redirectConnection = SVG('#connection_building_101_unit_329_redirect');
+    if (redirectConnection) {
+        redirectConnection.remove();
+    }
+    
+    parentConnections.clear();
+    connections.forEach(([parent, child]) => {
+        if (!parentConnections.has(child)) {
+            parentConnections.set(child, []);
+        }
+        parentConnections.get(child).push(parent);
+    });
+}
+
+function hideUnvailableUniqueUnits(selectedCiv) {
+    let hiddenUniqueUnits = [];
+    SVG.find('.node').each(function () {
+        let nodeId = this.attr('id');
+        let {id, type} = parseSVGObjectId(nodeId + '_x'); // Add _x to match the parsing pattern
+        
+        if (id === undefined || type === undefined) {
+            return;
+        }
+
+        let overlay = SVG(`#${nodeId}_overlay`);
+        if (overlay && overlay.data('type') === 'UNIQUEUNIT') {
+            if (!selectedCiv.units.map((item) => item.id).includes(id)) {
+                makeSVGObjectOpaque(this, 0);
+                overlay.off('mouseover mouseout click');
+                overlay.css('pointer-events', 'none');
+                overlay.attr('opacity', 0);
+                
+                hiddenUniqueUnits.push(nodeId);
+                return;
+            }
+        }
+    });
+
+    hiddenUniqueUnits.forEach(hiddenUnitId => {
+        SVG.find('.connection').each(function () {
+            let connectionId = this.attr('id');
+            if (connectionId && connectionId.endsWith('_' + hiddenUnitId)) {
+                makeSVGObjectOpaque(this, 0);
+            }
+        });
+    });
+
+    handleHidingCamelScout(hiddenUniqueUnits)
+
+}
+
+function handleHidingCamelScout(hiddenUniqueUnits) {
+    if (hiddenUniqueUnits.includes('unit_1755')) { // Camel Scout ID
+        makeSVGObjectOpaque(SVG('#connection_building_101_unit_1755'), 0);
+        makeSVGObjectOpaque(SVG('#connection_unit_1755_unit_329'), 0);
+
+        // Create a direct connection from Stable to Camel Rider
+        let stablePoint = connectionpoints.get('building_101');
+        let camelRiderPoint = connectionpoints.get('unit_329');
+        
+        if (stablePoint && camelRiderPoint) {
+            let intermediate_height = stablePoint.y + (tree.element_height * 2 / 3);
+            let connectionGroup = SVG('#connection_lines');
+            
+            connectionGroup.polyline([
+                stablePoint.x, stablePoint.y, 
+                stablePoint.x, intermediate_height, 
+                camelRiderPoint.x, intermediate_height, 
+                camelRiderPoint.x, camelRiderPoint.y
+            ])
+            .attr({id: 'connection_building_101_unit_329_redirect'})
+            .addClass('connection')
+            .click(hideHelp);
+            
+            if (parentConnections.has('unit_329')) {
+                let parents = parentConnections.get('unit_329');
+                let camelScoutIndex = parents.indexOf('unit_1755');
+                if (camelScoutIndex > -1) {
+                    parents.splice(camelScoutIndex, 1);
+                }
+                if (!parents.includes('building_101')) {
+                    parents.push('building_101');
+                }
+            }
+        }
+    }
+}
+
 function civ(name) {
+    resetCiv();
+
     let selectedCiv = civs[name];
+
+    hideUnvailableUniqueUnits(selectedCiv);
 
     SVG.find('.cross').each(function () {
         if (SVGObjectIsOpaque(this)) {
@@ -824,6 +960,13 @@ function civ(name) {
 
         let {id, type} = parseSVGObjectId(this.id());
         if (id === undefined || type === undefined) {
+            return;
+        }
+
+        // Skip unique units as they are now hidden instead of crossed out
+        let nodeId = this.id().replace('_x', '');
+        let overlay = SVG(`#${nodeId}_overlay`);
+        if (overlay && overlay.data('type') === 'UNIQUEUNIT') {
             return;
         }
 
@@ -877,7 +1020,6 @@ function civ(name) {
 function SVGObjectIsOpaque(svgObj) {
     return svgObj.attr('opacity') === 1
 }
-
 function SVGObjectIsTransparent(svgObj) {
     return svgObj.attr('opacity') === 0
 }
