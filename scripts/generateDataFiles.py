@@ -255,6 +255,7 @@ def gather_language_data(resourcesdir, data, language):
         for line in f:
             parse_line(key_value, line)
 
+    key_value[1] = ''  # Mode
     key_value[26708] = key_value[26186]  # Palisade Gate
     key_value[26097] = key_value[26381]  # Trebuchet
     key_value[26768] = key_value[28314]  # Gillnets
