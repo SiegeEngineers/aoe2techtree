@@ -1,16 +1,22 @@
 const TYPES = Object.freeze({
-    'BUILDING': {colour: '#922602', type: 'BUILDING', name: 'Building'},
-    'UNIT': {colour: '#3a6a80', type: 'UNIT', name: 'Unit'},
-    'UNIQUEUNIT': {colour: '#af30a3', type: 'UNIQUEUNIT', name: 'Unique Unit'},
-    'TECHNOLOGY': {colour: '#2c5729', type: 'TECHNOLOGY', name: 'Technology'}
+    'COMMON_BUILDING': {colour: '#a2410f', type: 'COMMON_BUILDING', name: 'Common Building'},
+    'REGIONAL_BUILDING': {colour: '#e24c2f', type: 'REGIONAL_BUILDING', name: 'Regional Building'},
+    'UNIQUE_BUILDING': {colour: '#d23251', type: 'UNIQUE_BUILDING', name: 'Unique Building'},
+    'COMMON_UNIT': {colour: '#00749a', type: 'COMMON_UNIT', name: 'Common Unit'},
+    'REGIONAL_UNIT': {colour: '#4a52d5', type: 'REGIONAL_UNIT', name: 'Regional Unit'},
+    'UNIQUE_UNIT': {colour: '#75377d', type: 'UNIQUE_UNIT', name: 'Unique Unit'},
+    'TECHNOLOGY': {colour: '#357136', type: 'TECHNOLOGY', name: 'Technology'}
 });
 
-const LEGEND = [TYPES.UNIQUEUNIT, TYPES.UNIT, TYPES.BUILDING, TYPES.TECHNOLOGY];
+const LEGEND = Object.values(TYPES);
 
 const PREFIX = Object.freeze({
-    'BUILDING': 'building_',
-    'UNIT': 'unit_',
-    'UNIQUEUNIT': 'unit_',
+    'COMMON_BUILDING': 'building_',
+    'REGIONAL_BUILDING': 'building_',
+    'UNIQUE_BUILDING': 'building_',
+    'COMMON_UNIT': 'unit_',
+    'REGIONAL_UNIT': 'unit_',
+    'UNIQUE_UNIT': 'unit_',
     'TECHNOLOGY': 'tech_'
 });
 
@@ -28,7 +34,7 @@ const getAgeNames = (data)=>{
 const unitClasses = {
     0: '<abbr title="unused">Wonders</abbr>',
     1: 'Infantry',
-    2: 'Turtle Ships and Thirisadai',
+    2: 'Heavy Warships',
     3: 'Base Pierce',
     4: 'Base Melee',
     5: 'Elephants',
@@ -53,19 +59,20 @@ const unitClasses = {
     24: 'Boars etc.',
     25: 'Monks',
     26: 'Castles & Kreposts',
-    27: 'Spearmen',
+    27: 'Spear Units',
     28: 'Mounted Archers',
-    29: 'Eagle Warriors',
+    29: 'Shock Infantry',
     30: 'Camels',
     31: '<abbr title="previously used by the Leitis as armor-ignoring attack">Obsolete</abbr>',
     32: 'Condottieri',
     33: '<abbr title="no unit has this armor class">Gunpowder units secondary projectile attack</abbr>',
     34: 'Fishing Ships',
     35: 'Mamelukes',
-    36: '<abbr title="unused">Heroes & Kings</abbr>',
-    37: 'Hussite Wagons',
+    36: 'Heroes & Kings',
+    37: 'Heavy Siege',
     38: 'Skirmishers',
     39: 'Cavalry Resistance',
+    40: 'Houses'
 };
 
 const animation_duration = 50;
@@ -623,7 +630,7 @@ class Caret {
     }
 
     isBuilding() {
-        return this.type === TYPES.BUILDING;
+        return this.type === TYPES.UNIQUE_BUILDING || this.type === TYPES.COMMON_BUILDING || this.type === TYPES.REGIONAL_BUILDING;
     }
 }
 
@@ -729,15 +736,27 @@ function getName(id, itemtype) {
 }
 
 function building(id) {
-    return new Caret(TYPES.BUILDING, getName(id, 'buildings'), id);
+    return new Caret(TYPES.COMMON_BUILDING, getName(id, 'buildings'), id);
+}
+
+function regionalbuilding(id) {
+    return new Caret(TYPES.REGIONAL_BUILDING, getName(id, 'buildings'), id);
+}
+
+function uniquebuilding(id) {
+    return new Caret(TYPES.UNIQUE_BUILDING, getName(id, 'buildings'), id);
 }
 
 function unit(id) {
-    return new Caret(TYPES.UNIT, getName(id, 'units'), id);
+    return new Caret(TYPES.COMMON_UNIT, getName(id, 'units'), id);
+}
+
+function regionalunit(id) {
+    return new Caret(TYPES.REGIONAL_UNIT, getName(id, 'units'), id);
 }
 
 function uniqueunit(id) {
-    return new Caret(TYPES.UNIQUEUNIT, getName(id, 'units'), id);
+    return new Caret(TYPES.UNIQUE_UNIT, getName(id, 'units'), id);
 }
 
 function tech(id) {
@@ -756,7 +775,7 @@ function getDefaultTree() {
     archerylane.rows.castle_1.push(unit(ELITE_SKIRMISHER));
     archerylane.rows.castle_1.push(uniqueunit(SLINGER));
     archerylane.rows.castle_1.push(unit(CAVALRY_ARCHER));
-    archerylane.rows.castle_1.push(unit(ELEPHANT_ARCHER));
+    archerylane.rows.castle_1.push(regionalunit(ELEPHANT_ARCHER));
     archerylane.rows.castle_1.push(uniqueunit(GENITOUR));
     archerylane.rows.castle_1.push(uniqueunit(GRENADIER));
     archerylane.rows.castle_1.push(uniqueunit(XIANBEI_RAIDER));
@@ -765,7 +784,7 @@ function getDefaultTree() {
     archerylane.rows.imperial_1.push(uniqueunit(IMPERIAL_SKIRMISHER));
     archerylane.rows.imperial_1.push(unit(HAND_CANNONEER));
     archerylane.rows.imperial_1.push(unit(HEAVY_CAV_ARCHER));
-    archerylane.rows.imperial_1.push(unit(ELITE_ELEPHANT_ARCHER));
+    archerylane.rows.imperial_1.push(regionalunit(ELITE_ELEPHANT_ARCHER));
     archerylane.rows.imperial_1.push(uniqueunit(ELITE_GENITOUR));
     archerylane.rows.imperial_1.push(tech(PARTHIAN_TACTICS));
     tree.lanes.push(archerylane);
@@ -777,21 +796,21 @@ function getDefaultTree() {
     barrackslane.rows.feudal_1.push(unit(MAN_AT_ARMS));
     barrackslane.rows.feudal_1.push(tech(ARSON));
     barrackslane.rows.feudal_1.push(unit(SPEARMAN));
-    barrackslane.rows.feudal_1.push(unit(EAGLE_SCOUT));
+    barrackslane.rows.feudal_1.push(regionalunit(EAGLE_SCOUT));
     barrackslane.rows.feudal_1.push(uniqueunit(FLEMISHPIKEMAN));
     barrackslane.rows.castle_1.push(unit(LONG_SWORDSMAN));
     barrackslane.rows.castle_1.push(tech(GAMBESONS));
     barrackslane.rows.castle_1.push(unit(PIKEMAN));
-    barrackslane.rows.castle_1.push(unit(EAGLE_WARRIOR));
-    barrackslane.rows.castle_1.push(unit(FIRE_LANCER));
+    barrackslane.rows.castle_1.push(regionalunit(EAGLE_WARRIOR));
+    barrackslane.rows.castle_1.push(regionalunit(FIRE_LANCER));
     barrackslane.rows.castle_1.push(uniqueunit(JIAN_SWORDSMAN));
     barrackslane.rows.castle_1.push(tech(SQUIRES));
     barrackslane.rows.imperial_1.push(unit(TWO_HANDED_SWORDSMAN));
     barrackslane.rows.imperial_1.push(uniqueunit(LEGIONARY));
     barrackslane.rows.imperial_2.push(unit(CHAMPION));
     barrackslane.rows.imperial_1.push(unit(HALBERDIER));
-    barrackslane.rows.imperial_1.push(unit(ELITE_EAGLE_WARRIOR));
-    barrackslane.rows.imperial_1.push(unit(ELITE_FIRE_LANCER));
+    barrackslane.rows.imperial_1.push(regionalunit(ELITE_EAGLE_WARRIOR));
+    barrackslane.rows.imperial_1.push(regionalunit(ELITE_FIRE_LANCER));
     barrackslane.rows.imperial_1.push(uniqueunit(CONDOTTIERO));
     tree.lanes.push(barrackslane);
 
@@ -804,19 +823,19 @@ function getDefaultTree() {
     stablelane.rows.castle_1.push(unit(LIGHT_CAVALRY));
     stablelane.rows.castle_1.push(uniqueunit(SHRIVAMSHA_RIDER));
     stablelane.rows.castle_1.push(unit(KNIGHT));
-    stablelane.rows.castle_1.push(unit(STEPPE_LANCER));
-    stablelane.rows.castle_1.push(unit(CAMEL_RIDER));
-    stablelane.rows.castle_1.push(unit(BATTLE_ELEPHANT));
-    stablelane.rows.castle_1.push(unit(HEI_GUANG_CAVALRY));
-    stablelane.rows.castle_1.push(uniqueunit(XOLOTL_WARRIOR));
+    stablelane.rows.castle_1.push(regionalunit(STEPPE_LANCER));
+    stablelane.rows.castle_1.push(regionalunit(CAMEL_RIDER));
+    stablelane.rows.castle_1.push(regionalunit(BATTLE_ELEPHANT));
+    stablelane.rows.castle_1.push(regionalunit(HEI_GUANG_CAVALRY));
+    stablelane.rows.castle_1.push(regionalunit(XOLOTL_WARRIOR));
     stablelane.rows.castle_1.push(tech(HUSBANDRY));
     stablelane.rows.imperial_1.push(unit(HUSSAR));
     stablelane.rows.imperial_1.push(uniqueunit(ELITE_SHRIVAMSHA_RIDER));
     stablelane.rows.imperial_1.push(unit(CAVALIER));
-    stablelane.rows.imperial_1.push(unit(ELITE_STEPPE_LANCER));
-    stablelane.rows.imperial_1.push(unit(HEAVY_CAMEL_RIDER));
-    stablelane.rows.imperial_1.push(unit(ELITE_BATTLE_ELEPHANT));
-    stablelane.rows.imperial_1.push(unit(HEAVY_HEI_GUANG_CAVALRY));
+    stablelane.rows.imperial_1.push(regionalunit(ELITE_STEPPE_LANCER));
+    stablelane.rows.imperial_1.push(regionalunit(HEAVY_CAMEL_RIDER));
+    stablelane.rows.imperial_1.push(regionalunit(ELITE_BATTLE_ELEPHANT));
+    stablelane.rows.imperial_1.push(regionalunit(HEAVY_HEI_GUANG_CAVALRY));
     stablelane.rows.imperial_2.push(uniqueunit(WINGED_HUSSAR));
     stablelane.rows.imperial_2.push(uniqueunit(IMPERIAL_CAMEL_RIDER));
     stablelane.rows.imperial_2.push(unit(PALADIN));
@@ -827,23 +846,23 @@ function getDefaultTree() {
     let siegeworkshoplane = new Lane();
     siegeworkshoplane.rows.castle_1.push(building(SIEGE_WORKSHOP));
     siegeworkshoplane.rows.castle_2.push(unit(BATTERING_RAM));
-    siegeworkshoplane.rows.castle_2.push(unit(ARMORED_ELEPHANT));
+    siegeworkshoplane.rows.castle_2.push(regionalunit(ARMORED_ELEPHANT));
     siegeworkshoplane.rows.castle_2.push(unit(MANGONEL));
-    siegeworkshoplane.rows.castle_2.push(unit(ROCKET_CART));
+    siegeworkshoplane.rows.castle_2.push(regionalunit(ROCKET_CART));
     siegeworkshoplane.rows.castle_2.push(unit(SCORPION));
     siegeworkshoplane.rows.castle_2.push(unit(SIEGE_TOWER));
     siegeworkshoplane.rows.castle_2.push(uniqueunit(WAR_CHARIOT));
     siegeworkshoplane.rows.imperial_1.push(unit(CAPPED_RAM));
-    siegeworkshoplane.rows.imperial_1.push(unit(SIEGE_ELEPHANT));
+    siegeworkshoplane.rows.imperial_1.push(regionalunit(SIEGE_ELEPHANT));
     siegeworkshoplane.rows.imperial_1.push(unit(ONAGER));
-    siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_ROCKET_CART));
+    siegeworkshoplane.rows.imperial_1.push(regionalunit(HEAVY_ROCKET_CART));
     siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_SCORPION));
     siegeworkshoplane.rows.imperial_1.push(unit(BOMBARD_CANNON));
     siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_RAM));
     siegeworkshoplane.rows.imperial_2.push(uniqueunit(FLAMING_CAMEL));
     siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_ONAGER));
     siegeworkshoplane.rows.imperial_2.push(uniqueunit(MOUNTED_TREBUCHET));
-    siegeworkshoplane.rows.imperial_2.push(uniqueunit(TRACTION_TREBUCHET));
+    siegeworkshoplane.rows.imperial_2.push(regionalunit(TRACTION_TREBUCHET));
     siegeworkshoplane.rows.imperial_2.push(uniqueunit(HOUFNICE));
     tree.lanes.push(siegeworkshoplane);
 
@@ -893,8 +912,8 @@ function getDefaultTree() {
     docklane.rows.imperial_1.push(uniqueunit(ELITE_CARAVEL));
     docklane.rows.imperial_1.push(tech(DRY_DOCK));
     docklane.rows.imperial_1.push(tech(SHIPWRIGHT));
-    docklane.rows.imperial_2.push(unit(DROMON));
-    docklane.rows.imperial_2.push(uniqueunit(LOU_CHUAN));
+    docklane.rows.imperial_2.push(regionalunit(DROMON));
+    docklane.rows.imperial_2.push(regionalunit(LOU_CHUAN));
     docklane.rows.imperial_2.push(uniqueunit(THIRISADAI));
     docklane.rows.imperial_2.push(unit(ELITE_CANNON_GALLEON));
     tree.lanes.push(docklane);
@@ -902,7 +921,7 @@ function getDefaultTree() {
 
     let fishtraplane = new Lane();
     fishtraplane.rows.feudal_1.push(building(FISH_TRAP));
-    fishtraplane.rows.castle_1.push(building(HARBOR));
+    fishtraplane.rows.castle_1.push(uniquebuilding(HARBOR));
     tree.lanes.push(fishtraplane);
 
 
@@ -944,10 +963,10 @@ function getDefaultTree() {
 
     let castlelane = new Lane();
     castlelane.rows.castle_1.push(building(CASTLE));
-    castlelane.rows.castle_2.push(new Caret(TYPES.UNIQUEUNIT, UNIQUE_UNIT, UNIQUE_UNIT));
+    castlelane.rows.castle_2.push(new Caret(TYPES.UNIQUE_UNIT, UNIQUE_UNIT, UNIQUE_UNIT));
     castlelane.rows.castle_2.push(unit(PETARD));
     castlelane.rows.castle_2.push(tech(UNIQUE_TECH_1));
-    castlelane.rows.imperial_1.push(new Caret(TYPES.UNIQUEUNIT, ELITE_UNIQUE_UNIT, ELITE_UNIQUE_UNIT));
+    castlelane.rows.imperial_1.push(new Caret(TYPES.UNIQUE_UNIT, ELITE_UNIQUE_UNIT, ELITE_UNIQUE_UNIT));
     castlelane.rows.imperial_1.push(unit(TREBUCHET));
     castlelane.rows.imperial_1.push(tech(UNIQUE_TECH_2));
     castlelane.rows.imperial_1.push(tech(HOARDINGS));
@@ -961,14 +980,14 @@ function getDefaultTree() {
 
 
     let krepostlane = new Lane();
-    krepostlane.rows.castle_1.push(building(KREPOST));
+    krepostlane.rows.castle_1.push(uniquebuilding(KREPOST));
     krepostlane.rows.castle_2.push(uniqueunit(KONNIK_2));
     krepostlane.rows.imperial_1.push(uniqueunit(ELITE_KONNIK_2));
     tree.lanes.push(krepostlane);
 
 
     let donjonlane = new Lane();
-    donjonlane.rows.feudal_1.push(building(DONJON));
+    donjonlane.rows.feudal_1.push(uniquebuilding(DONJON));
     donjonlane.rows.feudal_2.push(uniqueunit(DSERJEANT));
     donjonlane.rows.feudal_2.push(unit(DSPEARMAN));
     donjonlane.rows.castle_1.push(unit(DPIKEMAN));
@@ -995,7 +1014,7 @@ function getDefaultTree() {
     tree.lanes.push(monasterylane);
 
     let fortifiedchurchlane = new Lane();
-    fortifiedchurchlane.rows.castle_1.push(building(FORTIFIED_CHURCH));
+    fortifiedchurchlane.rows.castle_1.push(regionalbuilding(FORTIFIED_CHURCH));
     fortifiedchurchlane.rows.castle_2.push(uniqueunit(WARRIOR_PRIEST));
     tree.lanes.push(fortifiedchurchlane);
 
@@ -1029,11 +1048,11 @@ function getDefaultTree() {
 
 
     let feitorialane = new Lane();
-    feitorialane.rows.imperial_1.push(building(FEITORIA));
+    feitorialane.rows.imperial_1.push(uniquebuilding(FEITORIA));
     tree.lanes.push(feitorialane);
 
     let caravanserailane = new Lane();
-    caravanserailane.rows.imperial_1.push(building(CARAVANSERAI));
+    caravanserailane.rows.imperial_1.push(regionalbuilding(CARAVANSERAI));
     tree.lanes.push(caravanserailane);
 
 
@@ -1046,7 +1065,7 @@ function getDefaultTree() {
     tree.lanes.push(miningcamplane);
 
     let mulecartlane = new Lane();
-    mulecartlane.rows.dark_1.push(building(MULE_CART));
+    mulecartlane.rows.dark_1.push(regionalbuilding(MULE_CART));
     tree.lanes.push(mulecartlane);
 
 
@@ -1069,7 +1088,7 @@ function getDefaultTree() {
 
 
     let farmlane = new Lane();
-    farmlane.rows.dark_1.push(building(FOLWARK));
+    farmlane.rows.dark_1.push(uniquebuilding(FOLWARK));
     farmlane.rows.dark_2.push(building(FARM));
     tree.lanes.push(farmlane);
 
@@ -1086,7 +1105,7 @@ function getDefaultTree() {
 
 
     let pasturelane = new Lane();
-    pasturelane.rows.dark_1.push(building(PASTURE));
+    pasturelane.rows.dark_1.push(uniquebuilding(PASTURE));
     tree.lanes.push(pasturelane);
 
 

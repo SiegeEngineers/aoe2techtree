@@ -756,7 +756,7 @@ function create_colour_key() {
         td_color.style.width = '23px';
         tr.appendChild(td_color);
         let td_type = document.createElement('td');
-        td_type.innerText = data.strings[data.tech_tree_strings[LEGEND[index]['name']]];
+        td_type.innerText = data.tech_tree_strings[LEGEND[index]['name']].map(x => data.strings[x]).join(' ');
         tr.appendChild(td_type);
         if (index % 2 === 1) {
             kc.appendChild(tr);

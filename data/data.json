@@ -22816,13 +22816,16 @@
     },
     "tech_tree_strings": {
         "Age of Empires II": "1001",
-        "Building": "300084",
+        "Common Building": ["20132", "300084"],
+        "Regional Building": ["20133", "300084"],
+        "Unique Building": ["20134", "300084"],
         "Civilization": "9681",
         "Key": "300081",
-        "Technology": "300085",
+        "Technology": ["300085"],
         "Technology Tree": "9799",
-        "Unique Unit": "300082",
-        "Unit": "300083",
+        "Unique Unit": ["20134", "300083"],
+        "Regional Unit": ["20133", "300083"],
+        "Common Unit": ["20132", "300083"],
         "mode": "1"
     },
     "techtrees": {

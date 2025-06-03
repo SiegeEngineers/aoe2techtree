@@ -1,16 +1,14 @@
 const TYPES = Object.freeze({
     'BUILDING': {colour: '#922602', type: 'BUILDING', name: 'Building'},
     'UNIT': {colour: '#3a6a80', type: 'UNIT', name: 'Unit'},
-    'UNIQUEUNIT': {colour: '#af30a3', type: 'UNIQUEUNIT', name: 'Unique Unit'},
     'TECHNOLOGY': {colour: '#2c5729', type: 'TECHNOLOGY', name: 'Technology'}
 });
 
-const LEGEND = [TYPES.UNIT, TYPES.BUILDING, TYPES.TECHNOLOGY];
+const LEGEND = Object.values(TYPES);
 
 const PREFIX = Object.freeze({
     'BUILDING': 'building_',
     'UNIT': 'unit_',
-    'UNIQUEUNIT': 'unit_',
     'TECHNOLOGY': 'tech_'
 });
 
@@ -28,7 +26,7 @@ const getAgeNames = (data) => {
 const unitClasses = {
     0: '<abbr title="unused">Wonders</abbr>',
     1: 'Infantry',
-    2: 'Turtle Ships and Thirisadai',
+    2: 'Heavy Warships',
     3: 'Base Pierce',
     4: 'Base Melee',
     5: 'Elephants',
@@ -53,31 +51,24 @@ const unitClasses = {
     24: 'Boars etc.',
     25: 'Monks',
     26: 'Castles & Kreposts',
-    27: 'Spearmen',
+    27: 'Spear Units',
     28: 'Mounted Archers',
-    29: 'Eagle Warriors',
+    29: 'Shock Infantry',
     30: 'Camels',
     31: '<abbr title="previously used by the Leitis as armor-ignoring attack">Obsolete</abbr>',
     32: 'Condottieri',
     33: '<abbr title="no unit has this armor class">Gunpowder units secondary projectile attack</abbr>',
     34: 'Fishing Ships',
     35: 'Mamelukes',
-    36: '<abbr title="unused">Heroes & Kings</abbr>',
-    37: 'Hussite Wagons',
+    36: 'Heroes & Kings',
+    37: 'Heavy Siege',
     38: 'Skirmishers',
     39: 'Cavalry Resistance',
+    40: 'Houses'
 };
 
 const animation_duration = 50;
 
-const UNIQUE_UNIT = 'UNIQUE UNIT';
-const ELITE_UNIQUE_UNIT = 'ELITE UNIQUE UNIT';
-const UNIQUE_TECH_1 = 'UNIQUE TECH 1';
-const UNIQUE_TECH_2 = 'UNIQUE TECH 2';
-const MONK_PREFIX_MESO = 'meso_';
-const MONK_PREFIX_AFRICAN = 'african_';
-const MONK_PREFIX_ASIAN = 'asian_';
-const MONK_PREFIX_GENERIC = '';
 const BUILDING_STYLE_GENERIC = '';
 const BARRACKS = 12;
 const DOCK = 45;
@@ -478,10 +469,6 @@ function building(id) {
 
 function unit(id) {
     return new Caret(TYPES.UNIT, getName(id, 'units'), id);
-}
-
-function uniqueunit(id) {
-    return new Caret(TYPES.UNIQUEUNIT, getName(id, 'units'), id);
 }
 
 function tech(id) {
