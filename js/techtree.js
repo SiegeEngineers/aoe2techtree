@@ -999,9 +999,9 @@ function getDefaultTree() {
 
 
     let donjonlane = new Lane();
-    donjonlane.rows.feudal_1.push(building(DONJON));
-    donjonlane.rows.feudal_2.push(uniqueunit(DSERJEANT));
-    donjonlane.rows.feudal_2.push(unit(DSPEARMAN));
+    donjonlane.rows.dark_1.push(building(DONJON));
+    donjonlane.rows.feudal_1.push(uniqueunit(DSERJEANT));
+    donjonlane.rows.feudal_1.push(unit(DSPEARMAN));
     donjonlane.rows.castle_1.push(unit(DPIKEMAN));
     donjonlane.rows.imperial_1.push(uniqueunit(ELITE_DSERJEANT));
     donjonlane.rows.imperial_1.push(unit(DHALBERDIER));
