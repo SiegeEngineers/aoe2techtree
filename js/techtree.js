@@ -906,23 +906,19 @@ function getDefaultTree() {
     docklane.rows.imperial_1.push(uniqueunit(DRAGON_FIRE_SHIP));
     docklane.rows.imperial_1.push(unit(HEAVY_DEMO_SHIP));
     docklane.rows.imperial_1.push(unit(GALLEON));
+    docklane.rows.feudal_1.push(building(FISH_TRAP));
+    docklane.rows.castle_1.push(uniquebuilding(HARBOR));
     docklane.rows.imperial_1.push(unit(CANNON_GALLEON));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_TURTLE_SHIP));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_LONGBOAT));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_CARAVEL));
     docklane.rows.imperial_1.push(tech(DRY_DOCK));
-    docklane.rows.imperial_1.push(tech(SHIPWRIGHT));
     docklane.rows.imperial_2.push(regionalunit(DROMON));
     docklane.rows.imperial_2.push(regionalunit(LOU_CHUAN));
     docklane.rows.imperial_2.push(uniqueunit(THIRISADAI));
+    docklane.rows.imperial_2.push(tech(SHIPWRIGHT));
     docklane.rows.imperial_2.push(unit(ELITE_CANNON_GALLEON));
     tree.lanes.push(docklane);
-
-
-    let fishtraplane = new Lane();
-    fishtraplane.rows.feudal_1.push(building(FISH_TRAP));
-    fishtraplane.rows.castle_1.push(uniquebuilding(HARBOR));
-    tree.lanes.push(fishtraplane);
 
 
     let universitylane = new Lane();
@@ -987,9 +983,9 @@ function getDefaultTree() {
 
 
     let donjonlane = new Lane();
-    donjonlane.rows.feudal_1.push(uniquebuilding(DONJON));
-    donjonlane.rows.feudal_2.push(uniqueunit(DSERJEANT));
-    donjonlane.rows.feudal_2.push(unit(DSPEARMAN));
+    donjonlane.rows.dark_1.push(uniquebuilding(DONJON));
+    donjonlane.rows.feudal_1.push(uniqueunit(DSERJEANT));
+    donjonlane.rows.feudal_1.push(unit(DSPEARMAN));
     donjonlane.rows.castle_1.push(unit(DPIKEMAN));
     donjonlane.rows.imperial_1.push(uniqueunit(ELITE_DSERJEANT));
     donjonlane.rows.imperial_1.push(unit(DHALBERDIER));
@@ -1191,12 +1187,11 @@ function getConnections() {
         [u(WAR_GALLEY), u(GALLEON)],
         [b(DOCK), t(CAREENING)],
         [t(CAREENING), t(DRY_DOCK)],
-        [b(DOCK), t(SHIPWRIGHT)],
+        //[b(DOCK), t(SHIPWRIGHT)],
         [b(DOCK), b(FISH_TRAP)],
         [u(FIRE_GALLEY), u(FIRE_SHIP)],
         [u(FIRE_SHIP), u(FAST_FIRE_SHIP)],
         [u(FIRE_SHIP), u(DRAGON_FIRE_SHIP)],
-        [b(DOCK), u(CANNON_GALLEON)],
         [u(CANNON_GALLEON), u(ELITE_CANNON_GALLEON)],
         [b(WATCH_TOWER), b(GUARD_TOWER)],
         [b(GUARD_TOWER), b(KEEP)],
