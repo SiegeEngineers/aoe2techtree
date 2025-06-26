@@ -4175,7 +4175,7 @@
             "1061": {
                 "Cost": {
                     "Food": 250,
-                    "Gold": 300
+                    "Wood": 300
                 },
                 "ID": 1061,
                 "LanguageHelpId": 28473,
@@ -5134,7 +5134,7 @@
             "1910": {
                 "Cost": {
                     "Food": 950,
-                    "Gold": 750
+                    "Gold": 550
                 },
                 "ID": 991,
                 "ResearchTime": 45,
@@ -20626,7 +20626,7 @@
                         "Class": 23
                     }
                 ],
-                "Attack": 8,
+                "Attack": 9,
                 "AttackDelaySeconds": 0.4166666666666667,
                 "Attacks": [
                     {
@@ -20634,7 +20634,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 8,
+                        "Amount": 9,
                         "Class": 4
                     },
                     {
@@ -20669,7 +20669,7 @@
                 "ChargeEvent": 4,
                 "ChargeType": 6,
                 "Cost": {
-                    "Gold": 50,
+                    "Gold": 45,
                     "Wood": 40
                 },
                 "FrameDelay": 10,
@@ -20764,7 +20764,7 @@
                 "ChargeEvent": 5,
                 "ChargeType": 6,
                 "Cost": {
-                    "Gold": 50,
+                    "Gold": 45,
                     "Wood": 40
                 },
                 "FrameDelay": 10,
@@ -21018,8 +21018,8 @@
                 "MinRange": 0,
                 "PierceArmor": 3,
                 "Range": 0,
-                "RechargeDuration": 59.999880000240005,
-                "RechargeRate": 0.0166667,
+                "RechargeDuration": 40.0,
+                "RechargeRate": 0.025,
                 "ReloadTime": 2.28,
                 "Speed": 1.4,
                 "TrainTime": 14,
@@ -21101,8 +21101,8 @@
                 "MinRange": 0,
                 "PierceArmor": 3,
                 "Range": 0,
-                "RechargeDuration": 50.0,
-                "RechargeRate": 0.02,
+                "RechargeDuration": 30.000030000029998,
+                "RechargeRate": 0.0333333,
                 "ReloadTime": 2.28,
                 "Speed": 1.4,
                 "TrainTime": 14,
@@ -21138,7 +21138,7 @@
                         "Class": 23
                     }
                 ],
-                "Attack": 11,
+                "Attack": 12,
                 "AttackDelaySeconds": 0.4666666666666667,
                 "Attacks": [
                     {
@@ -21150,7 +21150,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 11,
+                        "Amount": 12,
                         "Class": 3
                     },
                     {
@@ -21170,11 +21170,11 @@
                 "ChargeType": 0,
                 "Cost": {
                     "Food": 35,
-                    "Gold": 70
+                    "Gold": 65
                 },
                 "FrameDelay": 14,
                 "GarrisonCapacity": 0,
-                "HP": 35,
+                "HP": 40,
                 "ID": 1911,
                 "LanguageHelpId": 26596,
                 "LanguageNameId": 5596,
@@ -21931,7 +21931,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 4,
+                "Attack": 5,
                 "AttackDelaySeconds": 0.9099999999999999,
                 "Attacks": [
                     {
@@ -21943,7 +21943,7 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 4,
+                        "Amount": 5,
                         "Class": 3
                     },
                     {
@@ -21968,7 +21968,7 @@
                     }
                 ],
                 "ChargeEvent": 0,
-                "ChargeType": 6,
+                "ChargeType": 7,
                 "Cost": {
                     "Gold": 25,
                     "Wood": 60
@@ -22315,8 +22315,8 @@
                 "PierceArmor": 5,
                 "Range": 6,
                 "RechargeRate": 0,
-                "ReloadTime": 8,
-                "Speed": 0.8,
+                "ReloadTime": 6.5,
+                "Speed": 0.9,
                 "TrainTime": 28,
                 "Trait": 8,
                 "TraitPiece": 1980,
@@ -22805,8 +22805,8 @@
                 "PierceArmor": 5,
                 "Range": 6,
                 "RechargeRate": 0,
-                "ReloadTime": 8,
-                "Speed": 0.8,
+                "ReloadTime": 6.5,
+                "Speed": 0.9,
                 "TrainTime": 28,
                 "Trait": 8,
                 "TraitPiece": 1962,
@@ -50138,6 +50138,10 @@
                 {
                     "age": 3,
                     "id": 140
+                },
+                {
+                    "age": 3,
+                    "id": 182
                 },
                 {
                     "age": 3,
