@@ -16,6 +16,9 @@ TECH_TREE_STRINGS = {
     "Unit": "300083",
     "Building": "300084",
     "Technology": "300085",
+    "Common": "20132",
+    "Regional": "20133",
+    "Unique": "20134",
 }
 
 AGE_NAMES = {
@@ -356,7 +359,7 @@ def parse_line(key_value, line):
             key_value[1] = text
 
 
-def gather_data(content, civs, unit_upgrades):
+def gather_data(content, civs, unit_upgrades, node_types):
     building_ids = set.union({b['id'] for c in civs.values() for b in c['buildings']}, \
                              {RTWC2})
     unit_ids = set.union({u['id'] for c in civs.values() for u in c['units']}, \
@@ -369,7 +372,7 @@ def gather_data(content, civs, unit_upgrades):
         {CARTOGRAPHY, TRACKING})
     gaia = content["Civs"][0]
     graphics = content["Graphics"]
-    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}}
+    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}, "node_types": node_types}
     for unit in gaia["Units"]:
         if unit["ID"] in building_ids:
             add_building(unit["ID"], unit, data)
@@ -580,17 +583,20 @@ def gather_civs(techtrees):
     )
     civs = {}
     unit_upgrades = {}
+    node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
         if civ['civ_id'] in ('ACHAEMENIDS','ATHENIANS','SPARTANS'):
             continue
         current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkSuffix': ''}
         for building in civ['civ_techs_buildings']:
+            node_types['buildings'][building['Node ID']] = building['Node Type']
             if building['Node Status'] != 'NotAvailable':
                 current_civ['buildings'].append({'id': building['Node ID'], 'age': building['Age ID']})
         for unit in civ['civ_techs_units']:
             if unit['Name'] == 'Monk':
                 current_civ['monkSuffix'] = f"_{unit['Picture Index']}"
             if unit['Node Type'] in ('Unit', 'UniqueUnit', 'UnitUpgrade', 'RegionalUnit') and unit['Node Status'] != 'NotAvailable':
+                node_types['units'][unit['Node ID']] = unit['Node Type']
                 if is_castle_age_unique_unit(unit):
                     current_civ['unique']['castleAgeUniqueUnit'] = unit['Node ID']
                 elif is_imperial_age_unique_unit(unit):
@@ -599,7 +605,8 @@ def gather_civs(techtrees):
                     current_civ['units'].append({'id': unit['Node ID'], 'age': unit['Age ID']})
                 if unit['Trigger Tech ID'] > -1:
                     unit_upgrades[unit['Node ID']] = unit['Trigger Tech ID']
-            if unit['Node Type'] in ('BuildingNonTech',):
+            if unit['Node Type'] in ('BuildingNonTech', 'UniqueBuilding'):
+                node_types['buildings'][unit['Node ID']] = unit['Node Type']
                 current_civ['buildings'].append({'id': unit['Node ID'], 'age': unit['Age ID']})
 
 
@@ -625,19 +632,22 @@ def gather_civs(techtrees):
 
     XOLOTL_WARRIOR = 1570
     for civname in ('Aztecs', 'Mayans', 'Incas'):
+        for item in civs[civname]['units']:
+            assert item['id'] != XOLOTL_WARRIOR
         civs[civname]['units'].append({'id': XOLOTL_WARRIOR, 'age': 3})
         civs[civname]['units'] = sorted(civs[civname]['units'], key=lambda x: x['id'])
-    HARBOR = 1189
-    civs['Malay']['buildings'].append({'id': HARBOR, 'age': 3})
-    civs['Malay']['buildings'] = sorted(civs['Malay']['buildings'], key=lambda x: x['id'])
+    assert XOLOTL_WARRIOR not in node_types['units']
+    node_types['units'][XOLOTL_WARRIOR] = 'RegionalUnit'
 
     DEMOLITION_SHIP = 527
     FIRE_SHIP = 529
     WAR_GALLEY_UPGRADE = 34
+    assert unit_upgrades[DEMOLITION_SHIP] != WAR_GALLEY_UPGRADE
     unit_upgrades[DEMOLITION_SHIP] = WAR_GALLEY_UPGRADE
+    assert unit_upgrades[FIRE_SHIP] != WAR_GALLEY_UPGRADE
     unit_upgrades[FIRE_SHIP] = WAR_GALLEY_UPGRADE
 
-    return civs, unit_upgrades
+    return civs, unit_upgrades, node_types
 
 
 def write_datafile(data, techtrees, outputdir):
@@ -761,10 +771,10 @@ def process_aoe2(args, outputdir):
     ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
     Path('/tmp/test.json').write_text(ttfcontent)
     techtrees = json.loads(ttfcontent)
-    civs, unit_upgrades = gather_civs(techtrees)
+    civs, unit_upgrades, node_types = gather_civs(techtrees)
     datafile = Path(args.datafile)
     content = json.loads(datafile.read_text())
-    data = gather_data(content, civs, unit_upgrades)
+    data = gather_data(content, civs, unit_upgrades, node_types)
     write_datafile(data, civs, outputdir)
     write_language_files(args, data, outputdir)
 

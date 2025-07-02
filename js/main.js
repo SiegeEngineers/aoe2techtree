@@ -156,7 +156,7 @@ function displayData() {
             for (let caret of row) {
                 const item = draw.group().attr({id: caret.id}).addClass('node');
                 const rect = item.rect(caret.width, caret.height).attr({
-                    fill: caret.type.colour,
+                    fill: caret.colour || caret.type.colour,
                     id: `${caret.id}_bg`
                 }).move(caret.x, caret.y);
                 let name = formatName(caret.name);
@@ -744,28 +744,63 @@ function create_building_index() {
 }
 
 function create_colour_key() {
-    let kc = document.getElementById('key__table');
-    let tr = null
-    for (let index in LEGEND) {
-        if (index % 2 === 0) {
-            tr = document.createElement('tr');
-        }
-        let td_color = document.createElement('td');
-        td_color.style.backgroundColor = LEGEND[index]['colour'];
-        td_color.style.border = '1px outset #8a5d21';
-        td_color.style.width = '23px';
-        tr.appendChild(td_color);
-        let td_type = document.createElement('td');
-        td_type.innerText = data.strings[data.tech_tree_strings[LEGEND[index]['name']]];
-        tr.appendChild(td_type);
-        if (index % 2 === 1) {
-            kc.appendChild(tr);
-        }
-    }
-    if (LEGEND.length % 2 > 0) {
-        kc.appendChild(tr)
-    }
-    document.getElementById('key__label').innerText = data.strings[data.tech_tree_strings['Key']];
+    let table = document.getElementById('key__table');
+    let tr = document.createElement('tr');
+
+    let td = document.createElement('td');
+    td.style.fontWeight = 'bold';
+    td.innerText = data.strings[data.tech_tree_strings['Key']];
+    tr.appendChild(td);
+    td = document.createElement('td');
+    td.innerText = data.strings[data.tech_tree_strings['Common']];
+    tr.appendChild(td);
+    td = document.createElement('td');
+    td.innerText = data.strings[data.tech_tree_strings['Regional']];
+    tr.appendChild(td);
+    td = document.createElement('td');
+    td.innerText = data.strings[data.tech_tree_strings['Unique']];
+    tr.appendChild(td);
+    table.appendChild(tr);
+
+    tr = document.createElement('tr');
+    td = document.createElement('td');
+    td.innerText = data.strings[data.tech_tree_strings['Unit']];
+    tr.appendChild(td);
+    addSquareToKey(tr, 'Unit');
+    addSquareToKey(tr, 'RegionalUnit');
+    addSquareToKey(tr, 'UniqueUnit');
+    table.appendChild(tr);
+
+    tr = document.createElement('tr');
+    td = document.createElement('td');
+    td.innerText = data.strings[data.tech_tree_strings['Building']];
+    tr.appendChild(td);
+    addSquareToKey(tr, 'BuildingTech');
+    addSquareToKey(tr, 'RegionalBuilding');
+    addSquareToKey(tr, 'UniqueBuilding');
+    table.appendChild(tr);
+
+    tr = document.createElement('tr');
+    td = document.createElement('td');
+    td.innerText = data.strings[data.tech_tree_strings['Technology']];
+    tr.appendChild(td);
+    addSquareToKey(tr, 'Technology');
+    td = document.createElement('td');
+    tr.appendChild(td);
+    table.appendChild(tr);
+}
+
+function addSquareToKey(tr, nodeType) {
+    const td = document.createElement('td');
+    td.style.textAlign = 'center';
+    const span = document.createElement('span');
+    span.style.display = 'inline-block';
+    span.style.backgroundColor = getColourForNodeType(nodeType);
+    span.style.border = '1px outset #8a5d21';
+    span.style.width = '23px';
+    span.style.height = '23px';
+    td.appendChild(span);
+    tr.appendChild(td);
 }
 
 function changeLocale() {

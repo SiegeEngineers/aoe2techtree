@@ -207,7 +207,8 @@ hr:before {
 
 #key__table {
     border: none;
-    border-spacing: 10px;
+    border-spacing: 2px;
+    font-size: 90%;
 }
 
 .locale-switcher {
