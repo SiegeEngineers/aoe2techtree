@@ -1030,11 +1030,6 @@ function getDefaultTree() {
     fortifiedchurchlane.rows.castle_2.push(uniqueunit(WARRIOR_PRIEST));
     tree.lanes.push(fortifiedchurchlane);
 
-
-    let houselane = new Lane();
-    houselane.rows.dark_1.push(building(HOUSE));
-    tree.lanes.push(houselane);
-
     let towncenterlane = new Lane();
     towncenterlane.rows.dark_1.push(building(TOWN_CENTER));
     towncenterlane.rows.dark_2.push(unit(VILLAGER));
@@ -1050,22 +1045,10 @@ function getDefaultTree() {
 
 
     let additionaltowncenterlane = new Lane();
+    additionaltowncenterlane.rows.dark_1.push(building(HOUSE));
     additionaltowncenterlane.rows.castle_1.push(building(TOWN_CENTER_2));
+    additionaltowncenterlane.rows.imperial_1.push(building(WONDER));
     tree.lanes.push(additionaltowncenterlane);
-
-
-    let wonderlane = new Lane();
-    wonderlane.rows.imperial_1.push(building(WONDER));
-    tree.lanes.push(wonderlane);
-
-
-    let feitorialane = new Lane();
-    feitorialane.rows.imperial_1.push(building(FEITORIA));
-    tree.lanes.push(feitorialane);
-
-    let caravanserailane = new Lane();
-    caravanserailane.rows.imperial_1.push(building(CARAVANSERAI));
-    tree.lanes.push(caravanserailane);
 
 
     let miningcamplane = new Lane();
@@ -1074,10 +1057,12 @@ function getDefaultTree() {
     miningcamplane.rows.feudal_1.push(tech(STONE_MINING));
     miningcamplane.rows.castle_1.push(tech(GOLD_SHAFT_MINING));
     miningcamplane.rows.castle_1.push(tech(STONE_SHAFT_MINING));
+    miningcamplane.rows.imperial_1.push(building(FEITORIA));
     tree.lanes.push(miningcamplane);
 
     let mulecartlane = new Lane();
     mulecartlane.rows.dark_1.push(building(MULE_CART));
+    mulecartlane.rows.imperial_1.push(building(CARAVANSERAI));
     tree.lanes.push(mulecartlane);
 
 
@@ -1090,34 +1075,30 @@ function getDefaultTree() {
 
 
     let marketlane = new Lane();
+    marketlane.rows.dark_1.push(building(FOLWARK));
     marketlane.rows.feudal_1.push(building(MARKET));
     marketlane.rows.feudal_2.push(unit(TRADE_CART));
-    marketlane.rows.castle_1.push(tech(COINAGE));
+    marketlane.rows.castle_2.push(tech(COINAGE));
     marketlane.rows.castle_1.push(tech(CARAVAN));
     marketlane.rows.imperial_1.push(tech(BANKING));
-    marketlane.rows.imperial_1.push(tech(GUILDS));
+    marketlane.rows.imperial_2.push(tech(GUILDS));
     tree.lanes.push(marketlane);
 
 
     let farmlane = new Lane();
-    farmlane.rows.dark_1.push(building(FOLWARK));
+    farmlane.rows.dark_1.push(building(MILL));
     farmlane.rows.dark_2.push(building(FARM));
+    farmlane.rows.feudal_1.push(tech(HORSE_COLLAR));
+    farmlane.rows.castle_1.push(tech(HEAVY_PLOW));
+    farmlane.rows.imperial_1.push(tech(CROP_ROTATION));
     tree.lanes.push(farmlane);
-
-
-    let milllane = new Lane();
-    milllane.rows.dark_1.push(building(MILL));
-    milllane.rows.feudal_1.push(tech(HORSE_COLLAR));
-    milllane.rows.feudal_1.push(tech(DOMESTICATION));
-    milllane.rows.castle_1.push(tech(HEAVY_PLOW));
-    milllane.rows.castle_1.push(tech(PASTORALISM));
-    milllane.rows.imperial_1.push(tech(CROP_ROTATION));
-    milllane.rows.imperial_1.push(tech(TRANSHUMANCE));
-    tree.lanes.push(milllane);
 
 
     let pasturelane = new Lane();
     pasturelane.rows.dark_1.push(building(PASTURE));
+    pasturelane.rows.feudal_1.push(tech(DOMESTICATION));
+    pasturelane.rows.castle_1.push(tech(PASTORALISM));
+    pasturelane.rows.imperial_1.push(tech(TRANSHUMANCE));
     tree.lanes.push(pasturelane);
 
 
@@ -1303,7 +1284,6 @@ function getConnections() {
         [b(LUMBER_CAMP), t(DOUBLE_BIT_AXE)],
         [t(DOUBLE_BIT_AXE), t(BOW_SAW)],
         [t(BOW_SAW), t(TWO_MAN_SAW)],
-        [b(MARKET), t(CARAVAN)],
         [t(COINAGE), t(BANKING)],
         [b(MARKET), u(TRADE_CART)],
         [b(MILL), b(MARKET)],
