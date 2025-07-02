@@ -1092,10 +1092,10 @@ function getDefaultTree() {
     let marketlane = new Lane();
     marketlane.rows.feudal_1.push(building(MARKET));
     marketlane.rows.feudal_2.push(unit(TRADE_CART));
-    marketlane.rows.castle_1.push(tech(COINAGE));
     marketlane.rows.castle_1.push(tech(CARAVAN));
+    marketlane.rows.castle_2.push(tech(COINAGE));
     marketlane.rows.imperial_1.push(tech(BANKING));
-    marketlane.rows.imperial_1.push(tech(GUILDS));
+    marketlane.rows.imperial_2.push(tech(GUILDS));
     tree.lanes.push(marketlane);
 
 
@@ -1223,6 +1223,7 @@ function getConnections() {
         [t(DEVOTION), t(FAITH)],
         [b(FORTIFIED_CHURCH), u(MONK)],
         [b(FORTIFIED_CHURCH), u(WARRIOR_PRIEST)],
+        [b(FORTIFIED_CHURCH), t(DEVOTION)],
         [b(FORTIFIED_CHURCH), t(REDEMPTION)],
         [b(FORTIFIED_CHURCH), t(ATONEMENT)],
         [b(FORTIFIED_CHURCH), t(HERBAL_MEDICINE)],
@@ -1303,7 +1304,7 @@ function getConnections() {
         [b(LUMBER_CAMP), t(DOUBLE_BIT_AXE)],
         [t(DOUBLE_BIT_AXE), t(BOW_SAW)],
         [t(BOW_SAW), t(TWO_MAN_SAW)],
-        [b(MARKET), t(CARAVAN)],
+        //[b(MARKET), t(CARAVAN)],
         [t(COINAGE), t(BANKING)],
         [b(MARKET), u(TRADE_CART)],
         [b(MILL), b(MARKET)],
