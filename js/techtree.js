@@ -923,10 +923,10 @@ function getDefaultTree() {
     docklane.rows.imperial_1.push(uniqueunit(ELITE_LONGBOAT));
     docklane.rows.imperial_1.push(uniqueunit(ELITE_CARAVEL));
     docklane.rows.imperial_1.push(tech(DRY_DOCK));
-    docklane.rows.imperial_1.push(tech(SHIPWRIGHT));
     docklane.rows.imperial_2.push(unit(DROMON));
     docklane.rows.imperial_2.push(uniqueunit(LOU_CHUAN));
     docklane.rows.imperial_2.push(uniqueunit(THIRISADAI));
+    docklane.rows.imperial_2.push(tech(SHIPWRIGHT));
     docklane.rows.imperial_2.push(unit(ELITE_CANNON_GALLEON));
     tree.lanes.push(docklane);
 
@@ -1203,7 +1203,6 @@ function getConnections() {
         [u(WAR_GALLEY), u(GALLEON)],
         [b(DOCK), t(CAREENING)],
         [t(CAREENING), t(DRY_DOCK)],
-        [b(DOCK), t(SHIPWRIGHT)],
         [b(DOCK), b(FISH_TRAP)],
         [u(FIRE_GALLEY), u(FIRE_SHIP)],
         [u(FIRE_SHIP), u(FAST_FIRE_SHIP)],
