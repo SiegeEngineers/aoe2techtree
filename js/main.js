@@ -679,10 +679,15 @@ function ifDefinedAndGreaterZero(value, prefix) {
 function arrayIfDefinedAndNonEmpty(attacks, prefix) {
     if (attacks !== undefined && 0 < attacks.length) {
         const strings = [];
+        // Hiding these armor classes from being displayed because no units have attack bonuses against them
+        const unusedArmorClasses = [0, 36, 40];
+        const obsoleteArmorClasses = [31]; // hiding these - because there is no purpose of showing them
         for (let attack of attacks) {
             const amount = attack['Amount'];
-            const clazz = unitClasses[attack['Class']];
-            strings.push(`${amount} (${clazz})`);
+            if (!obsoleteArmorClasses.includes(attack['Class']) && !unusedArmorClasses.includes(attack['Class'])) {
+                const clazz = unitClasses[attack['Class']];
+                strings.push(`${amount} (${clazz})`);
+            }
         }
         return prefix + '<p>' + strings.join(', ') + '</p>';
     }
