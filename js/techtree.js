@@ -24,7 +24,7 @@ const getAgeNames = (data)=>{
 }
 
 const unitClasses = {
-    0: '<abbr title="unused">Wonders</abbr>',
+    0: 'Wonders',
     1: 'Infantry',
     2: 'Heavy Warships',
     3: 'Base Pierce',
@@ -35,7 +35,7 @@ const unitClasses = {
     8: '<abbr title="except Camels">Mounted Units</abbr>',
     9: 'Unused',
     10: 'Unused',
-    11: '<abbr title="except Fish Traps">All Buildings</abbr>',
+    11: 'All Buildings',
     12: 'Unused',
     13: '<abbr title="except Castles and Kreposts">Stone Defense & Harbors</abbr>',
     14: 'Wolves etc.',
@@ -45,7 +45,7 @@ const unitClasses = {
     18: 'Trees',
     19: 'Unique Units',
     20: 'Siege Units',
-    21: '<abbr title="except Fish Traps and Wonders">Standard Buildings</abbr>',
+    21: '<abbr title="All buildings except Wonders">Standard Buildings</abbr>',
     22: 'Walls & Gates',
     23: 'Gunpowder Units',
     24: 'Boars etc.',
