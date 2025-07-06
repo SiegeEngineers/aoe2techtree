@@ -101,7 +101,7 @@ function buildTree(civ) {
         document.getElementById('techtree').removeChild(root);
     }
     // tree = getDefaultTree();
-    tree = getCustomTree(civ)
+    tree = getCustomTree(civ);
     // connections = getConnections();
     connections = getCustomConnections(civ);
     parentConnections = new Map();
@@ -156,7 +156,7 @@ function buildTree(civ) {
     for (let connection of connections) {
         console.log(connection)
         if (connection[0] === 'building_528') {  // fucking dromon; heavy demo is _not_ a building ffs
-            continue
+            continue;
         }
         let from = connectionpoints.get(connection[0]);
         let to = connectionpoints.get(connection[1]);
