@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <meta charset="utf-8">
+    <title>Age of Empires II Chronicles Tech Tree</title>
+    <link rel="alternate" hreflang="x-default" href="https://aoe2techtree.net/chronicles">
+    <link rel="alternate" hreflang="en" href="https://aoe2techtree.net/chronicles/?lng=en">
+    <link rel="alternate" hreflang="zh-CN" href="https://aoe2techtree.net/chronicles/?lng=zh">
+    <link rel="alternate" hreflang="zh-TW" href="https://aoe2techtree.net/chronicles/?lng=tw">
+    <link rel="alternate" hreflang="fr" href="https://aoe2techtree.net/chronicles/?lng=fr">
+    <link rel="alternate" hreflang="de" href="https://aoe2techtree.net/chronicles/?lng=de">
+    <link rel="alternate" hreflang="hi" href="https://aoe2techtree.net/chronicles/?lng=hi">
+    <link rel="alternate" hreflang="it" href="https://aoe2techtree.net/chronicles/?lng=it">
+    <link rel="alternate" hreflang="ja" href="https://aoe2techtree.net/chronicles/?lng=jp">
+    <link rel="alternate" hreflang="ko" href="https://aoe2techtree.net/chronicles/?lng=ko">
+    <link rel="alternate" hreflang="ms" href="https://aoe2techtree.net/chronicles/?lng=ms">
+    <link rel="alternate" hreflang="pl" href="https://aoe2techtree.net/chronicles/?lng=pl">
+    <link rel="alternate" hreflang="ru" href="https://aoe2techtree.net/chronicles/?lng=ru">
+    <link rel="alternate" hreflang="es-ES" href="https://aoe2techtree.net/chronicles/?lng=es">
+    <link rel="alternate" hreflang="es-MX" href="https://aoe2techtree.net/chronicles/?lng=mx">
+    <link rel="alternate" hreflang="tr" href="https://aoe2techtree.net/chronicles/?lng=tr">
+    <link rel="alternate" hreflang="vi" href="https://aoe2techtree.net/chronicles/?lng=vi">
+    <link rel="alternate" hreflang="pt-BR" href="https://aoe2techtree.net/chronicles/?lng=br">
+    <link rel="stylesheet" href="../fonts/merriweather.css">
+    <link rel="stylesheet" href="../style.css">
+    <script defer src="../js/svg.min.js"></script>
+    <script defer src="js/techtree.js"></script>
+    <script defer src="../js/main.js"></script>
+</head>
+
+<body>
+<div id="container">
+    <div id="wrapper">
+        <div id="metainfo">
+            <div id="civinfo">
+                <div id="civtitle">
+                    <select id="civselect" onchange="loadCiv()" autofocus>
+                        <option>Achaemenids</option>
+                        <option>Athenians</option>
+                        <option>Spartans</option>
+                    </select>
+                    <img id="civlogo" height="81" width="81" data-transparent="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
+                </div>
+                <p id="civtext"></p>
+            </div>
+            <div class="buildingindex">
+                <hr>
+                <table id="buildingindex__table">
+                </table>
+            </div>
+            <div class="key">
+                <b id="key__label"></b>
+                <table id="key__table">
+                </table>
+            </div>
+            <div class="locale-switcher">
+                <select id="localeselect" onchange="changeLocale()">
+                </select>
+            </div>
+            <div class="credits">
+                <p>
+                Version: Age of Empires II Chronicles Update <a href="https://www.ageofempires.com/news/age-of-empires-ii-definitive-edition-update-143421/" target="_blank" title="Changelog" rel="nofollow">143191</a>
+                    |
+                    <a href="/">» DE</a>
+                    |
+                    <a href="/ror">» RoR</a>
+                </p>
+                <p>
+                    A project by <a href="https://siegeengineers.org" rel="author" class="has-text-grey">Siege Engineers</a>.
+                    Contribute on <a href="https://github.com/SiegeEngineers/aoe2techtree" target="_blank">GitHub</a>.
+                    <a class="inverted" href="https://siegeengineers.org/donate/?from=aoe2techtree">Donate</a> to support this project.
+                </p>
+                <p>
+                    Made by hszemi, Anda, exterkamp, paulirish, lalitpatel, ides315,
+                    with thanks to Jineapple, TriRem, pip, and NkoDragaš<br>
+                </p>
+                <p>
+                    Item Metadata (cost, HP etc.) taken from <a href="https://github.com/HSZemi/aoe2dat" target="_blank">aoe2dat</a>
+                </p>
+                <p>
+                    Age of Empires II &copy; Microsoft Corporation.<br>
+                    <b>aoe2techtree</b> was created under Microsoft's "<a href="https://www.xbox.com/en-us/developers/rules" rel="nofollow">Game Content Usage Rules</a>" using assets
+                    from Age of Empires II, and it is not endorsed by or affiliated with Microsoft.
+                </p>
+            </div>
+        </div>
+        <div id="techtree">
+            <div id="helptext">
+                <div id="helptext__content"></div>
+                <details id="advanced-stats">
+                    <summary>Advanced Stats</summary>
+                    <div id="helptext__advanced_stats"></div>
+                    <div id="helptext__x_ref">
+                        <h3>Civilizations</h3>
+                        <div id="helptext__x_ref__container"></div>
+                    </div>
+                </details>
+              </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

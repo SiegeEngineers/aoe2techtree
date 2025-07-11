@@ -660,7 +660,34 @@ function enable(buildings, units, techs) {
     }
 }
 
+function applyEarlierAges(selectedCiv) {
+    SVG.find('.earlier-age').each(function () {
+        let {id, type, ageId} = parseSVGObjectId2(this.id());
+        if (id === undefined || type === undefined || ageId === undefined) {
+            console.error("Could not process: ", this.id());
+            return;
+        }
+
+        let earlyItem;
+        switch (type) {
+            case 'unit': earlyItem = selectedCiv.units.find((item) => item.id === id && item.age <= ageId);
+                break;
+            case 'building': earlyItem = selectedCiv.buildings.find((item) => item.id === id && item.age <= ageId);
+                break;
+            case 'tech': earlyItem = selectedCiv.techs.find((item) => item.id === id && item.age <= ageId);
+        }
+        if (earlyItem) {
+            getShieldForEarlierAge(this, earlyItem.age);
+            return;
+        }
+        if (SVGObjectIsOpaque(this)) {
+            makeSVGObjectOpaque(this, 0);
+        }
+    });
+}
+
 function applySelectedCiv(selectedCiv) {
+    applyEarlierAges(selectedCiv);
     enable(selectedCiv.buildings,
         [...selectedCiv.units, {id:UNIQUE_UNIT, age: 3}, {id: ELITE_UNIQUE_UNIT, age: 4}],
         [...selectedCiv.techs, {id: UNIQUE_TECH_1, age: 3}, {id: UNIQUE_TECH_2, age: 4}]);
