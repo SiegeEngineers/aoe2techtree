@@ -107,11 +107,10 @@ function displayData() {
     let icon_width = 112;
     let vertical_spacing = (row_height - icon_height) / 2 - 10;
     let margin_left = 20;
-    let image_urls = AGE_IMAGES;
     let age_names = getAgeNames(data);
-    for (let i = 0; i < image_urls.length; i++) {
+    for (let i = 0; i < AGE_IMAGES.length; i++) {
         let age_image_group = draw.group().click(hideHelp);
-        let age_image = age_image_group.image('img/Ages/' + image_urls[i])
+        let age_image = age_image_group.image('img/Ages/' + AGE_IMAGES[i])
             .size(icon_width, icon_height)
             .x(margin_left)
             .y(row_height * i + vertical_spacing);
@@ -119,8 +118,7 @@ function displayData() {
             .text(age_names[i])
             .font({size: 16, weight: 'bold'}) /* Text-anchor: middle does not work. */
             .cx(icon_width / 2 + margin_left)
-            .y(age_image.attr('y') + age_image.attr('height') + 5)
-        ;
+            .y(age_image.attr('y') + age_image.attr('height') + 5);
     }
 
     const connectionGroup = draw.group().attr({id: 'connection_lines'});
@@ -324,6 +322,7 @@ function displayHelp(caretId) {
     let id = overlay.data('id').replace('_copy', '');
     let caret = overlay.data('caret');
     let type = overlay.data('type');
+    if (name.includes('placeholder')) return hideHelp();
     helptextContent.innerHTML = getHelpText(name, id, type);
     helptextAdvancedStats.innerHTML = getAdvancedStats(name, id, type);
     styleXRefBadges(name, id, type);
@@ -451,9 +450,6 @@ function getHelpText(name, id, type) {
     let entitytype = getEntityType(type);
     const items = id.split('_', 1);
     id = id.substring(items[0].length + 1);
-    if (id === "null") {
-        return '?';
-    }
     let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
     if (text === undefined) {
         return '?';
@@ -622,8 +618,10 @@ function styleXRefBadges(name, id, type) {
                 if (civs[civ].techs.map((item) => `tech_${item.id}`).includes(id)) {
                     found = true;
                 } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech1}` === id || `tech_${civs[civ]?.unique?.castleAgeUniqueTech2}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech1}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech2}` === id) {
+                    // Chronicles unique technologies
                     found = true;
                 } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech}` === id) {
+                    // Age of Empires II unique technologies
                     found = true;
                 }
             } else if (type === 'BUILDING') {
