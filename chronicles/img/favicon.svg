@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="256" cy="256" r="256" id="gradient-0" gradientTransform="matrix(1, 0, 0, 1, 0, 0)">
+      <stop offset="0" style="stop-color: rgba(187, 218, 85, 1)"/>
+      <stop offset="1" style="stop-color: rgba(135, 165, 36, 1)"/>
+    </radialGradient>
+  </defs>
+  <rect style="stroke: url(#gradient-0); fill: rgb(208, 156, 97);" transform="matrix(0, -1, 1, 0, 0, 512)" x="0" y="0" width="512" height="512" rx="72" ry="72">
+    <title>Background</title>
+  </rect>
+  <g>
+    <title>Connectors</title>
+    <line style="fill: rgb(34, 70, 31); stroke: rgba(0, 0, 0, 0.82); stroke-linecap: round; stroke-width: 12px;" x1="256.3" y1="170" x2="256.3" y2="332"/>
+    <line style="fill: rgb(34, 70, 31); stroke: rgba(0, 0, 0, 0.82); stroke-linecap: round; stroke-width: 12px;" x1="420" y1="257" x2="420" y2="338"/>
+    <line style="fill: rgb(34, 70, 31); stroke: rgba(0, 0, 0, 0.82); stroke-linecap: round; stroke-width: 12px;" x1="92" y1="257" x2="92" y2="338"/>
+    <line style="fill: rgb(34, 70, 31); stroke: rgba(0, 0, 0, 0.82); stroke-linecap: round; stroke-width: 12px;" x1="92" y1="257" x2="420" y2="257"/>
+  </g>
+  <rect style="fill: rgb(125, 25, 4); vector-effect: non-scaling-stroke; stroke: rgba(60, 40, 18, 0.29);" x="196" y="72" width="120" height="120" rx="10" ry="10">
+    <title>Building</title>
+  </rect>
+  <rect style="fill: rgb(45, 87, 108); vector-effect: non-scaling-stroke; stroke: rgba(60, 40, 18, 0.29);" y="320" width="120" height="120" rx="10" ry="10" x="31.759">
+    <title>Unit</title>
+  </rect>
+  <rect style="fill: rgb(34, 70, 31); vector-effect: non-scaling-stroke; stroke: rgba(60, 40, 18, 0.29);" y="320" width="120" height="120" rx="10" ry="10" x="196">
+    <title>Research</title>
+  </rect>
+  <rect style="fill: rgb(157, 20, 144); vector-effect: non-scaling-stroke; stroke: rgba(60, 40, 18, 0.29);" y="320" width="120" height="120" rx="10" ry="10" x="360.241">
+    <title>Unique Unit</title>
+  </rect>
+</svg>

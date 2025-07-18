@@ -51,17 +51,6 @@ function updatePageTitle() {
     document.title = `${aoe2}${suffix} ${techtree}`;
 }
 
-function getShieldForEarlierRow(row) {
-    const age = row.split('_')[0];
-    for (let i = 1; i < AGE_IMAGES.length; i++) {
-        const ageimage = AGE_IMAGES[i];
-        if (ageimage.includes(age)) {
-            return AGE_IMAGES[i - 1];
-        }
-    }
-    return AGE_IMAGES[0];
-}
-
 function getAgeNumber(row) {
     const age = row.split('_')[0];
     for (let i = 0; i < AGE_IMAGES.length; i++) {
@@ -118,11 +107,10 @@ function displayData() {
     let icon_width = 112;
     let vertical_spacing = (row_height - icon_height) / 2 - 10;
     let margin_left = 20;
-    let image_urls = AGE_IMAGES;
     let age_names = getAgeNames(data);
-    for (let i = 0; i < image_urls.length; i++) {
+    for (let i = 0; i < AGE_IMAGES.length; i++) {
         let age_image_group = draw.group().click(hideHelp);
-        let age_image = age_image_group.image('img/Ages/' + image_urls[i])
+        let age_image = age_image_group.image('img/Ages/' + AGE_IMAGES[i])
             .size(icon_width, icon_height)
             .x(margin_left)
             .y(row_height * i + vertical_spacing);
@@ -130,8 +118,7 @@ function displayData() {
             .text(age_names[i])
             .font({size: 16, weight: 'bold'}) /* Text-anchor: middle does not work. */
             .cx(icon_width / 2 + margin_left)
-            .y(age_image.attr('y') + age_image.attr('height') + 5)
-        ;
+            .y(age_image.attr('y') + age_image.attr('height') + 5);
     }
 
     const connectionGroup = draw.group().attr({id: 'connection_lines'});
@@ -160,11 +147,12 @@ function displayData() {
                     id: `${caret.id}_bg`
                 }).move(caret.x, caret.y);
                 let name = formatName(caret.name);
+                const y_correction = caret.name ? 0 : 9;
                 const text = item.text(name.toString())
                     .font({size: 9, weight: 'bold'})
                     .attr({fill: '#ffffff', opacity: 0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
                     .cx(caret.x + caret.width / 2)
-                    .y(caret.y + caret.height / 1.5);
+                    .y(caret.y + caret.height / 1.5 + y_correction);
                 const image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
                     .attr({fill: '#000000', opacity: 0.5, id: caret.id + '_imgph'})
                     .move(caret.x + caret.width * 0.2, caret.y);
@@ -183,9 +171,9 @@ function displayData() {
                     .attr({id: caret.id + '_x'})
                     .addClass('cross')
                     .move(caret.x + caret.width * 0.15, caret.y - caret.height * 0.04);
-                const earlier_age_image = item.image('img/Ages/' + getShieldForEarlierRow(r))
+                const earlier_age_image = item.image('img/missing.png')
                     .size(caret.width * 0.3, caret.height * 0.3)
-                    .attr({id: caret.id + '_earlier_age_img_' + ageNumber, 'opacity': 0})
+                    .attr({id: caret.id + '_age_img_' + ageNumber, 'opacity': 0})
                     .addClass('earlier-age')
                     .move(caret.x + caret.width * 0.85, caret.y - caret.width * 0.15);
                 const overlaytrigger = item.rect(caret.width, caret.height)
@@ -257,6 +245,7 @@ function onAdvancedStatsStateUpdate() {
 }
 
 function imagePrefix(name) {
+    if (name.includes('placeholder')) return 'missing';
     return name.replace('_copy', '')
         .replace('building_', 'Buildings/')
         .replace('unit_', 'Units/')
@@ -333,6 +322,7 @@ function displayHelp(caretId) {
     let id = overlay.data('id').replace('_copy', '');
     let caret = overlay.data('caret');
     let type = overlay.data('type');
+    if (name.includes('placeholder')) return hideHelp();
     helptextContent.innerHTML = getHelpText(name, id, type);
     helptextAdvancedStats.innerHTML = getAdvancedStats(name, id, type);
     styleXRefBadges(name, id, type);
@@ -627,7 +617,11 @@ function styleXRefBadges(name, id, type) {
             } else if (type === 'TECHNOLOGY') {
                 if (civs[civ].techs.map((item) => `tech_${item.id}`).includes(id)) {
                     found = true;
+                } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech1}` === id || `tech_${civs[civ]?.unique?.castleAgeUniqueTech2}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech1}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech2}` === id) {
+                    // Chronicles unique technologies
+                    found = true;
                 } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech}` === id) {
+                    // Age of Empires II unique technologies
                     found = true;
                 }
             } else if (type === 'BUILDING') {
@@ -851,6 +845,7 @@ function fillCivSelector() {
 
 function civ(name) {
     let selectedCiv = civs[name];
+    selectedCiv.name = name;
 
     SVG.find('.cross').each(function () {
         if (SVGObjectIsOpaque(this)) {
@@ -879,34 +874,12 @@ function civ(name) {
         makeSVGObjectOpaque(SVG('#' + this.id().replace('_x', '_disabled_gray')), 0.2);
     });
 
-    SVG.find('.earlier-age').each(function () {
-        let {id, type, ageId} = parseSVGObjectId2(this.id());
-        if (id === undefined || type === undefined || ageId === undefined) {
-            return;
-        }
-
-        if (type === 'unit') {
-            if (selectedCiv.units.some((item) => item.id === id && item.age === ageId)) {
-                makeSVGObjectOpaque(this);
-                return;
-            }
-        } else if (type === 'building') {
-            if (selectedCiv.buildings.some((item) => item.id === id && item.age === ageId)) {
-                makeSVGObjectOpaque(this);
-                return;
-            }
-        } else if (type === 'tech') {
-            if (selectedCiv.techs.some((item) => item.id === id && item.age === ageId)) {
-                makeSVGObjectOpaque(this);
-                return;
-            }
-        }
-        if (SVGObjectIsOpaque(this)) {
-            makeSVGObjectOpaque(this, 0);
-        }
-    });
-
     applySelectedCiv(selectedCiv);
+}
+
+function getShieldForEarlierAge(svgObj, actualAge) {
+    makeSVGObjectOpaque(svgObj);
+    SVG('#' + svgObj.node.id).load('img/Ages/' + AGE_IMAGES[actualAge-1]);
 }
 
 function SVGObjectIsOpaque(svgObj) {
@@ -935,13 +908,14 @@ function parseSVGObjectId(svgObjId) {
 }
 
 function parseSVGObjectId2(svgObjId) {
-    const id_regex = /(.+)_([\d]+)_earlier_age_img_([\d]+)/;
+    const id_regex = /^(unit|tech|building)_([\w]+)_age_img_(\d+)$/;
 
     const found = svgObjId.match(id_regex);
     if (!found) {
         return {id: undefined, type: undefined, ageId: undefined};
     }
-    let id = parseInt(found[2]);
+    let id = found[2];
+    if (!isNaN(parseInt(id))) id = parseInt(id);
     let type = found[1];
     let ageId = parseInt(found[3]);
 
