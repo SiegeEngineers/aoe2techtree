@@ -833,25 +833,25 @@ function getDefaultTree() {
     stablelane.rows.feudal_2.push(tech(BLOODLINES));
     stablelane.rows.feudal_2.push(uniqueunit(CAMEL_SCOUT));
     stablelane.rows.castle_1.push(unit(LIGHT_CAVALRY));
-    stablelane.rows.castle_1.push(uniqueunit(SHRIVAMSHA_RIDER));
+    stablelane.rows.castle_1.push(uniqueunit(XOLOTL_WARRIOR));
     stablelane.rows.castle_1.push(unit(KNIGHT));
-    stablelane.rows.castle_1.push(unit(STEPPE_LANCER));
     stablelane.rows.castle_1.push(unit(CAMEL_RIDER));
+    stablelane.rows.castle_1.push(unit(STEPPE_LANCER));
     stablelane.rows.castle_1.push(unit(BATTLE_ELEPHANT));
     stablelane.rows.castle_1.push(unit(HEI_GUANG_CAVALRY));
-    stablelane.rows.castle_1.push(uniqueunit(XOLOTL_WARRIOR));
+    stablelane.rows.castle_1.push(uniqueunit(SHRIVAMSHA_RIDER));
     stablelane.rows.castle_1.push(tech(HUSBANDRY));
     stablelane.rows.imperial_1.push(unit(HUSSAR));
-    stablelane.rows.imperial_1.push(uniqueunit(ELITE_SHRIVAMSHA_RIDER));
+    stablelane.rows.imperial_1.push(uniqueunit(WINGED_HUSSAR));
     stablelane.rows.imperial_1.push(unit(CAVALIER));
-    stablelane.rows.imperial_1.push(unit(ELITE_STEPPE_LANCER));
     stablelane.rows.imperial_1.push(unit(HEAVY_CAMEL_RIDER));
+    stablelane.rows.imperial_1.push(unit(ELITE_STEPPE_LANCER));
     stablelane.rows.imperial_1.push(unit(ELITE_BATTLE_ELEPHANT));
     stablelane.rows.imperial_1.push(unit(HEAVY_HEI_GUANG_CAVALRY));
-    stablelane.rows.imperial_2.push(uniqueunit(WINGED_HUSSAR));
+    stablelane.rows.imperial_1.push(uniqueunit(ELITE_SHRIVAMSHA_RIDER));
     stablelane.rows.imperial_2.push(uniqueunit(IMPERIAL_CAMEL_RIDER));
-    stablelane.rows.imperial_2.push(unit(PALADIN));
     stablelane.rows.imperial_2.push(uniqueunit(SAVAR));
+    stablelane.rows.imperial_2.push(unit(PALADIN));
     tree.lanes.push(stablelane);
 
 
@@ -1187,7 +1187,7 @@ function getConnections() {
         [u(HEI_GUANG_CAVALRY), u(HEAVY_HEI_GUANG_CAVALRY)],
         [b(STABLE), u(STEPPE_LANCER)],
         [u(STEPPE_LANCER), u(ELITE_STEPPE_LANCER)],
-        [b(STABLE), u(XOLOTL_WARRIOR)],
+        [b(STABLE), u(SHRIVAMSHA_RIDER)],
         [b(STABLE), t(HUSBANDRY)],
         [b(STABLE), u(KNIGHT)],
         [u(KNIGHT), u(CAVALIER)],
@@ -1223,6 +1223,7 @@ function getConnections() {
         [t(DEVOTION), t(FAITH)],
         [b(FORTIFIED_CHURCH), u(MONK)],
         [b(FORTIFIED_CHURCH), u(WARRIOR_PRIEST)],
+        [b(FORTIFIED_CHURCH), t(DEVOTION)],
         [b(FORTIFIED_CHURCH), t(REDEMPTION)],
         [b(FORTIFIED_CHURCH), t(ATONEMENT)],
         [b(FORTIFIED_CHURCH), t(HERBAL_MEDICINE)],
