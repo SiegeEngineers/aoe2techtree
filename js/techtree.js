@@ -562,9 +562,10 @@ class Lane {
         }
         this.width = lane_width;
 
+        const nonHeadBuildings = [b(CARAVANSERAI), b(FEITORIA)];
         for (let r of Object.keys(this.rows)) {
             for (let i = 0; i < this.rows[r].length; i++) {
-                if (this.rows[r][i].isBuilding()) {
+                if (this.rows[r][i].isBuilding() && !nonHeadBuildings.includes(this.rows[r][i].id)) {
                     this.rows[r][i].x = this.x + ((this.width - this.padding) / 2) - (this.rows[r][i].width / 2);
                 }
             }
@@ -1030,11 +1031,6 @@ function getDefaultTree() {
     fortifiedchurchlane.rows.castle_2.push(uniqueunit(WARRIOR_PRIEST));
     tree.lanes.push(fortifiedchurchlane);
 
-
-    let houselane = new Lane();
-    houselane.rows.dark_1.push(building(HOUSE));
-    tree.lanes.push(houselane);
-
     let towncenterlane = new Lane();
     towncenterlane.rows.dark_1.push(building(TOWN_CENTER));
     towncenterlane.rows.dark_2.push(unit(VILLAGER));
@@ -1050,22 +1046,12 @@ function getDefaultTree() {
 
 
     let additionaltowncenterlane = new Lane();
+    additionaltowncenterlane.rows.dark_1.push(building(HOUSE));
     additionaltowncenterlane.rows.castle_1.push(building(TOWN_CENTER_2));
+    additionaltowncenterlane.rows.imperial_1.push(building(WONDER));
+    additionaltowncenterlane.rows.imperial_2.push(building(FEITORIA));
+    additionaltowncenterlane.rows.imperial_2.push(building(CARAVANSERAI));
     tree.lanes.push(additionaltowncenterlane);
-
-
-    let wonderlane = new Lane();
-    wonderlane.rows.imperial_1.push(building(WONDER));
-    tree.lanes.push(wonderlane);
-
-
-    let feitorialane = new Lane();
-    feitorialane.rows.imperial_1.push(building(FEITORIA));
-    tree.lanes.push(feitorialane);
-
-    let caravanserailane = new Lane();
-    caravanserailane.rows.imperial_1.push(building(CARAVANSERAI));
-    tree.lanes.push(caravanserailane);
 
 
     let miningcamplane = new Lane();
