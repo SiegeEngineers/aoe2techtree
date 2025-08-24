@@ -11,6 +11,8 @@ from PIL.Image import Resampling
 PLAYER_COLOUR = (0, 119, 228)
 # PLAYER_COLOUR = (236,9,9)
 
+UPPER_CASE_CHRONICLES_CIV_NAMES = {"ACHAEMENIDS", "ATHENIANS", "SPARTANS"}
+
 BASE_PATH = Path.home() / 'aoe/Aoe2DE proton/widgetui/textures/ingame'
 TARGET_SIZE = (48, 48)
 
@@ -124,9 +126,13 @@ def main():
     ttfcontent = techtreesfile.read_text()
     ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
     techtrees = json.loads(ttfcontent)
+    process_aoe2(techtrees)
+    process_chronicles(techtrees)
+
+def process_aoe2(techtrees):
     ids = {'Units': set(), 'Buildings': set(), 'Techs': set()}
     for civ in techtrees['civs']:
-        if civ['civ_id'] in ('ACHAEMENIDS','ATHENIANS','SPARTANS'):
+        if civ['civ_id'] in UPPER_CASE_CHRONICLES_CIV_NAMES:
             continue
         for item in (civ['civ_techs_buildings'] + civ['civ_techs_units']):
             if item['Use Type'] == 'Unit':
@@ -151,6 +157,37 @@ def main():
             target_file = Path(__file__).parent.resolve().parent / 'img' / type_ / f'{id_}.png'
             if id_ == 125:  # Monk
                 target_file = Path(__file__).parent.resolve().parent / 'img' / type_ / f'{id_}_{picture_index}.png'
+            convert(source_dds, target_file)
+
+
+def process_chronicles(techtrees):
+    ids = {'Units': set(), 'Buildings': set(), 'Techs': set()}
+    for civ in techtrees['civs']:
+        if civ['civ_id'] not in UPPER_CASE_CHRONICLES_CIV_NAMES:
+            continue
+        for item in (civ['civ_techs_buildings'] + civ['civ_techs_units']):
+            if item['Use Type'] == 'Unit':
+                ids['Units'].add((item['Node ID'], item['Picture Index']))
+            if item['Use Type'] == 'Building':
+                ids['Buildings'].add((item['Node ID'], item['Picture Index']))
+            if item['Use Type'] == 'Tech':
+                ids['Techs'].add((item['Node ID'], item['Picture Index']))
+    for type_, ids_for_type in sorted(ids.items()):
+        for pair in sorted(ids_for_type):
+            id_, picture_index = pair
+            print(type_, picture_index)
+            sourcetype = type_.lower()
+            if sourcetype == 'techs':
+                sourcetype = 'tech';
+            source_dds_list = (list((BASE_PATH / sourcetype).glob(f'{picture_index:03}_*.dds')) +
+                          list((BASE_PATH / sourcetype).glob(f'{picture_index:03}_*.DDS')))
+            if len(source_dds_list) > 1:
+                print(source_dds_list)
+                raise AssertionError(f'list too long for {id_=}, {type_=}, {picture_index=}')
+            source_dds = source_dds_list[0]
+            target_file = Path(__file__).parent.resolve().parent / 'chronicles' / 'img' / type_ / f'{id_}.png'
+            if id_ == 125:  # Monk
+                target_file = Path(__file__).parent.resolve().parent / 'chronicles' / 'img' / type_ / f'{id_}_{picture_index}.png'
             convert(source_dds, target_file)
 
 
