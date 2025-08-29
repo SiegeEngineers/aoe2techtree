@@ -3,7 +3,10 @@
 import argparse
 import json
 import re
-import sys
+from genieutils.datfile import DatFile
+from genieutils.civ import Civ
+from genieutils.unit import Unit, Creatable
+from genieutils.tech import Tech
 from pathlib import Path
 
 TECH_TREE_STRINGS = {
@@ -232,22 +235,29 @@ WARCHAR_B = 1980
 CARTOGRAPHY = 19
 TRACKING = 90
 
-def get_unit_cost(unit):
-    return get_cost(unit["Creatable"])
+def cpp_round(value: float) -> int | float:
+    rounded_int = round(value)
+    if abs(rounded_int - value) < 0.0000001:
+        return rounded_int
+    return round(value, 6)
 
 
-def get_cost(creatable):
+def get_unit_cost(unit: Unit):
+    return get_cost(unit.creatable)
+
+
+def get_cost(creatable: Creatable | Tech) -> dict[str, int]:
     cost = {}
-    resource_costs = creatable["ResourceCosts"]
+    resource_costs = creatable.resource_costs
     for rc in resource_costs:
-        if rc["Type"] == 0:
-            cost["Food"] = rc["Amount"]
-        if rc["Type"] == 1:
-            cost["Wood"] = rc["Amount"]
-        if rc["Type"] == 2:
-            cost["Stone"] = rc["Amount"]
-        if rc["Type"] == 3:
-            cost["Gold"] = rc["Amount"]
+        if rc.type == 0:
+            cost["Food"] = rc.amount
+        if rc.type == 1:
+            cost["Wood"] = rc.amount
+        if rc.type == 2:
+            cost["Stone"] = rc.amount
+        if rc.type == 3:
+            cost["Gold"] = rc.amount
     return cost
 
 
@@ -359,7 +369,7 @@ def parse_line(key_value, line):
             key_value[1] = text
 
 
-def gather_data(content, civs, unit_upgrades, node_types):
+def gather_data(content: DatFile, civs, unit_upgrades, node_types):
     building_ids = set.union({b['id'] for c in civs.values() for b in c['buildings']}, \
                              {RTWC2})
     unit_ids = set.union({u['id'] for c in civs.values() for u in c['units']}, \
@@ -370,22 +380,24 @@ def gather_data(content, civs, unit_upgrades, node_types):
                          {c['unique']['castleAgeUniqueTech'] for c in civs.values()}, \
         {c['unique']['imperialAgeUniqueTech'] for c in civs.values()}, \
         {CARTOGRAPHY, TRACKING})
-    gaia = content["Civs"][0]
-    graphics = content["Graphics"]
+    gaia: Civ = content.civs[0]
+    graphics = content.graphics
     data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}, "node_types": node_types}
-    for unit in gaia["Units"]:
-        if unit["ID"] in building_ids:
-            add_building(unit["ID"], unit, data)
-        if unit["ID"] in unit_ids:
-            add_unit(unit["ID"], unit, graphics, data)
+    for unit in gaia.units:
+        if not unit:
+            continue
+        if unit.id in building_ids:
+            add_building(unit.id, unit, data)
+        if unit.id in unit_ids:
+            add_unit(unit.id, unit, graphics, data)
     tech_id = 0
-    for tech in content["Techs"]:
+    for tech in content.techs:
         if tech_id in tech_ids:
             add_tech(tech_id, tech, data)
         tech_id += 1
 
     for unit_id, upgrade_id in unit_upgrades.items():
-        tech = content["Techs"][upgrade_id]
+        tech = content.techs[upgrade_id]
         add_unit_upgrade(unit_id, upgrade_id, tech, data)
 
     data["units"][83]['LanguageNameId'] = 5606  # Villager
@@ -395,118 +407,120 @@ def gather_data(content, civs, unit_upgrades, node_types):
     return data
 
 
-def ror_gather_data(content, civs, unit_upgrades):
+def ror_gather_data(content: DatFile, civs, unit_upgrades):
     ages = list(ROR_AGE_NAMES.keys())[1:]
     building_ids = {b['id'] for c in civs.values() for b in c['buildings']}
     unit_ids = {u['id'] for c in civs.values() for u in c['units']}
     tech_ids = set.union(
         {t['id'] for c in civs.values() for t in c['techs']},
-        {t for t, tech in enumerate(content['Techs']) if tech['Name'] in ages},
-        {t for t, tech in enumerate(content['Techs']) if 'Wall' in tech['Name']},
-        {t for t, tech in enumerate(content['Techs']) if 'Tower' in tech['Name']},
+        {t for t, tech in enumerate(content.techs) if tech.name in ages},
+        {t for t, tech in enumerate(content.techs) if 'Wall' in tech.name},
+        {t for t, tech in enumerate(content.techs) if 'Tower' in tech.name},
     )
-    gaia = content["Civs"][0]
-    graphics = content["Graphics"]
+    gaia = content.civs[0]
+    graphics = content.graphics
     data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}}
-    for unit in gaia["Units"]:
-        if unit["ID"] in building_ids:
-            add_building(unit["ID"], unit, data)
-        if unit["ID"] in unit_ids:
-            add_unit(unit["ID"], unit, graphics, data)
+    for unit in gaia.units:
+        if not unit:
+            continue
+        if unit.id in building_ids:
+            add_building(unit.id, unit, data)
+        if unit.id in unit_ids:
+            add_unit(unit.id, unit, graphics, data)
     tech_id = 0
-    for tech in content["Techs"]:
+    for tech in content.techs:
         if tech_id in tech_ids:
             add_tech(tech_id, tech, data)
         tech_id += 1
 
     for unit_id, upgrade_id in unit_upgrades.items():
-        tech = content["Techs"][upgrade_id]
+        tech = content.techs[upgrade_id]
         add_unit_upgrade(unit_id, upgrade_id, tech, data)
 
     return data
 
 
-def add_building(building_id, unit, data):
+def add_building(building_id, unit: Unit, data):
     data['buildings'][building_id] = {
-        'internal_name': unit['Name'],
+        'internal_name': unit.name,
         'ID': building_id,
-        'HP': unit["HitPoints"],
+        'HP': unit.hit_points,
         'Cost': get_unit_cost(unit),
-        'Attack': unit["Type50"]["DisplayedAttack"],
-        'Range': unit["Type50"]["DisplayedRange"],
-        'MeleeArmor': unit["Type50"]["DisplayedMeleeArmour"],
-        'PierceArmor': unit["Creatable"]["DisplayedPierceArmour"],
-        'GarrisonCapacity': unit["GarrisonCapacity"],
-        'LineOfSight': unit["LineOfSight"],
-        'Attacks': unit["Type50"]["Attacks"],
-        'Armours': unit["Type50"]["Armours"],
-        'ReloadTime': unit["Type50"]["ReloadTime"],
-        'AccuracyPercent': unit["Type50"]["AccuracyPercent"],
-        'MinRange': unit["Type50"]["MinRange"],
-        'TrainTime': unit["Creatable"]["TrainTime"],
-        'LanguageNameId': unit['LanguageDLLName'],
-        'LanguageHelpId': unit['LanguageDLLName'] + 21_000,
+        'Attack': unit.type_50.displayed_attack,
+        'Range': cpp_round(unit.type_50.displayed_range),
+        'MeleeArmor': unit.type_50.displayed_melee_armour,
+        'PierceArmor': unit.creatable.displayed_pierce_armour,
+        'GarrisonCapacity': unit.garrison_capacity,
+        'LineOfSight': cpp_round(unit.line_of_sight),
+        'Attacks': [{'Amount': item.amount, 'Class': item.class_} for item in unit.type_50.attacks],
+        'Armours': [{'Amount': item.amount, 'Class': item.class_} for item in unit.type_50.armours],
+        'ReloadTime': cpp_round(unit.type_50.reload_time),
+        'AccuracyPercent': unit.type_50.accuracy_percent,
+        'MinRange': cpp_round(unit.type_50.min_range),
+        'TrainTime': unit.creatable.train_locations[0].train_time,
+        'LanguageNameId': unit.language_dll_name,
+        'LanguageHelpId': unit.language_dll_name + 21_000,
     }
 
 
-def add_unit(key, unit, graphics, data):
-    if unit["Type50"]["FrameDelay"] == 0 or unit["Type50"]["AttackGraphic"] == -1:
+def add_unit(key, unit: Unit, graphics, data):
+    if unit.type_50.frame_delay == 0 or unit.type_50.attack_graphic == -1:
         attack_delay_seconds = 0.0
     else:
-        attack_graphic = graphics[unit["Type50"]["AttackGraphic"]]
-        animation_duration = attack_graphic["AnimationDuration"]
-        frame_delay = unit["Type50"]["FrameDelay"]
-        frame_count = attack_graphic["FrameCount"]
+        attack_graphic = graphics[unit.type_50.attack_graphic]
+        animation_duration = attack_graphic.frame_duration * attack_graphic.frame_count
+        frame_delay = unit.type_50.frame_delay
+        frame_count = attack_graphic.frame_count
         attack_delay_seconds = animation_duration * frame_delay / frame_count
     data['units'][key] = {
-        'internal_name': unit['Name'],
+        'internal_name': unit.name,
         'ID': key,
-        'HP': unit["HitPoints"],
+        'HP': unit.hit_points,
         'Cost': get_unit_cost(unit),
-        'Attack': unit["Type50"]["DisplayedAttack"],
-        'Range': unit["Type50"]["DisplayedRange"],
-        'MeleeArmor': unit["Type50"]["DisplayedMeleeArmour"],
-        'PierceArmor': unit["Creatable"]["DisplayedPierceArmour"],
-        'GarrisonCapacity': unit["GarrisonCapacity"],
-        'LineOfSight': unit["LineOfSight"],
-        'Speed': unit["Speed"],
-        'Trait': unit["Trait"],
-        'TraitPiece': unit["Nothing"],
-        'Attacks': unit["Type50"]["Attacks"],
-        'Armours': unit["Type50"]["Armours"],
-        'ReloadTime': unit["Type50"]["ReloadTime"],
-        'AccuracyPercent': unit["Type50"]["AccuracyPercent"],
-        'FrameDelay': unit["Type50"]["FrameDelay"],
-        'AttackDelaySeconds': attack_delay_seconds,
-        'MinRange': unit["Type50"]["MinRange"],
-        'TrainTime': unit["Creatable"]["TrainTime"],
-        'MaxCharge': unit["Creatable"]["MaxCharge"],
-        'RechargeRate': unit["Creatable"]["RechargeRate"],
-        'ChargeEvent': unit["Creatable"]["ChargeEvent"],
-        'ChargeType': unit["Creatable"]["ChargeType"],
-        'LanguageNameId': unit['LanguageDLLName'],
-        'LanguageHelpId': unit['LanguageDLLName'] + 21_000,
+        'Attack': unit.type_50.displayed_attack,
+        'Range': cpp_round(unit.type_50.displayed_range),
+        'MeleeArmor': unit.type_50.displayed_melee_armour,
+        'PierceArmor': unit.creatable.displayed_pierce_armour,
+        'GarrisonCapacity': unit.garrison_capacity,
+        'LineOfSight': cpp_round(unit.line_of_sight),
+        'Speed': cpp_round(unit.speed),
+        'Trait': unit.trait,
+        'TraitPiece': unit.nothing,
+        'Attacks': [{'Amount': item.amount, 'Class': item.class_} for item in unit.type_50.attacks],
+        'Armours': [{'Amount': item.amount, 'Class': item.class_} for item in unit.type_50.armours],
+        'ReloadTime': cpp_round(unit.type_50.reload_time),
+        'AccuracyPercent': unit.type_50.accuracy_percent,
+        'FrameDelay': unit.type_50.frame_delay,
+        'AttackDelaySeconds': cpp_round(attack_delay_seconds),
+        'MinRange': cpp_round(unit.type_50.min_range),
+        'TrainTime': unit.creatable.train_locations[0].train_time,
+        'MaxCharge': cpp_round(unit.creatable.max_charge),
+        'RechargeRate': cpp_round(unit.creatable.recharge_rate),
+        'ChargeEvent': unit.creatable.charge_event,
+        'ChargeType': unit.creatable.charge_type,
+        'LanguageNameId': unit.language_dll_name,
+        'LanguageHelpId': unit.language_dll_name + 21_000,
     }
-    if unit["Creatable"]["RechargeRate"] > 0:
-        data['units'][key]['RechargeDuration'] = unit["Creatable"]["MaxCharge"] / unit["Creatable"]["RechargeRate"]
+    if unit.creatable.recharge_rate > 0:
+        data['units'][key]['RechargeDuration'] = unit.creatable.max_charge / unit.creatable.recharge_rate
 
 
-def add_tech(key, tech, data):
+def add_tech(key, tech: Tech, data):
     data['techs'][key] = {
-        'internal_name': tech['Name'],
-        'ResearchTime': tech['ResearchTime'],
+        'internal_name': tech.name,
+        'ResearchTime': tech.research_locations[0].research_time,
         'ID': key,
         'Cost': get_cost(tech),
-        'LanguageNameId': tech['LanguageDLLName'],
-        'LanguageHelpId': tech['LanguageDLLName'] + 21_000,
-        'Repeatable': tech['Repeatable'] == "1",
+        'LanguageNameId': tech.language_dll_name,
+        'LanguageHelpId': tech.language_dll_name + 21_000,
+        'Repeatable': tech.repeatable == 1,
     }
 
 
-def add_unit_upgrade(key, tech_id, tech, data):
+def add_unit_upgrade(key, tech_id, tech: Tech, data):
     data['unit_upgrades'][key] = {
-        'internal_name': tech['Name'],
-        'ResearchTime': tech['ResearchTime'],
+        'internal_name': tech.name,
+        'ResearchTime': tech.research_locations[0].research_time,
         'ID': tech_id,
         'Cost': get_cost(tech),
     }
@@ -757,8 +771,8 @@ def process_ror(args, outputdir):
     ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
     techtrees = json.loads(ttfcontent)
     civs, unit_upgrades = ror_gather_civs(techtrees)
-    datafile = Path(args.rordatafile)
-    content = json.loads(datafile.read_text())
+    datafile = Path(args.programdir) / 'modes' / 'Pompeii' / 'resources' / '_common' / 'dat' / 'empires2_x2_p1.dat'
+    content = DatFile.parse(datafile)
     data = ror_gather_data(content, civs, unit_upgrades)
     ror_update_civ_techs(civs, data)
     ror_write_datafile(data, civs, outputdir)
@@ -769,11 +783,10 @@ def process_aoe2(args, outputdir):
     techtreesfile = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'civTechTrees.json'
     ttfcontent = techtreesfile.read_text()
     ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
-    Path('/tmp/test.json').write_text(ttfcontent)
     techtrees = json.loads(ttfcontent)
     civs, unit_upgrades, node_types = gather_civs(techtrees)
-    datafile = Path(args.datafile)
-    content = json.loads(datafile.read_text())
+    datafile = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'empires2_x2_p1.dat'
+    content = DatFile.parse(datafile)
     data = gather_data(content, civs, unit_upgrades, node_types)
     write_datafile(data, civs, outputdir)
     write_language_files(args, data, outputdir)
@@ -781,8 +794,6 @@ def process_aoe2(args, outputdir):
 
 def main():
     parser = argparse.ArgumentParser(description='Generate data files for aoe2techtree')
-    parser.add_argument('datafile', help='A full.json file generated by aoe2dat')
-    parser.add_argument('rordatafile', help='A full.json file generated by aoe2dat, for the RoR dataset')
     parser.add_argument('programdir', help='The main folder of an aoe2de installation, usually '
                                            'C:/Program Files (x86)/Steam/steamapps/common/AoE2DE/')
 
