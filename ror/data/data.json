@@ -1933,6 +1933,7 @@
                         "Class": 1
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -1987,6 +1988,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2041,6 +2043,7 @@
                         "Class": 13
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2082,6 +2085,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2123,6 +2127,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2163,6 +2168,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2203,6 +2209,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2249,6 +2256,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2298,6 +2306,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2339,6 +2348,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2392,6 +2402,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2446,6 +2457,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2496,6 +2508,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2546,6 +2559,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2596,6 +2610,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2650,6 +2665,7 @@
                         "Class": 22
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2695,6 +2711,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2740,6 +2757,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2784,6 +2802,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2834,6 +2853,7 @@
                         "Class": 2
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2884,6 +2904,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0.8,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2934,6 +2955,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -2987,6 +3009,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3037,6 +3060,7 @@
                         "Class": 8
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3083,6 +3107,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3129,6 +3154,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3179,6 +3205,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 1,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3225,6 +3252,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3278,6 +3306,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3327,6 +3356,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3381,6 +3411,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3431,6 +3462,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3485,6 +3517,7 @@
                         "Class": 8
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3530,6 +3563,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3579,6 +3613,7 @@
                         "Class": 2
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3620,6 +3655,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3669,6 +3705,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 1.25,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3723,6 +3760,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3773,6 +3811,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 1.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3823,6 +3862,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 1.2,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3881,6 +3921,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3935,6 +3976,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3993,6 +4035,7 @@
                         "Class": 21
                     }
                 ],
+                "BlastWidth": 0.75,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4051,6 +4094,7 @@
                         "Class": 21
                     }
                 ],
+                "BlastWidth": 0.75,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4101,6 +4145,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4151,6 +4196,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 0.75,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {

@@ -500,6 +500,7 @@ def add_unit(key, unit: Unit, graphics, data):
         'ChargeType': unit.creatable.charge_type,
         'LanguageNameId': unit.language_dll_name,
         'LanguageHelpId': unit.language_dll_name + 21_000,
+        'BlastWidth': cpp_round(unit.type_50.blast_width),
     }
     if unit.creatable.recharge_rate > 0:
         data['units'][key]['RechargeDuration'] = unit.creatable.max_charge / unit.creatable.recharge_rate

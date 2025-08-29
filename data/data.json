@@ -5500,6 +5500,7 @@
                         "Class": 13
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5578,6 +5579,7 @@
                         "Class": 32
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5656,6 +5658,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5734,6 +5737,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5804,6 +5808,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5898,6 +5903,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5947,6 +5953,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5995,6 +6002,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6065,6 +6073,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6135,6 +6144,7 @@
                         "Class": 13
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6213,6 +6223,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6295,6 +6306,7 @@
                         "Class": 37
                     }
                 ],
+                "BlastWidth": 0.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6377,6 +6389,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6463,6 +6476,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6553,6 +6567,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6635,6 +6650,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6697,6 +6713,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6767,6 +6784,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6845,6 +6863,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6919,6 +6938,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6993,6 +7013,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7067,6 +7088,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7137,6 +7159,7 @@
                         "Class": 37
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7230,6 +7253,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7279,6 +7303,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7324,6 +7349,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7398,6 +7424,7 @@
                         "Class": 1
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7500,6 +7527,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7578,6 +7606,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7672,6 +7701,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7746,6 +7776,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7820,6 +7851,7 @@
                         "Class": 1
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7890,6 +7922,7 @@
                         "Class": 25
                     }
                 ],
+                "BlastWidth": 1,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7968,6 +8001,7 @@
                         "Class": 30
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8062,6 +8096,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8144,6 +8179,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8226,6 +8262,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 1,
                 "Cost": {
@@ -8325,6 +8362,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8427,6 +8465,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8485,6 +8524,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8579,6 +8619,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8673,6 +8714,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8739,6 +8781,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 0.25,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8805,6 +8848,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 1.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8871,6 +8915,7 @@
                         "Class": 22
                     }
                 ],
+                "BlastWidth": 0.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -8957,6 +9002,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9026,6 +9072,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9108,6 +9155,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9181,6 +9229,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9267,6 +9316,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9337,6 +9387,7 @@
                         "Class": 13
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9395,6 +9446,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 3,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9453,6 +9505,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 3.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9527,6 +9580,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9597,6 +9651,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9675,6 +9730,7 @@
                         "Class": 30
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9749,6 +9805,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9823,6 +9880,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9901,6 +9959,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9971,6 +10030,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10045,6 +10105,7 @@
                         "Class": 1
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10094,6 +10155,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10179,6 +10241,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10244,6 +10307,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 2,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10310,6 +10374,7 @@
                         "Class": 37
                     }
                 ],
+                "BlastWidth": 1.25,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10400,6 +10465,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10478,6 +10544,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10556,6 +10623,7 @@
                         "Class": 30
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10650,6 +10718,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10720,6 +10789,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10814,6 +10884,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10892,6 +10963,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -10974,6 +11046,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 1,
                 "Cost": {
@@ -11069,6 +11142,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11143,6 +11217,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11225,6 +11300,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11291,6 +11367,7 @@
                         "Class": 37
                     }
                 ],
+                "BlastWidth": 1.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11357,6 +11434,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 0.3,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11435,6 +11513,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11513,6 +11592,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11595,6 +11675,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11677,6 +11758,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11767,6 +11849,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11857,6 +11940,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -11947,6 +12031,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -12045,6 +12130,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -12143,6 +12229,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -12217,6 +12304,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -12291,6 +12379,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -12373,6 +12462,7 @@
                         "Class": 39
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -12455,6 +12545,7 @@
                         "Class": 39
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -12512,6 +12603,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -12597,6 +12689,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -12683,6 +12776,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -12777,6 +12871,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0.3,
                 "ChargeEvent": 0,
                 "ChargeType": 7,
                 "Cost": {
@@ -12872,6 +12967,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0.3,
                 "ChargeEvent": 0,
                 "ChargeType": 7,
                 "Cost": {
@@ -12955,6 +13051,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13037,6 +13134,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13127,6 +13225,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13217,6 +13316,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13303,6 +13403,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13389,6 +13490,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13475,6 +13577,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13561,6 +13664,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13639,6 +13743,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13717,6 +13822,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13799,6 +13905,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13881,6 +13988,7 @@
                         "Class": 32
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -13963,6 +14071,7 @@
                         "Class": 32
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14037,6 +14146,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14111,6 +14221,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14217,6 +14328,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14323,6 +14435,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14421,6 +14534,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14519,6 +14633,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14597,6 +14712,7 @@
                         "Class": 30
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14675,6 +14791,7 @@
                         "Class": 30
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14757,6 +14874,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14839,6 +14957,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14913,6 +15032,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -14971,6 +15091,7 @@
                         "Class": 4
                     }
                 ],
+                "BlastWidth": 2.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15024,6 +15145,7 @@
                 "Attack": 0,
                 "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15134,6 +15256,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15244,6 +15367,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15322,6 +15446,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15400,6 +15525,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15490,6 +15616,7 @@
                         "Class": 39
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15580,6 +15707,7 @@
                         "Class": 39
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15654,6 +15782,7 @@
                         "Class": 1
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15728,6 +15857,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15818,6 +15948,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0.4,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15908,6 +16039,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0.4,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -15986,6 +16118,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16072,6 +16205,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16158,6 +16292,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16244,6 +16379,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16330,6 +16466,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16416,6 +16553,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16502,6 +16640,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16588,6 +16727,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16674,6 +16814,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16752,6 +16893,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16830,6 +16972,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -16916,6 +17059,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17002,6 +17146,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17068,6 +17213,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17154,6 +17300,7 @@
                         "Class": 21
                     }
                 ],
+                "BlastWidth": 2,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17228,6 +17375,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17310,6 +17458,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17392,6 +17541,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17474,6 +17624,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17560,6 +17711,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 1,
                 "ChargeType": 1,
                 "Cost": {
@@ -17647,6 +17799,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 1,
                 "ChargeType": 1,
                 "Cost": {
@@ -17726,6 +17879,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17804,6 +17958,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17882,6 +18037,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -17960,6 +18116,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -18050,6 +18207,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -18128,6 +18286,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -18206,6 +18365,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -18280,6 +18440,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -18354,6 +18515,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -18444,6 +18606,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -18525,6 +18688,7 @@
                         "Class": 37
                     }
                 ],
+                "BlastWidth": 0.7,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -18603,6 +18767,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0.75,
                 "ChargeEvent": 1,
                 "ChargeType": 3,
                 "Cost": {
@@ -18682,6 +18847,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0.75,
                 "ChargeEvent": 1,
                 "ChargeType": 3,
                 "Cost": {
@@ -18781,6 +18947,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -18879,6 +19046,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -18961,6 +19129,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -19043,6 +19212,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -19133,6 +19303,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -19223,6 +19394,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 1.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -19301,6 +19473,7 @@
                         "Class": 30
                     }
                 ],
+                "BlastWidth": 1,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -19379,6 +19552,7 @@
                         "Class": 30
                     }
                 ],
+                "BlastWidth": 1,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -19457,6 +19631,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -19543,6 +19718,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 4,
                 "Cost": {
@@ -19630,6 +19806,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 4,
                 "Cost": {
@@ -19729,6 +19906,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -19819,6 +19997,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -19909,6 +20088,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20003,6 +20183,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20097,6 +20278,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20191,6 +20373,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20273,6 +20456,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20355,6 +20539,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20433,6 +20618,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20503,6 +20689,7 @@
                         "Class": 26
                     }
                 ],
+                "BlastWidth": 0.8,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20573,6 +20760,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20643,6 +20831,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20729,6 +20918,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20815,6 +21005,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20897,6 +21088,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -20979,6 +21171,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -21073,6 +21266,7 @@
                         "Class": 5
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 4,
                 "ChargeType": 6,
                 "Cost": {
@@ -21168,6 +21362,7 @@
                         "Class": 5
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 5,
                 "ChargeType": 6,
                 "Cost": {
@@ -21247,6 +21442,7 @@
                         "Class": 22
                     }
                 ],
+                "BlastWidth": 1,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -21325,6 +21521,7 @@
                         "Class": 22
                     }
                 ],
+                "BlastWidth": 1.25,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -21411,6 +21608,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 5,
                 "Cost": {
@@ -21498,6 +21696,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 5,
                 "Cost": {
@@ -21581,6 +21780,7 @@
                         "Class": 32
                     }
                 ],
+                "BlastWidth": 0.65,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -21659,6 +21859,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -21737,6 +21938,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -21827,6 +22029,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -21897,6 +22100,7 @@
                         "Class": 37
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -21987,6 +22191,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -22073,6 +22278,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -22135,6 +22341,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": -3,
                 "ChargeType": 6,
                 "Cost": {
@@ -22222,6 +22429,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -22308,6 +22516,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -22398,6 +22607,7 @@
                         "Class": 1
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 7,
                 "Cost": {
@@ -22481,6 +22691,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -22563,6 +22774,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -22645,6 +22857,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -22731,6 +22944,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -22813,6 +23027,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -22895,6 +23110,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0.25,
                 "ChargeEvent": -4,
                 "ChargeType": 6,
                 "Cost": {
@@ -22978,6 +23194,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0.25,
                 "ChargeEvent": -4,
                 "ChargeType": 6,
                 "Cost": {
@@ -23057,6 +23274,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -23139,6 +23357,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -23225,6 +23444,7 @@
                         "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
