@@ -282,10 +282,10 @@ def gather_language_data(resourcesdir, data, language):
     key_value[26768] = key_value[28314]  # Gillnets
     key_value[42057] = key_value[26288]  # Use Konnik for Dismounted Konnik
     key_value[42058] = key_value[26290]  # Use Elite Konnik for Dismounted Elite Konnik
-    key_value[21104] = key_value[5414]  # Fix Ratha name
+    key_value[21104] = key_value[5414]   # Fix Ratha name
     key_value[42104] = key_value[26414]  # Fix Ratha description
     key_value[42096] = key_value[26414]  # Fix Ratha (melee) description
-    key_value[21105] = key_value[5420]  # Fix Elite Ratha name
+    key_value[21105] = key_value[5420]   # Fix Elite Ratha name
     key_value[42105] = key_value[26420]  # Fix Elite Ratha description
     key_value[42097] = key_value[26420]  # Fix Elite Ratha (melee) description
     key_value[42198] = key_value[26364]  # Fix War Chariot (Barrage) description
@@ -782,10 +782,10 @@ def process_ror(args, outputdir):
     ttfcontent = techtreesfile.read_text()
     ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
     techtrees = json.loads(ttfcontent)
-    civs, unit_upgrades = ror_gather_civs(techtrees)
+    civs, unit_upgrades, node_types = ror_gather_civs(techtrees)
     datafile = Path(args.programdir) / 'modes' / 'Pompeii' / 'resources' / '_common' / 'dat' / 'empires2_x2_p1.dat'
     content = DatFile.parse(datafile)
-    data = ror_gather_data(content, civs, unit_upgrades)
+    data = ror_gather_data(content, civs, unit_upgrades, node_types)
     ror_update_civ_techs(civs, data)
     ror_write_datafile(data, civs, outputdir)
     ror_write_language_files(args, data, outputdir)
