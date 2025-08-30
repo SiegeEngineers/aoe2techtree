@@ -983,11 +983,11 @@ function getDefaultTree() {
     castlelane.rows.imperial_1.push(tech(UNIQUE_TECH_2));
     castlelane.rows.imperial_1.push(tech(HOARDINGS));
     castlelane.rows.imperial_1.push(tech(SAPPERS));
-    castlelane.rows.imperial_1.push(tech(CONSCRIPTION));
-    castlelane.rows.imperial_1.push(tech(SPIES_TREASON));
     castlelane.rows.imperial_2.push(uniqueunit(LIU_BEI));
     castlelane.rows.imperial_2.push(uniqueunit(CAO_CAO));
     castlelane.rows.imperial_2.push(uniqueunit(SUN_JIAN));
+    castlelane.rows.imperial_2.push(tech(CONSCRIPTION));
+    castlelane.rows.imperial_2.push(tech(SPIES_TREASON));
     tree.lanes.push(castlelane);
 
 
@@ -1234,11 +1234,8 @@ function getConnections() {
         [u(UNIQUE_UNIT), u(ELITE_UNIQUE_UNIT)],
         [b(CASTLE), u(PETARD)],
         [b(CASTLE), t(UNIQUE_TECH_1)],
-        [b(CASTLE), t(UNIQUE_TECH_2)],
         [b(CASTLE), t(HOARDINGS)],
         [b(CASTLE), t(SAPPERS)],
-        [b(CASTLE), t(CONSCRIPTION)],
-        [b(CASTLE), t(SPIES_TREASON)],
         [b(KREPOST), u(KONNIK_2)],
         [u(KONNIK_2), u(ELITE_KONNIK_2)],
         [b(DONJON), u(DSERJEANT)],
