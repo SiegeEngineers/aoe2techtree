@@ -1089,35 +1089,31 @@ function getDefaultTree() {
     tree.lanes.push(lumbercamplane);
 
 
-    let marketlane = new Lane();
-    marketlane.rows.feudal_1.push(building(MARKET));
-    marketlane.rows.feudal_2.push(unit(TRADE_CART));
-    marketlane.rows.castle_1.push(tech(COINAGE));
-    marketlane.rows.castle_1.push(tech(CARAVAN));
-    marketlane.rows.imperial_1.push(tech(BANKING));
-    marketlane.rows.imperial_1.push(tech(GUILDS));
-    tree.lanes.push(marketlane);
-
-
-    let farmlane = new Lane();
-    farmlane.rows.dark_1.push(building(FOLWARK));
-    farmlane.rows.dark_2.push(building(FARM));
-    tree.lanes.push(farmlane);
+    let folwarklane = new Lane();
+    folwarklane.rows.dark_1.push(building(FOLWARK));
+    folwarklane.rows.feudal_1.push(building(MARKET));
+    folwarklane.rows.feudal_2.push(unit(TRADE_CART));
+    folwarklane.rows.castle_2.push(tech(COINAGE));
+    folwarklane.rows.castle_1.push(tech(CARAVAN));
+    folwarklane.rows.imperial_1.push(tech(BANKING));
+    folwarklane.rows.imperial_2.push(tech(GUILDS));
+    tree.lanes.push(folwarklane);
 
 
     let milllane = new Lane();
     milllane.rows.dark_1.push(building(MILL));
+    milllane.rows.dark_2.push(building(FARM));
     milllane.rows.feudal_1.push(tech(HORSE_COLLAR));
-    milllane.rows.feudal_1.push(tech(DOMESTICATION));
     milllane.rows.castle_1.push(tech(HEAVY_PLOW));
-    milllane.rows.castle_1.push(tech(PASTORALISM));
     milllane.rows.imperial_1.push(tech(CROP_ROTATION));
-    milllane.rows.imperial_1.push(tech(TRANSHUMANCE));
     tree.lanes.push(milllane);
 
 
     let pasturelane = new Lane();
     pasturelane.rows.dark_1.push(building(PASTURE));
+    pasturelane.rows.feudal_1.push(tech(DOMESTICATION));
+    pasturelane.rows.castle_1.push(tech(PASTORALISM));
+    pasturelane.rows.imperial_1.push(tech(TRANSHUMANCE));
     tree.lanes.push(pasturelane);
 
 
@@ -1304,7 +1300,6 @@ function getConnections() {
         [b(LUMBER_CAMP), t(DOUBLE_BIT_AXE)],
         [t(DOUBLE_BIT_AXE), t(BOW_SAW)],
         [t(BOW_SAW), t(TWO_MAN_SAW)],
-        [b(MARKET), t(CARAVAN)],
         [t(COINAGE), t(BANKING)],
         [b(MARKET), u(TRADE_CART)],
         [b(MILL), b(MARKET)],
