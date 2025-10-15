@@ -600,7 +600,7 @@ def gather_civs(techtrees):
     unit_upgrades = {}
     node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
-        if civ['civ_id'] in ('ACHAEMENIDS','ATHENIANS','SPARTANS'):
+        if civ['civ_id'] in ('ACHAEMENIDS','ATHENIANS','SPARTANS', 'MACEDONIANS', 'THRACIANS', 'PURU'):
             continue
         current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkSuffix': ''}
         for building in civ['civ_techs_buildings']:

@@ -6047,6 +6047,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 7,
@@ -7750,6 +7754,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 7,
@@ -8763,6 +8771,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 50,
@@ -9046,6 +9058,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 8,
@@ -9854,6 +9870,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 8,
@@ -10004,6 +10024,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 6,
@@ -11416,6 +11440,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 60,
@@ -12833,6 +12861,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 4,
@@ -12929,6 +12961,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 4,
@@ -14120,6 +14156,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 6,
@@ -14195,6 +14235,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 8,
@@ -19605,6 +19649,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 9,
@@ -20663,6 +20711,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 8,
@@ -22323,6 +22375,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 25,
