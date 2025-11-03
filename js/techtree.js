@@ -752,9 +752,9 @@ function getDefaultTree() {
     castlelane.rows.imperial_1.push(tech(UNIQUE_TECH_2));
     castlelane.rows.imperial_1.push(tech(HOARDINGS));
     castlelane.rows.imperial_1.push(tech(SAPPERS));
-    castlelane.rows.imperial_2.push(uniqueunit(LIU_BEI));
-    castlelane.rows.imperial_2.push(uniqueunit(CAO_CAO));
-    castlelane.rows.imperial_2.push(uniqueunit(SUN_JIAN));
+    castlelane.rows.imperial_2.push(unit(LIU_BEI));
+    castlelane.rows.imperial_2.push(unit(CAO_CAO));
+    castlelane.rows.imperial_2.push(unit(SUN_JIAN));
     castlelane.rows.imperial_2.push(tech(CONSCRIPTION));
     castlelane.rows.imperial_2.push(tech(SPIES_TREASON));
     tree.lanes.push(castlelane);
