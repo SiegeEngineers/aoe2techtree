@@ -1030,11 +1030,6 @@ function getDefaultTree() {
     fortifiedchurchlane.rows.castle_2.push(uniqueunit(WARRIOR_PRIEST));
     tree.lanes.push(fortifiedchurchlane);
 
-
-    let houselane = new Lane();
-    houselane.rows.dark_1.push(building(HOUSE));
-    tree.lanes.push(houselane);
-
     let towncenterlane = new Lane();
     towncenterlane.rows.dark_1.push(building(TOWN_CENTER));
     towncenterlane.rows.dark_2.push(unit(VILLAGER));
@@ -1049,22 +1044,15 @@ function getDefaultTree() {
     tree.lanes.push(towncenterlane);
 
 
-    let additionaltowncenterlane = new Lane();
-    additionaltowncenterlane.rows.castle_1.push(building(TOWN_CENTER_2));
-    tree.lanes.push(additionaltowncenterlane);
-
-
-    let wonderlane = new Lane();
-    wonderlane.rows.imperial_1.push(building(WONDER));
-    tree.lanes.push(wonderlane);
-
-
-    let feitorialane = new Lane();
-    feitorialane.rows.imperial_1.push(building(FEITORIA));
-    tree.lanes.push(feitorialane);
+    let houselane = new Lane();
+    houselane.rows.dark_1.push(building(HOUSE));
+    houselane.rows.castle_1.push(building(TOWN_CENTER_2));
+    houselane.rows.imperial_1.push(building(WONDER));
+    houselane.rows.imperial_2.push(building(FEITORIA));
+    tree.lanes.push(houselane);
 
     let caravanserailane = new Lane();
-    caravanserailane.rows.imperial_1.push(building(CARAVANSERAI));
+    caravanserailane.rows.imperial_2.push(building(CARAVANSERAI));
     tree.lanes.push(caravanserailane);
 
 
