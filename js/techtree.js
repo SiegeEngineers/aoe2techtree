@@ -562,16 +562,16 @@ class Lane {
         }
         this.width = lane_width;
 
+        const connections = getConnections();
         for (let r of Object.keys(this.rows)) {
             for (let i = 0; i < this.rows[r].length; i++) {
-                if (this.rows[r][i].isBuilding()) {
+                if (this.rows[r][i].isBuilding() && this.rows[r][i].isConnected(connections)) {
                     this.rows[r][i].x = this.x + ((this.width - this.padding) / 2) - (this.rows[r][i].width / 2);
                 }
             }
         }
 
-        let connections = getConnections();
-        let carets = this.nonBuildingCarets();
+        const carets = this.nonBuildingCarets();
         for (let connection of connections) {
             let from = connection[0];
             let to = connection[1];
@@ -624,6 +624,15 @@ class Caret {
 
     isBuilding() {
         return this.type === TYPES.BUILDING;
+    }
+
+    isConnected(connections) {
+        for (const connection of connections) {
+            if (this.id === connection[0] || this.id === connection[1]) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
@@ -1030,11 +1039,6 @@ function getDefaultTree() {
     fortifiedchurchlane.rows.castle_2.push(uniqueunit(WARRIOR_PRIEST));
     tree.lanes.push(fortifiedchurchlane);
 
-
-    let houselane = new Lane();
-    houselane.rows.dark_1.push(building(HOUSE));
-    tree.lanes.push(houselane);
-
     let towncenterlane = new Lane();
     towncenterlane.rows.dark_1.push(building(TOWN_CENTER));
     towncenterlane.rows.dark_2.push(unit(VILLAGER));
@@ -1049,23 +1053,13 @@ function getDefaultTree() {
     tree.lanes.push(towncenterlane);
 
 
-    let additionaltowncenterlane = new Lane();
-    additionaltowncenterlane.rows.castle_1.push(building(TOWN_CENTER_2));
-    tree.lanes.push(additionaltowncenterlane);
-
-
-    let wonderlane = new Lane();
-    wonderlane.rows.imperial_1.push(building(WONDER));
-    tree.lanes.push(wonderlane);
-
-
-    let feitorialane = new Lane();
-    feitorialane.rows.imperial_1.push(building(FEITORIA));
-    tree.lanes.push(feitorialane);
-
-    let caravanserailane = new Lane();
-    caravanserailane.rows.imperial_1.push(building(CARAVANSERAI));
-    tree.lanes.push(caravanserailane);
+    let houselane = new Lane();
+    houselane.rows.dark_1.push(building(HOUSE));
+    houselane.rows.castle_1.push(building(TOWN_CENTER_2));
+    houselane.rows.imperial_1.push(building(WONDER));
+    houselane.rows.imperial_2.push(building(FEITORIA));
+    houselane.rows.imperial_2.push(building(CARAVANSERAI));
+    tree.lanes.push(houselane);
 
 
     let miningcamplane = new Lane();
