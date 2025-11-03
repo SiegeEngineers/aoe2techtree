@@ -1,17 +1,3 @@
-const TYPES = Object.freeze({
-    'BUILDING': {colour: '#ff0000', type: 'BUILDING', name: 'Building'},
-    'UNIT': {colour: '#ff0000', type: 'UNIT', name: 'Unit'},
-    'UNIQUEUNIT': {colour: '#703b7a', type: 'UNIQUEUNIT', name: 'Unique Unit'},
-    'TECHNOLOGY': {colour: '#2c5729', type: 'TECHNOLOGY', name: 'Technology'}
-});
-
-const PREFIX = Object.freeze({
-    'BUILDING': 'building_',
-    'UNIT': 'unit_',
-    'UNIQUEUNIT': 'unit_',
-    'TECHNOLOGY': 'tech_'
-});
-
 const AGE_IMAGES = ['dark_age_de.png', 'feudal_age_de.png', 'castle_age_de.png', 'imperial_age_de.png'];
 
 const getAgeNames = (data)=>{
@@ -22,52 +8,6 @@ const getAgeNames = (data)=>{
         data.strings[data.age_names['Imperial Age']],
     ];
 }
-
-const unitClasses = {
-    0: '<abbr title="unused">Wonders</abbr>',
-    1: 'Infantry',
-    2: 'Heavy Warships',
-    3: 'Base Pierce',
-    4: 'Base Melee',
-    5: 'Elephants',
-    6: 'Unused',
-    7: 'Unused',
-    8: '<abbr title="except Camels">Mounted Units</abbr>',
-    9: 'Unused',
-    10: 'Unused',
-    11: '<abbr title="except Fish Traps">All Buildings</abbr>',
-    12: 'Unused',
-    13: '<abbr title="except Castles and Kreposts">Stone Defense & Harbors</abbr>',
-    14: 'Wolves etc.',
-    15: 'All Archers',
-    16: '<abbr title="except Fishing Ships">Ships</abbr>',
-    17: 'High Pierce Armor Siege Units',
-    18: 'Trees',
-    19: 'Unique Units',
-    20: 'Siege Units',
-    21: '<abbr title="except Fish Traps and Wonders">Standard Buildings</abbr>',
-    22: 'Walls & Gates',
-    23: 'Gunpowder Units',
-    24: 'Boars etc.',
-    25: 'Monks',
-    26: 'Castles & Kreposts',
-    27: 'Spear Units',
-    28: 'Mounted Archers',
-    29: 'Shock Infantry',
-    30: 'Camels',
-    31: '<abbr title="previously used by the Leitis as armor-ignoring attack">Obsolete</abbr>',
-    32: 'Condottieri',
-    33: '<abbr title="no unit has this armor class">Gunpowder units secondary projectile attack</abbr>',
-    34: 'Fishing Ships',
-    35: 'Mamelukes',
-    36: 'Heroes & Kings',
-    37: 'Heavy Siege',
-    38: 'Skirmishers',
-    39: 'Cavalry Resistance',
-    40: 'Houses'
-};
-
-const animation_duration = 50;
 
 const UNIQUE_UNIT = 'UNIQUE UNIT';
 const ELITE_UNIQUE_UNIT = 'ELITE UNIQUE UNIT';
@@ -305,38 +245,23 @@ const LIU_BEI = 1966;
 const JIAN_SWORDSMAN = 1974;
 const SUN_JIAN = 1978;
 
-const YEOMEN = 3;
-const EL_DORADO = 4;
-const FUROR_CELTICA = 5;
-const DRILL = 6;
-const MAHOUTS = 7;
 const TOWN_WATCH = 8;
-const ZEALOTRY = 9;
-const ARTILLERY = 10;
-const CRENELLATIONS = 11;
 const CROP_ROTATION = 12;
 const HEAVY_PLOW = 13;
 const HORSE_COLLAR = 14;
 const GUILDS = 15;
-const ANARCHY = 16;
 const BANKING = 17;
-const ATHEISM = 21;
 const LOOM = 22;
 const COINAGE = 23;
-const GARLAND_WARS = 24;
 const HUSBANDRY = 39;
 const FAITH = 45;
 const DEVOTION = 46;
 const CHEMISTRY = 47;
 const CARAVAN = 48;
-const BERSERKERGANG = 49;
 const MASONRY = 50;
 const ARCHITECTURE = 51;
-const ROCKETRY = 52;
 const TREADMILL_CRANE = 54;
 const GOLD_MINING = 55;
-const KATAPARUTO = 59;
-const LOGISTICA = 61;
 const KEEP_TECH = 63;
 const BOMBARD_TOWER_TECH = 64;
 const GILLNETS = 65;
@@ -349,7 +274,6 @@ const PLATE_MAIL_ARMOR = 77;
 const PLATE_BARDING_ARMOR = 80;
 const SCALE_BARDING_ARMOR = 81;
 const CHAIN_BARDING_ARMOR = 82;
-const BEARDED_AXE = 83;
 const BALLISTICS = 93;
 const FEUDAL_AGE = 101;
 const CASTLE_AGE = 102;
@@ -393,68 +317,9 @@ const PARTHIAN_TACTICS = 436;
 const THUMB_RING = 437;
 const THEOCRACY = 438;
 const HERESY = 439;
-const SUPREMACY = 440;
 const HERBAL_MEDICINE = 441;
-const SHINKICHON = 445;
-const PERFUSION = 457;
-const ATLATL = 460;
-const WARWOLF = 461;
-const GREAT_WALL = 462;
-const CHIEFTAINS = 463;
-const GREEK_FIRE = 464;
-const STRONGHOLD = 482;
-const MARAUDERS = 483;
-const YASAMA = 484;
-const OBSIDIAN_ARROWS = 485;
-const PANOKSEON = 486;
-const NOMADS = 487;
-const KAMANDARAN = 488;
-const IRONCLAD = 489;
-const MADRASAH = 490;
-const SIPAHI = 491;
-const INQUISITION = 492;
-const CHIVALRY = 493;
-const PAVISE = 494;
-const SILK_ROAD = 499;
-const SULTANS = 506;
-const SHATAGNI = 507;
-const ORTHODOXY = 512;
-const DRUZHINA = 513;
-const CORVINIAN_ARMY = 514;
-const RECURVE_BOW = 515;
-const ANDEAN_SLING = 516;
-const FABRIC_SHIELDS = 517;
-const CARRACK = 572;
-const ARQUEBUS = 573;
-const ROYAL_HEIRS = 574;
-const TORSION_ENGINES = 575;
-const TIGUI = 576;
-const FARIMBA = 577;
-const KASBAH = 578;
-const MAGHRABI_CAMELS = 579;
 const ARSON = 602;
 const ARROWSLITS = 608;
-const TUSK_SWORDS = 622;
-const DOUBLE_CROSSBOW = 623;
-const THALASSOCRACY = 624;
-const FORCED_LEVY = 625;
-const HOWDAH = 626;
-const MANIPUR_CAVALRY = 627;
-const CHATRAS = 628;
-const PAPER_MONEY = 629;
-const STIRRUPS = 685;
-const BAGAINS = 686;
-const SILK_ARMOR = 687;
-const TIMURID_SIEGECRAFT = 688;
-const STEPPE_HUSBANDRY = 689;
-const CUMAN_MERCENARIES = 690;
-const HILL_FORTS = 691;
-const TOWER_SHIELDS = 692;
-const SUPPLIES = 716;
-const BURGUNDIAN_VINEYARDS = 754;
-const FLEMISH_REVOLUTION = 755;
-const FIRST_CRUSADE = 756;
-const SCUTAGE = 757;
 const GAMBESONS = 875;
 const DOMESTICATION = 1014;
 const PASTORALISM = 1013;
@@ -610,57 +475,49 @@ class Lane {
     }
 }
 
-class Caret {
-    constructor(type, name, id, colour = null) {
-        this.type = type;
-        this.name = name;
-        this.id = PREFIX[type.type] + formatId(id);
-        this.width = 100;
-        this.height = 100;
-        this.x = 0;
-        this.y = 0;
-        this.colour = colour;
-    }
-
-    isBuilding() {
-        return this.type === TYPES.BUILDING;
-    }
-}
-
-function formatId(string) {
-    return string.toString().replace(/\s/g, '_').replace(/\//g, '_').toLowerCase();
-}
-
-function checkIdUnique(tree) {
-    let ids = new Set();
-    for (let lane of tree.lanes) {
-        for (let r of Object.keys(lane.rows)) {
-            for (let caret of lane.rows[r]) {
-                if (ids.has(caret.id)) {
-                    console.error('ID ' + caret.id + ' is not unique!');
-                }
-                ids.add(caret.id);
-            }
-        }
-    }
-}
-
 function enable(buildings, units, techs) {
     for (let item of buildings) {
-        SVG('#building_' + formatId(item.id) + '_x').attr({'opacity': 0});
-        SVG('#building_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        SVG('#' + b(item.id) + '_x').attr({'opacity': 0});
+        SVG('#' + b(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
     for (let item of units) {
-        SVG('#unit_' + formatId(item.id) + '_x').attr({'opacity': 0});
-        SVG('#unit_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        SVG('#' + u(item.id) + '_x').attr({'opacity': 0});
+        SVG('#' + u(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
     for (let item of techs) {
-        SVG('#tech_' + formatId(item.id) + '_x').attr({'opacity': 0});
-        SVG('#tech_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        SVG('#' + t(item.id) + '_x').attr({'opacity': 0});
+        SVG('#' + t(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
+}
+
+function applyEarlierAges(selectedCiv) {
+    SVG.find('.earlier-age').each(function () {
+        let {id, type, ageId} = parseSVGObjectId2(this.id());
+        if (id === undefined || type === undefined || ageId === undefined) {
+            console.error("Could not process: ", this.id());
+            return;
+        }
+
+        let earlyItem;
+        switch (type) {
+            case 'unit': earlyItem = selectedCiv.units.find((item) => item.id === id && item.age <= ageId);
+                break;
+            case 'building': earlyItem = selectedCiv.buildings.find((item) => item.id === id && item.age <= ageId);
+                break;
+            case 'tech': earlyItem = selectedCiv.techs.find((item) => item.id === id && item.age <= ageId);
+        }
+        if (earlyItem) {
+            getShieldForEarlierAge(this, earlyItem.age);
+            return;
+        }
+        if (SVGObjectIsOpaque(this)) {
+            makeSVGObjectOpaque(this, 0);
+        }
+    });
 }
 
 function applySelectedCiv(selectedCiv) {
+    applyEarlierAges(selectedCiv);
     enable(selectedCiv.buildings,
         [...selectedCiv.units, {id:UNIQUE_UNIT, age: 3}, {id: ELITE_UNIQUE_UNIT, age: 4}],
         [...selectedCiv.techs, {id: UNIQUE_TECH_1, age: 3}, {id: UNIQUE_TECH_2, age: 4}]);
@@ -670,109 +527,21 @@ function applySelectedCiv(selectedCiv) {
         selectedCiv.unique.imperialAgeUniqueTech], selectedCiv.monkSuffix);
 }
 
-function formatName(originalname) {
-    let name = originalname.toString().replace(/<br>/g, '\n').replace(/\n+/g, '\n');
-    const items = name.split('\n');
-    for (let i = 0; i < items.length; i++) {
-        const item = items[i];
-        if (items[i].length > 10) {
-            let space = item.indexOf(' ');
-            if (space !== -1) {
-                items[i] = item.slice(0, space) + '\n' + item.slice(space + 1);
-                let alternativeSpace = space + 1 + item.slice(space + 1).indexOf(' ');
-                if (alternativeSpace !== -1) {
-                    if (Math.abs((item.length / 2) - alternativeSpace) < Math.abs((item.length / 2) - space)) {
-                        items[i] = item.slice(0, alternativeSpace) + '\n' + item.slice(alternativeSpace + 1);
-                    }
-                }
-            } else {
-                let hyphen = item.indexOf('-');
-                if (hyphen !== -1) {
-                    items[i] = item.slice(0, hyphen) + '-\n' + item.slice(hyphen + 1);
-                    let alternativeHyphen = hyphen + 1 + item.slice(hyphen + 1).indexOf('-');
-                    if (alternativeHyphen !== -1) {
-                        if (Math.abs((item.length / 2) - alternativeHyphen) < Math.abs((item.length / 2) - hyphen)) {
-                            items[i] = item.slice(0, alternativeHyphen) + '-\n' + item.slice(alternativeHyphen + 1);
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return items.join('\n');
-}
-
 function unique(ids, monk_suffix) {
     if (monk_suffix === undefined) {
         monk_suffix = MONK_SUFFIX_GENERIC;
     }
-    SVG('#unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
-    SVG('#unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
-    SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
-    SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
-    SVG('#tech_' + formatId(UNIQUE_TECH_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
-    SVG('#tech_' + formatId(UNIQUE_TECH_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
-    SVG('#tech_' + formatId(UNIQUE_TECH_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
-    SVG('#tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
-    SVG('#unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
-    SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
-    SVG('#unit_' + formatId(MONK) + '_img').load('img/Units/' + '125' + monk_suffix + '.png');
-}
-
-function getName(id, itemtype) {
-    //ToDo handle unique stuff properly
-    if(id.toString().startsWith('UNIQUE')){
-        return id;
-    }
-    const languageNameId = data['data'][itemtype][id]['LanguageNameId'];
-    return data['strings'][languageNameId];
-}
-
-function getColour(id, itemtype) {
-    const nodeType = data['data']['node_types'][itemtype][id];
-    if (!nodeType) {
-        return null;
-    }
-    return getColourForNodeType(nodeType);
-}
-
-function getColourForNodeType(nodeType) {
-    switch (nodeType) {
-        case 'BuildingTech':
-        case 'BuildingNonTech':
-            return '#b54e18';
-        case 'RegionalBuilding':
-            return '#cc4422';
-        case 'UniqueBuilding':
-            return '#d43652';
-        case 'Unit':
-        case 'UnitUpgrade':
-            return '#00739c';
-        case 'RegionalUnit':
-            return '#515ae3';
-        case 'UniqueUnit':
-            return '#703b7a';
-        case 'Technology':
-            return '#397139';
-        default:
-            return '#ff0000';
-    }
-}
-
-function building(id) {
-    return new Caret(TYPES.BUILDING, getName(id, 'buildings'), id, getColour(id, 'buildings'));
-}
-
-function unit(id) {
-    return new Caret(TYPES.UNIT, getName(id, 'units'), id, getColour(id, 'units'));
-}
-
-function uniqueunit(id) {
-    return new Caret(TYPES.UNIQUEUNIT, getName(id, 'units'), id, getColour(id, 'units'));
-}
-
-function tech(id) {
-    return new Caret(TYPES.TECHNOLOGY, getName(id, 'techs'), id);
+    SVG('#' + u(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
+    SVG('#' + u(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
+    SVG('#' + u(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
+    SVG('#' + u(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
+    SVG('#' + t(UNIQUE_TECH_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
+    SVG('#' + t(UNIQUE_TECH_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
+    SVG('#' + t(UNIQUE_TECH_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
+    SVG('#' + t(UNIQUE_TECH_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
+    SVG('#' + u(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
+    SVG('#' + u(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
+    SVG('#' + u(MONK) + '_img').load('img/Units/' + '125' + monk_suffix + '.png');
 }
 
 function getDefaultTree() {
@@ -785,19 +554,19 @@ function getDefaultTree() {
     archerylane.rows.feudal_2.push(unit(SKIRMISHER));
     archerylane.rows.castle_1.push(unit(CROSSBOWMAN));
     archerylane.rows.castle_1.push(unit(ELITE_SKIRMISHER));
-    archerylane.rows.castle_1.push(uniqueunit(SLINGER));
+    archerylane.rows.castle_1.push(unit(SLINGER));
     archerylane.rows.castle_1.push(unit(CAVALRY_ARCHER));
     archerylane.rows.castle_1.push(unit(ELEPHANT_ARCHER));
-    archerylane.rows.castle_1.push(uniqueunit(GENITOUR));
-    archerylane.rows.castle_1.push(uniqueunit(GRENADIER));
-    archerylane.rows.castle_1.push(uniqueunit(XIANBEI_RAIDER));
+    archerylane.rows.castle_1.push(unit(GENITOUR));
+    archerylane.rows.castle_1.push(unit(GRENADIER));
+    archerylane.rows.castle_1.push(unit(XIANBEI_RAIDER));
     archerylane.rows.castle_1.push(tech(THUMB_RING));
     archerylane.rows.imperial_1.push(unit(ARBALESTER));
-    archerylane.rows.imperial_1.push(uniqueunit(IMPERIAL_SKIRMISHER));
+    archerylane.rows.imperial_1.push(unit(IMPERIAL_SKIRMISHER));
     archerylane.rows.imperial_1.push(unit(HAND_CANNONEER));
     archerylane.rows.imperial_1.push(unit(HEAVY_CAV_ARCHER));
     archerylane.rows.imperial_1.push(unit(ELITE_ELEPHANT_ARCHER));
-    archerylane.rows.imperial_1.push(uniqueunit(ELITE_GENITOUR));
+    archerylane.rows.imperial_1.push(unit(ELITE_GENITOUR));
     archerylane.rows.imperial_1.push(tech(PARTHIAN_TACTICS));
     tree.lanes.push(archerylane);
 
@@ -809,21 +578,21 @@ function getDefaultTree() {
     barrackslane.rows.feudal_1.push(tech(ARSON));
     barrackslane.rows.feudal_1.push(unit(SPEARMAN));
     barrackslane.rows.feudal_1.push(unit(EAGLE_SCOUT));
-    barrackslane.rows.feudal_1.push(uniqueunit(FLEMISHPIKEMAN));
+    barrackslane.rows.feudal_1.push(unit(FLEMISHPIKEMAN));
     barrackslane.rows.castle_1.push(unit(LONG_SWORDSMAN));
     barrackslane.rows.castle_1.push(tech(GAMBESONS));
     barrackslane.rows.castle_1.push(unit(PIKEMAN));
     barrackslane.rows.castle_1.push(unit(EAGLE_WARRIOR));
     barrackslane.rows.castle_1.push(unit(FIRE_LANCER));
-    barrackslane.rows.castle_1.push(uniqueunit(JIAN_SWORDSMAN));
+    barrackslane.rows.castle_1.push(unit(JIAN_SWORDSMAN));
     barrackslane.rows.castle_1.push(tech(SQUIRES));
     barrackslane.rows.imperial_1.push(unit(TWO_HANDED_SWORDSMAN));
-    barrackslane.rows.imperial_1.push(uniqueunit(LEGIONARY));
+    barrackslane.rows.imperial_1.push(unit(LEGIONARY));
     barrackslane.rows.imperial_2.push(unit(CHAMPION));
     barrackslane.rows.imperial_1.push(unit(HALBERDIER));
     barrackslane.rows.imperial_1.push(unit(ELITE_EAGLE_WARRIOR));
     barrackslane.rows.imperial_1.push(unit(ELITE_FIRE_LANCER));
-    barrackslane.rows.imperial_1.push(uniqueunit(CONDOTTIERO));
+    barrackslane.rows.imperial_1.push(unit(CONDOTTIERO));
     tree.lanes.push(barrackslane);
 
 
@@ -831,26 +600,26 @@ function getDefaultTree() {
     stablelane.rows.feudal_1.push(building(STABLE));
     stablelane.rows.feudal_2.push(unit(SCOUT_CAVALRY));
     stablelane.rows.feudal_2.push(tech(BLOODLINES));
-    stablelane.rows.feudal_2.push(uniqueunit(CAMEL_SCOUT));
+    stablelane.rows.feudal_2.push(unit(CAMEL_SCOUT));
     stablelane.rows.castle_1.push(unit(LIGHT_CAVALRY));
-    stablelane.rows.castle_1.push(uniqueunit(XOLOTL_WARRIOR));
+    stablelane.rows.castle_1.push(unit(XOLOTL_WARRIOR));
     stablelane.rows.castle_1.push(unit(KNIGHT));
     stablelane.rows.castle_1.push(unit(CAMEL_RIDER));
     stablelane.rows.castle_1.push(unit(STEPPE_LANCER));
     stablelane.rows.castle_1.push(unit(BATTLE_ELEPHANT));
     stablelane.rows.castle_1.push(unit(HEI_GUANG_CAVALRY));
-    stablelane.rows.castle_1.push(uniqueunit(SHRIVAMSHA_RIDER));
+    stablelane.rows.castle_1.push(unit(SHRIVAMSHA_RIDER));
     stablelane.rows.castle_1.push(tech(HUSBANDRY));
     stablelane.rows.imperial_1.push(unit(HUSSAR));
-    stablelane.rows.imperial_1.push(uniqueunit(WINGED_HUSSAR));
+    stablelane.rows.imperial_1.push(unit(WINGED_HUSSAR));
     stablelane.rows.imperial_1.push(unit(CAVALIER));
     stablelane.rows.imperial_1.push(unit(HEAVY_CAMEL_RIDER));
     stablelane.rows.imperial_1.push(unit(ELITE_STEPPE_LANCER));
     stablelane.rows.imperial_1.push(unit(ELITE_BATTLE_ELEPHANT));
     stablelane.rows.imperial_1.push(unit(HEAVY_HEI_GUANG_CAVALRY));
-    stablelane.rows.imperial_1.push(uniqueunit(ELITE_SHRIVAMSHA_RIDER));
-    stablelane.rows.imperial_2.push(uniqueunit(IMPERIAL_CAMEL_RIDER));
-    stablelane.rows.imperial_2.push(uniqueunit(SAVAR));
+    stablelane.rows.imperial_1.push(unit(ELITE_SHRIVAMSHA_RIDER));
+    stablelane.rows.imperial_2.push(unit(IMPERIAL_CAMEL_RIDER));
+    stablelane.rows.imperial_2.push(unit(SAVAR));
     stablelane.rows.imperial_2.push(unit(PALADIN));
     tree.lanes.push(stablelane);
 
@@ -863,7 +632,7 @@ function getDefaultTree() {
     siegeworkshoplane.rows.castle_2.push(unit(ROCKET_CART));
     siegeworkshoplane.rows.castle_2.push(unit(SCORPION));
     siegeworkshoplane.rows.castle_2.push(unit(SIEGE_TOWER));
-    siegeworkshoplane.rows.castle_2.push(uniqueunit(WAR_CHARIOT));
+    siegeworkshoplane.rows.castle_2.push(unit(WAR_CHARIOT));
     siegeworkshoplane.rows.imperial_1.push(unit(CAPPED_RAM));
     siegeworkshoplane.rows.imperial_1.push(unit(SIEGE_ELEPHANT));
     siegeworkshoplane.rows.imperial_1.push(unit(ONAGER));
@@ -871,11 +640,11 @@ function getDefaultTree() {
     siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_SCORPION));
     siegeworkshoplane.rows.imperial_1.push(unit(BOMBARD_CANNON));
     siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_RAM));
-    siegeworkshoplane.rows.imperial_2.push(uniqueunit(FLAMING_CAMEL));
+    siegeworkshoplane.rows.imperial_2.push(unit(FLAMING_CAMEL));
     siegeworkshoplane.rows.imperial_2.push(unit(SIEGE_ONAGER));
-    siegeworkshoplane.rows.imperial_2.push(uniqueunit(MOUNTED_TREBUCHET));
-    siegeworkshoplane.rows.imperial_2.push(uniqueunit(TRACTION_TREBUCHET));
-    siegeworkshoplane.rows.imperial_2.push(uniqueunit(HOUFNICE));
+    siegeworkshoplane.rows.imperial_2.push(unit(MOUNTED_TREBUCHET));
+    siegeworkshoplane.rows.imperial_2.push(unit(TRACTION_TREBUCHET));
+    siegeworkshoplane.rows.imperial_2.push(unit(HOUFNICE));
     tree.lanes.push(siegeworkshoplane);
 
 
@@ -910,22 +679,22 @@ function getDefaultTree() {
     docklane.rows.castle_1.push(tech(GILLNETS));
     docklane.rows.castle_1.push(unit(DEMOLITION_SHIP));
     docklane.rows.castle_1.push(unit(WAR_GALLEY));
-    docklane.rows.castle_1.push(uniqueunit(TURTLE_SHIP));
-    docklane.rows.castle_1.push(uniqueunit(LONGBOAT));
-    docklane.rows.castle_1.push(uniqueunit(CARAVEL));
+    docklane.rows.castle_1.push(unit(TURTLE_SHIP));
+    docklane.rows.castle_1.push(unit(LONGBOAT));
+    docklane.rows.castle_1.push(unit(CARAVEL));
     docklane.rows.castle_1.push(tech(CAREENING));
     docklane.rows.imperial_1.push(unit(FAST_FIRE_SHIP));
-    docklane.rows.imperial_1.push(uniqueunit(DRAGON_FIRE_SHIP));
+    docklane.rows.imperial_1.push(unit(DRAGON_FIRE_SHIP));
     docklane.rows.imperial_1.push(unit(HEAVY_DEMO_SHIP));
     docklane.rows.imperial_1.push(unit(GALLEON));
     docklane.rows.imperial_1.push(unit(CANNON_GALLEON));
-    docklane.rows.imperial_1.push(uniqueunit(ELITE_TURTLE_SHIP));
-    docklane.rows.imperial_1.push(uniqueunit(ELITE_LONGBOAT));
-    docklane.rows.imperial_1.push(uniqueunit(ELITE_CARAVEL));
+    docklane.rows.imperial_1.push(unit(ELITE_TURTLE_SHIP));
+    docklane.rows.imperial_1.push(unit(ELITE_LONGBOAT));
+    docklane.rows.imperial_1.push(unit(ELITE_CARAVEL));
     docklane.rows.imperial_1.push(tech(DRY_DOCK));
     docklane.rows.imperial_2.push(unit(DROMON));
-    docklane.rows.imperial_2.push(uniqueunit(LOU_CHUAN));
-    docklane.rows.imperial_2.push(uniqueunit(THIRISADAI));
+    docklane.rows.imperial_2.push(unit(LOU_CHUAN));
+    docklane.rows.imperial_2.push(unit(THIRISADAI));
     docklane.rows.imperial_2.push(tech(SHIPWRIGHT));
     docklane.rows.imperial_2.push(unit(ELITE_CANNON_GALLEON));
     tree.lanes.push(docklane);
@@ -993,17 +762,17 @@ function getDefaultTree() {
 
     let krepostlane = new Lane();
     krepostlane.rows.castle_1.push(building(KREPOST));
-    krepostlane.rows.castle_2.push(uniqueunit(KONNIK_2));
-    krepostlane.rows.imperial_1.push(uniqueunit(ELITE_KONNIK_2));
+    krepostlane.rows.castle_2.push(unit(KONNIK_2));
+    krepostlane.rows.imperial_1.push(unit(ELITE_KONNIK_2));
     tree.lanes.push(krepostlane);
 
 
     let donjonlane = new Lane();
     donjonlane.rows.dark_1.push(building(DONJON));
-    donjonlane.rows.feudal_1.push(uniqueunit(DSERJEANT));
+    donjonlane.rows.feudal_1.push(unit(DSERJEANT));
     donjonlane.rows.feudal_1.push(unit(DSPEARMAN));
     donjonlane.rows.castle_1.push(unit(DPIKEMAN));
-    donjonlane.rows.imperial_1.push(uniqueunit(ELITE_DSERJEANT));
+    donjonlane.rows.imperial_1.push(unit(ELITE_DSERJEANT));
     donjonlane.rows.imperial_1.push(unit(DHALBERDIER));
     tree.lanes.push(donjonlane);
 
@@ -1011,7 +780,7 @@ function getDefaultTree() {
     let monasterylane = new Lane();
     monasterylane.rows.castle_1.push(building(MONASTERY));
     monasterylane.rows.castle_2.push(unit(MONK));
-    monasterylane.rows.castle_2.push(uniqueunit(MISSIONARY));
+    monasterylane.rows.castle_2.push(unit(MISSIONARY));
     monasterylane.rows.castle_2.push(tech(DEVOTION));
     monasterylane.rows.castle_2.push(tech(REDEMPTION));
     monasterylane.rows.castle_2.push(tech(ATONEMENT));
@@ -1027,7 +796,7 @@ function getDefaultTree() {
 
     let fortifiedchurchlane = new Lane();
     fortifiedchurchlane.rows.castle_1.push(building(FORTIFIED_CHURCH));
-    fortifiedchurchlane.rows.castle_2.push(uniqueunit(WARRIOR_PRIEST));
+    fortifiedchurchlane.rows.castle_2.push(unit(WARRIOR_PRIEST));
     tree.lanes.push(fortifiedchurchlane);
 
 
@@ -1124,20 +893,8 @@ function getDefaultTree() {
     return tree;
 }
 
-function u(unit) {
-    return 'unit_' + unit;
-}
-
-function b(building) {
-    return 'building_' + building;
-}
-
-function t(tech) {
-    return 'tech_' + tech;
-}
-
 function getConnections() {
-    let connections = [
+    return [
         [b(ARCHERY_RANGE), u(ARCHER)],
         [u(ARCHER), u(CROSSBOWMAN)],
         [u(CROSSBOWMAN), u(ARBALESTER)],
@@ -1325,26 +1082,4 @@ function getConnections() {
         [b(ARCHERY_RANGE), u(XIANBEI_RAIDER)],
         [b(DOCK), u(LONGBOAT)],
     ];
-
-    let connection_ids = [];
-    for (let c of connections) {
-        connection_ids.push([formatId(c[0]), formatId(c[1])]);
-    }
-    return connection_ids;
-}
-
-
-function getConnectionPoints(tree) {
-    let points = new Map();
-    for (let lane of tree.lanes) {
-        for (let r of Object.keys(lane.rows)) {
-            for (let caret of lane.rows[r]) {
-                points.set(caret.id, {
-                    x: caret.x + (caret.width / 2),
-                    y: caret.y + (caret.height / 2)
-                });
-            }
-        }
-    }
-    return points;
 }

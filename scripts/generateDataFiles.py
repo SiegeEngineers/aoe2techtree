@@ -111,6 +111,17 @@ ROR_CIV_NAMES = {
     "Lac Viet": "310287",
 }
 
+CHRONICLES_CIV_NAMES = {
+    "Achaemenids": "10316",
+    "Athenians": "10317",
+    "Spartans": "10318",
+    "Macedonians": "10324",
+    "Thracians": "10325",
+    "Puru": "10326",
+}
+
+UPPER_CASE_CHRONICLES_CIV_NAMES = {key.upper() for key in CHRONICLES_CIV_NAMES}
+
 CIV_HELPTEXTS = {
     "Britons": "120150",
     "Franks": "120151",
@@ -274,10 +285,10 @@ def gather_language_data(resourcesdir, data, language):
     key_value[26768] = key_value[28314]  # Gillnets
     key_value[42057] = key_value[26288]  # Use Konnik for Dismounted Konnik
     key_value[42058] = key_value[26290]  # Use Elite Konnik for Dismounted Elite Konnik
-    key_value[21104] = key_value[5414]  # Fix Ratha name
+    key_value[21104] = key_value[5414]   # Fix Ratha name
     key_value[42104] = key_value[26414]  # Fix Ratha description
     key_value[42096] = key_value[26414]  # Fix Ratha (melee) description
-    key_value[21105] = key_value[5420]  # Fix Elite Ratha name
+    key_value[21105] = key_value[5420]   # Fix Elite Ratha name
     key_value[42105] = key_value[26420]  # Fix Elite Ratha description
     key_value[42097] = key_value[26420]  # Fix Elite Ratha (melee) description
     key_value[42198] = key_value[26364]  # Fix War Chariot (Barrage) description
@@ -407,7 +418,7 @@ def gather_data(content: DatFile, civs, unit_upgrades, node_types):
     return data
 
 
-def ror_gather_data(content: DatFile, civs, unit_upgrades):
+def ror_gather_data(content: DatFile, civs, unit_upgrades, node_types):
     ages = list(ROR_AGE_NAMES.keys())[1:]
     building_ids = {b['id'] for c in civs.values() for b in c['buildings']}
     unit_ids = {u['id'] for c in civs.values() for u in c['units']}
@@ -419,7 +430,7 @@ def ror_gather_data(content: DatFile, civs, unit_upgrades):
     )
     gaia = content.civs[0]
     graphics = content.graphics
-    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}}
+    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}, "node_types": node_types}
     for unit in gaia.units:
         if not unit:
             continue
@@ -600,7 +611,7 @@ def gather_civs(techtrees):
     unit_upgrades = {}
     node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
-        if civ['civ_id'] in ('ACHAEMENIDS','ATHENIANS','SPARTANS', 'MACEDONIANS', 'THRACIANS', 'PURU'):
+        if civ['civ_id'] in UPPER_CASE_CHRONICLES_CIV_NAMES:
             continue
         current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkSuffix': ''}
         for building in civ['civ_techs_buildings']:
@@ -690,12 +701,15 @@ def ror_gather_civs(techtrees):
     unit_excludelist = ()
     civs = {}
     unit_upgrades = {}
+    node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
         current_civ = {'buildings': [], 'units': [], 'techs': []}
         for building in civ['civ_techs_buildings']:
+            node_types['buildings'][building['Node ID']] = building['Node Type']
             if building['Node Status'] != 'NotAvailable':
                 current_civ['buildings'].append({'id': building['Node ID'], 'age': building['Age ID']})
         for unit in filter(ror_is_unit, civ['civ_techs_units']):
+            node_types['units'][unit['Node ID']] = unit['Node Type']
             current_civ['units'].append({'id': unit['Node ID'], 'age': unit['Age ID']})
             if unit['Trigger Tech ID'] > -1:
                 unit_upgrades[unit['Node ID']] = unit['Trigger Tech ID']
@@ -715,7 +729,7 @@ def ror_gather_civs(techtrees):
 
         current_civ['buildingStyle'] = ROR_BUILDING_STYLES[civname]
 
-    return civs, unit_upgrades
+    return civs, unit_upgrades, node_types
 
 
 def ror_update_civ_techs(civs, data):
@@ -771,10 +785,10 @@ def process_ror(args, outputdir):
     ttfcontent = techtreesfile.read_text()
     ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
     techtrees = json.loads(ttfcontent)
-    civs, unit_upgrades = ror_gather_civs(techtrees)
+    civs, unit_upgrades, node_types = ror_gather_civs(techtrees)
     datafile = Path(args.programdir) / 'modes' / 'Pompeii' / 'resources' / '_common' / 'dat' / 'empires2_x2_p1.dat'
     content = DatFile.parse(datafile)
-    data = ror_gather_data(content, civs, unit_upgrades)
+    data = ror_gather_data(content, civs, unit_upgrades, node_types)
     ror_update_civ_techs(civs, data)
     ror_write_datafile(data, civs, outputdir)
     ror_write_language_files(args, data, outputdir)
