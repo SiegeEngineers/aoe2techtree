@@ -460,6 +460,7 @@ function getHelpText(name, id, type) {
     let entitytype = getEntityType(type);
     const items = id.split('_', 1);
     id = id.substring(items[0].length + 1);
+    if (id < 0) return '?';
     let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
     if (text === undefined) {
         return '?';
