@@ -11,6 +11,8 @@ from PIL.Image import Resampling
 PLAYER_COLOUR = (0, 119, 228)
 # PLAYER_COLOUR = (236,9,9)
 
+UPPER_CASE_CHRONICLES_CIV_NAMES = {"ACHAEMENIDS", "ATHENIANS", "SPARTANS", "MACEDONIANS", "PURU", "THRACIANS"}
+
 BASE_PATH = Path.home() / 'aoe/Aoe2DE proton/widgetui/textures/ingame'
 TARGET_SIZE = (48, 48)
 
@@ -126,7 +128,7 @@ def main():
     techtrees = json.loads(ttfcontent)
     ids = {'Units': set(), 'Buildings': set(), 'Techs': set()}
     for civ in techtrees['civs']:
-        if civ['civ_id'] in ('ACHAEMENIDS','ATHENIANS','SPARTANS'):
+        if civ['civ_id'] in UPPER_CASE_CHRONICLES_CIV_NAMES:
             continue
         for item in (civ['civ_techs_buildings'] + civ['civ_techs_units']):
             if item['Use Type'] == 'Unit':
