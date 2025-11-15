@@ -682,7 +682,7 @@ function arrayIfDefinedAndNonEmpty(attacks, prefix) {
         const strings = [];
         for (let attack of attacks) {
             const amount = attack['Amount'];
-            const clazz = unitClasses[attack['Class']];
+            const clazz = attackAndArmorClasses[attack['Class']];
             strings.push(`${amount} (${clazz})`);
         }
         return prefix + '<p>' + strings.join(', ') + '</p>';
