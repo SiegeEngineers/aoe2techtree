@@ -411,6 +411,12 @@ function chargeText(type) {
             return 'Charged Area Attack:&nbsp;';
         case 4:
             return 'Projectile Dodging:&nbsp;';
+        case 5:
+            return 'Melee Attack Blocking:&nbsp;';
+        case 6:
+            return 'Charged Ranged Attack (type 1):&nbsp;';
+        case 7:
+            return 'Charged Ranged Attack (type 2):&nbsp;';
         default:
             return 'Unknown Charge:&nbsp;';
     }
