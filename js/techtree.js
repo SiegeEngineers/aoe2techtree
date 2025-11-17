@@ -623,6 +623,7 @@ class Caret {
 
     isConnected(connections) {
         for (const connection of connections) {
+            if (connection[2]) continue;
             if (this.id === connection[0] || this.id === connection[1]) {
                 return true;
             }
@@ -792,8 +793,8 @@ function getDefaultTree() {
     archerylane.rows.castle_1.push(uniqueunit(SLINGER));
     archerylane.rows.castle_1.push(unit(CAVALRY_ARCHER));
     archerylane.rows.castle_1.push(unit(ELEPHANT_ARCHER));
-    archerylane.rows.castle_1.push(uniqueunit(GENITOUR));
-    archerylane.rows.castle_1.push(uniqueunit(GRENADIER));
+    archerylane.rows.castle_2.push(uniqueunit(GENITOUR));
+    archerylane.rows.castle_2.push(uniqueunit(GRENADIER));
     archerylane.rows.castle_1.push(uniqueunit(XIANBEI_RAIDER));
     archerylane.rows.castle_1.push(tech(THUMB_RING));
     archerylane.rows.imperial_1.push(unit(ARBALESTER));
@@ -818,9 +819,9 @@ function getDefaultTree() {
     barrackslane.rows.castle_1.push(tech(GAMBESONS));
     barrackslane.rows.castle_1.push(unit(PIKEMAN));
     barrackslane.rows.castle_1.push(unit(EAGLE_WARRIOR));
-    barrackslane.rows.castle_1.push(unit(FIRE_LANCER));
-    barrackslane.rows.castle_1.push(uniqueunit(JIAN_SWORDSMAN));
     barrackslane.rows.castle_1.push(tech(SQUIRES));
+    barrackslane.rows.castle_1.push(uniqueunit(JIAN_SWORDSMAN));
+    barrackslane.rows.castle_2.push(unit(FIRE_LANCER));
     barrackslane.rows.imperial_1.push(unit(TWO_HANDED_SWORDSMAN));
     barrackslane.rows.imperial_1.push(uniqueunit(LEGIONARY));
     barrackslane.rows.imperial_2.push(unit(CHAMPION));
@@ -843,7 +844,7 @@ function getDefaultTree() {
     stablelane.rows.castle_1.push(unit(STEPPE_LANCER));
     stablelane.rows.castle_1.push(unit(BATTLE_ELEPHANT));
     stablelane.rows.castle_1.push(unit(HEI_GUANG_CAVALRY));
-    stablelane.rows.castle_1.push(uniqueunit(SHRIVAMSHA_RIDER));
+    stablelane.rows.castle_2.push(uniqueunit(SHRIVAMSHA_RIDER));
     stablelane.rows.castle_1.push(tech(HUSBANDRY));
     stablelane.rows.imperial_1.push(unit(HUSSAR));
     stablelane.rows.imperial_1.push(uniqueunit(WINGED_HUSSAR));
@@ -1152,10 +1153,13 @@ function getConnections() {
         [u(EAGLE_SCOUT), u(EAGLE_WARRIOR)],
         [u(EAGLE_WARRIOR), u(ELITE_EAGLE_WARRIOR)],
         [b(BARRACKS), u(FLEMISHPIKEMAN)],
-        [b(BARRACKS), u(JIAN_SWORDSMAN)],
+        [u(FLEMISHPIKEMAN), u(JIAN_SWORDSMAN), true],
         [u(FIRE_LANCER), u(ELITE_FIRE_LANCER)],
+        [u(JIAN_SWORDSMAN), u(CONDOTTIERO), true],
         [b(BARRACKS), t(SQUIRES)],
         [b(BARRACKS), t(ARSON)],
+        [t(ARSON), t(GAMBESONS), true],
+        [t(SQUIRES), u(FIRE_LANCER), true],
         [b(STABLE), u(SCOUT_CAVALRY)],
         [u(SCOUT_CAVALRY), u(LIGHT_CAVALRY)],
         [u(LIGHT_CAVALRY), u(HUSSAR)],
@@ -1163,6 +1167,7 @@ function getConnections() {
         [u(SHRIVAMSHA_RIDER), u(ELITE_SHRIVAMSHA_RIDER)],
         [b(STABLE), u(CAMEL_SCOUT)],
         [b(STABLE), t(BLOODLINES)],
+        [t(BLOODLINES), u(XOLOTL_WARRIOR), true],
         // [b(STABLE), u(CAMEL_RIDER)],
         [u(CAMEL_SCOUT), u(CAMEL_RIDER)],
         [u(CAMEL_RIDER), u(HEAVY_CAMEL_RIDER)],
@@ -1172,7 +1177,7 @@ function getConnections() {
         [u(HEI_GUANG_CAVALRY), u(HEAVY_HEI_GUANG_CAVALRY)],
         [b(STABLE), u(STEPPE_LANCER)],
         [u(STEPPE_LANCER), u(ELITE_STEPPE_LANCER)],
-        [b(STABLE), u(SHRIVAMSHA_RIDER)],
+        [t(HUSBANDRY), u(SHRIVAMSHA_RIDER), true],
         [b(STABLE), t(HUSBANDRY)],
         [b(STABLE), u(KNIGHT)],
         [u(KNIGHT), u(CAVALIER)],
@@ -1205,6 +1210,9 @@ function getConnections() {
         [b(MONASTERY), t(HERESY)],
         [b(MONASTERY), t(SANCTITY)],
         [b(MONASTERY), t(FERVOR)],
+        [b(MONASTERY), t(ILLUMINATION), true],
+        [b(MONASTERY), t(BLOCK_PRINTING), true],
+        [b(MONASTERY), t(THEOCRACY), true],
         [t(DEVOTION), t(FAITH)],
         [b(FORTIFIED_CHURCH), u(MONK)],
         [b(FORTIFIED_CHURCH), u(WARRIOR_PRIEST)],
@@ -1215,6 +1223,9 @@ function getConnections() {
         [b(FORTIFIED_CHURCH), t(HERESY)],
         [b(FORTIFIED_CHURCH), t(SANCTITY)],
         [b(FORTIFIED_CHURCH), t(FERVOR)],
+        [b(FORTIFIED_CHURCH), t(ILLUMINATION), true],
+        [b(FORTIFIED_CHURCH), t(BLOCK_PRINTING), true],
+        [b(FORTIFIED_CHURCH), t(THEOCRACY), true],
         [b(CASTLE), u(UNIQUE_UNIT)],
         [u(UNIQUE_UNIT), u(ELITE_UNIQUE_UNIT)],
         [b(CASTLE), u(PETARD)],
@@ -1233,7 +1244,9 @@ function getConnections() {
         [t(FEUDAL_AGE), t(CASTLE_AGE)],
         [t(CASTLE_AGE), t(IMPERIAL_AGE)],
         [b(TOWN_CENTER), t(LOOM)],
+        [u(VILLAGER), t(TOWN_WATCH), true],
         [t(TOWN_WATCH), t(TOWN_PATROL)],
+        [t(LOOM), t(WHEELBARROW), true],
         [t(WHEELBARROW), t(HAND_CART)],
         [b(SIEGE_WORKSHOP), u(MANGONEL)],
         [u(MANGONEL), u(ONAGER)],
@@ -1243,10 +1256,13 @@ function getConnections() {
         [u(CAPPED_RAM), u(SIEGE_RAM)],
         [b(SIEGE_WORKSHOP), u(ARMORED_ELEPHANT)],
         [u(ARMORED_ELEPHANT), u(SIEGE_ELEPHANT)],
+        [u(SIEGE_ELEPHANT), u(FLAMING_CAMEL), true],
         [b(SIEGE_WORKSHOP), u(ROCKET_CART)],
         [u(ROCKET_CART), u(HEAVY_ROCKET_CART)],
+        [u(HEAVY_ROCKET_CART), u(MOUNTED_TREBUCHET), true],
         [b(SIEGE_WORKSHOP), u(SCORPION)],
         [u(SCORPION), u(HEAVY_SCORPION)],
+        [u(HEAVY_SCORPION), u(TRACTION_TREBUCHET), true],
         [b(SIEGE_WORKSHOP), u(SIEGE_TOWER)],
         [b(SIEGE_WORKSHOP), u(WAR_CHARIOT)],
         [u(BOMBARD_CANNON), u(HOUFNICE)],
@@ -1268,12 +1284,15 @@ function getConnections() {
         [t(CHAIN_MAIL_ARMOR), t(PLATE_MAIL_ARMOR)],
         [b(UNIVERSITY), t(MASONRY)],
         [t(MASONRY), t(ARCHITECTURE)],
+        [t(FORTIFIED_WALL_TECH), t(CHEMISTRY), true],
         [b(UNIVERSITY), t(FORTIFIED_WALL_TECH)],
         [b(UNIVERSITY), t(BALLISTICS)],
+        [t(BALLISTICS), t(SIEGE_ENGINEERS), true],
         [b(UNIVERSITY), t(GUARD_TOWER_TECH)],
         [t(GUARD_TOWER_TECH), t(KEEP_TECH)],
         [b(UNIVERSITY), t(HEATED_SHOT)],
-        [b(UNIVERSITY), t(MURDER_HOLES)],
+        [b(UNIVERSITY), t(HEATED_SHOT)],
+        [t(HEATED_SHOT), t(ARROWSLITS), true],
         [b(UNIVERSITY), t(TREADMILL_CRANE)],
         [t(CHEMISTRY), t(BOMBARD_TOWER_TECH)],
         [b(MINING_CAMP), t(STONE_MINING)],
@@ -1288,10 +1307,13 @@ function getConnections() {
         [t(BOW_SAW), t(TWO_MAN_SAW)],
         [t(COINAGE), t(BANKING)],
         [b(MARKET), u(TRADE_CART)],
+        [b(MARKET), t(CARAVAN), true],
+        [b(MARKET), t(COINAGE), true],
+        [b(MARKET), t(GUILDS), true],
         [b(MILL), b(MARKET)],
         [b(FOLWARK), b(MARKET)],
-        [b(MILL), t(HORSE_COLLAR)],
-        [b(FOLWARK), t(HORSE_COLLAR)],
+        [b(MILL), t(HORSE_COLLAR), true],
+        [b(FOLWARK), t(HORSE_COLLAR), true],
         [t(HORSE_COLLAR), t(HEAVY_PLOW)],
         [t(HEAVY_PLOW), t(CROP_ROTATION)],
         [b(MILL), t(DOMESTICATION)],
@@ -1309,15 +1331,17 @@ function getConnections() {
         [b(DOCK), u(CARAVEL)],
         [b(DOCK), u(TURTLE_SHIP)],
         [b(ARCHERY_RANGE), u(SLINGER)],
-        [b(ARCHERY_RANGE), u(GENITOUR)],
-        [b(ARCHERY_RANGE), u(GRENADIER)],
+        [u(XIANBEI_RAIDER), u(GENITOUR), true],
+        [u(SLINGER), u(GRENADIER), true],
         [b(ARCHERY_RANGE), u(XIANBEI_RAIDER)],
+        [u(GRENADIER), u(HAND_CANNONEER), true],
+        [t(THUMB_RING), t(PARTHIAN_TACTICS), true],
         [b(DOCK), u(LONGBOAT)],
     ];
 
     let connection_ids = [];
     for (let c of connections) {
-        connection_ids.push([formatId(c[0]), formatId(c[1])]);
+        connection_ids.push([formatId(c[0]), formatId(c[1]), c[2]]);
     }
     return connection_ids;
 }

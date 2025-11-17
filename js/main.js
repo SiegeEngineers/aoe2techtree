@@ -86,12 +86,30 @@ function displayData() {
     tree = getDefaultTree();
     connections = getConnections();
     parentConnections = new Map();
-    connections.forEach(([parent, child]) => {
+    let alignmentConnections = new Map();
+    connections.forEach(([parent, child, isAlignmentConnectionOnly]) => {
         if (!parentConnections.has(child)) {
             parentConnections.set(child, []);
         }
+        if (isAlignmentConnectionOnly) {
+            if (!alignmentConnections.has(child)) {
+                alignmentConnections.set(child, []);
+            }
+            alignmentConnections.get(child).push(parent);
+            return;
+        }
         parentConnections.get(child).push(parent);
     });
+    for (const [child, shownParents] of alignmentConnections) {
+        let actualParents = new Set();
+        for (let shownParent of shownParents) {
+            while (!shownParent.startsWith(PREFIX.BUILDING)) shownParent = parentConnections.get(shownParent)[0];
+            actualParents.add(shownParent);
+        }
+        for (const actualParent of actualParents) {
+            parentConnections.get(child).push(actualParent);
+        }
+    }
     connectionpoints = getConnectionPoints(tree);
     fillCivSelector();
 
@@ -136,6 +154,7 @@ function displayData() {
 
     const connectionGroup = draw.group().attr({id: 'connection_lines'});
     for (let connection of connections) {
+        if (connection[2]) continue; // This prevents drawing lines for false connections
         let from = connectionpoints.get(connection[0]);
         let to = connectionpoints.get(connection[1]);
         let intermediate_height = from.y + (tree.element_height * 2 / 3);
