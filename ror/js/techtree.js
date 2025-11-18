@@ -25,7 +25,7 @@ const getAgeNames = (data) => {
     ];
 }
 
-const unitClasses = {
+const attackAndArmorClasses = {
     0: '<abbr title="unused">Wonders</abbr>',
     1: 'Infantry',
     2: 'Heavy Warships',
@@ -223,6 +223,7 @@ const BUILDING_INDEX = [
     TEMPLE,
     DOCK,
 ];
+
 class Tree {
     constructor() {
         this.offsets = {
@@ -325,10 +326,10 @@ class Lane {
             let to = connection[1];
             let allConnectionsForFrom = connections.filter(c => c[0] === from && carets.has(c[0]) && carets.has(c[1]));
             let allRelevantTos = allConnectionsForFrom.map(c => c[1]);
-            if (carets.has(from) && carets.get(from).x < Math.min(allRelevantTos.map(to_ => carets.get(to_).x))){
+            if (carets.has(from) && carets.get(from).x < Math.min(allRelevantTos.map(to_ => carets.get(to_).x))) {
                 carets.get(from).x = Math.min(allRelevantTos.map(to_ => carets.get(to_).x));
             }
-            if (carets.has(from) && carets.get(from).x > Math.max(allRelevantTos.map(to_ => carets.get(to_).x))){
+            if (carets.has(from) && carets.get(from).x > Math.max(allRelevantTos.map(to_ => carets.get(to_).x))) {
                 console.assert(allRelevantTos.length === 1, `Overlapping carets: ${allRelevantTos}`)
                 allRelevantTos.forEach(to_ => carets.get(to_).x = carets.get(from).x);
             }
@@ -449,24 +450,24 @@ function formatName(originalname) {
 }
 
 function unique(building_style) {
-	if (building_style === undefined) {
-		building_style = BUILDING_STYLE_GENERIC;
-	}
-	SVG('#building_' + formatId(BARRACKS) + '_img').load('img/Buildings/' + BARRACKS + '_' + building_style + '.png');
-	SVG('#building_' + formatId(ACADEMY) + '_img').load('img/Buildings/' + ACADEMY + '_' + building_style + '.png');
-	SVG('#building_' + formatId(TOWN_CENTER) + '_img').load('img/Buildings/' + TOWN_CENTER + '_' + building_style + '.png');
-	SVG('#building_' + formatId(TOWN_CENTER_2) + '_img').load('img/Buildings/' + TOWN_CENTER + '_' + building_style + '.png');
-	SVG('#building_' + formatId(MEDIUM_WALL) + '_img').load('img/Buildings/' + MEDIUM_WALL + '_' + building_style + '.png');
-	SVG('#building_' + formatId(FORTIFIED_WALL) + '_img').load('img/Buildings/' + FORTIFIED_WALL + '_' + building_style + '.png');
-	SVG('#building_' + formatId(GOVERNMENT_CENTER) + '_img').load('img/Buildings/' + GOVERNMENT_CENTER + '_' + building_style + '.png');
-	SVG('#building_' + formatId(GUARD_TOWER) + '_img').load('img/Buildings/' + GUARD_TOWER + '_' + building_style + '.png');
-	SVG('#building_' + formatId(BALLISTA_TOWER) + '_img').load('img/Buildings/' + GUARD_TOWER + '_' + building_style + '.png');
-	SVG('#building_' + formatId(WONDER) + '_img').load('img/Buildings/' + WONDER + '_' + building_style + '.png');
+    if (building_style === undefined) {
+        building_style = BUILDING_STYLE_GENERIC;
+    }
+    SVG('#building_' + formatId(BARRACKS) + '_img').load('img/Buildings/' + BARRACKS + '_' + building_style + '.png');
+    SVG('#building_' + formatId(ACADEMY) + '_img').load('img/Buildings/' + ACADEMY + '_' + building_style + '.png');
+    SVG('#building_' + formatId(TOWN_CENTER) + '_img').load('img/Buildings/' + TOWN_CENTER + '_' + building_style + '.png');
+    SVG('#building_' + formatId(TOWN_CENTER_2) + '_img').load('img/Buildings/' + TOWN_CENTER + '_' + building_style + '.png');
+    SVG('#building_' + formatId(MEDIUM_WALL) + '_img').load('img/Buildings/' + MEDIUM_WALL + '_' + building_style + '.png');
+    SVG('#building_' + formatId(FORTIFIED_WALL) + '_img').load('img/Buildings/' + FORTIFIED_WALL + '_' + building_style + '.png');
+    SVG('#building_' + formatId(GOVERNMENT_CENTER) + '_img').load('img/Buildings/' + GOVERNMENT_CENTER + '_' + building_style + '.png');
+    SVG('#building_' + formatId(GUARD_TOWER) + '_img').load('img/Buildings/' + GUARD_TOWER + '_' + building_style + '.png');
+    SVG('#building_' + formatId(BALLISTA_TOWER) + '_img').load('img/Buildings/' + GUARD_TOWER + '_' + building_style + '.png');
+    SVG('#building_' + formatId(WONDER) + '_img').load('img/Buildings/' + WONDER + '_' + building_style + '.png');
 }
 
 function getName(id, itemtype) {
     //ToDo handle unique stuff properly
-    if(id.toString().startsWith('UNIQUE')){
+    if (id.toString().startsWith('UNIQUE')) {
         return id;
     }
     const languageNameId = data['data'][itemtype][id]['LanguageNameId'];
@@ -494,96 +495,92 @@ function getDefaultTree() {
     tree.updateOffsets();
 
 
- 	let barrackslane = new Lane();
-	barrackslane.rows.stone_1.push(building(BARRACKS));
-	barrackslane.rows.stone_2.push(unit(CLUBMAN));
-	barrackslane.rows.tool_1.push(unit(AXEMAN));
-	barrackslane.rows.tool_1.push(unit(SLINGER));
-	barrackslane.rows.bronze_1.push(unit(SHORT_SWORDSMAN));
-	barrackslane.rows.bronze_2.push(unit(BROAD_SWORDSMAN));
-	barrackslane.rows.iron_1.push(unit(LONG_SWORDSMAN));
-	barrackslane.rows.iron_2.push(unit(LEGIONARY));
-	tree.lanes.push(barrackslane);
+    let barrackslane = new Lane();
+    barrackslane.rows.stone_1.push(building(BARRACKS));
+    barrackslane.rows.stone_2.push(unit(CLUBMAN));
+    barrackslane.rows.tool_1.push(unit(AXEMAN));
+    barrackslane.rows.tool_1.push(unit(SLINGER));
+    barrackslane.rows.bronze_1.push(unit(SHORT_SWORDSMAN));
+    barrackslane.rows.bronze_2.push(unit(BROAD_SWORDSMAN));
+    barrackslane.rows.iron_1.push(unit(LONG_SWORDSMAN));
+    barrackslane.rows.iron_2.push(unit(LEGIONARY));
+    tree.lanes.push(barrackslane);
 
 
- 	let archerylane = new Lane();
-	archerylane.rows.tool_1.push(building(ARCHERY_RANGE));
-	archerylane.rows.tool_2.push(unit(BOWMAN));
-	archerylane.rows.bronze_1.push(unit(CHARIOT_ARCHER));
-	archerylane.rows.bronze_1.push(unit(IMPROVED_BOWMAN));
-	archerylane.rows.bronze_2.push(unit(COMPOSITE_BOWMAN));
-	archerylane.rows.iron_1.push(unit(ELEPHANT_ARCHER));
-	tree.lanes.push(archerylane);
-	let horsearcherlane = new Lane();
-	horsearcherlane.rows.iron_1.push(unit(HORSE_ARCHER));
-	horsearcherlane.rows.iron_2.push(unit(HEAVY_HORSE_ARCHER));
-	tree.lanes.push(horsearcherlane);
+    let archerylane = new Lane();
+    archerylane.rows.tool_1.push(building(ARCHERY_RANGE));
+    archerylane.rows.tool_2.push(unit(BOWMAN));
+    archerylane.rows.bronze_1.push(unit(CHARIOT_ARCHER));
+    archerylane.rows.bronze_1.push(unit(IMPROVED_BOWMAN));
+    archerylane.rows.bronze_2.push(unit(COMPOSITE_BOWMAN));
+    archerylane.rows.iron_1.push(unit(HORSE_ARCHER));
+    archerylane.rows.iron_2.push(unit(HEAVY_HORSE_ARCHER));
+    archerylane.rows.iron_2.push(unit(ELEPHANT_ARCHER));
+    tree.lanes.push(archerylane);
 
 
-	let siegeworkshoplane = new Lane();
-	siegeworkshoplane.rows.bronze_1.push(building(SIEGE_WORKSHOP));
-	siegeworkshoplane.rows.bronze_2.push(unit(STONE_THROWER));
-	siegeworkshoplane.rows.iron_1.push(unit(CATAPULT));
-	siegeworkshoplane.rows.iron_1.push(unit(BALLISTA));
-	siegeworkshoplane.rows.iron_2.push(unit(HEAVY_CATAPULT));
-	siegeworkshoplane.rows.iron_2.push(unit(HELEPOLIS));
+    let siegeworkshoplane = new Lane();
+    siegeworkshoplane.rows.bronze_1.push(building(SIEGE_WORKSHOP));
+    siegeworkshoplane.rows.bronze_2.push(unit(STONE_THROWER));
+    siegeworkshoplane.rows.iron_1.push(unit(CATAPULT));
+    siegeworkshoplane.rows.iron_1.push(unit(BALLISTA));
+    siegeworkshoplane.rows.iron_2.push(unit(HEAVY_CATAPULT));
+    siegeworkshoplane.rows.iron_2.push(unit(HELEPOLIS));
     tree.lanes.push(siegeworkshoplane);
 
 
-	let scoutlane = new Lane();
-	scoutlane.rows.tool_2.push(unit(SCOUT));
-	tree.lanes.push(scoutlane);
-	let stablelane = new Lane();
-	stablelane.rows.tool_1.push(building(STABLE));
-	stablelane.rows.bronze_1.push(unit(CHARIOT));
-	stablelane.rows.bronze_1.push(unit(CAVALRY));
-	stablelane.rows.bronze_1.push(unit(CAMEL_RIDER));
-	stablelane.rows.iron_1.push(unit(SCYTHE_CHARIOT));
-	stablelane.rows.iron_1.push(unit(HEAVY_CAVALRY));
-	stablelane.rows.iron_1.push(unit(WAR_ELEPHANT));
-	stablelane.rows.iron_2.push(unit(CATAPHRACT));
-	stablelane.rows.iron_2.push(unit(ARMORED_ELEPHANT));
-	tree.lanes.push(stablelane);
+    let stablelane = new Lane();
+    stablelane.rows.tool_1.push(building(STABLE));
+    stablelane.rows.tool_2.push(unit(SCOUT));
+    stablelane.rows.bronze_1.push(unit(CHARIOT));
+    stablelane.rows.bronze_1.push(unit(CAVALRY));
+    stablelane.rows.bronze_1.push(unit(CAMEL_RIDER));
+    stablelane.rows.iron_1.push(unit(SCYTHE_CHARIOT));
+    stablelane.rows.iron_1.push(unit(HEAVY_CAVALRY));
+    stablelane.rows.iron_1.push(unit(WAR_ELEPHANT));
+    stablelane.rows.iron_2.push(unit(CATAPHRACT));
+    stablelane.rows.iron_2.push(unit(ARMORED_ELEPHANT));
+    tree.lanes.push(stablelane);
 
 
-	let academylane = new Lane();
-	academylane.rows.bronze_1.push(building(ACADEMY));
-	academylane.rows.bronze_2.push(unit(HOPLITE));
-	academylane.rows.iron_1.push(unit(PHALANGITE));
-	academylane.rows.iron_2.push(unit(CENTURION));
-	tree.lanes.push(academylane);
+    let academylane = new Lane();
+    academylane.rows.bronze_1.push(building(ACADEMY));
+    academylane.rows.bronze_2.push(unit(HOPLITE));
+    academylane.rows.iron_1.push(unit(PHALANGITE));
+    academylane.rows.iron_2.push(unit(CENTURION));
+    tree.lanes.push(academylane);
 
 
-	let storagepitlane = new Lane();
-	storagepitlane.rows.stone_1.push(building(STORAGE_PIT));
-	storagepitlane.rows.tool_1.push(tech(TOOLWORKING));
-	storagepitlane.rows.tool_1.push(tech(INFANTRY_LEATHER_ARMOR));
-	storagepitlane.rows.tool_1.push(tech(ARCHER_LEATHER_ARMOR));
-	storagepitlane.rows.tool_1.push(tech(CAVALRY_LEATHER_ARMOR));
-	storagepitlane.rows.bronze_1.push(tech(METALWORKING));
-	storagepitlane.rows.bronze_1.push(tech(INFANTRY_SCALE_ARMOR));
-	storagepitlane.rows.bronze_1.push(tech(ARCHER_SCALE_ARMOR));
-	storagepitlane.rows.bronze_1.push(tech(CAVALRY_SCALE_ARMOR));
-	storagepitlane.rows.bronze_1.push(tech(BRONZE_SHIELD));
-	storagepitlane.rows.iron_1.push(tech(METALLURGY));
-	storagepitlane.rows.iron_1.push(tech(INFANTRY_CHAIN_MAIL));
-	storagepitlane.rows.iron_1.push(tech(ARCHER_CHAIN_MAIL));
-	storagepitlane.rows.iron_1.push(tech(CAVALRY_CHAIN_MAIL));
-	storagepitlane.rows.iron_1.push(tech(IRON_SHIELD));
-	storagepitlane.rows.iron_2.push(tech(TOWER_SHIELD));
-	tree.lanes.push(storagepitlane);
+    let storagepitlane = new Lane();
+    storagepitlane.rows.stone_1.push(building(STORAGE_PIT));
+    storagepitlane.rows.tool_1.push(tech(TOOLWORKING));
+    storagepitlane.rows.tool_1.push(tech(INFANTRY_LEATHER_ARMOR));
+    storagepitlane.rows.tool_1.push(tech(ARCHER_LEATHER_ARMOR));
+    storagepitlane.rows.tool_1.push(tech(CAVALRY_LEATHER_ARMOR));
+    storagepitlane.rows.bronze_1.push(tech(METALWORKING));
+    storagepitlane.rows.bronze_1.push(tech(INFANTRY_SCALE_ARMOR));
+    storagepitlane.rows.bronze_1.push(tech(ARCHER_SCALE_ARMOR));
+    storagepitlane.rows.bronze_1.push(tech(CAVALRY_SCALE_ARMOR));
+    storagepitlane.rows.bronze_1.push(tech(BRONZE_SHIELD));
+    storagepitlane.rows.iron_1.push(tech(METALLURGY));
+    storagepitlane.rows.iron_1.push(tech(INFANTRY_CHAIN_MAIL));
+    storagepitlane.rows.iron_1.push(tech(ARCHER_CHAIN_MAIL));
+    storagepitlane.rows.iron_1.push(tech(CAVALRY_CHAIN_MAIL));
+    storagepitlane.rows.iron_1.push(tech(IRON_SHIELD));
+    storagepitlane.rows.iron_2.push(tech(TOWER_SHIELD));
+    tree.lanes.push(storagepitlane);
 
 
-	let granarylane = new Lane();
-	granarylane.rows.stone_1.push(building(GRANARY));
-	granarylane.rows.tool_1.push(tech(SMALL_WALL_TECH));
-	granarylane.rows.tool_1.push(tech(WATCH_TOWER_TECH));
-	granarylane.rows.bronze_1.push(tech(MEDIUM_WALL_TECH));
-	granarylane.rows.bronze_1.push(tech(SENTRY_TOWER_TECH));
-	granarylane.rows.iron_1.push(tech(FORTIFIED_WALL_TECH));
-	granarylane.rows.iron_1.push(tech(GUARD_TOWER_TECH));
-	granarylane.rows.iron_2.push(tech(BALLISTA_TOWER_TECH));
-	tree.lanes.push(granarylane);
+    let granarylane = new Lane();
+    granarylane.rows.stone_1.push(building(GRANARY));
+    granarylane.rows.tool_1.push(tech(SMALL_WALL_TECH));
+    granarylane.rows.tool_1.push(tech(WATCH_TOWER_TECH));
+    granarylane.rows.bronze_1.push(tech(MEDIUM_WALL_TECH));
+    granarylane.rows.bronze_1.push(tech(SENTRY_TOWER_TECH));
+    granarylane.rows.iron_1.push(tech(FORTIFIED_WALL_TECH));
+    granarylane.rows.iron_1.push(tech(GUARD_TOWER_TECH));
+    granarylane.rows.iron_2.push(tech(BALLISTA_TOWER_TECH));
+    tree.lanes.push(granarylane);
 
 
     let walllane = new Lane();
@@ -611,20 +608,20 @@ function getDefaultTree() {
     let marketlane = new Lane();
     marketlane.rows.tool_1.push(building(MARKET));
     marketlane.rows.tool_2.push(tech(WOODWORKING));
-	marketlane.rows.tool_2.push(tech(STONE_MINING));
-	marketlane.rows.tool_2.push(tech(GOLD_MINING));
-	marketlane.rows.tool_2.push(tech(DOMESTICATION));
-	marketlane.rows.bronze_1.push(tech(ARTISANSHIP));
-	marketlane.rows.bronze_1.push(tech(PLOW));
-	marketlane.rows.iron_1.push(tech(CRAFTSMANSHIP));
-	marketlane.rows.iron_1.push(tech(SIEGECRAFT));
-	marketlane.rows.iron_1.push(tech(COINAGE));
-	marketlane.rows.iron_1.push(tech(IRRIGATION));
+    marketlane.rows.tool_2.push(tech(STONE_MINING));
+    marketlane.rows.tool_2.push(tech(GOLD_MINING));
+    marketlane.rows.tool_2.push(tech(DOMESTICATION));
+    marketlane.rows.bronze_1.push(tech(ARTISANSHIP));
+    marketlane.rows.bronze_1.push(tech(PLOW));
+    marketlane.rows.iron_1.push(tech(CRAFTSMANSHIP));
+    marketlane.rows.iron_1.push(tech(SIEGECRAFT));
+    marketlane.rows.iron_1.push(tech(COINAGE));
+    marketlane.rows.iron_1.push(tech(IRRIGATION));
     tree.lanes.push(marketlane);
-	let wheellane = new Lane();
-	wheellane.rows.bronze_1.push(tech(WHEEL));
-	wheellane.rows.bronze_2.push(unit(TRADE_CART));
-	tree.lanes.push(wheellane);
+    let wheellane = new Lane();
+    wheellane.rows.bronze_1.push(tech(WHEEL));
+    wheellane.rows.bronze_2.push(unit(TRADE_CART));
+    tree.lanes.push(wheellane);
 
 
     let farmlane = new Lane();
@@ -632,43 +629,38 @@ function getDefaultTree() {
     tree.lanes.push(farmlane);
 
 
-	let governmentcenterlane = new Lane();
-	governmentcenterlane.rows.bronze_1.push(building(GOVERNMENT_CENTER));
-	governmentcenterlane.rows.bronze_2.push(tech(NOBILITY));
-	governmentcenterlane.rows.bronze_2.push(tech(WRITING));
-	governmentcenterlane.rows.bronze_2.push(tech(ARCHITECTURE));
-	governmentcenterlane.rows.bronze_2.push(tech(LOGISTICS));
-	governmentcenterlane.rows.bronze_2.push(tech(URBANIZATION));
-	governmentcenterlane.rows.iron_1.push(tech(ARISTOCRACY));
-	governmentcenterlane.rows.iron_1.push(tech(BALLISTICS));
-	governmentcenterlane.rows.iron_1.push(tech(ALCHEMY));
-	governmentcenterlane.rows.iron_1.push(tech(ENGINEERING));
-	governmentcenterlane.rows.iron_1.push(tech(CONSCRIPTION));
-	tree.lanes.push(governmentcenterlane);
+    let governmentcenterlane = new Lane();
+    governmentcenterlane.rows.bronze_1.push(building(GOVERNMENT_CENTER));
+    governmentcenterlane.rows.bronze_2.push(tech(NOBILITY));
+    governmentcenterlane.rows.bronze_2.push(tech(WRITING));
+    governmentcenterlane.rows.bronze_2.push(tech(ARCHITECTURE));
+    governmentcenterlane.rows.bronze_2.push(tech(LOGISTICS));
+    governmentcenterlane.rows.bronze_2.push(tech(URBANIZATION));
+    governmentcenterlane.rows.iron_1.push(tech(ARISTOCRACY));
+    governmentcenterlane.rows.iron_1.push(tech(BALLISTICS));
+    governmentcenterlane.rows.iron_1.push(tech(ALCHEMY));
+    governmentcenterlane.rows.iron_1.push(tech(ENGINEERING));
+    governmentcenterlane.rows.iron_1.push(tech(CONSCRIPTION));
+    tree.lanes.push(governmentcenterlane);
 
-	let newtowncenterlane = new Lane()
-	newtowncenterlane.rows.bronze_2.push(building(TOWN_CENTER_2));
-	tree.lanes.push(newtowncenterlane);
-
-
-	let templelane = new Lane();
-	templelane.rows.bronze_1.push(building(TEMPLE));
-	templelane.rows.bronze_2.push(tech(ASTROLOGY));
-	templelane.rows.bronze_2.push(tech(MYSTICISM));
-	templelane.rows.bronze_2.push(tech(POLYTHEISM));
-	templelane.rows.bronze_2.push(unit(PRIEST));
-	templelane.rows.iron_1.push(tech(AFTERLIFE));
-	templelane.rows.iron_1.push(tech(MONOTHEISM));
-	templelane.rows.iron_1.push(tech(FANATICISM));
-	templelane.rows.iron_1.push(tech(ZEALOTRY));
-	templelane.rows.iron_2.push(tech(MEDICINE));
-	templelane.rows.iron_2.push(tech(THEOCRACY));
-	tree.lanes.push(templelane);
+    let newtowncenterlane = new Lane()
+    newtowncenterlane.rows.bronze_2.push(building(TOWN_CENTER_2));
+    tree.lanes.push(newtowncenterlane);
 
 
-    let wonderlane = new Lane();
-    wonderlane.rows.iron_1.push(building(WONDER));
-    tree.lanes.push(wonderlane);
+    let templelane = new Lane();
+    templelane.rows.bronze_1.push(building(TEMPLE));
+    templelane.rows.bronze_2.push(tech(ASTROLOGY));
+    templelane.rows.bronze_2.push(tech(MYSTICISM));
+    templelane.rows.bronze_2.push(tech(POLYTHEISM));
+    templelane.rows.bronze_2.push(unit(PRIEST));
+    templelane.rows.iron_1.push(tech(AFTERLIFE));
+    templelane.rows.iron_1.push(tech(MONOTHEISM));
+    templelane.rows.iron_1.push(tech(FANATICISM));
+    templelane.rows.iron_1.push(tech(ZEALOTRY));
+    templelane.rows.iron_2.push(tech(MEDICINE));
+    templelane.rows.iron_2.push(tech(THEOCRACY));
+    tree.lanes.push(templelane);
 
 
     let towncenterlane = new Lane();
@@ -683,27 +675,28 @@ function getDefaultTree() {
 
     let houselane = new Lane();
     houselane.rows.stone_1.push(building(HOUSE));
+    houselane.rows.iron_1.push(building(WONDER));
     tree.lanes.push(houselane);
 
 
-	let fishinglane = new Lane();
-	fishinglane.rows.stone_2.push(unit(FISHING_BOAT));
-	fishinglane.rows.bronze_1.push(unit(FISHING_SHIP));
-	tree.lanes.push(fishinglane);
+    let fishinglane = new Lane();
+    fishinglane.rows.stone_2.push(unit(FISHING_BOAT));
+    fishinglane.rows.bronze_1.push(unit(FISHING_SHIP));
+    tree.lanes.push(fishinglane);
     let docklane = new Lane();
     docklane.rows.stone_1.push(building(DOCK));
-	docklane.rows.tool_1.push(unit(LIGHT_TRANSPORT));
-	docklane.rows.tool_1.push(unit(SCOUT_SHIP));
-	docklane.rows.bronze_1.push(unit(WAR_GALLEY));
-	docklane.rows.iron_1.push(unit(HEAVY_TRANSPORT));
-	docklane.rows.iron_1.push(unit(TRIREME));
-	docklane.rows.iron_2.push(unit(FIRE_GALLEY));
-	tree.lanes.push(docklane);
-	let tradeboatlane = new Lane();
-	tradeboatlane.rows.bronze_1.push(unit(TRADE_BOAT));
-	tradeboatlane.rows.bronze_2.push(unit(MERCHANT_SHIP));
-	tradeboatlane.rows.iron_1.push(unit(CATAPULT_TRIREME));
-	tradeboatlane.rows.iron_2.push(unit(JUGGERNAUT));
+    docklane.rows.tool_1.push(unit(LIGHT_TRANSPORT));
+    docklane.rows.tool_1.push(unit(SCOUT_SHIP));
+    docklane.rows.bronze_1.push(unit(WAR_GALLEY));
+    docklane.rows.iron_1.push(unit(HEAVY_TRANSPORT));
+    docklane.rows.iron_1.push(unit(TRIREME));
+    docklane.rows.iron_2.push(unit(FIRE_GALLEY));
+    tree.lanes.push(docklane);
+    let tradeboatlane = new Lane();
+    tradeboatlane.rows.bronze_1.push(unit(TRADE_BOAT));
+    tradeboatlane.rows.bronze_2.push(unit(MERCHANT_SHIP));
+    tradeboatlane.rows.iron_1.push(unit(CATAPULT_TRIREME));
+    tradeboatlane.rows.iron_2.push(unit(JUGGERNAUT));
     tree.lanes.push(tradeboatlane);
 
 
@@ -728,123 +721,117 @@ function t(tech) {
 
 function getConnections() {
     let connections = [
-		[b(ARCHERY_RANGE), b(SIEGE_WORKSHOP)],
-		[b(ARCHERY_RANGE), u(BOWMAN)],
-//		[b(ARCHERY_RANGE), u(CHARIOT_ARCHER)],
-		[b(ARCHERY_RANGE), u(IMPROVED_BOWMAN)],
-		[u(IMPROVED_BOWMAN), u(COMPOSITE_BOWMAN)],
-//		[b(ARCHERY_RANGE), u(ELEPHANT_ARCHER)],
-		[b(ARCHERY_RANGE), u(HORSE_ARCHER)],
-		[u(HORSE_ARCHER), u(HEAVY_HORSE_ARCHER)],
-		[b(SIEGE_WORKSHOP), u(STONE_THROWER)],
-		[u(STONE_THROWER), u(CATAPULT)],
-		[u(CATAPULT), u(HEAVY_CATAPULT)],
-		[b(SIEGE_WORKSHOP), u(BALLISTA)],
-		[u(BALLISTA), u(HELEPOLIS)],
+        [b(ARCHERY_RANGE), b(SIEGE_WORKSHOP)],
+        [b(ARCHERY_RANGE), u(BOWMAN)],
+        [b(ARCHERY_RANGE), u(IMPROVED_BOWMAN)],
+        [u(IMPROVED_BOWMAN), u(COMPOSITE_BOWMAN)],
+        [u(HORSE_ARCHER), u(HEAVY_HORSE_ARCHER)],
+        [b(SIEGE_WORKSHOP), u(STONE_THROWER)],
+        [u(STONE_THROWER), u(CATAPULT)],
+        [u(CATAPULT), u(HEAVY_CATAPULT)],
+        [b(SIEGE_WORKSHOP), u(BALLISTA)],
+        [u(BALLISTA), u(HELEPOLIS)],
         [b(BARRACKS), b(ARCHERY_RANGE)],
         [b(BARRACKS), b(STABLE)],
         [b(BARRACKS), u(CLUBMAN)],
         [u(CLUBMAN), u(AXEMAN)],
-		[b(BARRACKS), u(SLINGER)],
-//		[b(BARRACKS), u(SHORT_SWORDSMAN)],
-		[u(SHORT_SWORDSMAN), u(BROAD_SWORDSMAN)],
-		[u(BROAD_SWORDSMAN), u(LONG_SWORDSMAN)],
-		[u(LONG_SWORDSMAN), u(LEGIONARY)],
-		[b(STABLE), b(ACADEMY)],
-		[b(STABLE), u(SCOUT)],
-		[b(STABLE), u(CHARIOT)],
-		[u(CHARIOT), u(SCYTHE_CHARIOT)],
-		[b(STABLE), u(CAVALRY)],
-		[u(CAVALRY), u(HEAVY_CAVALRY)],
-		[u(HEAVY_CAVALRY), u(CATAPHRACT)],
-		[b(STABLE), u(CAMEL_RIDER)],
-//		[b(STABLE), u(WAR_ELEPHANT)],
-		[u(WAR_ELEPHANT), u(ARMORED_ELEPHANT)],
-		[b(ACADEMY), u(HOPLITE)],
-		[u(HOPLITE), u(PHALANGITE)],
-		[u(PHALANGITE), u(CENTURION)],
-		[b(STORAGE_PIT), t(TOOLWORKING)],
-		[t(TOOLWORKING), t(METALWORKING)],
-		[t(METALWORKING), t(METALLURGY)],
-		[b(STORAGE_PIT), t(INFANTRY_LEATHER_ARMOR)],
-		[t(INFANTRY_LEATHER_ARMOR), t(INFANTRY_SCALE_ARMOR)],
-		[t(INFANTRY_SCALE_ARMOR), t(INFANTRY_CHAIN_MAIL)],
-		[b(STORAGE_PIT), t(ARCHER_LEATHER_ARMOR)],
-		[t(ARCHER_LEATHER_ARMOR), t(ARCHER_SCALE_ARMOR)],
-		[t(ARCHER_SCALE_ARMOR), t(ARCHER_CHAIN_MAIL)],
-		[b(STORAGE_PIT), t(CAVALRY_LEATHER_ARMOR)],
-		[t(CAVALRY_LEATHER_ARMOR), t(CAVALRY_SCALE_ARMOR)],
-		[t(CAVALRY_SCALE_ARMOR), t(CAVALRY_CHAIN_MAIL)],
-		[b(STORAGE_PIT), t(BRONZE_SHIELD)],
-		[t(BRONZE_SHIELD), t(IRON_SHIELD)],
-		[t(IRON_SHIELD), t(TOWER_SHIELD)],
-		[b(GRANARY), b(MARKET)],
-		[b(GRANARY), t(SMALL_WALL_TECH)],
-		[t(SMALL_WALL_TECH), t(MEDIUM_WALL_TECH)],
-		[t(MEDIUM_WALL_TECH), t(FORTIFIED_WALL_TECH)],
-		[b(GRANARY), t(WATCH_TOWER_TECH)],
-		[t(WATCH_TOWER_TECH), t(SENTRY_TOWER_TECH)],
-		[t(SENTRY_TOWER_TECH), t(GUARD_TOWER_TECH)],
-		[t(GUARD_TOWER_TECH), t(BALLISTA_TOWER_TECH)],
-		[b(SMALL_WALL), b(MEDIUM_WALL)],
-		[b(MEDIUM_WALL), b(FORTIFIED_WALL)],
-		[b(SMALL_GATE), b(MEDIUM_GATE)],
-		[b(MEDIUM_GATE), b(FORTIFIED_GATE)],
-		[b(WATCH_TOWER), b(SENTRY_TOWER)],
-		[b(SENTRY_TOWER), b(GUARD_TOWER)],
-		[b(GUARD_TOWER), b(BALLISTA_TOWER)],
-		[b(MARKET), b(FARM)],
-		[b(MARKET), b(GOVERNMENT_CENTER)],
-		[b(MARKET), b(TEMPLE)],
-		[b(MARKET), t(WOODWORKING)],
-		[t(WOODWORKING), t(ARTISANSHIP)],
-		[t(ARTISANSHIP), t(CRAFTSMANSHIP)],
-		[b(MARKET), t(STONE_MINING)],
-		[t(STONE_MINING), t(SIEGECRAFT)],
-		[b(MARKET), t(GOLD_MINING)],
-		[t(GOLD_MINING), t(COINAGE)],
-		[b(MARKET), t(DOMESTICATION)],
-		[t(DOMESTICATION), t(PLOW)],
-		[t(PLOW), t(IRRIGATION)],
-		[b(MARKET), t(WHEEL)],
-		[t(WHEEL), u(TRADE_CART)],
-		[b(GOVERNMENT_CENTER), t(NOBILITY)],
-		[b(GOVERNMENT_CENTER), t(WRITING)],
-		[b(GOVERNMENT_CENTER), t(ARCHITECTURE)],
-		[b(GOVERNMENT_CENTER), t(LOGISTICS)],
-		[b(GOVERNMENT_CENTER), t(URBANIZATION)],
-		[b(GOVERNMENT_CENTER), b(TOWN_CENTER_2)],
-		// [b(GOVERNMENT_CENTER), t(ARISTOCRACY)],
-		// [b(GOVERNMENT_CENTER), t(BALLISTICS)],
-		// [b(GOVERNMENT_CENTER), t(ALCHEMY)],
-		// [b(GOVERNMENT_CENTER), t(ENGINEERING)],
-		// [b(GOVERNMENT_CENTER), t(CONSCRIPTION)],
-		[b(TEMPLE), t(ASTROLOGY)],
-		[b(TEMPLE), t(MYSTICISM)],
-		[b(TEMPLE), t(POLYTHEISM)],
-		[b(TEMPLE), u(PRIEST)],
-		// [b(TEMPLE), t(AFTERLIFE)],
-		// [b(TEMPLE), t(MONOTHEISM)],
-		// [b(TEMPLE), t(FANATICISM)],
-		// [b(TEMPLE), t(ZEALOTRY)],
-		// [b(TEMPLE), t(MEDICINE)],
-		// [b(TEMPLE), t(THEOCRACY)],
-		[b(TOWN_CENTER), u(VILLAGER)],
-		[b(TOWN_CENTER), t(TOOL_AGE)],
-		[t(TOOL_AGE), t(BRONZE_AGE)],
-		[t(BRONZE_AGE), t(IRON_AGE)],
-		[b(DOCK), u(FISHING_BOAT)],
-		[u(FISHING_BOAT), u(FISHING_SHIP)],
-		[b(DOCK), u(TRADE_BOAT)],
-		[u(TRADE_BOAT), u(MERCHANT_SHIP)],
-		[b(DOCK), u(LIGHT_TRANSPORT)],
-		[u(LIGHT_TRANSPORT), u(HEAVY_TRANSPORT)],
-		[b(DOCK), u(SCOUT_SHIP)],
-		[u(SCOUT_SHIP), u(WAR_GALLEY)],
-		[u(WAR_GALLEY), u(TRIREME)],
-		// [b(DOCK), u(FIRE_GALLEY)],
-		// [b(DOCK), u(CATAPULT_TRIREME)],
-		[u(CATAPULT_TRIREME), u(JUGGERNAUT)],
+        [b(BARRACKS), u(SLINGER)],
+        [u(SHORT_SWORDSMAN), u(BROAD_SWORDSMAN)],
+        [u(BROAD_SWORDSMAN), u(LONG_SWORDSMAN)],
+        [u(LONG_SWORDSMAN), u(LEGIONARY)],
+        [b(STABLE), b(ACADEMY)],
+        [b(STABLE), u(SCOUT)],
+        [u(CHARIOT), u(SCYTHE_CHARIOT)],
+        [b(STABLE), u(CAVALRY)],
+        [u(CAVALRY), u(HEAVY_CAVALRY)],
+        [u(HEAVY_CAVALRY), u(CATAPHRACT)],
+        [b(STABLE), u(CAMEL_RIDER)],
+        [u(WAR_ELEPHANT), u(ARMORED_ELEPHANT)],
+        [b(ACADEMY), u(HOPLITE)],
+        [u(HOPLITE), u(PHALANGITE)],
+        [u(PHALANGITE), u(CENTURION)],
+        [b(STORAGE_PIT), t(TOOLWORKING)],
+        [t(TOOLWORKING), t(METALWORKING)],
+        [t(METALWORKING), t(METALLURGY)],
+        [b(STORAGE_PIT), t(INFANTRY_LEATHER_ARMOR)],
+        [t(INFANTRY_LEATHER_ARMOR), t(INFANTRY_SCALE_ARMOR)],
+        [t(INFANTRY_SCALE_ARMOR), t(INFANTRY_CHAIN_MAIL)],
+        [b(STORAGE_PIT), t(ARCHER_LEATHER_ARMOR)],
+        [t(ARCHER_LEATHER_ARMOR), t(ARCHER_SCALE_ARMOR)],
+        [t(ARCHER_SCALE_ARMOR), t(ARCHER_CHAIN_MAIL)],
+        [b(STORAGE_PIT), t(CAVALRY_LEATHER_ARMOR)],
+        [t(CAVALRY_LEATHER_ARMOR), t(CAVALRY_SCALE_ARMOR)],
+        [t(CAVALRY_SCALE_ARMOR), t(CAVALRY_CHAIN_MAIL)],
+        [b(STORAGE_PIT), t(BRONZE_SHIELD)],
+        [t(BRONZE_SHIELD), t(IRON_SHIELD)],
+        [t(IRON_SHIELD), t(TOWER_SHIELD)],
+        [b(GRANARY), b(MARKET)],
+        [b(GRANARY), t(SMALL_WALL_TECH)],
+        [t(SMALL_WALL_TECH), t(MEDIUM_WALL_TECH)],
+        [t(MEDIUM_WALL_TECH), t(FORTIFIED_WALL_TECH)],
+        [b(GRANARY), t(WATCH_TOWER_TECH)],
+        [t(WATCH_TOWER_TECH), t(SENTRY_TOWER_TECH)],
+        [t(SENTRY_TOWER_TECH), t(GUARD_TOWER_TECH)],
+        [t(GUARD_TOWER_TECH), t(BALLISTA_TOWER_TECH)],
+        [b(SMALL_WALL), b(MEDIUM_WALL)],
+        [b(MEDIUM_WALL), b(FORTIFIED_WALL)],
+        [b(SMALL_GATE), b(MEDIUM_GATE)],
+        [b(MEDIUM_GATE), b(FORTIFIED_GATE)],
+        [b(WATCH_TOWER), b(SENTRY_TOWER)],
+        [b(SENTRY_TOWER), b(GUARD_TOWER)],
+        [b(GUARD_TOWER), b(BALLISTA_TOWER)],
+        [b(MARKET), b(FARM)],
+        [b(MARKET), b(GOVERNMENT_CENTER)],
+        [b(MARKET), b(TEMPLE)],
+        [b(MARKET), t(WOODWORKING)],
+        [t(WOODWORKING), t(ARTISANSHIP)],
+        [t(ARTISANSHIP), t(CRAFTSMANSHIP)],
+        [b(MARKET), t(STONE_MINING)],
+        [t(STONE_MINING), t(SIEGECRAFT)],
+        [b(MARKET), t(GOLD_MINING)],
+        [t(GOLD_MINING), t(COINAGE)],
+        [b(MARKET), t(DOMESTICATION)],
+        [t(DOMESTICATION), t(PLOW)],
+        [t(PLOW), t(IRRIGATION)],
+        [b(MARKET), t(WHEEL)],
+        [t(WHEEL), u(TRADE_CART)],
+        [b(GOVERNMENT_CENTER), t(NOBILITY)],
+        [b(GOVERNMENT_CENTER), t(WRITING)],
+        [b(GOVERNMENT_CENTER), t(ARCHITECTURE)],
+        [b(GOVERNMENT_CENTER), t(LOGISTICS)],
+        [b(GOVERNMENT_CENTER), t(URBANIZATION)],
+        [b(GOVERNMENT_CENTER), b(TOWN_CENTER_2)],
+        // [b(GOVERNMENT_CENTER), t(ARISTOCRACY)],
+        // [b(GOVERNMENT_CENTER), t(BALLISTICS)],
+        // [b(GOVERNMENT_CENTER), t(ALCHEMY)],
+        // [b(GOVERNMENT_CENTER), t(ENGINEERING)],
+        // [b(GOVERNMENT_CENTER), t(CONSCRIPTION)],
+        [b(TEMPLE), t(ASTROLOGY)],
+        [b(TEMPLE), t(MYSTICISM)],
+        [b(TEMPLE), t(POLYTHEISM)],
+        [b(TEMPLE), u(PRIEST)],
+        // [b(TEMPLE), t(AFTERLIFE)],
+        // [b(TEMPLE), t(MONOTHEISM)],
+        // [b(TEMPLE), t(FANATICISM)],
+        // [b(TEMPLE), t(ZEALOTRY)],
+        // [b(TEMPLE), t(MEDICINE)],
+        // [b(TEMPLE), t(THEOCRACY)],
+        [b(TOWN_CENTER), u(VILLAGER)],
+        [b(TOWN_CENTER), t(TOOL_AGE)],
+        [t(TOOL_AGE), t(BRONZE_AGE)],
+        [t(BRONZE_AGE), t(IRON_AGE)],
+        [b(DOCK), u(FISHING_BOAT)],
+        [u(FISHING_BOAT), u(FISHING_SHIP)],
+        [b(DOCK), u(TRADE_BOAT)],
+        [u(TRADE_BOAT), u(MERCHANT_SHIP)],
+        [b(DOCK), u(LIGHT_TRANSPORT)],
+        [u(LIGHT_TRANSPORT), u(HEAVY_TRANSPORT)],
+        [b(DOCK), u(SCOUT_SHIP)],
+        [u(SCOUT_SHIP), u(WAR_GALLEY)],
+        [u(WAR_GALLEY), u(TRIREME)],
+        // [b(DOCK), u(FIRE_GALLEY)],
+        // [b(DOCK), u(CATAPULT_TRIREME)],
+        [u(CATAPULT_TRIREME), u(JUGGERNAUT)],
     ];
 
     let connection_ids = [];

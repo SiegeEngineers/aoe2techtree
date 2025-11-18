@@ -740,29 +740,6 @@ function getColour(id, itemtype) {
     return getColourForNodeType(nodeType);
 }
 
-function getColourForNodeType(nodeType) {
-    switch (nodeType) {
-        case 'BuildingTech':
-        case 'BuildingNonTech':
-            return '#b54e18';
-        case 'RegionalBuilding':
-            return '#cc4422';
-        case 'UniqueBuilding':
-            return '#d43652';
-        case 'Unit':
-        case 'UnitUpgrade':
-            return '#00739c';
-        case 'RegionalUnit':
-            return '#515ae3';
-        case 'UniqueUnit':
-            return '#703b7a';
-        case 'Technology':
-            return '#397139';
-        default:
-            return '#ff0000';
-    }
-}
-
 function building(id) {
     return new Caret(TYPES.BUILDING, getName(id, 'buildings'), id, getColour(id, 'buildings'));
 }
