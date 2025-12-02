@@ -2067,7 +2067,7 @@
                 "Attack": 0,
                 "Attacks": [],
                 "Cost": {
-                    "Wood": 100
+                    "Wood": 110
                 },
                 "GarrisonCapacity": 0,
                 "HP": 560,
@@ -2080,7 +2080,7 @@
                 "PierceArmor": 0,
                 "Range": 0,
                 "ReloadTime": 0,
-                "TrainTime": 18,
+                "TrainTime": 22,
                 "internal_name": "PASTURE_BUILD"
             }
         },
@@ -4257,7 +4257,7 @@
             },
             "875": {
                 "Cost": {
-                    "Food": 100,
+                    "Food": 50,
                     "Gold": 100
                 },
                 "ID": 875,
@@ -4341,7 +4341,7 @@
             },
             "924": {
                 "Cost": {
-                    "Food": 750,
+                    "Food": 550,
                     "Gold": 250
                 },
                 "ID": 924,
@@ -4941,7 +4941,7 @@
             },
             "773": {
                 "Cost": {
-                    "Food": 1200,
+                    "Food": 900,
                     "Gold": 600
                 },
                 "ID": 60,
@@ -5146,7 +5146,7 @@
             "1230": {
                 "Cost": {
                     "Food": 700,
-                    "Gold": 900
+                    "Gold": 600
                 },
                 "ID": 680,
                 "ResearchTime": 40,
@@ -11881,7 +11881,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 25,
+                    "Food": 20,
                     "Gold": 50
                 },
                 "FrameDelay": 0,
@@ -11972,7 +11972,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 25,
+                    "Food": 20,
                     "Gold": 50
                 },
                 "FrameDelay": 0,
@@ -12063,7 +12063,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 25,
+                    "Food": 20,
                     "Gold": 50
                 },
                 "FrameDelay": 0,
@@ -12553,7 +12553,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 18,
+                "Attack": 19,
                 "AttackDelaySeconds": 0.404444,
                 "Attacks": [
                     {
@@ -12561,7 +12561,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 18,
+                        "Amount": 19,
                         "Class": 3
                     },
                     {
@@ -16432,7 +16432,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 110,
+                "HP": 120,
                 "ID": 1228,
                 "LanguageHelpId": 26313,
                 "LanguageNameId": 5313,
@@ -16519,7 +16519,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 140,
+                "HP": 145,
                 "ID": 1230,
                 "LanguageHelpId": 26314,
                 "LanguageNameId": 5314,
@@ -18272,7 +18272,7 @@
                 "Range": 0,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
-                "Speed": 0.9,
+                "Speed": 0.94,
                 "TrainTime": 14,
                 "Trait": 0,
                 "TraitPiece": 0,
@@ -21145,7 +21145,7 @@
                 "ChargeType": 0,
                 "Cost": {
                     "Food": 30,
-                    "Gold": 60
+                    "Gold": 50
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
@@ -21681,7 +21681,7 @@
                 "Range": 0,
                 "RechargeDuration": 39.99999940395356,
                 "RechargeRate": 0.025,
-                "ReloadTime": 2.28,
+                "ReloadTime": 2.16,
                 "Speed": 1.4,
                 "TrainTime": 14,
                 "Trait": 0,
@@ -21769,7 +21769,7 @@
                 "Range": 0,
                 "RechargeDuration": 29.999998435378156,
                 "RechargeRate": 0.033333,
-                "ReloadTime": 2.28,
+                "ReloadTime": 2.16,
                 "Speed": 1.4,
                 "TrainTime": 14,
                 "Trait": 0,
@@ -22136,7 +22136,7 @@
                 "AttackDelaySeconds": 0.666667,
                 "Attacks": [
                     {
-                        "Amount": 175,
+                        "Amount": 230,
                         "Class": 11
                     },
                     {
@@ -22172,8 +22172,8 @@
                 "PierceArmor": 8,
                 "Range": 14,
                 "RechargeRate": 0,
-                "ReloadTime": 9,
-                "Speed": 0.6,
+                "ReloadTime": 11,
+                "Speed": 0.57,
                 "TrainTime": 70,
                 "Trait": 0,
                 "TraitPiece": 0,
@@ -23352,7 +23352,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 1,
-                "TrainTime": 27,
+                "TrainTime": 35,
                 "Trait": 0,
                 "TraitPiece": 1976,
                 "internal_name": "JIANSWDS"
@@ -27390,6 +27390,10 @@
                 {
                     "age": 4,
                     "id": 422
+                },
+                {
+                    "age": 3,
+                    "id": 440
                 },
                 {
                     "age": 3,
