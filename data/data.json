@@ -2344,7 +2344,8 @@
                 "1968": "UniqueUnit",
                 "1970": "UniqueUnit",
                 "1974": "UniqueUnit",
-                "1978": "UniqueUnit"
+                "1978": "UniqueUnit",
+                "999440": "Unit"
             }
         },
         "techs": {
@@ -23526,6 +23527,73 @@
                 "Trait": 8,
                 "TraitPiece": 1962,
                 "internal_name": "WARCHAR"
+            },
+            "999440": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 25,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 100,
+                        "Class": 26
+                    },
+                    {
+                        "Amount": 500,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 25,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 60,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 900,
+                        "Class": 22
+                    }
+                ],
+                "BlastWidth": 0.5,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 65,
+                    "Gold": 20
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 50,
+                "ID": 440,
+                "LanguageHelpId": 26660,
+                "LanguageNameId": 5660,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": 0,
+                "MinRange": 0,
+                "PierceArmor": 2,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 0,
+                "Speed": 0.8,
+                "TrainTime": 25,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "PETARD"
             }
         }
     },
@@ -27396,10 +27464,6 @@
                     "id": 440
                 },
                 {
-                    "age": 3,
-                    "id": 440
-                },
-                {
                     "age": 4,
                     "id": 441
                 },
@@ -27478,6 +27542,10 @@
                 {
                     "age": 3,
                     "id": 1258
+                },
+                {
+                    "age": 3,
+                    "id": 999440
                 }
             ]
         },
