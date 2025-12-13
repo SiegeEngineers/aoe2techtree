@@ -403,6 +403,7 @@ def gather_data(content: DatFile, civs, unit_upgrades, node_types):
     data["units"][83]['LanguageNameId'] = 5606  # Villager
     data["units"][128]['LanguageNameId'] = 19052  # Trade Cart
     data["units"][331]['LanguageNameId'] = 5097  # Trebuchet
+    data["units"][999440] = data["units"][440]  # copy of Petard
 
     return data
 
@@ -608,6 +609,8 @@ def gather_civs(techtrees):
             if building['Node Status'] != 'NotAvailable':
                 current_civ['buildings'].append({'id': building['Node ID'], 'age': building['Age ID']})
         for unit in civ['civ_techs_units']:
+            if unit['Name'] == 'Petard' and unit['Building ID'] == 1251:  # second Petard location
+                unit['Node ID'] = 999440
             if unit['Name'] == 'Monk':
                 current_civ['monkSuffix'] = f"_{unit['Picture Index']}"
             if unit['Node Type'] in ('Unit', 'UniqueUnit', 'UnitUpgrade', 'RegionalUnit') and unit['Node Status'] != 'NotAvailable':

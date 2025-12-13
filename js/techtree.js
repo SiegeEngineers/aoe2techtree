@@ -148,6 +148,7 @@ const HALBERDIER = 359;
 const CANNON_GALLEON = 420;
 const CAPPED_RAM = 422;
 const PETARD = 440;
+const PETARD_2 = 999440;
 const HUSSAR = 441;
 const GALLEON = 442;
 const SCOUT_CAVALRY = 448;
@@ -998,6 +999,7 @@ function getDefaultTree() {
     let krepostlane = new Lane();
     krepostlane.rows.castle_1.push(building(KREPOST));
     krepostlane.rows.castle_2.push(uniqueunit(KONNIK_2));
+    krepostlane.rows.castle_2.push(unit(PETARD_2));
     krepostlane.rows.imperial_1.push(uniqueunit(ELITE_KONNIK_2));
     tree.lanes.push(krepostlane);
 
@@ -1222,6 +1224,7 @@ function getConnections() {
         [b(CASTLE), t(HOARDINGS)],
         [b(CASTLE), t(SAPPERS)],
         [b(KREPOST), u(KONNIK_2)],
+        [b(KREPOST), u(PETARD_2)],
         [u(KONNIK_2), u(ELITE_KONNIK_2)],
         [b(DONJON), u(DSERJEANT)],
         [u(DSERJEANT), u(ELITE_DSERJEANT)],
