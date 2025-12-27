@@ -408,7 +408,7 @@ def gather_data(content: DatFile, civs, unit_upgrades, node_types):
     return data
 
 
-def ror_gather_data(content: DatFile, civs, unit_upgrades):
+def ror_gather_data(content: DatFile, civs, unit_upgrades, node_types):
     ages = list(ROR_AGE_NAMES.keys())[1:]
     building_ids = {b['id'] for c in civs.values() for b in c['buildings']}
     unit_ids = {u['id'] for c in civs.values() for u in c['units']}
@@ -420,7 +420,7 @@ def ror_gather_data(content: DatFile, civs, unit_upgrades):
     )
     gaia = content.civs[0]
     graphics = content.graphics
-    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}}
+    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}, "node_types": node_types}
     for unit in gaia.units:
         if not unit:
             continue
@@ -693,12 +693,18 @@ def ror_gather_civs(techtrees):
     unit_excludelist = ()
     civs = {}
     unit_upgrades = {}
+    node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
         current_civ = {'buildings': [], 'units': [], 'techs': []}
         for building in civ['civ_techs_buildings']:
+            node_types['buildings'][building['Node ID']] = building['Node Type']
             if building['Node Status'] != 'NotAvailable':
                 current_civ['buildings'].append({'id': building['Node ID'], 'age': building['Age ID']})
         for unit in filter(ror_is_unit, civ['civ_techs_units']):
+            if unit['Node Type'] in ('Unit', 'UniqueUnit', 'UnitUpgrade', 'RegionalUnit') and unit['Node Status'] != 'NotAvailable':
+                node_types['units'][unit['Node ID']] = unit['Node Type']
+            if unit['Node Type'] in ('BuildingNonTech', 'UniqueBuilding'):
+                node_types['buildings'][unit['Node ID']] = unit['Node Type']
             current_civ['units'].append({'id': unit['Node ID'], 'age': unit['Age ID']})
             if unit['Trigger Tech ID'] > -1:
                 unit_upgrades[unit['Node ID']] = unit['Trigger Tech ID']
@@ -718,7 +724,7 @@ def ror_gather_civs(techtrees):
 
         current_civ['buildingStyle'] = ROR_BUILDING_STYLES[civname]
 
-    return civs, unit_upgrades
+    return civs, unit_upgrades, node_types
 
 
 def ror_update_civ_techs(civs, data):
@@ -774,10 +780,10 @@ def process_ror(args, outputdir):
     ttfcontent = techtreesfile.read_text()
     ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
     techtrees = json.loads(ttfcontent)
-    civs, unit_upgrades = ror_gather_civs(techtrees)
+    civs, unit_upgrades, node_types = ror_gather_civs(techtrees)
     datafile = Path(args.programdir) / 'modes' / 'Pompeii' / 'resources' / '_common' / 'dat' / 'empires2_x2_p1.dat'
     content = DatFile.parse(datafile)
-    data = ror_gather_data(content, civs, unit_upgrades)
+    data = ror_gather_data(content, civs, unit_upgrades, node_types)
     ror_update_civ_techs(civs, data)
     ror_write_datafile(data, civs, outputdir)
     ror_write_language_files(args, data, outputdir)

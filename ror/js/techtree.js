@@ -1,11 +1,10 @@
 const TYPES = Object.freeze({
-    'BUILDING': {colour: '#922602', type: 'BUILDING', name: 'Building'},
-    'UNIT': {colour: '#3a6a80', type: 'UNIT', name: 'Unit'},
-    'UNIQUEUNIT': {colour: '#af30a3', type: 'UNIQUEUNIT', name: 'Unique Unit'},
+    'BUILDING': {colour: '#ff0000', type: 'BUILDING', name: 'Building'},
+    'UNIT': {colour: '#ff0000', type: 'UNIT', name: 'Unit'},
+    'UNIQUEUNIT': {colour: '#703b7a', type: 'UNIQUEUNIT', name: 'Unique Unit'},
     'TECHNOLOGY': {colour: '#2c5729', type: 'TECHNOLOGY', name: 'Technology'}
 });
 
-const LEGEND = [TYPES.UNIT, TYPES.BUILDING, TYPES.TECHNOLOGY];
 
 const PREFIX = Object.freeze({
     'BUILDING': 'building_',
@@ -25,7 +24,7 @@ const getAgeNames = (data) => {
     ];
 }
 
-const unitClasses = {
+const attackAndArmorClasses = {
     0: '<abbr title="unused">Wonders</abbr>',
     1: 'Infantry',
     2: 'Heavy Warships',
@@ -359,7 +358,7 @@ class Lane {
 }
 
 class Caret {
-    constructor(type, name, id) {
+    constructor(type, name, id, colour = null) {
         this.type = type;
         this.name = name;
         this.id = PREFIX[type.type] + formatId(id);
@@ -367,6 +366,7 @@ class Caret {
         this.height = 100;
         this.x = 0;
         this.y = 0;
+        this.colour = colour;
     }
 
     isBuilding() {
@@ -473,16 +473,47 @@ function getName(id, itemtype) {
     return data['strings'][languageNameId];
 }
 
+function getColour(id, itemtype) {
+    const nodeType = data['data']['node_types'][itemtype][id];
+    if (!nodeType) {
+        return null;
+    }
+    return getColourForNodeType(nodeType);
+}
+
+function getColourForNodeType(nodeType) {
+    switch (nodeType) {
+        case 'BuildingTech':
+        case 'BuildingNonTech':
+            return '#b54e18';
+        case 'RegionalBuilding':
+            return '#cc4422';
+        case 'UniqueBuilding':
+            return '#d43652';
+        case 'Unit':
+        case 'UnitUpgrade':
+            return '#00739c';
+        case 'RegionalUnit':
+            return '#515ae3';
+        case 'UniqueUnit':
+            return '#703b7a';
+        case 'Technology':
+            return '#397139';
+        default:
+            return '#ff0000';
+    }
+}
+
 function building(id) {
-    return new Caret(TYPES.BUILDING, getName(id, 'buildings'), id);
+    return new Caret(TYPES.BUILDING, getName(id, 'buildings'), id, getColour(id, 'buildings'));
 }
 
 function unit(id) {
-    return new Caret(TYPES.UNIT, getName(id, 'units'), id);
+    return new Caret(TYPES.UNIT, getName(id, 'units'), id, getColour(id, 'units'));
 }
 
 function uniqueunit(id) {
-    return new Caret(TYPES.UNIQUEUNIT, getName(id, 'units'), id);
+    return new Caret(TYPES.UNIQUEUNIT, getName(id, 'units'), id, getColour(id, 'units'));
 }
 
 function tech(id) {
