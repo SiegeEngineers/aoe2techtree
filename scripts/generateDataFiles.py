@@ -712,7 +712,10 @@ def ror_gather_civs(techtrees):
             if building['Node Status'] != 'NotAvailable':
                 current_civ['buildings'].append({'id': building['Node ID'], 'age': building['Age ID']})
         for unit in filter(ror_is_unit, civ['civ_techs_units']):
-            node_types['units'][unit['Node ID']] = unit['Node Type']
+            if unit['Node Type'] in ('Unit', 'UniqueUnit', 'UnitUpgrade', 'RegionalUnit') and unit['Node Status'] != 'NotAvailable':
+                node_types['units'][unit['Node ID']] = unit['Node Type']
+            if unit['Node Type'] in ('BuildingNonTech', 'UniqueBuilding'):
+                node_types['buildings'][unit['Node ID']] = unit['Node Type']
             current_civ['units'].append({'id': unit['Node ID'], 'age': unit['Age ID']})
             if unit['Trigger Tech ID'] > -1:
                 unit_upgrades[unit['Node ID']] = unit['Trigger Tech ID']
