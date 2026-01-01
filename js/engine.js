@@ -17,7 +17,7 @@ const PREFIX = Object.freeze({
     'TECHNOLOGY': 'tech_'
 });
 
-const armorClasses = {
+const attackAndArmorClasses = {
     0: 'Wonders',
     1: 'Infantry',
     2: 'Heavy Warships',
