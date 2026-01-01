@@ -544,6 +544,9 @@ function getHelpText(name, id, type) {
         stats.push(ifDefinedAndGreaterZero(meta.BlastWidth, 'Blast Radius:&nbsp;'));
         stats.push(traitsIfDefined(meta.Trait, meta.TraitPiece));
         stats.push(ifDefinedAndGreaterZero(meta.MaxCharge, chargeText(meta.ChargeType)));
+        if ([6, 7].includes(meta.ChargeType) && meta.ChargeEvent) {
+            stats.push('Charge Attack Range:&nbsp;' + (meta.ChargeEvent + meta.Range));
+        }
         stats.push(ifDefinedAndGreaterZero(meta.RechargeRate, 'Recharge Rate:&nbsp;'));
         stats.push(secondsIfDefined(meta.RechargeDuration, 'Recharge Duration:&nbsp;'));
         if (displayAttack) {
