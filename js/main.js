@@ -705,18 +705,19 @@ function repeatableIfDefined(value) {
 
 function cost(cost_object) {
     let value = '';
-    if ('Food' in cost_object) {
+    if (cost_object.Food) {
         value += `<span class="cost food" title="${cost_object.Food} Food">${cost_object.Food}</span>`;
     }
-    if ('Wood' in cost_object) {
+    if (cost_object.Wood) {
         value += `<span class="cost wood" title="${cost_object.Wood} Wood">${cost_object.Wood}</span>`;
     }
-    if ('Gold' in cost_object) {
+    if (cost_object.Gold) {
         value += `<span class="cost gold" title="${cost_object.Gold} Gold">${cost_object.Gold}</span>`;
     }
-    if ('Stone' in cost_object) {
+    if (cost_object.Stone) {
         value += `<span class="cost stone" title="${cost_object.Stone} Stone">${cost_object.Stone}</span>`;
     }
+    if (value === '') return 'free';
     return value;
 }
 
