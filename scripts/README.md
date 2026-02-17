@@ -19,4 +19,5 @@ Example invocation:
 ```sh
 source venv/bin/activate
 ./generateDataFiles.py ~/aoe/Aoe2DE\ proton/
+./generateTechTreeJsons.py ~/aoe/Aoe2DE\ proton/
 ```

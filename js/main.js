@@ -1,10 +1,11 @@
 let tree;
 let data = {};
-let civs = {};
-let connections;
 let parentConnections;
-let connectionpoints;
 let focusedNodeId = null;
+
+const PADDING = 20;
+const PADDING_BETWEEN_COLUMNS = 10;
+const TOP_PADDING = 20;
 
 const locales = {
     en: 'English',
@@ -51,168 +52,15 @@ function updatePageTitle() {
     document.title = `${aoe2}${suffix} ${techtree}`;
 }
 
-function getShieldForEarlierRow(row) {
-    const age = row.split('_')[0];
-    for (let i = 1; i < AGE_IMAGES.length; i++) {
-        const ageimage = AGE_IMAGES[i];
-        if (ageimage.includes(age)) {
-            return AGE_IMAGES[i - 1];
-        }
-    }
-    return AGE_IMAGES[0];
-}
-
-function getAgeNumber(row) {
-    const age = row.split('_')[0];
-    for (let i = 0; i < AGE_IMAGES.length; i++) {
-        const ageimage = AGE_IMAGES[i];
-        if (ageimage.includes(age)) {
-            return i;
-        }
-    }
-    return 1;
-}
-
 function displayData() {
     // Reset containers
-    const root = document.getElementById('root');
-    if (root) {
-        document.getElementById('techtree').removeChild(root);
-    }
     document.getElementById('civselect').innerHTML = '';
     document.getElementById('buildingindex__table').innerHTML = '';
     document.getElementById('key__table').innerHTML = '';
 
-    tree = getDefaultTree();
-    connections = getConnections();
-    parentConnections = new Map();
-    connections.forEach(([parent, child]) => {
-        if (!parentConnections.has(child)) {
-            parentConnections.set(child, []);
-        }
-        parentConnections.get(child).push(parent);
-    });
-    connectionpoints = getConnectionPoints(tree);
     fillCivSelector();
-
-    const draw = SVG().addTo('#techtree').id('root').size(tree.width, tree.height)
-        .click((e) => {
-            if (e.target.id === 'root') {
-                hideHelp();
-            }
-        });
-
-    document.getElementById('techtree').onclick = (e) => {
-        if (e.target.id === 'techtree') {
-            hideHelp();
-        }
-    };
-
-    // Draw Age Row Highlighters
-    let row_height = tree.height / 4;
-    draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp);
-    draw.rect(tree.width, row_height).attr({fill: '#4d3617', opacity:0.3}).click(hideHelp).y(row_height * 2);
-
-    // Add Age Icons
-    let icon_height = Math.min(row_height / 2, 112);
-    let icon_width = 112;
-    let vertical_spacing = (row_height - icon_height) / 2 - 10;
-    let margin_left = 20;
-    let image_urls = AGE_IMAGES;
-    let age_names = getAgeNames(data);
-    for (let i = 0; i < image_urls.length; i++) {
-        let age_image_group = draw.group().click(hideHelp);
-        let age_image = age_image_group.image('img/Ages/' + image_urls[i])
-            .size(icon_width, icon_height)
-            .x(margin_left)
-            .y(row_height * i + vertical_spacing);
-        age_image_group
-            .text(age_names[i])
-            .font({size: 16, weight: 'bold'}) /* Text-anchor: middle does not work. */
-            .cx(icon_width / 2 + margin_left)
-            .y(age_image.attr('y') + age_image.attr('height') + 5)
-        ;
-    }
-
-    const connectionGroup = draw.group().attr({id: 'connection_lines'});
-    for (let connection of connections) {
-        let from = connectionpoints.get(connection[0]);
-        let to = connectionpoints.get(connection[1]);
-        let intermediate_height = from.y + (tree.element_height * 2 / 3);
-        connectionGroup.polyline([from.x, from.y, from.x, intermediate_height, to.x, intermediate_height, to.x, to.y])
-            .attr({id: `connection_${connection[0]}_${connection[1]}`})
-            .addClass('connection')
-            .click(hideHelp);
-    }
-
-    for (let lane of tree.lanes) {
-        draw.rect(lane.width + 10, tree.height)
-            .attr({fill: '#ffeeaa', 'opacity': 0, class: lane.caretIds().map((id) => `lane-with-${id}`)})
-            .move(lane.x - 10, lane.y)
-            .click(hideHelp);
-        for (let r of Object.keys(lane.rows)) {
-            let row = lane.rows[r];
-            const ageNumber = getAgeNumber(r);
-            for (let caret of row) {
-                const item = draw.group().attr({id: caret.id}).addClass('node');
-                const rect = item.rect(caret.width, caret.height).attr({
-                    fill: caret.colour || caret.type.colour,
-                    id: `${caret.id}_bg`
-                }).move(caret.x, caret.y);
-                let name = formatName(caret.name);
-                const text = item.text(name.toString())
-                    .font({size: 9, weight: 'bold'})
-                    .attr({fill: '#ffffff', opacity: 0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
-                    .cx(caret.x + caret.width / 2)
-                    .y(caret.y + caret.height / 1.5);
-                const image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
-                    .attr({fill: '#000000', opacity: 0.5, id: caret.id + '_imgph'})
-                    .move(caret.x + caret.width * 0.2, caret.y);
-                const prefix = 'img/';
-                const image = item.image(prefix + imagePrefix(caret.id) + '.png')
-                    .size(caret.width * 0.6, caret.height * 0.6)
-                    .attr({id: caret.id + '_img'})
-                    .move(caret.x + caret.width * 0.2, caret.y);
-                const rect_disabled_gray = item.rect(caret.width, caret.height).attr({
-                    fill: '#000',
-                    opacity: 0.2,
-                    id: `${caret.id}_disabled_gray`
-                }).move(caret.x, caret.y);
-                const cross = item.image(prefix + 'cross.png')
-                    .size(caret.width * 0.7, caret.height * 0.7)
-                    .attr({id: caret.id + '_x'})
-                    .addClass('cross')
-                    .move(caret.x + caret.width * 0.15, caret.y - caret.height * 0.04);
-                const earlier_age_image = item.image('img/Ages/' + getShieldForEarlierRow(r))
-                    .size(caret.width * 0.3, caret.height * 0.3)
-                    .attr({id: caret.id + '_earlier_age_img_' + ageNumber, 'opacity': 0})
-                    .addClass('earlier-age')
-                    .move(caret.x + caret.width * 0.85, caret.y - caret.width * 0.15);
-                const overlaytrigger = item.rect(caret.width, caret.height)
-                    .attr({id: caret.id + '_overlay'})
-                    .addClass('node__overlay')
-                    .move(caret.x, caret.y)
-                    .data({'type': caret.type.type, 'caret': caret, 'name': caret.name, 'id': caret.id})
-                    .mouseover(function () {
-                        highlightPath(caret.id);
-                    })
-                    .mouseout(function () {
-                        resetHighlightPath();
-                    })
-                    .click(function () {
-                        if (focusedNodeId === caret.id) {
-                            hideHelp();
-                        } else {
-                            displayHelp(caret.id);
-                        }
-                    });
-            }
-        }
-    }
-
-    create_building_index();
     let civWasLoaded = updateCivselectValue();
-    if(!civWasLoaded){
+    if (!civWasLoaded) {
         loadCiv();
     }
     create_colour_key();
@@ -224,7 +72,7 @@ function displayData() {
 function updateCivselectValue() {
     let hash = window.location.hash.substring(1);
     let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
-    if (capitalisedHash in data.civ_names) {
+    if (capitalisedHash in data.civs) {
         const civSelect = document.getElementById('civselect');
         if (civSelect.value !== capitalisedHash) {
             civSelect.value = capitalisedHash;
@@ -256,18 +104,11 @@ function onAdvancedStatsStateUpdate() {
     }
 }
 
-function imagePrefix(name) {
-    return name.replace('_copy', '')
-        .replace('building_', 'Buildings/')
-        .replace('unit_', 'Units/')
-        .replace('tech_', 'Techs/');
-}
-
 function loadCiv() {
     const selectedCiv = document.getElementById('civselect').value;
     civ(selectedCiv, tree);
-    if (selectedCiv in data.civ_helptexts) {
-        document.getElementById('civtext').innerHTML = data.strings[data.civ_helptexts[selectedCiv]];
+    if (selectedCiv in data.civs) {
+        document.getElementById('civtext').innerHTML = data.strings[data.civs[selectedCiv].help_string_id];
         document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
         window.location.hash = selectedCiv;
     } else {
@@ -299,7 +140,9 @@ function resetHighlightPath() {
 
 function unhighlightPath() {
     SVG.find('.node.is-highlight, .connection.is-highlight')
-        .each((el) => {el.removeClass('is-highlight')});
+        .each((el) => {
+            el.removeClass('is-highlight')
+        });
 }
 
 function highlightPath(caretId) {
@@ -324,19 +167,18 @@ function highlightPath(caretId) {
     }
 }
 
-function displayHelp(caretId) {
+function displayHelp(caretId, helpStringId, element_height, tree_height) {
     focusedNodeId = caretId;
     let helptextContent = document.getElementById('helptext__content');
     let helptextAdvancedStats = document.getElementById('helptext__advanced_stats');
     let overlay = SVG(`#${caretId}_overlay`);
     let name = overlay.data('name');
-    let id = overlay.data('id').replace('_copy', '');
+    let fullId = overlay.data('id').replace('_copy', '');
     let caret = overlay.data('caret');
-    let type = overlay.data('type');
-    helptextContent.innerHTML = getHelpText(name, id, type);
-    helptextAdvancedStats.innerHTML = getAdvancedStats(name, id, type);
-    styleXRefBadges(name, id, type);
-    positionHelptext(caret);
+    helptextContent.innerHTML = getHelpText(name, fullId, helpStringId);
+    helptextAdvancedStats.innerHTML = getAdvancedStats(name, fullId);
+    styleXRefBadges(name, fullId);
+    positionHelptext(caret, element_height, tree_height);
     resetHighlightPath();
 }
 
@@ -347,18 +189,18 @@ function hideHelp() {
     resetHighlightPath();
 }
 
-function positionHelptext(caret) {
+function positionHelptext(caret, element_height, tree_height) {
     const helptext = document.getElementById('helptext');
     helptext.style.display = 'block';
-    positionHelptextBelow(caret, helptext)
+    positionHelptextBelow(caret, helptext, element_height, tree_height)
     || positionHelptextAbove(caret, helptext)
-    || positionHelptextToLeftOrRight(caret, helptext);
+    || positionHelptextToLeftOrRight(caret, helptext, element_height);
 }
 
-function positionHelptextBelow(caret, helptext) {
-    let top = caret.y + caret.height + document.getElementById('root').getBoundingClientRect().top;
+function positionHelptextBelow(caret, helptext, element_height, tree_height) {
+    let top = caret.y + element_height + document.getElementById('root').getBoundingClientRect().top;
     let helpbox = helptext.getBoundingClientRect();
-    if (top + helpbox.height > tree.height) {
+    if (top + helpbox.height > tree_height) {
         return false;
     }
 
@@ -389,13 +231,13 @@ function positionHelptextAbove(caret, helptext) {
     return true;
 }
 
-function positionHelptextToLeftOrRight(caret, helptext) {
+function positionHelptextToLeftOrRight(caret, helptext, element_height) {
     let helpbox = helptext.getBoundingClientRect();
     let top = 0;
     let destX = caret.x - helpbox.width;
     let techtree = document.getElementById('techtree');
     if (destX < 0 || destX - techtree.scrollLeft < 0) {
-        destX = caret.x + caret.width;
+        destX = caret.x + element_height;
     }
     helptext.style.top = top + 'px';
     helptext.style.left = destX + 'px';
@@ -447,10 +289,10 @@ function traitsIfDefined(trait, traitPiece) {
                 traitdescriptions.push('Ship Unit');
                 break;
             case 4:
-                traitdescriptions.push('Builds:&nbsp;' + data.strings[data.data['buildings'][traitPiece]['LanguageNameId']]);
+                traitdescriptions.push('Builds:&nbsp;' + data.strings[data.data['Building'][traitPiece]['LanguageNameId']]);
                 break;
             case 8:
-                traitdescriptions.push('Transforms into:&nbsp;' + data.strings[(data.data['buildings'][traitPiece]||data.data['units'][traitPiece])['LanguageNameId']]);
+                traitdescriptions.push('Transforms into:&nbsp;' + data.strings[(data.data['Building'][traitPiece] || data.data['Unit'][traitPiece])['LanguageNameId']]);
                 break;
             case 16:
                 traitdescriptions.push('<abbr title="has auto-scout behaviour if placed at start">Scout Unit</abbr>');
@@ -462,27 +304,28 @@ function traitsIfDefined(trait, traitPiece) {
     return traitdescriptions;
 }
 
-function getHelpText(name, id, type) {
-    let entitytype = getEntityType(type);
-    const items = id.split('_', 1);
-    id = id.substring(items[0].length + 1);
-    let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
+function getHelpText(name, fullId, helpStringId) {
+    const trueHelpStringId = helpStringId - 79000;
+    const items = fullId.split('_');
+    const type = items[0];
+    const id = items[1];
+    let text = data.strings[trueHelpStringId];
     if (text === undefined) {
-        return '?';
+        return '? ' + trueHelpStringId;
     }
     text = text.replace(/\n/g, '');
-    if (type === 'TECHNOLOGY') {
+    if (type === 'Tech') {
         text = text.replace(/(.+?\(.+?\))(.*)/m,
             '<p class="helptext__heading">$1</p>' +
             '<p class="helptext__desc">$2</p>' +
             '<p class="helptext__stats">&nbsp;</p>');
-    } else if (type === 'UNIT' || type === 'UNIQUEUNIT' ) {
+    } else if (type === 'Unit') {
         text = text.replace(/(.+?\(‹cost›\))(.+?)<i>\s*(.+?)<\/i>(.*)/m,
             '<p class="helptext__heading">$1</p>' +
             '<p class="helptext__desc">$2</p>' +
             '<p class="helptext__upgrade_info"><em>$3</em></p>' +
             '<p class="helptext__stats">$4</p>');
-    } else if (type === 'BUILDING') {
+    } else if (type === 'Building') {
         // convert the 'Required for' text in <i> to <em> so that it doesn't break the next regex
         text = text.replace(/<b><i>(.+?)<\/b><\/i>/m, '<b><em>$1</em></b>');
         if (text.indexOf('<i>') >= 0) {
@@ -500,20 +343,20 @@ function getHelpText(name, id, type) {
         }
     }
     text = text.replace(/<br>/g, '');
-    if ((type === 'UNIT' || type === 'UNIQUEUNIT') && id in data.data.unit_upgrades) {
+    if ((type === 'Unit') && id in data.data.unit_upgrades) {
         text = text.replace(/<p class="helptext__stats">/,
             '<h3>Upgrade</h3><p class="helptext__upgrade_cost">' + cost(data.data.unit_upgrades[id].Cost)
             + ' (' + data.data.unit_upgrades[id].ResearchTime + 's)<p><p class="helptext__stats">');
     }
-    let meta = data.data[entitytype][id];
+    let meta = data.data[type][id];
     if (meta !== undefined) {
         let displayAttack = false;
         let ranged = meta.Range > 1;
         text = text.replace(/‹cost›/, cost(meta.Cost));
         // The format is ‹static_cost=Gold,200› as with Spies/Treason.
         text = text.replaceAll(/‹static_cost=([^,›]*),([^›]*)›/g, (_, resource, cost) => {
-          const className = resource.toLowerCase();
-          return `<span class="cost ${className}" title="${cost} ${resource}">${cost}</span>`;
+            const className = resource.toLowerCase();
+            return `<span class="cost ${className}" title="${cost} ${resource}">${cost}</span>`;
         });
         let stats = []
         if (text.match(/‹hp›/)) {
@@ -559,30 +402,19 @@ function getHelpText(name, id, type) {
     return text;
 }
 
-function getAdvancedStats(name, id, type) {
-    let entitytype = getEntityType(type);
-    const items = id.split('_', 1);
-    id = id.substring(items[0].length + 1);
+function getAdvancedStats(name, fullId) {
+    const items = fullId.split('_');
+    const entitytype = items[0];
+    const id = items[1];
     let meta = data.data[entitytype][id];
     let text = ''
     if (meta !== undefined) {
         text += arrayIfDefinedAndNonEmpty(meta.Attacks, '<h3>Attacks</h3>');
         text += arrayIfDefinedAndNonEmpty(meta.Armours, '<h3>Armours</h3>');
     } else {
-        console.error('No metadata found for ' + name);
+        console.error('No metadata found for ' + name + ' (fullId=' + fullId + ')');
     }
     return text;
-}
-
-function getEntityType(type) {
-    let entitytype = 'buildings';
-    if (type === 'UNIT' || type === 'UNIQUEUNIT') {
-        entitytype = 'units';
-    }
-    if (type === 'TECHNOLOGY') {
-        entitytype = 'techs';
-    }
-    return entitytype;
 }
 
 /**
@@ -591,20 +423,20 @@ function getEntityType(type) {
  *
  * @return A container with buttons + images for each civ to be used in cross referencing.
  */
-  function createXRefBadges() {
+function createXRefBadges() {
     let xRefLinks = document.getElementById('helptext__x_ref__container');
     xRefLinks.innerHTML = '';
-    for (let civ of Object.keys(data.civ_names)) {
+    for (let civ of Object.keys(data.civs)) {
         let xRefLink = document.createElement('button');
-        xRefLink.addEventListener('click', function() {
-          document.getElementById('civselect').value=civ;
-          loadCiv();
+        xRefLink.addEventListener('click', function () {
+            document.getElementById('civselect').value = civ;
+            loadCiv();
         });
 
         let xRefImage = document.createElement('img');
 
         xRefImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
-        xRefImage.title = data.strings[data.civ_names[civ]];
+        xRefImage.title = data.strings[data.civs[civ].name_string_id];
         xRefImage.id = `xRef__badge__${civ}`;
         xRefImage.classList.add('xRef__badge')
         xRefLink.appendChild(xRefImage);
@@ -616,31 +448,27 @@ function getEntityType(type) {
  * Set on/off of all cross reference badges for a single unit.
  *
  * @param {string} name The name of the entity being cross-referenced.
- * @param {string} id The id of the entity being cross-referenced.
+ * @param {string} fullId The type_id_buildingId of the entity being cross-referenced.
  * @param {string} type The type of the entity being cross-referenced.
  */
-function styleXRefBadges(name, id, type) {
-    for (let civ of Object.keys(data.civ_names)) {
+function styleXRefBadges(name, fullId) {
+    const items = fullId.split('_');
+    const type = items[0];
+    const id = parseInt(items[1]);
+    for (let civ of Object.keys(data.civs)) {
         let xRefImage = document.getElementById(`xRef__badge__${civ}`);
         let found = false;
-        // Make sure this civ exists
-        if (civs[civ]) {
-            if (type === 'UNIT' || type === 'UNIQUEUNIT') {
-                if (civs[civ].units.map((item) => `unit_${item.id}`).includes(id)) {
-                    found = true;
-                } else if (`unit_${civs[civ]?.unique?.castleAgeUniqueUnit}` === id || `unit_${civs[civ]?.unique?.imperialAgeUniqueUnit}` === id) {
-                    found = true;
-                }
-            } else if (type === 'TECHNOLOGY') {
-                if (civs[civ].techs.map((item) => `tech_${item.id}`).includes(id)) {
-                    found = true;
-                } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech}` === id) {
-                    found = true;
-                }
-            } else if (type === 'BUILDING') {
-                if (civs[civ].buildings.map((item) => `building_${item.id}`).includes(id)) {
-                    found = true;
-                }
+        if (type === 'Unit') {
+            if (data.civs[civ].Unit.includes(id)) {
+                found = true;
+            }
+        } else if (type === 'Tech') {
+            if (data.civs[civ].Tech.includes(id)) {
+                found = true;
+            }
+        } else if (type === 'Building') {
+            if (data.civs[civ].Building.includes(id)) {
+                found = true;
             }
         }
         if (found) {
@@ -720,33 +548,38 @@ function cost(cost_object) {
     return value;
 }
 
-function create_building_index() {
-    const buildingIndexRowLength = 6;
+function create_building_index(treeData) {
+    const buildingIndexRowLength = 7;
 
-    let kc = document.getElementById('buildingindex__table');
+    const kc = document.getElementById('buildingindex__table');
+    kc.innerHTML = '';
     let tr = null;
     let count = 0;
-    for (let index in BUILDING_INDEX) {
-        let buildingId = BUILDING_INDEX[index];
+    for (let building of treeData.buildings) {
+        if (building.building_in_new_column === false){
+            continue;
+        }
         if ((count % buildingIndexRowLength) === 0) {
             if (tr) {
-              kc.appendChild(tr);
+                kc.appendChild(tr);
             }
             tr = document.createElement('tr');
         }
         ++count;
         let img = document.createElement('img');
-        img.id = 'building_index_' + String(buildingId) + '_img';
-        img.src = 'img/Buildings/' + String(buildingId) + '.png';
+        img.id = 'building_index_' + building.id + '_img';
+        img.src = 'img/Building/' + building.picture_index + '.png';
         img.style.height = '24px';
         img.style.width = '24px';
         let td = document.createElement('td');
-        td.onclick = function() { scrollToBuildingId(buildingId); }
+        td.onclick = function () {
+            scrollToBuildingId(building.id);
+        }
         td.appendChild(img);
         tr.appendChild(td);
     }
     if (tr) {
-      kc.appendChild(tr);
+        kc.appendChild(tr);
     }
 }
 
@@ -791,7 +624,7 @@ function create_colour_key() {
     td = document.createElement('td');
     td.innerText = data.strings[data.tech_tree_strings['Technology']];
     tr.appendChild(td);
-    addSquareToKey(tr, 'Technology');
+    addSquareToKey(tr, 'Research');
     td = document.createElement('td');
     tr.appendChild(td);
     table.appendChild(tr);
@@ -818,7 +651,7 @@ function changeLocale() {
 }
 
 function fillLocaleSelector(currentLocale) {
-    Object.keys(locales).map(function(locale) {
+    Object.keys(locales).map(function (locale) {
         const option = document.createElement('option');
         option.setAttribute('value', locale);
         option.textContent = locales[locale];
@@ -830,7 +663,7 @@ function fillLocaleSelector(currentLocale) {
 }
 
 function getCompareLocale() {
-    switch (currentLocale){
+    switch (currentLocale) {
         case 'tw':
             return 'zh-TW'
         case 'jp':
@@ -842,117 +675,290 @@ function getCompareLocale() {
 
 function fillCivSelector() {
     const compareLocale = getCompareLocale();
-    const sorted_civ_names = Object.keys(data.civ_names).sort((a, b) => {
-        const localised_name_a = data.strings[data.civ_names[a]];
-        const localised_name_b = data.strings[data.civ_names[b]];
+    const sorted_civ_names = Object.keys(data.civs).sort((a, b) => {
+        const localised_name_a = data.strings[data.civs[a].name_string_id];
+        const localised_name_b = data.strings[data.civs[b].name_string_id];
         return localised_name_a.localeCompare(localised_name_b, compareLocale);
     });
 
     for (let civ_name of sorted_civ_names) {
         const option = document.createElement('option');
         option.setAttribute('value', civ_name);
-        option.textContent = data.strings[data.civ_names[civ_name]];
+        option.textContent = data.strings[data.civs[civ_name].name_string_id];
         document.getElementById('civselect').appendChild(option);
     }
 }
 
-function civ(name) {
-    let selectedCiv = civs[name];
-
-    SVG.find('.cross').each(function () {
-        if (SVGObjectIsOpaque(this)) {
-            return;
-        }
-
-        let {id, type} = parseSVGObjectId(this.id());
-        if (id === undefined || type === undefined) {
-            return;
-        }
-
-        if (type === 'unit') {
-            if (selectedCiv.units.map((item) => item.id).includes(id)) {
-                return;
-            }
-        } else if (type === 'building') {
-            if (selectedCiv.buildings.map((item) => item.id).includes(id)) {
-                return;
-            }
-        } else if (type === 'tech') {
-            if (selectedCiv.techs.map((item) => item.id).includes(id)) {
-                return;
+function hasItemsInGrid(building) {
+    for (const row of building.grid) {
+        for (const item of row) {
+            if (item !== null) {
+                return true;
             }
         }
-        makeSVGObjectOpaque(this);
-        makeSVGObjectOpaque(SVG('#' + this.id().replace('_x', '_disabled_gray')), 0.2);
-    });
-
-    SVG.find('.earlier-age').each(function () {
-        let {id, type, ageId} = parseSVGObjectId2(this.id());
-        if (id === undefined || type === undefined || ageId === undefined) {
-            return;
-        }
-
-        if (type === 'unit') {
-            if (selectedCiv.units.some((item) => item.id === id && item.age === ageId)) {
-                makeSVGObjectOpaque(this);
-                return;
-            }
-        } else if (type === 'building') {
-            if (selectedCiv.buildings.some((item) => item.id === id && item.age === ageId)) {
-                makeSVGObjectOpaque(this);
-                return;
-            }
-        } else if (type === 'tech') {
-            if (selectedCiv.techs.some((item) => item.id === id && item.age === ageId)) {
-                makeSVGObjectOpaque(this);
-                return;
-            }
-        }
-        if (SVGObjectIsOpaque(this)) {
-            makeSVGObjectOpaque(this, 0);
-        }
-    });
-
-    applySelectedCiv(selectedCiv);
-}
-
-function SVGObjectIsOpaque(svgObj) {
-    return svgObj.attr('opacity') === 1
-}
-
-function SVGObjectIsTransparent(svgObj) {
-    return svgObj.attr('opacity') === 0
-}
-
-function makeSVGObjectOpaque(svgObj, opacity = 1) {
-    svgObj.attr({'opacity': opacity});
-}
-
-function parseSVGObjectId(svgObjId) {
-    const id_regex = /(.+)_([\d]+)_(x|copy)/;
-
-    const found = svgObjId.match(id_regex);
-    if (!found) {
-        return {id: undefined, type: undefined};
     }
-    let id = parseInt(found[2]);
-    let type = found[1];
-
-    return {id, type}
+    return false;
 }
 
-function parseSVGObjectId2(svgObjId) {
-    const id_regex = /(.+)_([\d]+)_earlier_age_img_([\d]+)/;
+function civ(civName) {
 
-    const found = svgObjId.match(id_regex);
-    if (!found) {
-        return {id: undefined, type: undefined, ageId: undefined};
+    loadJson('data/trees/' + civName.toUpperCase() + '.json', function (treeData) {
+        const root = document.getElementById('root');
+        if (root) {
+            document.getElementById('techtree').removeChild(root);
+        }
+
+        const tree_height = Math.max(window.innerHeight - 80, 100);
+        const row_height = tree_height / 4;
+        const element_height = row_height / 3;
+
+        const connections = [];
+        const index = {}
+        for (const building of treeData.buildings) {
+            index[building.id] = building;
+        }
+        for (const item of treeData.units_techs) {
+            index[item.id] = item;
+            item.y = item.row * row_height / 2 + TOP_PADDING;
+        }
+        let startX = 172;
+        let width = 0;
+        let alreadyOccupiedRows = [];
+        let previousRow = 0;
+        let previousBuildingInOwnColumn = true;
+        let previousNodeType = '';
+        for (let building of treeData.buildings) {
+            const thisBuildingWidth = building.grid[0].length * (element_height + PADDING_BETWEEN_COLUMNS);
+            if (building.building_in_new_column === true
+                || previousBuildingInOwnColumn ||
+                hasItemsInGrid(building)
+                || previousRow > building.row
+                || previousNodeType !== building.node_type) {
+                // put in new column
+                startX += width + PADDING;
+                width = thisBuildingWidth;
+                alreadyOccupiedRows = [];
+            } else {
+                // put in same column
+                width = Math.max(width, thisBuildingWidth);
+                if (previousRow === building.row) {
+                    building.row++;
+                }
+            }
+            if (building.link_id !== -1) {
+                for (let linked_building of treeData.buildings) {
+                    if (linked_building.node_id === building.link_id) {
+                        if (linked_building.row === building.row) {
+                            building.row++;
+                        }
+                    }
+                }
+            }
+            building.x = startX + width / 2 - (element_height + PADDING_BETWEEN_COLUMNS) / 2;
+            building.y = building.row * row_height / 2 + TOP_PADDING;
+            for (let row = 0; row < building.grid.length; row++) {
+                for (let col = 0; col < building.grid[row].length; col++) {
+                    const itemId = building.grid[row][col];
+                    if (itemId) {
+                        const item = index[itemId];
+                        item.x = startX + col * (element_height + PADDING_BETWEEN_COLUMNS);
+                    }
+                }
+            }
+            alreadyOccupiedRows.push(building.row);
+            previousRow = building.row;
+            previousNodeType = building.node_type;
+            previousBuildingInOwnColumn = building.building_in_new_column !== false;
+        }
+        startX += width;
+
+        for (let building of treeData.buildings) {
+            if (building.building_upgraded_from_id !== -1 && building.building_upgraded_from_id !== null) {
+                for (let linked_building of treeData.buildings) {
+                    if (linked_building.node_id === building.building_upgraded_from_id) {
+                        connections.push([linked_building.id, building.id]);
+                    }
+                }
+            } else if (building.link_id !== -1) {
+                for (let linked_building of treeData.buildings) {
+                    if (linked_building.node_id === building.link_id
+                        && building.link_node_type === linked_building.node_type
+                        && ((linked_building.building_in_new_column !== false) || (linked_building.node_id === building.building_id))) {
+                        connections.push([linked_building.id, building.id]);
+                    }
+                }
+            }
+            for (let row = 0; row < building.grid.length; row++) {
+                for (let col = 0; col < building.grid[row].length; col++) {
+                    const itemId = building.grid[row][col];
+                    if (itemId) {
+                        const item = index[itemId];
+                        if (item.link_id !== -1) {
+                            for (let search_row = row - 1; search_row >= 0; search_row--) {
+                                const itemOnTopId = building.grid[search_row][col];
+                                if (itemOnTopId) {
+                                    const itemOnTop = index[itemOnTopId];
+                                    if (item.link_id === itemOnTop.node_id && item.link_node_type === itemOnTop.node_type) {
+                                        connections.push([itemOnTop.id, item.id]);
+                                    }
+                                    break;
+                                }
+                            }
+                        } else {
+                            let drawLineToBuilding = true;
+                            for (let search_row = row - 1; search_row >= 0; search_row--) {
+                                const itemOnTopId = building.grid[search_row][col];
+                                if (itemOnTopId) {
+                                    drawLineToBuilding = false;
+                                    break;
+                                }
+                            }
+                            if (drawLineToBuilding) {
+                                connections.push([building.id, item.id]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        parentConnections = new Map();
+        connections.forEach(([parent, child]) => {
+            if (!parentConnections.has(child)) {
+                parentConnections.set(child, []);
+            }
+            parentConnections.get(child).push(parent);
+        });
+
+        create_building_index(treeData);
+
+        const tree_width = startX + PADDING_BETWEEN_COLUMNS;
+
+
+        const draw = SVG().addTo('#techtree').id('root').size(tree_width, tree_height)
+            .click((e) => {
+                if (e.target.id === 'root') {
+                    hideHelp();
+                }
+            });
+
+        document.getElementById('techtree').onclick = (e) => {
+            if (e.target.id === 'techtree') {
+                hideHelp();
+            }
+        };
+
+        // Draw Age Row Highlighters
+        draw.rect(tree_width, row_height).attr({fill: '#4d3617', opacity: 0.3}).click(hideHelp);
+        draw.rect(tree_width, row_height).attr({fill: '#4d3617', opacity: 0.3}).click(hideHelp).y(row_height * 2);
+
+        // Add Age Icons
+        let icon_height = Math.min(row_height / 2, 112);
+        let icon_width = 112;
+        let vertical_spacing = (row_height - icon_height) / 2 - 10;
+        let margin_left = 20;
+        let image_urls = AGE_IMAGES[data.civs[civName].era];
+        let age_names = getAgeNames(data.civs[civName].era);
+        for (let i = 0; i < image_urls.length; i++) {
+            let age_image_group = draw.group().click(hideHelp);
+            let age_image = age_image_group.image('img/Ages/' + image_urls[i])
+                .size(icon_width, icon_height)
+                .x(margin_left)
+                .y(row_height * i + vertical_spacing);
+            age_image_group
+                .text(age_names[i])
+                .font({size: 16, weight: 'bold'}) /* Text-anchor: middle does not work. */
+                .cx(icon_width / 2 + margin_left)
+                .y(age_image.attr('y') + age_image.attr('height') + 5)
+            ;
+        }
+
+        const connectionGroup = draw.group().attr({id: 'connection_lines'});
+        for (let connection of connections) {
+            let from = index[connection[0]];
+            let to = index[connection[1]];
+            const offset = element_height / 2;
+            const from_x = from.x + offset;
+            const from_y = from.y + offset;
+            const to_x = to.x + offset;
+            const to_y = to.y + offset;
+            let intermediate_height = from_y + (element_height * 2 / 3);
+            connectionGroup.polyline([from_x, from_y, from_x, intermediate_height, to_x, intermediate_height, to_x, to_y])
+                .attr({id: `connection_${connection[0]}_${connection[1]}`})
+                .addClass('connection')
+                .click(hideHelp);
+        }
+
+        for (const building of treeData.buildings) {
+            drawItem(building, element_height, tree_height, draw);
+            drawGrid(building, element_height, tree_height, draw, index);
+        }
+    });
+}
+
+function drawGrid(building, element_height, tree_height, draw, index) {
+    for (let row = 0; row < building.grid.length; row++) {
+        for (let col = 0; col < building.grid[row].length; col++) {
+            const itemId = building.grid[row][col];
+            if (itemId) {
+                const item = index[itemId];
+                drawItem(item, element_height, tree_height, draw);
+            }
+        }
     }
-    let id = parseInt(found[2]);
-    let type = found[1];
-    let ageId = parseInt(found[3]);
+}
 
-    return {id, type, ageId}
+function drawItem(itemToDraw, element_height, tree_height, draw) {
+    const item = draw.group().attr({id: itemToDraw.id}).addClass('node');
+    const rect = item.rect(element_height, element_height).attr({
+        fill: getColourForNodeType(itemToDraw.node_type),
+        id: `${itemToDraw.id}_bg`
+    }).move(itemToDraw.x, itemToDraw.y);
+    let name = formatName(data.strings[itemToDraw.name_string_id]);
+    const text = item.text(name.toString())
+        .font({size: 9, weight: 'bold'})
+        .attr({fill: '#ffffff', opacity: 0.95, 'text-anchor': 'middle', id: itemToDraw.id + '_text'})
+        .cx(itemToDraw.x + element_height / 2)
+        .y(itemToDraw.y + element_height / 1.5);
+    const image_placeholder = item.rect(element_height * 0.6, element_height * 0.6)
+        .attr({fill: '#000000', opacity: 0.5, id: itemToDraw.id + '_imgph'})
+        .move(itemToDraw.x + element_height * 0.2, itemToDraw.y);
+    const prefix = 'img/';
+    const imgPrefix = prefix + itemToDraw.use_type + '/';
+    const image = item.image(imgPrefix + itemToDraw.picture_index + '.png')
+        .size(element_height * 0.6, element_height * 0.6)
+        .attr({id: itemToDraw.id + '_img'})
+        .move(itemToDraw.x + element_height * 0.2, itemToDraw.y);
+    if (itemToDraw.node_status === 'NotAvailable') {
+        const rect_disabled_gray = item.rect(element_height, element_height).attr({
+            fill: '#000',
+            opacity: 0.2,
+            id: `${itemToDraw.id}_disabled_gray`
+        }).move(itemToDraw.x, itemToDraw.y);
+        const cross = item.image(prefix + 'cross.png')
+            .size(element_height * 0.7, element_height * 0.7)
+            .attr({id: itemToDraw.id + '_x'})
+            .addClass('cross')
+            .move(itemToDraw.x + element_height * 0.15, itemToDraw.y - element_height * 0.04);
+    }
+    const overlaytrigger = item.rect(element_height, element_height)
+        .attr({id: itemToDraw.id + '_overlay'})
+        .addClass('node__overlay')
+        .move(itemToDraw.x, itemToDraw.y)
+        .data({'type': itemToDraw.node_type, 'caret': itemToDraw, 'name': itemToDraw.name, 'id': itemToDraw.id})
+        .mouseover(function () {
+            highlightPath(itemToDraw.id);
+        })
+        .mouseout(function () {
+            resetHighlightPath();
+        })
+        .click(function () {
+            if (focusedNodeId === itemToDraw.id) {
+                hideHelp();
+            } else {
+                displayHelp(itemToDraw.id, itemToDraw.help_string_id, element_height, tree_height);
+            }
+        });
 }
 
 function techtreeDoesNotHaveScrollbar() {
@@ -965,13 +971,7 @@ function shiftKeyIsNotPressed(e) {
 }
 
 function scrollToBuildingId(buildingId) {
-    const buildingElementId = `building_${buildingId}_bg`;
-    const laneBackground = SVG(`.lane-with-building_${buildingId}`);
-    laneBackground.attr({'opacity': 0.5});
-    setTimeout(() => {
-        laneBackground.animate(animation_duration * 10).attr({'opacity': 0});
-    }, 500);
-    const buildingElement = document.getElementById(buildingElementId);
+    const buildingElement = document.getElementById(buildingId);
     buildingElement.scrollIntoView({block: 'center', inline: 'center'});
 }
 
@@ -1044,7 +1044,6 @@ function main() {
 
     loadJson('data/data.json', function (response) {
         data = response;
-        civs = data.techtrees;
         loadLocale(storedLocale);
     });
 
@@ -1064,7 +1063,7 @@ function main() {
     });
 }
 
-if('loading' === document.readyState) {
+if ('loading' === document.readyState) {
     // Loading hasn't finished yet.
     document.addEventListener('DOMContentLoaded', main)
 } else {
