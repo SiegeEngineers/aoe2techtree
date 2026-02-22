@@ -121,54 +121,8 @@ class Tree {
     }
 }
 
-
 function formatName(originalname) {
-    let name = originalname.toString().replace(/<br>/g, '\n').replace(/\n+/g, '\n');
-    const items = name.split('\n');
-    for (let i = 0; i < items.length; i++) {
-        const item = items[i];
-        if (items[i].length > 10) {
-            let space = item.indexOf(' ');
-            if (space !== -1) {
-                items[i] = item.slice(0, space) + '\n' + item.slice(space + 1);
-                let alternativeSpace = space + 1 + item.slice(space + 1).indexOf(' ');
-                if (alternativeSpace !== -1) {
-                    if (Math.abs((item.length / 2) - alternativeSpace) < Math.abs((item.length / 2) - space)) {
-                        items[i] = item.slice(0, alternativeSpace) + '\n' + item.slice(alternativeSpace + 1);
-                    }
-                }
-            } else {
-                let hyphen = item.indexOf('-');
-                if (hyphen !== -1) {
-                    items[i] = item.slice(0, hyphen) + '-\n' + item.slice(hyphen + 1);
-                    let alternativeHyphen = hyphen + 1 + item.slice(hyphen + 1).indexOf('-');
-                    if (alternativeHyphen !== -1) {
-                        if (Math.abs((item.length / 2) - alternativeHyphen) < Math.abs((item.length / 2) - hyphen)) {
-                            items[i] = item.slice(0, alternativeHyphen) + '-\n' + item.slice(alternativeHyphen + 1);
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return items.join('\n');
-}
-
-function getName(id, itemtype) {
-    //ToDo handle unique stuff properly
-    if(id.toString().startsWith('UNIQUE')){
-        return id;
-    }
-    const languageNameId = data['data'][itemtype][id]['LanguageNameId'];
-    return data['strings'][languageNameId];
-}
-
-function getColour(id, itemtype) {
-    const nodeType = data['data']['node_types'][itemtype][id];
-    if (!nodeType) {
-        return null;
-    }
-    return getColourForNodeType(nodeType);
+    return originalname.toString().replace(/<br>/g, '\n').replace(/\n+/g, '\n');
 }
 
 function getColourForNodeType(nodeType) {
