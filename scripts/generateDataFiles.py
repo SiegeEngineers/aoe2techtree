@@ -132,12 +132,17 @@ RTWC2 = 71
 PTREB = 42
 KONNIK_INF = 1252
 EKONNIK_INF = 1253
+XOLOTL_WARRIOR = 1570
 RATHA = 1738
 ERATHA = 1740
 WARCHAR_FF = 1962
 WARCHAR_B = 1980
 CARTOGRAPHY = 19
 TRACKING = 90
+
+ADDITIONAL_BUILDINGS = {RTWC2}
+ADDITIONAL_UNITS = {PTREB, KONNIK_INF, EKONNIK_INF, XOLOTL_WARRIOR, RATHA, ERATHA, WARCHAR_FF, WARCHAR_B}
+ADDITIONAL_TECHS = {CARTOGRAPHY, TRACKING}
 
 
 def cpp_round(value: float) -> int | float:
@@ -198,7 +203,8 @@ def gather_language_data(resourcesdir, techtrees, civs_info, extra_ids, language
         key = int(TECH_TREE_STRINGS[name])
         key_value_filtered[key] = key_value[key]
     for key in extra_ids:
-        key_value_filtered[key] = key_value[key]
+        if key in key_value:
+            key_value_filtered[key] = key_value[key]
     return key_value_filtered
 
 
@@ -269,10 +275,9 @@ def parse_line(key_value, line):
 
 def gather_data(content: DatFile, civs, unit_upgrades):
     extra_ids = set()
-    building_ids = set.union(*(set(civ['Building']) for civ in civs.values()), {RTWC2})
-    unit_ids = set.union(*(set(civ['Unit']) for civ in civs.values()),
-                         {PTREB, KONNIK_INF, EKONNIK_INF, RATHA, ERATHA, WARCHAR_FF, WARCHAR_B})
-    tech_ids = set.union(*(set(civ['Tech']) for civ in civs.values()), {CARTOGRAPHY, TRACKING})
+    building_ids = set.union(*(set(civ['Building']) for civ in civs.values()), ADDITIONAL_BUILDINGS)
+    unit_ids = set.union(*(set(civ['Unit']) for civ in civs.values()), ADDITIONAL_UNITS)
+    tech_ids = set.union(*(set(civ['Tech']) for civ in civs.values()), ADDITIONAL_TECHS)
     gaia: Civ = content.civs[0]
     graphics = content.graphics
     data = {"Building": {}, "Unit": {}, "Tech": {}, "unit_upgrades": {}}
@@ -293,6 +298,13 @@ def gather_data(content: DatFile, civs, unit_upgrades):
     for unit_id, upgrade_id in unit_upgrades.items():
         tech = content.techs[upgrade_id]
         add_unit_upgrade(unit_id, upgrade_id, tech, data)
+
+    for unit_id in chain(ADDITIONAL_UNITS, ADDITIONAL_BUILDINGS):
+        extra_ids.add(gaia.units[unit_id].language_dll_name)
+        extra_ids.add(gaia.units[unit_id].language_dll_name + 21_000)
+    for tech_id in ADDITIONAL_TECHS:
+        extra_ids.add(content.techs[tech_id].language_dll_name)
+        extra_ids.add(content.techs[tech_id].language_dll_name + 21_000)
 
     return data, extra_ids
 

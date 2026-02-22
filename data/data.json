@@ -26584,6 +26584,88 @@
                 "TraitPiece": 0,
                 "internal_name": "ESLANCER"
             },
+            "1570": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 10,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 10,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 60,
+                    "Gold": 75
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 100,
+                "ID": 1570,
+                "LanguageNameId": 5040,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 2,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 1.8,
+                "Speed": 1.35,
+                "TrainTime": 30,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "AZTRAIDER"
+            },
             "1655": {
                 "AccuracyPercent": 100,
                 "Armours": [
