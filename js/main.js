@@ -971,7 +971,7 @@ function shiftKeyIsNotPressed(e) {
 }
 
 function scrollToBuildingId(buildingId) {
-    const buildingElement = document.getElementById(buildingId);
+    const buildingElement = document.getElementById(`${buildingId}_bg`);
     buildingElement.scrollIntoView({block: 'center', inline: 'center'});
 }
 
