@@ -38,7 +38,7 @@ const attackAndArmorClasses = {
     13: '<abbr title="except Castles and Kreposts">Stone Defense & Harbors</abbr>',
     14: 'Predator Animals',
     15: 'All Archers',
-    16: '<abbr title="except Fishing Ships">Ships</abbr>',
+    16: 'Ships',
     17: 'High Pierce Armor Siege Units',
     18: 'Trees',
     19: 'Unique Units',
@@ -62,6 +62,7 @@ const attackAndArmorClasses = {
     38: 'Skirmishers',
     39: 'Cavalry Resistance',
     40: 'Houses',
+    41: 'Fire Ships',
     60: 'Long-Range Warships',
 };
 
