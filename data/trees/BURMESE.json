@@ -2386,7 +2386,7 @@
       "name": "Padded Archer Armor",
       "name_string_id": 17208,
       "node_id": 211,
-      "node_status": "NotAvailable",
+      "node_status": "ResearchedCompleted",
       "node_type": "Research",
       "picture_index": 49,
       "row": 3,
