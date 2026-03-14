@@ -68,12 +68,11 @@ function loadLocale(localeCode) {
 }
 
 function updatePageTitle(currentEraName) {
-    let localizedEraName = data.strings[data.tech_tree_strings['Age of Empires II']];
-    if (currentEraName === 'Chronicles') localizedEraName = 'Chronicles'; // TODO: replace Chronicles name with translatable string;
-    const mode = data.strings[data.tech_tree_strings['mode']]
-    const suffix = mode ? ' – ' + mode : ''
+    const aoe2 = data.strings[data.tech_tree_strings['Age of Empires II']];
+    const mode = currentEraName === 'Chronicles' ? data.strings[data.tech_tree_strings['mode']] : '';
+    const suffix = mode ? ' – ' + mode : '';
     const techtree = data.strings[data.tech_tree_strings['Technology Tree']];
-    document.title = `${localizedEraName}${suffix} ${techtree}`;
+    document.title = `${aoe2}${suffix} ${techtree}`;
 }
 
 function displayData() {
@@ -460,7 +459,7 @@ function createXRefBadges() {
         let xRefImage = document.createElement('img');
 
         xRefImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
-        xRefImage.title = data.strings[data.civs[civ]?.name_string_id];
+        xRefImage.title = data.strings?.[data.civs[civ].name_string_id];
         xRefImage.id = `xRef__badge__${civ}`;
         xRefImage.classList.add('xRef__badge')
         xRefLink.appendChild(xRefImage);
