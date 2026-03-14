@@ -46,7 +46,7 @@ function loadEra() {
             )
         );
         createXRefBadges();
-        updatePageTitle(eras[currentEra]);
+        updatePageTitle();
         displayData();
         document.getElementById('eraselect').value = currentEra;
     });
@@ -59,7 +59,7 @@ function loadLocale(localeCode) {
     currentLocale = localeCode;
     loadJson('data/locales/' + localeCode + '/strings.json', function (strings) {
         data.strings = strings;
-        updatePageTitle(eras[currentEra]);
+        updatePageTitle();
         createXRefBadges();
         displayData();
         document.getElementById('localeselect').value = localeCode;
@@ -67,9 +67,9 @@ function loadLocale(localeCode) {
     });
 }
 
-function updatePageTitle(currentEraName) {
+function updatePageTitle() {
     const aoe2 = data.strings[data.tech_tree_strings['Age of Empires II']];
-    const mode = currentEraName === 'Chronicles' ? data.strings[data.tech_tree_strings['mode']] : '';
+    const mode = currentEra === 'antiquity' ? data.strings[data.tech_tree_strings['mode']] : '';
     const suffix = mode ? ' – ' + mode : '';
     const techtree = data.strings[data.tech_tree_strings['Technology Tree']];
     document.title = `${aoe2}${suffix} ${techtree}`;
