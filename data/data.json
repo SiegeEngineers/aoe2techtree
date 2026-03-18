@@ -37059,11 +37059,12 @@
             },
             "532": {
                 "Cost": {
-                    "Food": 0
+                    "Gold": 315,
+                    "Wood": 400
                 },
-                "ID": 246,
-                "ResearchTime": -1,
-                "internal_name": "Fast Fire Ship"
+                "ID": 35,
+                "ResearchTime": 65,
+                "internal_name": "Galleon"
             },
             "533": {
                 "Cost": {
@@ -37539,10 +37540,13 @@
                 "internal_name": "Elite Konnik"
             },
             "1302": {
-                "Cost": {},
-                "ID": 1010,
-                "ResearchTime": 0,
-                "internal_name": "Dragon Ship"
+                "Cost": {
+                    "Gold": 315,
+                    "Wood": 400
+                },
+                "ID": 35,
+                "ResearchTime": 65,
+                "internal_name": "Galleon"
             },
             "1372": {
                 "Cost": {
@@ -38087,10 +38091,13 @@
                 "internal_name": "War Galley"
             },
             "2628": {
-                "Cost": {},
-                "ID": 904,
-                "ResearchTime": -1,
-                "internal_name": "Carrack"
+                "Cost": {
+                    "Gold": 315,
+                    "Wood": 400
+                },
+                "ID": 35,
+                "ResearchTime": 65,
+                "internal_name": "Galleon"
             }
         }
     },

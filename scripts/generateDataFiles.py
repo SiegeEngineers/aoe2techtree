@@ -485,6 +485,17 @@ def gather_civs(techtrees, civs_info):
             civname = 'Hindustanis'
         civs[civname] = current_civ
 
+    FAST_FIRE_SHIP = 532
+    DRAGON_SHIP = 1302
+    CARRACK = 2628
+    HEAVY_WARSHIPS_UPGRADE = 35
+    assert unit_upgrades[FAST_FIRE_SHIP] != HEAVY_WARSHIPS_UPGRADE
+    unit_upgrades[FAST_FIRE_SHIP] = HEAVY_WARSHIPS_UPGRADE
+    assert unit_upgrades[DRAGON_SHIP] != HEAVY_WARSHIPS_UPGRADE
+    unit_upgrades[DRAGON_SHIP] = HEAVY_WARSHIPS_UPGRADE
+    assert unit_upgrades[CARRACK] != HEAVY_WARSHIPS_UPGRADE
+    unit_upgrades[CARRACK] = HEAVY_WARSHIPS_UPGRADE
+
     return civs, unit_upgrades
 
 
