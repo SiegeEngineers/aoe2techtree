@@ -28,6 +28,26 @@ const locales = {
 };
 const defaultLocale = 'en';
 let currentLocale = 'en';
+const compareStateClasses = ['compare-primary-only', 'compare-both', 'compare-secondary-only', 'compare-neither'];
+const compareTranslations = {
+    en: {compareCivilizations: 'Compare civilizations', swapCivilizations: 'Swap civilizations', selectedOnly: 'Selected civilization', comparisonOnly: 'Comparison civilization', exclusiveTechs: 'exclusive techs', both: 'Both', shared: 'shared', unavailable: 'unavailable'},
+    br: {compareCivilizations: 'Comparar civilizações', swapCivilizations: 'Inverter civilizações', selectedOnly: 'Civilização selecionada', comparisonOnly: 'Civilização comparada', exclusiveTechs: 'tecnologias exclusivas', both: 'Ambas', shared: 'compartilhadas', unavailable: 'indisponíveis'},
+    de: {compareCivilizations: 'Zivilisationen vergleichen', swapCivilizations: 'Zivilisationen tauschen', selectedOnly: 'Ausgewählte Zivilisation', comparisonOnly: 'Vergleichszivilisation', exclusiveTechs: 'exklusive Technologien', both: 'Beide', shared: 'gemeinsam', unavailable: 'nicht verfügbar'},
+    es: {compareCivilizations: 'Comparar civilizaciones', swapCivilizations: 'Intercambiar civilizaciones', selectedOnly: 'Civilización seleccionada', comparisonOnly: 'Civilización comparada', exclusiveTechs: 'tecnologías exclusivas', both: 'Ambas', shared: 'compartidas', unavailable: 'no disponibles'},
+    mx: {compareCivilizations: 'Comparar civilizaciones', swapCivilizations: 'Intercambiar civilizaciones', selectedOnly: 'Civilización seleccionada', comparisonOnly: 'Civilización comparada', exclusiveTechs: 'tecnologías exclusivas', both: 'Ambas', shared: 'compartidas', unavailable: 'no disponibles'},
+    fr: {compareCivilizations: 'Comparer les civilisations', swapCivilizations: 'Inverser les civilisations', selectedOnly: 'Civilisation sélectionnée', comparisonOnly: 'Civilisation comparée', exclusiveTechs: 'technologies exclusives', both: 'Les deux', shared: 'communes', unavailable: 'indisponibles'},
+    hi: {compareCivilizations: 'Sabhyataon ki tulna karein', swapCivilizations: 'Sabhyataon ko badlein', selectedOnly: 'Chuni hui sabhyata', comparisonOnly: 'Tulna wali sabhyata', exclusiveTechs: 'vishesh takniken', both: 'Dono', shared: 'sanjhi', unavailable: 'anuplabdh'},
+    it: {compareCivilizations: 'Confronta civiltà', swapCivilizations: 'Scambia civiltà', selectedOnly: 'Civiltà selezionata', comparisonOnly: 'Civiltà di confronto', exclusiveTechs: 'tecnologie esclusive', both: 'Entrambe', shared: 'condivise', unavailable: 'non disponibili'},
+    jp: {compareCivilizations: '文明を比較', swapCivilizations: '文明を入れ替え', selectedOnly: '選択中の文明', comparisonOnly: '比較対象の文明', exclusiveTechs: '固有テクノロジー', both: '両方', shared: '共通', unavailable: '利用不可'},
+    ko: {compareCivilizations: '문명 비교', swapCivilizations: '문명 바꾸기', selectedOnly: '선택한 문명', comparisonOnly: '비교 문명', exclusiveTechs: '고유 기술', both: '둘 다', shared: '공유', unavailable: '사용 불가'},
+    ms: {compareCivilizations: 'Bandingkan tamadun', swapCivilizations: 'Tukar tamadun', selectedOnly: 'Tamadun dipilih', comparisonOnly: 'Tamadun perbandingan', exclusiveTechs: 'teknologi eksklusif', both: 'Kedua-duanya', shared: 'dikongsi', unavailable: 'tidak tersedia'},
+    pl: {compareCivilizations: 'Porównaj cywilizacje', swapCivilizations: 'Zamień cywilizacje', selectedOnly: 'Wybrana cywilizacja', comparisonOnly: 'Porównywana cywilizacja', exclusiveTechs: 'unikalne technologie', both: 'Obie', shared: 'wspólne', unavailable: 'niedostępne'},
+    ru: {compareCivilizations: 'Сравнить цивилизации', swapCivilizations: 'Поменять цивилизации местами', selectedOnly: 'Выбранная цивилизация', comparisonOnly: 'Сравниваемая цивилизация', exclusiveTechs: 'уникальных технологий', both: 'Обе', shared: 'общих', unavailable: 'недоступных'},
+    tr: {compareCivilizations: 'Medeniyetleri karşılaştır', swapCivilizations: 'Medeniyetleri değiştir', selectedOnly: 'Seçilen medeniyet', comparisonOnly: 'Karşılaştırılan medeniyet', exclusiveTechs: 'özel teknoloji', both: 'İkisi de', shared: 'ortak', unavailable: 'kullanılamaz'},
+    vi: {compareCivilizations: 'So sánh nền văn minh', swapCivilizations: 'Đổi vị trí nền văn minh', selectedOnly: 'Nền văn minh đã chọn', comparisonOnly: 'Nền văn minh so sánh', exclusiveTechs: 'công nghệ độc quyền', both: 'Cả hai', shared: 'dùng chung', unavailable: 'không có'},
+    zh: {compareCivilizations: '比较文明', swapCivilizations: '交换文明', selectedOnly: '所选文明', comparisonOnly: '比较文明', exclusiveTechs: '专属科技', both: '双方', shared: '共享', unavailable: '不可用'},
+    tw: {compareCivilizations: '比較文明', swapCivilizations: '交換文明', selectedOnly: '所選文明', comparisonOnly: '比較文明', exclusiveTechs: '專屬科技', both: '雙方', shared: '共享', unavailable: '不可用'},
+};
 
 function loadLocale(localeCode) {
     if (!Object.keys(locales).includes(localeCode)) {
@@ -37,11 +57,24 @@ function loadLocale(localeCode) {
     loadJson('data/locales/' + localeCode + '/strings.json', function (strings) {
         data.strings = strings;
         updatePageTitle();
+        updateCompareUiStrings();
         createXRefBadges();
         displayData();
         document.getElementById('localeselect').value = localeCode;
         document.documentElement.setAttribute('lang', localeCode);
     });
+}
+
+function getCompareTranslation(key) {
+    const localeStrings = compareTranslations[currentLocale] || compareTranslations[defaultLocale];
+    return localeStrings[key] || compareTranslations[defaultLocale][key] || key;
+}
+
+function updateCompareUiStrings() {
+    document.getElementById('comparetogglelabel').textContent = getCompareTranslation('compareCivilizations');
+    document.getElementById('compareswap').setAttribute('aria-label', getCompareTranslation('swapCivilizations'));
+    document.getElementById('comparelegendprimary').textContent = getCompareTranslation('selectedOnly');
+    document.getElementById('comparelegendsecondary').textContent = getCompareTranslation('comparisonOnly');
 }
 
 function updatePageTitle() {
@@ -59,6 +92,8 @@ function displayData() {
     document.getElementById('key__table').innerHTML = '';
 
     fillCivSelector();
+    refreshCompareCivSelector();
+    syncCompareControls();
     let civWasLoaded = updateCivselectValue();
     if (!civWasLoaded) {
         loadCiv();
@@ -71,11 +106,22 @@ function displayData() {
 
 function updateCivselectValue() {
     let hash = window.location.hash.substring(1);
-    let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
-    if (capitalisedHash in data.civs) {
-        const civSelect = document.getElementById('civselect');
-        if (civSelect.value !== capitalisedHash) {
-            civSelect.value = capitalisedHash;
+    let [primaryHash, compareHash] = hash.split('-vs-');
+    let capitalisedPrimaryHash = capitaliseCivName(primaryHash);
+    let capitalisedCompareHash = capitaliseCivName(compareHash);
+    const civSelect = document.getElementById('civselect');
+    const compareToggle = document.getElementById('comparetoggle');
+    const compareSelect = document.getElementById('comparecivselect');
+
+    if (capitalisedPrimaryHash in data.civs) {
+        const primaryChanged = civSelect.value !== capitalisedPrimaryHash;
+        const compareEnabled = capitalisedCompareHash in data.civs && capitalisedCompareHash !== capitalisedPrimaryHash;
+        const compareChanged = compareToggle.checked !== compareEnabled || compareSelect.value !== (compareEnabled ? capitalisedCompareHash : '');
+        civSelect.value = capitalisedPrimaryHash;
+        compareToggle.checked = compareEnabled;
+        compareSelect.value = compareEnabled ? capitalisedCompareHash : '';
+        syncCompareControls();
+        if (primaryChanged || compareChanged) {
             loadCiv();
             return true;
         }
@@ -104,17 +150,276 @@ function onAdvancedStatsStateUpdate() {
     }
 }
 
+function capitaliseCivName(name) {
+    if (!name) {
+        return '';
+    }
+    return name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+}
+
+function getTransparentLogo(logoId) {
+    return document.getElementById(logoId).dataset.transparent;
+}
+
+function getSelectedCompareCiv() {
+    const compareToggle = document.getElementById('comparetoggle');
+    const compareSelect = document.getElementById('comparecivselect');
+    const selectedCiv = document.getElementById('civselect').value;
+    if (!compareToggle.checked) {
+        return '';
+    }
+    const compareCiv = compareSelect.value;
+    if (!(compareCiv in data.civs) || compareCiv === selectedCiv) {
+        return '';
+    }
+    return compareCiv;
+}
+
+function refreshCompareCivSelector() {
+    const compareSelect = document.getElementById('comparecivselect');
+    const selectedCiv = document.getElementById('civselect').value;
+    const currentCompareCiv = compareSelect.value;
+
+    compareSelect.innerHTML = '';
+    fillCivSelector('comparecivselect', selectedCiv);
+
+    if (currentCompareCiv && currentCompareCiv !== selectedCiv && currentCompareCiv in data.civs) {
+        compareSelect.value = currentCompareCiv;
+    } else if (compareSelect.options.length > 0) {
+        compareSelect.selectedIndex = 0;
+    } else {
+        compareSelect.value = '';
+    }
+}
+
+function syncCompareControls() {
+    const compareToggle = document.getElementById('comparetoggle');
+    const compareSelect = document.getElementById('comparecivselect');
+    const compareText = document.getElementById('comparetext');
+    const compareLegend = document.getElementById('comparelegend');
+    const compareSwap = document.getElementById('compareswap');
+    compareSelect.disabled = !compareToggle.checked;
+    compareSwap.disabled = !compareToggle.checked || compareSelect.options.length === 0;
+    if (!compareToggle.checked) {
+        compareText.hidden = true;
+        compareLegend.hidden = true;
+        return;
+    }
+
+    if (compareSelect.options.length > 0 && !compareSelect.value) {
+        compareSelect.selectedIndex = 0;
+    }
+    compareSwap.disabled = !compareSelect.value;
+}
+
+function swapCompareCivs() {
+    const compareToggle = document.getElementById('comparetoggle');
+    if (!compareToggle.checked) {
+        return;
+    }
+
+    const civSelect = document.getElementById('civselect');
+    const compareSelect = document.getElementById('comparecivselect');
+    const primaryCiv = civSelect.value;
+    const compareCiv = compareSelect.value;
+    if (!compareCiv || !(compareCiv in data.civs)) {
+        return;
+    }
+
+    civSelect.value = compareCiv;
+    refreshCompareCivSelector();
+    compareSelect.value = primaryCiv;
+    loadCiv();
+}
+
+function updateCompareSummary(primaryCiv, compareCiv, counts) {
+    const compareText = document.getElementById('comparetext');
+    const compareLegend = document.getElementById('comparelegend');
+    if (!compareCiv) {
+        compareText.hidden = true;
+        compareText.textContent = '';
+        compareLegend.hidden = true;
+        return;
+    }
+
+    const primaryName = data.strings[data.civs[primaryCiv].name_string_id];
+    const compareName = data.strings[data.civs[compareCiv].name_string_id];
+    compareText.innerHTML = `
+        <ul class="compare-list">
+            <li class="compare-list__row">
+                <span class="compare-list__label">${primaryName}</span>
+                <span class="compare-list__metric"><span class="compare-list__value">${counts.primaryOnly}</span><span class="compare-list__suffix">${getCompareTranslation('exclusiveTechs')}</span></span>
+            </li>
+            <li class="compare-list__row">
+                <span class="compare-list__label">${compareName}</span>
+                <span class="compare-list__metric"><span class="compare-list__value">${counts.secondaryOnly}</span><span class="compare-list__suffix">${getCompareTranslation('exclusiveTechs')}</span></span>
+            </li>
+            <li class="compare-list__row compare-list__row--stacked">
+                <span class="compare-list__label">${getCompareTranslation('both')}</span>
+                <span class="compare-list__metrics">
+                    <span class="compare-list__metric"><span class="compare-list__value">${counts.both}</span><span class="compare-list__suffix">${getCompareTranslation('shared')}</span></span>
+                    <span class="compare-list__metric"><span class="compare-list__value">${counts.neither}</span><span class="compare-list__suffix">${getCompareTranslation('unavailable')}</span></span>
+                </span>
+            </li>
+        </ul>
+    `;
+    compareText.hidden = false;
+    compareLegend.hidden = false;
+}
+
+function clearComparisonMarkers() {
+    document.querySelectorAll('.compare-marker').forEach((marker) => marker.remove());
+    document.querySelectorAll('#root .node').forEach((node) => node.classList.remove(...compareStateClasses));
+    document.querySelectorAll('#root .node [data-compare-hidden="true"]').forEach((element) => {
+        element.style.display = '';
+        element.removeAttribute('data-compare-hidden');
+    });
+}
+
+function createComparisonMarker(layer, cx, cy, className) {
+    const marker = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    marker.setAttribute('cx', cx.toString());
+    marker.setAttribute('cy', cy.toString());
+    marker.setAttribute('r', '5.5');
+    marker.setAttribute('class', `compare-marker ${className}`);
+    layer.appendChild(marker);
+}
+
+function setCompareHidden(element, hidden) {
+    if (!element) {
+        return;
+    }
+    element.style.display = hidden ? 'none' : '';
+    if (hidden) {
+        element.setAttribute('data-compare-hidden', 'true');
+    } else {
+        element.removeAttribute('data-compare-hidden');
+    }
+}
+
+function updateUnavailableOverlay(nodeId, shouldHide) {
+    setCompareHidden(document.getElementById(`${nodeId}_disabled_gray`), shouldHide);
+    setCompareHidden(document.getElementById(`${nodeId}_x`), shouldHide);
+}
+
+function getAvailabilityState(primaryAvailable, compareAvailable) {
+    if (primaryAvailable && compareAvailable) {
+        return 'compare-both';
+    }
+    if (primaryAvailable) {
+        return 'compare-primary-only';
+    }
+    if (compareAvailable) {
+        return 'compare-secondary-only';
+    }
+    return 'compare-neither';
+}
+
+function incrementComparisonCount(counts, stateClass) {
+    switch (stateClass) {
+        case 'compare-primary-only':
+            counts.primaryOnly += 1;
+            break;
+        case 'compare-both':
+            counts.both += 1;
+            break;
+        case 'compare-secondary-only':
+            counts.secondaryOnly += 1;
+            break;
+        default:
+            counts.neither += 1;
+    }
+}
+
+function applyComparisonState(primaryCiv, compareCiv) {
+    clearComparisonMarkers();
+    if (!compareCiv) {
+        updateCompareSummary(primaryCiv, compareCiv, {primaryOnly: 0, both: 0, secondaryOnly: 0, neither: 0});
+        return;
+    }
+
+    const root = document.getElementById('root');
+    if (!root) {
+        return;
+    }
+
+    const markerLayer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    markerLayer.setAttribute('id', 'compare-markers');
+    root.appendChild(markerLayer);
+
+    const counts = {
+        primaryOnly: 0,
+        both: 0,
+        secondaryOnly: 0,
+        neither: 0,
+    };
+
+    document.querySelectorAll('#root .node').forEach((node) => {
+        const overlay = SVG(`#${node.id}_overlay`);
+        if (!overlay) {
+            return;
+        }
+        const fullId = overlay.data('id');
+        if (!fullId) {
+            return;
+        }
+        const [type, idValue] = fullId.split('_');
+        const itemId = parseInt(idValue, 10);
+        const primaryAvailable = (data.civs[primaryCiv][type] || []).includes(itemId);
+        const compareAvailable = (data.civs[compareCiv][type] || []).includes(itemId);
+        const stateClass = getAvailabilityState(primaryAvailable, compareAvailable);
+        node.classList.add(stateClass);
+        incrementComparisonCount(counts, stateClass);
+        updateUnavailableOverlay(node.id, compareAvailable);
+
+        const bbox = node.getBBox();
+        if (primaryAvailable) {
+            createComparisonMarker(markerLayer, bbox.x + 7, bbox.y + 7, 'compare-marker--primary');
+        }
+        if (compareAvailable) {
+            createComparisonMarker(markerLayer, bbox.x + bbox.width - 7, bbox.y + 7, 'compare-marker--secondary');
+        }
+    });
+
+    updateCompareSummary(primaryCiv, compareCiv, counts);
+}
+
+function updateCivDetails(selectedCiv, compareCiv) {
+    const civText = document.getElementById('civtext');
+    const civLogo = document.getElementById('civlogo');
+    const compareLogo = document.getElementById('comparecivlogo');
+
+    if (selectedCiv in data.civs) {
+        civText.innerHTML = data.strings[data.civs[selectedCiv].help_string_id];
+        civLogo.src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
+    } else {
+        civText.innerHTML = '';
+        civLogo.src = getTransparentLogo('civlogo');
+    }
+
+    if (compareCiv) {
+        compareLogo.src = `./img/Civs/${compareCiv.toLowerCase()}.png`;
+    } else {
+        compareLogo.src = getTransparentLogo('comparecivlogo');
+    }
+}
+
+function updateHash(selectedCiv, compareCiv) {
+    window.location.hash = compareCiv ? `${selectedCiv}-vs-${compareCiv}` : selectedCiv;
+}
+
+function onCompareModeChange() {
+    syncCompareControls();
+    loadCiv();
+}
+
 function loadCiv() {
     const selectedCiv = document.getElementById('civselect').value;
-    civ(selectedCiv, tree);
-    if (selectedCiv in data.civs) {
-        document.getElementById('civtext').innerHTML = data.strings[data.civs[selectedCiv].help_string_id];
-        document.getElementById('civlogo').src = `./img/Civs/${selectedCiv.toLowerCase()}.png`;
-        window.location.hash = selectedCiv;
-    } else {
-        document.getElementById('civtext').innerHTML = '';
-        document.getElementById('civlogo').src = document.getElementById('civlogo').dataset.transparent;
-    }
+    refreshCompareCivSelector();
+    const compareCiv = getSelectedCompareCiv();
+    civ(selectedCiv, () => applyComparisonState(selectedCiv, compareCiv));
+    updateCivDetails(selectedCiv, compareCiv);
+    updateHash(selectedCiv, compareCiv);
     hideHelp();
 }
 
@@ -673,7 +978,8 @@ function getCompareLocale() {
     }
 }
 
-function fillCivSelector() {
+function fillCivSelector(selectId = 'civselect', excludedCiv = '') {
+    const civSelect = document.getElementById(selectId);
     const compareLocale = getCompareLocale();
     const sorted_civ_names = Object.keys(data.civs).sort((a, b) => {
         const localised_name_a = data.strings[data.civs[a].name_string_id];
@@ -682,10 +988,13 @@ function fillCivSelector() {
     });
 
     for (let civ_name of sorted_civ_names) {
+        if (civ_name === excludedCiv) {
+            continue;
+        }
         const option = document.createElement('option');
         option.setAttribute('value', civ_name);
         option.textContent = data.strings[data.civs[civ_name].name_string_id];
-        document.getElementById('civselect').appendChild(option);
+        civSelect.appendChild(option);
     }
 }
 
@@ -700,7 +1009,7 @@ function hasItemsInGrid(building) {
     return false;
 }
 
-function civ(civName) {
+function civ(civName, onRendered) {
 
     loadJson('data/trees/' + civName.toUpperCase() + '.json', function (treeData) {
         const root = document.getElementById('root');
@@ -892,6 +1201,10 @@ function civ(civName) {
         for (const building of treeData.buildings) {
             drawItem(building, element_height, tree_height, draw);
             drawGrid(building, element_height, tree_height, draw, index);
+        }
+
+        if (onRendered) {
+            onRendered();
         }
     });
 }
