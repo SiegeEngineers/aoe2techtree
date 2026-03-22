@@ -37470,12 +37470,6 @@
                 "ResearchTime": 45,
                 "internal_name": "Elite Rattan Archer"
             },
-            "1132": {
-                "Cost": {},
-                "ID": 630,
-                "ResearchTime": 0,
-                "internal_name": "Battle Elephant (make avail)"
-            },
             "1134": {
                 "Cost": {
                     "Food": 1100,
@@ -37808,12 +37802,6 @@
                 "ResearchTime": 45,
                 "internal_name": "Elite Fire Archer"
             },
-            "1974": {
-                "Cost": {},
-                "ID": 1156,
-                "ResearchTime": 0,
-                "internal_name": ""
-            },
             "2102": {
                 "Cost": {
                     "Food": 850,
@@ -37993,12 +37981,6 @@
                 "ID": 1328,
                 "ResearchTime": 70,
                 "internal_name": "Elite Sannahya"
-            },
-            "2550": {
-                "Cost": {},
-                "ID": 1350,
-                "ResearchTime": 0,
-                "internal_name": "Champi Scout (Make avail)"
             },
             "2552": {
                 "Cost": {

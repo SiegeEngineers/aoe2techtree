@@ -436,11 +436,14 @@ def add_tech(key, tech: Tech, data):
 
 
 def add_unit_upgrade(key, tech_id, tech: Tech, data):
+    cost = get_cost(tech)
+    if not cost:
+        return
     data['unit_upgrades'][key] = {
         'internal_name': tech.name,
         'ResearchTime': tech.research_locations[0].research_time,
         'ID': tech_id,
-        'Cost': get_cost(tech),
+        'Cost': cost,
     }
 
 
