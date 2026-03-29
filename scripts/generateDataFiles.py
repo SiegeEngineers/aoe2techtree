@@ -176,14 +176,12 @@ def gather_language_data(resourcesdir, techtrees, civs_info, extra_ids, language
     key_value_strings_file_en = resourcesdir / language / 'strings' / 'key-value' / 'key-value-strings-utf8.txt'
     with key_value_strings_file_en.open() as f:
         for line in f:
-            parse_line(key_value, line)
+            parse_line(key_value, line, 'IDS_MPS_AOE_II_DE_PAPHOS_TOGGLE')
 
     key_value_paphos_strings_file_en = resourcesdir / language / 'strings' / 'key-value' / 'key-value-paphos-strings-utf8.txt'
     with key_value_paphos_strings_file_en.open(encoding='utf-8') as f:
         for line in f:
-            parse_line(key_value, line)
-
-    key_value[1] = ''  # Mode
+            parse_line(key_value, line, 'IDS_MPS_AOE_II_DE_PAPHOS_TOGGLE')
 
     key_value_filtered = {}
     for civ in techtrees['civs']:
@@ -214,12 +212,12 @@ def ror_gather_language_data(programdir, techtrees, language):
     key_value_strings_file_en = programdir / 'resources' / language / 'strings' / 'key-value' / 'key-value-strings-utf8.txt'
     with key_value_strings_file_en.open(encoding='utf-8') as f:
         for line in f:
-            parse_line(key_value, line)
+            parse_line(key_value, line, 'IDS_MPS_RETURN_OF_ROME_TOGGLE')
     # override strings with everything specific to AoE1 / Return of Rome
     key_value_pompeii_strings_file_en = programdir / 'modes' / 'Pompeii' / 'resources' / language / 'strings' / 'key-value' / 'key-value-pompeii-strings-utf8.txt'
     with key_value_pompeii_strings_file_en.open(encoding='utf-8') as f:
         for line in f:
-            parse_line(key_value, line)
+            parse_line(key_value, line, 'IDS_MPS_RETURN_OF_ROME_TOGGLE')
 
     key_value[5121] = key_value[305131]  # Villager
     key_value[26121] = key_value[326131]
@@ -250,7 +248,7 @@ def ror_gather_language_data(programdir, techtrees, language):
     return key_value_filtered
 
 
-def parse_line(key_value, line):
+def parse_line(key_value, line, subGameString):
     items = line.split(" ")
     if items[0].isnumeric():
         number = int(items[0])
@@ -266,7 +264,7 @@ def parse_line(key_value, line):
             text = re.sub(r'‹i›(.+?)‹i›', r'<i>\1</i>', text)
             text = re.sub(r'\\n', r'<br>\n', text)
             key_value[number] = text
-    elif items[0] == 'IDS_MPS_RETURN_OF_ROME_TOGGLE':
+    elif items[0] == subGameString:
         match = re.search('".+"', line)
         if match:
             text = match.group(0)[1:-1]

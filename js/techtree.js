@@ -18,6 +18,7 @@ const AGE_IMAGES = {
 }
 
 const getAgeNames = (era)=>{
+    if (era === undefined) return [];
     return [
         data.strings[data.age_names[era][0]],
         data.strings[data.age_names[era][1]],
