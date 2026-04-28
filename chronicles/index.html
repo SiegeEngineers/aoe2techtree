@@ -3,32 +3,32 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
     <meta charset="utf-8">
-    <title>Age of Empires II Return of Rome Tech Tree</title>
-    <link rel="alternate" hreflang="x-default" href="https://aoe2techtree.net/ror">
-    <link rel="alternate" hreflang="en" href="https://aoe2techtree.net/ror/?lng=en">
-    <link rel="alternate" hreflang="zh-CN" href="https://aoe2techtree.net/ror/?lng=zh">
-    <link rel="alternate" hreflang="zh-TW" href="https://aoe2techtree.net/ror/?lng=tw">
-    <link rel="alternate" hreflang="fr" href="https://aoe2techtree.net/ror/?lng=fr">
-    <link rel="alternate" hreflang="de" href="https://aoe2techtree.net/ror/?lng=de">
-    <link rel="alternate" hreflang="hi" href="https://aoe2techtree.net/ror/?lng=hi">
-    <link rel="alternate" hreflang="it" href="https://aoe2techtree.net/ror/?lng=it">
-    <link rel="alternate" hreflang="ja" href="https://aoe2techtree.net/ror/?lng=jp">
-    <link rel="alternate" hreflang="ko" href="https://aoe2techtree.net/ror/?lng=ko">
-    <link rel="alternate" hreflang="ms" href="https://aoe2techtree.net/ror/?lng=ms">
-    <link rel="alternate" hreflang="pl" href="https://aoe2techtree.net/ror/?lng=pl">
-    <link rel="alternate" hreflang="ru" href="https://aoe2techtree.net/ror/?lng=ru">
-    <link rel="alternate" hreflang="es-ES" href="https://aoe2techtree.net/ror/?lng=es">
-    <link rel="alternate" hreflang="es-MX" href="https://aoe2techtree.net/ror/?lng=mx">
-    <link rel="alternate" hreflang="tr" href="https://aoe2techtree.net/ror/?lng=tr">
-    <link rel="alternate" hreflang="vi" href="https://aoe2techtree.net/ror/?lng=vi">
-    <link rel="alternate" hreflang="pt-BR" href="https://aoe2techtree.net/ror/?lng=br">
+    <title>Age of Empires II Tech Tree</title>
+    <link rel="alternate" hreflang="x-default" href="https://aoe2techtree.net/chronicles/">
+    <link rel="alternate" hreflang="en" href="https://aoe2techtree.net/chronicles/?lng=en">
+    <link rel="alternate" hreflang="zh-CN" href="https://aoe2techtree.net/chronicles/?lng=zh">
+    <link rel="alternate" hreflang="zh-TW" href="https://aoe2techtree.net/chronicles/?lng=tw">
+    <link rel="alternate" hreflang="fr" href="https://aoe2techtree.net/chronicles/?lng=fr">
+    <link rel="alternate" hreflang="de" href="https://aoe2techtree.net/chronicles/?lng=de">
+    <link rel="alternate" hreflang="hi" href="https://aoe2techtree.net/chronicles/?lng=hi">
+    <link rel="alternate" hreflang="it" href="https://aoe2techtree.net/chronicles/?lng=it">
+    <link rel="alternate" hreflang="ja" href="https://aoe2techtree.net/chronicles/?lng=jp">
+    <link rel="alternate" hreflang="ko" href="https://aoe2techtree.net/chronicles/?lng=ko">
+    <link rel="alternate" hreflang="ms" href="https://aoe2techtree.net/chronicles/?lng=ms">
+    <link rel="alternate" hreflang="pl" href="https://aoe2techtree.net/chronicles/?lng=pl">
+    <link rel="alternate" hreflang="ru" href="https://aoe2techtree.net/chronicles/?lng=ru">
+    <link rel="alternate" hreflang="es-ES" href="https://aoe2techtree.net/chronicles/?lng=es">
+    <link rel="alternate" hreflang="es-MX" href="https://aoe2techtree.net/chronicles/?lng=mx">
+    <link rel="alternate" hreflang="tr" href="https://aoe2techtree.net/chronicles/?lng=tr">
+    <link rel="alternate" hreflang="vi" href="https://aoe2techtree.net/chronicles/?lng=vi">
+    <link rel="alternate" hreflang="pt-BR" href="https://aoe2techtree.net/chronicles/?lng=br">
     <link rel="stylesheet" href="../fonts/merriweather.css">
     <link rel="stylesheet" href="../style.css">
     <script defer src="../js/svg.min.js"></script>
-    <script defer src="js/techtree.js"></script>
-    <script defer src="js/main.js"></script>
+    <script defer src="../js/techtree.js"></script>
+    <script defer src="../js/main.js"></script>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
             <div id="civinfo">
                 <div id="civtitle">
                     <select id="civselect" onchange="loadCiv()" autofocus>
-						<option>Loading…</option>
+                        <option>Loading…</option>
                     </select>
                     <img id="civlogo" height="81" width="81" data-transparent="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
                 </div>
@@ -50,7 +50,6 @@
                 </table>
             </div>
             <div class="key">
-                <b id="key__label"></b>
                 <table id="key__table">
                 </table>
             </div>
@@ -60,11 +59,11 @@
             </div>
             <div class="credits">
                 <p>
-                Version: Age of Empires II RoR Update <a href="https://www.ageofempires.com/news/age-of-empires-ii-definitive-edition-update-162286/" target="_blank" title="Changelog" rel="nofollow">162286</a>
+                    Version: Age of Empires II DE Update <a href="https://www.ageofempires.com/news/age-of-empires-ii-definitive-edition-update-170934/" target="_blank" title="Changelog" rel="nofollow">170934</a>
                     |
                     <a href="/">» DE</a>
                     |
-                    <a href="/chronicles">» Chronicles</a>
+                    <a href="/ror">» RoR</a>
                 </p>
                 <p>
                     A project by <a href="https://siegeengineers.org" rel="author" class="has-text-grey">Siege Engineers</a>.
@@ -72,7 +71,7 @@
                     <a class="inverted" href="https://siegeengineers.org/donate/?from=aoe2techtree">Donate</a> to support this project.
                 </p>
                 <p>
-                    Made by hszemi, Anda, exterkamp, paulirish, lalitpatel, ides315,
+                    Made by hszemi, Anda, exterkamp, paulirish, lalitpatel,
                     with thanks to Jineapple, TriRem, pip, and NkoDragaš<br>
                 </p>
                 <p>

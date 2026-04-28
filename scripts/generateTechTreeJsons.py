@@ -89,6 +89,10 @@ def main():
 
     args = parser.parse_args()
 
+    civ_info_file = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'civilizations.json'
+    civ_info_raw = json.loads(civ_info_file.read_text())
+    civs_info = {civ['tech_tree_name']: civ for civ in civ_info_raw['civilization_list']}
+
     for jsonfile in sorted((Path(args.programdir) / 'resources/_common/dat/CivTechTrees/').glob('*.json')):
         print(jsonfile.name)
         data = json.loads(jsonfile.read_text())
@@ -162,7 +166,11 @@ def main():
             target_filename = 'MAGYARS.json'
         if target_filename == 'INDIANS.json':
             target_filename = 'HINDUSTANIS.json'
-        target_file = Path(__file__).parent.with_name('data') / 'trees' / target_filename
+        subfolder = ''
+        civ_info = civs_info[data['civ_id']]
+        if civ_info['era'] == 'antiquity':
+            subfolder = 'chronicles'
+        target_file = Path(__file__).parent.parent / subfolder / 'data' / 'trees' / target_filename
         target_file.write_text(
             json.dumps({'buildings': buildings_dicts, 'units_techs': units_techs_dicts}, indent=2, sort_keys=True))
 

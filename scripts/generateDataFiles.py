@@ -460,10 +460,13 @@ def write_language_files(args, techtrees, civs_info, extra_ids, outputdir):
             json.dump(key_value_filtered, f, indent=4, sort_keys=True, ensure_ascii=False)
 
 
-def gather_civs(techtrees, civs_info):
+def gather_civs(techtrees, civs_info, era: str):
     civs = {}
     unit_upgrades = {}
     for civ in techtrees['civs']:
+        civ_info = civs_info[civ['civ_id']]
+        if civ_info['era'] != era:
+            continue
         current_civ = {'Building': [], 'Unit': [], 'Tech': [], 'meta': {}}
         for building in civ['civ_techs_buildings']:
             if building['Node Status'] != 'NotAvailable':
@@ -477,7 +480,6 @@ def gather_civs(techtrees, civs_info):
         current_civ['Building'] = sorted(set(current_civ['Building']))
         current_civ['Unit'] = sorted(set(current_civ['Unit']))
         current_civ['Tech'] = sorted(set(current_civ['Tech']))
-        civ_info = civs_info[civ['civ_id']]
         current_civ['name_string_id'] = civ_info['name_string_id']
         current_civ['help_string_id'] = civ_info['name_string_id'] + 109879
         current_civ['era'] = civ_info['era']
@@ -487,17 +489,6 @@ def gather_civs(techtrees, civs_info):
         if civname == 'Indians':
             civname = 'Hindustanis'
         civs[civname] = current_civ
-
-    FAST_FIRE_SHIP = 532
-    DRAGON_SHIP = 1302
-    CARRACK = 2628
-    HEAVY_WARSHIPS_UPGRADE = 35
-    assert unit_upgrades[FAST_FIRE_SHIP] != HEAVY_WARSHIPS_UPGRADE
-    unit_upgrades[FAST_FIRE_SHIP] = HEAVY_WARSHIPS_UPGRADE
-    assert unit_upgrades[DRAGON_SHIP] != HEAVY_WARSHIPS_UPGRADE
-    unit_upgrades[DRAGON_SHIP] = HEAVY_WARSHIPS_UPGRADE
-    assert unit_upgrades[CARRACK] != HEAVY_WARSHIPS_UPGRADE
-    unit_upgrades[CARRACK] = HEAVY_WARSHIPS_UPGRADE
 
     return civs, unit_upgrades
 
@@ -603,6 +594,19 @@ def ror_write_language_files(args, techtrees, outputdir):
             json.dump(key_value_filtered, f, indent=4, sort_keys=True, ensure_ascii=False)
 
 
+def patch_unit_upgrades_aoe2(unit_upgrades):
+    FAST_FIRE_SHIP = 532
+    DRAGON_SHIP = 1302
+    CARRACK = 2628
+    HEAVY_WARSHIPS_UPGRADE = 35
+    assert unit_upgrades[FAST_FIRE_SHIP] != HEAVY_WARSHIPS_UPGRADE
+    unit_upgrades[FAST_FIRE_SHIP] = HEAVY_WARSHIPS_UPGRADE
+    assert unit_upgrades[DRAGON_SHIP] != HEAVY_WARSHIPS_UPGRADE
+    unit_upgrades[DRAGON_SHIP] = HEAVY_WARSHIPS_UPGRADE
+    assert unit_upgrades[CARRACK] != HEAVY_WARSHIPS_UPGRADE
+    unit_upgrades[CARRACK] = HEAVY_WARSHIPS_UPGRADE
+
+
 def process_ror(args, outputdir):
     techtreesfile = Path(args.programdir) / 'modes' / 'Pompeii' / 'resources' / '_common' / 'dat' / 'civTechTrees.json'
     ttfcontent = techtreesfile.read_text()
@@ -618,12 +622,33 @@ def process_ror(args, outputdir):
 
 
 def process_aoe2(args, outputdir):
+    era = 'base'
     techtreesfiles = sorted((Path(args.programdir) / 'resources' / '_common' / 'dat' / 'CivTechTrees').glob('*.json'))
     techtrees = {"civs": [json.loads(ttfile.read_text()) for ttfile in techtreesfiles]}
     civ_info_file = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'civilizations.json'
     civ_info_raw = json.loads(civ_info_file.read_text())
     civs_info = {civ['tech_tree_name']: civ for civ in civ_info_raw['civilization_list']}
-    civs, unit_upgrades = gather_civs(techtrees, civs_info)
+    techtrees['civs'] = [x for x in techtrees['civs'] if civs_info[x['civ_id']]['era'] == era]
+    civs_info = {k:v for k, v in civs_info.items() if v['era'] == era}
+    civs, unit_upgrades = gather_civs(techtrees, civs_info, era)
+    patch_unit_upgrades_aoe2(unit_upgrades)
+    datafile = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'empires2_x2_p1.dat'
+    content = DatFile.parse(datafile)
+    data, extra_ids = gather_data(content, civs, unit_upgrades)
+    write_datafile(data, civs, outputdir)
+    write_language_files(args, techtrees, civs_info, extra_ids, outputdir)
+
+
+def process_chronicles(args, outputdir):
+    era = 'antiquity'
+    techtreesfiles = sorted((Path(args.programdir) / 'resources' / '_common' / 'dat' / 'CivTechTrees').glob('*.json'))
+    techtrees = {"civs": [json.loads(ttfile.read_text()) for ttfile in techtreesfiles]}
+    civ_info_file = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'civilizations.json'
+    civ_info_raw = json.loads(civ_info_file.read_text())
+    civs_info = {civ['tech_tree_name']: civ for civ in civ_info_raw['civilization_list']}
+    techtrees['civs'] = [x for x in techtrees['civs'] if civs_info[x['civ_id']]['era'] == era]
+    civs_info = {k:v for k, v in civs_info.items() if v['era'] == era}
+    civs, unit_upgrades = gather_civs(techtrees, civs_info, era)
     datafile = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'empires2_x2_p1.dat'
     content = DatFile.parse(datafile)
     data, extra_ids = gather_data(content, civs, unit_upgrades)
@@ -640,6 +665,9 @@ def main():
 
     outputdir = Path(__file__).parent / '..' / 'data'
     process_aoe2(args, outputdir)
+
+    outputdir = Path(__file__).parent / '..' / 'chronicles' / 'data'
+    process_chronicles(args, outputdir)
 
     print('RoR needs to be fully migrated still')
     raise SystemExit(0)
