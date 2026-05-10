@@ -7,6 +7,14 @@ const PADDING = 20;
 const PADDING_BETWEEN_COLUMNS = 10;
 const TOP_PADDING = 20;
 
+const eras = {
+    base: "Age of Empires II",
+    antiquity: "Chronicles",
+    all: "All",
+};
+const defaultEra = 'base';
+let currentEra = 'base';
+
 const locales = {
     en: 'English',
     zh: '简体中文',
@@ -29,6 +37,21 @@ const locales = {
 const defaultLocale = 'en';
 let currentLocale = 'en';
 
+function loadEra() {
+    if (eras[currentEra] === undefined) currentEra = defaultEra;
+    loadJson('data/data.json', function (response) {
+        data.civs = Object.fromEntries(
+            Object.entries(response.civs).filter(
+                ([_, civ]) => civ.era === currentEra || currentEra === "all"
+            )
+        );
+        createXRefBadges();
+        updatePageTitle();
+        displayData();
+        document.getElementById('eraselect').value = currentEra;
+    });
+}
+
 function loadLocale(localeCode) {
     if (!Object.keys(locales).includes(localeCode)) {
         localeCode = defaultLocale;
@@ -46,8 +69,8 @@ function loadLocale(localeCode) {
 
 function updatePageTitle() {
     const aoe2 = data.strings[data.tech_tree_strings['Age of Empires II']];
-    const mode = data.strings[data.tech_tree_strings['mode']]
-    const suffix = mode ? ' – ' + mode : ''
+    const mode = currentEra === 'antiquity' ? data.strings[data.tech_tree_strings['mode']] : '';
+    const suffix = mode ? ' – ' + mode : '';
     const techtree = data.strings[data.tech_tree_strings['Technology Tree']];
     document.title = `${aoe2}${suffix} ${techtree}`;
 }
@@ -436,7 +459,7 @@ function createXRefBadges() {
         let xRefImage = document.createElement('img');
 
         xRefImage.src = `./img/Civs/${civ.toLowerCase()}.png`;
-        xRefImage.title = data.strings[data.civs[civ].name_string_id];
+        xRefImage.title = data.strings?.[data.civs[civ].name_string_id];
         xRefImage.id = `xRef__badge__${civ}`;
         xRefImage.classList.add('xRef__badge')
         xRefLink.appendChild(xRefImage);
@@ -643,11 +666,28 @@ function addSquareToKey(tr, nodeType) {
     tr.appendChild(td);
 }
 
+function changeEra() {
+    currentEra = document.getElementById('eraselect').value;
+    loadEra();
+}
+
 function changeLocale() {
     const newLocale = document.getElementById('localeselect').value;
     setLocaleInUrl(newLocale);
     setLocaleInLocalStorage(newLocale);
     loadLocale(newLocale);
+}
+
+function fillEraSelector() {
+    Object.keys(eras).map(function (era) {
+        const option = document.createElement('option');
+        option.setAttribute('value', era);
+        option.textContent = eras[era];
+        if (currentEra === era) {
+            option.setAttribute('selected', '')
+        }
+        document.getElementById('eraselect').appendChild(option);
+    });
 }
 
 function fillLocaleSelector(currentLocale) {
@@ -857,8 +897,8 @@ function civ(civName) {
         let icon_width = 112;
         let vertical_spacing = (row_height - icon_height) / 2 - 10;
         let margin_left = 20;
-        let image_urls = AGE_IMAGES[data.civs[civName].era];
-        let age_names = getAgeNames(data.civs[civName].era);
+        let image_urls = AGE_IMAGES[data.civs[civName]?.era] ?? [];
+        let age_names = getAgeNames(data.civs[civName]?.era);
         for (let i = 0; i < image_urls.length; i++) {
             let age_image_group = draw.group().click(hideHelp);
             let age_image = age_image_group.image('img/Ages/' + image_urls[i])
@@ -1040,10 +1080,12 @@ function main() {
     setAdvancedStatsState();
 
     let storedLocale = getInitialLocale();
+    fillEraSelector();
     fillLocaleSelector(storedLocale);
 
     loadJson('data/data.json', function (response) {
         data = response;
+        loadEra();
         loadLocale(storedLocale);
     });
 
