@@ -54,7 +54,6 @@ function updatePageTitle() {
 
 function displayData() {
     // Reset containers
-    //document.getElementById('civselect').innerHTML = '';
     document.getElementById('buildingindex__table').innerHTML = '';
     document.getElementById('key__table').innerHTML = '';
 
@@ -73,7 +72,6 @@ function displayData() {
             document.getElementById('selected-civ-name').textContent=data.strings[data.civs[civSelect].name_string_id];
         }
         loadCivByName(civSelect);
-        //loadCiv();
     }
     create_colour_key();
     window.onhashchange = function () {
@@ -85,7 +83,6 @@ function updateCivselectValue() {
     let hash = window.location.hash.substring(1);
     let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
     if (capitalisedHash in data.civs) {
-        //const civSelect = document.getElementById('civselect');
         const civSelect = document.getElementById('selected-civ-name');
         if (civSelect.dataset.value !== capitalisedHash) {
             civSelect.dataset.value = capitalisedHash;
@@ -116,20 +113,6 @@ function onAdvancedStatsStateUpdate() {
         // pass
     }
 }
-
-//function loadCiv() {
-//    const selectedCiv = document.getElementById('civselect').value;
-//    civ(selectedCiv, tree);
-//    if (selectedCiv in data.civs) {
-//        document.getElementById('civtext').innerHTML = data.strings[data.civs[selectedCiv].help_string_id];
-//        document.getElementById('civlogo').src = `/img/Civs/${selectedCiv.toLowerCase()}.png`;
-//        window.location.hash = selectedCiv;
-//    } else {
-//        document.getElementById('civtext').innerHTML = '';
-//        document.getElementById('civlogo').src = document.getElementById('civlogo').dataset.transparent;
-//    }
-//    hideHelp();
-//}
 
 function loadCivByName(selectedCiv) {
     civ(selectedCiv, tree);
@@ -455,9 +438,8 @@ function createXRefBadges() {
     for (let civ of Object.keys(data.civs)) {
         let xRefLink = document.createElement('button');
         xRefLink.addEventListener('click', function () {
-            //document.getElementById('civselect').value = civ;
-            document.getElementById('selected-civ-icon').src='/img/Civs'+civ.toLowerCase()+'.png';
-            document.getElementById('selected-civ-name').textContent=civ;
+            document.getElementById('selected-civ-icon').src='/img/Civs/'+civ.toLowerCase()+'.png';
+            document.getElementById('selected-civ-name').textContent=data.strings[data.civs[civ].name_string_id];
             loadCivByName(civ);
         });
 
@@ -713,10 +695,6 @@ function fillCivSelector() {
     menu.innerHTML='';
 
     for (let civ_name of sorted_civ_names) {
-        //const option = document.createElement('option');
-        //option.setAttribute('value', civ_name);
-        //option.textContent = data.strings[data.civs[civ_name].name_string_id];
-        //document.getElementById('civselect').appendChild(option);
 
         // create option item
         const item=document.createElement('div');

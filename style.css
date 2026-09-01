@@ -41,9 +41,7 @@ a, a:hover, a:visited, a:active {
 
 #container {
     min-width: 100%;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    min-height: fill-available;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
 }
