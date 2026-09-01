@@ -54,14 +54,26 @@ function updatePageTitle() {
 
 function displayData() {
     // Reset containers
-    document.getElementById('civselect').innerHTML = '';
+    //document.getElementById('civselect').innerHTML = '';
     document.getElementById('buildingindex__table').innerHTML = '';
     document.getElementById('key__table').innerHTML = '';
 
     fillCivSelector();
     let civWasLoaded = updateCivselectValue();
     if (!civWasLoaded) {
-        loadCiv();
+        let civSelect;
+        if (document.getElementById('selected-civ-name').textContent==='Loading...') {
+            document.getElementById('selected-civ-icon').src='/img/Civs/britons.png';
+            document.getElementById('selected-civ-name').textContent=data.strings[data.civs['Britons'].name_string_id];
+            civSelect='Britons';
+        }
+        else {
+            civSelect=document.getElementById('selected-civ-name').dataset.value;
+            document.getElementById('selected-civ-icon').src='/img/Civs/'+civSelect.toLowerCase()+'.png';
+            document.getElementById('selected-civ-name').textContent=data.strings[data.civs[civSelect].name_string_id];
+        }
+        loadCivByName(civSelect);
+        //loadCiv();
     }
     create_colour_key();
     window.onhashchange = function () {
@@ -73,10 +85,11 @@ function updateCivselectValue() {
     let hash = window.location.hash.substring(1);
     let capitalisedHash = hash.substring(0, 1).toUpperCase() + hash.substring(1).toLowerCase();
     if (capitalisedHash in data.civs) {
-        const civSelect = document.getElementById('civselect');
-        if (civSelect.value !== capitalisedHash) {
-            civSelect.value = capitalisedHash;
-            loadCiv();
+        //const civSelect = document.getElementById('civselect');
+        const civSelect = document.getElementById('selected-civ-name');
+        if (civSelect.dataset.value !== capitalisedHash) {
+            civSelect.dataset.value = capitalisedHash;
+            loadCivByName(civSelect.dataset.value);
             return true;
         }
     }
@@ -104,8 +117,21 @@ function onAdvancedStatsStateUpdate() {
     }
 }
 
-function loadCiv() {
-    const selectedCiv = document.getElementById('civselect').value;
+//function loadCiv() {
+//    const selectedCiv = document.getElementById('civselect').value;
+//    civ(selectedCiv, tree);
+//    if (selectedCiv in data.civs) {
+//        document.getElementById('civtext').innerHTML = data.strings[data.civs[selectedCiv].help_string_id];
+//        document.getElementById('civlogo').src = `/img/Civs/${selectedCiv.toLowerCase()}.png`;
+//        window.location.hash = selectedCiv;
+//    } else {
+//        document.getElementById('civtext').innerHTML = '';
+//        document.getElementById('civlogo').src = document.getElementById('civlogo').dataset.transparent;
+//    }
+//    hideHelp();
+//}
+
+function loadCivByName(selectedCiv) {
     civ(selectedCiv, tree);
     if (selectedCiv in data.civs) {
         document.getElementById('civtext').innerHTML = data.strings[data.civs[selectedCiv].help_string_id];
@@ -429,8 +455,10 @@ function createXRefBadges() {
     for (let civ of Object.keys(data.civs)) {
         let xRefLink = document.createElement('button');
         xRefLink.addEventListener('click', function () {
-            document.getElementById('civselect').value = civ;
-            loadCiv();
+            //document.getElementById('civselect').value = civ;
+            document.getElementById('selected-civ-icon').src='/img/Civs'+civ.toLowerCase()+'.png';
+            document.getElementById('selected-civ-name').textContent=civ;
+            loadCivByName(civ);
         });
 
         let xRefImage = document.createElement('img');
@@ -681,11 +709,43 @@ function fillCivSelector() {
         return localised_name_a.localeCompare(localised_name_b, compareLocale);
     });
 
+    const menu=document.getElementById('dropdown-menu');
+    menu.innerHTML='';
+
     for (let civ_name of sorted_civ_names) {
-        const option = document.createElement('option');
-        option.setAttribute('value', civ_name);
-        option.textContent = data.strings[data.civs[civ_name].name_string_id];
-        document.getElementById('civselect').appendChild(option);
+        //const option = document.createElement('option');
+        //option.setAttribute('value', civ_name);
+        //option.textContent = data.strings[data.civs[civ_name].name_string_id];
+        //document.getElementById('civselect').appendChild(option);
+
+        // create option item
+        const item=document.createElement('div');
+        item.className='dropdown-item';
+        item.dataset.value=civ_name;
+
+        // create option item small logo
+        const icon=document.createElement('img');
+        icon.className='dropdown-item-icon';
+        icon.src=`/img/Civs/${civ_name.toLowerCase()}.png`;
+        icon.alt=civ_name;
+
+        // create option item text
+        const nameSpan=document.createElement('span');
+        nameSpan.textContent=data.strings[data.civs[civ_name].name_string_id];
+
+        // put small logo and civ name into option item
+        item.appendChild(icon);
+        item.appendChild(nameSpan);
+
+        item.addEventListener('click', function() {
+            document.getElementById('selected-civ-icon').src=icon.src;
+            document.getElementById('selected-civ-name').textContent=nameSpan.textContent;
+            document.getElementById('selected-civ-name').dataset.value=civ_name;
+            menu.classList.add('select-hide');
+
+            loadCivByName(civ_name);
+        });
+        menu.appendChild(item);
     }
 }
 
@@ -1059,6 +1119,18 @@ function main() {
             } else if (e.deltaY < 0) {
                 techtreeElement.scrollLeft -= 150;
             }
+        }
+    });
+
+    document.getElementById('dropdown-selected-btn').addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.getElementById('dropdown-menu').classList.toggle('select-hide');
+    });
+
+    document.addEventListener('click', function() {
+        const menu=document.getElementById('dropdown-menu');
+        if(menu) {
+            menu.classList.add('select-hide');
         }
     });
 }

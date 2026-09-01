@@ -161,6 +161,78 @@ a, a:hover, a:visited, a:active {
     outline: none;
 }
 
+.custom-dropdown {
+    font-size: 18px;
+    font-weight: bold;
+    flex: 1 0 auto;
+    position: relative;
+}
+
+.dropdown-selected {
+    background-color: #CBA388;
+    color: white;
+    text-shadow: #000000 -3px 2px;
+    height: 36px;
+    box-shadow: inset 0 2px #3f4806, inset 2px -2px #768141, inset -2px 0 #768141;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.dropdown-selected img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.dropdown-selected #arrow {
+    position: absolute;
+    right: 4px;
+    font-size: 16px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    max-height: 280px;
+    overflow-y: auto;
+    background-color: #CBA388;
+    border: 2px solid #768141;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.8);
+    margin-top: 4px;
+    min-height: 40px;
+}
+
+.select-hide {
+    display: none !important;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: background-color 0.15s;
+}
+
+.dropdown-item .dropdown-item-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.dropdown-item:hover {
+    background-color: #72604a;
+    color: #ffffff;
+}
+
 #civinfo {
     flex: 1 0 auto;
     font-size: 10pt;
