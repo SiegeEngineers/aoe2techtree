@@ -592,39 +592,41 @@ function create_colour_key() {
     td.innerText = data.strings[data.tech_tree_strings['Key']];
     tr.appendChild(td);
     td = document.createElement('td');
-    td.innerText = data.strings[data.tech_tree_strings['Common']];
-    tr.appendChild(td);
-    td = document.createElement('td');
-    td.innerText = data.strings[data.tech_tree_strings['Regional']];
-    tr.appendChild(td);
-    td = document.createElement('td');
-    td.innerText = data.strings[data.tech_tree_strings['Unique']];
-    tr.appendChild(td);
-    table.appendChild(tr);
-
-    tr = document.createElement('tr');
-    td = document.createElement('td');
     td.innerText = data.strings[data.tech_tree_strings['Unit']];
     tr.appendChild(td);
-    addSquareToKey(tr, 'Unit');
-    addSquareToKey(tr, 'RegionalUnit');
-    addSquareToKey(tr, 'UniqueUnit');
-    table.appendChild(tr);
-
-    tr = document.createElement('tr');
     td = document.createElement('td');
     td.innerText = data.strings[data.tech_tree_strings['Building']];
     tr.appendChild(td);
-    addSquareToKey(tr, 'BuildingTech');
-    addSquareToKey(tr, 'RegionalBuilding');
-    addSquareToKey(tr, 'UniqueBuilding');
+    td = document.createElement('td');
+    td.innerText = data.strings[data.tech_tree_strings['Technology']];
+    tr.appendChild(td);
     table.appendChild(tr);
 
     tr = document.createElement('tr');
     td = document.createElement('td');
-    td.innerText = data.strings[data.tech_tree_strings['Technology']];
+    td.innerText = data.strings[data.tech_tree_strings['Common']];
     tr.appendChild(td);
+    addSquareToKey(tr, 'Unit');
+    addSquareToKey(tr, 'BuildingTech');
     addSquareToKey(tr, 'Research');
+    table.appendChild(tr);
+
+    tr = document.createElement('tr');
+    td = document.createElement('td');
+    td.innerText = data.strings[data.tech_tree_strings['Regional']];
+    tr.appendChild(td);
+    addSquareToKey(tr, 'RegionalUnit');
+    addSquareToKey(tr, 'RegionalBuilding');
+    addSquareToKey(tr, 'RegionalTech');
+    table.appendChild(tr);
+
+    tr = document.createElement('tr');
+    td = document.createElement('td');
+    td.innerText = data.strings[data.tech_tree_strings['Unique']];
+    tr.appendChild(td);
+    addSquareToKey(tr, 'UniqueUnit');
+    addSquareToKey(tr, 'UniqueBuilding');
+    addSquareToKey(tr, 'UniqueTech');
     td = document.createElement('td');
     tr.appendChild(td);
     table.appendChild(tr);

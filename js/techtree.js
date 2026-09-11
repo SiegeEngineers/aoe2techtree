@@ -145,6 +145,10 @@ function getColourForNodeType(nodeType) {
             return '#703b7a';
         case 'Research':
             return '#397139';
+        case 'RegionalTech':
+            return '#059945';
+        case 'UniqueTech':
+            return '#009700';
         default:
             return '#ff0000';
     }

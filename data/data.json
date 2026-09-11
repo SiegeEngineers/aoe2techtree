@@ -60,6 +60,7 @@
                 47,
                 48,
                 50,
+                54,
                 55,
                 64,
                 65,
@@ -101,6 +102,7 @@
                 321,
                 322,
                 374,
+                375,
                 379,
                 380,
                 408,
@@ -373,7 +375,6 @@
                 48,
                 50,
                 51,
-                54,
                 55,
                 63,
                 65,
@@ -709,7 +710,6 @@
                 48,
                 50,
                 51,
-                54,
                 55,
                 63,
                 64,
@@ -817,7 +817,8 @@
                 1709,
                 2626,
                 2627,
-                2628
+                2628,
+                2700
             ],
             "era": "base",
             "help_string_id": 120188,
@@ -931,7 +932,8 @@
                 906,
                 907,
                 908,
-                909
+                909,
+                1452
             ],
             "Unit": [
                 4,
@@ -943,7 +945,6 @@
                 21,
                 24,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -963,7 +964,6 @@
                 442,
                 448,
                 473,
-                474,
                 492,
                 527,
                 528,
@@ -981,7 +981,9 @@
                 1105,
                 1258,
                 2626,
-                2627
+                2627,
+                2700,
+                2701
             ],
             "era": "base",
             "help_string_id": 120150,
@@ -1267,7 +1269,6 @@
                 24,
                 36,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -1307,7 +1308,8 @@
                 1699,
                 2626,
                 2627,
-                2628
+                2628,
+                2700
             ],
             "era": "base",
             "help_string_id": 120185,
@@ -1644,7 +1646,9 @@
                 1795,
                 2626,
                 2627,
-                2628
+                2628,
+                2703,
+                2704
             ],
             "era": "base",
             "help_string_id": 120156,
@@ -1700,7 +1704,6 @@
                 47,
                 48,
                 50,
-                54,
                 55,
                 63,
                 65,
@@ -1762,7 +1765,6 @@
                 21,
                 24,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -1784,7 +1786,6 @@
                 442,
                 448,
                 473,
-                474,
                 527,
                 528,
                 529,
@@ -1804,7 +1805,9 @@
                 1258,
                 2626,
                 2627,
-                2628
+                2628,
+                2700,
+                2701
             ],
             "era": "base",
             "help_string_id": 120162,
@@ -1948,7 +1951,6 @@
                 442,
                 448,
                 473,
-                474,
                 492,
                 527,
                 528,
@@ -2133,6 +2135,166 @@
             "internal_name": "Cumans",
             "meta": {},
             "name_string_id": 10304
+        },
+        "Danes": {
+            "Building": [
+                12,
+                45,
+                49,
+                50,
+                68,
+                70,
+                72,
+                79,
+                82,
+                84,
+                87,
+                101,
+                103,
+                104,
+                109,
+                117,
+                199,
+                209,
+                234,
+                235,
+                276,
+                487,
+                562,
+                584,
+                598,
+                621,
+                792
+            ],
+            "Tech": [
+                8,
+                13,
+                14,
+                17,
+                22,
+                23,
+                34,
+                35,
+                39,
+                46,
+                47,
+                48,
+                50,
+                55,
+                63,
+                65,
+                67,
+                68,
+                74,
+                75,
+                76,
+                77,
+                80,
+                81,
+                82,
+                93,
+                101,
+                102,
+                103,
+                140,
+                182,
+                199,
+                200,
+                201,
+                202,
+                203,
+                211,
+                212,
+                213,
+                215,
+                219,
+                230,
+                231,
+                233,
+                249,
+                252,
+                278,
+                279,
+                280,
+                315,
+                316,
+                322,
+                373,
+                374,
+                375,
+                377,
+                379,
+                380,
+                408,
+                435,
+                437,
+                438,
+                602,
+                608,
+                875,
+                906,
+                907,
+                908,
+                1452,
+                1483,
+                1484
+            ],
+            "Unit": [
+                4,
+                6,
+                7,
+                13,
+                17,
+                21,
+                24,
+                38,
+                74,
+                75,
+                77,
+                83,
+                93,
+                125,
+                128,
+                250,
+                279,
+                280,
+                331,
+                358,
+                359,
+                422,
+                440,
+                442,
+                448,
+                473,
+                529,
+                532,
+                533,
+                539,
+                542,
+                545,
+                546,
+                548,
+                550,
+                567,
+                588,
+                1103,
+                1105,
+                1258,
+                2626,
+                2627,
+                2633,
+                2700,
+                2701,
+                2703,
+                2704,
+                2711,
+                2712
+            ],
+            "era": "base",
+            "help_string_id": 120211,
+            "internal_name": "Danes",
+            "meta": {},
+            "name_string_id": 10332
         },
         "Dravidians": {
             "Building": [
@@ -2511,6 +2673,7 @@
                 48,
                 50,
                 51,
+                54,
                 55,
                 65,
                 67,
@@ -2522,7 +2685,6 @@
                 80,
                 81,
                 82,
-                83,
                 93,
                 101,
                 102,
@@ -2563,7 +2725,9 @@
                 906,
                 907,
                 908,
-                909
+                909,
+                1452,
+                1496
             ],
             "Unit": [
                 4,
@@ -2576,7 +2740,6 @@
                 24,
                 36,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -2597,7 +2760,6 @@
                 442,
                 448,
                 473,
-                474,
                 527,
                 528,
                 529,
@@ -2616,7 +2778,9 @@
                 1258,
                 2626,
                 2627,
-                2628
+                2628,
+                2700,
+                2701
             ],
             "era": "base",
             "help_string_id": 120151,
@@ -2831,6 +2995,7 @@
                 48,
                 50,
                 51,
+                54,
                 55,
                 65,
                 67,
@@ -3382,7 +3547,6 @@
                 527,
                 528,
                 529,
-                532,
                 539,
                 545,
                 546,
@@ -3681,7 +3845,6 @@
                 24,
                 36,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -3720,7 +3883,8 @@
                 1258,
                 2626,
                 2627,
-                2628
+                2628,
+                2700
             ],
             "era": "base",
             "help_string_id": 120168,
@@ -4155,8 +4319,6 @@
                 906,
                 907,
                 908,
-                909,
-                910,
                 1006,
                 1007,
                 1012,
@@ -4488,7 +4650,6 @@
                 486,
                 602,
                 608,
-                875,
                 906,
                 907,
                 908,
@@ -5249,6 +5410,7 @@
                 47,
                 48,
                 50,
+                51,
                 54,
                 55,
                 64,
@@ -6087,7 +6249,6 @@
                 24,
                 36,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -6106,7 +6267,6 @@
                 442,
                 448,
                 473,
-                474,
                 492,
                 527,
                 529,
@@ -6126,7 +6286,9 @@
                 1707,
                 2626,
                 2627,
-                2628
+                2628,
+                2700,
+                2701
             ],
             "era": "base",
             "help_string_id": 120187,
@@ -6223,7 +6385,6 @@
                 279,
                 280,
                 315,
-                316,
                 319,
                 321,
                 322,
@@ -6257,7 +6418,6 @@
                 24,
                 36,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -6294,7 +6454,8 @@
                 1258,
                 2626,
                 2627,
-                2628
+                2628,
+                2700
             ],
             "era": "base",
             "help_string_id": 120173,
@@ -6502,7 +6663,6 @@
                 47,
                 48,
                 50,
-                54,
                 55,
                 63,
                 65,
@@ -6627,6 +6787,175 @@
             "meta": {},
             "name_string_id": 10279
         },
+        "Saxons": {
+            "Building": [
+                12,
+                45,
+                49,
+                50,
+                68,
+                70,
+                72,
+                79,
+                82,
+                84,
+                87,
+                101,
+                103,
+                104,
+                109,
+                117,
+                155,
+                199,
+                209,
+                234,
+                235,
+                276,
+                487,
+                562,
+                584,
+                598,
+                621,
+                792
+            ],
+            "Tech": [
+                8,
+                12,
+                13,
+                14,
+                15,
+                17,
+                22,
+                23,
+                34,
+                35,
+                39,
+                45,
+                46,
+                47,
+                48,
+                50,
+                51,
+                54,
+                55,
+                63,
+                65,
+                67,
+                68,
+                74,
+                76,
+                77,
+                81,
+                82,
+                93,
+                101,
+                102,
+                103,
+                140,
+                182,
+                194,
+                199,
+                200,
+                201,
+                202,
+                203,
+                211,
+                212,
+                213,
+                215,
+                219,
+                221,
+                230,
+                231,
+                233,
+                249,
+                278,
+                280,
+                315,
+                316,
+                319,
+                321,
+                322,
+                373,
+                374,
+                375,
+                377,
+                379,
+                380,
+                408,
+                435,
+                437,
+                438,
+                439,
+                441,
+                602,
+                608,
+                875,
+                906,
+                909,
+                1452,
+                1464,
+                1491
+            ],
+            "Unit": [
+                4,
+                6,
+                7,
+                13,
+                17,
+                21,
+                24,
+                38,
+                74,
+                75,
+                77,
+                83,
+                93,
+                125,
+                128,
+                250,
+                279,
+                280,
+                283,
+                331,
+                358,
+                359,
+                422,
+                440,
+                441,
+                442,
+                448,
+                473,
+                492,
+                529,
+                533,
+                539,
+                542,
+                545,
+                546,
+                548,
+                550,
+                567,
+                1103,
+                1105,
+                1258,
+                2626,
+                2627,
+                2628,
+                2633,
+                2700,
+                2701,
+                2703,
+                2704,
+                2705,
+                2706
+            ],
+            "era": "base",
+            "help_string_id": 120209,
+            "internal_name": "Saxons",
+            "meta": {},
+            "name_string_id": 10330
+        },
         "Shu": {
             "Building": [
                 12,
@@ -6674,6 +7003,7 @@
                 48,
                 50,
                 51,
+                54,
                 55,
                 65,
                 67,
@@ -6883,7 +7213,8 @@
                 906,
                 907,
                 908,
-                909
+                909,
+                1452
             ],
             "Unit": [
                 4,
@@ -6894,7 +7225,6 @@
                 21,
                 24,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -6940,7 +7270,9 @@
                 1788,
                 2626,
                 2627,
-                2628
+                2628,
+                2700,
+                2701
             ],
             "era": "base",
             "help_string_id": 120186,
@@ -7229,7 +7561,6 @@
                 21,
                 36,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -7250,7 +7581,6 @@
                 442,
                 448,
                 473,
-                474,
                 527,
                 528,
                 529,
@@ -7272,7 +7602,9 @@
                 1258,
                 2626,
                 2627,
-                2628
+                2628,
+                2700,
+                2701
             ],
             "era": "base",
             "help_string_id": 120163,
@@ -7565,7 +7897,6 @@
                 25,
                 36,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -7603,7 +7934,9 @@
                 1258,
                 2626,
                 2627,
-                2628
+                2628,
+                2700,
+                2701
             ],
             "era": "base",
             "help_string_id": 120153,
@@ -7923,6 +8256,170 @@
             "meta": {},
             "name_string_id": 10280
         },
+        "Varangians": {
+            "Building": [
+                12,
+                45,
+                49,
+                50,
+                68,
+                70,
+                72,
+                79,
+                82,
+                84,
+                87,
+                101,
+                103,
+                104,
+                109,
+                117,
+                155,
+                199,
+                209,
+                234,
+                276,
+                487,
+                562,
+                584,
+                598,
+                621,
+                792
+            ],
+            "Tech": [
+                8,
+                12,
+                13,
+                14,
+                15,
+                17,
+                22,
+                23,
+                34,
+                35,
+                39,
+                45,
+                46,
+                47,
+                48,
+                50,
+                51,
+                54,
+                55,
+                65,
+                67,
+                68,
+                74,
+                75,
+                76,
+                77,
+                80,
+                81,
+                82,
+                93,
+                101,
+                102,
+                103,
+                140,
+                194,
+                199,
+                200,
+                201,
+                202,
+                203,
+                211,
+                212,
+                213,
+                215,
+                219,
+                221,
+                233,
+                249,
+                252,
+                278,
+                279,
+                280,
+                315,
+                319,
+                322,
+                373,
+                374,
+                375,
+                377,
+                380,
+                408,
+                435,
+                438,
+                441,
+                602,
+                875,
+                906,
+                907,
+                908,
+                909,
+                910,
+                1452,
+                1473,
+                1474
+            ],
+            "Unit": [
+                4,
+                6,
+                7,
+                13,
+                17,
+                21,
+                24,
+                38,
+                74,
+                75,
+                77,
+                83,
+                93,
+                125,
+                128,
+                250,
+                279,
+                280,
+                283,
+                331,
+                358,
+                359,
+                422,
+                440,
+                441,
+                442,
+                448,
+                473,
+                529,
+                532,
+                533,
+                539,
+                542,
+                545,
+                546,
+                548,
+                550,
+                1103,
+                1105,
+                1258,
+                2626,
+                2627,
+                2628,
+                2633,
+                2700,
+                2701,
+                2703,
+                2704,
+                2708,
+                2709
+            ],
+            "era": "base",
+            "help_string_id": 120210,
+            "internal_name": "Varangians",
+            "meta": {},
+            "name_string_id": 10331
+        },
         "Vietnamese": {
             "Building": [
                 12,
@@ -7971,6 +8468,7 @@
                 46,
                 47,
                 48,
+                50,
                 54,
                 55,
                 63,
@@ -8187,7 +8685,6 @@
                 463,
                 602,
                 608,
-                875,
                 906,
                 907,
                 908,
@@ -8202,7 +8699,6 @@
                 21,
                 24,
                 38,
-                39,
                 74,
                 75,
                 77,
@@ -8216,7 +8712,6 @@
                 283,
                 331,
                 358,
-                420,
                 422,
                 440,
                 442,
@@ -8232,7 +8727,6 @@
                 548,
                 550,
                 567,
-                691,
                 692,
                 694,
                 1103,
@@ -8240,7 +8734,11 @@
                 1258,
                 2626,
                 2627,
-                2628
+                2628,
+                2633,
+                2700,
+                2703,
+                2704
             ],
             "era": "base",
             "help_string_id": 120160,
@@ -10409,7 +10907,7 @@
                 "PierceArmor": 10,
                 "Range": 4,
                 "ReloadTime": 2,
-                "TrainTime": 40,
+                "TrainTime": 50,
                 "internal_name": "FORTCRCH"
             },
             "1808": {
@@ -11051,17 +11549,6 @@
                 "Repeatable": true,
                 "ResearchTime": 60,
                 "internal_name": "Chain Barding Armor"
-            },
-            "83": {
-                "Cost": {
-                    "Food": 300,
-                    "Gold": 300
-                },
-                "ID": 83,
-                "LanguageNameId": 7324,
-                "Repeatable": true,
-                "ResearchTime": 60,
-                "internal_name": "Frankish Bearded Axe"
             },
             "90": {
                 "Cost": {},
@@ -12661,6 +13148,94 @@
                 "Repeatable": true,
                 "ResearchTime": 40,
                 "internal_name": "Circumnavigation"
+            },
+            "1452": {
+                "Cost": {
+                    "Food": 300,
+                    "Gold": 200
+                },
+                "ID": 1452,
+                "LanguageNameId": 507024,
+                "Repeatable": true,
+                "ResearchTime": 70,
+                "internal_name": "Cranequins"
+            },
+            "1464": {
+                "Cost": {
+                    "Food": 525,
+                    "Gold": 475
+                },
+                "ID": 1464,
+                "LanguageNameId": 507013,
+                "Repeatable": false,
+                "ResearchTime": 45,
+                "internal_name": "Shield Wall"
+            },
+            "1473": {
+                "Cost": {
+                    "Food": 500,
+                    "Gold": 300
+                },
+                "ID": 1473,
+                "LanguageNameId": 507015,
+                "Repeatable": true,
+                "ResearchTime": 35,
+                "internal_name": "Vendel Legacy"
+            },
+            "1474": {
+                "Cost": {
+                    "Food": 475,
+                    "Gold": 400
+                },
+                "ID": 1474,
+                "LanguageNameId": 507016,
+                "Repeatable": false,
+                "ResearchTime": 50,
+                "internal_name": "Gothikon"
+            },
+            "1483": {
+                "Cost": {
+                    "Gold": 900,
+                    "Wood": 950
+                },
+                "ID": 1483,
+                "LanguageNameId": 507018,
+                "Repeatable": true,
+                "ResearchTime": 40,
+                "internal_name": "Northmen's Fury"
+            },
+            "1484": {
+                "Cost": {
+                    "Food": 250,
+                    "Gold": 450
+                },
+                "ID": 1484,
+                "LanguageNameId": 507019,
+                "Repeatable": false,
+                "ResearchTime": 35,
+                "internal_name": "Hamask"
+            },
+            "1491": {
+                "Cost": {
+                    "Food": 350,
+                    "Gold": 200
+                },
+                "ID": 1491,
+                "LanguageNameId": 507020,
+                "Repeatable": true,
+                "ResearchTime": 35,
+                "internal_name": "Clerical Recruitment"
+            },
+            "1496": {
+                "Cost": {
+                    "Food": 400,
+                    "Gold": 250
+                },
+                "ID": 1496,
+                "LanguageNameId": 507025,
+                "Repeatable": true,
+                "ResearchTime": 40,
+                "internal_name": "Ordonnance Companies"
             }
         },
         "Unit": {
@@ -13737,7 +14312,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 9,
+                        "Amount": 13,
                         "Class": 1
                     },
                     {
@@ -14189,7 +14764,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 29
                     },
                     {
@@ -14263,7 +14838,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 6,
+                        "Amount": 8,
                         "Class": 29
                     },
                     {
@@ -14931,10 +15506,6 @@
                     },
                     {
                         "Amount": 0,
-                        "Class": 19
-                    },
-                    {
-                        "Amount": 0,
                         "Class": 31
                     },
                     {
@@ -15200,12 +15771,12 @@
                 "HP": 60,
                 "ID": 281,
                 "LanguageNameId": 5111,
-                "LineOfSight": 5,
+                "LineOfSight": 7,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
                 "MinRange": 0,
                 "PierceArmor": 0,
-                "Range": 3,
+                "Range": 5,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 1,
@@ -16025,7 +16596,7 @@
                 "HP": 200,
                 "ID": 422,
                 "LanguageNameId": 5289,
-                "LineOfSight": 3,
+                "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": -2,
                 "MinRange": 0,
@@ -16369,7 +16940,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 8,
+                        "Amount": 9,
                         "Class": 29
                     },
                     {
@@ -16900,12 +17471,12 @@
                 "HP": 70,
                 "ID": 531,
                 "LanguageNameId": 5461,
-                "LineOfSight": 6,
+                "LineOfSight": 9,
                 "MaxCharge": 0,
                 "MeleeArmor": 1,
                 "MinRange": 0,
                 "PierceArmor": 0,
-                "Range": 4,
+                "Range": 6,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 1,
@@ -17003,10 +17574,6 @@
                     {
                         "Amount": 6,
                         "Class": 3
-                    },
-                    {
-                        "Amount": 0,
-                        "Class": 19
                     },
                     {
                         "Amount": 0,
@@ -17478,7 +18045,7 @@
                 "HP": 270,
                 "ID": 548,
                 "LanguageNameId": 5446,
-                "LineOfSight": 3,
+                "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": -1,
                 "MinRange": 0,
@@ -17500,7 +18067,7 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 7,
+                        "Amount": 8,
                         "Class": 3
                     },
                     {
@@ -17512,7 +18079,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 50,
+                "Attack": 55,
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
@@ -17520,7 +18087,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 50,
+                        "Amount": 55,
                         "Class": 4
                     },
                     {
@@ -17548,7 +18115,7 @@
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
                 "MinRange": 3,
-                "PierceArmor": 7,
+                "PierceArmor": 8,
                 "Range": 8,
                 "RechargeRate": 0,
                 "ReloadTime": 6,
@@ -17586,7 +18153,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 12,
+                        "Amount": 18,
                         "Class": 1
                     },
                     {
@@ -17656,7 +18223,7 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 10,
+                        "Amount": 8,
                         "Class": 4
                     },
                     {
@@ -17714,7 +18281,7 @@
                 "LanguageNameId": 5462,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
-                "MeleeArmor": 10,
+                "MeleeArmor": 8,
                 "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 0,
@@ -18341,7 +18908,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 8,
+                        "Amount": 9,
                         "Class": 29
                     },
                     {
@@ -19010,7 +19577,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 1.1,
-                "TrainTime": 50,
+                "TrainTime": 46,
                 "Trait": 16,
                 "TraitPiece": 0,
                 "internal_name": "EAGLE"
@@ -19747,7 +20314,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 70,
+                    "Food": 75,
                     "Gold": 60
                 },
                 "FrameDelay": 13,
@@ -19764,7 +20331,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2.9,
                 "Speed": 1.3,
-                "TrainTime": 24,
+                "TrainTime": 26,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "CONQI"
@@ -19829,7 +20396,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 70,
+                    "Food": 75,
                     "Gold": 60
                 },
                 "FrameDelay": 13,
@@ -19886,6 +20453,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
+                    "Food": 30,
                     "Gold": 100
                 },
                 "FrameDelay": 0,
@@ -20156,7 +20724,7 @@
                 },
                 "FrameDelay": 1,
                 "GarrisonCapacity": 0,
-                "HP": 275,
+                "HP": 260,
                 "ID": 831,
                 "LanguageNameId": 5731,
                 "LineOfSight": 8,
@@ -20510,7 +21078,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 1.8,
                 "Speed": 1.5,
-                "TrainTime": 12,
+                "TrainTime": 18,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "UMAGYX"
@@ -21460,7 +22028,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 3.45,
                 "Speed": 0.85,
-                "TrainTime": 25,
+                "TrainTime": 28,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "ORGAN"
@@ -21701,7 +22269,7 @@
                 "TrainTime": 25,
                 "Trait": 2,
                 "TraitPiece": 0,
-                "internal_name": "CARAV"
+                "internal_name": "ECARAV"
             },
             "1007": {
                 "AccuracyPercent": 95,
@@ -22467,7 +23035,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 1,
+                        "Amount": 0,
                         "Class": 11
                     },
                     {
@@ -22611,7 +23179,7 @@
                 "HP": 175,
                 "ID": 1105,
                 "LanguageNameId": 5445,
-                "LineOfSight": 8,
+                "LineOfSight": 6,
                 "MaxCharge": 0,
                 "MeleeArmor": -2,
                 "MinRange": 0,
@@ -23230,7 +23798,7 @@
                 },
                 "FrameDelay": 23,
                 "GarrisonCapacity": 0,
-                "HP": 40,
+                "HP": 35,
                 "ID": 1129,
                 "LanguageNameId": 5165,
                 "LineOfSight": 6,
@@ -23304,7 +23872,7 @@
                 },
                 "FrameDelay": 23,
                 "GarrisonCapacity": 0,
-                "HP": 45,
+                "HP": 40,
                 "ID": 1131,
                 "LanguageNameId": 5166,
                 "LineOfSight": 6,
@@ -24651,7 +25219,7 @@
                 "HP": 175,
                 "ID": 1258,
                 "LanguageNameId": 5094,
-                "LineOfSight": 3,
+                "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": -3,
                 "MinRange": 0,
@@ -25705,7 +26273,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 30,
+                    "Food": 35,
                     "Gold": 25
                 },
                 "FrameDelay": 0,
@@ -25722,7 +26290,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 0.94,
-                "TrainTime": 14,
+                "TrainTime": 16,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "FLEMISHPIKEMAN2"
@@ -25935,7 +26503,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Gold": 70,
+                    "Gold": 80,
                     "Wood": 110
                 },
                 "FrameDelay": 20,
@@ -26009,7 +26577,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Gold": 70,
+                    "Gold": 80,
                     "Wood": 110
                 },
                 "FrameDelay": 20,
@@ -26449,7 +27017,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 1.3,
-                "TrainTime": 20,
+                "TrainTime": 24,
                 "Trait": 8,
                 "TraitPiece": 1759,
                 "internal_name": "RATHA"
@@ -26792,7 +27360,7 @@
                 "HP": 180,
                 "ID": 1744,
                 "LanguageNameId": 5428,
-                "LineOfSight": 4,
+                "LineOfSight": 6,
                 "MaxCharge": 0,
                 "MeleeArmor": -2,
                 "MinRange": 0,
@@ -26882,7 +27450,7 @@
                 "HP": 220,
                 "ID": 1746,
                 "LanguageNameId": 5430,
-                "LineOfSight": 4,
+                "LineOfSight": 6,
                 "MaxCharge": 0,
                 "MeleeArmor": -2,
                 "MinRange": 0,
@@ -27487,7 +28055,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 1.3,
-                "TrainTime": 20,
+                "TrainTime": 24,
                 "Trait": 8,
                 "TraitPiece": 1738,
                 "internal_name": "RATHA2"
@@ -28040,7 +28608,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 8,
+                        "Amount": 9,
                         "Class": 29
                     },
                     {
@@ -29216,8 +29784,8 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 35,
-                    "Gold": 65
+                    "Food": 55,
+                    "Gold": 50
                 },
                 "FrameDelay": 14,
                 "GarrisonCapacity": 0,
@@ -29762,7 +30330,7 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 230,
+                        "Amount": 180,
                         "Class": 11
                     },
                     {
@@ -30037,7 +30605,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 7,
                 "Cost": {
-                    "Gold": 25,
+                    "Gold": 35,
                     "Wood": 65
                 },
                 "FrameDelay": 35,
@@ -30370,7 +30938,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 65,
+                    "Food": 75,
                     "Gold": 90
                 },
                 "FrameDelay": 3,
@@ -30387,7 +30955,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 6.5,
                 "Speed": 0.9,
-                "TrainTime": 28,
+                "TrainTime": 32,
                 "Trait": 8,
                 "TraitPiece": 1980,
                 "internal_name": "WARCHAR"
@@ -30856,7 +31424,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 65,
+                    "Food": 75,
                     "Gold": 90
                 },
                 "FrameDelay": 3,
@@ -31524,8 +32092,8 @@
                 "ChargeEvent": 0,
                 "ChargeType": 6,
                 "Cost": {
-                    "Gold": 50,
-                    "Wood": 45
+                    "Gold": 55,
+                    "Wood": 50
                 },
                 "FrameDelay": 19,
                 "GarrisonCapacity": 0,
@@ -31623,8 +32191,8 @@
                 "ChargeEvent": 0,
                 "ChargeType": 6,
                 "Cost": {
-                    "Gold": 50,
-                    "Wood": 45
+                    "Gold": 55,
+                    "Wood": 50
                 },
                 "FrameDelay": 19,
                 "GarrisonCapacity": 0,
@@ -31699,7 +32267,7 @@
                 "ChargeType": 0,
                 "Cost": {
                     "Gold": 45,
-                    "Wood": 35
+                    "Wood": 40
                 },
                 "FrameDelay": 15,
                 "GarrisonCapacity": 0,
@@ -31773,7 +32341,7 @@
                 "ChargeType": 0,
                 "Cost": {
                     "Gold": 45,
-                    "Wood": 35
+                    "Wood": 40
                 },
                 "FrameDelay": 15,
                 "GarrisonCapacity": 0,
@@ -31970,11 +32538,11 @@
                         "Class": 29
                     }
                 ],
-                "Attack": 12,
+                "Attack": 11,
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 12,
+                        "Amount": 11,
                         "Class": 4
                     },
                     {
@@ -32192,7 +32760,7 @@
                         "Class": 16
                     },
                     {
-                        "Amount": 4,
+                        "Amount": 3,
                         "Class": 4
                     },
                     {
@@ -32233,12 +32801,12 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 90,
+                "HP": 85,
                 "ID": 2626,
                 "LanguageNameId": 5523,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
-                "MeleeArmor": 4,
+                "MeleeArmor": 3,
                 "MinRange": 0,
                 "PierceArmor": 1,
                 "Range": 1,
@@ -32258,7 +32826,7 @@
                         "Class": 16
                     },
                     {
-                        "Amount": 5,
+                        "Amount": 4,
                         "Class": 4
                     },
                     {
@@ -32299,12 +32867,12 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 115,
+                "HP": 110,
                 "ID": 2627,
                 "LanguageNameId": 5524,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
-                "MeleeArmor": 5,
+                "MeleeArmor": 4,
                 "MinRange": 0,
                 "PierceArmor": 1,
                 "Range": 1,
@@ -32447,6 +33015,846 @@
                 "Trait": 2,
                 "TraitPiece": 0,
                 "internal_name": "CATAGA"
+            },
+            "2700": {
+                "AccuracyPercent": 80,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 28
+                    }
+                ],
+                "Attack": 7,
+                "AttackDelaySeconds": 0.91,
+                "Attacks": [
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 17
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 27
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Gold": 65,
+                    "Wood": 40
+                },
+                "FrameDelay": 21,
+                "GarrisonCapacity": 0,
+                "HP": 45,
+                "ID": 2700,
+                "LanguageNameId": 5527,
+                "LineOfSight": 6,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 0,
+                "Range": 4,
+                "RechargeRate": 0,
+                "ReloadTime": 2.5,
+                "Speed": 1.25,
+                "TrainTime": 40,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Mounted Crossbowman"
+            },
+            "2701": {
+                "AccuracyPercent": 80,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 28
+                    }
+                ],
+                "Attack": 8,
+                "AttackDelaySeconds": 0.996667,
+                "Attacks": [
+                    {
+                        "Amount": 8,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 17
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 27
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Gold": 65,
+                    "Wood": 40
+                },
+                "FrameDelay": 23,
+                "GarrisonCapacity": 0,
+                "HP": 55,
+                "ID": 2701,
+                "LanguageNameId": 5528,
+                "LineOfSight": 6,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 0,
+                "Range": 4,
+                "RechargeRate": 0,
+                "ReloadTime": 2.5,
+                "Speed": 1.25,
+                "TrainTime": 30,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Heavy Mounted Crossbowman"
+            },
+            "2703": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 29
+                    }
+                ],
+                "Attack": 13,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 13,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 5
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 65,
+                    "Gold": 45
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 70,
+                "ID": 2703,
+                "LanguageNameId": 5530,
+                "LineOfSight": 5,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 1,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 1.05,
+                "TrainTime": 30,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Varangian Guard"
+            },
+            "2704": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 29
+                    }
+                ],
+                "Attack": 17,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 17,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 5
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 65,
+                    "Gold": 45
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 80,
+                "ID": 2704,
+                "LanguageNameId": 5531,
+                "LineOfSight": 6,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 2,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 1.05,
+                "TrainTime": 30,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Varangian Guard"
+            },
+            "2705": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 9,
+                "AttackDelaySeconds": 0.894444,
+                "Attacks": [
+                    {
+                        "Amount": 1,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 9,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 6,
+                "ChargeType": 6,
+                "Cost": {
+                    "Gold": 35,
+                    "Wood": 80
+                },
+                "FrameDelay": 23,
+                "GarrisonCapacity": 0,
+                "HP": 75,
+                "ID": 2705,
+                "LanguageNameId": 5532,
+                "LineOfSight": 7,
+                "MaxCharge": 1,
+                "MeleeArmor": 1,
+                "MinRange": 0,
+                "PierceArmor": 4,
+                "Range": 0,
+                "RechargeDuration": 14.925372762546221,
+                "RechargeRate": 0.067,
+                "ReloadTime": 2,
+                "Speed": 0.9,
+                "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Hearth Troop"
+            },
+            "2706": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 12,
+                "AttackDelaySeconds": 0.894444,
+                "Attacks": [
+                    {
+                        "Amount": 1,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 6,
+                "ChargeType": 6,
+                "Cost": {
+                    "Gold": 35,
+                    "Wood": 80
+                },
+                "FrameDelay": 23,
+                "GarrisonCapacity": 0,
+                "HP": 85,
+                "ID": 2706,
+                "LanguageNameId": 5533,
+                "LineOfSight": 8,
+                "MaxCharge": 1,
+                "MeleeArmor": 1,
+                "MinRange": 0,
+                "PierceArmor": 4,
+                "Range": 0,
+                "RechargeDuration": 12.048193229648177,
+                "RechargeRate": 0.083,
+                "ReloadTime": 2,
+                "Speed": 0.9,
+                "TrainTime": 14,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Hearth Troop"
+            },
+            "2708": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 36
+                    }
+                ],
+                "Attack": 9,
+                "AttackDelaySeconds": 0.736667,
+                "Attacks": [
+                    {
+                        "Amount": 9,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 75,
+                    "Gold": 55
+                },
+                "FrameDelay": 17,
+                "GarrisonCapacity": 0,
+                "HP": 65,
+                "ID": 2708,
+                "LanguageNameId": 5535,
+                "LineOfSight": 7,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 1,
+                "Range": 4,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 1.35,
+                "TrainTime": 23,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Jarl"
+            },
+            "2709": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 36
+                    }
+                ],
+                "Attack": 10,
+                "AttackDelaySeconds": 0.736667,
+                "Attacks": [
+                    {
+                        "Amount": 10,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 75,
+                    "Gold": 55
+                },
+                "FrameDelay": 17,
+                "GarrisonCapacity": 0,
+                "HP": 75,
+                "ID": 2709,
+                "LanguageNameId": 5537,
+                "LineOfSight": 7,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 1,
+                "Range": 5,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 1.35,
+                "TrainTime": 23,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Jarl"
+            },
+            "2711": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 8,
+                "AttackDelaySeconds": 0.833333,
+                "Attacks": [
+                    {
+                        "Amount": 8,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 5
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 3,
+                "ChargeType": 6,
+                "Cost": {
+                    "Food": 65,
+                    "Gold": 15
+                },
+                "FrameDelay": 25,
+                "GarrisonCapacity": 0,
+                "HP": 70,
+                "ID": 2711,
+                "LanguageNameId": 5539,
+                "LineOfSight": 5,
+                "MaxCharge": 1,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 2,
+                "Range": 0,
+                "RechargeDuration": 1e-05,
+                "RechargeRate": 100000,
+                "ReloadTime": 1.8,
+                "Speed": 0.96,
+                "TrainTime": 10,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Jomsviking"
+            },
+            "2712": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 9,
+                "AttackDelaySeconds": 0.833333,
+                "Attacks": [
+                    {
+                        "Amount": 9,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 15,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 15,
+                        "Class": 5
+                    },
+                    {
+                        "Amount": 9,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 3,
+                "ChargeType": 6,
+                "Cost": {
+                    "Food": 65,
+                    "Gold": 15
+                },
+                "FrameDelay": 25,
+                "GarrisonCapacity": 0,
+                "HP": 75,
+                "ID": 2712,
+                "LanguageNameId": 5541,
+                "LineOfSight": 5,
+                "MaxCharge": 1,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 2,
+                "Range": 0,
+                "RechargeDuration": 1e-05,
+                "RechargeRate": 100000,
+                "ReloadTime": 1.8,
+                "Speed": 0.96,
+                "TrainTime": 10,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Jomsviking"
             }
         },
         "unit_upgrades": {
@@ -32595,11 +34003,11 @@
             },
             "527": {
                 "Cost": {
-                    "Gold": 100,
-                    "Wood": 50
+                    "Gold": 75,
+                    "Wood": 25
                 },
                 "ID": 905,
-                "ResearchTime": 50,
+                "ResearchTime": 20,
                 "internal_name": "Demolition Ship"
             },
             "528": {
@@ -33044,7 +34452,7 @@
             },
             "1131": {
                 "Cost": {
-                    "Food": 1000,
+                    "Food": 800,
                     "Gold": 750
                 },
                 "ID": 621,
@@ -33481,6 +34889,51 @@
                 "ID": 35,
                 "ResearchTime": 65,
                 "internal_name": "Galleon"
+            },
+            "2701": {
+                "Cost": {
+                    "Food": 1000,
+                    "Gold": 650
+                },
+                "ID": 1451,
+                "ResearchTime": 50,
+                "internal_name": "Heavy Mounted Crossbowman"
+            },
+            "2704": {
+                "Cost": {
+                    "Food": 750,
+                    "Gold": 475
+                },
+                "ID": 1454,
+                "ResearchTime": 50,
+                "internal_name": "Elite Varangian Guard"
+            },
+            "2706": {
+                "Cost": {
+                    "Gold": 700,
+                    "Wood": 750
+                },
+                "ID": 1462,
+                "ResearchTime": 45,
+                "internal_name": "Elite Hearth Troop"
+            },
+            "2709": {
+                "Cost": {
+                    "Food": 825,
+                    "Gold": 725
+                },
+                "ID": 1472,
+                "ResearchTime": 45,
+                "internal_name": "Elite Jarl"
+            },
+            "2712": {
+                "Cost": {
+                    "Food": 825,
+                    "Gold": 825
+                },
+                "ID": 1482,
+                "ResearchTime": 45,
+                "internal_name": "Elite Jomsviking "
             }
         }
     },

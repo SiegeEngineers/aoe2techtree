@@ -3495,7 +3495,7 @@
       "name_string_id": 407013,
       "node_id": 1130,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 164,
       "row": 5,
       "use_type": "Tech"
@@ -3514,7 +3514,7 @@
       "name_string_id": 407014,
       "node_id": 1131,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 166,
       "row": 6,
       "use_type": "Tech"
@@ -3533,7 +3533,7 @@
       "name_string_id": 407015,
       "node_id": 1132,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 165,
       "row": 5,
       "use_type": "Tech"
@@ -3552,7 +3552,7 @@
       "name_string_id": 407016,
       "node_id": 1133,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 167,
       "row": 6,
       "use_type": "Tech"
@@ -3965,12 +3965,12 @@
       "help_string_id": 507056,
       "id": "Tech_1225_109",
       "link_id": null,
-      "link_node_type": "BuildingTech",
+      "link_node_type": "UniqueTech",
       "name": "Skeuophoroi",
       "name_string_id": 407056,
       "node_id": 1225,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 160,
       "row": 4,
       "use_type": "Tech"
@@ -3984,12 +3984,12 @@
       "help_string_id": 507057,
       "id": "Tech_1226_109",
       "link_id": 1225,
-      "link_node_type": "Research",
+      "link_node_type": "UniqueTech",
       "name": "Hippagretai",
       "name_string_id": 407057,
       "node_id": 1226,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 161,
       "row": 6,
       "use_type": "Tech"
@@ -4008,7 +4008,7 @@
       "name_string_id": 407054,
       "node_id": 1223,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 163,
       "row": 4,
       "use_type": "Tech"
@@ -4027,7 +4027,7 @@
       "name_string_id": 407055,
       "node_id": 1224,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 162,
       "row": 4,
       "use_type": "Tech"

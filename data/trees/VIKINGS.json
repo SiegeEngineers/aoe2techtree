@@ -10,15 +10,18 @@
           null,
           null,
           null,
-          null
-        ],
-        [
-          null,
-          null,
           null,
           null
         ],
         [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
           null,
           null,
           null,
@@ -28,15 +31,18 @@
           "Unit_4_87",
           "Unit_7_87",
           null,
+          null,
           null
         ],
         [
           "Unit_24_87",
           "Unit_6_87",
           "Unit_39_87",
+          "Unit_2700_87",
           "Tech_437_87"
         ],
         [
+          null,
           null,
           null,
           null,
@@ -46,13 +52,15 @@
           "Unit_492_87",
           "Unit_5_87",
           "Unit_474_87",
+          "Unit_2701_87",
           "Tech_436_87"
         ],
         [
           null,
           null,
           null,
-          null
+          null,
+          "Tech_1452_87"
         ]
       ],
       "help_string_id": 105128,
@@ -62,7 +70,7 @@
       "name": "Archery Range",
       "name_string_id": 14128,
       "node_id": 87,
-      "node_status": "ResearchRequired",
+      "node_status": "ResearchedCompleted",
       "node_type": "BuildingTech",
       "picture_index": 0,
       "row": 2,
@@ -77,19 +85,23 @@
         [
           null,
           null,
+          null,
           null
         ],
         [
           "Unit_74_12",
+          null,
           null,
           null
         ],
         [
           "Unit_75_12",
           "Unit_93_12",
+          null,
           "Tech_602_12"
         ],
         [
+          null,
           null,
           null,
           null
@@ -97,9 +109,11 @@
         [
           "Unit_77_12",
           "Unit_358_12",
+          "Unit_2703_12",
           "Tech_875_12"
         ],
         [
+          null,
           null,
           null,
           "Tech_215_12"
@@ -107,10 +121,12 @@
         [
           "Unit_473_12",
           "Unit_359_12",
+          "Unit_2704_12",
           null
         ],
         [
           "Unit_567_12",
+          null,
           null,
           null
         ]
@@ -410,7 +426,7 @@
         ],
         [
           null,
-          null,
+          "Unit_2633_45",
           null,
           null,
           null,
@@ -1721,7 +1737,7 @@
       "name": "Cavalry Archer",
       "name_string_id": 14085,
       "node_id": 39,
-      "node_status": "ResearchedCompleted",
+      "node_status": "NotAvailable",
       "node_type": "Unit",
       "picture_index": 19,
       "row": 4,
@@ -1743,6 +1759,44 @@
       "node_status": "NotAvailable",
       "node_type": "UnitUpgrade",
       "picture_index": 71,
+      "row": 6,
+      "use_type": "Unit"
+    },
+    {
+      "age_id": 3,
+      "building_id": 87,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 105527,
+      "id": "Unit_2700_87",
+      "link_id": null,
+      "link_node_type": "BuildingTech",
+      "name": "Mounted Crossbowman",
+      "name_string_id": 14527,
+      "node_id": 2700,
+      "node_status": "ResearchedCompleted",
+      "node_type": "RegionalUnit",
+      "picture_index": 900,
+      "row": 4,
+      "use_type": "Unit"
+    },
+    {
+      "age_id": 4,
+      "building_id": 87,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 105528,
+      "id": "Unit_2701_87",
+      "link_id": 2700,
+      "link_node_type": "RegionalUnit",
+      "name": "Heavy Mounted Crossbowman",
+      "name_string_id": 14528,
+      "node_id": 2701,
+      "node_status": "NotAvailable",
+      "node_type": "RegionalUnit",
+      "picture_index": 901,
       "row": 6,
       "use_type": "Unit"
     },
@@ -1782,6 +1836,25 @@
       "node_type": "Research",
       "picture_index": 111,
       "row": 6,
+      "use_type": "Tech"
+    },
+    {
+      "age_id": 4,
+      "building_id": 87,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 607024,
+      "id": "Tech_1452_87",
+      "link_id": 436,
+      "link_node_type": "BuildingTech",
+      "name": "Cranequins",
+      "name_string_id": 517024,
+      "node_id": 1452,
+      "node_status": "NotAvailable",
+      "node_type": "RegionalTech",
+      "picture_index": 56,
+      "row": 7,
       "use_type": "Tech"
     },
     {
@@ -1937,6 +2010,44 @@
       "use_type": "Unit"
     },
     {
+      "age_id": 3,
+      "building_id": 12,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 105530,
+      "id": "Unit_2703_12",
+      "link_id": null,
+      "link_node_type": "BuildingTech",
+      "name": "Varangian Guard",
+      "name_string_id": 14530,
+      "node_id": 2703,
+      "node_status": "ResearchedCompleted",
+      "node_type": "RegionalUnit",
+      "picture_index": 902,
+      "row": 4,
+      "use_type": "Unit"
+    },
+    {
+      "age_id": 4,
+      "building_id": 12,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 105531,
+      "id": "Unit_2704_12",
+      "link_id": 2703,
+      "link_node_type": "RegionalUnit",
+      "name": "Elite Varangian Guard",
+      "name_string_id": 14531,
+      "node_id": 2704,
+      "node_status": "ResearchedCompleted",
+      "node_type": "RegionalUnit",
+      "picture_index": 903,
+      "row": 6,
+      "use_type": "Unit"
+    },
+    {
       "age_id": 2,
       "building_id": 12,
       "building_in_new_column": null,
@@ -1968,7 +2079,7 @@
       "name": "Gambesons",
       "name_string_id": 17450,
       "node_id": 875,
-      "node_status": "ResearchedCompleted",
+      "node_status": "NotAvailable",
       "node_type": "Research",
       "picture_index": 116,
       "row": 4,
@@ -3013,7 +3124,7 @@
       "name": "Cannon Galleon",
       "name_string_id": 14287,
       "node_id": 420,
-      "node_status": "ResearchRequired",
+      "node_status": "NotAvailable",
       "node_type": "Unit",
       "picture_index": 55,
       "row": 6,
@@ -3032,9 +3143,28 @@
       "name": "Elite Cannon Galleon",
       "name_string_id": 14573,
       "node_id": 691,
-      "node_status": "ResearchedCompleted",
-      "node_type": null,
+      "node_status": "NotAvailable",
+      "node_type": "Unit",
       "picture_index": 298,
+      "row": 7,
+      "use_type": "Unit"
+    },
+    {
+      "age_id": 4,
+      "building_id": 45,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 105572,
+      "id": "Unit_2633_45",
+      "link_id": 532,
+      "link_node_type": "BuildingTech",
+      "name": "Catapult Galleon",
+      "name_string_id": 14572,
+      "node_id": 2633,
+      "node_status": "ResearchedCompleted",
+      "node_type": "RegionalUnit",
+      "picture_index": 591,
       "row": 7,
       "use_type": "Unit"
     },
@@ -3048,11 +3178,11 @@
       "id": "Unit_250_45",
       "link_id": null,
       "link_node_type": "BuildingTech",
-      "name": "Longboat",
+      "name": "Longship",
       "name_string_id": 14106,
       "node_id": 250,
       "node_status": "ResearchedCompleted",
-      "node_type": "UniqueUnit",
+      "node_type": "RegionalUnit",
       "picture_index": 40,
       "row": 4,
       "use_type": "Unit"
@@ -3066,12 +3196,12 @@
       "help_string_id": 105457,
       "id": "Unit_533_45",
       "link_id": 250,
-      "link_node_type": "UniqueUnit",
-      "name": "Elite Longboat",
+      "link_node_type": "RegionalUnit",
+      "name": "Elite Longship",
       "name_string_id": 14457,
       "node_id": 533,
       "node_status": "ResearchedCompleted",
-      "node_type": "UniqueUnit",
+      "node_type": "RegionalUnit",
       "picture_index": 474,
       "row": 6,
       "use_type": "Unit"
@@ -3546,7 +3676,7 @@
       "name_string_id": 17312,
       "node_id": 463,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 33,
       "row": 5,
       "use_type": "Tech"
@@ -3565,7 +3695,7 @@
       "name_string_id": 17431,
       "node_id": 49,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 107,
       "row": 6,
       "use_type": "Tech"
@@ -3661,7 +3791,7 @@
       "node_id": 125,
       "node_status": "ResearchedCompleted",
       "node_type": "Unit",
-      "picture_index": 33,
+      "picture_index": 910,
       "row": 5,
       "use_type": "Unit"
     },

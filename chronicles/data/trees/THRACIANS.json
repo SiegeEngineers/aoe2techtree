@@ -3463,7 +3463,7 @@
       "name_string_id": 407145,
       "node_id": 1296,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 164,
       "row": 5,
       "use_type": "Tech"
@@ -3482,7 +3482,7 @@
       "name_string_id": 407147,
       "node_id": 1298,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 166,
       "row": 6,
       "use_type": "Tech"
@@ -3501,7 +3501,7 @@
       "name_string_id": 407146,
       "node_id": 1297,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 165,
       "row": 5,
       "use_type": "Tech"
@@ -3520,7 +3520,7 @@
       "name_string_id": 407148,
       "node_id": 1299,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 167,
       "row": 6,
       "use_type": "Tech"

@@ -2360,7 +2360,7 @@
       "name": "Siege Ballista",
       "name_string_id": 405163,
       "node_id": 36,
-      "node_status": "ResearchedCompleted",
+      "node_status": "ResearchRequired",
       "node_type": "Unit",
       "picture_index": 754,
       "row": 6,
@@ -3507,7 +3507,7 @@
       "name_string_id": 407141,
       "node_id": 1284,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 164,
       "row": 5,
       "use_type": "Tech"
@@ -3526,7 +3526,7 @@
       "name_string_id": 407143,
       "node_id": 1286,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 166,
       "row": 6,
       "use_type": "Tech"
@@ -3545,7 +3545,7 @@
       "name_string_id": 407142,
       "node_id": 1285,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 165,
       "row": 5,
       "use_type": "Tech"
@@ -3564,7 +3564,7 @@
       "name_string_id": 407144,
       "node_id": 1287,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 167,
       "row": 6,
       "use_type": "Tech"

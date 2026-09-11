@@ -10,15 +10,18 @@
           null,
           null,
           null,
-          null
-        ],
-        [
-          null,
-          null,
           null,
           null
         ],
         [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
           null,
           null,
           null,
@@ -28,15 +31,18 @@
           "Unit_4_87",
           "Unit_7_87",
           null,
+          null,
           null
         ],
         [
           "Unit_24_87",
           "Unit_6_87",
           "Unit_39_87",
+          "Unit_2700_87",
           "Tech_437_87"
         ],
         [
+          null,
           null,
           null,
           null,
@@ -46,13 +52,15 @@
           "Unit_492_87",
           "Unit_5_87",
           "Unit_474_87",
+          "Unit_2701_87",
           "Tech_436_87"
         ],
         [
           null,
           null,
           null,
-          null
+          null,
+          "Tech_1452_87"
         ]
       ],
       "help_string_id": 105128,
@@ -62,7 +70,7 @@
       "name": "Archery Range",
       "name_string_id": 14128,
       "node_id": 87,
-      "node_status": "ResearchRequired",
+      "node_status": "ResearchedCompleted",
       "node_type": "BuildingTech",
       "picture_index": 0,
       "row": 2,
@@ -1713,7 +1721,7 @@
       "name": "Cavalry Archer",
       "name_string_id": 14085,
       "node_id": 39,
-      "node_status": "ResearchedCompleted",
+      "node_status": "NotAvailable",
       "node_type": "Unit",
       "picture_index": 19,
       "row": 4,
@@ -1732,9 +1740,47 @@
       "name": "Heavy Cavalry Archer",
       "name_string_id": 14412,
       "node_id": 474,
-      "node_status": "ResearchedCompleted",
+      "node_status": "NotAvailable",
       "node_type": "UnitUpgrade",
       "picture_index": 71,
+      "row": 6,
+      "use_type": "Unit"
+    },
+    {
+      "age_id": 3,
+      "building_id": 87,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 105527,
+      "id": "Unit_2700_87",
+      "link_id": null,
+      "link_node_type": "BuildingTech",
+      "name": "Mounted Crossbowman",
+      "name_string_id": 14527,
+      "node_id": 2700,
+      "node_status": "ResearchedCompleted",
+      "node_type": "RegionalUnit",
+      "picture_index": 900,
+      "row": 4,
+      "use_type": "Unit"
+    },
+    {
+      "age_id": 4,
+      "building_id": 87,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 105528,
+      "id": "Unit_2701_87",
+      "link_id": 2700,
+      "link_node_type": "RegionalUnit",
+      "name": "Heavy Mounted Crossbowman",
+      "name_string_id": 14528,
+      "node_id": 2701,
+      "node_status": "ResearchedCompleted",
+      "node_type": "RegionalUnit",
+      "picture_index": 901,
       "row": 6,
       "use_type": "Unit"
     },
@@ -1774,6 +1820,25 @@
       "node_type": "Research",
       "picture_index": 111,
       "row": 6,
+      "use_type": "Tech"
+    },
+    {
+      "age_id": 4,
+      "building_id": 87,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 607024,
+      "id": "Tech_1452_87",
+      "link_id": 436,
+      "link_node_type": "BuildingTech",
+      "name": "Cranequins",
+      "name_string_id": 517024,
+      "node_id": 1452,
+      "node_status": "NotAvailable",
+      "node_type": "RegionalTech",
+      "picture_index": 56,
+      "row": 7,
       "use_type": "Tech"
     },
     {
@@ -3404,7 +3469,7 @@
       "name": "Treadmill Crane",
       "name_string_id": 17054,
       "node_id": 54,
-      "node_status": "ResearchedCompleted",
+      "node_status": "NotAvailable",
       "node_type": "Research",
       "picture_index": 60,
       "row": 5,
@@ -3500,7 +3565,7 @@
       "name_string_id": 17369,
       "node_id": 482,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 33,
       "row": 5,
       "use_type": "Tech"
@@ -3519,7 +3584,7 @@
       "name_string_id": 17421,
       "node_id": 5,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 107,
       "row": 6,
       "use_type": "Tech"

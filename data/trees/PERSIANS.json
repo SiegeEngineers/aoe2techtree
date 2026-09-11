@@ -62,7 +62,7 @@
       "name": "Archery Range",
       "name_string_id": 14128,
       "node_id": 87,
-      "node_status": "ResearchRequired",
+      "node_status": "ResearchedCompleted",
       "node_type": "BuildingTech",
       "picture_index": 0,
       "row": 2,
@@ -3590,7 +3590,7 @@
       "name_string_id": 17281,
       "node_id": 488,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 33,
       "row": 5,
       "use_type": "Tech"
@@ -3609,7 +3609,7 @@
       "name_string_id": 17423,
       "node_id": 7,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 107,
       "row": 6,
       "use_type": "Tech"

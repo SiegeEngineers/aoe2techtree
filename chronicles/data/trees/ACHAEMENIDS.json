@@ -3487,7 +3487,7 @@
       "name_string_id": 407005,
       "node_id": 1110,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 164,
       "row": 5,
       "use_type": "Tech"
@@ -3506,7 +3506,7 @@
       "name_string_id": 407007,
       "node_id": 1112,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 166,
       "row": 6,
       "use_type": "Tech"
@@ -3525,7 +3525,7 @@
       "name_string_id": 407006,
       "node_id": 1111,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 165,
       "row": 5,
       "use_type": "Tech"
@@ -3544,7 +3544,7 @@
       "name_string_id": 407008,
       "node_id": 1113,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 167,
       "row": 6,
       "use_type": "Tech"
@@ -3943,7 +3943,7 @@
       "name_string_id": 407045,
       "node_id": 1195,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 171,
       "row": 2,
       "use_type": "Tech"
@@ -3962,7 +3962,7 @@
       "name_string_id": 407046,
       "node_id": 1196,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 170,
       "row": 2,
       "use_type": "Tech"
@@ -3981,7 +3981,7 @@
       "name_string_id": 407047,
       "node_id": 1197,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 172,
       "row": 2,
       "use_type": "Tech"

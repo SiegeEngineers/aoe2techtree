@@ -4471,7 +4471,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 2,
+                        "Amount": 3,
                         "Class": 29
                     },
                     {
@@ -4545,7 +4545,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 6,
+                        "Amount": 8,
                         "Class": 29
                     },
                     {
@@ -5364,7 +5364,7 @@
                 "HP": 200,
                 "ID": 422,
                 "LanguageNameId": 5289,
-                "LineOfSight": 3,
+                "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": -2,
                 "MinRange": 0,
@@ -5911,7 +5911,7 @@
                 "HP": 270,
                 "ID": 548,
                 "LanguageNameId": 5446,
-                "LineOfSight": 3,
+                "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": -1,
                 "MinRange": 0,
@@ -5933,7 +5933,7 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 7,
+                        "Amount": 8,
                         "Class": 3
                     },
                     {
@@ -5945,7 +5945,7 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 50,
+                "Attack": 55,
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
@@ -5953,7 +5953,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 50,
+                        "Amount": 55,
                         "Class": 4
                     },
                     {
@@ -5981,7 +5981,7 @@
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
                 "MinRange": 3,
-                "PierceArmor": 7,
+                "PierceArmor": 8,
                 "Range": 8,
                 "RechargeRate": 0,
                 "ReloadTime": 6,
@@ -6015,7 +6015,7 @@
                 "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
-                        "Amount": 8,
+                        "Amount": 9,
                         "Class": 29
                     },
                     {
@@ -6252,7 +6252,7 @@
                 "HP": 175,
                 "ID": 1105,
                 "LanguageNameId": 5445,
-                "LineOfSight": 8,
+                "LineOfSight": 6,
                 "MaxCharge": 0,
                 "MeleeArmor": -2,
                 "MinRange": 0,
@@ -6474,7 +6474,7 @@
                 "HP": 175,
                 "ID": 1258,
                 "LanguageNameId": 5094,
-                "LineOfSight": 3,
+                "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": -3,
                 "MinRange": 0,
@@ -6663,7 +6663,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 1.3,
-                "TrainTime": 20,
+                "TrainTime": 24,
                 "Trait": 8,
                 "TraitPiece": 1759,
                 "internal_name": "RATHA"
@@ -6842,7 +6842,7 @@
                 "HP": 180,
                 "ID": 1744,
                 "LanguageNameId": 5428,
-                "LineOfSight": 4,
+                "LineOfSight": 6,
                 "MaxCharge": 0,
                 "MeleeArmor": -2,
                 "MinRange": 0,
@@ -6932,7 +6932,7 @@
                 "HP": 220,
                 "ID": 1746,
                 "LanguageNameId": 5430,
-                "LineOfSight": 4,
+                "LineOfSight": 6,
                 "MaxCharge": 0,
                 "MeleeArmor": -2,
                 "MinRange": 0,
@@ -7010,7 +7010,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 65,
+                    "Food": 75,
                     "Gold": 90
                 },
                 "FrameDelay": 3,
@@ -7027,7 +7027,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 6.5,
                 "Speed": 0.9,
-                "TrainTime": 28,
+                "TrainTime": 32,
                 "Trait": 8,
                 "TraitPiece": 1980,
                 "internal_name": "WARCHAR"
@@ -7096,7 +7096,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 65,
+                    "Food": 75,
                     "Gold": 90
                 },
                 "FrameDelay": 3,

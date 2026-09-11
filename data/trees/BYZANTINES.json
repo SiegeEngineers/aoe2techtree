@@ -62,7 +62,7 @@
       "name": "Archery Range",
       "name_string_id": 14128,
       "node_id": 87,
-      "node_status": "ResearchRequired",
+      "node_status": "ResearchedCompleted",
       "node_type": "BuildingTech",
       "picture_index": 0,
       "row": 2,
@@ -77,19 +77,23 @@
         [
           null,
           null,
+          null,
           null
         ],
         [
           "Unit_74_12",
+          null,
           null,
           null
         ],
         [
           "Unit_75_12",
           "Unit_93_12",
+          null,
           "Tech_602_12"
         ],
         [
+          null,
           null,
           null,
           null
@@ -97,9 +101,11 @@
         [
           "Unit_77_12",
           "Unit_358_12",
+          "Unit_2703_12",
           "Tech_875_12"
         ],
         [
+          null,
           null,
           null,
           "Tech_215_12"
@@ -107,10 +113,12 @@
         [
           "Unit_473_12",
           "Unit_359_12",
+          "Unit_2704_12",
           null
         ],
         [
           "Unit_567_12",
+          null,
           null,
           null
         ]
@@ -1937,6 +1945,44 @@
       "use_type": "Unit"
     },
     {
+      "age_id": 3,
+      "building_id": 12,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 105530,
+      "id": "Unit_2703_12",
+      "link_id": null,
+      "link_node_type": "BuildingTech",
+      "name": "Varangian Guard",
+      "name_string_id": 14530,
+      "node_id": 2703,
+      "node_status": "ResearchedCompleted",
+      "node_type": "RegionalUnit",
+      "picture_index": 902,
+      "row": 4,
+      "use_type": "Unit"
+    },
+    {
+      "age_id": 4,
+      "building_id": 12,
+      "building_in_new_column": null,
+      "building_upgraded_from_id": null,
+      "grid": null,
+      "help_string_id": 105531,
+      "id": "Unit_2704_12",
+      "link_id": 2703,
+      "link_node_type": "RegionalUnit",
+      "name": "Elite Varangian Guard",
+      "name_string_id": 14531,
+      "node_id": 2704,
+      "node_status": "ResearchedCompleted",
+      "node_type": "RegionalUnit",
+      "picture_index": 903,
+      "row": 6,
+      "use_type": "Unit"
+    },
+    {
       "age_id": 2,
       "building_id": 12,
       "building_in_new_column": null,
@@ -3565,7 +3611,7 @@
       "name_string_id": 17313,
       "node_id": 464,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 33,
       "row": 5,
       "use_type": "Tech"
@@ -3584,7 +3630,7 @@
       "name_string_id": 17318,
       "node_id": 61,
       "node_status": "ResearchedCompleted",
-      "node_type": "Research",
+      "node_type": "UniqueTech",
       "picture_index": 107,
       "row": 6,
       "use_type": "Tech"
